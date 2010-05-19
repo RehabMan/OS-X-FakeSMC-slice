@@ -10,9 +10,9 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					341,
+					458,
 					20,
-					48.16259765625,
+					48,
 					43,
 					43,
 					20,
@@ -27,15 +27,163 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 295944136;
-			PBXWorkspaceStateSaveDate = 295944136;
+			PBXConfiguration.PBXFileTableDataSource3.XCSCMDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					20,
+					434,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_SCM_ColumnID,
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 295980974;
+			PBXWorkspaceStateSaveDate = 295980974;
+		};
+		perUserProjectItems = {
+			AE05985611A3E31400FE6B49 = AE05985611A3E31400FE6B49 /* PBXTextBookmark */;
+			AE18161D11A449140018CB30 = AE18161D11A449140018CB30 /* PBXTextBookmark */;
+			AE18168E11A44D640018CB30 = AE18168E11A44D640018CB30 /* PBXTextBookmark */;
+			AE1816AB11A44F260018CB30 = AE1816AB11A44F260018CB30 /* PBXTextBookmark */;
+			AE1816AC11A44F260018CB30 = AE1816AC11A44F260018CB30 /* PBXTextBookmark */;
+			AE1816AE11A44F260018CB30 = AE1816AE11A44F260018CB30 /* PBXTextBookmark */;
+			AE1816AF11A44F260018CB30 = AE1816AF11A44F260018CB30 /* PlistBookmark */;
+			AE1816B011A44F260018CB30 = AE1816B011A44F260018CB30 /* PlistBookmark */;
+			AEDD1E5211A44FC5007EA900 /* PlistBookmark */ = AEDD1E5211A44FC5007EA900 /* PlistBookmark */;
+			AEDD1E6811A45001007EA900 /* PlistBookmark */ = AEDD1E6811A45001007EA900 /* PlistBookmark */;
 		};
 		sourceControlManager = AE95EDE711A3BBB100AE9201 /* Source Control */;
 		userBuildSettings = {
 		};
 	};
+	089C167EFE841241C02AAC07 /* English */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {598, 298}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 47}";
+		};
+	};
+	1A224C3EFF42367911CA2CB7 /* FakeSMCIntelThermal.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {845, 1209}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{1383, 582}";
+		};
+	};
+	1A224C3FFF42367911CA2CB7 /* FakeSMCIntelThermal.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {719, 3237}}";
+			sepNavSelRange = "{4045, 0}";
+			sepNavVisRange = "{3910, 442}";
+		};
+	};
 	32D94FC30562CBF700B6AF17 /* FakeSMCIntelThermal */ = {
 		activeExec = 0;
+	};
+	AE05985611A3E31400FE6B49 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 089C167EFE841241C02AAC07 /* English */;
+		name = "InfoPlist.strings: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 47;
+		vrLoc = 0;
+	};
+	AE18161D11A449140018CB30 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ED5A8F3611A34DF800DB8193 /* cpuid.h */;
+		name = "cpuid.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1059;
+		vrLoc = 0;
+	};
+	AE18168E11A44D640018CB30 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3EFF42367911CA2CB7 /* FakeSMCIntelThermal.h */;
+		name = "FakeSMCIntelThermal.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 582;
+		vrLoc = 1383;
+	};
+	AE1816AB11A44F260018CB30 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ED19393111A31AF4001793BC /* fakesmc.h */;
+		name = "fakesmc.h: 24";
+		rLen = 0;
+		rLoc = 466;
+		rType = 0;
+		vrLen = 466;
+		vrLoc = 0;
+	};
+	AE1816AC11A44F260018CB30 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AE1816AD11A44F260018CB30 /* mozo.pbxuser */;
+		name = "mozo.pbxuser: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 926;
+		vrLoc = 0;
+	};
+	AE1816AD11A44F260018CB30 /* mozo.pbxuser */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = text;
+		name = mozo.pbxuser;
+		path = /Users/mozo/Documents/fakesmc/FakeSMCIntelThermal/FakeSMCIntelThermal/FakeSMCIntelThermal.xcodeproj/mozo.pbxuser;
+		sourceTree = "<absolute>";
+	};
+	AE1816AE11A44F260018CB30 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCIntelThermal.cpp */;
+		name = "FakeSMCIntelThermal.cpp: 203";
+		rLen = 0;
+		rLoc = 4045;
+		rType = 0;
+		vrLen = 442;
+		vrLoc = 3910;
+	};
+	AE1816AF11A44F260018CB30 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 32D94FCF0562CBF700B6AF17 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundleShortVersionString,
+		);
+		name = /Users/mozo/Documents/fakesmc/FakeSMCIntelThermal/FakeSMCIntelThermal/Info.plist;
+		rLen = 0;
+		rLoc = 9223372036854775808;
+	};
+	AE1816B011A44F260018CB30 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 32D94FCF0562CBF700B6AF17 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundleShortVersionString,
+		);
+		name = /Users/mozo/Documents/fakesmc/FakeSMCIntelThermal/FakeSMCIntelThermal/Info.plist;
+		rLen = 0;
+		rLoc = 9223372036854775808;
 	};
 	AE95EDE711A3BBB100AE9201 /* Source Control */ = {
 		isa = PBXSourceControlManager;
@@ -50,5 +198,43 @@
 	AE95EDE811A3BBB100AE9201 /* Code sense */ = {
 		isa = PBXCodeSenseManager;
 		indexTemplatePath = "";
+	};
+	AEDD1E5211A44FC5007EA900 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 32D94FCF0562CBF700B6AF17 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundleShortVersionString,
+		);
+		name = /Users/mozo/Documents/fakesmc/FakeSMCIntelThermal/FakeSMCIntelThermal/Info.plist;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	AEDD1E6811A45001007EA900 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 32D94FCF0562CBF700B6AF17 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundleShortVersionString,
+		);
+		name = /Users/mozo/Documents/fakesmc/FakeSMCIntelThermal/FakeSMCIntelThermal/Info.plist;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	ED19393111A31AF4001793BC /* fakesmc.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {636, 354}}";
+			sepNavSelRange = "{466, 0}";
+			sepNavVisRange = "{0, 466}";
+		};
+	};
+	ED5A8F3611A34DF800DB8193 /* cpuid.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {636, 2106}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1059}";
+		};
 	};
 }

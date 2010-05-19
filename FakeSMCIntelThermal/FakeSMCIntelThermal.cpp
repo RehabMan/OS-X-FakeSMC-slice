@@ -200,7 +200,7 @@ bool IntelThermalMonitorPlugin::start(IOService * provider)
 		
 		snprintf(key, 5, "TC%dD", i);
 		
-		FakeSMCAddKey(key, 0x02, value, &Update);
+		FakeSMCRegisterKey(key, 0x02, value, &Update);
 	}
 
 	registerService(0);
@@ -219,11 +219,11 @@ void IntelThermalMonitorPlugin::stop (IOService* provider)
 {
 	for (int i=0; i<CpuCount; i++) 
 	{
-		char key[5], value[2];
+		char key[5];
 		
 		snprintf(key, 5, "TC%dD", i);
 		
-		FakeSMCAddKey(key, 0x02, value, NULL);
+		FakeSMCUnregisterKey(key);
 	}
 	
 	super::stop(provider);
