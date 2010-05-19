@@ -20,4 +20,4 @@ struct AppleSMCData {
 	SMCData next;
 };
 
-extern void FakeSMCAddKey (const char*, uint8_t, char*, FakeSMCPluginCallback);
+extern void FakeSMCAddKey (const char*, uint8_t, char*, PluginCallback);
