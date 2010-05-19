@@ -6,10 +6,21 @@
 
 IOACPIPlatformDeviceCh * smcNode;
 
-void FakeSMCAddKey (const char* keyname, uint8_t keylen, char* keydata, PluginCallback callback)
+void FakeSMCRegisterKey (const char* keyname, uint8_t keylen, char* keydata, PluginCallback callback)
 {
 	smcNode->SMCAddKey(keyname, keylen, keydata, 1, callback);
 	smcNode->FixUpKeysNum();
+}
+
+void FakeSMCUnregisterKey (const char* keyname)
+{
+	SMCData node = smcNode->FindSMCKey(keyname);
+	
+	if(node != NULL)
+	{
+		smcNode->SMCAddKey(keyname, node->len, node->data, 1, NULL);
+		smcNode->FixUpKeysNum();
+	}
 }
 
 #define super IOService
