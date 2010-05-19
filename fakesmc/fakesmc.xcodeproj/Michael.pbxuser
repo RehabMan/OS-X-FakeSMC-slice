@@ -1,0 +1,175 @@
+// !$*UTF8*$!
+{
+	089C1669FE841209C02AAC07 /* Project object */ = {
+		activeArchitecturePreference = i386;
+		activeBuildConfigurationName = Release;
+		activeSDKPreference = macosx10.6;
+		activeTarget = 32D94FC30562CBF700B6AF17 /* fakesmc */;
+		codeSenseManager = 4C66B5041196791E00EC93B9 /* Code sense */;
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					1153,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 295456909;
+			PBXWorkspaceStateSaveDate = 295456909;
+		};
+		perUserProjectItems = {
+			4C2B6E1A119AF2FD00523976 /* PBXTextBookmark */ = 4C2B6E1A119AF2FD00523976 /* PBXTextBookmark */;
+			4C2B6E1B119AF2FD00523976 /* PBXTextBookmark */ = 4C2B6E1B119AF2FD00523976 /* PBXTextBookmark */;
+			4C36C24B119C509300D4A14A /* PBXTextBookmark */ = 4C36C24B119C509300D4A14A /* PBXTextBookmark */;
+			4C66B54311967B0600EC93B9 /* PBXTextBookmark */ = 4C66B54311967B0600EC93B9 /* PBXTextBookmark */;
+			4C6F299511969AC4002DCCFF /* PlistBookmark */ = 4C6F299511969AC4002DCCFF /* PlistBookmark */;
+			4CFF40E11196BE8500D6D9B2 /* PBXTextBookmark */ = 4CFF40E11196BE8500D6D9B2 /* PBXTextBookmark */;
+			4CFF40E31196BE8500D6D9B2 /* PBXTextBookmark */ = 4CFF40E31196BE8500D6D9B2 /* PBXTextBookmark */;
+		};
+		sourceControlManager = 4C66B5031196791E00EC93B9 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	1A224C3EFF42367911CA2CB7 /* fakesmc.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1331, 468}}";
+			sepNavSelRange = "{572, 0}";
+			sepNavVisRange = "{0, 574}";
+		};
+	};
+	1A224C3FFF42367911CA2CB7 /* fakesmc.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1331, 2184}}";
+			sepNavSelRange = "{3972, 4}";
+			sepNavVisRange = "{0, 968}";
+		};
+	};
+	32D94FC30562CBF700B6AF17 /* fakesmc */ = {
+		activeExec = 0;
+	};
+	4C2B6E1A119AF2FD00523976 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E05B3D5A103D2D60006092C3 /* IOACPIPlatformDeviceCh.h */;
+		name = "IOACPIPlatformDeviceCh.h: 108";
+		rLen = 0;
+		rLoc = 2793;
+		rType = 0;
+		vrLen = 652;
+		vrLoc = 0;
+	};
+	4C2B6E1B119AF2FD00523976 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* fakesmc.cpp */;
+		name = "fakesmc.cpp: 136";
+		rLen = 4;
+		rLoc = 3972;
+		rType = 0;
+		vrLen = 1444;
+		vrLoc = 1911;
+	};
+	4C36C24B119C509300D4A14A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* fakesmc.cpp */;
+		name = "fakesmc.cpp: 136";
+		rLen = 4;
+		rLoc = 3972;
+		rType = 0;
+		vrLen = 968;
+		vrLoc = 0;
+	};
+	4C66B5031196791E00EC93B9 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	4C66B5041196791E00EC93B9 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	4C66B51D119679E700EC93B9 /* proc_reg.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = proc_reg.h;
+		path = /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/i386/proc_reg.h;
+		sourceTree = "<absolute>";
+	};
+	4C66B54311967B0600EC93B9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4C66B51D119679E700EC93B9 /* proc_reg.h */;
+		name = "proc_reg.h: 350";
+		rLen = 0;
+		rLoc = 11341;
+		rType = 0;
+		vrLen = 400;
+		vrLoc = 11056;
+	};
+	4C6F299511969AC4002DCCFF /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 32D94FCF0562CBF700B6AF17 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			IOKitPersonalities,
+			FakeSMC,
+			SMCKeys,
+			MSDS,
+		);
+		name = /Users/Michael/Desktop/fakesmc_device_only/Info.plist;
+		rLen = 0;
+		rLoc = 9223372036854775808;
+	};
+	4CFF40E11196BE8500D6D9B2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E05B3D5B103D2D60006092C3 /* IOACPIPlatformDeviceCh.cpp */;
+		name = "IOACPIPlatformDeviceCh.cpp: 42";
+		rLen = 0;
+		rLoc = 1167;
+		rType = 0;
+		vrLen = 983;
+		vrLoc = 928;
+	};
+	4CFF40E31196BE8500D6D9B2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3EFF42367911CA2CB7 /* fakesmc.h */;
+		name = "fakesmc.h: 23";
+		rLen = 0;
+		rLoc = 572;
+		rType = 0;
+		vrLen = 574;
+		vrLoc = 0;
+	};
+	E05B3D5A103D2D60006092C3 /* IOACPIPlatformDeviceCh.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1331, 1443}}";
+			sepNavSelRange = "{2793, 0}";
+			sepNavVisRange = "{0, 652}";
+		};
+	};
+	E05B3D5B103D2D60006092C3 /* IOACPIPlatformDeviceCh.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1331, 6591}}";
+			sepNavSelRange = "{1167, 0}";
+			sepNavVisRange = "{928, 983}";
+		};
+	};
+}

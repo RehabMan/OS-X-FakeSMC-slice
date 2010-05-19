@@ -1,0 +1,717 @@
+Tfakesmc
+v7
+r0
+t295074393.441309
+cCheck dependencies
+cProcessInfoPlistFile /Users/Michael/Desktop/fakesmc_device_only/build/Debug/fakesmc.kext/Contents/Info.plist Info.plist
+cCopyStringsFile /Users/Michael/Desktop/fakesmc_device_only/build/Debug/fakesmc.kext/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
+cCompileC build/fakesmc.build/Debug/fakesmc.build/Objects-normal/i386/fakesmc.o /Users/Michael/Desktop/fakesmc_device_only/fakesmc.cpp normal i386 c++ com.apple.compilers.gcc.4_2
+cCompileC build/fakesmc.build/Debug/fakesmc.build/Objects-normal/i386/IOACPIPlatformDeviceCh.o /Users/Michael/Desktop/fakesmc_device_only/IOACPIPlatformDeviceCh.cpp normal i386 c++ com.apple.compilers.gcc.4_2
+cCompileC build/fakesmc.build/Debug/fakesmc.build/Objects-normal/i386/fakesmc_info.o /Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/DerivedSources/fakesmc_info.c normal i386 c com.apple.compilers.gcc.4_2
+cLd /Users/Michael/Desktop/fakesmc_device_only/build/Debug/fakesmc.kext/Contents/MacOS/fakesmc normal i386
+cGenerateDSYMFile /Users/Michael/Desktop/fakesmc_device_only/build/Debug/fakesmc.kext.dSYM /Users/Michael/Desktop/fakesmc_device_only/build/Debug/fakesmc.kext/Contents/MacOS/fakesmc
+cTouch /Users/Michael/Desktop/fakesmc_device_only/build/Debug/fakesmc.kext
+
+N/Developer/SDKs/MacOSX10.6.sdk
+c000000004ABBF0FD00000000000000EE
+t1253830909
+s238
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/IOService.h
+c000000004A73D653000000000001F49D
+t1249105491
+s128157
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/IOTimerEventSource.h
+c000000004A73D6540000000000002B1D
+t1249105492
+s11037
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/acpi/IOACPIPlatformDevice.h
+c000000004A73D8B80000000000002B75
+t1249106104
+s11125
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/pci/IOPCIDevice.h
+c000000004A73D8C70000000000008708
+t1249106119
+s34568
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/i386/cpuid.h
+c000000004A73D66C0000000000002676
+t1249105516
+s9846
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/i386/proc_reg.h
+c000000004A73D66C00000000000039BC
+t1249105516
+s14780
+
+N/System/Library/Frameworks/Kernel.framework/PrivateHeaders/IOKit/IOService.h
+c000000004B3B89A9000000000001F51C
+t1262193065
+s128284
+
+N/System/Library/Frameworks/Kernel.framework/PrivateHeaders/IOKit/IOTimerEventSource.h
+c000000004B3B89A90000000000002B1D
+t1262193065
+s11037
+
+N/System/Library/Frameworks/Kernel.framework/PrivateHeaders/i386/cpuid.h
+c000000004B3B89A90000000000002A82
+t1262193065
+s10882
+
+N/System/Library/Frameworks/Kernel.framework/PrivateHeaders/i386/proc_reg.h
+c000000004B3B89A90000000000003A1E
+t1262193065
+s14878
+
+N/Users/Michael/Desktop/fakesmc_device_only/English.lproj/InfoPlist.strings
+c000000004A8AF67B0000000000000030
+t1250621051
+s48
+
+N/Users/Michael/Desktop/fakesmc_device_only/IOACPIPlatformDeviceCh.cpp
+c000000004B06B7800000000000003BBC
+t1258731392
+s15292
+i"IOACPIPlatformDeviceCh.h"
+i<i386/proc_reg.h>
+
+N/Users/Michael/Desktop/fakesmc_device_only/IOACPIPlatformDeviceCh.h
+c000000004B06B6750000000000000B6B
+t1258731125
+s2923
+i<IOKit/IOService.h>
+i<IOKit/acpi/IOACPIPlatformDevice.h>
+i<IOKit/acpi/IOACPIPlatformDevice.h>
+
+N/Users/Michael/Desktop/fakesmc_device_only/build/Debug/fakesmc.kext
+t1273381593
+s102
+
+N/Users/Michael/Desktop/fakesmc_device_only/build/Debug/fakesmc.kext.dSYM
+t1273381593
+s102
+
+N/Users/Michael/Desktop/fakesmc_device_only/build/Debug/fakesmc.kext/Contents/Info.plist
+t1273381347
+s2446
+
+N/Users/Michael/Desktop/fakesmc_device_only/build/Debug/fakesmc.kext/Contents/MacOS/fakesmc
+t1273381593
+s55876
+
+N/Users/Michael/Desktop/fakesmc_device_only/build/Debug/fakesmc.kext/Contents/Resources/English.lproj/InfoPlist.strings
+t1273381347
+s92
+
+N/Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/DerivedSources/fakesmc_info.c
+c000000004BE641E3000000000000019C
+t1273381347
+s412
+
+N/Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/Objects-normal/i386/IOACPIPlatformDeviceCh.o
+t1273381525
+s173808
+
+N/Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/Objects-normal/i386/fakesmc.LinkFileList
+c000000004BE6429500000000000000F1
+t1273381525
+s241
+
+N/Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/Objects-normal/i386/fakesmc.o
+t1273381593
+s174512
+
+N/Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/Objects-normal/i386/fakesmc_info.o
+t1273381525
+s3764
+
+N/Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/Objects-normal/x86_64/IOACPIPlatformDeviceCh.o
+t1273381348
+s176132
+
+N/Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/Objects-normal/x86_64/fakesmc.LinkFileList
+c000000004BE641E300000000000000F5
+t1273381347
+s245
+
+N/Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/Objects-normal/x86_64/fakesmc.o
+t1273381451
+s175376
+
+N/Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/Objects-normal/x86_64/fakesmc_info.o
+t1273381347
+s4064
+
+N/Users/Michael/Desktop/fakesmc_device_only/fakesmc.cpp
+c000000004BE642D80000000000001481
+t1273381592
+s5249
+i"fakesmc.h"
+i"IOACPIPlatformDeviceCh.h"
+i<i386/cpuid.h>
+i<i386/proc_reg.h>
+
+N/Users/Michael/Desktop/fakesmc_device_only/fakesmc.h
+c000000004A8CF5A900000000000002F1
+t1250751913
+s753
+i<IOKit/IOService.h>
+i<IOKit/pci/IOPCIDevice.h>
+i<IOKit/IOTimerEventSource.h>
+i<IOKit/acpi/IOACPIPlatformDevice.h>
+
+N/Users/andyvand/Downloads/fakesmc2.5_release/sources/fakesmc/English.lproj/InfoPlist.strings
+c000000004A8AF67B0000000000000030
+t1250621051
+s48
+
+N/Users/andyvand/Downloads/fakesmc2.5_release/sources/fakesmc/IOACPIPlatformDeviceCh.cpp
+c000000004B06B7800000000000003BBC
+t1258731392
+s15292
+i"IOACPIPlatformDeviceCh.h"
+i<i386/proc_reg.h>
+
+N/Users/andyvand/Downloads/fakesmc2.5_release/sources/fakesmc/IOACPIPlatformDeviceCh.h
+c000000004B06B6750000000000000B6B
+t1258731125
+s2923
+i<IOKit/IOService.h>
+i<IOKit/acpi/IOACPIPlatformDevice.h>
+i<IOKit/acpi/IOACPIPlatformDevice.h>
+
+N/Users/andyvand/Downloads/fakesmc2.5_release/sources/fakesmc/build/Debug/fakesmc.kext
+t2
+s0
+
+N/Users/andyvand/Downloads/fakesmc2.5_release/sources/fakesmc/build/Debug/fakesmc.kext.dSYM
+t2
+s0
+
+N/Users/andyvand/Downloads/fakesmc2.5_release/sources/fakesmc/build/Debug/fakesmc.kext/Contents/Info.plist
+t2
+s0
+
+N/Users/andyvand/Downloads/fakesmc2.5_release/sources/fakesmc/build/Debug/fakesmc.kext/Contents/MacOS/fakesmc
+t2
+s0
+
+N/Users/andyvand/Downloads/fakesmc2.5_release/sources/fakesmc/build/Debug/fakesmc.kext/Contents/Resources/English.lproj/InfoPlist.strings
+t2
+s0
+
+N/Users/andyvand/Downloads/fakesmc2.5_release/sources/fakesmc/build/fakesmc.build/Debug/fakesmc.build/DerivedSources/fakesmc_info.c
+c00000000000000000000000000000000
+t2
+s0
+
+N/Users/andyvand/Downloads/fakesmc2.5_release/sources/fakesmc/build/fakesmc.build/Debug/fakesmc.build/Objects-normal/i386/IOACPIPlatformDeviceCh.o
+t2
+s0
+
+N/Users/andyvand/Downloads/fakesmc2.5_release/sources/fakesmc/build/fakesmc.build/Debug/fakesmc.build/Objects-normal/i386/fakesmc.LinkFileList
+c00000000000000000000000000000000
+t2
+s0
+
+N/Users/andyvand/Downloads/fakesmc2.5_release/sources/fakesmc/build/fakesmc.build/Debug/fakesmc.build/Objects-normal/i386/fakesmc.o
+t2
+s0
+
+N/Users/andyvand/Downloads/fakesmc2.5_release/sources/fakesmc/build/fakesmc.build/Debug/fakesmc.build/Objects-normal/i386/fakesmc_info.o
+t2
+s0
+
+N/Users/andyvand/Downloads/fakesmc2.5_release/sources/fakesmc/fakesmc.cpp
+c000000004B06C28C0000000000001D02
+t1258734220
+s7426
+i"fakesmc.h"
+i"IOACPIPlatformDeviceCh.h"
+i<i386/cpuid.h>
+i<i386/proc_reg.h>
+
+N/Users/andyvand/Downloads/fakesmc2.5_release/sources/fakesmc/fakesmc.h
+c000000004A8CF5A900000000000002F1
+t1250751913
+s753
+i<IOKit/IOService.h>
+i<IOKit/pci/IOPCIDevice.h>
+i<IOKit/IOTimerEventSource.h>
+i<IOKit/acpi/IOACPIPlatformDevice.h>
+
+N/Users/bigowner/Documents/fakesmc (device only)/English.lproj/InfoPlist.strings
+c000000004A8AF67B0000000000000030
+t1250621051
+s48
+
+N/Users/bigowner/Documents/fakesmc (device only)/IOACPIPlatformDeviceCh.cpp
+c000000004BE686D600000000000038B4
+t1273398998
+s14516
+i"IOACPIPlatformDeviceCh.h"
+
+N/Users/bigowner/Documents/fakesmc (device only)/IOACPIPlatformDeviceCh.h
+c000000004BE662000000000000000B16
+t1273389568
+s2838
+i<IOKit/IOService.h>
+i<IOKit/acpi/IOACPIPlatformDevice.h>
+i<IOKit/acpi/IOACPIPlatformDevice.h>
+
+N/Users/bigowner/Documents/fakesmc (device only)/build/Debug/fakesmc.kext
+t1273381593
+s102
+
+N/Users/bigowner/Documents/fakesmc (device only)/build/Debug/fakesmc.kext.dSYM
+t1273381593
+s102
+
+N/Users/bigowner/Documents/fakesmc (device only)/build/Debug/fakesmc.kext/Contents/Info.plist
+t1273381347
+s2446
+
+N/Users/bigowner/Documents/fakesmc (device only)/build/Debug/fakesmc.kext/Contents/MacOS/fakesmc
+t1273381593
+s55876
+
+N/Users/bigowner/Documents/fakesmc (device only)/build/Debug/fakesmc.kext/Contents/Resources/English.lproj/InfoPlist.strings
+t1273381347
+s92
+
+N/Users/bigowner/Documents/fakesmc (device only)/build/fakesmc.build/Debug/fakesmc.build/DerivedSources/fakesmc_info.c
+c000000004BE641E3000000000000019C
+t1273381347
+s412
+
+N/Users/bigowner/Documents/fakesmc (device only)/build/fakesmc.build/Debug/fakesmc.build/Objects-normal/x86_64/IOACPIPlatformDeviceCh.o
+t1273381348
+s176132
+
+N/Users/bigowner/Documents/fakesmc (device only)/build/fakesmc.build/Debug/fakesmc.build/Objects-normal/x86_64/fakesmc.LinkFileList
+c000000004BE641E300000000000000F5
+t1273381347
+s245
+
+N/Users/bigowner/Documents/fakesmc (device only)/build/fakesmc.build/Debug/fakesmc.build/Objects-normal/x86_64/fakesmc.o
+t1273381451
+s175376
+
+N/Users/bigowner/Documents/fakesmc (device only)/build/fakesmc.build/Debug/fakesmc.build/Objects-normal/x86_64/fakesmc_info.o
+t1273381347
+s4064
+
+N/Users/bigowner/Documents/fakesmc (device only)/fakesmc.cpp
+c000000004BE6633C00000000000012DE
+t1273389884
+s4830
+i"fakesmc.h"
+i"IOACPIPlatformDeviceCh.h"
+i<i386/cpuid.h>
+
+N/Users/bigowner/Documents/fakesmc (device only)/fakesmc.h
+c000000004BE661B7000000000000023E
+t1273389495
+s574
+i<IOKit/IOService.h>
+i<IOKit/pci/IOPCIDevice.h>
+i<IOKit/IOTimerEventSource.h>
+i<IOKit/acpi/IOACPIPlatformDevice.h>
+
+N/Users/bigowner/Downloads/fakesmc_device_only/English.lproj/InfoPlist.strings
+c000000004A8AF67B0000000000000030
+t1250621051
+s48
+
+N/Users/bigowner/Downloads/fakesmc_device_only/IOACPIPlatformDeviceCh.cpp
+c000000004BE686D600000000000038B4
+t1273398998
+s14516
+i"IOACPIPlatformDeviceCh.h"
+
+N/Users/bigowner/Downloads/fakesmc_device_only/IOACPIPlatformDeviceCh.h
+c000000004BE662000000000000000B16
+t1273389568
+s2838
+i<IOKit/IOService.h>
+i<IOKit/acpi/IOACPIPlatformDevice.h>
+i<IOKit/acpi/IOACPIPlatformDevice.h>
+
+N/Users/bigowner/Downloads/fakesmc_device_only/build/Debug/fakesmc.kext
+t1273381593
+s102
+
+N/Users/bigowner/Downloads/fakesmc_device_only/build/Debug/fakesmc.kext.dSYM
+t1273381593
+s102
+
+N/Users/bigowner/Downloads/fakesmc_device_only/build/Debug/fakesmc.kext/Contents/Info.plist
+t1273381347
+s2446
+
+N/Users/bigowner/Downloads/fakesmc_device_only/build/Debug/fakesmc.kext/Contents/MacOS/fakesmc
+t1273381593
+s55876
+
+N/Users/bigowner/Downloads/fakesmc_device_only/build/Debug/fakesmc.kext/Contents/Resources/English.lproj/InfoPlist.strings
+t1273381347
+s92
+
+N/Users/bigowner/Downloads/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/DerivedSources/fakesmc_info.c
+c000000004BE641E3000000000000019C
+t1273381347
+s412
+
+N/Users/bigowner/Downloads/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/Objects-normal/x86_64/IOACPIPlatformDeviceCh.o
+t1273381348
+s176132
+
+N/Users/bigowner/Downloads/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/Objects-normal/x86_64/fakesmc.LinkFileList
+c000000004BE641E300000000000000F5
+t1273381347
+s245
+
+N/Users/bigowner/Downloads/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/Objects-normal/x86_64/fakesmc.o
+t1273381451
+s175376
+
+N/Users/bigowner/Downloads/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/Objects-normal/x86_64/fakesmc_info.o
+t1273381347
+s4064
+
+N/Users/bigowner/Downloads/fakesmc_device_only/fakesmc.cpp
+c000000004BE6633C00000000000012DE
+t1273389884
+s4830
+i"fakesmc.h"
+i"IOACPIPlatformDeviceCh.h"
+i<i386/cpuid.h>
+
+N/Users/bigowner/Downloads/fakesmc_device_only/fakesmc.h
+c000000004BE661B7000000000000023E
+t1273389495
+s574
+i<IOKit/IOService.h>
+i<IOKit/pci/IOPCIDevice.h>
+i<IOKit/IOTimerEventSource.h>
+i<IOKit/acpi/IOACPIPlatformDevice.h>
+
+N/Users/mozo/Documents/fakesmc with plugins/fakesmc/English.lproj/InfoPlist.strings
+c000000004A8AF67B0000000000000030
+t1250621051
+s48
+
+N/Users/mozo/Documents/fakesmc with plugins/fakesmc/IOACPIPlatformDeviceCh.cpp
+c000000004BF36C8200000000000039A0
+t1274244226
+s14752
+i"IOACPIPlatformDeviceCh.h"
+
+N/Users/mozo/Documents/fakesmc with plugins/fakesmc/IOACPIPlatformDeviceCh.h
+c000000004BF36C6D0000000000000BDB
+t1274244205
+s3035
+i<IOKit/IOService.h>
+i<IOKit/acpi/IOACPIPlatformDevice.h>
+i<IOKit/acpi/IOACPIPlatformDevice.h>
+
+N/Users/mozo/Documents/fakesmc with plugins/fakesmc/build/Debug/fakesmc.kext
+t1273381593
+s102
+
+N/Users/mozo/Documents/fakesmc with plugins/fakesmc/build/Debug/fakesmc.kext.dSYM
+t1273381593
+s102
+
+N/Users/mozo/Documents/fakesmc with plugins/fakesmc/build/Debug/fakesmc.kext/Contents/Info.plist
+t1273381347
+s2446
+
+N/Users/mozo/Documents/fakesmc with plugins/fakesmc/build/Debug/fakesmc.kext/Contents/MacOS/fakesmc
+t1273381593
+s55876
+
+N/Users/mozo/Documents/fakesmc with plugins/fakesmc/build/Debug/fakesmc.kext/Contents/Resources/English.lproj/InfoPlist.strings
+t1273381347
+s92
+
+N/Users/mozo/Documents/fakesmc with plugins/fakesmc/build/fakesmc.build/Debug/fakesmc.build/DerivedSources/fakesmc_info.c
+c000000004BE641E3000000000000019C
+t1273381347
+s412
+
+N/Users/mozo/Documents/fakesmc with plugins/fakesmc/build/fakesmc.build/Debug/fakesmc.build/Objects-normal/x86_64/IOACPIPlatformDeviceCh.o
+t1273381348
+s176132
+
+N/Users/mozo/Documents/fakesmc with plugins/fakesmc/build/fakesmc.build/Debug/fakesmc.build/Objects-normal/x86_64/fakesmc.LinkFileList
+c000000004BE641E300000000000000F5
+t1273381347
+s245
+
+N/Users/mozo/Documents/fakesmc with plugins/fakesmc/build/fakesmc.build/Debug/fakesmc.build/Objects-normal/x86_64/fakesmc.o
+t1273381451
+s175376
+
+N/Users/mozo/Documents/fakesmc with plugins/fakesmc/build/fakesmc.build/Debug/fakesmc.build/Objects-normal/x86_64/fakesmc_info.o
+t1273381347
+s4064
+
+N/Users/mozo/Documents/fakesmc with plugins/fakesmc/fakesmc.cpp
+c000000004BF36D3A0000000000001231
+t1274244410
+s4657
+i"fakesmc.h"
+
+N/Users/mozo/Documents/fakesmc with plugins/fakesmc/fakesmc.h
+c000000004BF36C9000000000000002A3
+t1274244240
+s675
+i<IOKit/IOService.h>
+i<IOKit/pci/IOPCIDevice.h>
+i<IOKit/IOTimerEventSource.h>
+i<IOKit/acpi/IOACPIPlatformDevice.h>
+i<IOACPIPlatformDeviceCh.h>
+
+NInfo.plist
+c000000004BEEB6F3000000000000093C
+t1273935603
+s2364
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies295074393#295074393#0(0"0(0#1#0"4324455640#0"0#
+
+CCompileC build/fakesmc.build/Debug/fakesmc.build/Objects-normal/i386/IOACPIPlatformDeviceCh.o /Users/Michael/Desktop/fakesmc_device_only/IOACPIPlatformDeviceCh.cpp normal i386 c++ com.apple.compilers.gcc.4_2
+s295074325.447520
+e295074325.868290
+r1
+xCompileC
+xbuild/fakesmc.build/Debug/fakesmc.build/Objects-normal/i386/IOACPIPlatformDeviceCh.o
+x/Users/Michael/Desktop/fakesmc_device_only/IOACPIPlatformDeviceCh.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@77"Compile /Users/Michael/Desktop/fakesmc_device_only/IOACPIPlatformDeviceCh.cpp295074325#295074325#0(0"0(0#0#69"/Users/Michael/Desktop/fakesmc_device_only/IOACPIPlatformDeviceCh.cpp4324455640#1670"    cd /Users/Michael/Desktop/fakesmc_device_only    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -O0 -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/fakesmc-generated-files.hmap -I/Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/fakesmc-own-target-headers.hmap -I/Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/fakesmc-all-target-headers.hmap -iquote /Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/fakesmc-project-headers.hmap -F/Users/Michael/Desktop/fakesmc_device_only/build/Debug -I/Users/Michael/Desktop/fakesmc_device_only/build/Debug/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/DerivedSources/i386 -I/Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/DerivedSources -c /Users/Michael/Desktop/fakesmc_device_only/IOACPIPlatformDeviceCh.cpp -o /Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/Objects-normal/i386/IOACPIPlatformDeviceCh.o0#
+
+CCompileC build/fakesmc.build/Debug/fakesmc.build/Objects-normal/i386/IOACPIPlatformDeviceCh.o /Users/andyvand/Downloads/fakesmc2.5_release/sources/fakesmc/IOACPIPlatformDeviceCh.cpp normal i386 c++ com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/fakesmc.build/Debug/fakesmc.build/Objects-normal/i386/fakesmc.o /Users/Michael/Desktop/fakesmc_device_only/fakesmc.cpp normal i386 c++ com.apple.compilers.gcc.4_2
+s295074393.047829
+e295074393.367983
+r1
+xCompileC
+xbuild/fakesmc.build/Debug/fakesmc.build/Objects-normal/i386/fakesmc.o
+x/Users/Michael/Desktop/fakesmc_device_only/fakesmc.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@62"Compile /Users/Michael/Desktop/fakesmc_device_only/fakesmc.cpp295074393#295074393#0(0"0(0#0#54"/Users/Michael/Desktop/fakesmc_device_only/fakesmc.cpp4324455640#1640"    cd /Users/Michael/Desktop/fakesmc_device_only    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -O0 -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/fakesmc-generated-files.hmap -I/Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/fakesmc-own-target-headers.hmap -I/Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/fakesmc-all-target-headers.hmap -iquote /Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/fakesmc-project-headers.hmap -F/Users/Michael/Desktop/fakesmc_device_only/build/Debug -I/Users/Michael/Desktop/fakesmc_device_only/build/Debug/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/DerivedSources/i386 -I/Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/DerivedSources -c /Users/Michael/Desktop/fakesmc_device_only/fakesmc.cpp -o /Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/Objects-normal/i386/fakesmc.o0#
+
+CCompileC build/fakesmc.build/Debug/fakesmc.build/Objects-normal/i386/fakesmc.o /Users/andyvand/Downloads/fakesmc2.5_release/sources/fakesmc/fakesmc.cpp normal i386 c++ com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/fakesmc.build/Debug/fakesmc.build/Objects-normal/i386/fakesmc_info.o /Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/DerivedSources/fakesmc_info.c normal i386 c com.apple.compilers.gcc.4_2
+s295074325.868416
+e295074325.911237
+r1
+xCompileC
+xbuild/fakesmc.build/Debug/fakesmc.build/Objects-normal/i386/fakesmc_info.o
+x/Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/DerivedSources/fakesmc_info.c
+xnormal
+xi386
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@120"Compile /Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/DerivedSources/fakesmc_info.c295074325#295074325#0(0"0(0#0#112"/Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/DerivedSources/fakesmc_info.c4324455640#1661"    cd /Users/Michael/Desktop/fakesmc_device_only    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch i386 -fmessage-length=0 -pipe -nostdinc -std=gnu99 -fno-builtin -Wno-trigraphs -fasm-blocks -force_cpusubtype_ALL -msoft-float -O0 -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/fakesmc-generated-files.hmap -I/Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/fakesmc-own-target-headers.hmap -I/Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/fakesmc-all-target-headers.hmap -iquote /Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/fakesmc-project-headers.hmap -F/Users/Michael/Desktop/fakesmc_device_only/build/Debug -I/Users/Michael/Desktop/fakesmc_device_only/build/Debug/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/DerivedSources/i386 -I/Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/DerivedSources -c /Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/DerivedSources/fakesmc_info.c -o /Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/Objects-normal/i386/fakesmc_info.o0#
+
+CCompileC build/fakesmc.build/Debug/fakesmc.build/Objects-normal/i386/fakesmc_info.o /Users/andyvand/Downloads/fakesmc2.5_release/sources/fakesmc/build/fakesmc.build/Debug/fakesmc.build/DerivedSources/fakesmc_info.c normal i386 c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/fakesmc.build/Debug/fakesmc.build/Objects-normal/x86_64/IOACPIPlatformDeviceCh.o "/Users/bigowner/Documents/fakesmc (device only)/IOACPIPlatformDeviceCh.cpp" normal x86_64 c++ com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/fakesmc.build/Debug/fakesmc.build/Objects-normal/x86_64/IOACPIPlatformDeviceCh.o "/Users/mozo/Documents/fakesmc with plugins/fakesmc/IOACPIPlatformDeviceCh.cpp" normal x86_64 c++ com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/fakesmc.build/Debug/fakesmc.build/Objects-normal/x86_64/IOACPIPlatformDeviceCh.o /Users/Michael/Desktop/fakesmc_device_only/IOACPIPlatformDeviceCh.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+s295074147.812206
+e295074148.150642
+r1
+xCompileC
+xbuild/fakesmc.build/Debug/fakesmc.build/Objects-normal/x86_64/IOACPIPlatformDeviceCh.o
+x/Users/Michael/Desktop/fakesmc_device_only/IOACPIPlatformDeviceCh.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@77"Compile /Users/Michael/Desktop/fakesmc_device_only/IOACPIPlatformDeviceCh.cpp295074147#295074148#0(0"0(0#0#69"/Users/Michael/Desktop/fakesmc_device_only/IOACPIPlatformDeviceCh.cpp4324455640#1676"    cd /Users/Michael/Desktop/fakesmc_device_only    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -O0 -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/fakesmc-generated-files.hmap -I/Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/fakesmc-own-target-headers.hmap -I/Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/fakesmc-all-target-headers.hmap -iquote /Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/fakesmc-project-headers.hmap -F/Users/Michael/Desktop/fakesmc_device_only/build/Debug -I/Users/Michael/Desktop/fakesmc_device_only/build/Debug/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/DerivedSources/x86_64 -I/Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/DerivedSources -c /Users/Michael/Desktop/fakesmc_device_only/IOACPIPlatformDeviceCh.cpp -o /Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/Objects-normal/x86_64/IOACPIPlatformDeviceCh.o0#
+
+CCompileC build/fakesmc.build/Debug/fakesmc.build/Objects-normal/x86_64/IOACPIPlatformDeviceCh.o /Users/bigowner/Downloads/fakesmc_device_only/IOACPIPlatformDeviceCh.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/fakesmc.build/Debug/fakesmc.build/Objects-normal/x86_64/fakesmc.o "/Users/bigowner/Documents/fakesmc (device only)/fakesmc.cpp" normal x86_64 c++ com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/fakesmc.build/Debug/fakesmc.build/Objects-normal/x86_64/fakesmc.o "/Users/mozo/Documents/fakesmc with plugins/fakesmc/fakesmc.cpp" normal x86_64 c++ com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/fakesmc.build/Debug/fakesmc.build/Objects-normal/x86_64/fakesmc.o /Users/Michael/Desktop/fakesmc_device_only/fakesmc.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+s295074251.656885
+e295074251.957836
+r1
+xCompileC
+xbuild/fakesmc.build/Debug/fakesmc.build/Objects-normal/x86_64/fakesmc.o
+x/Users/Michael/Desktop/fakesmc_device_only/fakesmc.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@62"Compile /Users/Michael/Desktop/fakesmc_device_only/fakesmc.cpp295074251#295074251#0(0"0(0#0#54"/Users/Michael/Desktop/fakesmc_device_only/fakesmc.cpp4324455640#1646"    cd /Users/Michael/Desktop/fakesmc_device_only    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -O0 -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/fakesmc-generated-files.hmap -I/Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/fakesmc-own-target-headers.hmap -I/Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/fakesmc-all-target-headers.hmap -iquote /Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/fakesmc-project-headers.hmap -F/Users/Michael/Desktop/fakesmc_device_only/build/Debug -I/Users/Michael/Desktop/fakesmc_device_only/build/Debug/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/DerivedSources/x86_64 -I/Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/DerivedSources -c /Users/Michael/Desktop/fakesmc_device_only/fakesmc.cpp -o /Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/Objects-normal/x86_64/fakesmc.o0#
+
+CCompileC build/fakesmc.build/Debug/fakesmc.build/Objects-normal/x86_64/fakesmc.o /Users/bigowner/Downloads/fakesmc_device_only/fakesmc.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/fakesmc.build/Debug/fakesmc.build/Objects-normal/x86_64/fakesmc_info.o "/Users/bigowner/Documents/fakesmc (device only)/build/fakesmc.build/Debug/fakesmc.build/DerivedSources/fakesmc_info.c" normal x86_64 c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/fakesmc.build/Debug/fakesmc.build/Objects-normal/x86_64/fakesmc_info.o "/Users/mozo/Documents/fakesmc with plugins/fakesmc/build/fakesmc.build/Debug/fakesmc.build/DerivedSources/fakesmc_info.c" normal x86_64 c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/fakesmc.build/Debug/fakesmc.build/Objects-normal/x86_64/fakesmc_info.o /Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/DerivedSources/fakesmc_info.c normal x86_64 c com.apple.compilers.gcc.4_2
+s295074147.813728
+e295074147.892202
+r1
+xCompileC
+xbuild/fakesmc.build/Debug/fakesmc.build/Objects-normal/x86_64/fakesmc_info.o
+x/Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/DerivedSources/fakesmc_info.c
+xnormal
+xx86_64
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@120"Compile /Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/DerivedSources/fakesmc_info.c295074147#295074147#0(0"0(0#0#112"/Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/DerivedSources/fakesmc_info.c4324455640#1667"    cd /Users/Michael/Desktop/fakesmc_device_only    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -nostdinc -std=gnu99 -fno-builtin -Wno-trigraphs -fasm-blocks -force_cpusubtype_ALL -msoft-float -O0 -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/fakesmc-generated-files.hmap -I/Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/fakesmc-own-target-headers.hmap -I/Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/fakesmc-all-target-headers.hmap -iquote /Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/fakesmc-project-headers.hmap -F/Users/Michael/Desktop/fakesmc_device_only/build/Debug -I/Users/Michael/Desktop/fakesmc_device_only/build/Debug/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/DerivedSources/x86_64 -I/Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/DerivedSources -c /Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/DerivedSources/fakesmc_info.c -o /Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/Objects-normal/x86_64/fakesmc_info.o0#
+
+CCompileC build/fakesmc.build/Debug/fakesmc.build/Objects-normal/x86_64/fakesmc_info.o /Users/bigowner/Downloads/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/DerivedSources/fakesmc_info.c normal x86_64 c com.apple.compilers.gcc.4_2
+r0
+
+CCopyStringsFile "/Users/bigowner/Documents/fakesmc (device only)/build/Debug/fakesmc.kext/Contents/Resources/English.lproj/InfoPlist.strings" English.lproj/InfoPlist.strings
+r0
+
+CCopyStringsFile "/Users/mozo/Documents/fakesmc with plugins/fakesmc/build/Debug/fakesmc.kext/Contents/Resources/English.lproj/InfoPlist.strings" English.lproj/InfoPlist.strings
+r0
+
+CCopyStringsFile /Users/Michael/Desktop/fakesmc_device_only/build/Debug/fakesmc.kext/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
+s295074147.466942
+e295074147.665959
+r1
+xCopyStringsFile
+x/Users/Michael/Desktop/fakesmc_device_only/build/Debug/fakesmc.kext/Contents/Resources/English.lproj/InfoPlist.strings
+xEnglish.lproj/InfoPlist.strings
+lSLF07#2@36"Copy English.lproj/InfoPlist.strings295074147#295074147#0(0"0(0#0#74"/Users/Michael/Desktop/fakesmc_device_only/English.lproj/InfoPlist.strings4324455640#374"    cd /Users/Michael/Desktop/fakesmc_device_only    setenv ICONV /usr/bin/iconv    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings --validate --inputencoding utf-8 --outputencoding UTF-16 English.lproj/InfoPlist.strings --outdir /Users/Michael/Desktop/fakesmc_device_only/build/Debug/fakesmc.kext/Contents/Resources/English.lproj0#
+
+CCopyStringsFile /Users/andyvand/Downloads/fakesmc2.5_release/sources/fakesmc/build/Debug/fakesmc.kext/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
+r0
+
+CCopyStringsFile /Users/bigowner/Downloads/fakesmc_device_only/build/Debug/fakesmc.kext/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
+r0
+
+CGenerateDSYMFile "/Users/bigowner/Documents/fakesmc (device only)/build/Debug/fakesmc.kext.dSYM" "/Users/bigowner/Documents/fakesmc (device only)/build/Debug/fakesmc.kext/Contents/MacOS/fakesmc"
+r0
+
+CGenerateDSYMFile "/Users/mozo/Documents/fakesmc with plugins/fakesmc/build/Debug/fakesmc.kext.dSYM" "/Users/mozo/Documents/fakesmc with plugins/fakesmc/build/Debug/fakesmc.kext/Contents/MacOS/fakesmc"
+r0
+
+CGenerateDSYMFile /Users/Michael/Desktop/fakesmc_device_only/build/Debug/fakesmc.kext.dSYM /Users/Michael/Desktop/fakesmc_device_only/build/Debug/fakesmc.kext/Contents/MacOS/fakesmc
+s295074393.411949
+e295074393.437549
+r1
+xGenerateDSYMFile
+x/Users/Michael/Desktop/fakesmc_device_only/build/Debug/fakesmc.kext.dSYM
+x/Users/Michael/Desktop/fakesmc_device_only/build/Debug/fakesmc.kext/Contents/MacOS/fakesmc
+lSLF07#2@94"GenerateDSYMFile build/Debug/fakesmc.kext.dSYM build/Debug/fakesmc.kext/Contents/MacOS/fakesmc295074393#295074393#0(0"0(0#0#90"/Users/Michael/Desktop/fakesmc_device_only/build/Debug/fakesmc.kext/Contents/MacOS/fakesmc4324455640#249"    cd /Users/Michael/Desktop/fakesmc_device_only    /Developer/usr/bin/dsymutil /Users/Michael/Desktop/fakesmc_device_only/build/Debug/fakesmc.kext/Contents/MacOS/fakesmc -o /Users/Michael/Desktop/fakesmc_device_only/build/Debug/fakesmc.kext.dSYM0#
+
+CGenerateDSYMFile /Users/andyvand/Downloads/fakesmc2.5_release/sources/fakesmc/build/Debug/fakesmc.kext.dSYM /Users/andyvand/Downloads/fakesmc2.5_release/sources/fakesmc/build/Debug/fakesmc.kext/Contents/MacOS/fakesmc
+r0
+
+CGenerateDSYMFile /Users/bigowner/Downloads/fakesmc_device_only/build/Debug/fakesmc.kext.dSYM /Users/bigowner/Downloads/fakesmc_device_only/build/Debug/fakesmc.kext/Contents/MacOS/fakesmc
+r0
+
+CLd "/Users/bigowner/Documents/fakesmc (device only)/build/Debug/fakesmc.kext/Contents/MacOS/fakesmc" normal x86_64
+r0
+
+CLd "/Users/mozo/Documents/fakesmc with plugins/fakesmc/build/Debug/fakesmc.kext/Contents/MacOS/fakesmc" normal x86_64
+r0
+
+CLd /Users/Michael/Desktop/fakesmc_device_only/build/Debug/fakesmc.kext/Contents/MacOS/fakesmc normal i386
+s295074393.368255
+e295074393.411837
+r1
+xLd
+x/Users/Michael/Desktop/fakesmc_device_only/build/Debug/fakesmc.kext/Contents/MacOS/fakesmc
+xnormal
+xi386
+lSLF07#2@95"Link /Users/Michael/Desktop/fakesmc_device_only/build/Debug/fakesmc.kext/Contents/MacOS/fakesmc295074393#295074393#0(0"0(0#0#0"4324455640#723"    cd /Users/Michael/Desktop/fakesmc_device_only    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/g++-4.2 -arch i386 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/Michael/Desktop/fakesmc_device_only/build/Debug -F/Users/Michael/Desktop/fakesmc_device_only/build/Debug -filelist /Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/Objects-normal/i386/fakesmc.LinkFileList -mmacosx-version-min=10.6 -lcpp_kext -Xlinker -kext -nostdlib -lkmodc++ /Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/Objects-normal/i386/fakesmc_info.o -lkmod -lcc_kext -o /Users/Michael/Desktop/fakesmc_device_only/build/Debug/fakesmc.kext/Contents/MacOS/fakesmc0#
+
+CLd /Users/Michael/Desktop/fakesmc_device_only/build/Debug/fakesmc.kext/Contents/MacOS/fakesmc normal x86_64
+s295074251.958113
+e295074251.974992
+r1
+xLd
+x/Users/Michael/Desktop/fakesmc_device_only/build/Debug/fakesmc.kext/Contents/MacOS/fakesmc
+xnormal
+xx86_64
+lSLF07#2@95"Link /Users/Michael/Desktop/fakesmc_device_only/build/Debug/fakesmc.kext/Contents/MacOS/fakesmc295074251#295074251#0(0"0(0#0#0"4324455640#729"    cd /Users/Michael/Desktop/fakesmc_device_only    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/g++-4.2 -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/Michael/Desktop/fakesmc_device_only/build/Debug -F/Users/Michael/Desktop/fakesmc_device_only/build/Debug -filelist /Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/Objects-normal/x86_64/fakesmc.LinkFileList -mmacosx-version-min=10.6 -lcpp_kext -Xlinker -kext -nostdlib -lkmodc++ /Users/Michael/Desktop/fakesmc_device_only/build/fakesmc.build/Debug/fakesmc.build/Objects-normal/x86_64/fakesmc_info.o -lkmod -lcc_kext -o /Users/Michael/Desktop/fakesmc_device_only/build/Debug/fakesmc.kext/Contents/MacOS/fakesmc0#
+
+CLd /Users/andyvand/Downloads/fakesmc2.5_release/sources/fakesmc/build/Debug/fakesmc.kext/Contents/MacOS/fakesmc normal i386
+r0
+
+CLd /Users/bigowner/Downloads/fakesmc_device_only/build/Debug/fakesmc.kext/Contents/MacOS/fakesmc normal x86_64
+r0
+
+CProcessInfoPlistFile "/Users/bigowner/Documents/fakesmc (device only)/build/Debug/fakesmc.kext/Contents/Info.plist" Info.plist
+r0
+
+CProcessInfoPlistFile "/Users/mozo/Documents/fakesmc with plugins/fakesmc/build/Debug/fakesmc.kext/Contents/Info.plist" Info.plist
+r0
+
+CProcessInfoPlistFile /Users/Michael/Desktop/fakesmc_device_only/build/Debug/fakesmc.kext/Contents/Info.plist Info.plist
+s295074147.440961
+e295074147.466796
+r1
+xProcessInfoPlistFile
+x/Users/Michael/Desktop/fakesmc_device_only/build/Debug/fakesmc.kext/Contents/Info.plist
+xInfo.plist
+lSLF07#2@18"Process Info.plist295074147#295074147#0(0"0(0#0#53"/Users/Michael/Desktop/fakesmc_device_only/Info.plist28429264708632676#219"    cd /Users/Michael/Desktop/fakesmc_device_only    builtin-infoPlistUtility Info.plist -expandbuildsettings -platform macosx -o /Users/Michael/Desktop/fakesmc_device_only/build/Debug/fakesmc.kext/Contents/Info.plist0#
+
+CProcessInfoPlistFile /Users/andyvand/Downloads/fakesmc2.5_release/sources/fakesmc/build/Debug/fakesmc.kext/Contents/Info.plist Info.plist
+r0
+
+CProcessInfoPlistFile /Users/bigowner/Downloads/fakesmc_device_only/build/Debug/fakesmc.kext/Contents/Info.plist Info.plist
+r0
+
+CTouch "/Users/bigowner/Documents/fakesmc (device only)/build/Debug/fakesmc.kext"
+r0
+
+CTouch "/Users/mozo/Documents/fakesmc with plugins/fakesmc/build/Debug/fakesmc.kext"
+r0
+
+CTouch /Users/Michael/Desktop/fakesmc_device_only/build/Debug/fakesmc.kext
+s295074393.437648
+e295074393.441249
+r1
+xTouch
+x/Users/Michael/Desktop/fakesmc_device_only/build/Debug/fakesmc.kext
+lSLF07#2@73"Touch /Users/Michael/Desktop/fakesmc_device_only/build/Debug/fakesmc.kext295074393#295074393#0(0"0(0#0#0"4324455640#140"    cd /Users/Michael/Desktop/fakesmc_device_only    /usr/bin/touch -c /Users/Michael/Desktop/fakesmc_device_only/build/Debug/fakesmc.kext0#
+
+CTouch /Users/andyvand/Downloads/fakesmc2.5_release/sources/fakesmc/build/Debug/fakesmc.kext
+r0
+
+CTouch /Users/bigowner/Downloads/fakesmc_device_only/build/Debug/fakesmc.kext
+r0
+
