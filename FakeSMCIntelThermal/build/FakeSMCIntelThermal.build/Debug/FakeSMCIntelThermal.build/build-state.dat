@@ -1,0 +1,125 @@
+TFakeSMCIntelThermal
+v7
+r1
+
+N/Developer/SDKs/MacOSX10.6.sdk
+c000000004ABBF0FD00000000000000EE
+t1253830909
+s238
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/IOService.h
+c000000004A73D653000000000001F49D
+t1249105491
+s128157
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/IOTimerEventSource.h
+c000000004A73D6540000000000002B1D
+t1249105492
+s11037
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/i386/cpuid.h
+c000000004A73D66C0000000000002676
+t1249105516
+s9846
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/i386/proc_reg.h
+c000000004A73D66C00000000000039BC
+t1249105516
+s14780
+
+N/Users/mozo/Documents/fakesmc with plugins/FakeSMCIntelThermal/English.lproj/InfoPlist.strings
+c000000004BE663D60000000000000032
+t1273390038
+s50
+
+N/Users/mozo/Documents/fakesmc with plugins/FakeSMCIntelThermal/FakeSMCIntelThermal.cpp
+c000000004BF36DF000000000000011CC
+t1274244592
+s4556
+i"FakeSMCIntelThermal.h"
+i"cpuid.h"
+
+N/Users/mozo/Documents/fakesmc with plugins/FakeSMCIntelThermal/FakeSMCIntelThermal.h
+c000000004BF36DF400000000000008AE
+t1274244596
+s2222
+i<IOKit/IOService.h>
+i<IOKit/IOTimerEventSource.h>
+i<i386/cpuid.h>
+i<i386/proc_reg.h>
+i<fakesmc.h>
+
+N/Users/mozo/Documents/fakesmc with plugins/FakeSMCIntelThermal/build/Debug/FakeSMCIntelThermal.kext
+t2
+s0
+
+N/Users/mozo/Documents/fakesmc with plugins/FakeSMCIntelThermal/build/Debug/FakeSMCIntelThermal.kext.dSYM
+t2
+s0
+
+N/Users/mozo/Documents/fakesmc with plugins/FakeSMCIntelThermal/build/Debug/FakeSMCIntelThermal.kext/Contents/Info.plist
+t2
+s0
+
+N/Users/mozo/Documents/fakesmc with plugins/FakeSMCIntelThermal/build/Debug/FakeSMCIntelThermal.kext/Contents/MacOS/FakeSMCIntelThermal
+t2
+s0
+
+N/Users/mozo/Documents/fakesmc with plugins/FakeSMCIntelThermal/build/Debug/FakeSMCIntelThermal.kext/Contents/Resources/English.lproj/InfoPlist.strings
+t2
+s0
+
+N/Users/mozo/Documents/fakesmc with plugins/FakeSMCIntelThermal/build/FakeSMCIntelThermal.build/Debug/FakeSMCIntelThermal.build/DerivedSources/FakeSMCIntelThermal_info.c
+c00000000000000000000000000000000
+t2
+s0
+
+N/Users/mozo/Documents/fakesmc with plugins/FakeSMCIntelThermal/build/FakeSMCIntelThermal.build/Debug/FakeSMCIntelThermal.build/Objects-normal/x86_64/FakeSMCIntelThermal.LinkFileList
+c00000000000000000000000000000000
+t2
+s0
+
+N/Users/mozo/Documents/fakesmc with plugins/FakeSMCIntelThermal/build/FakeSMCIntelThermal.build/Debug/FakeSMCIntelThermal.build/Objects-normal/x86_64/FakeSMCIntelThermal.o
+t2
+s0
+
+N/Users/mozo/Documents/fakesmc with plugins/FakeSMCIntelThermal/build/FakeSMCIntelThermal.build/Debug/FakeSMCIntelThermal.build/Objects-normal/x86_64/FakeSMCIntelThermal_info.o
+t2
+s0
+
+N/Users/mozo/Documents/fakesmc with plugins/FakeSMCIntelThermal/cpuid.h
+c000000004BF36DCA000000000000151B
+t1274244554
+s5403
+
+N/Users/mozo/Documents/fakesmc with plugins/FakeSMCIntelThermal/fakesmc.h
+c000000004BF36DFA00000000000001AA
+t1274244602
+s426
+
+NInfo.plist
+c000000004BF2F0440000000000000656
+t1274212420
+s1622
+
+CCompileC build/FakeSMCIntelThermal.build/Debug/FakeSMCIntelThermal.build/Objects-normal/x86_64/FakeSMCIntelThermal.o "/Users/mozo/Documents/fakesmc with plugins/FakeSMCIntelThermal/FakeSMCIntelThermal.cpp" normal x86_64 c++ com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/FakeSMCIntelThermal.build/Debug/FakeSMCIntelThermal.build/Objects-normal/x86_64/FakeSMCIntelThermal_info.o "/Users/mozo/Documents/fakesmc with plugins/FakeSMCIntelThermal/build/FakeSMCIntelThermal.build/Debug/FakeSMCIntelThermal.build/DerivedSources/FakeSMCIntelThermal_info.c" normal x86_64 c com.apple.compilers.gcc.4_2
+r0
+
+CCopyStringsFile "/Users/mozo/Documents/fakesmc with plugins/FakeSMCIntelThermal/build/Debug/FakeSMCIntelThermal.kext/Contents/Resources/English.lproj/InfoPlist.strings" English.lproj/InfoPlist.strings
+r0
+
+CGenerateDSYMFile "/Users/mozo/Documents/fakesmc with plugins/FakeSMCIntelThermal/build/Debug/FakeSMCIntelThermal.kext.dSYM" "/Users/mozo/Documents/fakesmc with plugins/FakeSMCIntelThermal/build/Debug/FakeSMCIntelThermal.kext/Contents/MacOS/FakeSMCIntelThermal"
+r0
+
+CLd "/Users/mozo/Documents/fakesmc with plugins/FakeSMCIntelThermal/build/Debug/FakeSMCIntelThermal.kext/Contents/MacOS/FakeSMCIntelThermal" normal x86_64
+r0
+
+CProcessInfoPlistFile "/Users/mozo/Documents/fakesmc with plugins/FakeSMCIntelThermal/build/Debug/FakeSMCIntelThermal.kext/Contents/Info.plist" Info.plist
+r0
+
+CTouch "/Users/mozo/Documents/fakesmc with plugins/FakeSMCIntelThermal/build/Debug/FakeSMCIntelThermal.kext"
+r0
+
