@@ -277,11 +277,16 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
+									<integer>19</integer>
+									<integer>18</integer>
+								</array>
+								<array>
+									<integer>21</integer>
 									<integer>18</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 104}, {186, 559}}</string>
+							<string>{{0, 0}, {186, 559}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -300,7 +305,7 @@
 							<real>186</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>238 251 900 618 0 0 1280 1002 </string>
+						<string>223 295 900 618 0 0 1280 1002 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -328,16 +333,15 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>AEDD1E6111A44FF7007EA900</string>
+										<string>AED2C2A511A4E1F600C5A406</string>
 										<key>history</key>
 										<array>
-											<string>AE37538F11A3F5F600AFA32E</string>
 											<string>AE37539111A3F5F600AFA32E</string>
 											<string>AE1816B111A44F260018CB30</string>
 											<string>AE1816B311A44F260018CB30</string>
 											<string>AE1816B411A44F260018CB30</string>
 											<string>AEDD1E6011A44FF7007EA900</string>
-											<string>AE1816B211A44F260018CB30</string>
+											<string>AED8F00311A483F1000F1E07</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -349,14 +353,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {692, 394}}</string>
+								<string>{{0, 0}, {692, 380}}</string>
 								<key>RubberWindowFrame</key>
-								<string>238 251 900 618 0 0 1280 1002 </string>
+								<string>223 295 900 618 0 0 1280 1002 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>394pt</string>
+							<string>380pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -369,14 +373,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 399}, {692, 178}}</string>
+								<string>{{0, 385}, {692, 192}}</string>
 								<key>RubberWindowFrame</key>
-								<string>238 251 900 618 0 0 1280 1002 </string>
+								<string>223 295 900 618 0 0 1280 1002 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
 							<key>Proportion</key>
-							<string>178pt</string>
+							<string>192pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
@@ -395,9 +399,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>AEDD1E4F11A44FC5007EA900</string>
+				<string>AED2C2A611A4E1F600C5A406</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>AEDD1E5011A44FC5007EA900</string>
+				<string>AED2C2A711A4E1F600C5A406</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -535,12 +539,11 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>AE37537711A3F1A300AFA32E</string>
 		<string>AE95EDCE11A3BB7D00AE9201</string>
-		<string>/Users/mozo/Documents/fakesmc/FakeSMCIntelThermal/fakesmc/fakesmc.xcodeproj</string>
+		<string>/Users/mozo/Documents/fakesmc/fakesmc/fakesmc.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>238 251 900 618 0 0 1280 1002 </string>
+	<string>223 295 900 618 0 0 1280 1002 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -617,7 +620,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>AE95EDCE11A3BB7D00AE9201</string>
-				<string>AEDD1E5111A44FC5007EA900</string>
+				<string>AED2C2A811A4E1F600C5A406</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
