@@ -37,19 +37,15 @@
 	<key>OSBundleLibraries</key>
 	<dict>
 		<key>com.apple.kpi.iokit</key>
-		<string>10.0</string>
+		<string>9.0</string>
 		<key>com.apple.kpi.libkern</key>
 		<string>9.0</string>
 		<key>com.apple.kpi.unsupported</key>
-		<string>10.0</string>
+		<string>9.0</string>
 		<key>org.netkas.fakesmc</key>
 		<string>1.0.0</string>
-		<key>com.apple.driver.AppleSMC</key>
-		<string>1.0.1d1</string>
 	</dict>
 	<key>OSBundleCompatibleVersion</key>
 	<string>1.0.0</string>
-	<key>OSBundleRequired</key>
-	<string>Root</string>
 </dict>
 </plist>
