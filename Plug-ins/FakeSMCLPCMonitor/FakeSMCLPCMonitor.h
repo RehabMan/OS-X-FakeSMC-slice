@@ -63,8 +63,10 @@ class LPCMonitorPlugin : public IOService
 {
     OSDeclareDefaultStructors(LPCMonitorPlugin)    
 private:
-	const char*		ChipName;
-	LPCChipModel	ChipModel;
+	LPCChipModel	Chip;
+	const char*		Name;
+	UInt16			Address;
+	UInt8			Revision;
 	UInt8			RegisterPort;
 	UInt8			ValuePort;
 	
@@ -80,8 +82,10 @@ private:
 	
 	void SMSCEnter();
 	void SMSCExit();
+	
+	void UpdateName();
 protected:
-public:
+public:	
 	virtual IOService*	probe(IOService *provider, SInt32 *score);
     virtual bool		start(IOService *provider);
 	virtual bool		init(OSDictionary *properties=0);
