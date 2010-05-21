@@ -20,46 +20,24 @@
 #define WarningLog(string, args...) do { IOLog (LogPrefix "[Warning] " string "\n", ## args); } while(0)
 #define InfoLog(string, args...)	do { IOLog (LogPrefix string "\n", ## args); } while(0)
 
-#define MSR_P4_EBC_FREQUENCY_ID		0x002C
-#define MSR_M_PSB_CLOCK_STS			0x00CD
-#define MSR_IA32_MPERF				0x00E7
-#define MSR_IA32_APERF				0x00E8
-#define MSR_IA32_EXT_CONFIG			0x00EE
-#define MSR_IA32_CLOCK_MODULATION	0x019A
-#define MSR_IA32_THERM_INTERRUPT	0x019B
 #define MSR_IA32_THERM_STATUS		0x019C
+#define MSR_IA32_PERF_STATUS		0x0198;
 #define MSR_IA32_TEMPERATURE_TARGET	0x01A2
+#define MSR_PLATFORM_INFO			0xCE;
 
 #define MaxCpuCount 128
 
-UInt8 CpuCount = 0;
-UInt8 TjMax = 100;
-UInt8 Thermal[MaxCpuCount];
+UInt8	CpuCount = 0;
+UInt32	CpuFamily = 0;
+UInt32	CpuModel = 0;
+UInt32	CpuStepping = 0;
 
-enum  {
-	Unknown,
-	Intel386,
-	Intel486,
-	IntelPentium,
-	IntelPentiumPro,
-	IntelPentiumM,
-	IntelNetburstOld,
-	IntelNetburstNew,
-	IntelCore,
-	IntelAtom,
-	IntelCore45,
-	IntelCoreI7,
-	AMDK5,
-	AMDK6,
-	AMDK7,
-	AMDK8BC,
-	AMDK8D,
-	AMDK8E,
-	AMDK8NPT,
-	AMDK10,
-	AMDK11,
-	CoreTechCount			
-};
+UInt8	TjMax = 100;
+
+bool	CpuCorei = false;
+UInt	TjMaxCorei[MaxCpuCount];
+
+UInt8	Thermal[MaxCpuCount];
 
 extern "C" void mp_rendezvous_no_intrs(void (*action_func)(void *), void * arg);
 extern "C" int cpu_number(void);
