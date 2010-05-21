@@ -1,0 +1,180 @@
+// !$*UTF8*$!
+{
+	089C1669FE841209C02AAC07 /* Project object */ = {
+		activeArchitecturePreference = i386;
+		activeBuildConfigurationName = Release;
+		activeTarget = 32D94FC30562CBF700B6AF17 /* PaztalomKawaiIntelCPUThermal */;
+		codeSenseManager = 4C6F29C211969B5D002DCCFF /* Code sense */;
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					404,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					364,
+					60,
+					20,
+					48.16259765625,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 295672896;
+			PBXWorkspaceStateSaveDate = 295672896;
+		};
+		perUserProjectItems = {
+			4C1613AE119F02C20057DFDB /* PBXTextBookmark */ = 4C1613AE119F02C20057DFDB /* PBXTextBookmark */;
+			4C211B9E119F9D4200E1D572 /* PBXTextBookmark */ = 4C211B9E119F9D4200E1D572 /* PBXTextBookmark */;
+			4C4C458C119EF49300B9FA33 /* PlistBookmark */ = 4C4C458C119EF49300B9FA33 /* PlistBookmark */;
+			4C4C45DA119F000600B9FA33 /* PlistBookmark */ = 4C4C45DA119F000600B9FA33 /* PlistBookmark */;
+			4C4C45DB119F000600B9FA33 /* PBXTextBookmark */ = 4C4C45DB119F000600B9FA33 /* PBXTextBookmark */;
+			4CFF407E1196ABAB00D6D9B2 /* PBXTextBookmark */ = 4CFF407E1196ABAB00D6D9B2 /* PBXTextBookmark */;
+		};
+		sourceControlManager = 4C6F29C111969B5D002DCCFF /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	1A224C3EFF42367911CA2CB7 /* PaztalomKawaiIntelCPUThermal.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {582, 453}}";
+			sepNavSelRange = "{208, 0}";
+			sepNavVisRange = "{0, 653}";
+		};
+	};
+	1A224C3FFF42367911CA2CB7 /* PaztalomKawaiIntelCPUThermal.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {810, 1261}}";
+			sepNavSelRange = "{2231, 0}";
+			sepNavVisRange = "{1674, 789}";
+		};
+	};
+	32D94FC30562CBF700B6AF17 /* PaztalomKawaiIntelCPUThermal */ = {
+		activeExec = 0;
+	};
+	4C1613AE119F02C20057DFDB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* PaztalomKawaiIntelCPUThermal.cpp */;
+		name = "PaztalomKawaiIntelCPUThermal.cpp: 85";
+		rLen = 0;
+		rLoc = 2231;
+		rType = 0;
+		vrLen = 942;
+		vrLoc = 0;
+	};
+	4C211B9E119F9D4200E1D572 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* PaztalomKawaiIntelCPUThermal.cpp */;
+		name = "PaztalomKawaiIntelCPUThermal.cpp: 85";
+		rLen = 0;
+		rLoc = 2231;
+		rType = 0;
+		vrLen = 789;
+		vrLoc = 1674;
+	};
+	4C4C458C119EF49300B9FA33 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 32D94FCF0562CBF700B6AF17 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			IOKitPersonalities,
+			PTKawaiIntel,
+			IOClass,
+		);
+		name = /Users/Michael/Desktop/PaztalomKawaiIntelCPUThermal/Info.plist;
+		rLen = 0;
+		rLoc = 9223372036854775808;
+	};
+	4C4C45AC119EF97900B9FA33 /* Info.plist */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = text.plist.xml;
+		name = Info.plist;
+		path = /Users/Michael/Desktop/PaztalomKawaiIntelCPUThermal/build/Debug/PaztalomKawaiIntelCPUThermal.kext/Contents/Info.plist;
+		sourceTree = "<absolute>";
+	};
+	4C4C45DA119F000600B9FA33 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 4C4C45AC119EF97900B9FA33 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			OSBundleLibraries,
+			com.apple.iokit.IOPCIFamily,
+		);
+		name = /Users/Michael/Desktop/PaztalomKawaiIntelCPUThermal/build/Debug/PaztalomKawaiIntelCPUThermal.kext/Contents/Info.plist;
+		rLen = 0;
+		rLoc = 9223372036854775808;
+	};
+	4C4C45DB119F000600B9FA33 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3EFF42367911CA2CB7 /* PaztalomKawaiIntelCPUThermal.h */;
+		name = "PaztalomKawaiIntelCPUThermal.h: 7";
+		rLen = 0;
+		rLoc = 208;
+		rType = 0;
+		vrLen = 653;
+		vrLoc = 0;
+	};
+	4C6F29C111969B5D002DCCFF /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	4C6F29C211969B5D002DCCFF /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	4C6F2A1311969FA3002DCCFF /* proc_reg.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = proc_reg.h;
+		path = /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/i386/proc_reg.h;
+		sourceTree = "<absolute>";
+	};
+	4CFF407E1196ABAB00D6D9B2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4C6F2A1311969FA3002DCCFF /* proc_reg.h */;
+		name = "proc_reg.h: 350";
+		rLen = 0;
+		rLoc = 11341;
+		rType = 0;
+		vrLen = 1769;
+		vrLoc = 0;
+	};
+}
