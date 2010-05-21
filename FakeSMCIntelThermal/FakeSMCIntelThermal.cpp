@@ -12,6 +12,20 @@
 #include "FakeSMCIntelThermal.h"
 #include "cpuid.h"
 
+inline void IntelThermal(void* magic)
+{
+	UInt32 cpn = cpu_number();
+	
+	if(cpn < MaxCpuCount)
+	{
+		if (cpn > CpuCount) CpuCount = cpn + 1;
+		
+		UInt64 msr = rdmsr64(MSR_IA32_THERM_STATUS);
+		
+		if (msr & 0x80000000) Thermal[cpn] = (msr >> 16) & 0x7F;
+	}
+}
+
 static void Update(SMCData node)
 {
 	UInt32 magic = 0;
@@ -20,9 +34,9 @@ static void Update(SMCData node)
 	
 	UInt8 cpun = node->key[2] - 48;
 	
-	if(CpuCorei)
+	if(CpuCoreiX)
 	{
-		node->data[0] = TjMaxCorei[cpun] - Thermal[cpun];
+		node->data[0] = TjMaxCoreiX[cpun] - Thermal[cpun];
 	}
 	else 
 	{
@@ -112,10 +126,10 @@ IOService* IntelThermalMonitorPlugin::probe(IOService *provider, SInt32 *score)
 				case 0x1E: // Intel Core i5, i7 LGA1156 (45nm)
 				case 0x25: // Intel Core i3, i5, i7 LGA1156 (32nm)
 				case 0x2C: // Intel Core i7 LGA1366 (32nm) 6 Core
-					CpuCorei = true;
+					CpuCoreiX = true;
 					
 					for (int i = 0; i < CpuCount; i++)
-						TjMaxCorei[i] = (rdmsr64(MSR_IA32_TEMPERATURE_TARGET) >> 16) & 0xFF;
+						TjMaxCoreiX[i] = (rdmsr64(MSR_IA32_TEMPERATURE_TARGET) >> 16) & 0xFF;
 					
 					break;
             }

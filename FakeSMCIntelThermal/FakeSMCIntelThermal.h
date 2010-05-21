@@ -34,27 +34,13 @@ UInt32	CpuStepping = 0;
 
 UInt8	TjMax = 100;
 
-bool	CpuCorei = false;
-UInt	TjMaxCorei[MaxCpuCount];
+bool	CpuCoreiX = false;
+UInt	TjMaxCoreiX[MaxCpuCount];
 
 UInt8	Thermal[MaxCpuCount];
 
 extern "C" void mp_rendezvous_no_intrs(void (*action_func)(void *), void * arg);
 extern "C" int cpu_number(void);
-
-inline void IntelThermal(void* magic)
-{
-	UInt32 cpn = cpu_number();
-	
-	if(cpn < MaxCpuCount)
-	{
-		if (cpn > CpuCount) CpuCount = cpn + 1;
-		
-		UInt64 msr = rdmsr64(MSR_IA32_THERM_STATUS);
-		
-		if (msr & 0x80000000) Thermal[cpn] = (msr >> 16) & 0x7F;
-	}
-}
 
 class IntelThermalMonitorPlugin : public IOService
 {
