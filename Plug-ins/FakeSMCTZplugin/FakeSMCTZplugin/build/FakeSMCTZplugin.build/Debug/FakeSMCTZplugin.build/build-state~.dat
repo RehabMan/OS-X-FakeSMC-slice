@@ -1,125 +1,0 @@
-TFakeSMCTZplugin
-v7
-r0
-t296149750.022025
-cCheck dependencies
-cProcessInfoPlistFile "/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/build/Debug/FakeSMCTZplugin.kext/Contents/Info.plist" Info.plist
-cCopyStringsFile "/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/build/Debug/FakeSMCTZplugin.kext/Contents/Resources/English.lproj/InfoPlist.strings" English.lproj/InfoPlist.strings
-cCompileC build/FakeSMCTZplugin.build/Debug/FakeSMCTZplugin.build/Objects-normal/x86_64/FakeSMCTZplugin.o "/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/FakeSMCTZplugin.cpp" normal x86_64 c++ com.apple.compilers.gcc.4_2
-cCompileC build/FakeSMCTZplugin.build/Debug/FakeSMCTZplugin.build/Objects-normal/x86_64/FakeSMCTZplugin_info.o "/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/build/FakeSMCTZplugin.build/Debug/FakeSMCTZplugin.build/DerivedSources/FakeSMCTZplugin_info.c" normal x86_64 c com.apple.compilers.gcc.4_2
-
-N/Developer/SDKs/MacOSX10.6.sdk
-c000000004A769DAB00000000000000EE
-t1249287595
-s238
-
-N/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/English.lproj/InfoPlist.strings
-c000000004BF6A51E0000000000000030
-t1274455326
-s48
-
-N/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/FakeSMCTZplugin.cpp
-c000000004BF6AB7500000000000005AB
-t1274456949
-s1451
-
-N/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/build/Debug/FakeSMCTZplugin.kext
-t2
-s0
-
-N/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/build/Debug/FakeSMCTZplugin.kext.dSYM
-t2
-s0
-
-N/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/build/Debug/FakeSMCTZplugin.kext/Contents/Info.plist
-t1274456949
-s824
-
-N/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/build/Debug/FakeSMCTZplugin.kext/Contents/MacOS/FakeSMCTZplugin
-t2
-s0
-
-N/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/build/Debug/FakeSMCTZplugin.kext/Contents/Resources/English.lproj/InfoPlist.strings
-t1274456949
-s92
-
-N/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/build/FakeSMCTZplugin.build/Debug/FakeSMCTZplugin.build/DerivedSources/FakeSMCTZplugin_info.c
-c000000004BF6AB7500000000000001B0
-t1274456949
-s432
-
-N/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/build/FakeSMCTZplugin.build/Debug/FakeSMCTZplugin.build/Objects-normal/x86_64/FakeSMCTZplugin.LinkFileList
-c000000004BF6AB7500000000000000A5
-t1274456949
-s165
-
-N/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/build/FakeSMCTZplugin.build/Debug/FakeSMCTZplugin.build/Objects-normal/x86_64/FakeSMCTZplugin.o
-t2
-s0
-
-N/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/build/FakeSMCTZplugin.build/Debug/FakeSMCTZplugin.build/Objects-normal/x86_64/FakeSMCTZplugin_info.o
-t1274456950
-s4160
-
-NInfo.plist
-c000000004BF6A51E000000000000037D
-t1274455326
-s893
-
-CCheck dependencies
-r0
-lSLF07#2@18"Check dependencies296149749#296149749#0(0"0(0#1#0"28710924367954032#0"0#
-
-CCompileC build/FakeSMCTZplugin.build/Debug/FakeSMCTZplugin.build/Objects-normal/x86_64/FakeSMCTZplugin.o "/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/FakeSMCTZplugin.cpp" normal x86_64 c++ com.apple.compilers.gcc.4_2
-s296149749.928610
-e296149749.932274
-r0
-xCompileC
-xbuild/FakeSMCTZplugin.build/Debug/FakeSMCTZplugin.build/Objects-normal/x86_64/FakeSMCTZplugin.o
-x/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/FakeSMCTZplugin.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@96"Compile /Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/FakeSMCTZplugin.cpp296149749#296149749#0(1005"/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/FakeSMCTZplugin.cpp:9: error: variable or field 'Update' declared void/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/FakeSMCTZplugin.cpp:9: error: 'SMCData' was not declared in this scope/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/FakeSMCTZplugin.cpp:20: error: expected constructor, destructor, or type conversion before '(' token/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/FakeSMCTZplugin.cpp:29: error: 'TZPlugin' has not been declared/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/FakeSMCTZplugin.cpp:29: error: 'IOService' was not declared in this scope/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/FakeSMCTZplugin.cpp:29: error: 'provider' was not declared in this scope/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/FakeSMCTZplugin.cpp:30: error: expected ',' or ';' before '{' token7(4@40"Variable or field 'Update' declared void296149749#0#140#0(6@88"/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/FakeSMCTZplugin.cpp296149749#9#0#9#0#0"0(4@40"'SMCData' was not declared in this scope296149749#140#140#0(6@88"/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/FakeSMCTZplugin.cpp296149749#9#0#9#0#34"'*' was not declared in this scope0(4@69"Expected constructor, destructor, or type conversion before '(' token296149749#280#170#0(6@88"/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/FakeSMCTZplugin.cpp296149749#20#0#20#0#19"expected * before *0(4@32"'TZPlugin' has not been declared296149749#450#133#0(6@88"/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/FakeSMCTZplugin.cpp296149749#29#0#29#0#25"'*' has not been declared0(4@42"'IOService' was not declared in this scope296149749#583#143#0(6@88"/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/FakeSMCTZplugin.cpp296149749#29#0#29#0#34"'*' was not declared in this scope0(4@41"'provider' was not declared in this scope296149749#726#142#0(6@88"/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/FakeSMCTZplugin.cpp296149749#29#0#29#0#34"'*' was not declared in this scope0(4@36"Expected ',' or ';' before '{' token296149749#868#137#0(6@88"/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/FakeSMCTZplugin.cpp296149749#30#0#30#0#19"expected * before *0(0#0#88"/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/FakeSMCTZplugin.cpp7307775882660168704#2114"    cd "/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -O0 -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -mmacosx-version-min=10.6 -gdwarf-2 -iquote "/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/build/FakeSMCTZplugin.build/Debug/FakeSMCTZplugin.build/FakeSMCTZplugin-generated-files.hmap" "-I/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/build/FakeSMCTZplugin.build/Debug/FakeSMCTZplugin.build/FakeSMCTZplugin-own-target-headers.hmap" "-I/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/build/FakeSMCTZplugin.build/Debug/FakeSMCTZplugin.build/FakeSMCTZplugin-all-target-headers.hmap" -iquote "/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/build/FakeSMCTZplugin.build/Debug/FakeSMCTZplugin.build/FakeSMCTZplugin-project-headers.hmap" "-F/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/build/Debug" "-I/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/build/Debug/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/build/FakeSMCTZplugin.build/Debug/FakeSMCTZplugin.build/DerivedSources/x86_64" "-I/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/build/FakeSMCTZplugin.build/Debug/FakeSMCTZplugin.build/DerivedSources" -c "/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/FakeSMCTZplugin.cpp" -o "/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/build/FakeSMCTZplugin.build/Debug/FakeSMCTZplugin.build/Objects-normal/x86_64/FakeSMCTZplugin.o"1#
-
-CCompileC build/FakeSMCTZplugin.build/Debug/FakeSMCTZplugin.build/Objects-normal/x86_64/FakeSMCTZplugin_info.o "/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/build/FakeSMCTZplugin.build/Debug/FakeSMCTZplugin.build/DerivedSources/FakeSMCTZplugin_info.c" normal x86_64 c com.apple.compilers.gcc.4_2
-s296149749.932391
-e296149750.021920
-r1
-xCompileC
-xbuild/FakeSMCTZplugin.build/Debug/FakeSMCTZplugin.build/Objects-normal/x86_64/FakeSMCTZplugin_info.o
-x/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/build/FakeSMCTZplugin.build/Debug/FakeSMCTZplugin.build/DerivedSources/FakeSMCTZplugin_info.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@170"Compile /Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/build/FakeSMCTZplugin.build/Debug/FakeSMCTZplugin.build/DerivedSources/FakeSMCTZplugin_info.c296149749#296149750#0(0"0(0#0#162"/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/build/FakeSMCTZplugin.build/Debug/FakeSMCTZplugin.build/DerivedSources/FakeSMCTZplugin_info.c4300911832#2151"    cd "/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -nostdinc -std=gnu99 -fno-builtin -Wno-trigraphs -fasm-blocks -force_cpusubtype_ALL -msoft-float -O0 -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -iquote "/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/build/FakeSMCTZplugin.build/Debug/FakeSMCTZplugin.build/FakeSMCTZplugin-generated-files.hmap" "-I/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/build/FakeSMCTZplugin.build/Debug/FakeSMCTZplugin.build/FakeSMCTZplugin-own-target-headers.hmap" "-I/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/build/FakeSMCTZplugin.build/Debug/FakeSMCTZplugin.build/FakeSMCTZplugin-all-target-headers.hmap" -iquote "/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/build/FakeSMCTZplugin.build/Debug/FakeSMCTZplugin.build/FakeSMCTZplugin-project-headers.hmap" "-F/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/build/Debug" "-I/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/build/Debug/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/build/FakeSMCTZplugin.build/Debug/FakeSMCTZplugin.build/DerivedSources/x86_64" "-I/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/build/FakeSMCTZplugin.build/Debug/FakeSMCTZplugin.build/DerivedSources" -c "/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/build/FakeSMCTZplugin.build/Debug/FakeSMCTZplugin.build/DerivedSources/FakeSMCTZplugin_info.c" -o "/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/build/FakeSMCTZplugin.build/Debug/FakeSMCTZplugin.build/Objects-normal/x86_64/FakeSMCTZplugin_info.o"0#
-
-CCopyStringsFile "/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/build/Debug/FakeSMCTZplugin.kext/Contents/Resources/English.lproj/InfoPlist.strings" English.lproj/InfoPlist.strings
-s296149749.674263
-e296149749.928469
-r1
-xCopyStringsFile
-x/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/build/Debug/FakeSMCTZplugin.kext/Contents/Resources/English.lproj/InfoPlist.strings
-xEnglish.lproj/InfoPlist.strings
-lSLF07#2@36"Copy English.lproj/InfoPlist.strings296149749#296149749#0(0"0(0#0#100"/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/English.lproj/InfoPlist.strings4300911832#438"    cd "/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin"    setenv ICONV /usr/bin/iconv    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings --validate --inputencoding utf-8 --outputencoding UTF-16 English.lproj/InfoPlist.strings --outdir "/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/build/Debug/FakeSMCTZplugin.kext/Contents/Resources/English.lproj"0#
-
-CGenerateDSYMFile "/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/build/Debug/FakeSMCTZplugin.kext.dSYM" "/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/build/Debug/FakeSMCTZplugin.kext/Contents/MacOS/FakeSMCTZplugin"
-r0
-
-CLd "/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/build/Debug/FakeSMCTZplugin.kext/Contents/MacOS/FakeSMCTZplugin" normal x86_64
-r0
-
-CProcessInfoPlistFile "/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/build/Debug/FakeSMCTZplugin.kext/Contents/Info.plist" Info.plist
-s296149749.647163
-e296149749.674159
-r1
-xProcessInfoPlistFile
-x/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/build/Debug/FakeSMCTZplugin.kext/Contents/Info.plist
-xInfo.plist
-lSLF07#2@18"Process Info.plist296149749#296149749#0(0"0(0#0#79"/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/Info.plist3419204512356397056#283"    cd "/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin"    builtin-infoPlistUtility Info.plist -expandbuildsettings -platform macosx -o "/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/build/Debug/FakeSMCTZplugin.kext/Contents/Info.plist"0#
-
-CTouch "/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/build/Debug/FakeSMCTZplugin.kext"
-r0
-
