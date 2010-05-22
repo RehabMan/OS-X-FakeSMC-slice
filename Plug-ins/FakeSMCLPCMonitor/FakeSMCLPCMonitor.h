@@ -3,16 +3,46 @@
 
 #include "fakesmc.h"
 
-#define DebugOn FALSE
+#define DebugOn TRUE
 
 #define LogPrefix "FakeSMCLPCMonitor: "
 #define DebugLog(string, args...)	do { if (DebugOn) { IOLog (LogPrefix "[Debug] " string "\n", ## args); } } while(0)
 #define WarningLog(string, args...) do { IOLog (LogPrefix "[Warning] " string "\n", ## args); } while(0)
 #define InfoLog(string, args...)	do { IOLog (LogPrefix string "\n", ## args); } while(0)
 
+const UInt8 REGISTER_PORT[2] = { 0x2e, 0x4e };
+const UInt8 VALUE_PORT[2] = { 0x2f, 0x4f };
+
+// Registers
+const UInt8 CONFIGURATION_CONTROL_REGISTER	= 0x02;
+const UInt8 DEVCIE_SELECT_REGISTER			= 0x07;
+const UInt8 CHIP_ID_REGISTER				= 0x20;
+const UInt8 CHIP_REVISION_REGISTER			= 0x21;
+const UInt8 BASE_ADDRESS_REGISTER			= 0x60;
+
+// ITE
+const UInt8 IT87_ENVIRONMENT_CONTROLLER_LDN = 0x04;
+
+// Winbond, Fintek
+const UInt8 FINTEK_VENDOR_ID_REGISTER		= 0x23;
+const UInt16 FINTEK_VENDOR_ID				= 0x1934;
+
+const UInt8 WINBOND_HARDWARE_MONITOR_LDN	= 0x0B;
+
+const UInt8 F71858_HARDWARE_MONITOR_LDN		= 0x02;
+const UInt8 FINTEK_HARDWARE_MONITOR_LDN		= 0x04;
+
+enum LPCChipType
+{
+	UnknownType,
+    IT87x,
+    Winbound,
+	Fintek 
+};
+
 enum LPCChipModel
 {
-	Unknown = 0,
+	UnknownModel = 0,
 	
     IT8712F = 0x8712,
     IT8716F = 0x8716,
@@ -37,58 +67,43 @@ enum LPCChipModel
     F71889F = 0x0723 
 };
 
-const UInt8 LPCRegisterPort[2] = { 0x2e, 0x4e };
-const UInt8 LPCValuePort[2] = { 0x2f, 0x4f };
-
-// Registers
-const UInt8 CONFIGURATION_CONTROL_REGISTER	= 0x02;
-const UInt8 DEVCIE_SELECT_REGISTER			= 0x07;
-const UInt8 CHIP_ID_REGISTER				= 0x20;
-const UInt8 CHIP_REVISION_REGISTER			= 0x21;
-const UInt8 BASE_ADDRESS_REGISTER			= 0x60;
-
 // ITE
-const UInt8 IT87_ENVIRONMENT_CONTROLLER_LDN = 0x04;
+const unsigned char ITE_VENDOR_ID = 0x90;
 
-// Winbond, Fintek
-const UInt8 FINTEK_VENDOR_ID_REGISTER		= 0x23;
-const UInt16 FINTEK_VENDOR_ID				= 0x1934;
+// ITE Environment Controller
+const unsigned char ITE_ADDRESS_REGISTER_OFFSET = 0x05;
+const unsigned char ITE_DATA_REGISTER_OFFSET = 0x06;
 
-const UInt8 WINBOND_HARDWARE_MONITOR_LDN	= 0x0B;
+// ITE Environment Controller Registers    
+const unsigned char ITE_CONFIGURATION_REGISTER = 0x00;
+const unsigned char ITE_TEMPERATURE_BASE_REG = 0x29;
+const unsigned char ITE_VENDOR_ID_REGISTER = 0x58;
+const unsigned char ITE_FAN_TACHOMETER_16_BIT_ENABLE_REGISTER = 0x0c;
+const unsigned char ITE_FAN_TACHOMETER_REG[] = { 0x0d, 0x0e, 0x0f, 0x80, 0x82 };
+const unsigned char ITE_FAN_TACHOMETER_EXT_REG[] = { 0x18, 0x19, 0x1a, 0x81, 0x83 };
+const unsigned char ITE_VOLTAGE_BASE_REG = 0x20;
 
-const UInt8 F71858_HARDWARE_MONITOR_LDN		= 0x02;
-const UInt8 FINTEK_HARDWARE_MONITOR_LDN		= 0x04;
+// Global
+
+LPCChipType		Type;
+LPCChipModel	Model;
+const char*		Name;
+UInt16			Address;
+UInt8			Revision;
+UInt8			RegisterPort;
+UInt8			ValuePort;
 
 class LPCMonitorPlugin : public IOService
 {
     OSDeclareDefaultStructors(LPCMonitorPlugin)    
 private:
-	LPCChipModel	Chip;
-	const char*		Name;
-	UInt16			Address;
-	UInt8			Revision;
-	UInt8			RegisterPort;
-	UInt8			ValuePort;
-	
-	UInt8	ReadByte(UInt8 reg);
-	UInt16	ReadWord(UInt8 reg);
-	void	Select(UInt8 logicalDeviceNumber);
-	
-	void IT87Enter();
-	void IT87Exit();
-	
-	void WinbondFintekEnter();
-	void WinbondFintekExit();
-	
-	void SMSCEnter();
-	void SMSCExit();
-	
-	void UpdateName();
+
 protected:
+	
 public:	
+	virtual bool		init(OSDictionary *properties=0);
 	virtual IOService*	probe(IOService *provider, SInt32 *score);
     virtual bool		start(IOService *provider);
-	virtual bool		init(OSDictionary *properties=0);
-	virtual void		free(void);
 	virtual void		stop(IOService *provider);
+	virtual void		free(void);
 };
