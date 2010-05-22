@@ -22,14 +22,14 @@
 	<string>1.0</string>
 	<key>IOKitPersonalities</key>
 	<dict>
-		<key>LPCMonitorPlugin</key>
+		<key>HardwareMonitorPlugin</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
 			<string>org.mozodojo.${PRODUCT_NAME}</string>
 			<key>IOClass</key>
 			<string>LPCMonitorPlugin</string>
 			<key>IOMatchCategory</key>
-			<string>${PRODUCT_NAME}</string>
+			<string>LPCMonitorPlugin</string>
 			<key>IOProviderClass</key>
 			<string>IOResources</string>
 			<key>IOResourceMatch</key>
@@ -46,12 +46,8 @@
 		<string>9.0</string>
 		<key>org.netkas.fakesmc</key>
 		<string>2.6.0</string>
-		<key>com.apple.driver.AppleSMC</key>
-		<string>1.0.1d1</string>
 	</dict>
 	<key>OSBundleCompatibleVersion</key>
 	<string>1.0.0</string>
-	<key>OSBundleRequired</key>
-	<string>Root</string>
 </dict>
 </plist>

@@ -82,6 +82,23 @@ short IT87ReadByte(UInt8 reg, bool* valid)
 	return value;
 }
 
+short IT87ReadRPM(UInt8 num)
+{
+	bool* valid;
+	int value = IT87ReadByte(ITE_FAN_TACHOMETER_REG[num], valid);
+	
+	if(valid)
+	{
+		value |= IT87ReadByte(ITE_FAN_TACHOMETER_EXT_REG[num], valid) << 8;
+		
+		if(valid) 
+			if (value > 0x3f) 
+				value = 1.35e6f / (value * 2);
+	}
+	
+	return value;
+}
+
 // WinbondFintek
 
 void WinbondFintekEnter()
@@ -95,232 +112,6 @@ void WinbondFintekExit()
 	outb(RegisterPort, 0xAA);      
 }
 
-bool WinboundFintekProbe()
-{
-	// Winbound
-	
-	WinbondFintekEnter();
-	
-	UInt8 id = ReadByte(CHIP_ID_REGISTER);
-	UInt8 logicalDeviceNumber = 0;
-	
-	Revision = ReadByte(CHIP_REVISION_REGISTER);
-	
-	switch (id) 
-	{
-		case 0x05:
-			switch (Revision) 
-			{
-				case 0x07:
-					Model = F71858;
-					logicalDeviceNumber = F71858_HARDWARE_MONITOR_LDN;
-					break;
-				case 0x41:
-					Model = F71882;
-					logicalDeviceNumber = FINTEK_HARDWARE_MONITOR_LDN;
-					break;              
-			} 
-			break;
-		case 0x06:
-			switch (Revision) 
-			{             
-				case 0x01:
-					Model = F71862;
-					logicalDeviceNumber = FINTEK_HARDWARE_MONITOR_LDN;
-					break;              
-			}
-			break;
-		case 0x07:
-			switch (Revision) 
-			{
-				case 0x23:
-					Model = F71889F;
-					logicalDeviceNumber = FINTEK_HARDWARE_MONITOR_LDN;
-					break;              
-			} 
-			break;
-		case 0x08:
-			switch (Revision)
-			{
-				case 0x14:
-					Model = F71869;
-					logicalDeviceNumber = FINTEK_HARDWARE_MONITOR_LDN;
-					break;              
-			}
-			break;
-		case 0x09:
-			switch (Revision)
-			{
-				case 0x09:
-					Model = F71889ED;
-					logicalDeviceNumber = FINTEK_HARDWARE_MONITOR_LDN;
-					break;              
-			} 
-			break;
-		case 0x52:
-			switch (Revision) 
-			{
-				case 0x17:
-				case 0x3A:
-				case 0x41:
-					Model = W83627HF;
-					logicalDeviceNumber = WINBOND_HARDWARE_MONITOR_LDN;
-					break;             
-			}
-			break;
-		case 0x82:
-			switch (Revision)
-			{
-				case 0x83:
-					Model = W83627THF;
-					logicalDeviceNumber = WINBOND_HARDWARE_MONITOR_LDN;
-					break;
-			}
-			break;
-		case 0x85:
-			switch (Revision)
-			{
-				case 0x41:
-					Model = W83687THF;
-					logicalDeviceNumber = WINBOND_HARDWARE_MONITOR_LDN;
-					break;
-			}
-			break;
-		case 0x88:
-			switch (Revision & 0xF0)
-			{
-				case 0x50:
-				case 0x60:
-					Model = W83627EHF;
-					logicalDeviceNumber = WINBOND_HARDWARE_MONITOR_LDN;
-					break;
-			}
-			break;
-		case 0xA0:
-			switch (Revision & 0xF0)
-			{
-				case 0x20: 
-					Model = W83627DHG;
-					logicalDeviceNumber = WINBOND_HARDWARE_MONITOR_LDN;  
-					break;             
-			}
-			break;
-		case 0xA5:
-			switch (Revision & 0xF0)
-			{
-				case 0x10:
-					Model = W83667HG;
-					logicalDeviceNumber = WINBOND_HARDWARE_MONITOR_LDN;
-					break;
-			}
-			break;
-		case 0xB0:
-			switch (Revision & 0xF0)
-			{
-				case 0x70:
-					Model = W83627DHGP;
-					logicalDeviceNumber = WINBOND_HARDWARE_MONITOR_LDN;
-					break;             
-			}
-			break;
-		case 0xB3:
-			switch (Revision & 0xF0)
-			{
-				case 0x50:
-					Model = W83667HGB;
-					logicalDeviceNumber = WINBOND_HARDWARE_MONITOR_LDN;
-					break;
-			}
-			break; 
-	}
-	
-	if (Model == UnknownModel)
-	{
-		if (id != 0 && id != 0xff)
-		{
-			WinbondFintekExit();
-			
-			InfoLog("Found Unknown Winbond / Fintek with ID 0x%x", ((id << 8) | Revision)); 		
-		}
-	} 
-	else
-	{
-		UpdateChipName();
-		
-		Select(logicalDeviceNumber);
-		
-		Address = ReadWord(BASE_ADDRESS_REGISTER);          
-		
-		//usleep(1);
-		
-		UInt16 verify = ReadWord(BASE_ADDRESS_REGISTER);
-		UInt16 vendorID = ReadWord(FINTEK_VENDOR_ID_REGISTER);
-		
-		WinbondFintekExit();
-		
-		if (Address != verify)
-		{            
-			InfoLog("Chip ID - %s", Name); 
-			InfoLog("Chip revision - 0x%x", Revision);
-			WarningLog("Address verification failed");
-			
-			return false;
-		}
-		
-		// some Fintek chips have address register offset 0x05 added already
-		if ((Address & 0x07) == 0x05)
-			Address &= 0xFFF8;
-		
-		if (Address < 0x100 || (Address & 0xF007) != 0)
-		{            
-			InfoLog("Chip ID - %s", Name);
-			InfoLog("Chip revision - 0x%x", Revision);
-			WarningLog("Invalid address 0x%x", Address);
-			
-			return false;
-		}
-		
-		switch (Model)
-		{
-			case W83627DHG:
-			case W83627DHGP:
-			case W83627EHF:
-			case W83627HF:
-			case W83627THF:
-			case W83667HG:
-			case W83667HGB:
-			case W83687THF:
-				/*W836XX w836XX = new W836XX(chip, revision, address);
-				 if (w836XX.IsAvailable)
-				 hardware.Add(w836XX);*/
-				break;
-			case F71858:
-			case F71862:
-			case F71869:
-			case F71882:
-			case F71889ED:
-			case F71889F:
-				if (vendorID != FINTEK_VENDOR_ID)
-				{
-					InfoLog("Chip ID - %s", Name);
-					InfoLog("Chip revision - 0x%x", Revision);
-					WarningLog("Invalid vendor ID 0x%x", vendorID);
-					
-					return false;
-				}
-				//hardware.Add(new F718XX(chip, address));
-				break;
-			default: break;
-		}
-		
-		UpdateChipName();
-		
-		InfoLog("Found %s", Name);
-	}
-	
-	return true;
-}
-
 // SMSC
 
 void SMSCEnter()
@@ -331,38 +122,6 @@ void SMSCEnter()
 void SMSCExit()
 {
 	outb(RegisterPort, 0xAA);
-}
-
-bool SMSCProbe()
-{
-	SMSCEnter();
-	
-	UInt16 chipID = ReadWord(CHIP_ID_REGISTER);
-	
-	switch (chipID) 
-	{
-		default: Model = UnknownModel; break;
-	}
-	
-	if (Model == UnknownModel)
-	{
-		if (chipID != 0 && chipID != 0xffff)
-		{
-			SMSCExit();
-			
-			UpdateChipName();
-			
-			InfoLog("Found unknown SMSC with ID 0x%x", chipID);
-		}
-	} 
-	else 
-	{
-		SMSCExit();
-		
-		return false;
-	}
-	
-	return true;
 }
 
 bool CompareKeys(const char* key1, const char* key2)
@@ -406,26 +165,13 @@ static void Update(SMCData node)
 			{
 				UInt8 num = node->key[1] - 48;
 				
-				int value = IT87ReadByte(ITE_FAN_TACHOMETER_REG[num], valid);
-				
-				if(valid)
-				{
-					value |= IT87ReadByte(ITE_FAN_TACHOMETER_EXT_REG[num], valid) << 8;
+				short value = IT87ReadRPM(num);
+												
+				// iStat (mac os?) fix
+				value *= 4;
 						
-					if(valid) 
-					{	
-						if (value > 0x3f) 
-						{
-							value = 1.35e6f / (value * 2);
-						}
-											
-						// iStat (mac os?) fix
-						value *= 4;
-						
-						node->data[0] = value >> 8;
-						node->data[1] = value & 0xff;
-					}
-				}
+				node->data[0] = value >> 8;
+				node->data[1] = value & 0xff;
 			}
 			
 			break;
@@ -462,6 +208,216 @@ IOService* LPCMonitorPlugin::probe(IOService *provider, SInt32 *score)
 	
 		Type = UnknownType;
 		Model = UnknownModel;
+		
+		// Winbound/Fintek
+		
+		WinbondFintekEnter();
+		
+		UInt8 id = ReadByte(CHIP_ID_REGISTER);
+		UInt8 logicalDeviceNumber = 0;
+		
+		Revision = ReadByte(CHIP_REVISION_REGISTER);
+		
+		switch (id) 
+		{
+			case 0x05:
+				switch (Revision) 
+					case 0x07:
+						Model = F71858;
+						logicalDeviceNumber = F71858_HARDWARE_MONITOR_LDN;
+						break;
+					case 0x41:
+						Model = F71882;
+						logicalDeviceNumber = FINTEK_HARDWARE_MONITOR_LDN;
+						break;   
+				break;
+				
+			case 0x06:
+				switch (Revision) 
+					case 0x01:
+						Model = F71862;
+						logicalDeviceNumber = FINTEK_HARDWARE_MONITOR_LDN;
+						break;     
+				break;
+				
+			case 0x07:
+				switch (Revision)
+					case 0x23:
+						Model = F71889F;
+						logicalDeviceNumber = FINTEK_HARDWARE_MONITOR_LDN;
+						break;    
+				break;
+				
+			case 0x08:
+				switch (Revision)
+					case 0x14:
+						Model = F71869;
+						logicalDeviceNumber = FINTEK_HARDWARE_MONITOR_LDN;
+						break;    
+				break;
+			case 0x09:
+				switch (Revision)
+					case 0x09:
+						Model = F71889ED;
+						logicalDeviceNumber = FINTEK_HARDWARE_MONITOR_LDN;
+						break;    
+				break;
+				
+			case 0x52:
+				switch (Revision)
+					case 0x17:
+					case 0x3A:
+					case 0x41:
+						Model = W83627HF;
+						logicalDeviceNumber = WINBOND_HARDWARE_MONITOR_LDN;
+						break;
+				break;
+				
+			case 0x82:
+				switch (Revision)
+					case 0x83:
+						Model = W83627THF;
+						logicalDeviceNumber = WINBOND_HARDWARE_MONITOR_LDN;
+						break;
+				break;
+				
+			case 0x85:
+				switch (Revision)
+					case 0x41:
+						Model = W83687THF;
+						logicalDeviceNumber = WINBOND_HARDWARE_MONITOR_LDN;
+						break;
+				break;
+			case 0x88:
+				switch (Revision & 0xF0)
+					case 0x50:
+					case 0x60:
+						Model = W83627EHF;
+						logicalDeviceNumber = WINBOND_HARDWARE_MONITOR_LDN;
+						break;
+				break;
+				
+			case 0xA0:
+				switch (Revision & 0xF0)
+					case 0x20: 
+						Model = W83627DHG;
+						logicalDeviceNumber = WINBOND_HARDWARE_MONITOR_LDN;  
+						break;   
+				break;
+				
+			case 0xA5:
+				switch (Revision & 0xF0)
+					case 0x10:
+						Model = W83667HG;
+						logicalDeviceNumber = WINBOND_HARDWARE_MONITOR_LDN;
+						break;
+				break;
+				
+			case 0xB0:
+				switch (Revision & 0xF0)
+					case 0x70:
+						Model = W83627DHGP;
+						logicalDeviceNumber = WINBOND_HARDWARE_MONITOR_LDN;
+						break;        
+				break;
+				
+			case 0xB3:
+				switch (Revision & 0xF0)
+					case 0x50:
+						Model = W83667HGB;
+						logicalDeviceNumber = WINBOND_HARDWARE_MONITOR_LDN;
+						break;
+				break; 
+		}
+		
+		if (Model == UnknownModel)
+		{
+			if (id != 0 && id != 0xff)
+			{
+				WinbondFintekExit();
+				
+				InfoLog("Found Unknown Winbond / Fintek with ID 0x%x", ((id << 8) | Revision));
+				
+				return 0;
+			}
+		} 
+		else
+		{
+			UpdateChipName();
+			
+			Select(logicalDeviceNumber);
+			
+			Address = ReadWord(BASE_ADDRESS_REGISTER);          
+			
+			//usleep(1);
+			
+			UInt16 verify = ReadWord(BASE_ADDRESS_REGISTER);
+			UInt16 vendorID = ReadWord(FINTEK_VENDOR_ID_REGISTER);
+			
+			WinbondFintekExit();
+			
+			if (Address != verify)
+			{            
+				InfoLog("Chip ID - %s", Name); 
+				InfoLog("Chip revision - 0x%x", Revision);
+				WarningLog("Address verification failed");
+				
+				return 0;
+			}
+			
+			// some Fintek chips have address register offset 0x05 added already
+			if ((Address & 0x07) == 0x05)
+				Address &= 0xFFF8;
+			
+			if (Address < 0x100 || (Address & 0xF007) != 0)
+			{            
+				InfoLog("Chip ID - %s", Name);
+				InfoLog("Chip revision - 0x%x", Revision);
+				WarningLog("Invalid address 0x%x", Address);
+				
+				return 0;
+			}
+			
+			switch (Model)
+			{
+				case W83627DHG:
+				case W83627DHGP:
+				case W83627EHF:
+				case W83627HF:
+				case W83627THF:
+				case W83667HG:
+				case W83667HGB:
+				case W83687THF:
+					Type = Winbound;
+					break;
+					
+				case F71858:
+				case F71862:
+				case F71869:
+				case F71882:
+				case F71889ED:
+				case F71889F:
+					if (vendorID != FINTEK_VENDOR_ID)
+					{
+						InfoLog("Chip ID - %s", Name);
+						InfoLog("Chip revision - 0x%x", Revision);
+						WarningLog("Invalid vendor ID 0x%x", vendorID);
+						
+						return 0;
+					}
+					Type = Fintek;
+					break;
+					
+				default: 
+					return 0;
+			}
+			
+			UpdateChipName();
+			
+			InfoLog("Found %s", Name);
+			
+			break;
+		}
 		
 		// ITE
 		
@@ -538,6 +494,35 @@ IOService* LPCMonitorPlugin::probe(IOService *provider, SInt32 *score)
 			break;
 		}
 		
+		// SMSC
+		SMSCEnter();
+		
+		chipID = ReadWord(CHIP_ID_REGISTER);
+		
+		switch (chipID) 
+		{
+			default: Model = UnknownModel; break;
+		}
+		
+		if (Model == UnknownModel)
+		{
+			if (chipID != 0 && chipID != 0xffff)
+			{
+				SMSCExit();
+				
+				UpdateChipName();
+				
+				InfoLog("Found unknown SMSC with ID 0x%x", chipID);
+				
+				return 0;
+			}
+		} 
+		else 
+		{
+			SMSCExit();
+			
+			return 0;
+		}
 	}
 	
 	return this;
@@ -584,33 +569,42 @@ bool LPCMonitorPlugin::start(IOService * provider)
 			FakeSMCRegisterKey("TN0P", 2, value, &Update);
 			
 			// Fans
-			value[0] = 0x5;
+			UInt8 funCount;
+			
+			for (int i=0; i<5; i++) 
+			{
+				if (IT87ReadRPM(i) > 0xa)
+				{
+					funCount++;
+					
+					char key[5];
+					
+					value[0] = 0x0;
+					value[1] = 0xa;
+					snprintf(key, 5, "F%dMn", i);
+					FakeSMCRegisterKey(key, 2, value, NULL);
+					
+					value[0] = 0xef;
+					value[1] = 0xff;
+					snprintf(key, 5, "F%dMx", i);
+					FakeSMCRegisterKey(key, 2, value, NULL);
+					
+					value[0] = 0x0;
+					value[1] = 0x0;
+					snprintf(key, 5, "F%dAc", i);
+					FakeSMCRegisterKey(key, 2, value, &Update);
+				}
+			}
+			
+			value[0] = funCount;
 			FakeSMCRegisterKey("FNum", 1, value, NULL);
 			
-			value[0] = 0xef;
-			value[1] = 0xff;
-			for (int i=0; i<5; i++) 
-			{
-				char key[5];
-				snprintf(key, 5, "F%dMx", i);
-				FakeSMCRegisterKey(key, 2, value, NULL);
-			}
+			break;
 			
-			for (int i=0; i<5; i++) 
-			{
-				char key[5];
-				
-				value[0] = 0x0;
-				value[1] = 0xf;
-				snprintf(key, 5, "F%dMn", i);
-				FakeSMCRegisterKey(key, 2, value, NULL);
-				
-				value[0] = 0x0;
-				value[1] = 0x0;
-				snprintf(key, 5, "F%dAc", i);
-				FakeSMCRegisterKey(key, 2, value, &Update);
-			}
+		case Winbound:
+			break;
 			
+		case Fintek:
 			break;
 	}
 	
