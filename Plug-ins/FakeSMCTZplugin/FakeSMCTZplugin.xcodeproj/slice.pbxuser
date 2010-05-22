@@ -1,0 +1,147 @@
+// !$*UTF8*$!
+{
+	089C1669FE841209C02AAC07 /* Project object */ = {
+		activeBuildConfigurationName = Release;
+		activeSDKPreference = macosx10.6;
+		activeTarget = 32D94FC30562CBF700B6AF17 /* FakeSMCTZplugin */;
+		addToTargets = (
+			32D94FC30562CBF700B6AF17 /* FakeSMCTZplugin */,
+		);
+		codeSenseManager = 12253D2B11A6DCAE0039DE58 /* Code sense */;
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					715,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 296252176;
+			PBXWorkspaceStateSaveDate = 296252176;
+		};
+		perUserProjectItems = {
+			12BF2BEA11A7E97C0087FBF5 = 12BF2BEA11A7E97C0087FBF5 /* PBXTextBookmark */;
+			12BF2BEB11A7E97C0087FBF5 = 12BF2BEB11A7E97C0087FBF5 /* PBXTextBookmark */;
+			12BF2C5F11A854220087FBF5 = 12BF2C5F11A854220087FBF5 /* PBXTextBookmark */;
+			12BF2C8111A86C7E0087FBF5 = 12BF2C8111A86C7E0087FBF5 /* PBXTextBookmark */;
+			12C47FC411A6F650000CFCA2 = 12C47FC411A6F650000CFCA2 /* PlistBookmark */;
+		};
+		sourceControlManager = 12253D2A11A6DCAE0039DE58 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	12253D2A11A6DCAE0039DE58 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = fakesmc;
+				../fakesmc = fakesmc;
+			};
+		};
+	};
+	12253D2B11A6DCAE0039DE58 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	12253D2C11A6DD3D0039DE58 /* fakesmc.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {893, 452}}";
+			sepNavSelRange = "{230, 0}";
+			sepNavVisRange = "{0, 466}";
+		};
+	};
+	12BF2BEA11A7E97C0087FBF5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12253D2C11A6DD3D0039DE58 /* fakesmc.h */;
+		name = "fakesmc.h: 13";
+		rLen = 0;
+		rLoc = 230;
+		rType = 0;
+		vrLen = 466;
+		vrLoc = 0;
+	};
+	12BF2BEB11A7E97C0087FBF5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3EFF42367911CA2CB7 /* FakeSMCTZplugin.h */;
+		name = "FakeSMCTZplugin.h: 4";
+		rLen = 0;
+		rLoc = 112;
+		rType = 0;
+		vrLen = 652;
+		vrLoc = 0;
+	};
+	12BF2C5F11A854220087FBF5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCTZplugin.cpp */;
+		name = "FakeSMCTZplugin.cpp: 9";
+		rLen = 0;
+		rLoc = 177;
+		rType = 0;
+		vrLen = 825;
+		vrLoc = 706;
+	};
+	12BF2C8111A86C7E0087FBF5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCTZplugin.cpp */;
+		name = "FakeSMCTZplugin.cpp: 9";
+		rLen = 0;
+		rLoc = 177;
+		rType = 0;
+		vrLen = 823;
+		vrLoc = 706;
+	};
+	12C47FC411A6F650000CFCA2 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 32D94FCF0562CBF700B6AF17 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			IOKitPersonalities,
+			TZPlugin,
+			IOClass,
+		);
+		name = "/Volumes/LeoHD/Projects/FakeSMC projects/fakesmcMozo/FakeSMCTZplugin/Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775808;
+	};
+	1A224C3EFF42367911CA2CB7 /* FakeSMCTZplugin.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {893, 452}}";
+			sepNavSelRange = "{112, 0}";
+			sepNavVisRange = "{0, 652}";
+		};
+	};
+	1A224C3FFF42367911CA2CB7 /* FakeSMCTZplugin.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {893, 1573}}";
+			sepNavSelRange = "{177, 0}";
+			sepNavVisRange = "{706, 823}";
+			sepNavWindowFrame = "{{15, 64}, {1040, 809}}";
+		};
+	};
+	32D94FC30562CBF700B6AF17 /* FakeSMCTZplugin */ = {
+		activeExec = 0;
+	};
+	32D94FCF0562CBF700B6AF17 /* Info.plist */ = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{242, 69}, {1040, 809}}";
+		};
+	};
+}
