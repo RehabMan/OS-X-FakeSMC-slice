@@ -195,6 +195,9 @@ UInt16 WinbondReadRPM(UInt8 index)
 			WinbondWriteByte(0, WINBOND_FAN_BIT_REG[i], newByte);        
 	}
 	
+	if(value < -55 || value > 125)
+		return 0;
+	
 	return value;
 }
 
@@ -250,9 +253,7 @@ static void Update(SMCData node)
 			// FANs
 			if(CompareKeys(node->key, "F0Ac") || CompareKeys(node->key, "F1Ac") || CompareKeys(node->key, "F2Ac") || CompareKeys(node->key, "F3Ac") || CompareKeys(node->key, "F4Ac"))
 			{
-				UInt8 num = node->key[1] - 48;
-				
-				short value = IT87ReadRPM(num);
+				short value = IT87ReadRPM(FanIndex[node->key[1] - 48]);
 												
 				// iStat (mac os?) fix
 				value *= 4;
@@ -284,7 +285,7 @@ static void Update(SMCData node)
 			
 			if(CompareKeys(node->key, "F0Ac") || CompareKeys(node->key, "F1Ac") || CompareKeys(node->key, "F2Ac") || CompareKeys(node->key, "F3Ac") || CompareKeys(node->key, "F4Ac"))
 			{
-				UInt16 value = WinbondReadRPM(node->key[1] - 48);
+				UInt16 value = WinbondReadRPM(FanIndex[node->key[1] - 48]);
 				
 				// iStat (mac os?) fix
 				value *= 4;
@@ -691,30 +692,30 @@ bool LPCMonitorPlugin::start(IOService * provider)
 			FakeSMCRegisterKey("TN0P", 2, value, &Update);
 			
 			// Fans
-			UInt8 fanCount;
+			UInt8 fanCount = 0;
 			
 			for (int i=0; i<5; i++) 
 			{
 				if (IT87ReadRPM(i) > 0xa)
 				{
-					fanCount = i + 1;
-					
 					char key[5];
 					
 					value[0] = 0x0;
 					value[1] = 0xa;
-					snprintf(key, 5, "F%dMn", i);
+					snprintf(key, 5, "F%dMn", fanCount);
 					FakeSMCRegisterKey(key, 2, value, NULL);
 					
 					value[0] = 0xef;
 					value[1] = 0xff;
-					snprintf(key, 5, "F%dMx", i);
+					snprintf(key, 5, "F%dMx", fanCount);
 					FakeSMCRegisterKey(key, 2, value, NULL);
 					
 					value[0] = 0x0;
 					value[1] = 0x0;
-					snprintf(key, 5, "F%dAc", i);
+					snprintf(key, 5, "F%dAc", fanCount);
 					FakeSMCRegisterKey(key, 2, value, &Update);
+					
+					FanIndex[fanCount++] = i;
 				}
 			}
 			
@@ -779,27 +780,34 @@ bool LPCMonitorPlugin::start(IOService * provider)
 				}
 			}
 			
+			UInt8 fanCount = 0;
+			
 			for (int i=0; i<5; i++) 
 			{
-				char key[5];
+				if(WinbondReadRPM(i) > 0)
+				{
+					char key[5];
 				
-				value[0] = 0x0;
-				value[1] = 0xa;
-				snprintf(key, 5, "F%dMn", i);
-				FakeSMCRegisterKey(key, 2, value, NULL);
-				
-				value[0] = 0xef;
-				value[1] = 0xff;
-				snprintf(key, 5, "F%dMx", i);
-				FakeSMCRegisterKey(key, 2, value, NULL);
-				
-				value[0] = 0x0;
-				value[1] = 0x0;
-				snprintf(key, 5, "F%dAc", i);
-				FakeSMCRegisterKey(key, 2, value, &Update);
+					value[0] = 0x0;
+					value[1] = 0xa;
+					snprintf(key, 5, "F%dMn", fanCount);
+					FakeSMCRegisterKey(key, 2, value, NULL);
+					
+					value[0] = 0xef;
+					value[1] = 0xff;
+					snprintf(key, 5, "F%dMx", fanCount);
+					FakeSMCRegisterKey(key, 2, value, NULL);
+					
+					value[0] = 0x0;
+					value[1] = 0x0;
+					snprintf(key, 5, "F%dAc", fanCount);
+					FakeSMCRegisterKey(key, 2, value, &Update);
+					
+					FanIndex[fanCount++] = i;
+				}
 			}
 			
-			value[0] = 5;
+			value[0] = fanCount;
 			FakeSMCRegisterKey("FNum", 1, value, NULL);
 			
 			break;
