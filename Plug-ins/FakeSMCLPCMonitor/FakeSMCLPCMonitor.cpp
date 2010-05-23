@@ -112,6 +112,92 @@ void WinbondFintekExit()
 	outb(RegisterPort, 0xAA);      
 }
 
+UInt8 WinbondReadByte(UInt8 bank, UInt8 reg) 
+{
+	outb((UInt16)(Address + WINBOND_ADDRESS_REGISTER_OFFSET), WINBOND_BANK_SELECT_REGISTER);
+	outb((UInt16)(Address + WINBOND_DATA_REGISTER_OFFSET), bank);
+	outb((UInt16)(Address + WINBOND_ADDRESS_REGISTER_OFFSET), reg);
+	return inb((UInt16)(Address + WINBOND_DATA_REGISTER_OFFSET));
+}
+
+void WinbondWriteByte(UInt8 bank, UInt8 reg, UInt8 value)
+{
+	outb((ushort)(Address + WINBOND_ADDRESS_REGISTER_OFFSET), WINBOND_BANK_SELECT_REGISTER);
+	outb((ushort)(Address + WINBOND_DATA_REGISTER_OFFSET), bank);
+	outb((ushort)(Address + WINBOND_ADDRESS_REGISTER_OFFSET), reg);
+	outb((ushort)(Address + WINBOND_DATA_REGISTER_OFFSET), value); 
+}
+
+short WinbondReadTemperature(UInt8 index)
+{
+	UInt32 value = WinbondReadByte(WINBOND_TEMPERATURE_BANK[index], WINBOND_TEMPERATURE_REG[index]) << 1;
+	
+	if (WINBOND_TEMPERATURE_BANK[index] > 0) 
+		value |= WinbondReadByte(WINBOND_TEMPERATURE_BANK[index], (UInt8)(WINBOND_TEMPERATURE_REG[index] + 1)) >> 7;
+	
+	float temperature = value / 2.0f;
+	
+	return temperature;
+}
+
+UInt64 WinbondSetBit(UInt64 target, UInt32 bit, UInt32 value)
+{
+	if (((value & 1) == value) && bit >= 0 && bit <= 63)
+	{
+		UInt64 mask = (((UInt64)1) << bit);
+		return value > 0 ? target | mask : target & ~mask;
+	}
+	
+	return value;
+}
+
+UInt16 WinbondReadRPM(UInt8 index)
+{
+	UInt64 bits = 0;
+	
+	for (int i = 0; i < 5; i++)
+		bits = (bits << 8) | WinbondReadByte(0, WINBOND_FAN_BIT_REG[i]);
+	
+	UInt64 newBits = bits;
+	
+	int count = WinbondReadByte(WINBOND_FAN_TACHO_BANK[index], WINBOND_FAN_TACHO_REG[index]);
+	
+	// assemble fan divisor
+	int divisorBits = (int)(
+							(((bits >> WINBOND_FAN_DIV_BIT2[index]) & 1) << 2) |
+							(((bits >> WINBOND_FAN_DIV_BIT1[index]) & 1) << 1) |
+							((bits >> WINBOND_FAN_DIV_BIT0[index]) & 1));
+	int divisor = 1 << divisorBits;
+	
+	float value = (count < 0xff) ? 1.35e6f / (count * divisor) : 0;
+	
+	// update fan divisor
+	if (count > 192 && divisorBits < 7) 
+		divisorBits++;
+	if (count < 96 && divisorBits > 0)
+		divisorBits--;
+	
+	newBits = WinbondSetBit(newBits, WINBOND_FAN_DIV_BIT2[index], 
+							(divisorBits >> 2) & 1);
+	newBits = WinbondSetBit(newBits, WINBOND_FAN_DIV_BIT1[index], 
+							(divisorBits >> 1) & 1);
+	newBits = WinbondSetBit(newBits, WINBOND_FAN_DIV_BIT0[index], 
+							divisorBits & 1);
+	
+	// write new fan divisors 
+	for (int i = 4; i >= 0; i--) 
+	{
+		UInt8 oldByte = (UInt8)(bits & 0xFF);
+		UInt8 newByte = (UInt8)(newBits & 0xFF);
+		bits = bits >> 8;
+		newBits = newBits >> 8;
+		if (oldByte != newByte) 
+			WinbondWriteByte(0, WINBOND_FAN_BIT_REG[i], newByte);        
+	}
+	
+	return value;
+}
+
 // SMSC
 
 void SMSCEnter()
@@ -134,6 +220,7 @@ static void Update(SMCData node)
 	switch (Type)
 	{
 		case IT87x:
+		{
 			bool* valid;
 			 	
 			// Heatsink
@@ -175,10 +262,44 @@ static void Update(SMCData node)
 			}
 			
 			break;
-		case Winbound:
+		}
+			
+		case Winbond:
+		{
+			// Heatsink
+			if(CompareKeys(node->key, "Th0H"))
+			{
+				node->data[0] = WinbondReadTemperature(0);
+				node->data[1] = 0;
+			}
+			
+			// Northbridge
+			if(CompareKeys(node->key, "TN0P"))
+			{
+				node->data[0] = WinbondReadTemperature(2);
+				node->data[1] = 0;
+			}
+			
+			// Fans
+			
+			if(CompareKeys(node->key, "F0Ac") || CompareKeys(node->key, "F1Ac") || CompareKeys(node->key, "F2Ac") || CompareKeys(node->key, "F3Ac") || CompareKeys(node->key, "F4Ac"))
+			{
+				UInt16 value = WinbondReadRPM(node->key[1] - 48);
+				
+				// iStat (mac os?) fix
+				value *= 4;
+				
+				node->data[0] = value >> 8;
+				node->data[1] = value & 0xff;
+			}
+			
 			break;
+		}
+			
 		case Fintek:
+		{
 			break;
+		}
 	}
 }
 
@@ -209,7 +330,7 @@ IOService* LPCMonitorPlugin::probe(IOService *provider, SInt32 *score)
 		Type = UnknownType;
 		Model = UnknownModel;
 		
-		// Winbound/Fintek
+		// Winbond/Fintek
 		
 		WinbondFintekEnter();
 		
@@ -388,7 +509,7 @@ IOService* LPCMonitorPlugin::probe(IOService *provider, SInt32 *score)
 				case W83667HG:
 				case W83667HGB:
 				case W83687THF:
-					Type = Winbound;
+					Type = Winbond;
 					break;
 					
 				case F71858:
@@ -537,6 +658,7 @@ bool LPCMonitorPlugin::start(IOService * provider)
 	switch (Type)
 	{
 		case IT87x:
+		{
 			bool* valid;
 			UInt8 vendorId;
 			
@@ -561,7 +683,7 @@ bool LPCMonitorPlugin::start(IOService * provider)
 			}
 			
 			char value[2];
-
+			
 			// Heatsink
 			FakeSMCRegisterKey("Th0H", 2, value, &Update);
 			
@@ -569,13 +691,13 @@ bool LPCMonitorPlugin::start(IOService * provider)
 			FakeSMCRegisterKey("TN0P", 2, value, &Update);
 			
 			// Fans
-			UInt8 funCount;
+			UInt8 fanCount;
 			
 			for (int i=0; i<5; i++) 
 			{
 				if (IT87ReadRPM(i) > 0xa)
 				{
-					funCount++;
+					fanCount = i + 1;
 					
 					char key[5];
 					
@@ -596,16 +718,98 @@ bool LPCMonitorPlugin::start(IOService * provider)
 				}
 			}
 			
-			value[0] = funCount;
+			value[0] = fanCount;
 			FakeSMCRegisterKey("FNum", 1, value, NULL);
 			
 			break;
+		}
 			
-		case Winbound:
+		case Winbond:
+		{
+			char value[2];
+			
+			switch (Model) 
+			{
+				case W83667HG:
+				case W83667HGB:
+				{
+					// do not add temperature sensor registers that read PECI
+					UInt8 flag = WinbondReadByte(0, WINBOND_TEMPERATURE_SOURCE_SELECT_REG);
+					
+					// Heatsink
+					if ((flag & 0x04) == 0)	FakeSMCRegisterKey("Th0H", 2, value, &Update);
+					
+					/*if ((flag & 0x40) == 0)
+						list.Add(new Sensor(TEMPERATURE_NAME[1], 1, null,
+											SensorType.Temperature, this, parameter));*/
+					
+					// Northbridge
+					FakeSMCRegisterKey("TN0P", 2, value, &Update);
+					
+					break;
+				}
+					
+				case W83627DHG:        
+				case W83627DHGP:
+				{
+					// do not add temperature sensor registers that read PECI
+					UInt8 sel = WinbondReadByte(0, WINBOND_TEMPERATURE_SOURCE_SELECT_REG);
+					
+					// Heatsink
+					if ((sel & 0x07) == 0) FakeSMCRegisterKey("Th0H", 2, value, &Update);
+					
+					/*if ((sel & 0x70) == 0)
+						list.Add(new Sensor(TEMPERATURE_NAME[1], 1, null,
+											SensorType.Temperature, this, parameter));*/
+					
+					// Northbridge
+					FakeSMCRegisterKey("TN0P", 2, value, &Update);
+					
+					break;
+				}
+					
+				default:
+				{
+					// no PECI support, add all sensors
+					// Heatsink
+					FakeSMCRegisterKey("Th0H", 2, value, &Update);
+					// Northbridge
+					FakeSMCRegisterKey("TN0P", 2, value, &Update);
+				  break;
+				}
+			}
+			
+			for (int i=0; i<5; i++) 
+			{
+				char key[5];
+				
+				value[0] = 0x0;
+				value[1] = 0xa;
+				snprintf(key, 5, "F%dMn", i);
+				FakeSMCRegisterKey(key, 2, value, NULL);
+				
+				value[0] = 0xef;
+				value[1] = 0xff;
+				snprintf(key, 5, "F%dMx", i);
+				FakeSMCRegisterKey(key, 2, value, NULL);
+				
+				value[0] = 0x0;
+				value[1] = 0x0;
+				snprintf(key, 5, "F%dAc", i);
+				FakeSMCRegisterKey(key, 2, value, &Update);
+			}
+			
+			value[0] = 5;
+			FakeSMCRegisterKey("FNum", 1, value, NULL);
+			
 			break;
+		}
 			
 		case Fintek:
+		{
+			
 			break;
+		}
 	}
 	
 	return true;	
@@ -614,6 +818,24 @@ bool LPCMonitorPlugin::start(IOService * provider)
 void LPCMonitorPlugin::stop (IOService* provider)
 {
 	DebugLog("Stoping...");
+	
+	switch (Type)
+	{
+		case IT87x:
+		case Winbond:
+			FakeSMCUnregisterKey("Th0H");
+			FakeSMCUnregisterKey("TN0P");
+			for (int i=0; i<5; i++) 
+			{
+				char key[5];
+				snprintf(key, 5, "F%dAc", i);
+				FakeSMCUnregisterKey(key);
+			}
+			break;
+		case Fintek:
+			break;
+
+	}
 	
 	super::stop(provider);
 }

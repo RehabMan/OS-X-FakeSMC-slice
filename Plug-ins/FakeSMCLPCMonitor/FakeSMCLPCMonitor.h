@@ -36,7 +36,7 @@ enum LPCChipType
 {
 	UnknownType,
     IT87x,
-    Winbound,
+    Winbond,
 	Fintek 
 };
 
@@ -82,6 +82,32 @@ const unsigned char ITE_FAN_TACHOMETER_16_BIT_ENABLE_REGISTER = 0x0c;
 const unsigned char ITE_FAN_TACHOMETER_REG[] = { 0x0d, 0x0e, 0x0f, 0x80, 0x82 };
 const unsigned char ITE_FAN_TACHOMETER_EXT_REG[] = { 0x18, 0x19, 0x1a, 0x81, 0x83 };
 const unsigned char ITE_VOLTAGE_BASE_REG = 0x20;
+
+// Winbond 
+UInt16 WINBOND_VENDOR_ID = 0x5CA3;
+UInt8 WINBOND_HIGH_BYTE = 0x80;
+
+// Winbond Hardware Monitor
+UInt8 WINBOND_ADDRESS_REGISTER_OFFSET = 0x05;
+UInt8 WINBOND_DATA_REGISTER_OFFSET = 0x06;
+
+// Winbond Hardware Monitor Registers
+UInt8 WINBOND_VOLTAGE_BASE_REG = 0x20;
+UInt8 WINBOND_BANK_SELECT_REGISTER = 0x4E;
+UInt8 WINBOND_VENDOR_ID_REGISTER = 0x4F;
+UInt8 WINBOND_TEMPERATURE_SOURCE_SELECT_REG = 0x49;
+
+//private string[] TEMPERATURE_NAME = 
+//new string[] {"CPU", "Auxiliary", "System"};
+UInt8 WINBOND_TEMPERATURE_REG[] = { 0x50, 0x50, 0x27 };
+UInt8 WINBOND_TEMPERATURE_BANK[] = { 1, 2, 0 };
+
+UInt8 WINBOND_FAN_TACHO_REG[] = { 0x28, 0x29, 0x2A, 0x3F, 0x53 };
+UInt8 WINBOND_FAN_TACHO_BANK[] = { 0, 0, 0, 0, 5 };       
+UInt8 WINBOND_FAN_BIT_REG[] = { 0x47, 0x4B, 0x4C, 0x59, 0x5D };
+UInt8 WINBOND_FAN_DIV_BIT0[] = { 36, 38, 30, 8, 10 };
+UInt8 WINBOND_FAN_DIV_BIT1[] = { 37, 39, 31, 9, 11 };
+UInt8 WINBOND_FAN_DIV_BIT2[] = { 5, 6, 7, 23, 15 };
 
 // Global
 
