@@ -42,6 +42,7 @@
 				247142CAFF3F8F9811CA285C /* Source */,
 				8DA8362C06AD9B9200E5AC22 /* Kernel.framework */,
 				089C167CFE841241C02AAC07 /* Resources */,
+				AE68715011A9B3FE004A6082 /* Misc */,
 				19C28FB6FE9D52B211CA2CBB /* Products */,
 			);
 			name = PaztalomKawaiIntelCPUThermal;
@@ -52,7 +53,6 @@
 			children = (
 				32D94FCF0562CBF700B6AF17 /* Info.plist */,
 				089C167DFE841241C02AAC07 /* InfoPlist.strings */,
-				AE39535D11A6A78A00A906DC /* license.rtf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -73,6 +73,14 @@
 				1A224C3FFF42367911CA2CB7 /* FakeSMCLPCMonitor.cpp */,
 			);
 			name = Source;
+			sourceTree = "<group>";
+		};
+		AE68715011A9B3FE004A6082 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				AE39535D11A6A78A00A906DC /* license.rtf */,
+			);
+			name = Misc;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
