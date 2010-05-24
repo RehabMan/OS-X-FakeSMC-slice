@@ -1,0 +1,9 @@
+/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp:7:29: error: FakeSMCTZplugin.h: No such file or directory
+/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp:12: error: variable or field 'Update' declared void
+/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp:12: error: 'SMCData' was not declared in this scope
+/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp:21: error: expected constructor, destructor, or type conversion before '(' token
+/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp:30: error: 'TZPlugin' has not been declared
+/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp:30: error: 'IOService' was not declared in this scope
+/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp:30: error: 'provider' was not declared in this scope
+/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp:31: error: expected ',' or ';' before '{' token
+/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp:10: warning: 'TZtemp' defined but not used

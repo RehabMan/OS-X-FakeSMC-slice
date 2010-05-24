@@ -1,0 +1,141 @@
+// !$*UTF8*$!
+{
+	089C1669FE841209C02AAC07 /* Project object */ = {
+		activeBuildConfigurationName = Release;
+		activeTarget = 32D94FC30562CBF700B6AF17 /* FakeSMCFanTZplugin */;
+		addToTargets = (
+			32D94FC30562CBF700B6AF17 /* FakeSMCFanTZplugin */,
+		);
+		codeSenseManager = 127E683A11AAAAC3004C9E3D /* Code sense */;
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					524,
+					20,
+					48.16259765625,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 296402716;
+			PBXWorkspaceStateSaveDate = 296402716;
+		};
+		perUserProjectItems = {
+			127E689011AAB473004C9E3D = 127E689011AAB473004C9E3D /* PlistBookmark */;
+			127E689111AAB473004C9E3D = 127E689111AAB473004C9E3D /* PBXTextBookmark */;
+			127E689211AAB473004C9E3D = 127E689211AAB473004C9E3D /* PBXTextBookmark */;
+			127E689311AAB473004C9E3D = 127E689311AAB473004C9E3D /* PBXTextBookmark */;
+			127E689411AAB473004C9E3D = 127E689411AAB473004C9E3D /* PBXTextBookmark */;
+		};
+		sourceControlManager = 127E683911AAAAC3004C9E3D /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	127E683911AAAAC3004C9E3D /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	127E683A11AAAAC3004C9E3D /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	127E683B11AAAAD0004C9E3D /* fakesmc.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {702, 403}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 466}";
+		};
+	};
+	127E689011AAB473004C9E3D /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 32D94FCF0562CBF700B6AF17 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			IOKitPersonalities,
+			TZFanPlugin,
+			IONameMatch,
+		);
+		name = "/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775808;
+	};
+	127E689111AAB473004C9E3D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 127E683B11AAAAD0004C9E3D /* fakesmc.h */;
+		name = "fakesmc.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 466;
+		vrLoc = 0;
+	};
+	127E689211AAB473004C9E3D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCTZFanPlugin.cpp */;
+		name = "FakeSMCTZFanPlugin.cpp: 50";
+		rLen = 0;
+		rLoc = 1103;
+		rType = 0;
+		vrLen = 705;
+		vrLoc = 0;
+	};
+	127E689311AAB473004C9E3D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3EFF42367911CA2CB7 /* FakeSMCTZFanPlugin.h */;
+		name = "FakeSMCTZFanPlugin.h: 9";
+		rLen = 0;
+		rLoc = 228;
+		rType = 0;
+		vrLen = 656;
+		vrLoc = 0;
+	};
+	127E689411AAB473004C9E3D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3EFF42367911CA2CB7 /* FakeSMCTZFanPlugin.h */;
+		name = "FakeSMCTZFanPlugin.h: 10";
+		rLen = 6;
+		rLoc = 242;
+		rType = 0;
+		vrLen = 656;
+		vrLoc = 0;
+	};
+	1A224C3EFF42367911CA2CB7 /* FakeSMCTZFanPlugin.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {702, 403}}";
+			sepNavSelRange = "{242, 6}";
+			sepNavVisRange = "{0, 656}";
+			sepNavWindowFrame = "{{15, 64}, {1040, 809}}";
+		};
+	};
+	1A224C3FFF42367911CA2CB7 /* FakeSMCTZFanPlugin.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {439, 1963}}";
+			sepNavSelRange = "{1586, 0}";
+			sepNavVisRange = "{1368, 323}";
+			sepNavWindowFrame = "{{15, 64}, {1040, 809}}";
+		};
+	};
+	32D94FC30562CBF700B6AF17 /* FakeSMCFanTZplugin */ = {
+		activeExec = 0;
+	};
+}

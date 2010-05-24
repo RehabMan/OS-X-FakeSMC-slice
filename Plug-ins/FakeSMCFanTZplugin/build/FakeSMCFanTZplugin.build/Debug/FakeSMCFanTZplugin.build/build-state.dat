@@ -1,0 +1,119 @@
+TFakeSMCFanTZplugin
+v7
+r1
+
+N/Developer/SDKs/MacOSX10.6.sdk
+c000000004A769DAB00000000000000EE
+t1249287595
+s238
+
+N/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/English.lproj/InfoPlist.strings
+c000000004BFA73380000000000000030
+t1274704696
+s48
+
+N/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp
+c000000004BFA73380000000000000019
+t1274704696
+s25
+
+N/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Debug/FakeSMCFanTZplugin.kext
+t2
+s0
+
+N/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Debug/FakeSMCFanTZplugin.kext.dSYM
+t2
+s0
+
+N/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Debug/FakeSMCFanTZplugin.kext/Contents/Info.plist
+t2
+s0
+
+N/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Debug/FakeSMCFanTZplugin.kext/Contents/MacOS/FakeSMCFanTZplugin
+t2
+s0
+
+N/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Debug/FakeSMCFanTZplugin.kext/Contents/Resources/English.lproj/InfoPlist.strings
+t2
+s0
+
+N/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Debug/FakeSMCFanTZplugin.build/DerivedSources/FakeSMCFanTZplugin_info.c
+c00000000000000000000000000000000
+t2
+s0
+
+N/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Debug/FakeSMCFanTZplugin.build/Objects-normal/i386/FakeSMCFanTZplugin
+t2
+s0
+
+N/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Debug/FakeSMCFanTZplugin.build/Objects-normal/i386/FakeSMCFanTZplugin.LinkFileList
+c00000000000000000000000000000000
+t2
+s0
+
+N/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Debug/FakeSMCFanTZplugin.build/Objects-normal/i386/FakeSMCFanTZplugin.o
+t2
+s0
+
+N/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Debug/FakeSMCFanTZplugin.build/Objects-normal/i386/FakeSMCFanTZplugin_info.o
+t2
+s0
+
+N/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Debug/FakeSMCFanTZplugin.build/Objects-normal/x86_64/FakeSMCFanTZplugin
+t2
+s0
+
+N/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Debug/FakeSMCFanTZplugin.build/Objects-normal/x86_64/FakeSMCFanTZplugin.LinkFileList
+c00000000000000000000000000000000
+t2
+s0
+
+N/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Debug/FakeSMCFanTZplugin.build/Objects-normal/x86_64/FakeSMCFanTZplugin.o
+t2
+s0
+
+N/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Debug/FakeSMCFanTZplugin.build/Objects-normal/x86_64/FakeSMCFanTZplugin_info.o
+t2
+s0
+
+NInfo.plist
+c000000004BFA74710000000000000660
+t1274705009
+s1632
+
+CCompileC build/FakeSMCFanTZplugin.build/Debug/FakeSMCFanTZplugin.build/Objects-normal/i386/FakeSMCFanTZplugin.o /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp normal i386 c++ com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/FakeSMCFanTZplugin.build/Debug/FakeSMCFanTZplugin.build/Objects-normal/i386/FakeSMCFanTZplugin_info.o /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Debug/FakeSMCFanTZplugin.build/DerivedSources/FakeSMCFanTZplugin_info.c normal i386 c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/FakeSMCFanTZplugin.build/Debug/FakeSMCFanTZplugin.build/Objects-normal/x86_64/FakeSMCFanTZplugin.o /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/FakeSMCFanTZplugin.build/Debug/FakeSMCFanTZplugin.build/Objects-normal/x86_64/FakeSMCFanTZplugin_info.o /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Debug/FakeSMCFanTZplugin.build/DerivedSources/FakeSMCFanTZplugin_info.c normal x86_64 c com.apple.compilers.gcc.4_2
+r0
+
+CCopyStringsFile /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Debug/FakeSMCFanTZplugin.kext/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
+r0
+
+CCreateUniversalBinary /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Debug/FakeSMCFanTZplugin.kext/Contents/MacOS/FakeSMCFanTZplugin normal "i386 x86_64"
+r0
+
+CGenerateDSYMFile /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Debug/FakeSMCFanTZplugin.kext.dSYM /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Debug/FakeSMCFanTZplugin.kext/Contents/MacOS/FakeSMCFanTZplugin
+r0
+
+CLd /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Debug/FakeSMCFanTZplugin.kext/Contents/MacOS/FakeSMCFanTZplugin normal x86_64
+r0
+
+CLd /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Debug/FakeSMCFanTZplugin.build/Objects-normal/i386/FakeSMCFanTZplugin normal i386
+r0
+
+CLd /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Debug/FakeSMCFanTZplugin.build/Objects-normal/x86_64/FakeSMCFanTZplugin normal x86_64
+r0
+
+CProcessInfoPlistFile /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Debug/FakeSMCFanTZplugin.kext/Contents/Info.plist Info.plist
+r0
+
+CTouch /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Debug/FakeSMCFanTZplugin.kext
+r0
+
