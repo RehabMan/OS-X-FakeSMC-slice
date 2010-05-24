@@ -79,6 +79,8 @@ IOService* IntelThermalMonitorPlugin::probe(IOService *provider, SInt32 *score)
 	CpuModel = cpuid_info()->cpuid_model;
 	CpuStepping =  cpuid_info()->cpuid_stepping;
 	
+	DebugLog("CPU family 0x%x, model 0x%x, stepping 0x%x", CpuFamily, CpuModel, CpuStepping);
+	
 	switch (CpuFamily)
 	{
         case 0x06: 
@@ -136,6 +138,8 @@ IOService* IntelThermalMonitorPlugin::probe(IOService *provider, SInt32 *score)
 		} 
 			break;
 	}
+	
+	DebugLog("CPU Tjmax %d", TjMax);
 	
 	return this;
 }

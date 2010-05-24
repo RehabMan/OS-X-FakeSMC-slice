@@ -17,7 +17,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.1</string>
+	<string>1.1.0.d2</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.1</string>
 	<key>IOKitPersonalities</key>
@@ -28,6 +28,8 @@
 			<string>org.mozodojo.${PRODUCT_NAME}</string>
 			<key>IOClass</key>
 			<string>IntelThermalMonitorPlugin</string>
+			<key>IOMatchCategory</key>
+			<string>org_mozodojo_${PRODUCT_NAME}</string>
 			<key>IOProviderClass</key>
 			<string>IOResources</string>
 			<key>IOResourceMatch</key>
