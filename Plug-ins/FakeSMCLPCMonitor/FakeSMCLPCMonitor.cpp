@@ -656,6 +656,26 @@ bool LPCMonitorPlugin::start(IOService * provider)
 	
 	if (!super::start(provider)) return false;
 	
+	OSArray *fanNames = OSDynamicCast(OSArray, getProperty("Fan Names"));
+
+	if (fanNames) fanNames = OSArray::withArray(fanNames);
+	
+    if (fanNames) 
+	{
+		UInt32 count = fanNames ? fanNames->getCount() : 0;
+		
+		if(count > 5) count = 5;
+		
+		for (UInt32 i = 0; i < count; i++) 
+		{
+			OSString* name = OSDynamicCast(OSString, fanNames->getObject(i));
+						
+			if (name) FanName[i] = name->getCStringNoCopy();
+		}
+		
+		fanNames->release();
+    }
+
 	switch (Type)
 	{
 		case IT87x:
@@ -699,6 +719,9 @@ bool LPCMonitorPlugin::start(IOService * provider)
 				if (IT87ReadRPM(i) > 0xa)
 				{
 					char key[5];
+					
+					snprintf(key, 5, "F%dID", fanCount);
+					FakeSMCRegisterKey(key, strlen(FanName[fanCount]), (char*)FanName[fanCount], NULL);
 					
 					value[0] = 0x0;
 					value[1] = 0xa;
@@ -787,6 +810,9 @@ bool LPCMonitorPlugin::start(IOService * provider)
 				if(WinbondReadRPM(i) > 0)
 				{
 					char key[5];
+					
+					snprintf(key, 5, "F%dID", fanCount);
+					FakeSMCRegisterKey(key, strlen(FanName[fanCount]), (char*)FanName[fanCount], NULL);
 				
 					value[0] = 0x0;
 					value[1] = 0xa;

@@ -22,8 +22,16 @@
 	<string>1.0</string>
 	<key>IOKitPersonalities</key>
 	<dict>
-		<key>HardwareMonitorPlugin</key>
+		<key>HardwareMonitor</key>
 		<dict>
+			<key>Fan Names</key>
+			<array>
+				<string>CPU</string>
+				<string>System</string>
+				<string>Fan #3</string>
+				<string>Fan #4</string>
+				<string>Fan #5</string>
+			</array>
 			<key>CFBundleIdentifier</key>
 			<string>org.mozodojo.${PRODUCT_NAME}</string>
 			<key>IOClass</key>

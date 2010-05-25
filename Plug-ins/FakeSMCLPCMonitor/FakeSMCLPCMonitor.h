@@ -3,7 +3,7 @@
 
 #include "fakesmc.h"
 
-#define DebugOn TRUE
+#define DebugOn FALSE
 
 #define LogPrefix "FakeSMCLPCMonitor: "
 #define DebugLog(string, args...)	do { if (DebugOn) { IOLog (LogPrefix "[Debug] " string "\n", ## args); } } while(0)
@@ -119,6 +119,7 @@ UInt8			Revision;
 UInt8			RegisterPort;
 UInt8			ValuePort;
 UInt8			FanIndex[5];
+const char*		FanName[5];
 
 class LPCMonitorPlugin : public IOService
 {
