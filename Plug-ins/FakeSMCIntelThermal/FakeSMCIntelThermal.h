@@ -13,7 +13,7 @@
 #include <i386/proc_reg.h>
 #include <fakesmc.h>
 
-#define DebugOn TRUE
+#define DebugOn FALSE
 
 #define LogPrefix "FakeSMCIntelThermal: "
 #define DebugLog(string, args...)	do { if (DebugOn) { IOLog (LogPrefix "[Debug] " string "\n", ## args); } } while(0)

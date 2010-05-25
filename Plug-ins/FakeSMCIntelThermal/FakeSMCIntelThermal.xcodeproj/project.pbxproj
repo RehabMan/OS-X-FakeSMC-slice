@@ -10,7 +10,6 @@
 		32D94FC60562CBF700B6AF17 /* FakeSMCIntelThermal.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A224C3EFF42367911CA2CB7 /* FakeSMCIntelThermal.h */; };
 		32D94FC80562CBF700B6AF17 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
 		32D94FCA0562CBF700B6AF17 /* FakeSMCIntelThermal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCIntelThermal.cpp */; settings = {ATTRIBUTES = (); }; };
-		AE39535E11A6A78A00A906DC /* license.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AE39535D11A6A78A00A906DC /* license.rtf */; };
 		ED19393211A31AF4001793BC /* fakesmc.h in Headers */ = {isa = PBXBuildFile; fileRef = ED19393111A31AF4001793BC /* fakesmc.h */; };
 		ED5A8F3711A34DF800DB8193 /* cpuid.h in Headers */ = {isa = PBXBuildFile; fileRef = ED5A8F3611A34DF800DB8193 /* cpuid.h */; };
 /* End PBXBuildFile section */
@@ -22,7 +21,6 @@
 		32D94FCF0562CBF700B6AF17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32D94FD00562CBF700B6AF17 /* FakeSMCIntelThermal.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FakeSMCIntelThermal.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DA8362C06AD9B9200E5AC22 /* Kernel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kernel.framework; path = /System/Library/Frameworks/Kernel.framework; sourceTree = "<absolute>"; };
-		AE39535D11A6A78A00A906DC /* license.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = license.rtf; sourceTree = "<group>"; };
 		ED19393111A31AF4001793BC /* fakesmc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fakesmc.h; sourceTree = "<group>"; };
 		ED5A8F3611A34DF800DB8193 /* cpuid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpuid.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -54,7 +52,6 @@
 			children = (
 				32D94FCF0562CBF700B6AF17 /* Info.plist */,
 				089C167DFE841241C02AAC07 /* InfoPlist.strings */,
-				AE39535D11A6A78A00A906DC /* license.rtf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -140,7 +137,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				32D94FC80562CBF700B6AF17 /* InfoPlist.strings in Resources */,
-				AE39535E11A6A78A00A906DC /* license.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
