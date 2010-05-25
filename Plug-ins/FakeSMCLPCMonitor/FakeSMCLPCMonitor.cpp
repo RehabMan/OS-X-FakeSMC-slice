@@ -656,24 +656,21 @@ bool LPCMonitorPlugin::start(IOService * provider)
 	
 	if (!super::start(provider)) return false;
 	
-	OSArray *fanNames = OSDynamicCast(OSArray, getProperty("Fan Names"));
+	OSArray* fanIDs = OSDynamicCast(OSArray, getProperty("Fan Names"));
+	OSString* fanName[5]; 
 
-	if (fanNames) fanNames = OSArray::withArray(fanNames);
+	if (fanIDs) fanIDs = OSArray::withArray(fanIDs);
 	
-    if (fanNames) 
+    if (fanIDs) 
 	{
-		UInt32 count = fanNames ? fanNames->getCount() : 0;
+		UInt32 count = fanIDs->getCount();
 		
 		if(count > 5) count = 5;
 		
-		for (UInt32 i = 0; i < count; i++) 
-		{
-			OSString* name = OSDynamicCast(OSString, fanNames->getObject(i));
-						
-			if (name) FanName[i] = name->getCStringNoCopy();
-		}
+		for (UInt32 i = 0; i < count; i++)
+			fanName[i] = OSDynamicCast(OSString, fanIDs->getObject(i));
 		
-		fanNames->release();
+		fanIDs->release();
     }
 
 	switch (Type)
@@ -720,8 +717,11 @@ bool LPCMonitorPlugin::start(IOService * provider)
 				{
 					char key[5];
 					
-					snprintf(key, 5, "F%dID", fanCount);
-					FakeSMCRegisterKey(key, strlen(FanName[fanCount]), (char*)FanName[fanCount], NULL);
+					if(fanName[fanCount])
+					{
+						snprintf(key, 5, "F%dID", fanCount);
+						FakeSMCRegisterKey(key, fanName[fanCount]->getLength(), (char*)fanName[fanCount]->getCStringNoCopy(), NULL);
+					}
 					
 					value[0] = 0x0;
 					value[1] = 0xa;
@@ -811,9 +811,12 @@ bool LPCMonitorPlugin::start(IOService * provider)
 				{
 					char key[5];
 					
-					snprintf(key, 5, "F%dID", fanCount);
-					FakeSMCRegisterKey(key, strlen(FanName[fanCount]), (char*)FanName[fanCount], NULL);
-				
+					if(fanName[fanCount])
+					{
+						snprintf(key, 5, "F%dID", fanCount);
+						FakeSMCRegisterKey(key, fanName[fanCount]->getLength(), (char*)fanName[fanCount]->getCStringNoCopy(), NULL);
+					}
+					
 					value[0] = 0x0;
 					value[1] = 0xa;
 					snprintf(key, 5, "F%dMn", fanCount);

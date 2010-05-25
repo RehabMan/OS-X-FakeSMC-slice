@@ -119,7 +119,6 @@ UInt8			Revision;
 UInt8			RegisterPort;
 UInt8			ValuePort;
 UInt8			FanIndex[5];
-const char*		FanName[5];
 
 class LPCMonitorPlugin : public IOService
 {
