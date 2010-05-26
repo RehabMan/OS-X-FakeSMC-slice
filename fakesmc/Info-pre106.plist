@@ -69,8 +69,6 @@
 			<false/>
 			<key>smc-compatible</key>
 			<string>smc-napa</string>
-			<key>tjmax</key>
-			<integer>100</integer>
 		</dict>
 	</dict>
 	<key>OSBundleLibraries</key>

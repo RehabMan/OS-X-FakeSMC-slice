@@ -6,6 +6,12 @@
 
 IOACPIPlatformDeviceCh * smcNode;
 
+void FakeSMCAddKey (const char* keyname, uint8_t keylen, char* keydata)
+{
+	smcNode->SMCAddKey(keyname, keylen, keydata, 1);
+	smcNode->FixUpKeysNum();
+}
+
 void FakeSMCRegisterKey (const char* keyname, uint8_t keylen, char* keydata, PluginCallback callback)
 {
 	smcNode->SMCAddKey(keyname, keylen, keydata, 1, callback);

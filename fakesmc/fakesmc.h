@@ -4,6 +4,7 @@
 #include <IOKit/acpi/IOACPIPlatformDevice.h>
 #include <IOACPIPlatformDeviceCh.h>
 
+void FakeSMCAddKey (const char*, uint8_t, char*);
 void FakeSMCRegisterKey (const char*, uint8_t, char*, PluginCallback);
 void FakeSMCUnregisterKey (const char* keyname);
 
