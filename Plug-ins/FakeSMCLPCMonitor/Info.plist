@@ -24,24 +24,24 @@
 	<dict>
 		<key>HardwareMonitor</key>
 		<dict>
-			<key>Fan Names</key>
-			<array>
-				<string>CPU</string>
-				<string>System</string>
-				<string>Fan #3</string>
-				<string>Fan #4</string>
-				<string>Fan #5</string>
-			</array>
 			<key>CFBundleIdentifier</key>
 			<string>org.mozodojo.${PRODUCT_NAME}</string>
 			<key>IOClass</key>
 			<string>LPCMonitorPlugin</string>
 			<key>IOMatchCategory</key>
-			<string>LPCMonitorPlugin</string>
+			<string>org_mozodojo_${PRODUCT_NAME}</string>
 			<key>IOProviderClass</key>
 			<string>IOResources</string>
 			<key>IOResourceMatch</key>
 			<string>IOKit</string>
+			<key>FANs</key>
+			<array>
+				<string>CPU</string>
+				<string>HDD</string>
+				<string></string>
+				<string></string>
+				<string></string>
+			</array>
 		</dict>
 	</dict>
 	<key>OSBundleLibraries</key>

@@ -656,9 +656,9 @@ bool LPCMonitorPlugin::start(IOService * provider)
 	
 	if (!super::start(provider)) return false;
 	
-	OSArray* fanIDs = OSDynamicCast(OSArray, getProperty("Fan Names"));
+	OSArray* fanIDs = OSDynamicCast(OSArray, getProperty("FANs"));
 	OSString* fanName[5]; 
-
+	
 	if (fanIDs) fanIDs = OSArray::withArray(fanIDs);
 	
     if (fanIDs) 
@@ -672,7 +672,7 @@ bool LPCMonitorPlugin::start(IOService * provider)
 		
 		fanIDs->release();
     }
-
+	
 	switch (Type)
 	{
 		case IT87x:
@@ -713,25 +713,22 @@ bool LPCMonitorPlugin::start(IOService * provider)
 			
 			for (int i=0; i<5; i++) 
 			{
-				if (IT87ReadRPM(i) > 0xa)
+				if (fanName[fanCount] && fanName[fanCount]->getLength() > 0)
 				{
 					char key[5];
 					
-					if(fanName[fanCount])
-					{
-						snprintf(key, 5, "F%dID", fanCount);
-						FakeSMCRegisterKey(key, fanName[fanCount]->getLength(), (char*)fanName[fanCount]->getCStringNoCopy(), NULL);
-					}
-					
+					snprintf(key, 5, "F%dID", fanCount);
+					FakeSMCAddKey(key, fanName[fanCount]->getLength(), (char*)fanName[fanCount]->getCStringNoCopy());
+				
 					value[0] = 0x0;
 					value[1] = 0xa;
 					snprintf(key, 5, "F%dMn", fanCount);
-					FakeSMCRegisterKey(key, 2, value, NULL);
+					FakeSMCAddKey(key, 2, value);
 					
 					value[0] = 0xef;
 					value[1] = 0xff;
 					snprintf(key, 5, "F%dMx", fanCount);
-					FakeSMCRegisterKey(key, 2, value, NULL);
+					FakeSMCAddKey(key, 2, value);
 					
 					value[0] = 0x0;
 					value[1] = 0x0;
@@ -743,7 +740,7 @@ bool LPCMonitorPlugin::start(IOService * provider)
 			}
 			
 			value[0] = fanCount;
-			FakeSMCRegisterKey("FNum", 1, value, NULL);
+			FakeSMCAddKey("FNum", 1, value);
 			
 			break;
 		}
@@ -807,25 +804,22 @@ bool LPCMonitorPlugin::start(IOService * provider)
 			
 			for (int i=0; i<5; i++) 
 			{
-				if(WinbondReadRPM(i) > 0)
+				if (fanName[fanCount] && fanName[fanCount]->getLength() > 0)
 				{
 					char key[5];
 					
-					if(fanName[fanCount])
-					{
-						snprintf(key, 5, "F%dID", fanCount);
-						FakeSMCRegisterKey(key, fanName[fanCount]->getLength(), (char*)fanName[fanCount]->getCStringNoCopy(), NULL);
-					}
+					snprintf(key, 5, "F%dID", fanCount);
+					FakeSMCAddKey(key, fanName[fanCount]->getLength(), (char*)fanName[fanCount]->getCStringNoCopy());
 					
 					value[0] = 0x0;
 					value[1] = 0xa;
 					snprintf(key, 5, "F%dMn", fanCount);
-					FakeSMCRegisterKey(key, 2, value, NULL);
+					FakeSMCAddKey(key, 2, value);
 					
 					value[0] = 0xef;
 					value[1] = 0xff;
 					snprintf(key, 5, "F%dMx", fanCount);
-					FakeSMCRegisterKey(key, 2, value, NULL);
+					FakeSMCAddKey(key, 2, value);
 					
 					value[0] = 0x0;
 					value[1] = 0x0;
@@ -837,7 +831,7 @@ bool LPCMonitorPlugin::start(IOService * provider)
 			}
 			
 			value[0] = fanCount;
-			FakeSMCRegisterKey("FNum", 1, value, NULL);
+			FakeSMCAddKey("FNum", 1, value);
 			
 			break;
 		}
