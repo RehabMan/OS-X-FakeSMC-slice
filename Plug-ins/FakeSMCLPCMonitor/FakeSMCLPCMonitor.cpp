@@ -253,7 +253,7 @@ static void Update(const char* key, char* data)
 					UInt16 value = (dec << 14) | (frc << 4);
 					
 					data[0] = (value & 0xff00) >> 8;
-					data[1] = (value & 0x00ff) | 0x3;
+					data[1] = (value & 0x00ff) | 0xb;
 				}
 			}
 			
