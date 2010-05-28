@@ -32,13 +32,7 @@ void FakeSMCAddKeyCallback (const char* keyname, const char* keytype, uint8_t ke
 
 void FakeSMCRemoveKeyCallback (const char* keyname)
 {
-	SMCData node = smcNode->FindSMCKey(keyname);
-	
-	if(node != NULL)
-	{
-		smcNode->SMCAddKey(keyname, node->len, node->data, 1, NULL);
-		smcNode->FixUpKeysNum();
-	}
+	if(SMCData node = smcNode->FindSMCKey(keyname)) node->onkeyread = NULL;
 }
 
 #define super IOService

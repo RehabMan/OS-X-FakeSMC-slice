@@ -72,7 +72,7 @@ void IOACPIPlatformDeviceCh::applesmc_fill_data(struct AppleSMCStatus *s)
         uint32_t key_current = *((uint32_t*)s->key);
 		if(key_data == key_current) {
 //            IOLog("APPLESMC: Key matched (%s Len=%d Data=%s)\n", d->key, d->len, d->data);
-			if(d->onkeyread) (d->onkeyread)(d->key, d->data);	
+			if(d->onkeyread != NULL) (d->onkeyread)(d->key, d->data);	
             memcpy(s->data, d->data, d->len);
             return;
         }
