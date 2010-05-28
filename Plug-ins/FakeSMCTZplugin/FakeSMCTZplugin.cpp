@@ -5,17 +5,16 @@
  *
  */
 #include "FakeSMCTZplugin.h"
+#include "fakesmc.h"
 
 #define kTimeoutMSecs 1000
 static int TZtemp;
 
-static void Update(SMCData node)
+static void Update(const char* key, char* data)
 {	
-	node->data[0] = TZtemp;
-	node->data[1] = 0;
+	data[0] = TZtemp;
+	data[1] = 0;
 }
-
-
 
 #define super IOService
 OSDefineMetaClassAndStructors(TZPlugin, IOService)
@@ -46,7 +45,7 @@ bool TZPlugin::start(IOService * provider)
 		
 		snprintf(key, 5, "TN%dP", i);
 		
-		FakeSMCRegisterKey(key, 0x02, value, &Update);
+		FakeSMCAddKeyCallback(key, "sp78", 0x02, value, &Update);
 						   //OSMemberFunctionCast(PluginCallback, this, &TZPlugin::Update));
 		IOLog("FakeSMC_TZ: %s registered\n", key);
 	}
@@ -62,7 +61,7 @@ bool TZPlugin::start(IOService * provider)
 		
 		snprintf(key, 5, "FN%dP", i);
 		
-		FakeSMCRegisterKey(key, 0x02, value, &Update);
+		FakeSMCAddKeyCallback(key, "sp78", 0x02, value, &Update);
 		IOLog("FakeSMC_TZ: %s registered\n", key);
 	}
 	
@@ -107,13 +106,13 @@ void TZPlugin::stop (IOService* provider)
 	{
 		snprintf(key, 5, "TN%dP", i);
 		
-		FakeSMCUnregisterKey(key);
+		FakeSMCRemoveKeyCallback(key);
 	}
 	
 	for (int i=0; i<FCount; i++) 
 	{
 		snprintf(key, 5, "FN%dP", i);
-		FakeSMCUnregisterKey(key);
+		FakeSMCRemoveKeyCallback(key);
 	}
 	
 	super::stop(provider);
