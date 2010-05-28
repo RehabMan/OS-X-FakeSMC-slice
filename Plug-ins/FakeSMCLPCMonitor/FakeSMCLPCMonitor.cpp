@@ -778,7 +778,7 @@ bool LPCMonitorPlugin::start(IOService * provider)
 					FakeSMCAddKey(key, "ch8*", fanName[i]->getLength(), (char*)fanName[i]->getCStringNoCopy());
 					
 					snprintf(key, 5, "F%dAc", fanCount);
-					FakeSMCAddKeyCallback(key, "fp2e", 2, value, &Update);
+					FakeSMCAddKeyCallback(key, "fpe2", 2, value, &Update);
 					
 					FanIndex[fanCount++] = i;
 				}
@@ -862,7 +862,7 @@ bool LPCMonitorPlugin::start(IOService * provider)
 					FakeSMCAddKey(key, "ch8*", fanName[i]->getLength(), (char*)fanName[i]->getCStringNoCopy());
 					
 					snprintf(key, 5, "F%dAc", fanCount);
-					FakeSMCAddKeyCallback(key, "fp2e", 2, value, &Update);
+					FakeSMCAddKeyCallback(key, "fpe2", 2, value, &Update);
 					
 					FanIndex[fanCount++] = i;
 				}
