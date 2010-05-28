@@ -111,7 +111,14 @@ IOService* IntelThermalMonitorPlugin::probe(IOService *provider, SInt32 *score)
 					break;
 					
 				case 0x17: // Intel Core (45nm)
-					TjMax = 100; break;
+					// Mobile CPU ?
+					if (rdmsr64(0x17) & (1<<28))
+					{
+						TjMax = 105; break;
+					}else
+					{
+						TjMax = 100; break;
+					}
 					
 				case 0x1C: // Intel Atom (45nm)
 					switch (CpuStepping)
