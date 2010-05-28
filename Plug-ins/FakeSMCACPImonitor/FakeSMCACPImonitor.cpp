@@ -19,7 +19,7 @@ static void Update(const char* key, char* data)
 	{
 		UInt8 num = key[1] - 48;
 		
-		value = SMCx[num] * 10; // * 40; //iStat fix=4 ACPI_units=10? // mozo: need to check now with fp2e type, like it should
+		value = SMCx[num] * 10; // * 40; //iStat fix=4 ACPI_units=10? // mozo: need to check now with fpe2 type, like it should
 		
 		data[0] = (value >> 6) & 0xff;
 		data[1] = (value << 2) & 0xff;
@@ -109,7 +109,7 @@ bool ACPImonitor::start(IOService * provider)
 			value[0] = 0x0;
 			value[1] = 0x0;
 			snprintf(key, 5, "F%dAc", i);
-			FakeSMCAddKeyCallback(key, 2, value, &Update);
+			FakeSMCAddKeyCallback(key, "fpe2", 2, value, &Update);
 			IOLog("FakeSMC_ACPI: %s registered\n", key);
 			FCount = i+1;
 		}
