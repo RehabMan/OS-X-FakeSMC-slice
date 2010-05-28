@@ -291,6 +291,52 @@ static void Update(const char* key, char* data)
 				data[1] = 0;
 			}
 			
+			// CPU Vcore
+			if(CompareKeys(key, "VC0C"))
+			{
+				float voltage; 
+				
+				switch (Model) 
+				{
+					case W83627HF:
+					case W83627THF:
+					case W83687THF:
+					{
+						UInt8 vrmConfiguration = WinbondReadByte(0, 0x18);
+						LastVcore = WinbondReadByte(0, WINBOND_VOLTAGE_BASE_REG);
+						
+						if ((vrmConfiguration & 0x01) == 0)
+							voltage = 0.016f * LastVcore; // VRM8 formula
+						else
+							voltage = 0.00488f * LastVcore + 0.69f; // VRM9 formula
+						
+						break;
+					}
+					default:
+					{
+						LastVcore = WinbondReadByte(0, WINBOND_VOLTAGE_BASE_REG);
+						voltage = 0.008f * 2 * LastVcore;
+
+						break;
+					}
+				}
+				
+				UInt16 base = voltage * 1000;
+				UInt16 dec = base / 1000;
+				UInt16 frc = base - (dec * 1000);
+				
+				UInt16 value = (dec << 14) | (frc << 4);
+				
+				data[0] = (value & 0xff00) >> 8;
+				data[1] = (value & 0x00ff) | 0x3;
+			}
+			
+			if(CompareKeys(key, "VC0c"))
+			{
+				data[0] = (LastVcore & 0xff00) >> 8;
+				data[1] = LastVcore & 0x00ff;
+			}
+			
 			// Fans
 			if(CompareKeys(key, "F0Ac") || CompareKeys(key, "F1Ac") || CompareKeys(key, "F2Ac") || CompareKeys(key, "F3Ac") || CompareKeys(key, "F4Ac"))
 			{
@@ -799,6 +845,10 @@ bool LPCMonitorPlugin::start(IOService * provider)
 				}
 			}
 			
+			// CPU Vcore
+			FakeSMCAddKeyCallback("VC0C", "fp2e", 2, value, &Update);
+			FakeSMCAddKeyCallback("VC0c", "ui16", 2, value, &Update);
+			
 			// FANs
 			UInt8 fanCount = 0;
 			
@@ -841,11 +891,11 @@ void LPCMonitorPlugin::stop (IOService* provider)
 	switch (Type)
 	{
 		case IT87x:
-			FakeSMCRemoveKeyCallback("VC0C");
-			FakeSMCRemoveKeyCallback("VC0c");
 		case Winbond:
 			FakeSMCRemoveKeyCallback("Th0H");
 			FakeSMCRemoveKeyCallback("TN0P");
+			FakeSMCRemoveKeyCallback("VC0C");
+			FakeSMCRemoveKeyCallback("VC0c");
 			for (int i=0; i<5; i++) 
 			{
 				char key[5];
