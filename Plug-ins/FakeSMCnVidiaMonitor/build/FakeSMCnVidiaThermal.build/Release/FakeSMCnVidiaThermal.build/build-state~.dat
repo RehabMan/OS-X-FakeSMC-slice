@@ -1,0 +1,270 @@
+TFakeSMCnVidiaThermal
+v7
+r0
+t296759184.051313
+cCheck dependencies
+cProcessInfoPlistFile /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/Release/FakeSMCnVidiaThermal.kext/Contents/Info.plist Info.plist
+cCopyStringsFile /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/Release/FakeSMCnVidiaThermal.kext/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
+cCompileC build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/Objects-normal/x86_64/PTKawainVi.o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+cCompileC build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/Objects-normal/x86_64/FakeSMCnVidiaThermal_info.o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/DerivedSources/FakeSMCnVidiaThermal_info.c normal x86_64 c com.apple.compilers.gcc.4_2
+cCompileC build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/Objects-normal/i386/PTKawainVi.o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp normal i386 c++ com.apple.compilers.gcc.4_2
+cCompileC build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/Objects-normal/i386/FakeSMCnVidiaThermal_info.o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/DerivedSources/FakeSMCnVidiaThermal_info.c normal i386 c com.apple.compilers.gcc.4_2
+cCompileC build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/Objects-normal/ppc/PTKawainVi.o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp normal ppc c++ com.apple.compilers.gcc.4_2
+cCompileC build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/Objects-normal/ppc/FakeSMCnVidiaThermal_info.o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/DerivedSources/FakeSMCnVidiaThermal_info.c normal ppc c com.apple.compilers.gcc.4_2
+
+N/Developer/SDKs/MacOSX10.6.sdk
+c000000004ABBF0FD00000000000000EE
+t1253830909
+s238
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/IOTimerEventSource.h
+c000000004A73D6540000000000002B1D
+t1249105492
+s11037
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/pci/IOPCIDevice.h
+c000000004A73D8C70000000000008708
+t1249106119
+s34568
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/English.lproj/InfoPlist.strings
+c000000004BFF75150000000000000032
+t1275032853
+s50
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp
+c000000004BFFF7FB0000000000001ADC
+t1275066363
+s6876
+i"PTKawainVi.h"
+i"fakesmc.h"
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.h
+c000000004BFFF7AB0000000000000274
+t1275066283
+s628
+i<IOKit/pci/IOPCIDevice.h>
+i<IOKit/IOTimerEventSource.h>
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/DerivedSources/FakeSMCnVidiaThermal_info.c
+c000000004BFFF80E00000000000001AB
+t1275066382
+s427
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/Objects-normal/i386/FakeSMCnVidiaThermal
+t2
+s0
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/Objects-normal/i386/FakeSMCnVidiaThermal.LinkFileList
+c000000004BFFF80E00000000000000A1
+t1275066382
+s161
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/Objects-normal/i386/FakeSMCnVidiaThermal_info.o
+t1275066383
+s3860
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/Objects-normal/i386/PTKawainVi.o
+t2
+s0
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/Objects-normal/ppc/FakeSMCnVidiaThermal
+t2
+s0
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/Objects-normal/ppc/FakeSMCnVidiaThermal.LinkFileList
+c000000004BFFF80E00000000000000A0
+t1275066382
+s160
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/Objects-normal/ppc/FakeSMCnVidiaThermal_info.o
+t1275066383
+s3864
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/Objects-normal/ppc/PTKawainVi.o
+t2
+s0
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/Objects-normal/x86_64/FakeSMCnVidiaThermal
+t2
+s0
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/Objects-normal/x86_64/FakeSMCnVidiaThermal.LinkFileList
+c000000004BFFF80E00000000000000A3
+t1275066382
+s163
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/Objects-normal/x86_64/FakeSMCnVidiaThermal_info.o
+t1275066382
+s4160
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/Objects-normal/x86_64/PTKawainVi.o
+t2
+s0
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/Release/FakeSMCnVidiaThermal.kext
+t2
+s0
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/Release/FakeSMCnVidiaThermal.kext.dSYM
+t2
+s0
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/Release/FakeSMCnVidiaThermal.kext/Contents/Info.plist
+t1275066382
+s1567
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/Release/FakeSMCnVidiaThermal.kext/Contents/MacOS/FakeSMCnVidiaThermal
+t2
+s0
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/Release/FakeSMCnVidiaThermal.kext/Contents/Resources/English.lproj/InfoPlist.strings
+t1275066382
+s96
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/fakesmc.h
+c000000004BFF751500000000000002A9
+t1275032853
+s681
+
+NInfo.plist
+c000000004BFFEEFD0000000000000648
+t1275064061
+s1608
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies296759182#296759182#0(0"0(0#1#0"4324455640#0"0#
+
+CCompileC build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/Objects-normal/i386/FakeSMCnVidiaThermal_info.o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/DerivedSources/FakeSMCnVidiaThermal_info.c normal i386 c com.apple.compilers.gcc.4_2
+s296759183.048429
+e296759183.077835
+r1
+xCompileC
+xbuild/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/Objects-normal/i386/FakeSMCnVidiaThermal_info.o
+x/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/DerivedSources/FakeSMCnVidiaThermal_info.c
+xnormal
+xi386
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@178"Compile /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/DerivedSources/FakeSMCnVidiaThermal_info.c296759183#296759183#0(0"0(0#0#170"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/DerivedSources/FakeSMCnVidiaThermal_info.c4324455640#2154"    cd /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch i386 -fmessage-length=0 -pipe -nostdinc -std=gnu99 -fno-builtin -Wno-trigraphs -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/FakeSMCnVidiaThermal-generated-files.hmap -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/FakeSMCnVidiaThermal-own-target-headers.hmap -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/FakeSMCnVidiaThermal-all-target-headers.hmap -iquote /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/FakeSMCnVidiaThermal-project-headers.hmap -F/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/Release -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/DerivedSources/i386 -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/DerivedSources -c /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/DerivedSources/FakeSMCnVidiaThermal_info.c -o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/Objects-normal/i386/FakeSMCnVidiaThermal_info.o0#
+
+CCompileC build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/Objects-normal/i386/PTKawainVi.o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp normal i386 c++ com.apple.compilers.gcc.4_2
+s296759182.878806
+e296759183.098026
+r0
+xCompileC
+xbuild/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/Objects-normal/i386/PTKawainVi.o
+x/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.gcc.4_2
+o/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp: In function 'void Update(const char*, char*)':
+o/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp:18: error: 'nvio' was not declared in this scope
+o/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp:19: error: 'nvio_base' was not declared in this scope
+o/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp:20: error: 'arch' was not declared in this scope
+o/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp:27: error: 'slope' was not declared in this scope
+o/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp:27: error: 'offset' was not declared in this scope
+lSLF07#2@82"Compile /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp296759182#296759183#0(751"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp: In function 'void Update(const char*, char*)':/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp:18: error: 'nvio' was not declared in this scope/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp:19: error: 'nvio_base' was not declared in this scope/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp:20: error: 'arch' was not declared in this scope/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp:27: error: 'slope' was not declared in this scope/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp:27: error: 'offset' was not declared in this scope5(4@37"'nvio' was not declared in this scope296759183#123#124#0(6@74"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp296759163#18#0#18#0#34"'*' was not declared in this scope0(4@42"'nvio_base' was not declared in this scope296759183#247#129#0(6@74"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp296759163#19#0#19#0#34"'*' was not declared in this scope0(4@37"'arch' was not declared in this scope296759183#376#124#0(6@74"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp296759163#20#0#20#0#34"'*' was not declared in this scope0(4@38"'slope' was not declared in this scope296759183#500#125#0(6@74"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp296759163#27#0#27#0#34"'*' was not declared in this scope0(4@39"'offset' was not declared in this scope296759183#625#126#0(6@74"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp296759163#27#0#27#0#34"'*' was not declared in this scope0(0#0#74"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp4324455640#2085"    cd /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/FakeSMCnVidiaThermal-generated-files.hmap -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/FakeSMCnVidiaThermal-own-target-headers.hmap -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/FakeSMCnVidiaThermal-all-target-headers.hmap -iquote /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/FakeSMCnVidiaThermal-project-headers.hmap -F/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/Release -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/DerivedSources/i386 -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/DerivedSources -c /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp -o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/Objects-normal/i386/PTKawainVi.o1#
+
+CCompileC build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/Objects-normal/ppc/FakeSMCnVidiaThermal_info.o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/DerivedSources/FakeSMCnVidiaThermal_info.c normal ppc c com.apple.compilers.gcc.4_2
+s296759183.098108
+e296759183.881912
+r1
+xCompileC
+xbuild/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/Objects-normal/ppc/FakeSMCnVidiaThermal_info.o
+x/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/DerivedSources/FakeSMCnVidiaThermal_info.c
+xnormal
+xppc
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@178"Compile /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/DerivedSources/FakeSMCnVidiaThermal_info.c296759183#296759183#0(0"0(0#0#170"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/DerivedSources/FakeSMCnVidiaThermal_info.c4324455640#2161"    cd /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch ppc -fmessage-length=0 -pipe -nostdinc -std=gnu99 -fno-builtin -Wno-trigraphs -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -mtune=G5 -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/FakeSMCnVidiaThermal-generated-files.hmap -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/FakeSMCnVidiaThermal-own-target-headers.hmap -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/FakeSMCnVidiaThermal-all-target-headers.hmap -iquote /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/FakeSMCnVidiaThermal-project-headers.hmap -F/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/Release -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/DerivedSources/ppc -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/DerivedSources -c /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/DerivedSources/FakeSMCnVidiaThermal_info.c -o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/Objects-normal/ppc/FakeSMCnVidiaThermal_info.o0#
+
+CCompileC build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/Objects-normal/ppc/PTKawainVi.o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp normal ppc c++ com.apple.compilers.gcc.4_2
+s296759183.077922
+e296759184.051249
+r0
+xCompileC
+xbuild/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/Objects-normal/ppc/PTKawainVi.o
+x/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp
+xnormal
+xppc
+xc++
+xcom.apple.compilers.gcc.4_2
+o/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp: In function 'void Update(const char*, char*)':
+o/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp:18: error: 'nvio' was not declared in this scope
+o/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp:19: error: 'nvio_base' was not declared in this scope
+o/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp:20: error: 'arch' was not declared in this scope
+o/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp:27: error: 'slope' was not declared in this scope
+o/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp:27: error: 'offset' was not declared in this scope
+lSLF07#2@82"Compile /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp296759183#296759184#0(751"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp: In function 'void Update(const char*, char*)':/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp:18: error: 'nvio' was not declared in this scope/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp:19: error: 'nvio_base' was not declared in this scope/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp:20: error: 'arch' was not declared in this scope/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp:27: error: 'slope' was not declared in this scope/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp:27: error: 'offset' was not declared in this scope5(4@37"'nvio' was not declared in this scope296759184#123#124#0(6@74"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp296759163#18#0#18#0#34"'*' was not declared in this scope0(4@42"'nvio_base' was not declared in this scope296759184#247#129#0(6@74"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp296759163#19#0#19#0#34"'*' was not declared in this scope0(4@37"'arch' was not declared in this scope296759184#376#124#0(6@74"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp296759163#20#0#20#0#34"'*' was not declared in this scope0(4@38"'slope' was not declared in this scope296759184#500#125#0(6@74"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp296759163#27#0#27#0#34"'*' was not declared in this scope0(4@39"'offset' was not declared in this scope296759184#625#126#0(6@74"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp296759163#27#0#27#0#34"'*' was not declared in this scope0(0#0#74"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp4324455640#2092"    cd /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch ppc -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -mtune=G5 -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/FakeSMCnVidiaThermal-generated-files.hmap -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/FakeSMCnVidiaThermal-own-target-headers.hmap -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/FakeSMCnVidiaThermal-all-target-headers.hmap -iquote /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/FakeSMCnVidiaThermal-project-headers.hmap -F/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/Release -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/DerivedSources/ppc -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/DerivedSources -c /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp -o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/Objects-normal/ppc/PTKawainVi.o1#
+
+CCompileC build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/Objects-normal/x86_64/FakeSMCnVidiaThermal_info.o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/DerivedSources/FakeSMCnVidiaThermal_info.c normal x86_64 c com.apple.compilers.gcc.4_2
+s296759182.810022
+e296759182.878721
+r1
+xCompileC
+xbuild/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/Objects-normal/x86_64/FakeSMCnVidiaThermal_info.o
+x/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/DerivedSources/FakeSMCnVidiaThermal_info.c
+xnormal
+xx86_64
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@178"Compile /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/DerivedSources/FakeSMCnVidiaThermal_info.c296759182#296759182#0(0"0(0#0#170"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/DerivedSources/FakeSMCnVidiaThermal_info.c4324455640#2160"    cd /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -nostdinc -std=gnu99 -fno-builtin -Wno-trigraphs -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/FakeSMCnVidiaThermal-generated-files.hmap -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/FakeSMCnVidiaThermal-own-target-headers.hmap -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/FakeSMCnVidiaThermal-all-target-headers.hmap -iquote /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/FakeSMCnVidiaThermal-project-headers.hmap -F/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/Release -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/DerivedSources/x86_64 -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/DerivedSources -c /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/DerivedSources/FakeSMCnVidiaThermal_info.c -o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/Objects-normal/x86_64/FakeSMCnVidiaThermal_info.o0#
+
+CCompileC build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/Objects-normal/x86_64/PTKawainVi.o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+s296759182.809249
+e296759183.048347
+r0
+xCompileC
+xbuild/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/Objects-normal/x86_64/PTKawainVi.o
+x/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.gcc.4_2
+o/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp: In function 'void Update(const char*, char*)':
+o/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp:18: error: 'nvio' was not declared in this scope
+o/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp:19: error: 'nvio_base' was not declared in this scope
+o/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp:20: error: 'arch' was not declared in this scope
+o/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp:27: error: 'slope' was not declared in this scope
+o/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp:27: error: 'offset' was not declared in this scope
+lSLF07#2@82"Compile /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp296759182#296759183#0(751"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp: In function 'void Update(const char*, char*)':/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp:18: error: 'nvio' was not declared in this scope/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp:19: error: 'nvio_base' was not declared in this scope/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp:20: error: 'arch' was not declared in this scope/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp:27: error: 'slope' was not declared in this scope/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp:27: error: 'offset' was not declared in this scope5(4@37"'nvio' was not declared in this scope296759183#123#124#0(6@74"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp296759163#18#0#18#0#34"'*' was not declared in this scope0(4@42"'nvio_base' was not declared in this scope296759183#247#129#0(6@74"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp296759163#19#0#19#0#34"'*' was not declared in this scope0(4@37"'arch' was not declared in this scope296759183#376#124#0(6@74"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp296759163#20#0#20#0#34"'*' was not declared in this scope0(4@38"'slope' was not declared in this scope296759183#500#125#0(6@74"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp296759163#27#0#27#0#34"'*' was not declared in this scope0(4@39"'offset' was not declared in this scope296759183#625#126#0(6@74"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp296759163#27#0#27#0#34"'*' was not declared in this scope0(0#0#74"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp4324455640#2091"    cd /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/FakeSMCnVidiaThermal-generated-files.hmap -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/FakeSMCnVidiaThermal-own-target-headers.hmap -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/FakeSMCnVidiaThermal-all-target-headers.hmap -iquote /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/FakeSMCnVidiaThermal-project-headers.hmap -F/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/Release -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/DerivedSources/x86_64 -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/DerivedSources -c /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/PTKawainVi.cpp -o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/Objects-normal/x86_64/PTKawainVi.o1#
+
+CCopyStringsFile /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/Release/FakeSMCnVidiaThermal.kext/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
+s296759182.777537
+e296759182.809165
+r1
+xCopyStringsFile
+x/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/Release/FakeSMCnVidiaThermal.kext/Contents/Resources/English.lproj/InfoPlist.strings
+xEnglish.lproj/InfoPlist.strings
+lSLF07#2@36"Copy English.lproj/InfoPlist.strings296759182#296759182#0(0"0(0#0#91"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/English.lproj/InfoPlist.strings4324455640#423"    cd /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal    setenv ICONV /usr/bin/iconv    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings --validate --inputencoding utf-8 --outputencoding UTF-16 English.lproj/InfoPlist.strings --outdir /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/Release/FakeSMCnVidiaThermal.kext/Contents/Resources/English.lproj0#
+
+CCreateUniversalBinary /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/Release/FakeSMCnVidiaThermal.kext/Contents/MacOS/FakeSMCnVidiaThermal normal "x86_64 i386 ppc"
+r0
+
+CGenerateDSYMFile /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/Release/FakeSMCnVidiaThermal.kext.dSYM /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/Release/FakeSMCnVidiaThermal.kext/Contents/MacOS/FakeSMCnVidiaThermal
+r0
+
+CLd /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/Objects-normal/i386/FakeSMCnVidiaThermal normal i386
+r0
+
+CLd /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/Objects-normal/ppc/FakeSMCnVidiaThermal normal ppc
+r0
+
+CLd /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/FakeSMCnVidiaThermal.build/Release/FakeSMCnVidiaThermal.build/Objects-normal/x86_64/FakeSMCnVidiaThermal normal x86_64
+r0
+
+CProcessInfoPlistFile /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/Release/FakeSMCnVidiaThermal.kext/Contents/Info.plist Info.plist
+s296759182.773111
+e296759182.777480
+r1
+xProcessInfoPlistFile
+x/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/Release/FakeSMCnVidiaThermal.kext/Contents/Info.plist
+xInfo.plist
+lSLF07#2@18"Process Info.plist296759182#296759182#0(0"0(0#0#70"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/Info.plist4324455640#268"    cd /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal    builtin-infoPlistUtility Info.plist -expandbuildsettings -platform macosx -o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/Release/FakeSMCnVidiaThermal.kext/Contents/Info.plist0#
+
+CTouch /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCnVidiaThermal/build/Release/FakeSMCnVidiaThermal.kext
+r0
+
