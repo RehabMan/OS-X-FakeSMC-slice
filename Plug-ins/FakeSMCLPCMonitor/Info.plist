@@ -37,10 +37,10 @@
 			<key>FANs</key>
 			<array>
 				<string>CPU</string>
-				<string>CASING</string>
-				<string>INTAKE</string>
 				<string>EXHAUST</string>
-				<string>PS</string>
+				<string></string>
+				<string></string>
+				<string></string>
 			</array>
 		</dict>
 	</dict>

@@ -248,21 +248,24 @@ static void Update(const char* key, char* data)
 			// CPU Vcore
 			if(CompareKeys(key, "VC0C"))
 			{
-				UInt16 value = IT87ReadByte(ITE_VOLTAGE_BASE_REG + 0, valid);
-				
+				UInt16 value = IT87ReadByte(ITE_VOLTAGE_BASE_REG + 0, valid) << 4;
+						
 				if (valid)
 				{
-					value <<= 4;
+					UInt16 dec = value / 1000;
+					UInt16 frc = value - (dec * 1000);
 					
-					data[0] = (value >> 4) & 0xff;
-					data[1] = ((value << 4) & 0xff) | 0x3;
+					value = (dec << 14) | (frc << 4);
+					
+					data[0] = (value & 0xff00) >> 8;
+					data[1] = (value & 0x00ff) | 0x3;
 				}
 			}
 			
 			// FANs
 			if(CompareKeys(key, "F0Ac") || CompareKeys(key, "F1Ac") || CompareKeys(key, "F2Ac") || CompareKeys(key, "F3Ac") || CompareKeys(key, "F4Ac"))
 			{
-				short value = IT87ReadRPM(key[1] - 48);
+				short value = IT87ReadRPM(FanIndex[key[1] - 48]);
 																	
 				data[0] = (value >> 6) & 0xff;
 				data[1] = (value << 2) & 0xff;
@@ -290,7 +293,7 @@ static void Update(const char* key, char* data)
 			// Fans
 			if(CompareKeys(key, "F0Ac") || CompareKeys(key, "F1Ac") || CompareKeys(key, "F2Ac") || CompareKeys(key, "F3Ac") || CompareKeys(key, "F4Ac"))
 			{
-				UInt16 value = WinbondReadRPM(key[1] - 48);
+				UInt16 value = WinbondReadRPM(FanIndex[key[1] - 48]);
 				
 				data[0] = (value >> 6) & 0xff;
 				data[1] = (value << 2) & 0xff;
@@ -680,6 +683,7 @@ bool LPCMonitorPlugin::start(IOService * provider)
 	{
 		case IT87x:
 		case Winbond:
+			UInt8 fanCount = 0;
 			char value[2];
 			
 			for (int i=0; i<5; i++) 
@@ -688,27 +692,17 @@ bool LPCMonitorPlugin::start(IOService * provider)
 				
 				if (fanName[i] && fanName[i]->getLength() > 0)
 				{	
-					snprintf(key, 5, "F%dID", i);
+					snprintf(key, 5, "F%dID", fanCount);
 					FakeSMCAddKey(key, "ch8*", fanName[i]->getLength(), (char*)fanName[i]->getCStringNoCopy());
+					
+					snprintf(key, 5, "F%dAc", fanCount);
+					FakeSMCAddKeyCallback(key, "fp2e", 2, value, &Update);
+					
+					FanIndex[fanCount++] = i;
 				}
-				
-				value[0] = ((UInt16)100 >> 6) & 0xff;
-				value[1] = ((UInt16)100 << 2) & 0xff;
-				snprintf(key, 5, "F%dMn", i);
-				FakeSMCAddKey(key, "fpe2", 2, value);
-				
-				value[0] = (6000 >> 6) & 0xff;
-				value[1] = (6000 << 2) & 0xff;
-				snprintf(key, 5, "F%dMx", i);
-				FakeSMCAddKey(key, "fpe2", 2, value);
-				
-				value[0] = 0x0;
-				value[1] = 0x0;
-				snprintf(key, 5, "F%dAc", i);
-				FakeSMCAddKeyCallback(key, "fp2e", 2, value, &Update);
 			}
 			
-			value[0] = 5;
+			value[0] = fanCount;
 			FakeSMCAddKey("FNum", 1, value);
 			
 			break;
