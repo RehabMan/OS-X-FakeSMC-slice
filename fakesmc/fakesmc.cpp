@@ -47,7 +47,7 @@ bool FakeSMC::init (OSDictionary *dict)
 
 bool FakeSMC::start (IOService *provider)
 {
-	IOLog ("FakeSMC: Opensource SMC device emulator by netkas (C) 2009\nFakeSMC: Monitoring plugins support by mozodojo (C) 2010\n");
+	IOLog ("FakeSMC: Opensource SMC device emulator by netkas (C) 2009\nFakeSMC: Monitoring plugins support by mozodojo (C) 2010\nFakeSMC: Original idea of plugins and code sumple by гык-sse2 (C) 2010\n");
 	bool res = super::start (provider);
 	bool ret=false;
 	OSArray *        controllers;
