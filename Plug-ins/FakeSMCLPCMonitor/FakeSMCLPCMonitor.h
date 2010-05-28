@@ -83,6 +83,8 @@ const unsigned char ITE_FAN_TACHOMETER_REG[] = { 0x0d, 0x0e, 0x0f, 0x80, 0x82 };
 const unsigned char ITE_FAN_TACHOMETER_EXT_REG[] = { 0x18, 0x19, 0x1a, 0x81, 0x83 };
 const unsigned char ITE_VOLTAGE_BASE_REG = 0x20;
 
+const float ITE_VOLTAGE_GAIN[] = {1, 1, 1, (6.8f / 10 + 1), 1, 1, 1, 1, 1 };
+
 // Winbond 
 UInt16 WINBOND_VENDOR_ID = 0x5CA3;
 UInt8 WINBOND_HIGH_BYTE = 0x80;
@@ -118,7 +120,6 @@ UInt16			Address;
 UInt8			Revision;
 UInt8			RegisterPort;
 UInt8			ValuePort;
-UInt8			FanIndex[5];
 
 class LPCMonitorPlugin : public IOService
 {

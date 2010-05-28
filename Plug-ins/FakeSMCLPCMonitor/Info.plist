@@ -17,19 +17,19 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.0</string>
+	<string>1.1</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>1.1</string>
 	<key>IOKitPersonalities</key>
 	<dict>
-		<key>HardwareMonitor</key>
+		<key>LPCMonitorPlugin</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
 			<string>org.mozodojo.${PRODUCT_NAME}</string>
 			<key>IOClass</key>
 			<string>LPCMonitorPlugin</string>
 			<key>IOMatchCategory</key>
-			<string>org_mozodojo_${PRODUCT_NAME}</string>
+			<string>LPCMonitorPlugin</string>
 			<key>IOProviderClass</key>
 			<string>IOResources</string>
 			<key>IOResourceMatch</key>
@@ -37,10 +37,10 @@
 			<key>FANs</key>
 			<array>
 				<string>CPU</string>
-				<string>HDD</string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>CASING</string>
+				<string>INTAKE</string>
+				<string>EXHAUST</string>
+				<string>PS</string>
 			</array>
 		</dict>
 	</dict>
@@ -53,9 +53,9 @@
 		<key>com.apple.kpi.unsupported</key>
 		<string>9.0</string>
 		<key>org.netkas.fakesmc</key>
-		<string>2.6.0</string>
+		<string>2.6.1</string>
 	</dict>
 	<key>OSBundleCompatibleVersion</key>
-	<string>1.0.0</string>
+	<string>1.1</string>
 </dict>
 </plist>

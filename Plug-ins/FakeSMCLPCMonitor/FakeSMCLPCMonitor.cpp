@@ -213,12 +213,7 @@ void SMSCExit()
 	outb(RegisterPort, 0xAA);
 }
 
-bool CompareKeys(const char* key1, const char* key2)
-{
-	return ((key1[0] == key2[0]) && (key1[1] == key2[1]) && (key1[2] == key2[2]) && (key1[3] == key2[3]));
-}
-
-static void Update(SMCData node)
+static void Update(const char* key, char* data)
 {
 	switch (Type)
 	{
@@ -227,39 +222,50 @@ static void Update(SMCData node)
 			bool* valid;
 			 	
 			// Heatsink
-			if(CompareKeys(node->key, "Th0H"))
+			if(CompareKeys(key, "Th0H"))
 			{
 				char value = IT87ReadByte(ITE_TEMPERATURE_BASE_REG + 1, valid);
 				
 				if(valid)
 				{
-					node->data[0] = value;
-					node->data[1] = 0;
+					data[0] = value;
+					data[1] = 0;
 				}
 			}
 			
 			// Northbridge
-			if(CompareKeys(node->key, "TN0P"))
+			if(CompareKeys(key, "TN0P"))
 			{
 				char value = IT87ReadByte(ITE_TEMPERATURE_BASE_REG, valid);
 				
 				if(valid)
 				{
-					node->data[0] = value;
-					node->data[1] = 0;
+					data[0] = value;
+					data[1] = 0;
+				}
+			}
+			
+			// CPU Vcore
+			if(CompareKeys(key, "VC0C"))
+			{
+				UInt16 value = IT87ReadByte(ITE_VOLTAGE_BASE_REG + 0, valid);
+				
+				if (valid)
+				{
+					value <<= 4;
+					
+					data[0] = (value >> 4) & 0xff;
+					data[1] = ((value << 4) & 0xff) | 0x3;
 				}
 			}
 			
 			// FANs
-			if(CompareKeys(node->key, "F0Ac") || CompareKeys(node->key, "F1Ac") || CompareKeys(node->key, "F2Ac") || CompareKeys(node->key, "F3Ac") || CompareKeys(node->key, "F4Ac"))
+			if(CompareKeys(key, "F0Ac") || CompareKeys(key, "F1Ac") || CompareKeys(key, "F2Ac") || CompareKeys(key, "F3Ac") || CompareKeys(key, "F4Ac"))
 			{
-				short value = IT87ReadRPM(FanIndex[node->key[1] - 48]);
-												
-				// iStat (mac os?) fix
-				value *= 4;
-						
-				node->data[0] = value >> 8;
-				node->data[1] = value & 0xff;
+				short value = IT87ReadRPM(key[1] - 48);
+																	
+				data[0] = (value >> 6) & 0xff;
+				data[1] = (value << 2) & 0xff;
 			}
 			
 			break;
@@ -268,30 +274,26 @@ static void Update(SMCData node)
 		case Winbond:
 		{
 			// Heatsink
-			if(CompareKeys(node->key, "Th0H"))
+			if(CompareKeys(key, "Th0H"))
 			{
-				node->data[0] = WinbondReadTemperature(0);
-				node->data[1] = 0;
+				data[0] = WinbondReadTemperature(0);
+				data[1] = 0;
 			}
 			
 			// Northbridge
-			if(CompareKeys(node->key, "TN0P"))
+			if(CompareKeys(key, "TN0P"))
 			{
-				node->data[0] = WinbondReadTemperature(2);
-				node->data[1] = 0;
+				data[0] = WinbondReadTemperature(2);
+				data[1] = 0;
 			}
 			
 			// Fans
-			
-			if(CompareKeys(node->key, "F0Ac") || CompareKeys(node->key, "F1Ac") || CompareKeys(node->key, "F2Ac") || CompareKeys(node->key, "F3Ac") || CompareKeys(node->key, "F4Ac"))
+			if(CompareKeys(key, "F0Ac") || CompareKeys(key, "F1Ac") || CompareKeys(key, "F2Ac") || CompareKeys(key, "F3Ac") || CompareKeys(key, "F4Ac"))
 			{
-				UInt16 value = WinbondReadRPM(FanIndex[node->key[1] - 48]);
+				UInt16 value = WinbondReadRPM(key[1] - 48);
 				
-				// iStat (mac os?) fix
-				value *= 4;
-				
-				node->data[0] = value >> 8;
-				node->data[1] = value & 0xff;
+				data[0] = (value >> 6) & 0xff;
+				data[1] = (value << 2) & 0xff;
 			}
 			
 			break;
@@ -673,6 +675,46 @@ bool LPCMonitorPlugin::start(IOService * provider)
 		fanIDs->release();
     }
 	
+	// Fans
+	switch (Type)
+	{
+		case IT87x:
+		case Winbond:
+			char value[2];
+			
+			for (int i=0; i<5; i++) 
+			{
+				char key[5];
+				
+				if (fanName[i] && fanName[i]->getLength() > 0)
+				{	
+					snprintf(key, 5, "F%dID", i);
+					FakeSMCAddKey(key, "ch8*", fanName[i]->getLength(), (char*)fanName[i]->getCStringNoCopy());
+				}
+				
+				value[0] = ((UInt16)100 >> 6) & 0xff;
+				value[1] = ((UInt16)100 << 2) & 0xff;
+				snprintf(key, 5, "F%dMn", i);
+				FakeSMCAddKey(key, "fpe2", 2, value);
+				
+				value[0] = (6000 >> 6) & 0xff;
+				value[1] = (6000 << 2) & 0xff;
+				snprintf(key, 5, "F%dMx", i);
+				FakeSMCAddKey(key, "fpe2", 2, value);
+				
+				value[0] = 0x0;
+				value[1] = 0x0;
+				snprintf(key, 5, "F%dAc", i);
+				FakeSMCAddKeyCallback(key, "fp2e", 2, value, &Update);
+			}
+			
+			value[0] = 5;
+			FakeSMCAddKey("FNum", 1, value);
+			
+			break;
+	}
+	
+	// Other sensors
 	switch (Type)
 	{
 		case IT87x:
@@ -703,44 +745,13 @@ bool LPCMonitorPlugin::start(IOService * provider)
 			char value[2];
 			
 			// Heatsink
-			FakeSMCRegisterKey("Th0H", 2, value, &Update);
+			FakeSMCAddKeyCallback("Th0H", "sp78", 2, value, &Update);
 			
 			// Northbridge
-			FakeSMCRegisterKey("TN0P", 2, value, &Update);
+			FakeSMCAddKeyCallback("TN0P", "sp78", 2, value, &Update);
 			
-			// Fans
-			UInt8 fanCount = 0;
-			
-			for (int i=0; i<5; i++) 
-			{
-				if (fanName[fanCount] && fanName[fanCount]->getLength() > 0)
-				{
-					char key[5];
-					
-					snprintf(key, 5, "F%dID", fanCount);
-					FakeSMCAddKey(key, fanName[fanCount]->getLength(), (char*)fanName[fanCount]->getCStringNoCopy());
-				
-					value[0] = 0x0;
-					value[1] = 0xa;
-					snprintf(key, 5, "F%dMn", fanCount);
-					FakeSMCAddKey(key, 2, value);
-					
-					value[0] = 0xef;
-					value[1] = 0xff;
-					snprintf(key, 5, "F%dMx", fanCount);
-					FakeSMCAddKey(key, 2, value);
-					
-					value[0] = 0x0;
-					value[1] = 0x0;
-					snprintf(key, 5, "F%dAc", fanCount);
-					FakeSMCRegisterKey(key, 2, value, &Update);
-					
-					FanIndex[fanCount++] = i;
-				}
-			}
-			
-			value[0] = fanCount;
-			FakeSMCAddKey("FNum", 1, value);
+			// CPU Vcore
+			FakeSMCAddKeyCallback("VC0C", "fp2e", 2, value, &Update);
 			
 			break;
 		}
@@ -758,14 +769,14 @@ bool LPCMonitorPlugin::start(IOService * provider)
 					UInt8 flag = WinbondReadByte(0, WINBOND_TEMPERATURE_SOURCE_SELECT_REG);
 					
 					// Heatsink
-					if ((flag & 0x04) == 0)	FakeSMCRegisterKey("Th0H", 2, value, &Update);
+					if ((flag & 0x04) == 0)	FakeSMCAddKeyCallback("Th0H", "sp78", 2, value, &Update);
 					
 					/*if ((flag & 0x40) == 0)
 						list.Add(new Sensor(TEMPERATURE_NAME[1], 1, null,
 											SensorType.Temperature, this, parameter));*/
 					
 					// Northbridge
-					FakeSMCRegisterKey("TN0P", 2, value, &Update);
+					FakeSMCAddKeyCallback("TN0P", "sp78", 2, value, &Update);
 					
 					break;
 				}
@@ -777,14 +788,14 @@ bool LPCMonitorPlugin::start(IOService * provider)
 					UInt8 sel = WinbondReadByte(0, WINBOND_TEMPERATURE_SOURCE_SELECT_REG);
 					
 					// Heatsink
-					if ((sel & 0x07) == 0) FakeSMCRegisterKey("Th0H", 2, value, &Update);
+					if ((sel & 0x07) == 0) FakeSMCAddKeyCallback("Th0H", "sp78", 2, value, &Update);
 					
 					/*if ((sel & 0x70) == 0)
 						list.Add(new Sensor(TEMPERATURE_NAME[1], 1, null,
 											SensorType.Temperature, this, parameter));*/
 					
 					// Northbridge
-					FakeSMCRegisterKey("TN0P", 2, value, &Update);
+					FakeSMCAddKeyCallback("TN0P", "sp78", 2, value, &Update);
 					
 					break;
 				}
@@ -793,45 +804,12 @@ bool LPCMonitorPlugin::start(IOService * provider)
 				{
 					// no PECI support, add all sensors
 					// Heatsink
-					FakeSMCRegisterKey("Th0H", 2, value, &Update);
+					FakeSMCAddKeyCallback("Th0H", "sp78", 2, value, &Update);
 					// Northbridge
-					FakeSMCRegisterKey("TN0P", 2, value, &Update);
+					FakeSMCAddKeyCallback("TN0P", "sp78", 2, value, &Update);
 				  break;
 				}
 			}
-			
-			UInt8 fanCount = 0;
-			
-			for (int i=0; i<5; i++) 
-			{
-				if (fanName[fanCount] && fanName[fanCount]->getLength() > 0)
-				{
-					char key[5];
-					
-					snprintf(key, 5, "F%dID", fanCount);
-					FakeSMCAddKey(key, fanName[fanCount]->getLength(), (char*)fanName[fanCount]->getCStringNoCopy());
-					
-					value[0] = 0x0;
-					value[1] = 0xa;
-					snprintf(key, 5, "F%dMn", fanCount);
-					FakeSMCAddKey(key, 2, value);
-					
-					value[0] = 0xef;
-					value[1] = 0xff;
-					snprintf(key, 5, "F%dMx", fanCount);
-					FakeSMCAddKey(key, 2, value);
-					
-					value[0] = 0x0;
-					value[1] = 0x0;
-					snprintf(key, 5, "F%dAc", fanCount);
-					FakeSMCRegisterKey(key, 2, value, &Update);
-					
-					FanIndex[fanCount++] = i;
-				}
-			}
-			
-			value[0] = fanCount;
-			FakeSMCAddKey("FNum", 1, value);
 			
 			break;
 		}
@@ -853,14 +831,15 @@ void LPCMonitorPlugin::stop (IOService* provider)
 	switch (Type)
 	{
 		case IT87x:
+			FakeSMCRemoveKeyCallback("VC0C");
 		case Winbond:
-			FakeSMCUnregisterKey("Th0H");
-			FakeSMCUnregisterKey("TN0P");
+			FakeSMCRemoveKeyCallback("Th0H");
+			FakeSMCRemoveKeyCallback("TN0P");
 			for (int i=0; i<5; i++) 
 			{
 				char key[5];
 				snprintf(key, 5, "F%dAc", i);
-				FakeSMCUnregisterKey(key);
+				FakeSMCRemoveKeyCallback(key);
 			}
 			break;
 		case Fintek:

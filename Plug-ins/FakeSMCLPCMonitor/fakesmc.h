@@ -7,19 +7,15 @@
  *
  */
 
-struct AppleSMCData;
-
-typedef struct AppleSMCData* SMCData;
-typedef void (*PluginCallback)(SMCData);
-
-struct AppleSMCData {
-	uint8_t len;
-	char *key;
-	char *data;
-	PluginCallback callback;
-	SMCData next;
-};
+typedef void (*OnKeyReadCallback)(const char*, char*);
 
 void FakeSMCAddKey (const char*, uint8_t, char*);
-void FakeSMCRegisterKey (const char*, uint8_t, char*, PluginCallback);
-void FakeSMCUnregisterKey (const char* keyname);
+void FakeSMCAddKey (const char*, const char*, uint8_t, char*);
+void FakeSMCAddKeyCallback (const char*, uint8_t, char*, OnKeyReadCallback);
+void FakeSMCAddKeyCallback (const char*, const char*, uint8_t, char*, OnKeyReadCallback);
+void FakeSMCRemoveKeyCallback (const char*);
+
+bool CompareKeys(const char* key1, const char* key2)
+{
+	return ((key1[0] == key2[0]) && (key1[1] == key2[1]) && (key1[2] == key2[2]) && (key1[3] == key2[3]));
+}
