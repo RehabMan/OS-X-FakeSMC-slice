@@ -36,8 +36,8 @@
 			<string>IOKit</string>
 			<key>FANs</key>
 			<array>
-				<string>CPU</string>
-				<string>EXHAUST</string>
+				<string></string>
+				<string></string>
 				<string></string>
 				<string></string>
 				<string></string>
