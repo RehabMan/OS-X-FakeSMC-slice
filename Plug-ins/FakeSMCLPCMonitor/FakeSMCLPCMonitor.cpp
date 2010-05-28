@@ -130,7 +130,7 @@ short WinbondReadTemperature(UInt8 index)
 	if (WINBOND_TEMPERATURE_BANK[index] > 0) 
 		value |= WinbondReadByte(WINBOND_TEMPERATURE_BANK[index], (UInt8)(WINBOND_TEMPERATURE_REG[index] + 1)) >> 7;
 	
-	float temperature = value / 2.0f;
+	float temperature = (float)value / 2.0f;
 	
 	return temperature;
 }
@@ -315,7 +315,7 @@ static void Update(const char* key, char* data)
 					default:
 					{
 						LastVcore = WinbondReadByte(0, WINBOND_VOLTAGE_BASE_REG);
-						voltage = 0.008f * 2 * LastVcore;
+						voltage = 0.008f * LastVcore;
 
 						break;
 					}
