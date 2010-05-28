@@ -41,7 +41,7 @@
 	<key>OSBundleLibraries</key>
 	<dict>
 		<key>org.netkas.fakesmc</key>
-		<string>2.6.0</string>
+		<string>2.6.1</string>
 		<key>com.apple.iokit.IOACPIFamily</key>
 		<string>1.2</string>
 		<key>com.apple.kpi.bsd</key>

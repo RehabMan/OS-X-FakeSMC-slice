@@ -5,81 +5,77 @@
  *
  */
 #include "FakeSMCACPImonitor.h"
+#include "fakesmc.h"
 
 #define kTimeoutMSecs 1000
 //static int TZFan[5];
 static int SMCx[30];
 
-bool CompareKeys(const char* key1, const char* key2)
-{
-	return ((key1[0] == key2[0]) && (key1[1] == key2[1]) && (key1[2] == key2[2]) && (key1[3] == key2[3]));
-}
-
-static void Update(SMCData node)
+static void Update(const char* key, char* data)
 {	
 	short value;
 	// FANs
-	if(CompareKeys(node->key, "F0Ac") || CompareKeys(node->key, "F1Ac") || CompareKeys(node->key, "F2Ac") || CompareKeys(node->key, "F3Ac") || CompareKeys(node->key, "F4Ac") || CompareKeys(node->key, "F5Ac"))
+	if(CompareKeys(key, "F0Ac") || CompareKeys(key, "F1Ac") || CompareKeys(key, "F2Ac") || CompareKeys(key, "F3Ac") || CompareKeys(key, "F4Ac") || CompareKeys(key, "F5Ac"))
 	{
-		UInt8 num = node->key[1] - 48;
+		UInt8 num = key[1] - 48;
 		
-		value = SMCx[num] * 40; //iStat fix=4 ACPI_units=10?
+		value = SMCx[num] * 10; // * 40; //iStat fix=4 ACPI_units=10? // mozo: need to check now with fp2e type, like it should
 		
-		node->data[0] = value>>8;
-		node->data[1] = value & 0xff;;
+		data[0] = (value >> 6) & 0xff;
+		data[1] = (value << 2) & 0xff;
 	} else
 	//Temp
-		if(CompareKeys(node->key, "TC0H"))
+		if(CompareKeys(key, "TC0H"))
 	{
-		node->data[0] = SMCx[10];
-		node->data[1] = 0;
-	} else if (CompareKeys(node->key, "TN0H")) {
-		node->data[0] = SMCx[11];
-		node->data[1] = 0;
+		data[0] = SMCx[10];
+		data[1] = 0;
+	} else if (CompareKeys(key, "TN0H")) {
+		data[0] = SMCx[11];
+		data[1] = 0;
 		
-	} else if (CompareKeys(node->key, "TW0P")) {
-		node->data[0] = SMCx[12];
-		node->data[1] = 0;
-	} else if (CompareKeys(node->key, "Th0H")) {
-		node->data[0] = SMCx[13];
-		node->data[1] = 0;
-	} else if (CompareKeys(node->key, "Th1H")) {
-		node->data[0] = SMCx[14];
-		node->data[1] = 0;
+	} else if (CompareKeys(key, "TW0P")) {
+		data[0] = SMCx[12];
+		data[1] = 0;
+	} else if (CompareKeys(key, "Th0H")) {
+		data[0] = SMCx[13];
+		data[1] = 0;
+	} else if (CompareKeys(key, "Th1H")) {
+		data[0] = SMCx[14];
+		data[1] = 0;
 	} else 
 		//Voltage
-		if(CompareKeys(node->key, "VCAC")) {
-			node->data[0] = SMCx[20];
-			node->data[1] = 0;			
-		} else if (CompareKeys(node->key, "Vp0C")) {
-			node->data[0] = SMCx[21];
-			node->data[1] = 0;
-		} else if (CompareKeys(node->key, "Vp1C")) {
-			node->data[0] = SMCx[22];
-			node->data[1] = 0;
-		} else if (CompareKeys(node->key, "Vp2C")) {
-			node->data[0] = SMCx[23];
-			node->data[1] = 0;
+		if(CompareKeys(key, "VCAC")) {
+			data[0] = SMCx[20];
+			data[1] = 0;			
+		} else if (CompareKeys(key, "Vp0C")) {
+			data[0] = SMCx[21];
+			data[1] = 0;
+		} else if (CompareKeys(key, "Vp1C")) {
+			data[0] = SMCx[22];
+			data[1] = 0;
+		} else if (CompareKeys(key, "Vp2C")) {
+			data[0] = SMCx[23];
+			data[1] = 0;
 			// Amperage
-		} else if (CompareKeys(node->key, "ICAC")) {
-			node->data[0] = SMCx[24];
-			node->data[1] = 0;
-		} else if (CompareKeys(node->key, "Ip0C")) {
-			node->data[0] = SMCx[25];
-			node->data[1] = 0;
-		} else if (CompareKeys(node->key, "Ip1C")) {
-			node->data[0] = SMCx[26];
-			node->data[1] = 0;
-		} else if (CompareKeys(node->key, "Ip2C")) {
-			node->data[0] = SMCx[27];
-			node->data[1] = 0;
+		} else if (CompareKeys(key, "ICAC")) {
+			data[0] = SMCx[24];
+			data[1] = 0;
+		} else if (CompareKeys(key, "Ip0C")) {
+			data[0] = SMCx[25];
+			data[1] = 0;
+		} else if (CompareKeys(key, "Ip1C")) {
+			data[0] = SMCx[26];
+			data[1] = 0;
+		} else if (CompareKeys(key, "Ip2C")) {
+			data[0] = SMCx[27];
+			data[1] = 0;
 			//Power
-		} else if (CompareKeys(node->key, "PC0C")) {
-			node->data[0] = SMCx[28];
-			node->data[1] = 0;
-		} else if (CompareKeys(node->key, "PC1C")) {
-			node->data[0] = SMCx[29];
-			node->data[1] = 0;
+		} else if (CompareKeys(key, "PC0C")) {
+			data[0] = SMCx[28];
+			data[1] = 0;
+		} else if (CompareKeys(key, "PC1C")) {
+			data[0] = SMCx[29];
+			data[1] = 0;
 		}			
 }
 
@@ -111,56 +107,46 @@ bool ACPImonitor::start(IOService * provider)
 		snprintf(key, 5, "SMC%d", i);
 		if (kIOReturnSuccess == TZDevice->evaluateInteger(key, &tmp)){		
 			value[0] = 0x0;
-			value[1] = 0xa;
-			snprintf(key, 5, "F%dMn", i);
-			FakeSMCRegisterKey(key, 2, value, NULL);
-			
-			value[0] = 0xef;
-			value[1] = 0xff;
-			snprintf(key, 5, "F%dMx", i);
-			FakeSMCRegisterKey(key, 2, value, NULL);
-			
-			value[0] = 0x0;
 			value[1] = 0x0;
 			snprintf(key, 5, "F%dAc", i);
-			FakeSMCRegisterKey(key, 2, value, &Update);
+			FakeSMCAddKeyCallback(key, 2, value, &Update);
 			IOLog("FakeSMC_ACPI: %s registered\n", key);
 			FCount = i+1;
 		}
 	}
 	
 	value[0] = FCount;
-	FakeSMCRegisterKey("FNum", 1, value, NULL);
+	FakeSMCAddKey("FNum", 1, value);
 	
 	//Next step - temperature keys
 	if (kIOReturnSuccess == TZDevice->evaluateInteger("SMCA", &tmp)){		
 		value[0] = tmp;
 		value[1] = 0x0;
-		FakeSMCRegisterKey("TC0H", 2, value, &Update);
+		FakeSMCAddKeyCallback("TC0H", "sp78", 2, value, &Update);
 		IOLog("FakeSMC_ACPI: %s registered\n", "TC0H");
 	}
 	if (kIOReturnSuccess == TZDevice->evaluateInteger("SMCB", &tmp)){		
 		value[0] = tmp;
 		value[1] = 0x0;
-		FakeSMCRegisterKey("TN0H", 2, value, &Update);
+		FakeSMCAddKeyCallback("TN0H", "sp78", 2, value, &Update);
 		IOLog("FakeSMC_ACPI: %s registered\n", "TN0H");
 	}
 	if (kIOReturnSuccess == TZDevice->evaluateInteger("SMCC", &tmp)){		
 		value[0] = tmp;
 		value[1] = 0x0;
-		FakeSMCRegisterKey("TW0P", 2, value, &Update);
+		FakeSMCAddKeyCallback("TW0P", "sp78", 2, value, &Update);
 		IOLog("FakeSMC_ACPI: %s registered\n", "TW0P");
 	}
 	if (kIOReturnSuccess == TZDevice->evaluateInteger("SMCD", &tmp)){		
 		value[0] = tmp;
 		value[1] = 0x0;
-		FakeSMCRegisterKey("Th0H", 2, value, &Update);
+		FakeSMCAddKeyCallback("Th0H", "sp78", 2, value, &Update);
 		IOLog("FakeSMC_ACPI: %s registered\n", "Th0H");
 	}
 	if (kIOReturnSuccess == TZDevice->evaluateInteger("SMCE", &tmp)){		
 		value[0] = tmp;
 		value[1] = 0x0;
-		FakeSMCRegisterKey("Th1H", 2, value, &Update);
+		FakeSMCAddKeyCallback("Th1H", "sp78", 2, value, &Update);
 		IOLog("FakeSMC_ACPI: %s registered\n", "Th1H");
 	}
 	
@@ -168,63 +154,64 @@ bool ACPImonitor::start(IOService * provider)
 	if (kIOReturnSuccess == TZDevice->evaluateInteger("SMCK", &tmp)){		
 		value[0] = tmp;
 		value[1] = 0x0;
-		FakeSMCRegisterKey("VCAC", 2, value, &Update);
+		FakeSMCAddKeyCallback("VCAC", 2, value, &Update);
 		IOLog("FakeSMC_ACPI: %s registered\n", "VCAC");
 	}
 	if (kIOReturnSuccess == TZDevice->evaluateInteger("SMCL", &tmp)){		
 		value[0] = tmp;
 		value[1] = 0x0;
-		FakeSMCRegisterKey("Vp0C", 2, value, &Update);
+		FakeSMCAddKeyCallback("Vp0C", 2, value, &Update);
 		IOLog("FakeSMC_ACPI: %s registered\n", "Vp0C");
 	}
 	if (kIOReturnSuccess == TZDevice->evaluateInteger("SMCM", &tmp)){		
 		value[0] = tmp;
 		value[1] = 0x0;
-		FakeSMCRegisterKey("Vp1C", 2, value, &Update);
+		FakeSMCAddKeyCallback("Vp1C", 2, value, &Update);
 		IOLog("FakeSMC_ACPI: %s registered\n", "Vp1C");
 	}
 	if (kIOReturnSuccess == TZDevice->evaluateInteger("SMCN", &tmp)){		
 		value[0] = tmp;
 		value[1] = 0x0;
-		FakeSMCRegisterKey("Vp2C", 2, value, &Update);
+		FakeSMCAddKeyCallback("Vp2C", 2, value, &Update);
 		IOLog("FakeSMC_ACPI: %s registered\n", "Vp2C");
 	}
 	//Amperage
 	if (kIOReturnSuccess == TZDevice->evaluateInteger("SMCO", &tmp)){		
 		value[0] = tmp;
 		value[1] = 0x0;
-		FakeSMCRegisterKey("ICAC", 2, value, &Update);
+		FakeSMCAddKeyCallback("ICAC", 2, value, &Update);
 		IOLog("FakeSMC_ACPI: %s registered\n", "ICAC");
 	}
 	if (kIOReturnSuccess == TZDevice->evaluateInteger("SMCP", &tmp)){		
 		value[0] = tmp;
 		value[1] = 0x0;
-		FakeSMCRegisterKey("Ip0C", 2, value, &Update);
+		FakeSMCAddKeyCallback("Ip0C", 2, value, &Update);
 		IOLog("FakeSMC_ACPI: %s registered\n", "Ip0C");
 	}
 	if (kIOReturnSuccess == TZDevice->evaluateInteger("SMCQ", &tmp)){		
 		value[0] = tmp;
 		value[1] = 0x0;
-		FakeSMCRegisterKey("Ip1C", 2, value, &Update);
+		FakeSMCAddKeyCallback("Ip1C", 2, value, &Update);
 		IOLog("FakeSMC_ACPI: %s registered\n", "Ip1C");
 	}
 	if (kIOReturnSuccess == TZDevice->evaluateInteger("SMCR", &tmp)){		
 		value[0] = tmp;
 		value[1] = 0x0;
-		FakeSMCRegisterKey("Ip2C", 2, value, &Update);
+		FakeSMCAddKeyCallback("Ip2C", 2, value, &Update);
 		IOLog("FakeSMC_ACPI: %s registered\n", "Ip2C");
 	}
+	
 	//Power
 	if (kIOReturnSuccess == TZDevice->evaluateInteger("SMCS", &tmp)){		
 		value[0] = tmp;
 		value[1] = 0x0;
-		FakeSMCRegisterKey("PC0C", 2, value, &Update);
+		FakeSMCAddKeyCallback("PC0C", 2, value, &Update);
 		IOLog("FakeSMC_ACPI: %s registered\n", "PC0C");
 	}
 	if (kIOReturnSuccess == TZDevice->evaluateInteger("SMCT", &tmp)){		
 		value[0] = tmp;
 		value[1] = 0x0;
-		FakeSMCRegisterKey("PC1C", 2, value, &Update);
+		FakeSMCAddKeyCallback("PC1C", 2, value, &Update);
 		IOLog("FakeSMC_ACPI: %s registered\n", "PC1C");
 	}	
 	
@@ -322,36 +309,26 @@ bool ACPImonitor::init(OSDictionary *properties)
 void ACPImonitor::stop (IOService* provider)
 {
 	char key[5];
-	FakeSMCUnregisterKey("FNum");
-	
 	for (int i=0; i<FCount; i++) 
 	{
-		snprintf(key, 5, "F%dMn", i);
-		FakeSMCUnregisterKey(key);
-		snprintf(key, 5, "F%dMx", i);
-		FakeSMCUnregisterKey(key);
 		snprintf(key, 5, "F%dAc", i);
-		FakeSMCUnregisterKey(key);
+		FakeSMCRemoveKeyCallback(key);
 	}
-	FakeSMCUnregisterKey("TC0H");
-	FakeSMCUnregisterKey("TN0H");
-	FakeSMCUnregisterKey("TW0P");
-	FakeSMCUnregisterKey("Th0H");
-	FakeSMCUnregisterKey("Th1H");
-	FakeSMCUnregisterKey("VCAC");
-	FakeSMCUnregisterKey("Vp0C");
-	FakeSMCUnregisterKey("Vp1C");
-	FakeSMCUnregisterKey("Vp2C");
-	FakeSMCUnregisterKey("ICAC");
-	FakeSMCUnregisterKey("Ip0C");
-	FakeSMCUnregisterKey("Ip1C");
-	FakeSMCUnregisterKey("Ip2C");
-	FakeSMCUnregisterKey("PC0C");
-	FakeSMCUnregisterKey("PC1C");
-	//	FakeSMCUnregisterKey("FNum");
-	//	FakeSMCUnregisterKey("FNum");
-	//	FakeSMCUnregisterKey("FNum");
-	//	FakeSMCUnregisterKey("FNum");
+	FakeSMCRemoveKeyCallback("TC0H");
+	FakeSMCRemoveKeyCallback("TN0H");
+	FakeSMCRemoveKeyCallback("TW0P");
+	FakeSMCRemoveKeyCallback("Th0H");
+	FakeSMCRemoveKeyCallback("Th1H");
+	FakeSMCRemoveKeyCallback("VCAC");
+	FakeSMCRemoveKeyCallback("Vp0C");
+	FakeSMCRemoveKeyCallback("Vp1C");
+	FakeSMCRemoveKeyCallback("Vp2C");
+	FakeSMCRemoveKeyCallback("ICAC");
+	FakeSMCRemoveKeyCallback("Ip0C");
+	FakeSMCRemoveKeyCallback("Ip1C");
+	FakeSMCRemoveKeyCallback("Ip2C");
+	FakeSMCRemoveKeyCallback("PC0C");
+	FakeSMCRemoveKeyCallback("PC1C");
 	
 	super::stop(provider);
 }
