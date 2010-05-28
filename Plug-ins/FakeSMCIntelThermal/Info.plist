@@ -29,7 +29,7 @@
 			<key>IOClass</key>
 			<string>IntelThermalMonitorPlugin</string>
 			<key>IOMatchCategory</key>
-			<string>org_mozodojo_${PRODUCT_NAME}</string>
+			<string>IntelThermalMonitorPlugin</string>
 			<key>IOProviderClass</key>
 			<string>IOResources</string>
 			<key>IOResourceMatch</key>
@@ -45,9 +45,9 @@
 		<key>com.apple.kpi.unsupported</key>
 		<string>9.0</string>
 		<key>org.netkas.fakesmc</key>
-		<string>2.6.0</string>
+		<string>2.6.1</string>
 	</dict>
 	<key>OSBundleCompatibleVersion</key>
-	<string>1.0.0</string>
+	<string>1.1</string>
 </dict>
 </plist>

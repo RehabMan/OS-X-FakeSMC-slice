@@ -26,24 +26,24 @@ inline void IntelThermal(void* magic)
 	}
 }
 
-static void Update(SMCData node)
+static void Update(const char* key, char* data)
 {
 	UInt32 magic = 0;
 	
 	mp_rendezvous_no_intrs(IntelThermal, &magic);
 	
-	UInt8 cpun = node->key[2] - 48;
+	UInt8 cpun = key[2] - 48;
 	
 	if(CpuCoreiX)
 	{
-		node->data[0] = TjMaxCoreiX[cpun] - Thermal[cpun];
+		data[0] = TjMaxCoreiX[cpun] - Thermal[cpun];
 	}
 	else 
 	{
-		node->data[0] = TjMax - Thermal[cpun];
+		data[0] = TjMax - Thermal[cpun];
 	}
 	
-	node->data[1] = 0;
+	data[1] = 0;
 }
 
 #define super IOService
@@ -89,24 +89,25 @@ IOService* IntelThermalMonitorPlugin::probe(IOService *provider, SInt32 *score)
 			{
 				case 0x0F: // Intel Core (65nm)
 					switch (CpuStepping) 
-				{
-					case 0x06: // B2
-						switch (CpuCount) {
-							case 2:
-								TjMax = 80 + 10; break;
-							case 4:
-								TjMax = 90 + 10; break;
-							default:
-								TjMax = 85 + 10; break;
-						}
-						TjMax = 80 + 10; break;
-					case 0x0B: // G0
-						TjMax = 90 + 10; break;
-					case 0x0D: // M0
-						TjMax = 85 + 10; break;
-					default:
-						TjMax = 85 + 10; break;
-				}
+					{
+						case 0x06: // B2
+							switch (CpuCount) 
+							{
+								case 2:
+									TjMax = 80 + 10; break;
+								case 4:
+									TjMax = 90 + 10; break;
+								default:
+									TjMax = 85 + 10; break;
+							}
+							TjMax = 80 + 10; break;
+						case 0x0B: // G0
+							TjMax = 90 + 10; break;
+						case 0x0D: // M0
+							TjMax = 85 + 10; break;
+						default:
+							TjMax = 85 + 10; break;
+					}
 					break;
 					
 				case 0x17: // Intel Core (45nm)
@@ -114,14 +115,14 @@ IOService* IntelThermalMonitorPlugin::probe(IOService *provider, SInt32 *score)
 					
 				case 0x1C: // Intel Atom (45nm)
 					switch (CpuStepping)
-				{
-					case 0x02: // C0
-						TjMax = 90; break;
-					case 0x0A: // A0, B0
-						TjMax = 100; break;
-					default:
-						TjMax = 90; break;
-				} 
+					{
+						case 0x02: // C0
+							TjMax = 90; break;
+						case 0x0A: // A0, B0
+							TjMax = 100; break;
+						default:
+							TjMax = 90; break;
+					} 
 					break;
 					
 				case 0x1A: // Intel Core i7 LGA1366 (45nm)
@@ -159,7 +160,7 @@ bool IntelThermalMonitorPlugin::start(IOService * provider)
 		
 		snprintf(key, 5, "TC%dD", i);
 		
-		FakeSMCRegisterKey(key, 0x02, value, &Update);
+		FakeSMCAddKeyCallback(key, "sp78", 0x02, value, &Update);
 	}
 	
 	registerService(0);
@@ -182,7 +183,7 @@ void IntelThermalMonitorPlugin::stop (IOService* provider)
 		
 		snprintf(key, 5, "TC%dD", i);
 		
-		FakeSMCUnregisterKey(key);
+		FakeSMCRemoveKeyCallback(key);
 	}
 	
 	super::stop(provider);
