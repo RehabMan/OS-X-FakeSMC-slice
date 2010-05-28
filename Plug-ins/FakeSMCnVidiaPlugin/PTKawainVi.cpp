@@ -4,18 +4,18 @@
  *	No rights reserved
  */
 #include "PTKawainVi.h"
+#include "fakesmc.h"
 
 #define INVID(offset) OSReadLittleInt32((nvio_base), offset)
 #define OUTVID(offset,val) OSWriteLittleInt32((nvio_base), offset, val)
 OSDefineMetaClassAndStructors(PTKawainVi, IOPCIDevice)
 
 static int nVtemp;
-static void Update(SMCData node) {	
-	node->data[0] = nVtemp;
-	node->data[1] = 0;
+
+static void Update(const char* key, char* data) {	
+	data[0] = nVtemp;
+	data[1] = 0;
 }
-
-
 
 IOService*
 PTKawainVi::probe(IOService *provider, SInt32 *score) {
@@ -79,7 +79,7 @@ PTKawainVi::probe(IOService *provider, SInt32 *score) {
 bool
 PTKawainVi::start( IOService * provider ) {
 	char value[2];
-	FakeSMCRegisterKey("TG0D", 2, value, &Update);
+	FakeSMCAddKeyCallback("TG0D", "sp78", 2, value, &Update);
 	WorkLoop = IOWorkLoop::workLoop();
 	TimerEventSource = IOTimerEventSource::timerEventSource(this,OSMemberFunctionCast(IOTimerEventSource::Action, this, &PTKawainVi::LoopTimerEvent));
 	if (!TimerEventSource || !WorkLoop || (kIOReturnSuccess != WorkLoop->addEventSource(TimerEventSource))) 
@@ -98,7 +98,7 @@ PTKawainVi::init(OSDictionary *properties) {
 
 void PTKawainVi::stop (IOService* provider) {
 	IOPCIDevice::stop (provider);
-	FakeSMCUnregisterKey("TG0D");
+	FakeSMCRemoveKeyCallback("TG0D");
 	TimerEventSource->disable();
 	TimerEventSource->release();
 }

@@ -1,8 +1,5 @@
 #include <IOKit/pci/IOPCIDevice.h>
 #include <IOKit/IOTimerEventSource.h>
-#include <fakesmc.h>
-
-void AddKey (const char*, uint8_t, char*);
 
 class PTKawainVi : public IOPCIDevice {
     OSDeclareDefaultStructors(PTKawainVi)    

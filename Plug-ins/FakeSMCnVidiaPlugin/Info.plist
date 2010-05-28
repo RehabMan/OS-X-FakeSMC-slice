@@ -43,7 +43,7 @@
 	<key>OSBundleLibraries</key>
 	<dict>
 		<key>org.netkas.fakesmc</key>
-		<string>1.0.0</string>
+		<string>2.6.1</string>
 		<key>com.apple.kpi.iokit</key>
 		<string>10.0</string>
 		<key>com.apple.kpi.libkern</key>
@@ -53,7 +53,5 @@
 		<key>com.apple.kpi.unsupported</key>
 		<string>10.0</string>
 	</dict>
-	<key>OSBundleRequired</key>
-	<string>Safe Boot</string>
 </dict>
 </plist>
