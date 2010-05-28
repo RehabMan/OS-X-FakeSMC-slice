@@ -88,10 +88,7 @@ short IT87ReadRPM(UInt8 num)
 	if(valid)
 	{
 		value |= IT87ReadByte(ITE_FAN_TACHOMETER_EXT_REG[num], valid) << 8;
-		
-		if(valid) 
-			if (value > 0x3f) 
-				value = 1.35e6f / (value * 2);
+		value = valid && value > 0x3f && value < 0xffff ? (float)(1350000 + value) / (float)(value * 2) : 0;
 	}
 	
 	return value;
