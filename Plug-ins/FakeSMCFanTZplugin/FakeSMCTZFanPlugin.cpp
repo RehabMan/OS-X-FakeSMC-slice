@@ -5,30 +5,24 @@
  *
  */
 #include "FakeSMCTZFanPlugin.h"
+#include "fakesmc.h"
 
 #define kTimeoutMSecs 1000
 static int TZFan[5];
 
-bool CompareKeys(const char* key1, const char* key2)
-{
-	return ((key1[0] == key2[0]) && (key1[1] == key2[1]) && (key1[2] == key2[2]) && (key1[3] == key2[3]));
-}
-
-static void Update(SMCData node)
+static void Update(const char* key, char* data)
 {	
 	// FANs
-	if(CompareKeys(node->key, "F0Ac") || CompareKeys(node->key, "F1Ac") || CompareKeys(node->key, "F2Ac") || CompareKeys(node->key, "F3Ac") || CompareKeys(node->key, "F4Ac"))
+	if(CompareKeys(key, "F0Ac") || CompareKeys(key, "F1Ac") || CompareKeys(key, "F2Ac") || CompareKeys(key, "F3Ac") || CompareKeys(key, "F4Ac"))
 	{
-		UInt8 num = node->key[1] - 48;
+		UInt8 num = key[1] - 48;
 		
 		short value = TZFan[num];
 				
-		node->data[0] = value;
-		node->data[1] = 0;
+		data[0] = (value >> 6) & 0xff;
+		data[1] = (value << 2) & 0xff;
 	}
 }
-
-
 
 #define super IOService
 OSDefineMetaClassAndStructors(TZFanPlugin, IOService)
@@ -51,26 +45,15 @@ bool TZFanPlugin::start(IOService * provider)
 	//Here is Fan on TZ	
 	for (int i=0; i<FCount; i++) 
 	{
-
-		value[0] = 0x0;
-		value[1] = 0xa;
-		snprintf(key, 5, "F%dMn", i);
-		FakeSMCRegisterKey(key, 2, value, NULL);
-		
-		value[0] = 0xef;
-		value[1] = 0xff;
-		snprintf(key, 5, "F%dMx", i);
-		FakeSMCRegisterKey(key, 2, value, NULL);
-		
 		value[0] = 0x0;
 		value[1] = 0x0;
 		snprintf(key, 5, "F%dAc", i);
-		FakeSMCRegisterKey(key, 2, value, &Update);
+		FakeSMCAddKeyCallback(key, "fp2e", 2, value, &Update);
 		IOLog("FakeSMC_FanTZ: %s registered\n", key);
 	}
 	
 	value[0] = FCount;
-	FakeSMCRegisterKey("FNum", 1, value, NULL);
+	FakeSMCAddKey("FNum", 1, value);
 	
 	registerService(0);
 	TZWorkLoop = getWorkLoop();
@@ -115,16 +98,11 @@ bool TZFanPlugin::init(OSDictionary *properties)
 void TZFanPlugin::stop (IOService* provider)
 {
 	char key[5];
-	FakeSMCUnregisterKey("FNum");
 	
 	for (int i=0; i<FCount; i++) 
 	{
-		snprintf(key, 5, "F%dMn", i);
-		FakeSMCUnregisterKey(key);
-		snprintf(key, 5, "F%dMx", i);
-		FakeSMCUnregisterKey(key);
 		snprintf(key, 5, "F%dAc", i);
-		FakeSMCUnregisterKey(key);
+		FakeSMCRemoveKeyCallback(key);
 	}
 	
 	super::stop(provider);

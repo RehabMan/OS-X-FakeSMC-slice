@@ -1,7 +1,6 @@
 #include <IOKit/IOService.h>
 #include "IOKit/acpi/IOACPIPlatformDevice.h"
 #include <IOKit/IOTimerEventSource.h>
-#include <fakesmc.h>
 
 class TZFanPlugin : public IOService
 {
