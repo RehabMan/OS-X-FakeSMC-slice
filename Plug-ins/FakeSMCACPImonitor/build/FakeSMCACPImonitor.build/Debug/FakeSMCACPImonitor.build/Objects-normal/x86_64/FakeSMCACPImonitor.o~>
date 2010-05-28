@@ -1,0 +1,7 @@
+/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp: In function 'void Update(AppleSMCData*)':
+/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp:36: error: expected `}' before 'else'
+/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp: In member function 'virtual bool ACPImonitor::start(IOService*)':
+/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp:133: error: name lookup of 'i' changed for new ISO 'for' scoping
+/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp:103: error:   using obsolete binding at 'i'
+/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp: At global scope:
+/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp:10: warning: 'TZFan' defined but not used

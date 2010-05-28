@@ -1,0 +1,217 @@
+TFakeSMCACPImonitor
+v7
+r0
+t296556562.452168
+cCheck dependencies
+cProcessInfoPlistFile /Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/Release/FakeSMCACPImonitor.kext/Contents/Info.plist Info.plist
+cCopyStringsFile /Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/Release/FakeSMCACPImonitor.kext/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
+cCompileC build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/Objects-normal/i386/FakeSMCACPImonitor.o /Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp normal i386 c++ com.apple.compilers.gcc.4_2
+cCompileC build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/Objects-normal/i386/FakeSMCACPImonitor_info.o /Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/DerivedSources/FakeSMCACPImonitor_info.c normal i386 c com.apple.compilers.gcc.4_2
+cCompileC build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/Objects-normal/x86_64/FakeSMCACPImonitor.o /Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+cCompileC build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/Objects-normal/x86_64/FakeSMCACPImonitor_info.o /Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/DerivedSources/FakeSMCACPImonitor_info.c normal x86_64 c com.apple.compilers.gcc.4_2
+
+N/Developer/SDKs/MacOSX10.6.sdk
+c000000004A769DAB00000000000000EE
+t1249287595
+s238
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/IOService.h
+c000000004A73D653000000000001F49D
+t1249105491
+s128157
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/IOTimerEventSource.h
+c000000004A73D6540000000000002B1D
+t1249105492
+s11037
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/acpi/IOACPIPlatformDevice.h
+c000000004A73D8B80000000000002B75
+t1249106104
+s11125
+
+N/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/English.lproj/InfoPlist.strings
+c000000004BFC3BCB0000000000000030
+t1274821579
+s48
+
+N/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp
+c000000004BFCE09100000000000024BD
+t1274863761
+s9405
+i"FakeSMCACPImonitor.h"
+
+N/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.h
+c000000004BFC452A0000000000000290
+t1274823978
+s656
+i<IOKit/IOService.h>
+i"IOKit/acpi/IOACPIPlatformDevice.h"
+i<IOKit/IOTimerEventSource.h>
+i"fakesmc.h"
+
+N/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/DerivedSources/FakeSMCACPImonitor_info.c
+c000000004BFCE09100000000000001B3
+t1274863761
+s435
+
+N/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/Objects-normal/i386/FakeSMCACPImonitor
+t2
+s0
+
+N/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/Objects-normal/i386/FakeSMCACPImonitor.LinkFileList
+c000000004BFCE09100000000000000A7
+t1274863761
+s167
+
+N/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/Objects-normal/i386/FakeSMCACPImonitor.o
+t2
+s0
+
+N/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/Objects-normal/i386/FakeSMCACPImonitor_info.o
+t1274863762
+s580
+
+N/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/Objects-normal/x86_64/FakeSMCACPImonitor
+t2
+s0
+
+N/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/Objects-normal/x86_64/FakeSMCACPImonitor.LinkFileList
+c000000004BFCE09100000000000000A9
+t1274863761
+s169
+
+N/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/Objects-normal/x86_64/FakeSMCACPImonitor.o
+t2
+s0
+
+N/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/Objects-normal/x86_64/FakeSMCACPImonitor_info.o
+t1274863762
+s768
+
+N/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/Release/FakeSMCACPImonitor.kext
+t2
+s0
+
+N/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/Release/FakeSMCACPImonitor.kext/Contents/Info.plist
+t1274863761
+s1575
+
+N/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/Release/FakeSMCACPImonitor.kext/Contents/MacOS/FakeSMCACPImonitor
+t2
+s0
+
+N/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/Release/FakeSMCACPImonitor.kext/Contents/Resources/English.lproj/InfoPlist.strings
+t1274863761
+s92
+
+N/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/fakesmc.h
+c000000004BFB9E8A00000000000001D2
+t1274781322
+s466
+
+NInfo.plist
+c000000004BFC452A0000000000000660
+t1274823978
+s1632
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies296556561#296556561#0(0"0(0#1#0"5282796310486668288#0"0#
+
+CCompileC build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/Objects-normal/i386/FakeSMCACPImonitor.o /Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp normal i386 c++ com.apple.compilers.gcc.4_2
+s296556561.932123
+e296556562.200898
+r0
+xCompileC
+xbuild/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/Objects-normal/i386/FakeSMCACPImonitor.o
+x/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.gcc.4_2
+o/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp: In function 'void Update(AppleSMCData*)':
+o/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp:36: error: expected `}' before 'else'
+o/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp: In member function 'virtual bool ACPImonitor::start(IOService*)':
+o/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp:133: error: name lookup of 'i' changed for new ISO 'for' scoping
+o/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp:103: error:   using obsolete binding at 'i'
+o/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp: At global scope:
+o/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp:10: warning: 'TZFan' defined but not used
+lSLF07#2@92"Compile /Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp296556561#296556562#0(912"/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp: In function 'void Update(AppleSMCData*)':/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp:36: error: expected `}' before 'else'/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp: In member function 'virtual bool ACPImonitor::start(IOService*)':/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp:133: error: name lookup of 'i' changed for new ISO 'for' scoping/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp:103: error:   using obsolete binding at 'i'/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp: At global scope:/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp:10: warning: 'TZFan' defined but not used5(4@26"Expected `}' before 'else'296556562#128#123#0(6@84"/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp296556561#36#0#36#0#19"expected * before *0(4@52"Name lookup of 'i' changed for new ISO 'for' scoping296556562#403#150#0(6@84"/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp296556561#133#0#133#0#0"0(4@29"Using obsolete binding at 'i'296556562#553#129#0(6@84"/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp296556561#103#0#103#0#0"0(23@16"At global scope:296556562#682#103#0(6@84"/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp296556561#0#0#0#0#0"0(22@28"'TZFan' defined but not used296556562#785#127#0(6@84"/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp296556561#10#0#10#0#24"'*' defined but not used0(0#0#84"/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp4300911832#2094"    cd /Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -ftree-vectorize -mmacosx-version-min=10.6 -iquote /Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/FakeSMCACPImonitor-generated-files.hmap -I/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/FakeSMCACPImonitor-own-target-headers.hmap -I/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/FakeSMCACPImonitor-all-target-headers.hmap -iquote /Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/FakeSMCACPImonitor-project-headers.hmap -F/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/Release -I/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/DerivedSources/i386 -I/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/DerivedSources -c /Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp -o /Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/Objects-normal/i386/FakeSMCACPImonitor.o1#
+
+CCompileC build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/Objects-normal/i386/FakeSMCACPImonitor_info.o /Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/DerivedSources/FakeSMCACPImonitor_info.c normal i386 c com.apple.compilers.gcc.4_2
+s296556561.933165
+e296556562.263535
+r1
+xCompileC
+xbuild/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/Objects-normal/i386/FakeSMCACPImonitor_info.o
+x/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/DerivedSources/FakeSMCACPImonitor_info.c
+xnormal
+xi386
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@174"Compile /Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/DerivedSources/FakeSMCACPImonitor_info.c296556561#296556562#0(0"0(0#0#166"/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/DerivedSources/FakeSMCACPImonitor_info.c4300911832#2128"    cd /Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch i386 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -ftree-vectorize -mmacosx-version-min=10.6 -iquote /Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/FakeSMCACPImonitor-generated-files.hmap -I/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/FakeSMCACPImonitor-own-target-headers.hmap -I/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/FakeSMCACPImonitor-all-target-headers.hmap -iquote /Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/FakeSMCACPImonitor-project-headers.hmap -F/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/Release -I/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/DerivedSources/i386 -I/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/DerivedSources -c /Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/DerivedSources/FakeSMCACPImonitor_info.c -o /Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/Objects-normal/i386/FakeSMCACPImonitor_info.o0#
+
+CCompileC build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/Objects-normal/x86_64/FakeSMCACPImonitor.o /Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+s296556562.200990
+e296556562.452078
+r0
+xCompileC
+xbuild/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/Objects-normal/x86_64/FakeSMCACPImonitor.o
+x/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.gcc.4_2
+o/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp: In function 'void Update(AppleSMCData*)':
+o/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp:36: error: expected `}' before 'else'
+o/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp: In member function 'virtual bool ACPImonitor::start(IOService*)':
+o/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp:133: error: name lookup of 'i' changed for new ISO 'for' scoping
+o/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp:103: error:   using obsolete binding at 'i'
+o/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp: At global scope:
+o/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp:10: warning: 'TZFan' defined but not used
+lSLF07#2@92"Compile /Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp296556562#296556562#0(912"/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp: In function 'void Update(AppleSMCData*)':/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp:36: error: expected `}' before 'else'/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp: In member function 'virtual bool ACPImonitor::start(IOService*)':/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp:133: error: name lookup of 'i' changed for new ISO 'for' scoping/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp:103: error:   using obsolete binding at 'i'/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp: At global scope:/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp:10: warning: 'TZFan' defined but not used5(4@26"Expected `}' before 'else'296556562#128#123#0(6@84"/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp296556561#36#0#36#0#19"expected * before *0(4@52"Name lookup of 'i' changed for new ISO 'for' scoping296556562#403#150#0(6@84"/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp296556561#133#0#133#0#0"0(4@29"Using obsolete binding at 'i'296556562#553#129#0(6@84"/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp296556561#103#0#103#0#0"0(23@16"At global scope:296556562#682#103#0(6@84"/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp296556561#0#0#0#0#0"0(22@28"'TZFan' defined but not used296556562#785#127#0(6@84"/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp296556561#10#0#10#0#24"'*' defined but not used0(0#0#84"/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp4300911832#2100"    cd /Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -ftree-vectorize -mmacosx-version-min=10.6 -iquote /Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/FakeSMCACPImonitor-generated-files.hmap -I/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/FakeSMCACPImonitor-own-target-headers.hmap -I/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/FakeSMCACPImonitor-all-target-headers.hmap -iquote /Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/FakeSMCACPImonitor-project-headers.hmap -F/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/Release -I/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/DerivedSources/x86_64 -I/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/DerivedSources -c /Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/FakeSMCACPImonitor.cpp -o /Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/Objects-normal/x86_64/FakeSMCACPImonitor.o1#
+
+CCompileC build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/Objects-normal/x86_64/FakeSMCACPImonitor_info.o /Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/DerivedSources/FakeSMCACPImonitor_info.c normal x86_64 c com.apple.compilers.gcc.4_2
+s296556562.263642
+e296556562.296377
+r1
+xCompileC
+xbuild/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/Objects-normal/x86_64/FakeSMCACPImonitor_info.o
+x/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/DerivedSources/FakeSMCACPImonitor_info.c
+xnormal
+xx86_64
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@174"Compile /Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/DerivedSources/FakeSMCACPImonitor_info.c296556562#296556562#0(0"0(0#0#166"/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/DerivedSources/FakeSMCACPImonitor_info.c4300911832#2134"    cd /Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -ftree-vectorize -mmacosx-version-min=10.6 -iquote /Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/FakeSMCACPImonitor-generated-files.hmap -I/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/FakeSMCACPImonitor-own-target-headers.hmap -I/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/FakeSMCACPImonitor-all-target-headers.hmap -iquote /Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/FakeSMCACPImonitor-project-headers.hmap -F/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/Release -I/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/DerivedSources/x86_64 -I/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/DerivedSources -c /Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/DerivedSources/FakeSMCACPImonitor_info.c -o /Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/Objects-normal/x86_64/FakeSMCACPImonitor_info.o0#
+
+CCopyStringsFile /Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/Release/FakeSMCACPImonitor.kext/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
+s296556561.660430
+e296556561.932020
+r1
+xCopyStringsFile
+x/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/Release/FakeSMCACPImonitor.kext/Contents/Resources/English.lproj/InfoPlist.strings
+xEnglish.lproj/InfoPlist.strings
+lSLF07#2@36"Copy English.lproj/InfoPlist.strings296556561#296556561#0(0"0(0#0#93"/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/English.lproj/InfoPlist.strings4300911832#425"    cd /Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor    setenv ICONV /usr/bin/iconv    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings --validate --inputencoding utf-8 --outputencoding UTF-16 English.lproj/InfoPlist.strings --outdir /Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/Release/FakeSMCACPImonitor.kext/Contents/Resources/English.lproj0#
+
+CCreateUniversalBinary /Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/Release/FakeSMCACPImonitor.kext/Contents/MacOS/FakeSMCACPImonitor normal "i386 x86_64"
+r0
+
+CLd /Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/Objects-normal/i386/FakeSMCACPImonitor normal i386
+r0
+
+CLd /Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/FakeSMCACPImonitor.build/Release/FakeSMCACPImonitor.build/Objects-normal/x86_64/FakeSMCACPImonitor normal x86_64
+r0
+
+CProcessInfoPlistFile /Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/Release/FakeSMCACPImonitor.kext/Contents/Info.plist Info.plist
+s296556561.630837
+e296556561.660306
+r1
+xProcessInfoPlistFile
+x/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/Release/FakeSMCACPImonitor.kext/Contents/Info.plist
+xInfo.plist
+lSLF07#2@18"Process Info.plist296556561#296556561#0(0"0(0#0#72"/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/Info.plist18859154157535332#270"    cd /Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor    builtin-infoPlistUtility Info.plist -expandbuildsettings -platform macosx -o /Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/Release/FakeSMCACPImonitor.kext/Contents/Info.plist0#
+
+CTouch /Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/build/Release/FakeSMCACPImonitor.kext
+r0
+

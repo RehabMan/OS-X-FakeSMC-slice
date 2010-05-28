@@ -1,0 +1,140 @@
+// !$*UTF8*$!
+{
+	089C1669FE841209C02AAC07 /* Project object */ = {
+		activeArchitecturePreference = i386;
+		activeBuildConfigurationName = "Release Leopard";
+		activeSDKPreference = macosx10.5;
+		activeTarget = 32D94FC30562CBF700B6AF17 /* FakeSMCACPImonitor */;
+		addToTargets = (
+			32D94FC30562CBF700B6AF17 /* FakeSMCACPImonitor */,
+		);
+		codeSenseManager = 12B8EC4C11AC735400EAD0A7 /* Code sense */;
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					488,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 296742888;
+			PBXWorkspaceStateSaveDate = 296742888;
+		};
+		perUserProjectItems = {
+			12B272FC11ADCF2000BBAD62 = 12B272FC11ADCF2000BBAD62 /* PBXTextBookmark */;
+			12B8E69511ADE1A40098CEDA = 12B8E69511ADE1A40098CEDA /* PBXTextBookmark */;
+			12B8EC5F11AC7CAA00EAD0A7 = 12B8EC5F11AC7CAA00EAD0A7 /* PBXTextBookmark */;
+			12B8EC6011AC7CAA00EAD0A7 = 12B8EC6011AC7CAA00EAD0A7 /* PlistBookmark */;
+			12B8EC6111AC7CAA00EAD0A7 = 12B8EC6111AC7CAA00EAD0A7 /* PBXTextBookmark */;
+		};
+		sourceControlManager = 12B8EC4B11AC735400EAD0A7 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	12B272FC11ADCF2000BBAD62 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCACPImonitor.cpp */;
+		name = "FakeSMCACPImonitor.cpp: 128";
+		rLen = 0;
+		rLoc = 3340;
+		rType = 0;
+		vrLen = 685;
+		vrLoc = 2852;
+	};
+	12B8E69511ADE1A40098CEDA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCACPImonitor.cpp */;
+		name = "FakeSMCACPImonitor.cpp: 128";
+		rLen = 0;
+		rLoc = 3340;
+		rType = 0;
+		vrLen = 618;
+		vrLoc = 2919;
+	};
+	12B8EC4B11AC735400EAD0A7 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	12B8EC4C11AC735400EAD0A7 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	12B8EC4D11AC736200EAD0A7 /* fakesmc.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {519, 338}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 343}";
+		};
+	};
+	12B8EC5F11AC7CAA00EAD0A7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12B8EC4D11AC736200EAD0A7 /* fakesmc.h */;
+		name = "fakesmc.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 343;
+		vrLoc = 0;
+	};
+	12B8EC6011AC7CAA00EAD0A7 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 32D94FCF0562CBF700B6AF17 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			OSBundleLibraries,
+		);
+		name = "/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCACPImonitor/Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775808;
+	};
+	12B8EC6111AC7CAA00EAD0A7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3EFF42367911CA2CB7 /* FakeSMCACPImonitor.h */;
+		name = "FakeSMCACPImonitor.h: 8";
+		rLen = 0;
+		rLoc = 214;
+		rType = 0;
+		vrLen = 522;
+		vrLoc = 134;
+	};
+	1A224C3EFF42367911CA2CB7 /* FakeSMCACPImonitor.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {519, 325}}";
+			sepNavSelRange = "{214, 0}";
+			sepNavVisRange = "{134, 522}";
+		};
+	};
+	1A224C3FFF42367911CA2CB7 /* FakeSMCACPImonitor.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {666, 4914}}";
+			sepNavSelRange = "{3340, 0}";
+			sepNavVisRange = "{2919, 618}";
+			sepNavWindowFrame = "{{435, 87}, {802, 791}}";
+		};
+	};
+	32D94FC30562CBF700B6AF17 /* FakeSMCACPImonitor */ = {
+		activeExec = 0;
+	};
+}
