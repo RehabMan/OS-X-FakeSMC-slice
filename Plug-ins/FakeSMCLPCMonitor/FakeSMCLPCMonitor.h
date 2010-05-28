@@ -120,7 +120,9 @@ UInt16			Address;
 UInt8			Revision;
 UInt8			RegisterPort;
 UInt8			ValuePort;
+
 UInt8			FanIndex[5];
+UInt16			LastVcore;
 
 class LPCMonitorPlugin : public IOService
 {

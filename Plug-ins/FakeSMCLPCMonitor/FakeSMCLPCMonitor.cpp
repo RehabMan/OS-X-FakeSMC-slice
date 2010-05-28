@@ -8,8 +8,6 @@
  */
 
 #include <architecture/i386/pio.h>
-//#include <unistd.h>
-
 #include "FakeSMCLPCMonitor.h"
 
 UInt8 ReadByte(UInt8 reg)
@@ -248,18 +246,24 @@ static void Update(const char* key, char* data)
 			// CPU Vcore
 			if(CompareKeys(key, "VC0C"))
 			{
-				UInt16 value = IT87ReadByte(ITE_VOLTAGE_BASE_REG + 0, valid) << 4;
+				LastVcore = IT87ReadByte(ITE_VOLTAGE_BASE_REG + 0, valid) << 4;
 						
 				if (valid)
 				{
-					UInt16 dec = value / 1000;
-					UInt16 frc = value - (dec * 1000);
+					UInt16 dec = LastVcore / 1000;
+					UInt16 frc = LastVcore - (dec * 1000);
 					
-					value = (dec << 14) | (frc << 4);
+					UInt16 value = (dec << 14) | (frc << 4);
 					
 					data[0] = (value & 0xff00) >> 8;
 					data[1] = (value & 0x00ff) | 0x3;
 				}
+			}
+			
+			if(CompareKeys(key, "VC0c"))
+			{
+				data[0] = (LastVcore & 0xff00) >> 8;
+				data[1] = LastVcore & 0x00ff;
 			}
 			
 			// FANs
@@ -678,36 +682,6 @@ bool LPCMonitorPlugin::start(IOService * provider)
 		fanIDs->release();
     }
 	
-	// Fans
-	switch (Type)
-	{
-		case IT87x:
-		case Winbond:
-			UInt8 fanCount = 0;
-			char value[2];
-			
-			for (int i=0; i<5; i++) 
-			{
-				char key[5];
-				
-				if (fanName[i] && fanName[i]->getLength() > 0)
-				{	
-					snprintf(key, 5, "F%dID", fanCount);
-					FakeSMCAddKey(key, "ch8*", fanName[i]->getLength(), (char*)fanName[i]->getCStringNoCopy());
-					
-					snprintf(key, 5, "F%dAc", fanCount);
-					FakeSMCAddKeyCallback(key, "fp2e", 2, value, &Update);
-					
-					FanIndex[fanCount++] = i;
-				}
-			}
-			
-			value[0] = fanCount;
-			FakeSMCAddKey("FNum", 1, value);
-			
-			break;
-	}
-	
 	// Other sensors
 	switch (Type)
 	{
@@ -746,6 +720,29 @@ bool LPCMonitorPlugin::start(IOService * provider)
 			
 			// CPU Vcore
 			FakeSMCAddKeyCallback("VC0C", "fp2e", 2, value, &Update);
+			FakeSMCAddKeyCallback("VC0c", "ui16", 2, value, &Update);
+			
+			// FANs
+			UInt8 fanCount = 0;
+						
+			for (int i=0; i<5; i++) 
+			{
+				char key[5];
+				
+				if ((fanName[i] != NULL && fanName[i]->getLength() > 0) || IT87ReadRPM(i))
+				{	
+					snprintf(key, 5, "F%dID", fanCount);
+					FakeSMCAddKey(key, "ch8*", fanName[i]->getLength(), (char*)fanName[i]->getCStringNoCopy());
+					
+					snprintf(key, 5, "F%dAc", fanCount);
+					FakeSMCAddKeyCallback(key, "fp2e", 2, value, &Update);
+					
+					FanIndex[fanCount++] = i;
+				}
+			}
+			
+			value[0] = fanCount;
+			FakeSMCAddKey("FNum", 1, value);
 			
 			break;
 		}
@@ -805,6 +802,28 @@ bool LPCMonitorPlugin::start(IOService * provider)
 				}
 			}
 			
+			// FANs
+			UInt8 fanCount = 0;
+			
+			for (int i=0; i<5; i++) 
+			{
+				char key[5];
+				
+				if ((fanName[i] != NULL && fanName[i]->getLength() > 0) || WinbondReadRPM(i))
+				{	
+					snprintf(key, 5, "F%dID", fanCount);
+					FakeSMCAddKey(key, "ch8*", fanName[i]->getLength(), (char*)fanName[i]->getCStringNoCopy());
+					
+					snprintf(key, 5, "F%dAc", fanCount);
+					FakeSMCAddKeyCallback(key, "fp2e", 2, value, &Update);
+					
+					FanIndex[fanCount++] = i;
+				}
+			}
+			
+			value[0] = fanCount;
+			FakeSMCAddKey("FNum", 1, value);
+			
 			break;
 		}
 			
@@ -826,6 +845,7 @@ void LPCMonitorPlugin::stop (IOService* provider)
 	{
 		case IT87x:
 			FakeSMCRemoveKeyCallback("VC0C");
+			FakeSMCRemoveKeyCallback("VC0c");
 		case Winbond:
 			FakeSMCRemoveKeyCallback("Th0H");
 			FakeSMCRemoveKeyCallback("TN0P");
