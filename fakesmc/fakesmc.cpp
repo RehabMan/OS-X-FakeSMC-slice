@@ -12,13 +12,25 @@ void FakeSMCAddKey (const char* keyname, uint8_t keylen, char* keydata)
 	smcNode->FixUpKeysNum();
 }
 
-void FakeSMCRegisterKey (const char* keyname, uint8_t keylen, char* keydata, PluginCallback callback)
+void FakeSMCAddKey (const char* keyname, const char* keytype, uint8_t keylen, char* keydata)
 {
-	smcNode->SMCAddKey(keyname, keylen, keydata, 1, callback);
+	smcNode->SMCAddKey(keyname, keytype, keylen, keydata, 1);
 	smcNode->FixUpKeysNum();
 }
 
-void FakeSMCUnregisterKey (const char* keyname)
+void FakeSMCAddKeyCallback (const char* keyname, uint8_t keylen, char* keydata, OnKeyReadCallback onkeyread)
+{
+	smcNode->SMCAddKey(keyname, keylen, keydata, 1, onkeyread);
+	smcNode->FixUpKeysNum();
+}
+
+void FakeSMCAddKeyCallback (const char* keyname, const char* keytype, uint8_t keylen, char* keydata, OnKeyReadCallback onkeyread)
+{
+	smcNode->SMCAddKey(keyname, keytype, keylen, keydata, 1, onkeyread);
+	smcNode->FixUpKeysNum();
+}
+
+void FakeSMCRemoveKeyCallback (const char* keyname)
 {
 	SMCData node = smcNode->FindSMCKey(keyname);
 	

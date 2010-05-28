@@ -26,13 +26,14 @@ struct AppleSMCStatus {
 struct AppleSMCData;
 
 typedef struct AppleSMCData* SMCData;
-typedef void (*PluginCallback)(SMCData);
+typedef void (*OnKeyReadCallback)(const char*, char*);
 
 struct AppleSMCData {
 	uint8_t len;
 	char *key;
+	char *type;
 	char *data;
-	PluginCallback callback;
+	OnKeyReadCallback onkeyread;
 	SMCData next;
 };
 
@@ -101,7 +102,10 @@ class IOACPIPlatformDeviceCh : public IOACPIPlatformDevice
 	virtual void	SMCSetup();
 	
 	virtual SMCData SMCAddKey(const char * keyname, uint8_t keylen, char * keydata, uint32_t replace_flag); //returns a pointer to key struct, so we can modify it later 
-	virtual SMCData SMCAddKey(const char * keyname, uint8_t keylen, char * keydata, uint32_t replace_flag, PluginCallback callback);
+	virtual SMCData SMCAddKey(const char * keyname, uint8_t keylen, char * keydata, uint32_t replace_flag, OnKeyReadCallback onkeyread);
+	
+	virtual SMCData SMCAddKey(const char * keyname, const char * keytype, uint8_t keylen, char * keydata, uint32_t replace_flag);
+	virtual SMCData SMCAddKey(const char * keyname, const char * keytype, uint8_t keylen, char * keydata, uint32_t replace_flag, OnKeyReadCallback onkeyread);
 	
 	virtual SMCData FindSMCKey(const char * keyname);
 	

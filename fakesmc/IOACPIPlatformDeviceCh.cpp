@@ -72,7 +72,7 @@ void IOACPIPlatformDeviceCh::applesmc_fill_data(struct AppleSMCStatus *s)
         uint32_t key_current = *((uint32_t*)s->key);
 		if(key_data == key_current) {
 //            IOLog("APPLESMC: Key matched (%s Len=%d Data=%s)\n", d->key, d->len, d->data);
-			if(d->callback != NULL)	(d->callback)(d);	
+			if(d->onkeyread) (d->onkeyread)(d->key, d->data);	
             memcpy(s->data, d->data, d->len);
             return;
         }
@@ -102,42 +102,38 @@ char * IOACPIPlatformDeviceCh::applesmc_get_key_by_index(uint32_t index, struct 
 void IOACPIPlatformDeviceCh::applesmc_fill_info(struct AppleSMCStatus *s)
 {
     struct AppleSMCData *d;
-    for( d = ASMCDKey; d; d = d->next) {
+	
+    for ( d = ASMCDKey; d; d = d->next) 
+	{
         uint32_t key_data = *((uint32_t*)d->key);
         uint32_t key_current = *((uint32_t*)s->key);
-        if(key_data == key_current) {
+		
+        if (key_data == key_current) 
+		{
 			s->key_info[0] = d->len;
 			s->key_info[5] = 0;
-			switch(d->len){
-				case 1:
-					s->key_info[1]='u';
-					s->key_info[2]='i';
-					s->key_info[3]='8';
-					break;
-				case 2:
-					s->key_info[1]='u';
-					s->key_info[2]='i';
-					s->key_info[3]='1';
-					s->key_info[4]='6';					
-					break;
-				case 4:
-					s->key_info[1]='u';
-					s->key_info[2]='i';
-					s->key_info[3]='3';
-					s->key_info[4]='2';					
-					break;
-				default:
-					s->key_info[1]='c';
-					s->key_info[2]='h';
-					s->key_info[3]='8';
-					s->key_info[4]='*';					
-					break;
+			
+			int len = strlen(d->type);
+			
+			for (int i=0; i<4; i++)
+			{
+				if (i<len) 
+				{
+					s->key_info[i+1] = d->type[i];
+				}
+				else 
+				{
+					s->key_info[i+1] = 0;
+				}
 			}
+			
             return;
         }
     }
+	
 	if(debug)
-	IOLog("FakeSMC: key info not found %c%c%c%c, length - %x\n", s->key[0], s->key[1], s->key[2], s->key[3],  s->data_len);
+		IOLog("FakeSMC: key info not found %c%c%c%c, length - %x\n", s->key[0], s->key[1], s->key[2], s->key[3],  s->data_len);
+	
 	s->status_1e=0x84;
 }
 
@@ -398,7 +394,22 @@ void IOACPIPlatformDeviceCh::FixUpKeysNum()
 }
 
 //if replace_flag = 0 - existing key will not be overwrited, if != 0 - will be overwrited.
-SMCData IOACPIPlatformDeviceCh::SMCAddKey(const char * keyname, uint8_t keylen, char * keydata, uint32_t replace_flag, PluginCallback callback)
+SMCData IOACPIPlatformDeviceCh::SMCAddKey(const char * keyname, uint8_t keylen, char * keydata, uint32_t replace_flag)
+{
+	return SMCAddKey(keyname, "", keylen, keydata, replace_flag, NULL);
+}
+
+SMCData IOACPIPlatformDeviceCh::SMCAddKey(const char * keyname, uint8_t keylen, char * keydata, uint32_t replace_flag, OnKeyReadCallback onkeyread)
+{
+	return SMCAddKey(keyname, "", keylen, keydata, replace_flag, onkeyread);
+}
+
+SMCData IOACPIPlatformDeviceCh::SMCAddKey(const char * keyname, const char * keytype, uint8_t keylen, char * keydata, uint32_t replace_flag)
+{
+	return SMCAddKey(keyname, keytype, keylen, keydata, replace_flag, NULL);
+}
+
+SMCData IOACPIPlatformDeviceCh::SMCAddKey(const char * keyname, const char * keytype, uint8_t keylen, char * keydata, uint32_t replace_flag, OnKeyReadCallback onkeyread)
 {
 	SMCData SMCkey=0;
 	SMCData PrevKey=0;
@@ -409,38 +420,66 @@ SMCData IOACPIPlatformDeviceCh::SMCAddKey(const char * keyname, uint8_t keylen, 
 	{
 		if(replace_flag != 0) 
 		{
+			if (strlen(keytype) > 0) bcopy(keytype, SMCkey->type, 5);
 			SMCkey->len = keylen;
 			IOFree(SMCkey->data, keylen);
 			SMCkey->data = (char*) IOMalloc(keylen);
 			bcopy(keydata, SMCkey->data,keylen);
-			SMCkey->callback = callback;
-//			IOLog("FakeSMC: replacing key (%s Len=%d)\n", keyname, SMCkey->len);
+			SMCkey->onkeyread = onkeyread;
+			//			IOLog("FakeSMC: replacing key (%s Len=%d)\n", keyname, SMCkey->len);
 		}
 		return SMCkey;
 	}
-	for ( SMCkey = ASMCDKey; SMCkey; SMCkey = SMCkey->next ) PrevKey = SMCkey;
 	
-	if(ASMCDKey == 0) SMCkey = (ASMCDKey = (AppleSMCData *)IOMalloc(sizeof(struct AppleSMCData)));
-	else {
+	for ( SMCkey = ASMCDKey; SMCkey; SMCkey = SMCkey->next )
+		PrevKey = SMCkey;
+	
+	if(ASMCDKey == 0) 
+	{
+		SMCkey = (ASMCDKey = (AppleSMCData *)IOMalloc(sizeof(struct AppleSMCData)));
+	}
+	else 
+	{
 		SMCkey = (AppleSMCData *)IOMalloc(sizeof(struct AppleSMCData));
 		PrevKey->next = SMCkey;
 	}
+	
 	bzero((void*)SMCkey, sizeof(struct AppleSMCData));
+	
 	SMCkey->len = keylen;
 	SMCkey->key = (char*) IOMalloc(5);
+	SMCkey->type = (char*) IOMalloc(5); 
 	SMCkey->data = (char*) IOMalloc(keylen);
-	SMCkey->callback = callback;
+	SMCkey->onkeyread = onkeyread;
+	
 	bzero(SMCkey->data, keylen);
 	bcopy(keyname, SMCkey->key, 5); //size of key name is 4 chars + \0
+	if (strlen(keytype) > 0)
+	{
+		bcopy(keytype, SMCkey->type, 5);
+	}
+	else 
+	{
+		switch (keylen) 
+		{
+			case 1:
+				bcopy("ui8\0", SMCkey->type, 5);
+				break;
+			case 2:
+				bcopy("ui16", SMCkey->type, 5);
+				break;
+			case 4:
+				bcopy("ui32", SMCkey->type, 5);
+				break;
+			default:
+				bcopy("ch8*", SMCkey->type, 5);
+				break;
+		}
+	}
 	bcopy(keydata, SMCkey->data,keylen);
+	
 	return SMCkey;
 }
-
-//if replace_flag = 0 - existing key will not be overwrited, if != 0 - will be overwrited.
-SMCData IOACPIPlatformDeviceCh::SMCAddKey(const char * keyname, uint8_t keylen, char * keydata, uint32_t replace_flag)
-{
-	return SMCAddKey(keyname, keylen, keydata, replace_flag, NULL);
-}	
 
 SMCData IOACPIPlatformDeviceCh::FindSMCKey(const char * keyname)
 {

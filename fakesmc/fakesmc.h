@@ -5,8 +5,10 @@
 #include <IOACPIPlatformDeviceCh.h>
 
 void FakeSMCAddKey (const char*, uint8_t, char*);
-void FakeSMCRegisterKey (const char*, uint8_t, char*, PluginCallback);
-void FakeSMCUnregisterKey (const char* keyname);
+void FakeSMCAddKey (const char*, const char*, uint8_t, char*);
+void FakeSMCAddKeyCallback (const char*, uint8_t, char*, OnKeyReadCallback);
+void FakeSMCAddKeyCallback (const char*, const char*, uint8_t, char*, OnKeyReadCallback);
+void FakeSMCRemoveKeyCallback(const char*);
 
 class FakeSMC : public IOService
 {
