@@ -111,6 +111,9 @@ UInt8 WINBOND_FAN_DIV_BIT0[] = { 36, 38, 30, 8, 10 };
 UInt8 WINBOND_FAN_DIV_BIT1[] = { 37, 39, 31, 9, 11 };
 UInt8 WINBOND_FAN_DIV_BIT2[] = { 5, 6, 7, 23, 15 };
 
+UInt16 WinbondFanValue[5];
+bool WinbondFanValueObsolete[5];
+
 // Global
 
 LPCChipType		Type;

@@ -146,8 +146,9 @@ UInt64 WinbondSetBit(UInt64 target, UInt32 bit, UInt32 value)
 	return value;
 }
 
-UInt16 WinbondReadRPM(UInt8 index)
+void WinbondUpdateRPM()
 {
+	float result = 0;
 	UInt64 bits = 0;
 	
 	for (int i = 0; i < 5; i++)
@@ -155,29 +156,33 @@ UInt16 WinbondReadRPM(UInt8 index)
 	
 	UInt64 newBits = bits;
 	
-	int count = WinbondReadByte(WINBOND_FAN_TACHO_BANK[index], WINBOND_FAN_TACHO_REG[index]);
-	
-	// assemble fan divisor
-	int divisorBits = (int)(
-							(((bits >> WINBOND_FAN_DIV_BIT2[index]) & 1) << 2) |
-							(((bits >> WINBOND_FAN_DIV_BIT1[index]) & 1) << 1) |
-							((bits >> WINBOND_FAN_DIV_BIT0[index]) & 1));
-	int divisor = 1 << divisorBits;
-	
-	float value = (count < 0xff) ? 1.35e6f / (count * divisor) : 0;
-	
-	// update fan divisor
-	if (count > 192 && divisorBits < 7) 
-		divisorBits++;
-	if (count < 96 && divisorBits > 0)
-		divisorBits--;
-	
-	newBits = WinbondSetBit(newBits, WINBOND_FAN_DIV_BIT2[index], 
-							(divisorBits >> 2) & 1);
-	newBits = WinbondSetBit(newBits, WINBOND_FAN_DIV_BIT1[index], 
-							(divisorBits >> 1) & 1);
-	newBits = WinbondSetBit(newBits, WINBOND_FAN_DIV_BIT0[index], 
-							divisorBits & 1);
+	for (int i = 0; i < 5; i++)
+	{
+		int count = WinbondReadByte(WINBOND_FAN_TACHO_BANK[i], WINBOND_FAN_TACHO_REG[i]);
+		
+		// assemble fan divisor
+		int divisorBits = (int)(
+								(((bits >> WINBOND_FAN_DIV_BIT2[i]) & 1) << 2) |
+								(((bits >> WINBOND_FAN_DIV_BIT1[i]) & 1) << 1) |
+								((bits >> WINBOND_FAN_DIV_BIT0[i]) & 1));
+		int divisor = 1 << divisorBits;
+		
+		WinbondFanValue[i] = (count < 0xff) ? 1.35e6f / (float)(count * divisor) : 0;
+		WinbondFanValueObsolete[i] = false;
+
+		// update fan divisor
+		if (count > 192 && divisorBits < 7) 
+			divisorBits++;
+		if (count < 96 && divisorBits > 0)
+			divisorBits--;
+		
+		newBits = WinbondSetBit(newBits, WINBOND_FAN_DIV_BIT2[i], 
+								(divisorBits >> 2) & 1);
+		newBits = WinbondSetBit(newBits, WINBOND_FAN_DIV_BIT1[i], 
+								(divisorBits >> 1) & 1);
+		newBits = WinbondSetBit(newBits, WINBOND_FAN_DIV_BIT0[i], 
+								divisorBits & 1);
+	}
 	
 	// write new fan divisors 
 	for (int i = 4; i >= 0; i--) 
@@ -189,11 +194,6 @@ UInt16 WinbondReadRPM(UInt8 index)
 		if (oldByte != newByte) 
 			WinbondWriteByte(0, WINBOND_FAN_BIT_REG[i], newByte);        
 	}
-	
-	if(value < -55 || value > 125)
-		return 0;
-	
-	return value;
 }
 
 // SMSC
@@ -340,7 +340,16 @@ static void Update(const char* key, char* data)
 			// Fans
 			if(CompareKeys(key, "F0Ac") || CompareKeys(key, "F1Ac") || CompareKeys(key, "F2Ac") || CompareKeys(key, "F3Ac") || CompareKeys(key, "F4Ac"))
 			{
-				UInt16 value = WinbondReadRPM(FanIndex[key[1] - 48]);
+				UInt8 index = FanIndex[key[1] - 48];
+				
+				if(WinbondFanValueObsolete[index]) 
+				{
+					WinbondUpdateRPM();
+				}
+				
+				UInt16 value = WinbondFanValue[index];
+				
+				WinbondFanValueObsolete[index] = true;
 				
 				data[0] = (value >> 6) & 0xff;
 				data[1] = (value << 2) & 0xff;
@@ -852,11 +861,13 @@ bool LPCMonitorPlugin::start(IOService * provider)
 			// FANs
 			UInt8 fanCount = 0;
 			
+			WinbondUpdateRPM();
+			
 			for (int i=0; i<5; i++) 
 			{
 				char key[5];
 				
-				if ((fanName[i] != NULL && fanName[i]->getLength() > 0) || WinbondReadRPM(i))
+				if ((fanName[i] != NULL && fanName[i]->getLength() > 0) || WinbondFanValue[i] > 0)
 				{	
 					snprintf(key, 5, "F%dID", fanCount);
 					FakeSMCAddKey(key, "ch8*", fanName[i]->getLength(), (char*)fanName[i]->getCStringNoCopy());
