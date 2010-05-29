@@ -1,6 +1,8 @@
 #include <IOKit/pci/IOPCIDevice.h>
 #include <IOKit/IOTimerEventSource.h>
 
+UInt8 FanIndex;
+
 class PTKawainVi : public IOService {
     OSDeclareDefaultStructors(PTKawainVi)    
 public:

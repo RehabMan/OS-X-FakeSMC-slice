@@ -302,7 +302,7 @@ PTKawainVi::start( IOService * provider ) {
 	
 	char key[5];
 	
-	snprintf(key, 5, "F%dAc", GetFNum());
+	snprintf(key, 5, "F%dAc", FanIndex = GetFNum());
 	FakeSMCAddKeyCallback(key, "fp2e", 2, value, &::UpdateF);
 	UpdateFNum(1);
 	
@@ -318,7 +318,11 @@ PTKawainVi::init(OSDictionary *properties) {
 void PTKawainVi::stop (IOService* provider) {
 	IOService::stop (provider);
 	FakeSMCRemoveKeyCallback("TG0D");
-	FakeSMCRemoveKeyCallback("F5Ac");
+	
+	char key[5];
+	snprintf(key, 5, "F%dAc", FanIndex);
+	FakeSMCRemoveKeyCallback(key);
+	UpdateFNum(-1);
 }
 
 void PTKawainVi::free () {
