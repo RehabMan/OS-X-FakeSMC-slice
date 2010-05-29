@@ -32,7 +32,7 @@ static void Update(const char* key, char* data)
 	
 	mp_rendezvous_no_intrs(IntelThermal, &magic);
 	
-	UInt8 cpun = key[2] - 48;
+	UInt8 cpun = GetIndex(key[2]);
 	
 	if(CpuCoreiX)
 	{
@@ -67,7 +67,7 @@ IOService* IntelThermalMonitorPlugin::probe(IOService *provider, SInt32 *score)
 		return 0;
 	}
 	
-	CpuCount = cpuid_count_cores();
+	CpuCount = /*cpuid_info()->core_count;*/cpuid_count_cores();
 	
 	if(CpuCount == 0)
 	{
@@ -138,6 +138,21 @@ IOService* IntelThermalMonitorPlugin::probe(IOService *provider, SInt32 *score)
 				case 0x2C: // Intel Core i7 LGA1366 (32nm) 6 Core
 					CpuCoreiX = true;
 					
+					OSDictionary * iocpu = serviceMatching("IOCPU");
+					if (iocpu) 
+					{
+						OSIterator * iterator = getMatchingServices(iocpu);
+						if (iterator) 
+						{
+							CpuCount = 0;
+							
+							while (iterator->getNextObject()) 
+							{
+								CpuCount++;
+							}
+						}
+					}
+					
 					for (int i = 0; i < CpuCount; i++)
 						TjMaxCoreiX[i] = (rdmsr64(MSR_IA32_TEMPERATURE_TARGET) >> 16) & 0xFF;
 					
@@ -165,7 +180,7 @@ bool IntelThermalMonitorPlugin::start(IOService * provider)
 		
 		char key[5];
 		
-		snprintf(key, 5, "TC%dD", i);
+		snprintf(key, 5, "TC%xD", i);
 		
 		FakeSMCAddKeyCallback(key, "sp78", 0x02, value, &Update);
 	}

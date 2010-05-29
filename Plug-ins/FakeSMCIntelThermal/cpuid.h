@@ -141,9 +141,9 @@ static void cpuid_update_generic_info()
 uint32_t cpuid_count_cores()
 {
 	uint32_t cpuid_reg[4];
+	
 	do_cpuid(1, cpuid_reg);
-	uint32_t cores=0;
-	cores=bitfield(cpuid_reg[1], 23, 16);
-	return cores;
+	
+	return bitfield(cpuid_reg[1], 23, 16);
 }
 

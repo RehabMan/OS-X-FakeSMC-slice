@@ -19,3 +19,11 @@ inline bool CompareKeys(const char* key1, const char* key2)
 {
 	return ((key1[0] == key2[0]) && (key1[1] == key2[1]) && (key1[2] == key2[2]) && (key1[3] == key2[3]));
 }
+
+inline UInt8 GetIndex(char value)
+{
+	if (value >= 'A') 
+		return value - 55;
+	
+	return value - 48;
+}
