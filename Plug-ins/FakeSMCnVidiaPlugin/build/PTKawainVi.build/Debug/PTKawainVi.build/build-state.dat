@@ -1,617 +1,0 @@
-TPTKawainVi
-v7
-r0
-t295285308.367821
-cCheck dependencies
-cProcessInfoPlistFile /Users/Michael/Desktop/PTKawainVi.new/build/Debug/PTKawainVi.kext/Contents/Info.plist Info.plist
-cCopyStringsFile /Users/Michael/Desktop/PTKawainVi.new/build/Debug/PTKawainVi.kext/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
-cCompileC build/PTKawainVi.build/Debug/PTKawainVi.build/Objects-normal/i386/PTKawainVi.o /Users/Michael/Desktop/PTKawainVi.new/PTKawainVi.cpp normal i386 c++ com.apple.compilers.gcc.4_2
-cCompileC build/PTKawainVi.build/Debug/PTKawainVi.build/Objects-normal/i386/PTKawainVi_info.o /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Debug/PTKawainVi.build/DerivedSources/PTKawainVi_info.c normal i386 c com.apple.compilers.gcc.4_2
-cLd /Users/Michael/Desktop/PTKawainVi.new/build/Debug/PTKawainVi.kext/Contents/MacOS/PTKawainVi normal i386
-cGenerateDSYMFile /Users/Michael/Desktop/PTKawainVi.new/build/Debug/PTKawainVi.kext.dSYM /Users/Michael/Desktop/PTKawainVi.new/build/Debug/PTKawainVi.kext/Contents/MacOS/PTKawainVi
-cTouch /Users/Michael/Desktop/PTKawainVi.new/build/Debug/PTKawainVi.kext
-
-N/Developer/SDKs/MacOSX10.5.sdk
-c000000004BE0164F00000000000000EE
-t1272976975
-s238
-
-N/Developer/SDKs/MacOSX10.5.sdk/System/Library/Frameworks/IOKit.framework/IOKit
-c000000004B760CCB000000000003D498
-t1266027723
-s251032
-
-N/Developer/SDKs/MacOSX10.5.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/IOLib.h
-c0000000047E883950000000000004A06
-t1206420373
-s18950
-
-N/Developer/SDKs/MacOSX10.5.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/IOTimerEventSource.h
-c0000000047E883960000000000002CE8
-t1206420374
-s11496
-
-N/Developer/SDKs/MacOSX10.5.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/pci/IOPCIDevice.h
-c000000004864AB860000000000007C69
-t1214557062
-s31849
-
-N/Developer/SDKs/MacOSX10.5.sdk/System/Library/Frameworks/Kernel.framework/Headers/string.h
-c0000000047E883B10000000000000C73
-t1206420401
-s3187
-
-N/Developer/SDKs/MacOSX10.6.sdk
-c000000004BE0165B00000000000000EE
-t1272976987
-s238
-
-N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/IOKit.framework/Headers/IOKitLib.h
-c000000004A4D52090000000000012048
-t1246581257
-s73800
-
-N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/IOKit.framework/IOKit
-c000000004BAC505B000000000003AB6C
-t1269583963
-s240492
-
-N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/IOLib.h
-c000000004A73D6520000000000004DDF
-t1249105490
-s19935
-
-N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/IOService.h
-c000000004A73D653000000000001F49D
-t1249105491
-s128157
-
-N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/IOTimerEventSource.h
-c000000004A73D6540000000000002B1D
-t1249105492
-s11037
-
-N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/acpi/IOACPIPlatformDevice.h
-c000000004A73D8B80000000000002B75
-t1249106104
-s11125
-
-N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/pci/IOPCIDevice.h
-c000000004A73D8C70000000000008708
-t1249106119
-s34568
-
-N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/string.h
-c000000004A73D6470000000000000C73
-t1249105479
-s3187
-
-N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/sys/_types.h
-c000000004A73D65E00000000000018AC
-t1249105502
-s6316
-
-N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/sys/select.h
-c000000004A73D65D0000000000001552
-t1249105501
-s5458
-
-N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/sys/unistd.h
-c000000004A73D65D0000000000001D15
-t1249105501
-s7445
-
-N/Developer/SDKs/MacOSX10.6.sdk/usr/include/stdio.h
-c000000004A5C14A70000000000004174
-t1247548583
-s16756
-
-N/Developer/SDKs/MacOSX10.6.sdk/usr/include/stdlib.h
-c000000004A5C14A70000000000002DF5
-t1247548583
-s11765
-
-N/Developer/SDKs/MacOSX10.6.sdk/usr/include/time.h
-c000000004A5C14A7000000000000178E
-t1247548583
-s6030
-
-N/Developer/SDKs/MacOSX10.6.sdk/usr/include/unistd.h
-c000000004A5C14A7000000000000563E
-t1247548583
-s22078
-
-N/PTKawainVi/English.lproj/InfoPlist.strings
-c000000004BDD3A880000000000000032
-t1272789640
-s50
-
-N/PTKawainVi/IOACPIPlatformDeviceCh.h
-c000000004BE2CE42000000000000113A
-t1273155138
-s4410
-i<IOKit/IOService.h>
-i<IOKit/acpi/IOACPIPlatformDevice.h>
-i<IOKit/acpi/IOACPIPlatformDevice.h>
-
-N/PTKawainVi/PTKawainVi.cpp
-c000000004BE43D920000000000000F36
-t1273249170
-s3894
-i"PTKawainVi.h"
-
-N/PTKawainVi/PTKawainVi.h
-c000000004BE2D1140000000000000327
-t1273155860
-s807
-i<IOKit/pci/IOPCIDevice.h>
-i<IOKit/IOTimerEventSource.h>
-
-N/PTKawainVi/_types.h
-c000000004A5C14A60000000000000890
-t1247548582
-s2192
-i<sys/_types.h>
-
-N/PTKawainVi/build/Debug/PTKawainVi.kext
-t1273394190
-s102
-
-N/PTKawainVi/build/Debug/PTKawainVi.kext.dSYM
-t1273249171
-s102
-
-N/PTKawainVi/build/Debug/PTKawainVi.kext/Contents/Info.plist
-t1273394190
-s1623
-
-N/PTKawainVi/build/Debug/PTKawainVi.kext/Contents/MacOS/PTKawainVi
-t1273249171
-s35656
-
-N/PTKawainVi/build/Debug/PTKawainVi.kext/Contents/Resources/English.lproj/InfoPlist.strings
-t1273155707
-s96
-
-N/PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/DerivedSources/PTKawainVi_info.c
-c000000004BE2D07B00000000000001AB
-t1273155707
-s427
-
-N/PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/Objects-normal/i386/PTKawainVi.LinkFileList
-c000000004BE2D07B000000000000005B
-t1273155707
-s91
-
-N/PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/Objects-normal/i386/PTKawainVi.o
-t1273249171
-s154176
-
-N/PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/Objects-normal/i386/PTKawainVi_info.o
-t1273155707
-s3700
-
-N/PTKawainVi/fakesmc.h
-c000000004BE2CEAE0000000000000A5B
-t1273155246
-s2651
-i<IOKit/IOService.h>
-i<IOKit/pci/IOPCIDevice.h>
-i<IOKit/IOTimerEventSource.h>
-i"IOACPIPlatformDeviceCh.h"
-
-N/PTKawainVi/unistd.h
-c000000004BE030C4000000000000563E
-t1272983748
-s22078
-i"_types.h"
-i<sys/unistd.h>
-i<sys/select.h>
-
-N/Users/Michael/Desktop/PTKawainVi.new/English.lproj/InfoPlist.strings
-c000000004BDD3A880000000000000032
-t1272789640
-s50
-
-N/Users/Michael/Desktop/PTKawainVi.new/PTKawainVi.cpp
-c000000004BE43D920000000000000F36
-t1273249170
-s3894
-i"PTKawainVi.h"
-
-N/Users/Michael/Desktop/PTKawainVi.new/PTKawainVi.h
-c000000004BE2D1140000000000000327
-t1273155860
-s807
-i<IOKit/pci/IOPCIDevice.h>
-i<IOKit/IOTimerEventSource.h>
-
-N/Users/Michael/Desktop/PTKawainVi.new/build/Debug/PTKawainVi.kext
-t1273592508
-s102
-
-N/Users/Michael/Desktop/PTKawainVi.new/build/Debug/PTKawainVi.kext.dSYM
-t1273592350
-s102
-
-N/Users/Michael/Desktop/PTKawainVi.new/build/Debug/PTKawainVi.kext/Contents/Info.plist
-t1273592508
-s1627
-
-N/Users/Michael/Desktop/PTKawainVi.new/build/Debug/PTKawainVi.kext/Contents/MacOS/PTKawainVi
-t1273592350
-s35708
-
-N/Users/Michael/Desktop/PTKawainVi.new/build/Debug/PTKawainVi.kext/Contents/Resources/English.lproj/InfoPlist.strings
-t1273155707
-s96
-
-N/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Debug/PTKawainVi.build/DerivedSources/PTKawainVi_info.c
-c000000004BE2D07B00000000000001AB
-t1273155707
-s427
-
-N/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Debug/PTKawainVi.build/Objects-normal/i386/PTKawainVi.LinkFileList
-c000000004BE97A1D0000000000000075
-t1273592349
-s117
-
-N/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Debug/PTKawainVi.build/Objects-normal/i386/PTKawainVi.o
-t1273249171
-s154176
-
-N/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Debug/PTKawainVi.build/Objects-normal/i386/PTKawainVi_info.o
-t1273155707
-s3700
-
-N/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Debug/PTKawainVi.build/Objects-normal/i386/smc.o
-t2
-s0
-
-N/Users/Michael/Desktop/PTKawainVi.new/smc.c
-c000000004BE6D9AF0000000000002832
-t1273420207
-s10290
-i<string.h>
-i<IOKit/IOLib.h>
-i"smc.h"
-
-N/Users/Michael/Desktop/PTKawainVi.new/smc.h
-c00000000472254060000000000000BA4
-t1193432070
-s2980
-
-N/Users/Michael/Desktop/SMC/ITESMC_2.1/IOACPIPlatformDeviceCh.h
-c000000004BE19B33000000000000113C
-t1273076531
-s4412
-i<IOKit/IOService.h>
-i<IOKit/acpi/IOACPIPlatformDevice.h>
-i<IOKit/acpi/IOACPIPlatformDevice.h>
-
-N/Users/Michael/Desktop/SMC/ITESMC_2.1/fakesmc.h
-c000000004BE1B4E20000000000000A5A
-t1273083106
-s2650
-i<IOKit/IOService.h>
-i<IOKit/pci/IOPCIDevice.h>
-i<IOKit/IOTimerEventSource.h>
-i"IOACPIPlatformDeviceCh.h"
-
-N/Users/Michael/Documents/PTKawainVi/English.lproj/InfoPlist.strings
-c000000004BDD3A880000000000000032
-t1272789640
-s50
-
-N/Users/Michael/Documents/PTKawainVi/PTKawainVi.cpp
-c000000004BDECEBE000000000000083B
-t1272893118
-s2107
-i"PTKawainVi.h"
-i<IOKit/IOLib.h>
-i<unistd.h>
-
-N/Users/Michael/Documents/PTKawainVi/PTKawainVi.h
-c000000004BDDB3C30000000000000192
-t1272820675
-s402
-i<IOKit/pci/IOPCIDevice.h>
-
-N/Users/Michael/Documents/PTKawainVi/build/Debug/PTKawainVi.kext
-t1272891777
-s102
-
-N/Users/Michael/Documents/PTKawainVi/build/Debug/PTKawainVi.kext.dSYM
-t1272891777
-s102
-
-N/Users/Michael/Documents/PTKawainVi/build/Debug/PTKawainVi.kext/Contents/Info.plist
-t1272822059
-s1570
-
-N/Users/Michael/Documents/PTKawainVi/build/Debug/PTKawainVi.kext/Contents/MacOS/PTKawainVi
-t1272891777
-s32332
-
-N/Users/Michael/Documents/PTKawainVi/build/Debug/PTKawainVi.kext/Contents/Resources/English.lproj/InfoPlist.strings
-t1272820203
-s96
-
-N/Users/Michael/Documents/PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/DerivedSources/PTKawainVi_info.c
-c000000004BDDB1EB00000000000001AB
-t1272820203
-s427
-
-N/Users/Michael/Documents/PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/Objects-normal/i386/PTKawainVi.LinkFileList
-c000000004BDDB1EB0000000000000073
-t1272820203
-s115
-
-N/Users/Michael/Documents/PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/Objects-normal/i386/PTKawainVi.o
-t2
-s0
-
-N/Users/Michael/Documents/PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/Objects-normal/i386/PTKawainVi_info.o
-t1272820204
-s3764
-
-N/Users/Michael/Documents/PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/Objects-normal/x86_64/PTKawainVi.LinkFileList
-c00000000000000000000000000000000
-t2
-s0
-
-N/Users/Michael/Documents/PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/Objects-normal/x86_64/PTKawainVi.o
-t2
-s0
-
-N/Users/Michael/Documents/PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/Objects-normal/x86_64/PTKawainVi_info.o
-t2
-s0
-
-NInfo.plist
-c000000004BE97ABC0000000000000698
-t1273592508
-s1688
-
-CCheck dependencies
-r0
-lSLF07#2@18"Check dependencies295285308#295285308#0(0"0(0#1#0"4324455640#0"0#
-
-CCompileC build/PTKawainVi.build/Debug/PTKawainVi.build/Objects-normal/i386/PTKawainVi.o /PTKawainVi/PTKawainVi.cpp normal i386 c++ com.apple.compilers.gcc.4_2
-s294941970.641116
-e294941971.271436
-r1
-xCompileC
-xbuild/PTKawainVi.build/Debug/PTKawainVi.build/Objects-normal/i386/PTKawainVi.o
-x/PTKawainVi/PTKawainVi.cpp
-xnormal
-xi386
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@34"Compile /PTKawainVi/PTKawainVi.cpp294941970#294941971#0(0"0(0#0#26"/PTKawainVi/PTKawainVi.cpp4324455640#1359"    cd /PTKawainVi    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -O0 -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -mmacosx-version-min=10.6 -gdwarf-2 -iquote /PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/PTKawainVi-generated-files.hmap -I/PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/PTKawainVi-own-target-headers.hmap -I/PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/PTKawainVi-all-target-headers.hmap -iquote /PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/PTKawainVi-project-headers.hmap -F/PTKawainVi/build/Debug -I/PTKawainVi/build/Debug/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/DerivedSources/i386 -I/PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/DerivedSources -c /PTKawainVi/PTKawainVi.cpp -o /PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/Objects-normal/i386/PTKawainVi.o0#
-
-CCompileC build/PTKawainVi.build/Debug/PTKawainVi.build/Objects-normal/i386/PTKawainVi.o /Users/Michael/Desktop/PTKawainVi.new/PTKawainVi.cpp normal i386 c++ com.apple.compilers.gcc.4_2
-r0
-
-CCompileC build/PTKawainVi.build/Debug/PTKawainVi.build/Objects-normal/i386/PTKawainVi.o /Users/Michael/Documents/PTKawainVi/PTKawainVi.cpp normal i386 c++ com.apple.compilers.gcc.4_2
-s294585918.940701
-e294585919.180729
-r0
-xCompileC
-xbuild/PTKawainVi.build/Debug/PTKawainVi.build/Objects-normal/i386/PTKawainVi.o
-x/Users/Michael/Documents/PTKawainVi/PTKawainVi.cpp
-xnormal
-xi386
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@58"Compile /Users/Michael/Documents/PTKawainVi/PTKawainVi.cpp294585918#294585919#0(100"/Users/Michael/Documents/PTKawainVi/PTKawainVi.cpp:4:20: error: unistd.h: No such file or directory1(4@35"Unistd.h: No such file or directory294585919#0#100#0(6@50"/Users/Michael/Documents/PTKawainVi/PTKawainVi.cpp294585918#4#0#4#0#28"*: No such file or directory0(0#0#50"/Users/Michael/Documents/PTKawainVi/PTKawainVi.cpp4300885448#1623"    cd /Users/Michael/Documents/PTKawainVi    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -O0 -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/Michael/Documents/PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/PTKawainVi-generated-files.hmap -I/Users/Michael/Documents/PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/PTKawainVi-own-target-headers.hmap -I/Users/Michael/Documents/PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/PTKawainVi-all-target-headers.hmap -iquote /Users/Michael/Documents/PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/PTKawainVi-project-headers.hmap -F/Users/Michael/Documents/PTKawainVi/build/Debug -I/Users/Michael/Documents/PTKawainVi/build/Debug/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/Michael/Documents/PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/DerivedSources/i386 -I/Users/Michael/Documents/PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/DerivedSources -c /Users/Michael/Documents/PTKawainVi/PTKawainVi.cpp -o /Users/Michael/Documents/PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/Objects-normal/i386/PTKawainVi.o1#
-
-CCompileC build/PTKawainVi.build/Debug/PTKawainVi.build/Objects-normal/i386/PTKawainVi_info.o /PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/DerivedSources/PTKawainVi_info.c normal i386 c com.apple.compilers.gcc.4_2
-s294848507.397897
-e294848507.446717
-r1
-xCompileC
-xbuild/PTKawainVi.build/Debug/PTKawainVi.build/Objects-normal/i386/PTKawainVi_info.o
-x/PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/DerivedSources/PTKawainVi_info.c
-xnormal
-xi386
-xc
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@98"Compile /PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/DerivedSources/PTKawainVi_info.c294848507#294848507#0(0"0(0#0#90"/PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/DerivedSources/PTKawainVi_info.c4324455640#1386"    cd /PTKawainVi    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch i386 -fmessage-length=0 -pipe -nostdinc -std=gnu99 -fno-builtin -Wno-trigraphs -fasm-blocks -force_cpusubtype_ALL -msoft-float -O0 -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -iquote /PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/PTKawainVi-generated-files.hmap -I/PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/PTKawainVi-own-target-headers.hmap -I/PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/PTKawainVi-all-target-headers.hmap -iquote /PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/PTKawainVi-project-headers.hmap -F/PTKawainVi/build/Debug -I/PTKawainVi/build/Debug/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/DerivedSources/i386 -I/PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/DerivedSources -c /PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/DerivedSources/PTKawainVi_info.c -o /PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/Objects-normal/i386/PTKawainVi_info.o0#
-
-CCompileC build/PTKawainVi.build/Debug/PTKawainVi.build/Objects-normal/i386/PTKawainVi_info.o /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Debug/PTKawainVi.build/DerivedSources/PTKawainVi_info.c normal i386 c com.apple.compilers.gcc.4_2
-r0
-
-CCompileC build/PTKawainVi.build/Debug/PTKawainVi.build/Objects-normal/i386/PTKawainVi_info.o /Users/Michael/Documents/PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/DerivedSources/PTKawainVi_info.c normal i386 c com.apple.compilers.gcc.4_2
-s294513003.998818
-e294513004.275013
-r1
-xCompileC
-xbuild/PTKawainVi.build/Debug/PTKawainVi.build/Objects-normal/i386/PTKawainVi_info.o
-x/Users/Michael/Documents/PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/DerivedSources/PTKawainVi_info.c
-xnormal
-xi386
-xc
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@122"Compile /Users/Michael/Documents/PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/DerivedSources/PTKawainVi_info.c294513003#294513004#0(0"0(0#0#114"/Users/Michael/Documents/PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/DerivedSources/PTKawainVi_info.c4300885448#1650"    cd /Users/Michael/Documents/PTKawainVi    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch i386 -fmessage-length=0 -pipe -nostdinc -std=gnu99 -fno-builtin -Wno-trigraphs -fasm-blocks -force_cpusubtype_ALL -msoft-float -O0 -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/Michael/Documents/PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/PTKawainVi-generated-files.hmap -I/Users/Michael/Documents/PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/PTKawainVi-own-target-headers.hmap -I/Users/Michael/Documents/PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/PTKawainVi-all-target-headers.hmap -iquote /Users/Michael/Documents/PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/PTKawainVi-project-headers.hmap -F/Users/Michael/Documents/PTKawainVi/build/Debug -I/Users/Michael/Documents/PTKawainVi/build/Debug/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/Michael/Documents/PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/DerivedSources/i386 -I/Users/Michael/Documents/PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/DerivedSources -c /Users/Michael/Documents/PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/DerivedSources/PTKawainVi_info.c -o /Users/Michael/Documents/PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/Objects-normal/i386/PTKawainVi_info.o0#
-
-CCompileC build/PTKawainVi.build/Debug/PTKawainVi.build/Objects-normal/i386/smc.o /Users/Michael/Desktop/PTKawainVi.new/smc.c normal i386 c com.apple.compilers.gcc.4_2
-s295113076.854331
-e295113076.954023
-r0
-xCompileC
-xbuild/PTKawainVi.build/Debug/PTKawainVi.build/Objects-normal/i386/smc.o
-x/Users/Michael/Desktop/PTKawainVi.new/smc.c
-xnormal
-xi386
-xc
-xcom.apple.compilers.gcc.4_2
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function '_ultostr':
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:45: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function 'SMCOpen':
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:117: warning: implicit declaration of function 'IOMasterPort'
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:119: error: 'CFMutableDictionaryRef' undeclared (first use in this function)
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:119: error: (Each undeclared identifier is reported only once
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:119: error: for each function it appears in.)
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:119: error: expected ';' before 'matchingDictionary'
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:120: warning: implicit declaration of function 'IOServiceGetMatchingServices'
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:120: error: 'matchingDictionary' undeclared (first use in this function)
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:127: warning: implicit declaration of function 'IOIteratorNext'
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:127: warning: assignment makes pointer from integer without a cast
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:128: warning: implicit declaration of function 'IOObjectRelease'
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:135: warning: implicit declaration of function 'IOServiceOpen'
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:135: warning: implicit declaration of function 'mach_task_self'
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function 'SMCClose':
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:148: warning: implicit declaration of function 'IOServiceClose'
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function 'SMCCall':
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:160: warning: implicit declaration of function 'IOConnectMethodStructureIStructureO'
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function 'SMCReadKey':
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:181: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function 'SMCPrintFans':
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:290: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:293: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:296: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:299: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:302: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function 'SMCSetFanRpm':
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:355: warning: 'strcpy' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/string.h:64)
-lSLF07#2@51"Compile /Users/Michael/Desktop/PTKawainVi.new/smc.c295113076#295113076#0(3618"/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function '_ultostr':/Users/Michael/Desktop/PTKawainVi.new/smc.c:45: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function 'SMCOpen':/Users/Michael/Desktop/PTKawainVi.new/smc.c:117: warning: implicit declaration of function 'IOMasterPort'/Users/Michael/Desktop/PTKawainVi.new/smc.c:119: error: 'CFMutableDictionaryRef' undeclared (first use in this function)/Users/Michael/Desktop/PTKawainVi.new/smc.c:119: error: (Each undeclared identifier is reported only once/Users/Michael/Desktop/PTKawainVi.new/smc.c:119: error: for each function it appears in.)/Users/Michael/Desktop/PTKawainVi.new/smc.c:119: error: expected ';' before 'matchingDictionary'/Users/Michael/Desktop/PTKawainVi.new/smc.c:120: warning: implicit declaration of function 'IOServiceGetMatchingServices'/Users/Michael/Desktop/PTKawainVi.new/smc.c:120: error: 'matchingDictionary' undeclared (first use in this function)/Users/Michael/Desktop/PTKawainVi.new/smc.c:127: warning: implicit declaration of function 'IOIteratorNext'/Users/Michael/Desktop/PTKawainVi.new/smc.c:127: warning: assignment makes pointer from integer without a cast/Users/Michael/Desktop/PTKawainVi.new/smc.c:128: warning: implicit declaration of function 'IOObjectRelease'/Users/Michael/Desktop/PTKawainVi.new/smc.c:135: warning: implicit declaration of function 'IOServiceOpen'/Users/Michael/Desktop/PTKawainVi.new/smc.c:135: warning: implicit declaration of function 'mach_task_self'/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function 'SMCClose':/Users/Michael/Desktop/PTKawainVi.new/smc.c:148: warning: implicit declaration of function 'IOServiceClose'/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function 'SMCCall':/Users/Michael/Desktop/PTKawainVi.new/smc.c:160: warning: implicit declaration of function 'IOConnectMethodStructureIStructureO'/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function 'SMCReadKey':/Users/Michael/Desktop/PTKawainVi.new/smc.c:181: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function 'SMCPrintFans':/Users/Michael/Desktop/PTKawainVi.new/smc.c:290: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)/Users/Michael/Desktop/PTKawainVi.new/smc.c:293: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)/Users/Michael/Desktop/PTKawainVi.new/smc.c:296: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)/Users/Michael/Desktop/PTKawainVi.new/smc.c:299: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)/Users/Michael/Desktop/PTKawainVi.new/smc.c:302: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function 'SMCSetFanRpm':/Users/Michael/Desktop/PTKawainVi.new/smc.c:355: warning: 'strcpy' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/string.h:64)20(22@141"'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)295113076#69#199#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#45#0#45#0#33"'*' is deprecated (declared at *)0(22@47"Implicit declaration of function 'IOMasterPort'295113076#336#106#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#117#0#117#0#36"implicit declaration of function '*'0(4@64"'CFMutableDictionaryRef' undeclared (first use in this function)295113076#442#121#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#119#0#119#0#43"'*' undeclared (first use in this function)0(4@40"Expected ';' before 'matchingDictionary'295113076#759#97#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#119#0#119#0#19"expected * before *0(22@63"Implicit declaration of function 'IOServiceGetMatchingServices'295113076#856#122#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#120#0#120#0#36"implicit declaration of function '*'0(4@60"'matchingDictionary' undeclared (first use in this function)295113076#978#117#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#120#0#120#0#43"'*' undeclared (first use in this function)0(22@49"Implicit declaration of function 'IOIteratorNext'295113076#1095#108#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#127#0#127#0#36"implicit declaration of function '*'0(22@52"Assignment makes pointer from integer without a cast295113076#1203#111#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#127#0#127#0#0"0(22@50"Implicit declaration of function 'IOObjectRelease'295113076#1314#109#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#128#0#128#0#36"implicit declaration of function '*'0(22@48"Implicit declaration of function 'IOServiceOpen'295113076#1423#107#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#135#0#135#0#36"implicit declaration of function '*'0(22@49"Implicit declaration of function 'mach_task_self'295113076#1530#108#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#135#0#135#0#36"implicit declaration of function '*'0(22@49"Implicit declaration of function 'IOServiceClose'295113076#1707#108#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#148#0#148#0#36"implicit declaration of function '*'0(22@70"Implicit declaration of function 'IOConnectMethodStructureIStructureO'295113076#1883#129#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#160#0#160#0#36"implicit declaration of function '*'0(22@141"'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)295113076#2083#200#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#181#0#181#0#33"'*' is deprecated (declared at *)0(22@141"'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)295113076#2356#200#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#290#0#290#0#33"'*' is deprecated (declared at *)0(22@141"'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)295113076#2556#200#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#293#0#293#0#33"'*' is deprecated (declared at *)0(22@141"'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)295113076#2756#200#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#296#0#296#0#33"'*' is deprecated (declared at *)0(22@141"'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)295113076#2956#200#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#299#0#299#0#33"'*' is deprecated (declared at *)0(22@141"'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)295113076#3156#200#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#302#0#302#0#33"'*' is deprecated (declared at *)0(22@130"'strcpy' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/string.h:64)295113076#3429#189#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#355#0#355#0#33"'*' is deprecated (declared at *)0(0#0#43"/Users/Michael/Desktop/PTKawainVi.new/smc.c4324455640#1587"    cd /Users/Michael/Desktop/PTKawainVi.new    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch i386 -fmessage-length=0 -pipe -nostdinc -std=gnu99 -fno-builtin -Wno-trigraphs -fasm-blocks -force_cpusubtype_ALL -msoft-float -O0 -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Debug/PTKawainVi.build/PTKawainVi-generated-files.hmap -I/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Debug/PTKawainVi.build/PTKawainVi-own-target-headers.hmap -I/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Debug/PTKawainVi.build/PTKawainVi-all-target-headers.hmap -iquote /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Debug/PTKawainVi.build/PTKawainVi-project-headers.hmap -F/Users/Michael/Desktop/PTKawainVi.new/build/Debug -I/Users/Michael/Desktop/PTKawainVi.new/build/Debug/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Debug/PTKawainVi.build/DerivedSources/i386 -I/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Debug/PTKawainVi.build/DerivedSources -c /Users/Michael/Desktop/PTKawainVi.new/smc.c -o /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Debug/PTKawainVi.build/Objects-normal/i386/smc.o1#
-
-CCompileC build/PTKawainVi.build/Debug/PTKawainVi.build/Objects-normal/x86_64/PTKawainVi.o /Users/Michael/Documents/PTKawainVi/PTKawainVi.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-r0
-
-CCompileC build/PTKawainVi.build/Debug/PTKawainVi.build/Objects-normal/x86_64/PTKawainVi_info.o /Users/Michael/Documents/PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/DerivedSources/PTKawainVi_info.c normal x86_64 c com.apple.compilers.gcc.4_2
-r0
-
-CCopyStringsFile /PTKawainVi/build/Debug/PTKawainVi.kext/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
-s294848507.358289
-e294848507.396738
-r1
-xCopyStringsFile
-x/PTKawainVi/build/Debug/PTKawainVi.kext/Contents/Resources/English.lproj/InfoPlist.strings
-xEnglish.lproj/InfoPlist.strings
-lSLF07#2@36"Copy English.lproj/InfoPlist.strings294848507#294848507#0(0"0(0#0#43"/PTKawainVi/English.lproj/InfoPlist.strings4324455640#315"    cd /PTKawainVi    setenv ICONV /usr/bin/iconv    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings --validate --inputencoding utf-8 --outputencoding UTF-16 English.lproj/InfoPlist.strings --outdir /PTKawainVi/build/Debug/PTKawainVi.kext/Contents/Resources/English.lproj0#
-
-CCopyStringsFile /Users/Michael/Desktop/PTKawainVi.new/build/Debug/PTKawainVi.kext/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
-r0
-
-CCopyStringsFile /Users/Michael/Documents/PTKawainVi/build/Debug/PTKawainVi.kext/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
-s294513003.691193
-e294513003.984766
-r1
-xCopyStringsFile
-x/Users/Michael/Documents/PTKawainVi/build/Debug/PTKawainVi.kext/Contents/Resources/English.lproj/InfoPlist.strings
-xEnglish.lproj/InfoPlist.strings
-lSLF07#2@36"Copy English.lproj/InfoPlist.strings294513003#294513003#0(0"0(0#0#67"/Users/Michael/Documents/PTKawainVi/English.lproj/InfoPlist.strings4300885448#363"    cd /Users/Michael/Documents/PTKawainVi    setenv ICONV /usr/bin/iconv    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings --validate --inputencoding utf-8 --outputencoding UTF-16 English.lproj/InfoPlist.strings --outdir /Users/Michael/Documents/PTKawainVi/build/Debug/PTKawainVi.kext/Contents/Resources/English.lproj0#
-
-CGenerateDSYMFile /PTKawainVi/build/Debug/PTKawainVi.kext.dSYM /PTKawainVi/build/Debug/PTKawainVi.kext/Contents/MacOS/PTKawainVi
-s294941971.579726
-e294941971.660399
-r1
-xGenerateDSYMFile
-x/PTKawainVi/build/Debug/PTKawainVi.kext.dSYM
-x/PTKawainVi/build/Debug/PTKawainVi.kext/Contents/MacOS/PTKawainVi
-lSLF07#2@103"GenerateDSYMFile build/Debug/PTKawainVi.kext.dSYM build/Debug/PTKawainVi.kext/Contents/MacOS/PTKawainVi294941971#294941971#0(0"0(0#0#65"/PTKawainVi/build/Debug/PTKawainVi.kext/Contents/MacOS/PTKawainVi4324455640#165"    cd /PTKawainVi    /Developer/usr/bin/dsymutil /PTKawainVi/build/Debug/PTKawainVi.kext/Contents/MacOS/PTKawainVi -o /PTKawainVi/build/Debug/PTKawainVi.kext.dSYM0#
-
-CGenerateDSYMFile /Users/Michael/Desktop/PTKawainVi.new/build/Debug/PTKawainVi.kext.dSYM /Users/Michael/Desktop/PTKawainVi.new/build/Debug/PTKawainVi.kext/Contents/MacOS/PTKawainVi
-s295285150.179376
-e295285150.252980
-r1
-xGenerateDSYMFile
-x/Users/Michael/Desktop/PTKawainVi.new/build/Debug/PTKawainVi.kext.dSYM
-x/Users/Michael/Desktop/PTKawainVi.new/build/Debug/PTKawainVi.kext/Contents/MacOS/PTKawainVi
-lSLF07#2@103"GenerateDSYMFile build/Debug/PTKawainVi.kext.dSYM build/Debug/PTKawainVi.kext/Contents/MacOS/PTKawainVi295285150#295285150#0(0"0(0#0#91"/Users/Michael/Desktop/PTKawainVi.new/build/Debug/PTKawainVi.kext/Contents/MacOS/PTKawainVi4324455640#243"    cd /Users/Michael/Desktop/PTKawainVi.new    /Developer/usr/bin/dsymutil /Users/Michael/Desktop/PTKawainVi.new/build/Debug/PTKawainVi.kext/Contents/MacOS/PTKawainVi -o /Users/Michael/Desktop/PTKawainVi.new/build/Debug/PTKawainVi.kext.dSYM0#
-
-CGenerateDSYMFile /Users/Michael/Documents/PTKawainVi/build/Debug/PTKawainVi.kext.dSYM /Users/Michael/Documents/PTKawainVi/build/Debug/PTKawainVi.kext/Contents/MacOS/PTKawainVi
-s294584577.526576
-e294584577.553657
-r1
-xGenerateDSYMFile
-x/Users/Michael/Documents/PTKawainVi/build/Debug/PTKawainVi.kext.dSYM
-x/Users/Michael/Documents/PTKawainVi/build/Debug/PTKawainVi.kext/Contents/MacOS/PTKawainVi
-lSLF07#2@103"GenerateDSYMFile build/Debug/PTKawainVi.kext.dSYM build/Debug/PTKawainVi.kext/Contents/MacOS/PTKawainVi294584577#294584577#0(0"0(0#0#89"/Users/Michael/Documents/PTKawainVi/build/Debug/PTKawainVi.kext/Contents/MacOS/PTKawainVi4300885448#237"    cd /Users/Michael/Documents/PTKawainVi    /Developer/usr/bin/dsymutil /Users/Michael/Documents/PTKawainVi/build/Debug/PTKawainVi.kext/Contents/MacOS/PTKawainVi -o /Users/Michael/Documents/PTKawainVi/build/Debug/PTKawainVi.kext.dSYM0#
-
-CLd /PTKawainVi/build/Debug/PTKawainVi.kext/Contents/MacOS/PTKawainVi normal i386
-s294941971.271720
-e294941971.579572
-r1
-xLd
-x/PTKawainVi/build/Debug/PTKawainVi.kext/Contents/MacOS/PTKawainVi
-xnormal
-xi386
-lSLF07#2@70"Link /PTKawainVi/build/Debug/PTKawainVi.kext/Contents/MacOS/PTKawainVi294941971#294941971#0(0"0(0#0#0"27584981513797680#561"    cd /PTKawainVi    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/g++-4.2 -arch i386 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/PTKawainVi/build/Debug -F/PTKawainVi/build/Debug -filelist /PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/Objects-normal/i386/PTKawainVi.LinkFileList -mmacosx-version-min=10.6 -lcpp_kext -Xlinker -kext -nostdlib -lkmodc++ /PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/Objects-normal/i386/PTKawainVi_info.o -lkmod -lcc_kext -o /PTKawainVi/build/Debug/PTKawainVi.kext/Contents/MacOS/PTKawainVi0#
-
-CLd /Users/Michael/Desktop/PTKawainVi.new/build/Debug/PTKawainVi.kext/Contents/MacOS/PTKawainVi normal i386
-s295285149.888225
-e295285150.179257
-r1
-xLd
-x/Users/Michael/Desktop/PTKawainVi.new/build/Debug/PTKawainVi.kext/Contents/MacOS/PTKawainVi
-xnormal
-xi386
-lSLF07#2@96"Link /Users/Michael/Desktop/PTKawainVi.new/build/Debug/PTKawainVi.kext/Contents/MacOS/PTKawainVi295285149#295285150#0(0"0(0#0#0"21110984035794992#717"    cd /Users/Michael/Desktop/PTKawainVi.new    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/g++-4.2 -arch i386 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/Michael/Desktop/PTKawainVi.new/build/Debug -F/Users/Michael/Desktop/PTKawainVi.new/build/Debug -filelist /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Debug/PTKawainVi.build/Objects-normal/i386/PTKawainVi.LinkFileList -mmacosx-version-min=10.6 -lcpp_kext -Xlinker -kext -nostdlib -lkmodc++ /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Debug/PTKawainVi.build/Objects-normal/i386/PTKawainVi_info.o -lkmod -lcc_kext -o /Users/Michael/Desktop/PTKawainVi.new/build/Debug/PTKawainVi.kext/Contents/MacOS/PTKawainVi0#
-
-CLd /Users/Michael/Documents/PTKawainVi/build/Debug/PTKawainVi.kext/Contents/MacOS/PTKawainVi normal i386
-s294584577.450630
-e294584577.526436
-r1
-xLd
-x/Users/Michael/Documents/PTKawainVi/build/Debug/PTKawainVi.kext/Contents/MacOS/PTKawainVi
-xnormal
-xi386
-lSLF07#2@94"Link /Users/Michael/Documents/PTKawainVi/build/Debug/PTKawainVi.kext/Contents/MacOS/PTKawainVi294584577#294584577#0(0"0(0#0#0"4300885448#705"    cd /Users/Michael/Documents/PTKawainVi    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/g++-4.2 -arch i386 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/Michael/Documents/PTKawainVi/build/Debug -F/Users/Michael/Documents/PTKawainVi/build/Debug -filelist /Users/Michael/Documents/PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/Objects-normal/i386/PTKawainVi.LinkFileList -mmacosx-version-min=10.6 -lcpp_kext -Xlinker -kext -nostdlib -lkmodc++ /Users/Michael/Documents/PTKawainVi/build/PTKawainVi.build/Debug/PTKawainVi.build/Objects-normal/i386/PTKawainVi_info.o -lkmod -lcc_kext -o /Users/Michael/Documents/PTKawainVi/build/Debug/PTKawainVi.kext/Contents/MacOS/PTKawainVi0#
-
-CLd /Users/Michael/Documents/PTKawainVi/build/Debug/PTKawainVi.kext/Contents/MacOS/PTKawainVi normal x86_64
-r0
-
-CProcessInfoPlistFile /PTKawainVi/build/Debug/PTKawainVi.kext/Contents/Info.plist Info.plist
-s295086990.708979
-e295086990.722632
-r1
-xProcessInfoPlistFile
-x/PTKawainVi/build/Debug/PTKawainVi.kext/Contents/Info.plist
-xInfo.plist
-lSLF07#2@18"Process Info.plist295086990#295086990#0(0"0(0#0#22"/PTKawainVi/Info.plist19140500286341228#160"    cd /PTKawainVi    builtin-infoPlistUtility Info.plist -expandbuildsettings -platform macosx -o /PTKawainVi/build/Debug/PTKawainVi.kext/Contents/Info.plist0#
-
-CProcessInfoPlistFile /Users/Michael/Desktop/PTKawainVi.new/build/Debug/PTKawainVi.kext/Contents/Info.plist Info.plist
-s295285308.360412
-e295285308.363302
-r1
-xProcessInfoPlistFile
-x/Users/Michael/Desktop/PTKawainVi.new/build/Debug/PTKawainVi.kext/Contents/Info.plist
-xInfo.plist
-lSLF07#2@18"Process Info.plist295285308#295285308#0(0"0(0#0#48"/Users/Michael/Desktop/PTKawainVi.new/Info.plist4324455640#212"    cd /Users/Michael/Desktop/PTKawainVi.new    builtin-infoPlistUtility Info.plist -expandbuildsettings -platform macosx -o /Users/Michael/Desktop/PTKawainVi.new/build/Debug/PTKawainVi.kext/Contents/Info.plist0#
-
-CProcessInfoPlistFile /Users/Michael/Documents/PTKawainVi/build/Debug/PTKawainVi.kext/Contents/Info.plist Info.plist
-s294514859.962288
-e294514859.965891
-r1
-xProcessInfoPlistFile
-x/Users/Michael/Documents/PTKawainVi/build/Debug/PTKawainVi.kext/Contents/Info.plist
-xInfo.plist
-lSLF07#2@18"Process Info.plist294514859#294514859#0(0"0(0#0#46"/Users/Michael/Documents/PTKawainVi/Info.plist4300885448#208"    cd /Users/Michael/Documents/PTKawainVi    builtin-infoPlistUtility Info.plist -expandbuildsettings -platform macosx -o /Users/Michael/Documents/PTKawainVi/build/Debug/PTKawainVi.kext/Contents/Info.plist0#
-
-CTouch /PTKawainVi/build/Debug/PTKawainVi.kext
-s295086990.723228
-e295086990.740749
-r1
-xTouch
-x/PTKawainVi/build/Debug/PTKawainVi.kext
-lSLF07#2@45"Touch /PTKawainVi/build/Debug/PTKawainVi.kext295086990#295086990#0(0"0(0#0#0"0#81"    cd /PTKawainVi    /usr/bin/touch -c /PTKawainVi/build/Debug/PTKawainVi.kext0#
-
-CTouch /Users/Michael/Desktop/PTKawainVi.new/build/Debug/PTKawainVi.kext
-s295285308.363659
-e295285308.367770
-r1
-xTouch
-x/Users/Michael/Desktop/PTKawainVi.new/build/Debug/PTKawainVi.kext
-lSLF07#2@71"Touch /Users/Michael/Desktop/PTKawainVi.new/build/Debug/PTKawainVi.kext295285308#295285308#0(0"0(0#0#0"4324455640#133"    cd /Users/Michael/Desktop/PTKawainVi.new    /usr/bin/touch -c /Users/Michael/Desktop/PTKawainVi.new/build/Debug/PTKawainVi.kext0#
-
-CTouch /Users/Michael/Documents/PTKawainVi/build/Debug/PTKawainVi.kext
-s294584577.553786
-e294584577.558280
-r1
-xTouch
-x/Users/Michael/Documents/PTKawainVi/build/Debug/PTKawainVi.kext
-lSLF07#2@69"Touch /Users/Michael/Documents/PTKawainVi/build/Debug/PTKawainVi.kext294584577#294584577#0(0"0(0#0#0"4300885448#129"    cd /Users/Michael/Documents/PTKawainVi    /usr/bin/touch -c /Users/Michael/Documents/PTKawainVi/build/Debug/PTKawainVi.kext0#
-
