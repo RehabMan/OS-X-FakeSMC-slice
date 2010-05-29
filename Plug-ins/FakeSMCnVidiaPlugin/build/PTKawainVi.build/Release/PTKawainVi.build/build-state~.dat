@@ -1,410 +1,0 @@
-TPTKawainVi
-v7
-r0
-t295113060.643617
-cCheck dependencies
-cProcessInfoPlistFile /Users/Michael/Desktop/PTKawainVi.new/build/Release/PTKawainVi.kext/Contents/Info.plist Info.plist
-cCopyStringsFile /Users/Michael/Desktop/PTKawainVi.new/build/Release/PTKawainVi.kext/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
-cCompileC build/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/x86_64/PTKawainVi.o /Users/Michael/Desktop/PTKawainVi.new/PTKawainVi.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-cCompileC build/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/x86_64/smc.o /Users/Michael/Desktop/PTKawainVi.new/smc.c normal x86_64 c com.apple.compilers.gcc.4_2
-cCompileC build/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/x86_64/PTKawainVi_info.o /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/DerivedSources/PTKawainVi_info.c normal x86_64 c com.apple.compilers.gcc.4_2
-cCompileC build/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/i386/PTKawainVi.o /Users/Michael/Desktop/PTKawainVi.new/PTKawainVi.cpp normal i386 c++ com.apple.compilers.gcc.4_2
-cCompileC build/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/i386/smc.o /Users/Michael/Desktop/PTKawainVi.new/smc.c normal i386 c com.apple.compilers.gcc.4_2
-cCompileC build/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/i386/PTKawainVi_info.o /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/DerivedSources/PTKawainVi_info.c normal i386 c com.apple.compilers.gcc.4_2
-cCompileC build/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/ppc/PTKawainVi.o /Users/Michael/Desktop/PTKawainVi.new/PTKawainVi.cpp normal ppc c++ com.apple.compilers.gcc.4_2
-cCompileC build/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/ppc/smc.o /Users/Michael/Desktop/PTKawainVi.new/smc.c normal ppc c com.apple.compilers.gcc.4_2
-cCompileC build/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/ppc/PTKawainVi_info.o /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/DerivedSources/PTKawainVi_info.c normal ppc c com.apple.compilers.gcc.4_2
-
-N/Developer/SDKs/MacOSX10.6.sdk
-c000000004BE0165B00000000000000EE
-t1272976987
-s238
-
-N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/IOLib.h
-c000000004A73D6520000000000004DDF
-t1249105490
-s19935
-
-N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/IOTimerEventSource.h
-c000000004A73D6540000000000002B1D
-t1249105492
-s11037
-
-N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/pci/IOPCIDevice.h
-c000000004A73D8C70000000000008708
-t1249106119
-s34568
-
-N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/string.h
-c000000004A73D6470000000000000C73
-t1249105479
-s3187
-
-N/Users/Michael/Desktop/PTKawainVi.new/English.lproj/InfoPlist.strings
-c000000004BDD3A880000000000000032
-t1272789640
-s50
-
-N/Users/Michael/Desktop/PTKawainVi.new/PTKawainVi.cpp
-c000000004BE43D920000000000000F36
-t1273249170
-s3894
-i"PTKawainVi.h"
-
-N/Users/Michael/Desktop/PTKawainVi.new/PTKawainVi.h
-c000000004BE2D1140000000000000327
-t1273155860
-s807
-i<IOKit/pci/IOPCIDevice.h>
-i<IOKit/IOTimerEventSource.h>
-
-N/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/DerivedSources/PTKawainVi_info.c
-c000000004BE6D9E100000000000001AB
-t1273420257
-s427
-
-N/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/i386/PTKawainVi
-t2
-s0
-
-N/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/i386/PTKawainVi.LinkFileList
-c000000004BE6D9E100000000000000E7
-t1273420257
-s231
-
-N/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/i386/PTKawainVi.o
-t1273420259
-s155304
-
-N/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/i386/PTKawainVi_info.o
-t1273420259
-s3764
-
-N/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/i386/smc.o
-t2
-s0
-
-N/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/ppc/PTKawainVi
-t2
-s0
-
-N/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/ppc/PTKawainVi.LinkFileList
-c000000004BE6D9E100000000000000E5
-t1273420257
-s229
-
-N/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/ppc/PTKawainVi.o
-t1273420260
-s165100
-
-N/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/ppc/PTKawainVi_info.o
-t1273420260
-s3760
-
-N/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/ppc/smc.o
-t2
-s0
-
-N/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/x86_64/PTKawainVi
-t2
-s0
-
-N/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/x86_64/PTKawainVi.LinkFileList
-c000000004BE6D9E100000000000000EB
-t1273420257
-s235
-
-N/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/x86_64/PTKawainVi.o
-t1273420259
-s155396
-
-N/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/x86_64/PTKawainVi_info.o
-t1273420258
-s4064
-
-N/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/x86_64/smc.o
-t2
-s0
-
-N/Users/Michael/Desktop/PTKawainVi.new/build/Release/PTKawainVi.kext
-t2
-s0
-
-N/Users/Michael/Desktop/PTKawainVi.new/build/Release/PTKawainVi.kext.dSYM
-t2
-s0
-
-N/Users/Michael/Desktop/PTKawainVi.new/build/Release/PTKawainVi.kext/Contents/Info.plist
-t1273420257
-s1623
-
-N/Users/Michael/Desktop/PTKawainVi.new/build/Release/PTKawainVi.kext/Contents/MacOS/PTKawainVi
-t2
-s0
-
-N/Users/Michael/Desktop/PTKawainVi.new/build/Release/PTKawainVi.kext/Contents/Resources/English.lproj/InfoPlist.strings
-t1273420258
-s96
-
-N/Users/Michael/Desktop/PTKawainVi.new/smc.c
-c000000004BE6D9AF0000000000002832
-t1273420207
-s10290
-i<string.h>
-i<IOKit/IOLib.h>
-i"smc.h"
-
-N/Users/Michael/Desktop/PTKawainVi.new/smc.h
-c00000000472254060000000000000BA4
-t1193432070
-s2980
-
-NInfo.plist
-c000000004BE6740E0000000000000694
-t1273394190
-s1684
-
-CCheck dependencies
-r0
-lSLF07#2@18"Check dependencies295113057#295113057#0(0"0(0#1#0"4324455640#0"0#
-
-CCompileC build/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/i386/PTKawainVi.o /Users/Michael/Desktop/PTKawainVi.new/PTKawainVi.cpp normal i386 c++ com.apple.compilers.gcc.4_2
-s295113059.032352
-e295113059.683253
-r1
-xCompileC
-xbuild/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/i386/PTKawainVi.o
-x/Users/Michael/Desktop/PTKawainVi.new/PTKawainVi.cpp
-xnormal
-xi386
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@60"Compile /Users/Michael/Desktop/PTKawainVi.new/PTKawainVi.cpp295113059#295113060#0(0"0(0#0#52"/Users/Michael/Desktop/PTKawainVi.new/PTKawainVi.cpp4324455640#1663"    cd /Users/Michael/Desktop/PTKawainVi.new    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/PTKawainVi-generated-files.hmap -I/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/PTKawainVi-own-target-headers.hmap -I/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/PTKawainVi-all-target-headers.hmap -iquote /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/PTKawainVi-project-headers.hmap -F/Users/Michael/Desktop/PTKawainVi.new/build/Release -I/Users/Michael/Desktop/PTKawainVi.new/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/DerivedSources/i386 -I/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/DerivedSources -c /Users/Michael/Desktop/PTKawainVi.new/PTKawainVi.cpp -o /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/i386/PTKawainVi.o0#
-
-CCompileC build/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/i386/PTKawainVi_info.o /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/DerivedSources/PTKawainVi_info.c normal i386 c com.apple.compilers.gcc.4_2
-s295113059.460022
-e295113059.510685
-r1
-xCompileC
-xbuild/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/i386/PTKawainVi_info.o
-x/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/DerivedSources/PTKawainVi_info.c
-xnormal
-xi386
-xc
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@126"Compile /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/DerivedSources/PTKawainVi_info.c295113059#295113059#0(0"0(0#0#118"/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/DerivedSources/PTKawainVi_info.c4324455640#1692"    cd /Users/Michael/Desktop/PTKawainVi.new    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch i386 -fmessage-length=0 -pipe -nostdinc -std=gnu99 -fno-builtin -Wno-trigraphs -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/PTKawainVi-generated-files.hmap -I/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/PTKawainVi-own-target-headers.hmap -I/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/PTKawainVi-all-target-headers.hmap -iquote /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/PTKawainVi-project-headers.hmap -F/Users/Michael/Desktop/PTKawainVi.new/build/Release -I/Users/Michael/Desktop/PTKawainVi.new/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/DerivedSources/i386 -I/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/DerivedSources -c /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/DerivedSources/PTKawainVi_info.c -o /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/i386/PTKawainVi_info.o0#
-
-CCompileC build/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/i386/smc.o /Users/Michael/Desktop/PTKawainVi.new/smc.c normal i386 c com.apple.compilers.gcc.4_2
-s295113059.351623
-e295113059.459905
-r0
-xCompileC
-xbuild/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/i386/smc.o
-x/Users/Michael/Desktop/PTKawainVi.new/smc.c
-xnormal
-xi386
-xc
-xcom.apple.compilers.gcc.4_2
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function '_ultostr':
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:45: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function 'SMCOpen':
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:117: warning: implicit declaration of function 'IOMasterPort'
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:119: error: 'CFMutableDictionaryRef' undeclared (first use in this function)
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:119: error: (Each undeclared identifier is reported only once
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:119: error: for each function it appears in.)
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:119: error: expected ';' before 'matchingDictionary'
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:120: warning: implicit declaration of function 'IOServiceGetMatchingServices'
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:120: error: 'matchingDictionary' undeclared (first use in this function)
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:127: warning: implicit declaration of function 'IOIteratorNext'
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:127: warning: assignment makes pointer from integer without a cast
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:128: warning: implicit declaration of function 'IOObjectRelease'
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:135: warning: implicit declaration of function 'IOServiceOpen'
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:135: warning: implicit declaration of function 'mach_task_self'
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function 'SMCClose':
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:148: warning: implicit declaration of function 'IOServiceClose'
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function 'SMCCall':
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:160: warning: implicit declaration of function 'IOConnectMethodStructureIStructureO'
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function 'SMCReadKey':
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:181: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function 'SMCPrintFans':
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:290: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:293: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:296: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:299: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:302: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function 'SMCSetFanRpm':
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:355: warning: 'strcpy' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/string.h:64)
-lSLF07#2@51"Compile /Users/Michael/Desktop/PTKawainVi.new/smc.c295113059#295113059#0(3618"/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function '_ultostr':/Users/Michael/Desktop/PTKawainVi.new/smc.c:45: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function 'SMCOpen':/Users/Michael/Desktop/PTKawainVi.new/smc.c:117: warning: implicit declaration of function 'IOMasterPort'/Users/Michael/Desktop/PTKawainVi.new/smc.c:119: error: 'CFMutableDictionaryRef' undeclared (first use in this function)/Users/Michael/Desktop/PTKawainVi.new/smc.c:119: error: (Each undeclared identifier is reported only once/Users/Michael/Desktop/PTKawainVi.new/smc.c:119: error: for each function it appears in.)/Users/Michael/Desktop/PTKawainVi.new/smc.c:119: error: expected ';' before 'matchingDictionary'/Users/Michael/Desktop/PTKawainVi.new/smc.c:120: warning: implicit declaration of function 'IOServiceGetMatchingServices'/Users/Michael/Desktop/PTKawainVi.new/smc.c:120: error: 'matchingDictionary' undeclared (first use in this function)/Users/Michael/Desktop/PTKawainVi.new/smc.c:127: warning: implicit declaration of function 'IOIteratorNext'/Users/Michael/Desktop/PTKawainVi.new/smc.c:127: warning: assignment makes pointer from integer without a cast/Users/Michael/Desktop/PTKawainVi.new/smc.c:128: warning: implicit declaration of function 'IOObjectRelease'/Users/Michael/Desktop/PTKawainVi.new/smc.c:135: warning: implicit declaration of function 'IOServiceOpen'/Users/Michael/Desktop/PTKawainVi.new/smc.c:135: warning: implicit declaration of function 'mach_task_self'/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function 'SMCClose':/Users/Michael/Desktop/PTKawainVi.new/smc.c:148: warning: implicit declaration of function 'IOServiceClose'/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function 'SMCCall':/Users/Michael/Desktop/PTKawainVi.new/smc.c:160: warning: implicit declaration of function 'IOConnectMethodStructureIStructureO'/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function 'SMCReadKey':/Users/Michael/Desktop/PTKawainVi.new/smc.c:181: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function 'SMCPrintFans':/Users/Michael/Desktop/PTKawainVi.new/smc.c:290: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)/Users/Michael/Desktop/PTKawainVi.new/smc.c:293: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)/Users/Michael/Desktop/PTKawainVi.new/smc.c:296: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)/Users/Michael/Desktop/PTKawainVi.new/smc.c:299: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)/Users/Michael/Desktop/PTKawainVi.new/smc.c:302: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function 'SMCSetFanRpm':/Users/Michael/Desktop/PTKawainVi.new/smc.c:355: warning: 'strcpy' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/string.h:64)20(22@141"'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)295113059#69#199#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#45#0#45#0#33"'*' is deprecated (declared at *)0(22@47"Implicit declaration of function 'IOMasterPort'295113059#336#106#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#117#0#117#0#36"implicit declaration of function '*'0(4@64"'CFMutableDictionaryRef' undeclared (first use in this function)295113059#442#121#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#119#0#119#0#43"'*' undeclared (first use in this function)0(4@40"Expected ';' before 'matchingDictionary'295113059#759#97#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#119#0#119#0#19"expected * before *0(22@63"Implicit declaration of function 'IOServiceGetMatchingServices'295113059#856#122#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#120#0#120#0#36"implicit declaration of function '*'0(4@60"'matchingDictionary' undeclared (first use in this function)295113059#978#117#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#120#0#120#0#43"'*' undeclared (first use in this function)0(22@49"Implicit declaration of function 'IOIteratorNext'295113059#1095#108#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#127#0#127#0#36"implicit declaration of function '*'0(22@52"Assignment makes pointer from integer without a cast295113059#1203#111#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#127#0#127#0#0"0(22@50"Implicit declaration of function 'IOObjectRelease'295113059#1314#109#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#128#0#128#0#36"implicit declaration of function '*'0(22@48"Implicit declaration of function 'IOServiceOpen'295113059#1423#107#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#135#0#135#0#36"implicit declaration of function '*'0(22@49"Implicit declaration of function 'mach_task_self'295113059#1530#108#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#135#0#135#0#36"implicit declaration of function '*'0(22@49"Implicit declaration of function 'IOServiceClose'295113059#1707#108#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#148#0#148#0#36"implicit declaration of function '*'0(22@70"Implicit declaration of function 'IOConnectMethodStructureIStructureO'295113059#1883#129#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#160#0#160#0#36"implicit declaration of function '*'0(22@141"'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)295113059#2083#200#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#181#0#181#0#33"'*' is deprecated (declared at *)0(22@141"'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)295113059#2356#200#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#290#0#290#0#33"'*' is deprecated (declared at *)0(22@141"'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)295113059#2556#200#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#293#0#293#0#33"'*' is deprecated (declared at *)0(22@141"'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)295113059#2756#200#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#296#0#296#0#33"'*' is deprecated (declared at *)0(22@141"'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)295113059#2956#200#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#299#0#299#0#33"'*' is deprecated (declared at *)0(22@141"'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)295113059#3156#200#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#302#0#302#0#33"'*' is deprecated (declared at *)0(22@130"'strcpy' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/string.h:64)295113059#3429#189#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#355#0#355#0#33"'*' is deprecated (declared at *)0(0#0#43"/Users/Michael/Desktop/PTKawainVi.new/smc.c4324455640#1605"    cd /Users/Michael/Desktop/PTKawainVi.new    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch i386 -fmessage-length=0 -pipe -nostdinc -std=gnu99 -fno-builtin -Wno-trigraphs -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/PTKawainVi-generated-files.hmap -I/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/PTKawainVi-own-target-headers.hmap -I/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/PTKawainVi-all-target-headers.hmap -iquote /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/PTKawainVi-project-headers.hmap -F/Users/Michael/Desktop/PTKawainVi.new/build/Release -I/Users/Michael/Desktop/PTKawainVi.new/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/DerivedSources/i386 -I/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/DerivedSources -c /Users/Michael/Desktop/PTKawainVi.new/smc.c -o /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/i386/smc.o1#
-
-CCompileC build/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/ppc/PTKawainVi.o /Users/Michael/Desktop/PTKawainVi.new/PTKawainVi.cpp normal ppc c++ com.apple.compilers.gcc.4_2
-s295113059.510815
-e295113060.643510
-r1
-xCompileC
-xbuild/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/ppc/PTKawainVi.o
-x/Users/Michael/Desktop/PTKawainVi.new/PTKawainVi.cpp
-xnormal
-xppc
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@60"Compile /Users/Michael/Desktop/PTKawainVi.new/PTKawainVi.cpp295113059#295113060#0(0"0(0#0#52"/Users/Michael/Desktop/PTKawainVi.new/PTKawainVi.cpp4324455640#1670"    cd /Users/Michael/Desktop/PTKawainVi.new    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch ppc -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -mtune=G5 -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/PTKawainVi-generated-files.hmap -I/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/PTKawainVi-own-target-headers.hmap -I/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/PTKawainVi-all-target-headers.hmap -iquote /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/PTKawainVi-project-headers.hmap -F/Users/Michael/Desktop/PTKawainVi.new/build/Release -I/Users/Michael/Desktop/PTKawainVi.new/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/DerivedSources/ppc -I/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/DerivedSources -c /Users/Michael/Desktop/PTKawainVi.new/PTKawainVi.cpp -o /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/ppc/PTKawainVi.o0#
-
-CCompileC build/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/ppc/PTKawainVi_info.o /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/DerivedSources/PTKawainVi_info.c normal ppc c com.apple.compilers.gcc.4_2
-s295113060.215071
-e295113060.256458
-r1
-xCompileC
-xbuild/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/ppc/PTKawainVi_info.o
-x/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/DerivedSources/PTKawainVi_info.c
-xnormal
-xppc
-xc
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@126"Compile /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/DerivedSources/PTKawainVi_info.c295113060#295113060#0(0"0(0#0#118"/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/DerivedSources/PTKawainVi_info.c4324455640#1699"    cd /Users/Michael/Desktop/PTKawainVi.new    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch ppc -fmessage-length=0 -pipe -nostdinc -std=gnu99 -fno-builtin -Wno-trigraphs -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -mtune=G5 -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/PTKawainVi-generated-files.hmap -I/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/PTKawainVi-own-target-headers.hmap -I/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/PTKawainVi-all-target-headers.hmap -iquote /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/PTKawainVi-project-headers.hmap -F/Users/Michael/Desktop/PTKawainVi.new/build/Release -I/Users/Michael/Desktop/PTKawainVi.new/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/DerivedSources/ppc -I/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/DerivedSources -c /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/DerivedSources/PTKawainVi_info.c -o /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/ppc/PTKawainVi_info.o0#
-
-CCompileC build/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/ppc/smc.o /Users/Michael/Desktop/PTKawainVi.new/smc.c normal ppc c com.apple.compilers.gcc.4_2
-s295113059.683374
-e295113060.214954
-r0
-xCompileC
-xbuild/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/ppc/smc.o
-x/Users/Michael/Desktop/PTKawainVi.new/smc.c
-xnormal
-xppc
-xc
-xcom.apple.compilers.gcc.4_2
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function '_ultostr':
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:45: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function 'SMCOpen':
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:117: warning: implicit declaration of function 'IOMasterPort'
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:119: error: 'CFMutableDictionaryRef' undeclared (first use in this function)
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:119: error: (Each undeclared identifier is reported only once
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:119: error: for each function it appears in.)
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:119: error: expected ';' before 'matchingDictionary'
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:120: warning: implicit declaration of function 'IOServiceGetMatchingServices'
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:120: error: 'matchingDictionary' undeclared (first use in this function)
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:127: warning: implicit declaration of function 'IOIteratorNext'
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:127: warning: assignment makes pointer from integer without a cast
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:128: warning: implicit declaration of function 'IOObjectRelease'
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:135: warning: implicit declaration of function 'IOServiceOpen'
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:135: warning: implicit declaration of function 'mach_task_self'
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function 'SMCClose':
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:148: warning: implicit declaration of function 'IOServiceClose'
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function 'SMCCall':
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:160: warning: implicit declaration of function 'IOConnectMethodStructureIStructureO'
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function 'SMCReadKey':
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:181: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function 'SMCPrintFans':
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:290: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:293: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:296: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:299: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:302: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function 'SMCSetFanRpm':
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:355: warning: 'strcpy' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/string.h:64)
-lSLF07#2@51"Compile /Users/Michael/Desktop/PTKawainVi.new/smc.c295113059#295113060#0(3618"/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function '_ultostr':/Users/Michael/Desktop/PTKawainVi.new/smc.c:45: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function 'SMCOpen':/Users/Michael/Desktop/PTKawainVi.new/smc.c:117: warning: implicit declaration of function 'IOMasterPort'/Users/Michael/Desktop/PTKawainVi.new/smc.c:119: error: 'CFMutableDictionaryRef' undeclared (first use in this function)/Users/Michael/Desktop/PTKawainVi.new/smc.c:119: error: (Each undeclared identifier is reported only once/Users/Michael/Desktop/PTKawainVi.new/smc.c:119: error: for each function it appears in.)/Users/Michael/Desktop/PTKawainVi.new/smc.c:119: error: expected ';' before 'matchingDictionary'/Users/Michael/Desktop/PTKawainVi.new/smc.c:120: warning: implicit declaration of function 'IOServiceGetMatchingServices'/Users/Michael/Desktop/PTKawainVi.new/smc.c:120: error: 'matchingDictionary' undeclared (first use in this function)/Users/Michael/Desktop/PTKawainVi.new/smc.c:127: warning: implicit declaration of function 'IOIteratorNext'/Users/Michael/Desktop/PTKawainVi.new/smc.c:127: warning: assignment makes pointer from integer without a cast/Users/Michael/Desktop/PTKawainVi.new/smc.c:128: warning: implicit declaration of function 'IOObjectRelease'/Users/Michael/Desktop/PTKawainVi.new/smc.c:135: warning: implicit declaration of function 'IOServiceOpen'/Users/Michael/Desktop/PTKawainVi.new/smc.c:135: warning: implicit declaration of function 'mach_task_self'/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function 'SMCClose':/Users/Michael/Desktop/PTKawainVi.new/smc.c:148: warning: implicit declaration of function 'IOServiceClose'/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function 'SMCCall':/Users/Michael/Desktop/PTKawainVi.new/smc.c:160: warning: implicit declaration of function 'IOConnectMethodStructureIStructureO'/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function 'SMCReadKey':/Users/Michael/Desktop/PTKawainVi.new/smc.c:181: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function 'SMCPrintFans':/Users/Michael/Desktop/PTKawainVi.new/smc.c:290: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)/Users/Michael/Desktop/PTKawainVi.new/smc.c:293: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)/Users/Michael/Desktop/PTKawainVi.new/smc.c:296: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)/Users/Michael/Desktop/PTKawainVi.new/smc.c:299: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)/Users/Michael/Desktop/PTKawainVi.new/smc.c:302: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function 'SMCSetFanRpm':/Users/Michael/Desktop/PTKawainVi.new/smc.c:355: warning: 'strcpy' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/string.h:64)20(22@141"'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)295113060#69#199#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#45#0#45#0#33"'*' is deprecated (declared at *)0(22@47"Implicit declaration of function 'IOMasterPort'295113060#336#106#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#117#0#117#0#36"implicit declaration of function '*'0(4@64"'CFMutableDictionaryRef' undeclared (first use in this function)295113060#442#121#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#119#0#119#0#43"'*' undeclared (first use in this function)0(4@40"Expected ';' before 'matchingDictionary'295113060#759#97#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#119#0#119#0#19"expected * before *0(22@63"Implicit declaration of function 'IOServiceGetMatchingServices'295113060#856#122#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#120#0#120#0#36"implicit declaration of function '*'0(4@60"'matchingDictionary' undeclared (first use in this function)295113060#978#117#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#120#0#120#0#43"'*' undeclared (first use in this function)0(22@49"Implicit declaration of function 'IOIteratorNext'295113060#1095#108#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#127#0#127#0#36"implicit declaration of function '*'0(22@52"Assignment makes pointer from integer without a cast295113060#1203#111#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#127#0#127#0#0"0(22@50"Implicit declaration of function 'IOObjectRelease'295113060#1314#109#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#128#0#128#0#36"implicit declaration of function '*'0(22@48"Implicit declaration of function 'IOServiceOpen'295113060#1423#107#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#135#0#135#0#36"implicit declaration of function '*'0(22@49"Implicit declaration of function 'mach_task_self'295113060#1530#108#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#135#0#135#0#36"implicit declaration of function '*'0(22@49"Implicit declaration of function 'IOServiceClose'295113060#1707#108#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#148#0#148#0#36"implicit declaration of function '*'0(22@70"Implicit declaration of function 'IOConnectMethodStructureIStructureO'295113060#1883#129#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#160#0#160#0#36"implicit declaration of function '*'0(22@141"'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)295113060#2083#200#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#181#0#181#0#33"'*' is deprecated (declared at *)0(22@141"'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)295113060#2356#200#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#290#0#290#0#33"'*' is deprecated (declared at *)0(22@141"'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)295113060#2556#200#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#293#0#293#0#33"'*' is deprecated (declared at *)0(22@141"'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)295113060#2756#200#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#296#0#296#0#33"'*' is deprecated (declared at *)0(22@141"'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)295113060#2956#200#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#299#0#299#0#33"'*' is deprecated (declared at *)0(22@141"'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)295113060#3156#200#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#302#0#302#0#33"'*' is deprecated (declared at *)0(22@130"'strcpy' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/string.h:64)295113060#3429#189#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#355#0#355#0#33"'*' is deprecated (declared at *)0(0#0#43"/Users/Michael/Desktop/PTKawainVi.new/smc.c4324455640#1612"    cd /Users/Michael/Desktop/PTKawainVi.new    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch ppc -fmessage-length=0 -pipe -nostdinc -std=gnu99 -fno-builtin -Wno-trigraphs -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -mtune=G5 -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/PTKawainVi-generated-files.hmap -I/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/PTKawainVi-own-target-headers.hmap -I/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/PTKawainVi-all-target-headers.hmap -iquote /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/PTKawainVi-project-headers.hmap -F/Users/Michael/Desktop/PTKawainVi.new/build/Release -I/Users/Michael/Desktop/PTKawainVi.new/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/DerivedSources/ppc -I/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/DerivedSources -c /Users/Michael/Desktop/PTKawainVi.new/smc.c -o /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/ppc/smc.o1#
-
-CCompileC build/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/x86_64/PTKawainVi.o /Users/Michael/Desktop/PTKawainVi.new/PTKawainVi.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-s295113058.668189
-e295113059.351341
-r1
-xCompileC
-xbuild/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/x86_64/PTKawainVi.o
-x/Users/Michael/Desktop/PTKawainVi.new/PTKawainVi.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@60"Compile /Users/Michael/Desktop/PTKawainVi.new/PTKawainVi.cpp295113058#295113059#0(0"0(0#0#52"/Users/Michael/Desktop/PTKawainVi.new/PTKawainVi.cpp4324455640#1669"    cd /Users/Michael/Desktop/PTKawainVi.new    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/PTKawainVi-generated-files.hmap -I/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/PTKawainVi-own-target-headers.hmap -I/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/PTKawainVi-all-target-headers.hmap -iquote /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/PTKawainVi-project-headers.hmap -F/Users/Michael/Desktop/PTKawainVi.new/build/Release -I/Users/Michael/Desktop/PTKawainVi.new/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/DerivedSources/x86_64 -I/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/DerivedSources -c /Users/Michael/Desktop/PTKawainVi.new/PTKawainVi.cpp -o /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/x86_64/PTKawainVi.o0#
-
-CCompileC build/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/x86_64/PTKawainVi_info.o /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/DerivedSources/PTKawainVi_info.c normal x86_64 c com.apple.compilers.gcc.4_2
-s295113058.798017
-e295113059.032223
-r1
-xCompileC
-xbuild/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/x86_64/PTKawainVi_info.o
-x/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/DerivedSources/PTKawainVi_info.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@126"Compile /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/DerivedSources/PTKawainVi_info.c295113058#295113059#0(0"0(0#0#118"/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/DerivedSources/PTKawainVi_info.c4324455640#1698"    cd /Users/Michael/Desktop/PTKawainVi.new    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -nostdinc -std=gnu99 -fno-builtin -Wno-trigraphs -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/PTKawainVi-generated-files.hmap -I/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/PTKawainVi-own-target-headers.hmap -I/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/PTKawainVi-all-target-headers.hmap -iquote /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/PTKawainVi-project-headers.hmap -F/Users/Michael/Desktop/PTKawainVi.new/build/Release -I/Users/Michael/Desktop/PTKawainVi.new/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/DerivedSources/x86_64 -I/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/DerivedSources -c /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/DerivedSources/PTKawainVi_info.c -o /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/x86_64/PTKawainVi_info.o0#
-
-CCompileC build/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/x86_64/smc.o /Users/Michael/Desktop/PTKawainVi.new/smc.c normal x86_64 c com.apple.compilers.gcc.4_2
-s295113058.670439
-e295113058.797823
-r0
-xCompileC
-xbuild/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/x86_64/smc.o
-x/Users/Michael/Desktop/PTKawainVi.new/smc.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.gcc.4_2
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function '_ultostr':
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:45: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function 'SMCOpen':
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:117: warning: implicit declaration of function 'IOMasterPort'
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:119: error: 'CFMutableDictionaryRef' undeclared (first use in this function)
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:119: error: (Each undeclared identifier is reported only once
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:119: error: for each function it appears in.)
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:119: error: expected ';' before 'matchingDictionary'
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:120: warning: implicit declaration of function 'IOServiceGetMatchingServices'
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:120: error: 'matchingDictionary' undeclared (first use in this function)
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:127: warning: implicit declaration of function 'IOIteratorNext'
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:127: warning: assignment makes pointer from integer without a cast
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:128: warning: implicit declaration of function 'IOObjectRelease'
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:135: warning: implicit declaration of function 'IOServiceOpen'
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:135: warning: implicit declaration of function 'mach_task_self'
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function 'SMCClose':
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:148: warning: implicit declaration of function 'IOServiceClose'
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function 'SMCCall':
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:160: warning: implicit declaration of function 'IOConnectMethodStructureIStructureO'
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function 'SMCReadKey':
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:181: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function 'SMCPrintFans':
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:290: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:293: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:296: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:299: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:302: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function 'SMCSetFanRpm':
-o/Users/Michael/Desktop/PTKawainVi.new/smc.c:355: warning: 'strcpy' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/string.h:64)
-lSLF07#2@51"Compile /Users/Michael/Desktop/PTKawainVi.new/smc.c295113058#295113058#0(3618"/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function '_ultostr':/Users/Michael/Desktop/PTKawainVi.new/smc.c:45: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function 'SMCOpen':/Users/Michael/Desktop/PTKawainVi.new/smc.c:117: warning: implicit declaration of function 'IOMasterPort'/Users/Michael/Desktop/PTKawainVi.new/smc.c:119: error: 'CFMutableDictionaryRef' undeclared (first use in this function)/Users/Michael/Desktop/PTKawainVi.new/smc.c:119: error: (Each undeclared identifier is reported only once/Users/Michael/Desktop/PTKawainVi.new/smc.c:119: error: for each function it appears in.)/Users/Michael/Desktop/PTKawainVi.new/smc.c:119: error: expected ';' before 'matchingDictionary'/Users/Michael/Desktop/PTKawainVi.new/smc.c:120: warning: implicit declaration of function 'IOServiceGetMatchingServices'/Users/Michael/Desktop/PTKawainVi.new/smc.c:120: error: 'matchingDictionary' undeclared (first use in this function)/Users/Michael/Desktop/PTKawainVi.new/smc.c:127: warning: implicit declaration of function 'IOIteratorNext'/Users/Michael/Desktop/PTKawainVi.new/smc.c:127: warning: assignment makes pointer from integer without a cast/Users/Michael/Desktop/PTKawainVi.new/smc.c:128: warning: implicit declaration of function 'IOObjectRelease'/Users/Michael/Desktop/PTKawainVi.new/smc.c:135: warning: implicit declaration of function 'IOServiceOpen'/Users/Michael/Desktop/PTKawainVi.new/smc.c:135: warning: implicit declaration of function 'mach_task_self'/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function 'SMCClose':/Users/Michael/Desktop/PTKawainVi.new/smc.c:148: warning: implicit declaration of function 'IOServiceClose'/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function 'SMCCall':/Users/Michael/Desktop/PTKawainVi.new/smc.c:160: warning: implicit declaration of function 'IOConnectMethodStructureIStructureO'/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function 'SMCReadKey':/Users/Michael/Desktop/PTKawainVi.new/smc.c:181: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function 'SMCPrintFans':/Users/Michael/Desktop/PTKawainVi.new/smc.c:290: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)/Users/Michael/Desktop/PTKawainVi.new/smc.c:293: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)/Users/Michael/Desktop/PTKawainVi.new/smc.c:296: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)/Users/Michael/Desktop/PTKawainVi.new/smc.c:299: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)/Users/Michael/Desktop/PTKawainVi.new/smc.c:302: warning: 'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)/Users/Michael/Desktop/PTKawainVi.new/smc.c: In function 'SMCSetFanRpm':/Users/Michael/Desktop/PTKawainVi.new/smc.c:355: warning: 'strcpy' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/string.h:64)20(22@141"'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)295113058#69#199#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#45#0#45#0#33"'*' is deprecated (declared at *)0(22@47"Implicit declaration of function 'IOMasterPort'295113058#336#106#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#117#0#117#0#36"implicit declaration of function '*'0(4@64"'CFMutableDictionaryRef' undeclared (first use in this function)295113058#442#121#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#119#0#119#0#43"'*' undeclared (first use in this function)0(4@40"Expected ';' before 'matchingDictionary'295113058#759#97#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#119#0#119#0#19"expected * before *0(22@63"Implicit declaration of function 'IOServiceGetMatchingServices'295113058#856#122#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#120#0#120#0#36"implicit declaration of function '*'0(4@60"'matchingDictionary' undeclared (first use in this function)295113058#978#117#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#120#0#120#0#43"'*' undeclared (first use in this function)0(22@49"Implicit declaration of function 'IOIteratorNext'295113058#1095#108#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#127#0#127#0#36"implicit declaration of function '*'0(22@52"Assignment makes pointer from integer without a cast295113058#1203#111#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#127#0#127#0#0"0(22@50"Implicit declaration of function 'IOObjectRelease'295113058#1314#109#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#128#0#128#0#36"implicit declaration of function '*'0(22@48"Implicit declaration of function 'IOServiceOpen'295113058#1423#107#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#135#0#135#0#36"implicit declaration of function '*'0(22@49"Implicit declaration of function 'mach_task_self'295113058#1530#108#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#135#0#135#0#36"implicit declaration of function '*'0(22@49"Implicit declaration of function 'IOServiceClose'295113058#1707#108#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#148#0#148#0#36"implicit declaration of function '*'0(22@70"Implicit declaration of function 'IOConnectMethodStructureIStructureO'295113058#1883#129#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#160#0#160#0#36"implicit declaration of function '*'0(22@141"'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)295113058#2083#200#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#181#0#181#0#33"'*' is deprecated (declared at *)0(22@141"'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)295113058#2356#200#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#290#0#290#0#33"'*' is deprecated (declared at *)0(22@141"'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)295113058#2556#200#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#293#0#293#0#33"'*' is deprecated (declared at *)0(22@141"'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)295113058#2756#200#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#296#0#296#0#33"'*' is deprecated (declared at *)0(22@141"'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)295113058#2956#200#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#299#0#299#0#33"'*' is deprecated (declared at *)0(22@141"'sprintf' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/libkern.h:158)295113058#3156#200#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#302#0#302#0#33"'*' is deprecated (declared at *)0(22@130"'strcpy' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/string.h:64)295113058#3429#189#0(6@43"/Users/Michael/Desktop/PTKawainVi.new/smc.c295113007#355#0#355#0#33"'*' is deprecated (declared at *)0(0#0#43"/Users/Michael/Desktop/PTKawainVi.new/smc.c4324455640#1611"    cd /Users/Michael/Desktop/PTKawainVi.new    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -nostdinc -std=gnu99 -fno-builtin -Wno-trigraphs -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/PTKawainVi-generated-files.hmap -I/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/PTKawainVi-own-target-headers.hmap -I/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/PTKawainVi-all-target-headers.hmap -iquote /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/PTKawainVi-project-headers.hmap -F/Users/Michael/Desktop/PTKawainVi.new/build/Release -I/Users/Michael/Desktop/PTKawainVi.new/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/DerivedSources/x86_64 -I/Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/DerivedSources -c /Users/Michael/Desktop/PTKawainVi.new/smc.c -o /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/x86_64/smc.o1#
-
-CCopyStringsFile /Users/Michael/Desktop/PTKawainVi.new/build/Release/PTKawainVi.kext/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
-s295113057.634965
-e295113058.668066
-r1
-xCopyStringsFile
-x/Users/Michael/Desktop/PTKawainVi.new/build/Release/PTKawainVi.kext/Contents/Resources/English.lproj/InfoPlist.strings
-xEnglish.lproj/InfoPlist.strings
-lSLF07#2@36"Copy English.lproj/InfoPlist.strings295113057#295113058#0(0"0(0#0#69"/Users/Michael/Desktop/PTKawainVi.new/English.lproj/InfoPlist.strings4324455640#369"    cd /Users/Michael/Desktop/PTKawainVi.new    setenv ICONV /usr/bin/iconv    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings --validate --inputencoding utf-8 --outputencoding UTF-16 English.lproj/InfoPlist.strings --outdir /Users/Michael/Desktop/PTKawainVi.new/build/Release/PTKawainVi.kext/Contents/Resources/English.lproj0#
-
-CCreateUniversalBinary /Users/Michael/Desktop/PTKawainVi.new/build/Release/PTKawainVi.kext/Contents/MacOS/PTKawainVi normal "x86_64 i386 ppc"
-r0
-
-CGenerateDSYMFile /Users/Michael/Desktop/PTKawainVi.new/build/Release/PTKawainVi.kext.dSYM /Users/Michael/Desktop/PTKawainVi.new/build/Release/PTKawainVi.kext/Contents/MacOS/PTKawainVi
-r0
-
-CLd /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/i386/PTKawainVi normal i386
-r0
-
-CLd /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/ppc/PTKawainVi normal ppc
-r0
-
-CLd /Users/Michael/Desktop/PTKawainVi.new/build/PTKawainVi.build/Release/PTKawainVi.build/Objects-normal/x86_64/PTKawainVi normal x86_64
-r0
-
-CProcessInfoPlistFile /Users/Michael/Desktop/PTKawainVi.new/build/Release/PTKawainVi.kext/Contents/Info.plist Info.plist
-s295113057.602276
-e295113057.634863
-r1
-xProcessInfoPlistFile
-x/Users/Michael/Desktop/PTKawainVi.new/build/Release/PTKawainVi.kext/Contents/Info.plist
-xInfo.plist
-lSLF07#2@18"Process Info.plist295113057#295113057#0(0"0(0#0#48"/Users/Michael/Desktop/PTKawainVi.new/Info.plist4324455640#214"    cd /Users/Michael/Desktop/PTKawainVi.new    builtin-infoPlistUtility Info.plist -expandbuildsettings -platform macosx -o /Users/Michael/Desktop/PTKawainVi.new/build/Release/PTKawainVi.kext/Contents/Info.plist0#
-
-CTouch /Users/Michael/Desktop/PTKawainVi.new/build/Release/PTKawainVi.kext
-r0
-
