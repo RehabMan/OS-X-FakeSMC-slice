@@ -8,6 +8,7 @@ void FakeSMCAddKey (const char*, uint8_t, char*);
 void FakeSMCAddKey (const char*, const char*, uint8_t, char*);
 void FakeSMCAddKeyCallback (const char*, uint8_t, char*, OnKeyReadCallback);
 void FakeSMCAddKeyCallback (const char*, const char*, uint8_t, char*, OnKeyReadCallback);
+char* FakeSMCGetKey (const char*);
 void FakeSMCRemoveKeyCallback(const char*);
 
 class FakeSMC : public IOService

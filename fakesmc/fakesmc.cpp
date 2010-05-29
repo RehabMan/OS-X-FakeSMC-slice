@@ -30,6 +30,14 @@ void FakeSMCAddKeyCallback (const char* keyname, const char* keytype, uint8_t ke
 	smcNode->FixUpKeysNum();
 }
 
+char* FakeSMCGetKey (const char* keyname)
+{
+	if(SMCData node = smcNode->FindSMCKey(keyname)) 
+		return node->data;
+		
+	return NULL;
+}
+
 void FakeSMCRemoveKeyCallback (const char* keyname)
 {
 	if(SMCData node = smcNode->FindSMCKey(keyname)) node->onkeyread = NULL;
