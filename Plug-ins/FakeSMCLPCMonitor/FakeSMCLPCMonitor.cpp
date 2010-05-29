@@ -264,12 +264,19 @@ static void Update(const char* key, char* data)
 			}
 			
 			// FANs
-			if(CompareKeys(key, "F0Ac") || CompareKeys(key, "F1Ac") || CompareKeys(key, "F2Ac") || CompareKeys(key, "F3Ac") || CompareKeys(key, "F4Ac"))
+			for (int i = FanOffset; i < FanOffset + 5; i++)
 			{
-				short value = IT87ReadRPM(FanIndex[key[1] - 48]);
-																	
-				data[0] = (value >> 6) & 0xff;
-				data[1] = (value << 2) & 0xff;
+				char name[5];
+				
+				snprintf(name, 5, "F%dAc", i);
+				
+				if(CompareKeys(key, name))
+				{
+					short value = IT87ReadRPM(FanIndex[key[1] - 48 - FanOffset]);
+																		
+					data[0] = (value >> 6) & 0xff;
+					data[1] = (value << 2) & 0xff;
+				}
 			}
 			
 			break;
@@ -338,21 +345,28 @@ static void Update(const char* key, char* data)
 			}
 			
 			// Fans
-			if(CompareKeys(key, "F0Ac") || CompareKeys(key, "F1Ac") || CompareKeys(key, "F2Ac") || CompareKeys(key, "F3Ac") || CompareKeys(key, "F4Ac"))
+			for (int i = FanOffset; i < FanOffset + 5; i++)
 			{
-				UInt8 index = FanIndex[key[1] - 48];
+				char name[5];
 				
-				if(WinbondFanValueObsolete[index]) 
+				snprintf(name, 5, "F%dAc", i);
+				
+				if(CompareKeys(key, name))
 				{
-					WinbondUpdateRPM();
+					UInt8 index = FanIndex[key[1] - 48 - FanOffset];
+					
+					if(WinbondFanValueObsolete[index]) 
+					{
+						WinbondUpdateRPM();
+					}
+					
+					UInt16 value = WinbondFanValue[index];
+					
+					WinbondFanValueObsolete[index] = true;
+					
+					data[0] = (value >> 6) & 0xff;
+					data[1] = (value << 2) & 0xff;
 				}
-				
-				UInt16 value = WinbondFanValue[index];
-				
-				WinbondFanValueObsolete[index] = true;
-				
-				data[0] = (value >> 6) & 0xff;
-				data[1] = (value << 2) & 0xff;
 			}
 			
 			break;
@@ -776,25 +790,26 @@ bool LPCMonitorPlugin::start(IOService * provider)
 			
 			// FANs
 			UInt8 fanCount = 0;
+			
+			FanOffset = GetFNum();
 						
-			for (int i=0; i<5; i++) 
+			for (int i = 0; i < 5; i++) 
 			{
 				char key[5];
 				
 				if ((fanName[i] != NULL && fanName[i]->getLength() > 0) || IT87ReadRPM(i))
 				{	
-					snprintf(key, 5, "F%dID", fanCount);
+					snprintf(key, 5, "F%dID", FanOffset + fanCount);
 					FakeSMCAddKey(key, "ch8*", fanName[i]->getLength(), (char*)fanName[i]->getCStringNoCopy());
 					
-					snprintf(key, 5, "F%dAc", fanCount);
+					snprintf(key, 5, "F%dAc", FanOffset + fanCount);
 					FakeSMCAddKeyCallback(key, "fpe2", 2, value, &Update);
 					
 					FanIndex[fanCount++] = i;
 				}
 			}
 			
-			value[0] = fanCount;
-			FakeSMCAddKey("FNum", 1, value);
+			UpdateFNum(fanCount);
 			
 			break;
 		}
@@ -861,26 +876,27 @@ bool LPCMonitorPlugin::start(IOService * provider)
 			// FANs
 			UInt8 fanCount = 0;
 			
+			FanOffset = GetFNum();
+			
 			WinbondUpdateRPM();
 			
-			for (int i=0; i<5; i++) 
+			for (int i = 0; i < 5; i++) 
 			{
 				char key[5];
 				
 				if ((fanName[i] != NULL && fanName[i]->getLength() > 0) || WinbondFanValue[i] > 0)
 				{	
-					snprintf(key, 5, "F%dID", fanCount);
+					snprintf(key, 5, "F%dID", FanOffset + fanCount);
 					FakeSMCAddKey(key, "ch8*", fanName[i]->getLength(), (char*)fanName[i]->getCStringNoCopy());
 					
-					snprintf(key, 5, "F%dAc", fanCount);
+					snprintf(key, 5, "F%dAc", FanOffset + fanCount);
 					FakeSMCAddKeyCallback(key, "fpe2", 2, value, &Update);
 					
 					FanIndex[fanCount++] = i;
 				}
 			}
 			
-			value[0] = fanCount;
-			FakeSMCAddKey("FNum", 1, value);
+			UpdateFNum(fanCount);
 			
 			break;
 		}

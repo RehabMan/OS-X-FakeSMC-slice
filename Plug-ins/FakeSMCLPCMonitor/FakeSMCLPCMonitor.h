@@ -125,6 +125,7 @@ UInt8			RegisterPort;
 UInt8			ValuePort;
 
 UInt8			FanIndex[5];
+UInt8			FanOffset;
 UInt16			LastVcore;
 
 class LPCMonitorPlugin : public IOService
