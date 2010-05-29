@@ -264,7 +264,7 @@ static void Update(const char* key, char* data)
 			}
 			
 			// FANs
-			for (int i = FanOffset; i < FanOffset + 5; i++)
+			for (int i = FanOffset; i < FanOffset + FanCount; i++)
 			{
 				char name[5];
 				
@@ -345,7 +345,7 @@ static void Update(const char* key, char* data)
 			}
 			
 			// Fans
-			for (int i = FanOffset; i < FanOffset + 5; i++)
+			for (int i = FanOffset; i < FanOffset + FanCount; i++)
 			{
 				char name[5];
 				
@@ -789,8 +789,6 @@ bool LPCMonitorPlugin::start(IOService * provider)
 			FakeSMCAddKeyCallback("VC0c", "ui16", 2, value, &Update);
 			
 			// FANs
-			UInt8 fanCount = 0;
-			
 			FanOffset = GetFNum();
 						
 			for (int i = 0; i < 5; i++) 
@@ -799,17 +797,17 @@ bool LPCMonitorPlugin::start(IOService * provider)
 				
 				if ((fanName[i] != NULL && fanName[i]->getLength() > 0) || IT87ReadRPM(i))
 				{	
-					snprintf(key, 5, "F%dID", FanOffset + fanCount);
+					snprintf(key, 5, "F%dID", FanOffset + FanCount);
 					FakeSMCAddKey(key, "ch8*", fanName[i]->getLength(), (char*)fanName[i]->getCStringNoCopy());
 					
-					snprintf(key, 5, "F%dAc", FanOffset + fanCount);
+					snprintf(key, 5, "F%dAc", FanOffset + FanCount);
 					FakeSMCAddKeyCallback(key, "fpe2", 2, value, &Update);
 					
-					FanIndex[fanCount++] = i;
+					FanIndex[FanCount++] = i;
 				}
 			}
 			
-			UpdateFNum(fanCount);
+			UpdateFNum(FanCount);
 			
 			break;
 		}
@@ -874,8 +872,6 @@ bool LPCMonitorPlugin::start(IOService * provider)
 			FakeSMCAddKeyCallback("VC0c", "ui16", 2, value, &Update);
 			
 			// FANs
-			UInt8 fanCount = 0;
-			
 			FanOffset = GetFNum();
 			
 			WinbondUpdateRPM();
@@ -886,17 +882,17 @@ bool LPCMonitorPlugin::start(IOService * provider)
 				
 				if ((fanName[i] != NULL && fanName[i]->getLength() > 0) || WinbondFanValue[i] > 0)
 				{	
-					snprintf(key, 5, "F%dID", FanOffset + fanCount);
+					snprintf(key, 5, "F%dID", FanOffset + FanCount);
 					FakeSMCAddKey(key, "ch8*", fanName[i]->getLength(), (char*)fanName[i]->getCStringNoCopy());
 					
-					snprintf(key, 5, "F%dAc", FanOffset + fanCount);
+					snprintf(key, 5, "F%dAc", FanOffset + FanCount);
 					FakeSMCAddKeyCallback(key, "fpe2", 2, value, &Update);
 					
-					FanIndex[fanCount++] = i;
+					FanIndex[FanCount++] = i;
 				}
 			}
 			
-			UpdateFNum(fanCount);
+			UpdateFNum(FanCount);
 			
 			break;
 		}
@@ -923,12 +919,13 @@ void LPCMonitorPlugin::stop (IOService* provider)
 			FakeSMCRemoveKeyCallback("TN0P");
 			FakeSMCRemoveKeyCallback("VC0C");
 			FakeSMCRemoveKeyCallback("VC0c");
-			for (int i=0; i<5; i++) 
+			for (int i = FanOffset; i < FanOffset + FanCount; i++) 
 			{
 				char key[5];
 				snprintf(key, 5, "F%dAc", i);
 				FakeSMCRemoveKeyCallback(key);
 			}
+			UpdateFNum(-FanCount);
 			break;
 		case Fintek:
 			break;
