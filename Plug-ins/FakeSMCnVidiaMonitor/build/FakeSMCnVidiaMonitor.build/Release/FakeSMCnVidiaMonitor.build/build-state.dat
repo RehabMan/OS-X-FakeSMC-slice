@@ -1,514 +1,0 @@
-TFakeSMCnVidiaMonitor
-v7
-r0
-t296816651.842721
-cCheck dependencies
-cProcessInfoPlistFile /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext/Contents/Info.plist Info.plist
-cCopyStringsFile /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
-cCompileC build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/PTKawainVi.o /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/PTKawainVi.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-cCompileC build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/FakeSMCnVidiaMonitor_info.o /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/FakeSMCnVidiaMonitor_info.c normal x86_64 c com.apple.compilers.gcc.4_2
-cCompileC build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/PTKawainVi.o /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/PTKawainVi.cpp normal i386 c++ com.apple.compilers.gcc.4_2
-cLd /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/FakeSMCnVidiaMonitor normal x86_64
-cCompileC build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/FakeSMCnVidiaMonitor_info.o /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/FakeSMCnVidiaMonitor_info.c normal i386 c com.apple.compilers.gcc.4_2
-cLd /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/FakeSMCnVidiaMonitor normal i386
-cCompileC build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/PTKawainVi.o /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/PTKawainVi.cpp normal ppc c++ com.apple.compilers.gcc.4_2
-cCompileC build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/FakeSMCnVidiaMonitor_info.o /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/FakeSMCnVidiaMonitor_info.c normal ppc c com.apple.compilers.gcc.4_2
-cLd /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/FakeSMCnVidiaMonitor normal ppc
-cCreateUniversalBinary /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext/Contents/MacOS/FakeSMCnVidiaMonitor normal "x86_64 i386 ppc"
-cGenerateDSYMFile /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext.dSYM /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext/Contents/MacOS/FakeSMCnVidiaMonitor
-cTouch /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext
-
-N/Developer/SDKs/MacOSX10.6.sdk
-c000000004ABBF0FD00000000000000EE
-t1253830909
-s238
-
-N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/IOTimerEventSource.h
-c000000004A73D6540000000000002B1D
-t1249105492
-s11037
-
-N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/pci/IOPCIDevice.h
-c000000004A73D8C70000000000008708
-t1249106119
-s34568
-
-N/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/English.lproj/InfoPlist.strings
-c000000004BFF75150000000000000032
-t1275032853
-s50
-
-N/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/PTKawainVi.cpp
-c000000004C00D8070000000000003098
-t1275123719
-s12440
-i"PTKawainVi.h"
-i"fakesmc.h"
-
-N/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/PTKawainVi.h
-c000000004C00CF6B0000000000000414
-t1275121515
-s1044
-i<IOKit/pci/IOPCIDevice.h>
-i<IOKit/IOTimerEventSource.h>
-
-N/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/FakeSMCnVidiaMonitor_info.c
-c000000004C00CFB300000000000001AB
-t1275121587
-s427
-
-N/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/FakeSMCnVidiaMonitor
-t1275123851
-s35980
-
-N/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/FakeSMCnVidiaMonitor.LinkFileList
-c000000004C00D88A00000000000000A1
-t1275123850
-s161
-
-N/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/FakeSMCnVidiaMonitor_info.o
-t1275121588
-s3828
-
-N/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/PTKawainVi.o
-t1275123851
-s155648
-
-N/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/FakeSMCnVidiaMonitor
-t1275123851
-s47320
-
-N/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/FakeSMCnVidiaMonitor.LinkFileList
-c000000004C00D88A00000000000000A0
-t1275123850
-s160
-
-N/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/FakeSMCnVidiaMonitor_info.o
-t1275121588
-s3832
-
-N/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/PTKawainVi.o
-t1275123851
-s170864
-
-N/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/FakeSMCnVidiaMonitor
-t1275123851
-s39632
-
-N/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/FakeSMCnVidiaMonitor.LinkFileList
-c000000004C00D88A00000000000000A3
-t1275123850
-s163
-
-N/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/FakeSMCnVidiaMonitor_info.o
-t1275121587
-s4128
-
-N/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/PTKawainVi.o
-t1275123851
-s158308
-
-N/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext
-t1275123851
-s102
-
-N/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext.dSYM
-t1275123851
-s102
-
-N/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext/Contents/Info.plist
-t1275123850
-s1567
-
-N/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext/Contents/MacOS/FakeSMCnVidiaMonitor
-t1275123851
-s129240
-
-N/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext/Contents/Resources/English.lproj/InfoPlist.strings
-t1275121587
-s96
-
-N/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/fakesmc.h
-c000000004C00D7DD00000000000003DA
-t1275123677
-s986
-
-N/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/English.lproj/InfoPlist.strings
-c000000004BFF75150000000000000032
-t1275032853
-s50
-
-N/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/PTKawainVi.cpp
-c000000004C00D8070000000000003098
-t1275123719
-s12440
-i"PTKawainVi.h"
-i"fakesmc.h"
-
-N/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/PTKawainVi.h
-c000000004C00CF6B0000000000000414
-t1275121515
-s1044
-i<IOKit/pci/IOPCIDevice.h>
-i<IOKit/IOTimerEventSource.h>
-
-N/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/FakeSMCnVidiaMonitor_info.c
-c000000004C00CFB300000000000001AB
-t1275121587
-s427
-
-N/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/FakeSMCnVidiaMonitor
-t1275121588
-s35588
-
-N/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/FakeSMCnVidiaMonitor.LinkFileList
-c000000004C00CFB30000000000000091
-t1275121587
-s145
-
-N/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/FakeSMCnVidiaMonitor_info.o
-t1275121588
-s3828
-
-N/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/PTKawainVi.o
-t1275121588
-s154876
-
-N/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/FakeSMCnVidiaMonitor
-t1275121588
-s46728
-
-N/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/FakeSMCnVidiaMonitor.LinkFileList
-c000000004C00CFB30000000000000090
-t1275121587
-s144
-
-N/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/FakeSMCnVidiaMonitor_info.o
-t1275121588
-s3832
-
-N/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/PTKawainVi.o
-t1275121588
-s169916
-
-N/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/FakeSMCnVidiaMonitor
-t1275121588
-s39344
-
-N/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/FakeSMCnVidiaMonitor.LinkFileList
-c000000004C00CFB30000000000000093
-t1275121587
-s147
-
-N/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/FakeSMCnVidiaMonitor_info.o
-t1275121587
-s4128
-
-N/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/PTKawainVi.o
-t1275121588
-s157408
-
-N/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/Release/FakeSMCnVidiaMonitor.kext
-t1275121588
-s102
-
-N/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/Release/FakeSMCnVidiaMonitor.kext.dSYM
-t1275121588
-s102
-
-N/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/Release/FakeSMCnVidiaMonitor.kext/Contents/Info.plist
-t1275121587
-s1567
-
-N/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/Release/FakeSMCnVidiaMonitor.kext/Contents/MacOS/FakeSMCnVidiaMonitor
-t1275121588
-s128648
-
-N/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/Release/FakeSMCnVidiaMonitor.kext/Contents/Resources/English.lproj/InfoPlist.strings
-t1275121587
-s96
-
-N/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/fakesmc.h
-c000000004C00D7DD00000000000003DA
-t1275123677
-s986
-
-NInfo.plist
-c000000004C00D7E30000000000000648
-t1275123683
-s1608
-
-CCheck dependencies
-r0
-lSLF07#2@18"Check dependencies296816650#296816650#0(0"0(0#1#0"6227989334090673152#0"0#
-
-CCompileC build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/FakeSMCnVidiaMonitor_info.o "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/FakeSMCnVidiaMonitor_info.c" normal i386 c com.apple.compilers.gcc.4_2
-s296814388.036789
-e296814388.078624
-r1
-xCompileC
-xbuild/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/FakeSMCnVidiaMonitor_info.o
-x/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/FakeSMCnVidiaMonitor_info.c
-xnormal
-xi386
-xc
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@162"Compile /Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/FakeSMCnVidiaMonitor_info.c296814388#296814388#0(0"0(0#0#154"/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/FakeSMCnVidiaMonitor_info.c4324455640#2000"    cd "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch i386 -fmessage-length=0 -pipe -nostdinc -std=gnu99 -fno-builtin -Wno-trigraphs -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -iquote "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-generated-files.hmap" "-I/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-own-target-headers.hmap" "-I/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-all-target-headers.hmap" -iquote "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-project-headers.hmap" "-F/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/Release" "-I/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/Release/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/i386" "-I/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources" -c "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/FakeSMCnVidiaMonitor_info.c" -o "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/FakeSMCnVidiaMonitor_info.o"0#
-
-CCompileC build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/FakeSMCnVidiaMonitor_info.o /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/FakeSMCnVidiaMonitor_info.c normal i386 c com.apple.compilers.gcc.4_2
-r0
-
-CCompileC build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/PTKawainVi.o "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/PTKawainVi.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
-s296814387.629793
-e296814388.046789
-r1
-xCompileC
-xbuild/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/PTKawainVi.o
-x/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/PTKawainVi.cpp
-xnormal
-xi386
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@66"Compile /Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/PTKawainVi.cpp296814387#296814388#0(0"0(0#0#58"/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/PTKawainVi.cpp4324455640#1931"    cd "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -mmacosx-version-min=10.6 -gdwarf-2 -iquote "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-generated-files.hmap" "-I/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-own-target-headers.hmap" "-I/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-all-target-headers.hmap" -iquote "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-project-headers.hmap" "-F/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/Release" "-I/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/Release/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/i386" "-I/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources" -c "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/PTKawainVi.cpp" -o "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/PTKawainVi.o"0#
-
-CCompileC build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/PTKawainVi.o /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/PTKawainVi.cpp normal i386 c++ com.apple.compilers.gcc.4_2
-s296816650.924224
-e296816651.348588
-r1
-xCompileC
-xbuild/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/PTKawainVi.o
-x/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/PTKawainVi.cpp
-xnormal
-xi386
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@82"Compile /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/PTKawainVi.cpp296816650#296816651#0(0"0(0#0#74"/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/PTKawainVi.cpp4324455640#2085"    cd /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-generated-files.hmap -I/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-own-target-headers.hmap -I/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-all-target-headers.hmap -iquote /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-project-headers.hmap -F/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release -I/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/i386 -I/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources -c /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/PTKawainVi.cpp -o /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/PTKawainVi.o0#
-
-CCompileC build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/FakeSMCnVidiaMonitor_info.o "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/FakeSMCnVidiaMonitor_info.c" normal ppc c com.apple.compilers.gcc.4_2
-s296814388.115192
-e296814388.320717
-r1
-xCompileC
-xbuild/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/FakeSMCnVidiaMonitor_info.o
-x/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/FakeSMCnVidiaMonitor_info.c
-xnormal
-xppc
-xc
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@162"Compile /Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/FakeSMCnVidiaMonitor_info.c296814388#296814388#0(0"0(0#0#154"/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/FakeSMCnVidiaMonitor_info.c4324455640#2007"    cd "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch ppc -fmessage-length=0 -pipe -nostdinc -std=gnu99 -fno-builtin -Wno-trigraphs -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -mtune=G5 -mmacosx-version-min=10.6 -gdwarf-2 -iquote "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-generated-files.hmap" "-I/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-own-target-headers.hmap" "-I/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-all-target-headers.hmap" -iquote "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-project-headers.hmap" "-F/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/Release" "-I/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/Release/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/ppc" "-I/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources" -c "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/FakeSMCnVidiaMonitor_info.c" -o "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/FakeSMCnVidiaMonitor_info.o"0#
-
-CCompileC build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/FakeSMCnVidiaMonitor_info.o /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/FakeSMCnVidiaMonitor_info.c normal ppc c com.apple.compilers.gcc.4_2
-r0
-
-CCompileC build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/PTKawainVi.o "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/PTKawainVi.cpp" normal ppc c++ com.apple.compilers.gcc.4_2
-s296814388.046873
-e296814388.453013
-r1
-xCompileC
-xbuild/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/PTKawainVi.o
-x/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/PTKawainVi.cpp
-xnormal
-xppc
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@66"Compile /Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/PTKawainVi.cpp296814388#296814388#0(0"0(0#0#58"/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/PTKawainVi.cpp4324455640#1938"    cd "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch ppc -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -mtune=G5 -mmacosx-version-min=10.6 -gdwarf-2 -iquote "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-generated-files.hmap" "-I/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-own-target-headers.hmap" "-I/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-all-target-headers.hmap" -iquote "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-project-headers.hmap" "-F/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/Release" "-I/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/Release/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/ppc" "-I/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources" -c "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/PTKawainVi.cpp" -o "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/PTKawainVi.o"0#
-
-CCompileC build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/PTKawainVi.o /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/PTKawainVi.cpp normal ppc c++ com.apple.compilers.gcc.4_2
-s296816651.349858
-e296816651.746035
-r1
-xCompileC
-xbuild/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/PTKawainVi.o
-x/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/PTKawainVi.cpp
-xnormal
-xppc
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@82"Compile /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/PTKawainVi.cpp296816651#296816651#0(0"0(0#0#74"/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/PTKawainVi.cpp4324455640#2092"    cd /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch ppc -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -mtune=G5 -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-generated-files.hmap -I/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-own-target-headers.hmap -I/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-all-target-headers.hmap -iquote /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-project-headers.hmap -F/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release -I/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/ppc -I/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources -c /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/PTKawainVi.cpp -o /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/PTKawainVi.o0#
-
-CCompileC build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/FakeSMCnVidiaMonitor_info.o "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/FakeSMCnVidiaMonitor_info.c" normal x86_64 c com.apple.compilers.gcc.4_2
-s296814387.596609
-e296814387.629709
-r1
-xCompileC
-xbuild/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/FakeSMCnVidiaMonitor_info.o
-x/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/FakeSMCnVidiaMonitor_info.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@162"Compile /Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/FakeSMCnVidiaMonitor_info.c296814387#296814387#0(0"0(0#0#154"/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/FakeSMCnVidiaMonitor_info.c4324455640#2006"    cd "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -nostdinc -std=gnu99 -fno-builtin -Wno-trigraphs -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -iquote "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-generated-files.hmap" "-I/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-own-target-headers.hmap" "-I/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-all-target-headers.hmap" -iquote "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-project-headers.hmap" "-F/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/Release" "-I/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/Release/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/x86_64" "-I/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources" -c "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/FakeSMCnVidiaMonitor_info.c" -o "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/FakeSMCnVidiaMonitor_info.o"0#
-
-CCompileC build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/FakeSMCnVidiaMonitor_info.o /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/FakeSMCnVidiaMonitor_info.c normal x86_64 c com.apple.compilers.gcc.4_2
-r0
-
-CCompileC build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/PTKawainVi.o "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/PTKawainVi.cpp" normal x86_64 c++ com.apple.compilers.gcc.4_2
-s296814387.595855
-e296814388.021422
-r1
-xCompileC
-xbuild/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/PTKawainVi.o
-x/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/PTKawainVi.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@66"Compile /Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/PTKawainVi.cpp296814387#296814388#0(0"0(0#0#58"/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/PTKawainVi.cpp4324455640#1937"    cd "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -mmacosx-version-min=10.6 -gdwarf-2 -iquote "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-generated-files.hmap" "-I/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-own-target-headers.hmap" "-I/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-all-target-headers.hmap" -iquote "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-project-headers.hmap" "-F/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/Release" "-I/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/Release/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/x86_64" "-I/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources" -c "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/PTKawainVi.cpp" -o "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/PTKawainVi.o"0#
-
-CCompileC build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/PTKawainVi.o /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/PTKawainVi.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-s296816650.913489
-e296816651.326081
-r1
-xCompileC
-xbuild/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/PTKawainVi.o
-x/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/PTKawainVi.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@82"Compile /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/PTKawainVi.cpp296816650#296816651#0(0"0(0#0#74"/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/PTKawainVi.cpp4324455640#2091"    cd /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-generated-files.hmap -I/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-own-target-headers.hmap -I/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-all-target-headers.hmap -iquote /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-project-headers.hmap -F/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release -I/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/x86_64 -I/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources -c /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/PTKawainVi.cpp -o /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/PTKawainVi.o0#
-
-CCopyStringsFile "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/Release/FakeSMCnVidiaMonitor.kext/Contents/Resources/English.lproj/InfoPlist.strings" English.lproj/InfoPlist.strings
-s296814387.564823
-e296814387.595620
-r1
-xCopyStringsFile
-x/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/Release/FakeSMCnVidiaMonitor.kext/Contents/Resources/English.lproj/InfoPlist.strings
-xEnglish.lproj/InfoPlist.strings
-lSLF07#2@36"Copy English.lproj/InfoPlist.strings296814387#296814387#0(0"0(0#0#75"/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/English.lproj/InfoPlist.strings4324455640#395"    cd "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2"    setenv ICONV /usr/bin/iconv    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings --validate --inputencoding utf-8 --outputencoding UTF-16 English.lproj/InfoPlist.strings --outdir "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/Release/FakeSMCnVidiaMonitor.kext/Contents/Resources/English.lproj"0#
-
-CCopyStringsFile /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
-r0
-
-CCreateUniversalBinary "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/Release/FakeSMCnVidiaMonitor.kext/Contents/MacOS/FakeSMCnVidiaMonitor" normal "x86_64 i386 ppc"
-s296814388.486888
-e296814388.505914
-r1
-xCreateUniversalBinary
-x/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/Release/FakeSMCnVidiaMonitor.kext/Contents/MacOS/FakeSMCnVidiaMonitor
-xnormal
-xx86_64 i386 ppc
-lSLF07#2@122"CreateUniversalBinary build/Release/FakeSMCnVidiaMonitor.kext/Contents/MacOS/FakeSMCnVidiaMonitor normal "x86_64 i386 ppc"296814388#296814388#0(0"0(0#0#59"/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/x86_64 i386 ppc4324455640#675"    cd "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2"    /usr/bin/lipo -create "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/FakeSMCnVidiaMonitor" "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/FakeSMCnVidiaMonitor" "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/FakeSMCnVidiaMonitor" -output "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/Release/FakeSMCnVidiaMonitor.kext/Contents/MacOS/FakeSMCnVidiaMonitor"0#
-
-CCreateUniversalBinary /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext/Contents/MacOS/FakeSMCnVidiaMonitor normal "x86_64 i386 ppc"
-s296816651.782608
-e296816651.803096
-r1
-xCreateUniversalBinary
-x/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext/Contents/MacOS/FakeSMCnVidiaMonitor
-xnormal
-xx86_64 i386 ppc
-lSLF07#2@122"CreateUniversalBinary build/Release/FakeSMCnVidiaMonitor.kext/Contents/MacOS/FakeSMCnVidiaMonitor normal "x86_64 i386 ppc"296816651#296816651#0(0"0(0#0#75"/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/x86_64 i386 ppc4324455640#745"    cd /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor    /usr/bin/lipo -create /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/FakeSMCnVidiaMonitor /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/FakeSMCnVidiaMonitor /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/FakeSMCnVidiaMonitor -output /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext/Contents/MacOS/FakeSMCnVidiaMonitor0#
-
-CGenerateDSYMFile "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/Release/FakeSMCnVidiaMonitor.kext.dSYM" "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/Release/FakeSMCnVidiaMonitor.kext/Contents/MacOS/FakeSMCnVidiaMonitor"
-s296814388.506013
-e296814388.547549
-r1
-xGenerateDSYMFile
-x/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/Release/FakeSMCnVidiaMonitor.kext.dSYM
-x/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/Release/FakeSMCnVidiaMonitor.kext/Contents/MacOS/FakeSMCnVidiaMonitor
-lSLF07#2@137"GenerateDSYMFile build/Release/FakeSMCnVidiaMonitor.kext.dSYM build/Release/FakeSMCnVidiaMonitor.kext/Contents/MacOS/FakeSMCnVidiaMonitor296814388#296814388#0(0"0(0#0#119"/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/Release/FakeSMCnVidiaMonitor.kext/Contents/MacOS/FakeSMCnVidiaMonitor4324455640#301"    cd "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2"    /Developer/usr/bin/dsymutil "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/Release/FakeSMCnVidiaMonitor.kext/Contents/MacOS/FakeSMCnVidiaMonitor" -o "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/Release/FakeSMCnVidiaMonitor.kext.dSYM"0#
-
-CGenerateDSYMFile /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext.dSYM /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext/Contents/MacOS/FakeSMCnVidiaMonitor
-s296816651.803167
-e296816651.839975
-r1
-xGenerateDSYMFile
-x/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext.dSYM
-x/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext/Contents/MacOS/FakeSMCnVidiaMonitor
-lSLF07#2@137"GenerateDSYMFile build/Release/FakeSMCnVidiaMonitor.kext.dSYM build/Release/FakeSMCnVidiaMonitor.kext/Contents/MacOS/FakeSMCnVidiaMonitor296816651#296816651#0(0"0(0#0#135"/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext/Contents/MacOS/FakeSMCnVidiaMonitor4324455640#343"    cd /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor    /Developer/usr/bin/dsymutil /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext/Contents/MacOS/FakeSMCnVidiaMonitor -o /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext.dSYM0#
-
-CLd "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/FakeSMCnVidiaMonitor" normal i386
-s296814388.078698
-e296814388.115111
-r1
-xLd
-x/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/FakeSMCnVidiaMonitor
-xnormal
-xi386
-lSLF07#2@157"Link /Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/FakeSMCnVidiaMonitor296814388#296814388#0(0"0(0#0#0"4324455640#888"    cd "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2"    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/g++-4.2 -arch i386 -isysroot /Developer/SDKs/MacOSX10.6.sdk "-L/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/Release" "-F/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/Release" -filelist "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/FakeSMCnVidiaMonitor.LinkFileList" -mmacosx-version-min=10.6 -lcpp_kext -Xlinker -kext -nostdlib -lkmodc++ "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/FakeSMCnVidiaMonitor_info.o" -lkmod -lcc_kext -o "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/FakeSMCnVidiaMonitor"0#
-
-CLd "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/FakeSMCnVidiaMonitor" normal ppc
-s296814388.453108
-e296814388.486806
-r1
-xLd
-x/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/FakeSMCnVidiaMonitor
-xnormal
-xppc
-lSLF07#2@156"Link /Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/FakeSMCnVidiaMonitor296814388#296814388#0(0"0(0#0#0"4324455640#884"    cd "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2"    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/g++-4.2 -arch ppc -isysroot /Developer/SDKs/MacOSX10.6.sdk "-L/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/Release" "-F/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/Release" -filelist "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/FakeSMCnVidiaMonitor.LinkFileList" -mmacosx-version-min=10.6 -lcpp_kext -Xlinker -kext -nostdlib -lkmodc++ "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/FakeSMCnVidiaMonitor_info.o" -lkmod -lcc_kext -o "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/FakeSMCnVidiaMonitor"0#
-
-CLd "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/FakeSMCnVidiaMonitor" normal x86_64
-s296814388.021500
-e296814388.036707
-r1
-xLd
-x/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/FakeSMCnVidiaMonitor
-xnormal
-xx86_64
-lSLF07#2@159"Link /Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/FakeSMCnVidiaMonitor296814388#296814388#0(0"0(0#0#0"4324455640#896"    cd "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2"    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/g++-4.2 -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.6.sdk "-L/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/Release" "-F/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/Release" -filelist "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/FakeSMCnVidiaMonitor.LinkFileList" -mmacosx-version-min=10.6 -lcpp_kext -Xlinker -kext -nostdlib -lkmodc++ "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/FakeSMCnVidiaMonitor_info.o" -lkmod -lcc_kext -o "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/FakeSMCnVidiaMonitor"0#
-
-CLd /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/FakeSMCnVidiaMonitor normal i386
-s296816651.348710
-e296816651.392452
-r1
-xLd
-x/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/FakeSMCnVidiaMonitor
-xnormal
-xi386
-lSLF07#2@173"Link /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/FakeSMCnVidiaMonitor296816651#296816651#0(0"0(0#0#0"4324455640#972"    cd /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/g++-4.2 -arch i386 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release -F/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release -filelist /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/FakeSMCnVidiaMonitor.LinkFileList -mmacosx-version-min=10.6 -lcpp_kext -Xlinker -kext -nostdlib -lkmodc++ /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/FakeSMCnVidiaMonitor_info.o -lkmod -lcc_kext -o /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/FakeSMCnVidiaMonitor0#
-
-CLd /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/FakeSMCnVidiaMonitor normal ppc
-s296816651.746123
-e296816651.782509
-r1
-xLd
-x/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/FakeSMCnVidiaMonitor
-xnormal
-xppc
-lSLF07#2@172"Link /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/FakeSMCnVidiaMonitor296816651#296816651#0(0"0(0#0#0"4324455640#968"    cd /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/g++-4.2 -arch ppc -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release -F/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release -filelist /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/FakeSMCnVidiaMonitor.LinkFileList -mmacosx-version-min=10.6 -lcpp_kext -Xlinker -kext -nostdlib -lkmodc++ /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/FakeSMCnVidiaMonitor_info.o -lkmod -lcc_kext -o /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/FakeSMCnVidiaMonitor0#
-
-CLd /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/FakeSMCnVidiaMonitor normal x86_64
-s296816651.326156
-e296816651.349802
-r1
-xLd
-x/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/FakeSMCnVidiaMonitor
-xnormal
-xx86_64
-lSLF07#2@175"Link /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/FakeSMCnVidiaMonitor296816651#296816651#0(0"0(0#0#0"4324455640#980"    cd /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/g++-4.2 -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release -F/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release -filelist /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/FakeSMCnVidiaMonitor.LinkFileList -mmacosx-version-min=10.6 -lcpp_kext -Xlinker -kext -nostdlib -lkmodc++ /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/FakeSMCnVidiaMonitor_info.o -lkmod -lcc_kext -o /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/FakeSMCnVidiaMonitor0#
-
-CProcessInfoPlistFile "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/Release/FakeSMCnVidiaMonitor.kext/Contents/Info.plist" Info.plist
-s296814387.562166
-e296814387.564762
-r1
-xProcessInfoPlistFile
-x/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/Release/FakeSMCnVidiaMonitor.kext/Contents/Info.plist
-xInfo.plist
-lSLF07#2@18"Process Info.plist296814387#296814387#0(0"0(0#0#54"/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/Info.plist4324455640#240"    cd "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2"    builtin-infoPlistUtility Info.plist -expandbuildsettings -platform macosx -o "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/Release/FakeSMCnVidiaMonitor.kext/Contents/Info.plist"0#
-
-CProcessInfoPlistFile /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext/Contents/Info.plist Info.plist
-s296816650.900184
-e296816650.913383
-r1
-xProcessInfoPlistFile
-x/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext/Contents/Info.plist
-xInfo.plist
-lSLF07#2@18"Process Info.plist296816650#296816650#0(0"0(0#0#70"/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/Info.plist24207320447909964#268"    cd /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor    builtin-infoPlistUtility Info.plist -expandbuildsettings -platform macosx -o /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext/Contents/Info.plist0#
-
-CTouch "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/Release/FakeSMCnVidiaMonitor.kext"
-s296814388.547623
-e296814388.550184
-r1
-xTouch
-x/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/Release/FakeSMCnVidiaMonitor.kext
-lSLF07#2@89"Touch /Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/Release/FakeSMCnVidiaMonitor.kext296814388#296814388#0(0"0(0#0#0"4324455640#161"    cd "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2"    /usr/bin/touch -c "/Users/mozo/Downloads/FakeSMCnVidiaPlugin 2/build/Release/FakeSMCnVidiaMonitor.kext"0#
-
-CTouch /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext
-s296816651.840051
-e296816651.842691
-r1
-xTouch
-x/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext
-lSLF07#2@105"Touch /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext296816651#296816651#0(0"0(0#0#0"4324455640#189"    cd /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor    /usr/bin/touch -c /Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext0#
-
