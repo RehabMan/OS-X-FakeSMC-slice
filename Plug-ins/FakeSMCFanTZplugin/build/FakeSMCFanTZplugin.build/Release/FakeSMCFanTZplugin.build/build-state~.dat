@@ -1,305 +1,0 @@
-TFakeSMCFanTZplugin
-v7
-r0
-t296398210.692894
-cCheck dependencies
-cProcessInfoPlistFile /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Release/FakeSMCFanTZplugin.kext/Contents/Info.plist Info.plist
-cCopyStringsFile /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Release/FakeSMCFanTZplugin.kext/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
-cCompileC build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/Objects-normal/i386/FakeSMCTZFanPlugin.o /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCTZFanPlugin.cpp normal i386 c++ com.apple.compilers.gcc.4_2
-cCompileC build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/Objects-normal/i386/FakeSMCFanTZplugin_info.o /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/DerivedSources/FakeSMCFanTZplugin_info.c normal i386 c com.apple.compilers.gcc.4_2
-cCompileC build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/Objects-normal/x86_64/FakeSMCTZFanPlugin.o /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCTZFanPlugin.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-cCompileC build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/Objects-normal/x86_64/FakeSMCFanTZplugin_info.o /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/DerivedSources/FakeSMCFanTZplugin_info.c normal x86_64 c com.apple.compilers.gcc.4_2
-cLd /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/Objects-normal/i386/FakeSMCFanTZplugin normal i386
-cLd /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/Objects-normal/x86_64/FakeSMCFanTZplugin normal x86_64
-cCreateUniversalBinary /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Release/FakeSMCFanTZplugin.kext/Contents/MacOS/FakeSMCFanTZplugin normal "i386 x86_64"
-cGenerateDSYMFile /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Release/FakeSMCFanTZplugin.kext.dSYM /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Release/FakeSMCFanTZplugin.kext/Contents/MacOS/FakeSMCFanTZplugin
-cTouch /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Release/FakeSMCFanTZplugin.kext
-
-N/Developer/SDKs/MacOSX10.6.sdk
-c000000004A769DAB00000000000000EE
-t1249287595
-s238
-
-N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/IOService.h
-c000000004A73D653000000000001F49D
-t1249105491
-s128157
-
-N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/IOTimerEventSource.h
-c000000004A73D6540000000000002B1D
-t1249105492
-s11037
-
-N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/acpi/IOACPIPlatformDevice.h
-c000000004A73D8B80000000000002B75
-t1249106104
-s11125
-
-N/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/English.lproj/InfoPlist.strings
-c000000004BFA73380000000000000030
-t1274704696
-s48
-
-N/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp
-c000000004BFA7599000000000000091E
-t1274705305
-s2334
-i"FakeSMCTZFanPlugin.h"
-
-N/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCTZFanPlugin.cpp
-c000000004BFA7599000000000000091E
-t1274705305
-s2334
-i"FakeSMCTZFanPlugin.h"
-
-N/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCTZFanPlugin.h
-c000000004BFA75990000000000000290
-t1274705305
-s656
-i<IOKit/IOService.h>
-i"IOKit/acpi/IOACPIPlatformDevice.h"
-i<IOKit/IOTimerEventSource.h>
-i<fakesmc.h>
-
-N/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/DerivedSources/FakeSMCFanTZplugin_info.c
-c000000004BFA760100000000000001B3
-t1274705409
-s435
-
-N/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/Objects-normal/i386/FakeSMCFanTZplugin
-t1274705410
-s29848
-
-N/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/Objects-normal/i386/FakeSMCFanTZplugin.LinkFileList
-c000000004BFA7601000000000000009A
-t1274705409
-s154
-
-N/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/Objects-normal/i386/FakeSMCFanTZplugin.o
-t2
-s0
-
-N/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/Objects-normal/i386/FakeSMCFanTZplugin_info.o
-t1274705409
-s3828
-
-N/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/Objects-normal/i386/FakeSMCTZFanPlugin.o
-t1274705410
-s167088
-
-N/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/Objects-normal/x86_64/FakeSMCFanTZplugin
-t1274705410
-s33032
-
-N/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/Objects-normal/x86_64/FakeSMCFanTZplugin.LinkFileList
-c000000004BFA7601000000000000009C
-t1274705409
-s156
-
-N/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/Objects-normal/x86_64/FakeSMCFanTZplugin.o
-t2
-s0
-
-N/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/Objects-normal/x86_64/FakeSMCFanTZplugin_info.o
-t1274705410
-s4128
-
-N/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/Objects-normal/x86_64/FakeSMCTZFanPlugin.o
-t1274705410
-s168200
-
-N/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Release/FakeSMCFanTZplugin.kext
-t1274705410
-s102
-
-N/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Release/FakeSMCFanTZplugin.kext.dSYM
-t1274705410
-s102
-
-N/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Release/FakeSMCFanTZplugin.kext/Contents/Info.plist
-t1274705409
-s1575
-
-N/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Release/FakeSMCFanTZplugin.kext/Contents/MacOS/FakeSMCFanTZplugin
-t1274705410
-s69896
-
-N/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Release/FakeSMCFanTZplugin.kext/Contents/Resources/English.lproj/InfoPlist.strings
-t1274705409
-s92
-
-N/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/fakesmc.h
-c000000004BF8058400000000000001D2
-t1274545540
-s466
-
-NInfo.plist
-c000000004BFA759A0000000000000660
-t1274705306
-s1632
-
-CCheck dependencies
-r0
-lSLF07#2@18"Check dependencies296398209#296398209#0(0"0(0#1#0"4300911832#0"0#
-
-CCompileC build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/Objects-normal/i386/FakeSMCFanTZplugin.o /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp normal i386 c++ com.apple.compilers.gcc.4_2
-s296398106.691728
-e296398106.796064
-r0
-xCompileC
-xbuild/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/Objects-normal/i386/FakeSMCFanTZplugin.o
-x/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp
-xnormal
-xi386
-xc++
-xcom.apple.compilers.gcc.4_2
-o/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp:7:32: error: FakeSMCTZFanPlugin.h: No such file or directory
-o/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp:12: error: variable or field 'Update' declared void
-o/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp:12: error: 'SMCData' was not declared in this scope
-o/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp:21: error: expected constructor, destructor, or type conversion before '(' token
-o/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp:30: error: 'TZFanPlugin' has not been declared
-o/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp:30: error: 'IOService' was not declared in this scope
-o/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp:30: error: 'provider' was not declared in this scope
-o/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp:31: error: expected ',' or ';' before '{' token
-o/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp:10: warning: 'TZtemp' defined but not used
-lSLF07#2@79"Compile /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp296398106#296398106#0(1139"/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp:7:32: error: FakeSMCTZFanPlugin.h: No such file or directory/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp:12: error: variable or field 'Update' declared void/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp:12: error: 'SMCData' was not declared in this scope/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp:21: error: expected constructor, destructor, or type conversion before '(' token/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp:30: error: 'TZFanPlugin' has not been declared/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp:30: error: 'IOService' was not declared in this scope/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp:30: error: 'provider' was not declared in this scope/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp:31: error: expected ',' or ';' before '{' token/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp:10: warning: 'TZtemp' defined but not used9(4@47"FakeSMCTZFanPlugin.h: No such file or directory296398106#0#133#0(6@71"/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp296398105#7#0#7#0#28"*: No such file or directory0(4@40"Variable or field 'Update' declared void296398106#133#124#0(6@71"/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp296398105#12#0#12#0#0"0(4@40"'SMCData' was not declared in this scope296398106#257#124#0(6@71"/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp296398105#12#0#12#0#34"'*' was not declared in this scope0(4@69"Expected constructor, destructor, or type conversion before '(' token296398106#381#153#0(6@71"/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp296398105#21#0#21#0#19"expected * before *0(4@35"'TZFanPlugin' has not been declared296398106#534#119#0(6@71"/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp296398105#30#0#30#0#25"'*' has not been declared0(4@42"'IOService' was not declared in this scope296398106#653#126#0(6@71"/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp296398105#30#0#30#0#34"'*' was not declared in this scope0(4@41"'provider' was not declared in this scope296398106#779#125#0(6@71"/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp296398105#30#0#30#0#34"'*' was not declared in this scope0(4@36"Expected ',' or ';' before '{' token296398106#904#120#0(6@71"/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp296398105#31#0#31#0#19"expected * before *0(22@29"'TZtemp' defined but not used296398106#1024#115#0(6@71"/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp296398105#10#0#10#0#24"'*' defined but not used0(0#0#71"/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp4300911832#1961"    cd /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -ftree-vectorize -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/FakeSMCFanTZplugin-generated-files.hmap -I/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/FakeSMCFanTZplugin-own-target-headers.hmap -I/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/FakeSMCFanTZplugin-all-target-headers.hmap -iquote /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/FakeSMCFanTZplugin-project-headers.hmap -F/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Release -I/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/DerivedSources/i386 -I/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/DerivedSources -c /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp -o /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/Objects-normal/i386/FakeSMCFanTZplugin.o1#
-
-CCompileC build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/Objects-normal/i386/FakeSMCFanTZplugin_info.o /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/DerivedSources/FakeSMCFanTZplugin_info.c normal i386 c com.apple.compilers.gcc.4_2
-s296398209.118369
-e296398209.158769
-r1
-xCompileC
-xbuild/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/Objects-normal/i386/FakeSMCFanTZplugin_info.o
-x/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/DerivedSources/FakeSMCFanTZplugin_info.c
-xnormal
-xi386
-xc
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@161"Compile /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/DerivedSources/FakeSMCFanTZplugin_info.c296398209#296398209#0(0"0(0#0#153"/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/DerivedSources/FakeSMCFanTZplugin_info.c4300911832#1995"    cd /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch i386 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -ftree-vectorize -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/FakeSMCFanTZplugin-generated-files.hmap -I/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/FakeSMCFanTZplugin-own-target-headers.hmap -I/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/FakeSMCFanTZplugin-all-target-headers.hmap -iquote /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/FakeSMCFanTZplugin-project-headers.hmap -F/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Release -I/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/DerivedSources/i386 -I/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/DerivedSources -c /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/DerivedSources/FakeSMCFanTZplugin_info.c -o /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/Objects-normal/i386/FakeSMCFanTZplugin_info.o0#
-
-CCompileC build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/Objects-normal/i386/FakeSMCTZFanPlugin.o /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCTZFanPlugin.cpp normal i386 c++ com.apple.compilers.gcc.4_2
-s296398209.117398
-e296398210.167495
-r1
-xCompileC
-xbuild/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/Objects-normal/i386/FakeSMCTZFanPlugin.o
-x/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCTZFanPlugin.cpp
-xnormal
-xi386
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@79"Compile /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCTZFanPlugin.cpp296398209#296398210#0(0"0(0#0#71"/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCTZFanPlugin.cpp4300911832#1961"    cd /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -ftree-vectorize -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/FakeSMCFanTZplugin-generated-files.hmap -I/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/FakeSMCFanTZplugin-own-target-headers.hmap -I/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/FakeSMCFanTZplugin-all-target-headers.hmap -iquote /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/FakeSMCFanTZplugin-project-headers.hmap -F/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Release -I/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/DerivedSources/i386 -I/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/DerivedSources -c /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCTZFanPlugin.cpp -o /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/Objects-normal/i386/FakeSMCTZFanPlugin.o0#
-
-CCompileC build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/Objects-normal/x86_64/FakeSMCFanTZplugin.o /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-s296398106.796249
-e296398106.857912
-r0
-xCompileC
-xbuild/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/Objects-normal/x86_64/FakeSMCFanTZplugin.o
-x/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-o/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp:7:32: error: FakeSMCTZFanPlugin.h: No such file or directory
-o/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp:12: error: variable or field 'Update' declared void
-o/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp:12: error: 'SMCData' was not declared in this scope
-o/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp:21: error: expected constructor, destructor, or type conversion before '(' token
-o/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp:30: error: 'TZFanPlugin' has not been declared
-o/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp:30: error: 'IOService' was not declared in this scope
-o/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp:30: error: 'provider' was not declared in this scope
-o/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp:31: error: expected ',' or ';' before '{' token
-o/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp:10: warning: 'TZtemp' defined but not used
-lSLF07#2@79"Compile /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp296398106#296398106#0(1139"/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp:7:32: error: FakeSMCTZFanPlugin.h: No such file or directory/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp:12: error: variable or field 'Update' declared void/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp:12: error: 'SMCData' was not declared in this scope/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp:21: error: expected constructor, destructor, or type conversion before '(' token/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp:30: error: 'TZFanPlugin' has not been declared/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp:30: error: 'IOService' was not declared in this scope/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp:30: error: 'provider' was not declared in this scope/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp:31: error: expected ',' or ';' before '{' token/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp:10: warning: 'TZtemp' defined but not used9(4@47"FakeSMCTZFanPlugin.h: No such file or directory296398106#0#133#0(6@71"/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp296398105#7#0#7#0#28"*: No such file or directory0(4@40"Variable or field 'Update' declared void296398106#133#124#0(6@71"/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp296398105#12#0#12#0#0"0(4@40"'SMCData' was not declared in this scope296398106#257#124#0(6@71"/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp296398105#12#0#12#0#34"'*' was not declared in this scope0(4@69"Expected constructor, destructor, or type conversion before '(' token296398106#381#153#0(6@71"/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp296398105#21#0#21#0#19"expected * before *0(4@35"'TZFanPlugin' has not been declared296398106#534#119#0(6@71"/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp296398105#30#0#30#0#25"'*' has not been declared0(4@42"'IOService' was not declared in this scope296398106#653#126#0(6@71"/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp296398105#30#0#30#0#34"'*' was not declared in this scope0(4@41"'provider' was not declared in this scope296398106#779#125#0(6@71"/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp296398105#30#0#30#0#34"'*' was not declared in this scope0(4@36"Expected ',' or ';' before '{' token296398106#904#120#0(6@71"/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp296398105#31#0#31#0#19"expected * before *0(22@29"'TZtemp' defined but not used296398106#1024#115#0(6@71"/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp296398105#10#0#10#0#24"'*' defined but not used0(0#0#71"/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp8461261333188206592#1967"    cd /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -ftree-vectorize -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/FakeSMCFanTZplugin-generated-files.hmap -I/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/FakeSMCFanTZplugin-own-target-headers.hmap -I/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/FakeSMCFanTZplugin-all-target-headers.hmap -iquote /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/FakeSMCFanTZplugin-project-headers.hmap -F/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Release -I/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/DerivedSources/x86_64 -I/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/DerivedSources -c /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCFanTZplugin.cpp -o /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/Objects-normal/x86_64/FakeSMCFanTZplugin.o1#
-
-CCompileC build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/Objects-normal/x86_64/FakeSMCFanTZplugin_info.o /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/DerivedSources/FakeSMCFanTZplugin_info.c normal x86_64 c com.apple.compilers.gcc.4_2
-s296398210.148466
-e296398210.186126
-r1
-xCompileC
-xbuild/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/Objects-normal/x86_64/FakeSMCFanTZplugin_info.o
-x/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/DerivedSources/FakeSMCFanTZplugin_info.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@161"Compile /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/DerivedSources/FakeSMCFanTZplugin_info.c296398210#296398210#0(0"0(0#0#153"/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/DerivedSources/FakeSMCFanTZplugin_info.c4300911832#2001"    cd /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -ftree-vectorize -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/FakeSMCFanTZplugin-generated-files.hmap -I/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/FakeSMCFanTZplugin-own-target-headers.hmap -I/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/FakeSMCFanTZplugin-all-target-headers.hmap -iquote /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/FakeSMCFanTZplugin-project-headers.hmap -F/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Release -I/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/DerivedSources/x86_64 -I/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/DerivedSources -c /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/DerivedSources/FakeSMCFanTZplugin_info.c -o /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/Objects-normal/x86_64/FakeSMCFanTZplugin_info.o0#
-
-CCompileC build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/Objects-normal/x86_64/FakeSMCTZFanPlugin.o /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCTZFanPlugin.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-s296398209.158878
-e296398210.148358
-r1
-xCompileC
-xbuild/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/Objects-normal/x86_64/FakeSMCTZFanPlugin.o
-x/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCTZFanPlugin.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@79"Compile /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCTZFanPlugin.cpp296398209#296398210#0(0"0(0#0#71"/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCTZFanPlugin.cpp4300911832#1967"    cd /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -ftree-vectorize -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/FakeSMCFanTZplugin-generated-files.hmap -I/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/FakeSMCFanTZplugin-own-target-headers.hmap -I/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/FakeSMCFanTZplugin-all-target-headers.hmap -iquote /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/FakeSMCFanTZplugin-project-headers.hmap -F/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Release -I/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/DerivedSources/x86_64 -I/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/DerivedSources -c /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/FakeSMCTZFanPlugin.cpp -o /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/Objects-normal/x86_64/FakeSMCTZFanPlugin.o0#
-
-CCopyStringsFile /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Release/FakeSMCFanTZplugin.kext/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
-s296398209.089852
-e296398209.117288
-r1
-xCopyStringsFile
-x/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Release/FakeSMCFanTZplugin.kext/Contents/Resources/English.lproj/InfoPlist.strings
-xEnglish.lproj/InfoPlist.strings
-lSLF07#2@36"Copy English.lproj/InfoPlist.strings296398209#296398209#0(0"0(0#0#80"/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/English.lproj/InfoPlist.strings4300911832#399"    cd /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin    setenv ICONV /usr/bin/iconv    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings --validate --inputencoding utf-8 --outputencoding UTF-16 English.lproj/InfoPlist.strings --outdir /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Release/FakeSMCFanTZplugin.kext/Contents/Resources/English.lproj0#
-
-CCreateUniversalBinary /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Release/FakeSMCFanTZplugin.kext/Contents/MacOS/FakeSMCFanTZplugin normal "i386 x86_64"
-s296398210.520802
-e296398210.550203
-r1
-xCreateUniversalBinary
-x/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Release/FakeSMCFanTZplugin.kext/Contents/MacOS/FakeSMCFanTZplugin
-xnormal
-xi386 x86_64
-lSLF07#2@114"CreateUniversalBinary build/Release/FakeSMCFanTZplugin.kext/Contents/MacOS/FakeSMCFanTZplugin normal "i386 x86_64"296398210#296398210#0(0"0(0#0#60"/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/i386 x86_644300911832#517"    cd /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin    /usr/bin/lipo -create /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/Objects-normal/i386/FakeSMCFanTZplugin /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/Objects-normal/x86_64/FakeSMCFanTZplugin -output /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Release/FakeSMCFanTZplugin.kext/Contents/MacOS/FakeSMCFanTZplugin0#
-
-CGenerateDSYMFile /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Release/FakeSMCFanTZplugin.kext.dSYM /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Release/FakeSMCFanTZplugin.kext/Contents/MacOS/FakeSMCFanTZplugin
-s296398210.550312
-e296398210.661369
-r1
-xGenerateDSYMFile
-x/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Release/FakeSMCFanTZplugin.kext.dSYM
-x/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Release/FakeSMCFanTZplugin.kext/Contents/MacOS/FakeSMCFanTZplugin
-lSLF07#2@131"GenerateDSYMFile build/Release/FakeSMCFanTZplugin.kext.dSYM build/Release/FakeSMCFanTZplugin.kext/Contents/MacOS/FakeSMCFanTZplugin296398210#296398210#0(0"0(0#0#120"/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Release/FakeSMCFanTZplugin.kext/Contents/MacOS/FakeSMCFanTZplugin4300911832#304"    cd /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin    /Developer/usr/bin/dsymutil /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Release/FakeSMCFanTZplugin.kext/Contents/MacOS/FakeSMCFanTZplugin -o /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Release/FakeSMCFanTZplugin.kext.dSYM0#
-
-CLd /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/Objects-normal/i386/FakeSMCFanTZplugin normal i386
-s296398210.167612
-e296398210.520697
-r1
-xLd
-x/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/Objects-normal/i386/FakeSMCFanTZplugin
-xnormal
-xi386
-lSLF07#2@156"Link /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/Objects-normal/i386/FakeSMCFanTZplugin296398210#296398210#0(0"0(0#0#0"4300911832#888"    cd /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/g++-4.2 -arch i386 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Release -F/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Release -filelist /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/Objects-normal/i386/FakeSMCFanTZplugin.LinkFileList -mmacosx-version-min=10.6 -lcpp_kext -Xlinker -kext -nostdlib -lkmodc++ /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/Objects-normal/i386/FakeSMCFanTZplugin_info.o -lkmod -lcc_kext -o /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/Objects-normal/i386/FakeSMCFanTZplugin0#
-
-CLd /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/Objects-normal/x86_64/FakeSMCFanTZplugin normal x86_64
-s296398210.186221
-e296398210.518717
-r1
-xLd
-x/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/Objects-normal/x86_64/FakeSMCFanTZplugin
-xnormal
-xx86_64
-lSLF07#2@158"Link /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/Objects-normal/x86_64/FakeSMCFanTZplugin296398210#296398210#0(0"0(0#0#0"4300911832#896"    cd /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/g++-4.2 -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Release -F/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Release -filelist /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/Objects-normal/x86_64/FakeSMCFanTZplugin.LinkFileList -mmacosx-version-min=10.6 -lcpp_kext -Xlinker -kext -nostdlib -lkmodc++ /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/Objects-normal/x86_64/FakeSMCFanTZplugin_info.o -lkmod -lcc_kext -o /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/FakeSMCFanTZplugin.build/Release/FakeSMCFanTZplugin.build/Objects-normal/x86_64/FakeSMCFanTZplugin0#
-
-CProcessInfoPlistFile /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Release/FakeSMCFanTZplugin.kext/Contents/Info.plist Info.plist
-s296398209.086548
-e296398209.089773
-r1
-xProcessInfoPlistFile
-x/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Release/FakeSMCFanTZplugin.kext/Contents/Info.plist
-xInfo.plist
-lSLF07#2@18"Process Info.plist296398209#296398209#0(0"0(0#0#59"/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/Info.plist4300911832#244"    cd /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin    builtin-infoPlistUtility Info.plist -expandbuildsettings -platform macosx -o /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Release/FakeSMCFanTZplugin.kext/Contents/Info.plist0#
-
-CTouch /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Release/FakeSMCFanTZplugin.kext
-s296398210.661551
-e296398210.692813
-r1
-xTouch
-x/Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Release/FakeSMCFanTZplugin.kext
-lSLF07#2@92"Touch /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Release/FakeSMCFanTZplugin.kext296398210#296398210#0(0"0(0#0#0"4300911832#165"    cd /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin    /usr/bin/touch -c /Users/slice/fakesmc/Plug-ins/FakeSMCFanTZplugin/build/Release/FakeSMCFanTZplugin.kext0#
-
