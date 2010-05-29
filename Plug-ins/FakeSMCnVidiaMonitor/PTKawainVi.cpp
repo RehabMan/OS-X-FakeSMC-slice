@@ -296,12 +296,16 @@ PTKawainVi::start( IOService * provider ) {
 			return false;
 	}
 	
-	
 	char value[2];
 	
 	FakeSMCAddKeyCallback("TG0D", "sp78", 2, value, &::UpdateT);
-	FakeSMCAddKeyCallback("F5Ac", "fp2e", 2, value, &::UpdateF);
+	
+	char key[5];
+	
+	snprintf(key, 5, "F%dAc", GetFNum());
+	FakeSMCAddKeyCallback(key, "fp2e", 2, value, &::UpdateF);
 	UpdateFNum(1);
+	
 	return res;
 		
 }
