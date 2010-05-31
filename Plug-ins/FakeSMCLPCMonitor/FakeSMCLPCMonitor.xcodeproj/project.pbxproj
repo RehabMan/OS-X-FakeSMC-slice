@@ -17,6 +17,8 @@
 		AEAD02B811B176980016B8F9 /* SuperIO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEAD02B611B176980016B8F9 /* SuperIO.cpp */; };
 		AEAD041811B18D4B0016B8F9 /* Winbond.h in Headers */ = {isa = PBXBuildFile; fileRef = AEAD041611B18D4B0016B8F9 /* Winbond.h */; };
 		AEAD041911B18D4B0016B8F9 /* Winbond.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEAD041711B18D4B0016B8F9 /* Winbond.cpp */; };
+		AEEC326311B4414E0048ED14 /* Fintek.h in Headers */ = {isa = PBXBuildFile; fileRef = AEEC326111B4414E0048ED14 /* Fintek.h */; };
+		AEEC326411B4414E0048ED14 /* Fintek.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEEC326211B4414E0048ED14 /* Fintek.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		AEAD02B611B176980016B8F9 /* SuperIO.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SuperIO.cpp; sourceTree = "<group>"; };
 		AEAD041611B18D4B0016B8F9 /* Winbond.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Winbond.h; sourceTree = "<group>"; };
 		AEAD041711B18D4B0016B8F9 /* Winbond.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Winbond.cpp; sourceTree = "<group>"; };
+		AEEC326111B4414E0048ED14 /* Fintek.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fintek.h; sourceTree = "<group>"; };
+		AEEC326211B4414E0048ED14 /* Fintek.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Fintek.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,8 @@
 				AEAD028F11B173120016B8F9 /* IT87x.cpp */,
 				AEAD041611B18D4B0016B8F9 /* Winbond.h */,
 				AEAD041711B18D4B0016B8F9 /* Winbond.cpp */,
+				AEEC326111B4414E0048ED14 /* Fintek.h */,
+				AEEC326211B4414E0048ED14 /* Fintek.cpp */,
 				1A224C3EFF42367911CA2CB7 /* FakeSMCLPCMonitor.h */,
 				1A224C3FFF42367911CA2CB7 /* FakeSMCLPCMonitor.cpp */,
 			);
@@ -102,6 +108,7 @@
 				AEAD02B711B176980016B8F9 /* SuperIO.h in Headers */,
 				AEAD041811B18D4B0016B8F9 /* Winbond.h in Headers */,
 				AE17D8AC11B2D76700E3BEFD /* fakesmc.h in Headers */,
+				AEEC326311B4414E0048ED14 /* Fintek.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +185,7 @@
 				AEAD029111B173120016B8F9 /* IT87x.cpp in Sources */,
 				AEAD02B811B176980016B8F9 /* SuperIO.cpp in Sources */,
 				AEAD041911B18D4B0016B8F9 /* Winbond.cpp in Sources */,
+				AEEC326411B4414E0048ED14 /* Fintek.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -61,11 +61,17 @@ protected:
 	UInt8	RegisterPort;
 	UInt8	ValuePort;
 	UInt16	Address;
+	
+	UInt16	LastVcore;
+	
+	UInt8	FanOffset;
+	UInt8	FanCount;
+	UInt8	FanIndex[5];
 
-	void		SetPorts(UInt8 index);
-	UInt8		ReadByte(UInt8 reg);
-	UInt16		ReadWord(UInt8 reg);
-	void		Select(UInt8 logicalDeviceNumber);
+	void	SetPorts(UInt8 index);
+	UInt8	ReadByte(UInt8 reg);
+	UInt16	ReadWord(UInt8 reg);
+	void	Select(UInt8 logicalDeviceNumber);
 public:
 	SuperIOModel	Model;
 	
@@ -73,7 +79,16 @@ public:
 	virtual void	Init();
 	virtual void	Finish();
 	
+	virtual void	Update(const char* key, char* data);
+	
 	const char*		GetModelNameString();
 };
+
+static SuperIO* Instance;
+
+static void Update(const char* key, char* data)
+{
+	Instance->Update(key, data);
+}
 
 #endif

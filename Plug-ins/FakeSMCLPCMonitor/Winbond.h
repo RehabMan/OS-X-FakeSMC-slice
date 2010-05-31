@@ -46,11 +46,6 @@ class Winbond : public SuperIO
 {
 private:
 protected:
-	UInt16	LastVcore;
-	
-	UInt8	FanOffset;
-	UInt8	FanCount;
-	UInt8	FanIndex[5];
 	UInt16	FanValue[5];
 	bool	FanValueObsolete[5];
 	
@@ -66,7 +61,7 @@ public:
 	virtual void	Init();
 	virtual void	Finish();
 	
-	void Update(const char* key, char* data);
+	virtual void	Update(const char* key, char* data);
 };
 
 #endif

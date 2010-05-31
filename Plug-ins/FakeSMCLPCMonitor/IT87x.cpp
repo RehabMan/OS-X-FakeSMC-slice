@@ -14,13 +14,6 @@
 #include "IT87x.h"
 #include "fakesmc.h"
 
-IT87x* IT87xInstance;
-
-static void Update(const char* key, char* data)
-{
-	IT87xInstance->Update(key, data);
-}
-
 void IT87x::Enter()
 {
 	outb(RegisterPort, 0x87);
@@ -138,7 +131,7 @@ void IT87x::Init()
 {
 	char value[2];
 	
-	IT87xInstance = this;
+	Instance = this;
 	
 	// Heatsink
 	FakeSMCAddKeyCallback("Th0H", "sp78", 2, value, &::Update);

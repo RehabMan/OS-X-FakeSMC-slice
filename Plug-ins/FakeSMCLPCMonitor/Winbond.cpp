@@ -13,13 +13,6 @@
 #include "Winbond.h"
 #include "fakesmc.h"
 
-Winbond* WinbondInstance;
-
-static void Update(const char* key, char* data)
-{
-	WinbondInstance->Update(key, data);
-}
-
 void Winbond::Enter()
 {
 	outb(RegisterPort, 0x87);
@@ -260,7 +253,7 @@ void Winbond::Init()
 {	
 	char value[2];
 	
-	WinbondInstance = this;
+	Instance = this;
 	
 	switch (Model) 
 	{

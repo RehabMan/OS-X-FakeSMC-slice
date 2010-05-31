@@ -2,9 +2,6 @@
  *
  *  Copyright © 2010 mozodojo. All rights reserved.
  *
- *	This code includes parts of original Open Hardware Monitor code
- *	Copyright © 2010 Michael Möller. All Rights Reserved.
- *
  */
 
 #include "FakeSMCLPCMonitor.h"
