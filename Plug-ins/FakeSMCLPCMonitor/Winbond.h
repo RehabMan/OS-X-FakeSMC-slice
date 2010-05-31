@@ -5,6 +5,9 @@
  *  Created by Mozodojo on 29/05/10.
  *  Copyright 2010 mozodojo. All rights reserved.
  *
+ *  This code contains parts of original code from Open Hardware Monitor
+ *  Copyright 2010 Michael Möller. All rights reserved.
+ *
  */
 
 #ifndef WINBOND_H
