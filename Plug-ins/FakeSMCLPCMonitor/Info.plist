@@ -17,9 +17,9 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.1</string>
+	<string>1.2</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1</string>
+	<string>1.2</string>
 	<key>IOKitPersonalities</key>
 	<dict>
 		<key>LPCMonitorPlugin</key>
@@ -55,7 +55,5 @@
 		<key>org.netkas.fakesmc</key>
 		<string>2.6.2</string>
 	</dict>
-	<key>OSBundleCompatibleVersion</key>
-	<string>1.1</string>
 </dict>
 </plist>

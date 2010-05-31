@@ -7,6 +7,9 @@
  *
  */
 
+#ifndef _FAKESMC_H 
+#define _FAKESMC_H
+
 typedef void (*OnKeyReadCallback)(const char*, char*);
 
 void FakeSMCAddKey (const char*, uint8_t, char*);
@@ -16,12 +19,12 @@ void FakeSMCAddKeyCallback (const char*, const char*, uint8_t, char*, OnKeyReadC
 char* FakeSMCGetKey (const char*);
 void FakeSMCRemoveKeyCallback (const char*);
 
-bool CompareKeys(const char* key1, const char* key2)
+static bool CompareKeys(const char* key1, const char* key2)
 {
 	return ((key1[0] == key2[0]) && (key1[1] == key2[1]) && (key1[2] == key2[2]) && (key1[3] == key2[3]));
 }
 
-UInt8 GetFNum()
+static UInt8 GetFNum()
 {
 	char* data = FakeSMCGetKey("FNum");
 	
@@ -33,7 +36,7 @@ UInt8 GetFNum()
 	return 0;
 }
 
-void UpdateFNum(UInt8 valueToAdd)
+static void UpdateFNum(UInt8 valueToAdd)
 {
 	char* data = FakeSMCGetKey("FNum");
 	
@@ -53,3 +56,5 @@ void UpdateFNum(UInt8 valueToAdd)
 		data[0] = oldValue + valueToAdd;
 	}
 }
+
+#endif 
