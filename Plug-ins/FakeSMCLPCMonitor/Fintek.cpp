@@ -21,15 +21,12 @@ UInt8 Fintek::ReadByte(UInt8 reg)
 void Fintek::Enter()
 {
 	outb(RegisterPort, 0x87);
-	outb(RegisterPort, 0x01);
-	outb(RegisterPort, 0x55);
-	outb(RegisterPort, 0x55);
+	outb(RegisterPort, 0x87);
 }
 
 void Fintek::Exit()
 {
-	outb(RegisterPort, SUPERIO_CONFIGURATION_CONTROL_REGISTER);
-	outb(ValuePort, 0x02);
+	outb(RegisterPort, 0xAA);
 }
 
 short Fintek::ReadTemperature(UInt8 index)

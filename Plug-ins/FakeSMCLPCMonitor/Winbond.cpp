@@ -16,15 +16,12 @@
 void Winbond::Enter()
 {
 	outb(RegisterPort, 0x87);
-	outb(RegisterPort, 0x01);
-	outb(RegisterPort, 0x55);
-	outb(RegisterPort, 0x55);
+	outb(RegisterPort, 0x87);
 }
 
 void Winbond::Exit()
 {
-	outb(RegisterPort, SUPERIO_CONFIGURATION_CONTROL_REGISTER);
-	outb(ValuePort, 0x02);
+	outb(RegisterPort, 0xAA);
 }
 
 UInt8 Winbond::ReadByte(UInt8 bank, UInt8 reg) 
