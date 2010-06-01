@@ -1,0 +1,12 @@
+ffffffffffffffffffffffffffffffff ffffffffffffffffffffffffffffffff ffffffffffffffffffffffffffffffff 0 /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/IOACPIPlatformDeviceCh.o
+ffffffffffffffffffffffffffffffff ffffffffffffffffffffffffffffffff ffffffffffffffffffffffffffffffff 0 /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/x86_64/IOACPIPlatformDeviceCh.o
+ffffffffffffffffffffffffffffffff ffffffffffffffffffffffffffffffff ffffffffffffffffffffffffffffffff 0 /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/fakesmc.o
+ffffffffffffffffffffffffffffffff ffffffffffffffffffffffffffffffff ffffffffffffffffffffffffffffffff 0 /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/x86_64/fakesmc.o
+ffffffffffffffffffffffffffffffff ffffffffffffffffffffffffffffffff ffffffffffffffffffffffffffffffff 136 /Users/mozo/Documents/FakeSMC/fakesmc/build/Release/fakesmc.kext
+ffffffffffffffffffffffffffffffff ffffffffffffffffffffffffffffffff ffffffffffffffffffffffffffffffff 169860 /Users/mozo/Documents/FakeSMC/fakesmc/build/Release/fakesmc.kext/Contents/MacOS/fakesmc
+ffffffffffffffffffffffffffffffff ffffffffffffffffffffffffffffffff ffffffffffffffffffffffffffffffff 0 /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/fakesmc
+ffffffffffffffffffffffffffffffff ffffffffffffffffffffffffffffffff ffffffffffffffffffffffffffffffff 0 /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/fakesmc_info.o
+ffffffffffffffffffffffffffffffff ffffffffffffffffffffffffffffffff ffffffffffffffffffffffffffffffff 0 /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/x86_64/fakesmc
+ffffffffffffffffffffffffffffffff ffffffffffffffffffffffffffffffff ffffffffffffffffffffffffffffffff 0 /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/x86_64/fakesmc_info.o
+ffffffffffffffffffffffffffffffff ffffffffffffffffffffffffffffffff ffffffffffffffffffffffffffffffff 92 /Users/mozo/Documents/FakeSMC/fakesmc/build/Release/fakesmc.kext/Contents/Resources/English.lproj/InfoPlist.strings
+ffffffffffffffffffffffffffffffff ffffffffffffffffffffffffffffffff ffffffffffffffffffffffffffffffff 2416 /Users/mozo/Documents/FakeSMC/fakesmc/build/Release/fakesmc.kext/Contents/Info.plist

@@ -1,0 +1,7 @@
+11b1339751faf52483e937b93e6a08ba 8379a2f77fe59a4dbeaad02fcaecf87b ffffffffffffffffffffffffffffffff 102 /Users/mozo/Documents/FakeSMC/fakesmc/build/Release Snow/fakesmc.kext
+3faaa38779f83eac246dc825397d9206 299623d2236d36e73a2184a721ad95a6 ffffffffffffffffffffffffffffffff 55248 /Users/mozo/Documents/FakeSMC/fakesmc/build/Release Snow/fakesmc.kext/Contents/MacOS/fakesmc
+000000004c0533580000000000000030 cffbbe2a5fc9ec43afe19c0a4a1c7678 ffffffffffffffffffffffffffffffff 92 /Users/mozo/Documents/FakeSMC/fakesmc/build/Release Snow/fakesmc.kext/Contents/Resources/English.lproj/InfoPlist.strings
+00000000000000000000000000000000 c8760de818a322743244e7316ca67952 ffffffffffffffffffffffffffffffff 2416 /Users/mozo/Documents/FakeSMC/fakesmc/build/Release Snow/fakesmc.kext/Contents/Info.plist
+000000004a73d653000000000001c25f 1d3930eb6936b80a4ec3f756643bec4a ffffffffffffffffffffffffffffffff 37188 /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release Snow/fakesmc.build/Objects-normal/x86_64/IOACPIPlatformDeviceCh.o
+000000000676e5730000000000009c75 9e0b698cbddbe043f159704bf7013b77 ffffffffffffffffffffffffffffffff 29528 /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release Snow/fakesmc.build/Objects-normal/x86_64/fakesmc.o
+000000004c05347c0000000000000198 bc98fae0e7ae91449bf74f38aa461a67 ffffffffffffffffffffffffffffffff 768 /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release Snow/fakesmc.build/Objects-normal/x86_64/fakesmc_info.o

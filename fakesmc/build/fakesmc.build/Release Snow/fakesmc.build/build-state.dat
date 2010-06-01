@@ -1,0 +1,220 @@
+Tfakesmc
+v7
+r0
+t297102333.636738
+cCheck dependencies
+cProcessInfoPlistFile "/Users/mozo/Documents/FakeSMC/fakesmc/build/Release Snow/fakesmc.kext/Contents/Info.plist" Info.plist
+cCopyStringsFile "/Users/mozo/Documents/FakeSMC/fakesmc/build/Release Snow/fakesmc.kext/Contents/Resources/English.lproj/InfoPlist.strings" English.lproj/InfoPlist.strings
+cCompileC "build/fakesmc.build/Release Snow/fakesmc.build/Objects-normal/x86_64/fakesmc.o" /Users/mozo/Documents/FakeSMC/fakesmc/fakesmc.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+cCompileC "build/fakesmc.build/Release Snow/fakesmc.build/Objects-normal/x86_64/IOACPIPlatformDeviceCh.o" /Users/mozo/Documents/FakeSMC/fakesmc/IOACPIPlatformDeviceCh.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+cCompileC "build/fakesmc.build/Release Snow/fakesmc.build/Objects-normal/x86_64/fakesmc_info.o" "/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release Snow/fakesmc.build/DerivedSources/fakesmc_info.c" normal x86_64 c com.apple.compilers.gcc.4_2
+cLd "/Users/mozo/Documents/FakeSMC/fakesmc/build/Release Snow/fakesmc.kext/Contents/MacOS/fakesmc" normal x86_64
+cTouch "/Users/mozo/Documents/FakeSMC/fakesmc/build/Release Snow/fakesmc.kext"
+
+N/Developer/SDKs/MacOSX10.5.sdk
+c000000004AB44D2500000000000000EE
+t1253330213
+s238
+
+N/Developer/SDKs/MacOSX10.5.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/IOService.h
+c0000000047E88395000000000001F49C
+t1206420373
+s128156
+
+N/Developer/SDKs/MacOSX10.5.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/IOTimerEventSource.h
+c0000000047E883960000000000002CE8
+t1206420374
+s11496
+
+N/Developer/SDKs/MacOSX10.5.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/acpi/IOACPIPlatformDevice.h
+c000000004864AB990000000000002B75
+t1214557081
+s11125
+
+N/Developer/SDKs/MacOSX10.5.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/pci/IOPCIDevice.h
+c000000004864AB860000000000007C69
+t1214557062
+s31849
+
+N/Developer/SDKs/MacOSX10.6.sdk
+c000000004ABBF0FD00000000000000EE
+t1253830909
+s238
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/IOService.h
+c000000004A73D653000000000001F49D
+t1249105491
+s128157
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/IOTimerEventSource.h
+c000000004A73D6540000000000002B1D
+t1249105492
+s11037
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/acpi/IOACPIPlatformDevice.h
+c000000004A73D8B80000000000002B75
+t1249106104
+s11125
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/pci/IOPCIDevice.h
+c000000004A73D8C70000000000008708
+t1249106119
+s34568
+
+N/Users/mozo/Documents/FakeSMC/fakesmc/English.lproj/InfoPlist.strings
+c000000004C0533580000000000000030
+t1275409240
+s48
+
+N/Users/mozo/Documents/FakeSMC/fakesmc/IOACPIPlatformDeviceCh.cpp
+c000000004C0533580000000000003BD9
+t1275409240
+s15321
+i"IOACPIPlatformDeviceCh.h"
+
+N/Users/mozo/Documents/FakeSMC/fakesmc/IOACPIPlatformDeviceCh.h
+c000000004C0533580000000000000D1B
+t1275409240
+s3355
+i<IOKit/IOService.h>
+i<IOKit/acpi/IOACPIPlatformDevice.h>
+i<IOKit/acpi/IOACPIPlatformDevice.h>
+
+N/Users/mozo/Documents/FakeSMC/fakesmc/build/Release Snow/fakesmc.kext
+t1275409533
+s102
+
+N/Users/mozo/Documents/FakeSMC/fakesmc/build/Release Snow/fakesmc.kext/Contents/Info.plist
+t1275409532
+s2416
+
+N/Users/mozo/Documents/FakeSMC/fakesmc/build/Release Snow/fakesmc.kext/Contents/MacOS/fakesmc
+t1275409533
+s55248
+
+N/Users/mozo/Documents/FakeSMC/fakesmc/build/Release Snow/fakesmc.kext/Contents/Resources/English.lproj/InfoPlist.strings
+t1275409533
+s92
+
+N/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release Snow/fakesmc.build/DerivedSources/fakesmc_info.c
+c000000004C05347C0000000000000198
+t1275409532
+s408
+
+N/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release Snow/fakesmc.build/Objects-normal/x86_64/IOACPIPlatformDeviceCh.o
+t1275409533
+s37188
+
+N/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release Snow/fakesmc.build/Objects-normal/x86_64/fakesmc.LinkFileList
+c000000004C05347C00000000000000F9
+t1275409532
+s249
+
+N/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release Snow/fakesmc.build/Objects-normal/x86_64/fakesmc.o
+t1275409533
+s29528
+
+N/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release Snow/fakesmc.build/Objects-normal/x86_64/fakesmc_info.o
+t1275409533
+s768
+
+N/Users/mozo/Documents/FakeSMC/fakesmc/fakesmc.cpp
+c000000004C05335800000000000015C6
+t1275409240
+s5574
+i"fakesmc.h"
+
+N/Users/mozo/Documents/FakeSMC/fakesmc/fakesmc.h
+c000000004C05335800000000000003C8
+t1275409240
+s968
+i<IOKit/IOService.h>
+i<IOKit/pci/IOPCIDevice.h>
+i<IOKit/IOTimerEventSource.h>
+i<IOKit/acpi/IOACPIPlatformDevice.h>
+i<IOACPIPlatformDeviceCh.h>
+
+NInfo.plist
+c000000004C0533580000000000000942
+t1275409240
+s2370
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies297102332#297102332#0(0"0(0#1#0"4324455640#0"0#
+
+CCompileC "build/fakesmc.build/Release Snow/fakesmc.build/Objects-normal/x86_64/IOACPIPlatformDeviceCh.o" /Users/mozo/Documents/FakeSMC/fakesmc/IOACPIPlatformDeviceCh.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+s297102333.044430
+e297102333.611430
+r1
+xCompileC
+xbuild/fakesmc.build/Release Snow/fakesmc.build/Objects-normal/x86_64/IOACPIPlatformDeviceCh.o
+x/Users/mozo/Documents/FakeSMC/fakesmc/IOACPIPlatformDeviceCh.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@72"Compile /Users/mozo/Documents/FakeSMC/fakesmc/IOACPIPlatformDeviceCh.cpp297102333#297102333#0(0"0(0#0#64"/Users/mozo/Documents/FakeSMC/fakesmc/IOACPIPlatformDeviceCh.cpp4324455640#1669"    cd /Users/mozo/Documents/FakeSMC/fakesmc    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -mmacosx-version-min=10.6 -fopenmp -iquote "/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release Snow/fakesmc.build/fakesmc-generated-files.hmap" "-I/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release Snow/fakesmc.build/fakesmc-own-target-headers.hmap" "-I/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release Snow/fakesmc.build/fakesmc-all-target-headers.hmap" -iquote "/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release Snow/fakesmc.build/fakesmc-project-headers.hmap" "-F/Users/mozo/Documents/FakeSMC/fakesmc/build/Release Snow" "-I/Users/mozo/Documents/FakeSMC/fakesmc/build/Release Snow/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release Snow/fakesmc.build/DerivedSources/x86_64" "-I/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release Snow/fakesmc.build/DerivedSources" -c /Users/mozo/Documents/FakeSMC/fakesmc/IOACPIPlatformDeviceCh.cpp -o "/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release Snow/fakesmc.build/Objects-normal/x86_64/IOACPIPlatformDeviceCh.o"0#
+
+CCompileC "build/fakesmc.build/Release Snow/fakesmc.build/Objects-normal/x86_64/fakesmc.o" /Users/mozo/Documents/FakeSMC/fakesmc/fakesmc.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+s297102333.043648
+e297102333.588144
+r1
+xCompileC
+xbuild/fakesmc.build/Release Snow/fakesmc.build/Objects-normal/x86_64/fakesmc.o
+x/Users/mozo/Documents/FakeSMC/fakesmc/fakesmc.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@57"Compile /Users/mozo/Documents/FakeSMC/fakesmc/fakesmc.cpp297102333#297102333#0(0"0(0#0#49"/Users/mozo/Documents/FakeSMC/fakesmc/fakesmc.cpp4324455640#1639"    cd /Users/mozo/Documents/FakeSMC/fakesmc    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -mmacosx-version-min=10.6 -fopenmp -iquote "/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release Snow/fakesmc.build/fakesmc-generated-files.hmap" "-I/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release Snow/fakesmc.build/fakesmc-own-target-headers.hmap" "-I/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release Snow/fakesmc.build/fakesmc-all-target-headers.hmap" -iquote "/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release Snow/fakesmc.build/fakesmc-project-headers.hmap" "-F/Users/mozo/Documents/FakeSMC/fakesmc/build/Release Snow" "-I/Users/mozo/Documents/FakeSMC/fakesmc/build/Release Snow/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release Snow/fakesmc.build/DerivedSources/x86_64" "-I/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release Snow/fakesmc.build/DerivedSources" -c /Users/mozo/Documents/FakeSMC/fakesmc/fakesmc.cpp -o "/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release Snow/fakesmc.build/Objects-normal/x86_64/fakesmc.o"0#
+
+CCompileC "build/fakesmc.build/Release Snow/fakesmc.build/Objects-normal/x86_64/fakesmc_info.o" "/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release Snow/fakesmc.build/DerivedSources/fakesmc_info.c" normal x86_64 c com.apple.compilers.gcc.4_2
+s297102333.588232
+e297102333.619790
+r1
+xCompileC
+xbuild/fakesmc.build/Release Snow/fakesmc.build/Objects-normal/x86_64/fakesmc_info.o
+x/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release Snow/fakesmc.build/DerivedSources/fakesmc_info.c
+xnormal
+xx86_64
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@122"Compile /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release Snow/fakesmc.build/DerivedSources/fakesmc_info.c297102333#297102333#0(0"0(0#0#114"/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release Snow/fakesmc.build/DerivedSources/fakesmc_info.c4324455640#1658"    cd /Users/mozo/Documents/FakeSMC/fakesmc    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -fopenmp -iquote "/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release Snow/fakesmc.build/fakesmc-generated-files.hmap" "-I/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release Snow/fakesmc.build/fakesmc-own-target-headers.hmap" "-I/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release Snow/fakesmc.build/fakesmc-all-target-headers.hmap" -iquote "/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release Snow/fakesmc.build/fakesmc-project-headers.hmap" "-F/Users/mozo/Documents/FakeSMC/fakesmc/build/Release Snow" "-I/Users/mozo/Documents/FakeSMC/fakesmc/build/Release Snow/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release Snow/fakesmc.build/DerivedSources/x86_64" "-I/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release Snow/fakesmc.build/DerivedSources" -c "/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release Snow/fakesmc.build/DerivedSources/fakesmc_info.c" -o "/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release Snow/fakesmc.build/Objects-normal/x86_64/fakesmc_info.o"0#
+
+CCopyStringsFile "/Users/mozo/Documents/FakeSMC/fakesmc/build/Release Snow/fakesmc.kext/Contents/Resources/English.lproj/InfoPlist.strings" English.lproj/InfoPlist.strings
+s297102332.727931
+e297102333.043571
+r1
+xCopyStringsFile
+x/Users/mozo/Documents/FakeSMC/fakesmc/build/Release Snow/fakesmc.kext/Contents/Resources/English.lproj/InfoPlist.strings
+xEnglish.lproj/InfoPlist.strings
+lSLF07#2@36"Copy English.lproj/InfoPlist.strings297102332#297102333#0(0"0(0#0#69"/Users/mozo/Documents/FakeSMC/fakesmc/English.lproj/InfoPlist.strings4324455640#373"    cd /Users/mozo/Documents/FakeSMC/fakesmc    setenv ICONV /usr/bin/iconv    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings --validate --inputencoding utf-8 --outputencoding UTF-16 English.lproj/InfoPlist.strings --outdir "/Users/mozo/Documents/FakeSMC/fakesmc/build/Release Snow/fakesmc.kext/Contents/Resources/English.lproj"0#
+
+CLd "/Users/mozo/Documents/FakeSMC/fakesmc/build/Release Snow/fakesmc.kext/Contents/MacOS/fakesmc" normal x86_64
+s297102333.619866
+e297102333.633960
+r1
+xLd
+x/Users/mozo/Documents/FakeSMC/fakesmc/build/Release Snow/fakesmc.kext/Contents/MacOS/fakesmc
+xnormal
+xx86_64
+lSLF07#2@97"Link /Users/mozo/Documents/FakeSMC/fakesmc/build/Release Snow/fakesmc.kext/Contents/MacOS/fakesmc297102333#297102333#0(0"0(0#0#0"4324455640#753"    cd /Users/mozo/Documents/FakeSMC/fakesmc    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/g++-4.2 -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.6.sdk "-L/Users/mozo/Documents/FakeSMC/fakesmc/build/Release Snow" "-F/Users/mozo/Documents/FakeSMC/fakesmc/build/Release Snow" -filelist "/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release Snow/fakesmc.build/Objects-normal/x86_64/fakesmc.LinkFileList" -mmacosx-version-min=10.6 -fopenmp -lcpp_kext -Xlinker -kext -nostdlib -lkmodc++ "/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release Snow/fakesmc.build/Objects-normal/x86_64/fakesmc_info.o" -lkmod -lcc_kext -o "/Users/mozo/Documents/FakeSMC/fakesmc/build/Release Snow/fakesmc.kext/Contents/MacOS/fakesmc"0#
+
+CProcessInfoPlistFile "/Users/mozo/Documents/FakeSMC/fakesmc/build/Release Snow/fakesmc.kext/Contents/Info.plist" Info.plist
+s297102332.723206
+e297102332.727866
+r1
+xProcessInfoPlistFile
+x/Users/mozo/Documents/FakeSMC/fakesmc/build/Release Snow/fakesmc.kext/Contents/Info.plist
+xInfo.plist
+lSLF07#2@18"Process Info.plist297102332#297102332#0(0"0(0#0#48"/Users/mozo/Documents/FakeSMC/fakesmc/Info.plist4324455640#218"    cd /Users/mozo/Documents/FakeSMC/fakesmc    builtin-infoPlistUtility Info.plist -expandbuildsettings -platform macosx -o "/Users/mozo/Documents/FakeSMC/fakesmc/build/Release Snow/fakesmc.kext/Contents/Info.plist"0#
+
+CTouch "/Users/mozo/Documents/FakeSMC/fakesmc/build/Release Snow/fakesmc.kext"
+s297102333.634034
+e297102333.636641
+r1
+xTouch
+x/Users/mozo/Documents/FakeSMC/fakesmc/build/Release Snow/fakesmc.kext
+lSLF07#2@75"Touch /Users/mozo/Documents/FakeSMC/fakesmc/build/Release Snow/fakesmc.kext297102333#297102333#0(0"0(0#0#0"4324455640#139"    cd /Users/mozo/Documents/FakeSMC/fakesmc    /usr/bin/touch -c "/Users/mozo/Documents/FakeSMC/fakesmc/build/Release Snow/fakesmc.kext"0#
+

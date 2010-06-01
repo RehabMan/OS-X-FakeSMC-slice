@@ -1,0 +1,397 @@
+Tfakesmc
+v7
+r0
+t297102110.390697
+cCheck dependencies
+cProcessInfoPlistFile /Users/mozo/Documents/FakeSMC/fakesmc/build/Release/fakesmc.kext/Contents/Info.plist Info.plist
+cCopyStringsFile /Users/mozo/Documents/FakeSMC/fakesmc/build/Release/fakesmc.kext/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
+cCompileC build/fakesmc.build/Release/fakesmc.build/Objects-normal/x86_64/fakesmc.o /Users/mozo/Documents/FakeSMC/fakesmc/fakesmc.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+cCompileC build/fakesmc.build/Release/fakesmc.build/Objects-normal/x86_64/IOACPIPlatformDeviceCh.o /Users/mozo/Documents/FakeSMC/fakesmc/IOACPIPlatformDeviceCh.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+cCompileC build/fakesmc.build/Release/fakesmc.build/Objects-normal/x86_64/fakesmc_info.o /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/fakesmc_info.c normal x86_64 c com.apple.compilers.gcc.4_2
+cCompileC build/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/fakesmc.o /Users/mozo/Documents/FakeSMC/fakesmc/fakesmc.cpp normal i386 c++ com.apple.compilers.gcc.4_2
+cLd /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/x86_64/fakesmc normal x86_64
+cCompileC build/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/IOACPIPlatformDeviceCh.o /Users/mozo/Documents/FakeSMC/fakesmc/IOACPIPlatformDeviceCh.cpp normal i386 c++ com.apple.compilers.gcc.4_2
+cCompileC build/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/fakesmc_info.o /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/fakesmc_info.c normal i386 c com.apple.compilers.gcc.4_2
+cCompileC build/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/fakesmc.o /Users/mozo/Documents/FakeSMC/fakesmc/fakesmc.cpp normal ppc c++ com.apple.compilers.gcc.4_2
+cLd /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/fakesmc normal i386
+cCompileC build/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/IOACPIPlatformDeviceCh.o /Users/mozo/Documents/FakeSMC/fakesmc/IOACPIPlatformDeviceCh.cpp normal ppc c++ com.apple.compilers.gcc.4_2
+cCompileC build/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/fakesmc_info.o /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/fakesmc_info.c normal ppc c com.apple.compilers.gcc.4_2
+cLd /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/fakesmc normal ppc
+cCreateUniversalBinary /Users/mozo/Documents/FakeSMC/fakesmc/build/Release/fakesmc.kext/Contents/MacOS/fakesmc normal "x86_64 i386 ppc"
+cTouch /Users/mozo/Documents/FakeSMC/fakesmc/build/Release/fakesmc.kext
+
+N/Developer/SDKs/MacOSX10.5.sdk
+c000000004AB44D2500000000000000EE
+t1253330213
+s238
+
+N/Developer/SDKs/MacOSX10.5.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/IOService.h
+c0000000047E88395000000000001F49C
+t1206420373
+s128156
+
+N/Developer/SDKs/MacOSX10.5.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/IOTimerEventSource.h
+c0000000047E883960000000000002CE8
+t1206420374
+s11496
+
+N/Developer/SDKs/MacOSX10.5.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/acpi/IOACPIPlatformDevice.h
+c000000004864AB990000000000002B75
+t1214557081
+s11125
+
+N/Developer/SDKs/MacOSX10.5.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/pci/IOPCIDevice.h
+c000000004864AB860000000000007C69
+t1214557062
+s31849
+
+N/Developer/SDKs/MacOSX10.6.sdk
+c000000004ABBF0FD00000000000000EE
+t1253830909
+s238
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/IOService.h
+c000000004A73D653000000000001F49D
+t1249105491
+s128157
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/IOTimerEventSource.h
+c000000004A73D6540000000000002B1D
+t1249105492
+s11037
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/acpi/IOACPIPlatformDevice.h
+c000000004A73D8B80000000000002B75
+t1249106104
+s11125
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/pci/IOPCIDevice.h
+c000000004A73D8C70000000000008708
+t1249106119
+s34568
+
+N/System/Library/Frameworks/Kernel.framework/Headers/IOKit/IOService.h
+c000000004A73D653000000000001F49D
+t1249105491
+s128157
+
+N/System/Library/Frameworks/Kernel.framework/Headers/IOKit/IOTimerEventSource.h
+c000000004A73D6540000000000002B1D
+t1249105492
+s11037
+
+N/System/Library/Frameworks/Kernel.framework/Headers/IOKit/acpi/IOACPIPlatformDevice.h
+c000000004A73D8B80000000000002B75
+t1249106104
+s11125
+
+N/System/Library/Frameworks/Kernel.framework/Headers/IOKit/pci/IOPCIDevice.h
+c000000004A73D8C70000000000008708
+t1249106119
+s34568
+
+N/Users/mozo/Documents/FakeSMC/fakesmc/English.lproj/InfoPlist.strings
+c000000004C0533580000000000000030
+t1275409240
+s48
+
+N/Users/mozo/Documents/FakeSMC/fakesmc/IOACPIPlatformDeviceCh.cpp
+c000000004C0533580000000000003BD9
+t1275409240
+s15321
+i"IOACPIPlatformDeviceCh.h"
+
+N/Users/mozo/Documents/FakeSMC/fakesmc/IOACPIPlatformDeviceCh.h
+c000000004C0533580000000000000D1B
+t1275409240
+s3355
+i<IOKit/IOService.h>
+i<IOKit/acpi/IOACPIPlatformDevice.h>
+i<IOKit/acpi/IOACPIPlatformDevice.h>
+
+N/Users/mozo/Documents/FakeSMC/fakesmc/build/Release/fakesmc.kext
+t1275409310
+s136
+
+N/Users/mozo/Documents/FakeSMC/fakesmc/build/Release/fakesmc.kext/Contents/Info.plist
+t1275409240
+s2416
+
+N/Users/mozo/Documents/FakeSMC/fakesmc/build/Release/fakesmc.kext/Contents/MacOS/fakesmc
+t1275409310
+s169860
+
+N/Users/mozo/Documents/FakeSMC/fakesmc/build/Release/fakesmc.kext/Contents/Resources/English.lproj/InfoPlist.strings
+t1275409240
+s92
+
+N/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/fakesmc_info.c
+c000000004C05339C0000000000000198
+t1275409308
+s408
+
+N/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/IOACPIPlatformDeviceCh.o
+t1275409309
+s35372
+
+N/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/fakesmc
+t1275409309
+s48200
+
+N/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/fakesmc.LinkFileList
+c000000004C05339C00000000000000EB
+t1275409308
+s235
+
+N/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/fakesmc.o
+t1275409309
+s28260
+
+N/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/fakesmc_info.o
+t1275409309
+s580
+
+N/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/IOACPIPlatformDeviceCh.o
+t1275409310
+s41396
+
+N/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/fakesmc
+t1275409310
+s59268
+
+N/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/fakesmc.LinkFileList
+c000000004C05339C00000000000000E9
+t1275409308
+s233
+
+N/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/fakesmc.o
+t1275409309
+s34492
+
+N/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/fakesmc_info.o
+t1275409310
+s580
+
+N/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/x86_64/IOACPIPlatformDeviceCh.o
+t1275409308
+s37188
+
+N/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/x86_64/fakesmc
+t1275409309
+s55248
+
+N/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/x86_64/fakesmc.LinkFileList
+c000000004C05339C00000000000000EF
+t1275409308
+s239
+
+N/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/x86_64/fakesmc.o
+t1275409308
+s29528
+
+N/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/x86_64/fakesmc_info.o
+t1275409308
+s768
+
+N/Users/mozo/Documents/FakeSMC/fakesmc/fakesmc.cpp
+c000000004C05335800000000000015C6
+t1275409240
+s5574
+i"fakesmc.h"
+
+N/Users/mozo/Documents/FakeSMC/fakesmc/fakesmc.h
+c000000004C05335800000000000003C8
+t1275409240
+s968
+i<IOKit/IOService.h>
+i<IOKit/pci/IOPCIDevice.h>
+i<IOKit/IOTimerEventSource.h>
+i<IOKit/acpi/IOACPIPlatformDevice.h>
+i<IOACPIPlatformDeviceCh.h>
+
+NInfo.plist
+c000000004C0533580000000000000942
+t1275409240
+s2370
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies297102108#297102108#0(0"0(0#1#0"4324455640#0"0#
+
+CCompileC build/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/IOACPIPlatformDeviceCh.o /Users/mozo/Documents/FakeSMC/fakesmc/IOACPIPlatformDeviceCh.cpp normal i386 c++ com.apple.compilers.gcc.4_2
+s297102109.132480
+e297102109.695920
+r1
+xCompileC
+xbuild/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/IOACPIPlatformDeviceCh.o
+x/Users/mozo/Documents/FakeSMC/fakesmc/IOACPIPlatformDeviceCh.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@72"Compile /Users/mozo/Documents/FakeSMC/fakesmc/IOACPIPlatformDeviceCh.cpp297102109#297102109#0(0"0(0#0#64"/Users/mozo/Documents/FakeSMC/fakesmc/IOACPIPlatformDeviceCh.cpp4324455640#1600"    cd /Users/mozo/Documents/FakeSMC/fakesmc    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -mmacosx-version-min=10.6 -fopenmp -iquote /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-generated-files.hmap -I/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-own-target-headers.hmap -I/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-all-target-headers.hmap -iquote /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-project-headers.hmap -F/Users/mozo/Documents/FakeSMC/fakesmc/build/Release -I/Users/mozo/Documents/FakeSMC/fakesmc/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/i386 -I/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources -c /Users/mozo/Documents/FakeSMC/fakesmc/IOACPIPlatformDeviceCh.cpp -o /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/IOACPIPlatformDeviceCh.o0#
+
+CCompileC build/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/fakesmc.o /Users/mozo/Documents/FakeSMC/fakesmc/fakesmc.cpp normal i386 c++ com.apple.compilers.gcc.4_2
+s297102108.688409
+e297102109.269488
+r1
+xCompileC
+xbuild/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/fakesmc.o
+x/Users/mozo/Documents/FakeSMC/fakesmc/fakesmc.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@57"Compile /Users/mozo/Documents/FakeSMC/fakesmc/fakesmc.cpp297102108#297102109#0(0"0(0#0#49"/Users/mozo/Documents/FakeSMC/fakesmc/fakesmc.cpp4324455640#1570"    cd /Users/mozo/Documents/FakeSMC/fakesmc    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -mmacosx-version-min=10.6 -fopenmp -iquote /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-generated-files.hmap -I/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-own-target-headers.hmap -I/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-all-target-headers.hmap -iquote /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-project-headers.hmap -F/Users/mozo/Documents/FakeSMC/fakesmc/build/Release -I/Users/mozo/Documents/FakeSMC/fakesmc/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/i386 -I/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources -c /Users/mozo/Documents/FakeSMC/fakesmc/fakesmc.cpp -o /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/fakesmc.o0#
+
+CCompileC build/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/fakesmc_info.o /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/fakesmc_info.c normal i386 c com.apple.compilers.gcc.4_2
+s297102109.269559
+e297102109.311051
+r1
+xCompileC
+xbuild/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/fakesmc_info.o
+x/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/fakesmc_info.c
+xnormal
+xi386
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@117"Compile /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/fakesmc_info.c297102109#297102109#0(0"0(0#0#109"/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/fakesmc_info.c4324455640#1582"    cd /Users/mozo/Documents/FakeSMC/fakesmc    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch i386 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -fopenmp -iquote /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-generated-files.hmap -I/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-own-target-headers.hmap -I/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-all-target-headers.hmap -iquote /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-project-headers.hmap -F/Users/mozo/Documents/FakeSMC/fakesmc/build/Release -I/Users/mozo/Documents/FakeSMC/fakesmc/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/i386 -I/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources -c /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/fakesmc_info.c -o /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/fakesmc_info.o0#
+
+CCompileC build/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/IOACPIPlatformDeviceCh.o /Users/mozo/Documents/FakeSMC/fakesmc/IOACPIPlatformDeviceCh.cpp normal ppc c++ com.apple.compilers.gcc.4_2
+s297102109.771273
+e297102110.197324
+r1
+xCompileC
+xbuild/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/IOACPIPlatformDeviceCh.o
+x/Users/mozo/Documents/FakeSMC/fakesmc/IOACPIPlatformDeviceCh.cpp
+xnormal
+xppc
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@72"Compile /Users/mozo/Documents/FakeSMC/fakesmc/IOACPIPlatformDeviceCh.cpp297102109#297102110#0(0"0(0#0#64"/Users/mozo/Documents/FakeSMC/fakesmc/IOACPIPlatformDeviceCh.cpp4324455640#1607"    cd /Users/mozo/Documents/FakeSMC/fakesmc    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch ppc -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -mtune=G4 -mmacosx-version-min=10.6 -fopenmp -iquote /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-generated-files.hmap -I/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-own-target-headers.hmap -I/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-all-target-headers.hmap -iquote /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-project-headers.hmap -F/Users/mozo/Documents/FakeSMC/fakesmc/build/Release -I/Users/mozo/Documents/FakeSMC/fakesmc/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/ppc -I/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources -c /Users/mozo/Documents/FakeSMC/fakesmc/IOACPIPlatformDeviceCh.cpp -o /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/IOACPIPlatformDeviceCh.o0#
+
+CCompileC build/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/fakesmc.o /Users/mozo/Documents/FakeSMC/fakesmc/fakesmc.cpp normal ppc c++ com.apple.compilers.gcc.4_2
+s297102109.311130
+e297102109.949154
+r1
+xCompileC
+xbuild/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/fakesmc.o
+x/Users/mozo/Documents/FakeSMC/fakesmc/fakesmc.cpp
+xnormal
+xppc
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@57"Compile /Users/mozo/Documents/FakeSMC/fakesmc/fakesmc.cpp297102109#297102109#0(0"0(0#0#49"/Users/mozo/Documents/FakeSMC/fakesmc/fakesmc.cpp4324455640#1577"    cd /Users/mozo/Documents/FakeSMC/fakesmc    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch ppc -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -mtune=G4 -mmacosx-version-min=10.6 -fopenmp -iquote /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-generated-files.hmap -I/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-own-target-headers.hmap -I/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-all-target-headers.hmap -iquote /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-project-headers.hmap -F/Users/mozo/Documents/FakeSMC/fakesmc/build/Release -I/Users/mozo/Documents/FakeSMC/fakesmc/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/ppc -I/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources -c /Users/mozo/Documents/FakeSMC/fakesmc/fakesmc.cpp -o /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/fakesmc.o0#
+
+CCompileC build/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/fakesmc_info.o /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/fakesmc_info.c normal ppc c com.apple.compilers.gcc.4_2
+s297102109.949222
+e297102110.270168
+r1
+xCompileC
+xbuild/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/fakesmc_info.o
+x/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/fakesmc_info.c
+xnormal
+xppc
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@117"Compile /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/fakesmc_info.c297102109#297102110#0(0"0(0#0#109"/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/fakesmc_info.c4324455640#1589"    cd /Users/mozo/Documents/FakeSMC/fakesmc    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch ppc -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -mtune=G4 -mmacosx-version-min=10.6 -fopenmp -iquote /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-generated-files.hmap -I/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-own-target-headers.hmap -I/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-all-target-headers.hmap -iquote /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-project-headers.hmap -F/Users/mozo/Documents/FakeSMC/fakesmc/build/Release -I/Users/mozo/Documents/FakeSMC/fakesmc/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/ppc -I/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources -c /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/fakesmc_info.c -o /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/fakesmc_info.o0#
+
+CCompileC build/fakesmc.build/Release/fakesmc.build/Objects-normal/x86_64/IOACPIPlatformDeviceCh.o /Users/mozo/Documents/FakeSMC/fakesmc/IOACPIPlatformDeviceCh.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+s297102108.131249
+e297102108.672876
+r1
+xCompileC
+xbuild/fakesmc.build/Release/fakesmc.build/Objects-normal/x86_64/IOACPIPlatformDeviceCh.o
+x/Users/mozo/Documents/FakeSMC/fakesmc/IOACPIPlatformDeviceCh.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@72"Compile /Users/mozo/Documents/FakeSMC/fakesmc/IOACPIPlatformDeviceCh.cpp297102108#297102108#0(0"0(0#0#64"/Users/mozo/Documents/FakeSMC/fakesmc/IOACPIPlatformDeviceCh.cpp4324455640#1606"    cd /Users/mozo/Documents/FakeSMC/fakesmc    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -mmacosx-version-min=10.6 -fopenmp -iquote /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-generated-files.hmap -I/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-own-target-headers.hmap -I/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-all-target-headers.hmap -iquote /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-project-headers.hmap -F/Users/mozo/Documents/FakeSMC/fakesmc/build/Release -I/Users/mozo/Documents/FakeSMC/fakesmc/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/x86_64 -I/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources -c /Users/mozo/Documents/FakeSMC/fakesmc/IOACPIPlatformDeviceCh.cpp -o /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/x86_64/IOACPIPlatformDeviceCh.o0#
+
+CCompileC build/fakesmc.build/Release/fakesmc.build/Objects-normal/x86_64/fakesmc.o /Users/mozo/Documents/FakeSMC/fakesmc/fakesmc.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+s297102108.124609
+e297102108.688332
+r1
+xCompileC
+xbuild/fakesmc.build/Release/fakesmc.build/Objects-normal/x86_64/fakesmc.o
+x/Users/mozo/Documents/FakeSMC/fakesmc/fakesmc.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@57"Compile /Users/mozo/Documents/FakeSMC/fakesmc/fakesmc.cpp297102108#297102108#0(0"0(0#0#49"/Users/mozo/Documents/FakeSMC/fakesmc/fakesmc.cpp4324455640#1576"    cd /Users/mozo/Documents/FakeSMC/fakesmc    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -mmacosx-version-min=10.6 -fopenmp -iquote /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-generated-files.hmap -I/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-own-target-headers.hmap -I/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-all-target-headers.hmap -iquote /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-project-headers.hmap -F/Users/mozo/Documents/FakeSMC/fakesmc/build/Release -I/Users/mozo/Documents/FakeSMC/fakesmc/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/x86_64 -I/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources -c /Users/mozo/Documents/FakeSMC/fakesmc/fakesmc.cpp -o /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/x86_64/fakesmc.o0#
+
+CCompileC build/fakesmc.build/Release/fakesmc.build/Objects-normal/x86_64/fakesmc_info.o /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/fakesmc_info.c normal x86_64 c com.apple.compilers.gcc.4_2
+s297102108.672959
+e297102108.963454
+r1
+xCompileC
+xbuild/fakesmc.build/Release/fakesmc.build/Objects-normal/x86_64/fakesmc_info.o
+x/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/fakesmc_info.c
+xnormal
+xx86_64
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@117"Compile /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/fakesmc_info.c297102108#297102108#0(0"0(0#0#109"/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/fakesmc_info.c4324455640#1588"    cd /Users/mozo/Documents/FakeSMC/fakesmc    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -fopenmp -iquote /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-generated-files.hmap -I/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-own-target-headers.hmap -I/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-all-target-headers.hmap -iquote /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-project-headers.hmap -F/Users/mozo/Documents/FakeSMC/fakesmc/build/Release -I/Users/mozo/Documents/FakeSMC/fakesmc/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/x86_64 -I/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources -c /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/fakesmc_info.c -o /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/x86_64/fakesmc_info.o0#
+
+CCopyStringsFile /Users/mozo/Documents/FakeSMC/fakesmc/build/Release/fakesmc.kext/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
+r0
+
+CCreateUniversalBinary /Users/mozo/Documents/FakeSMC/fakesmc/build/Release/fakesmc.kext/Contents/MacOS/fakesmc normal "x86_64 i386 ppc"
+s297102110.348453
+e297102110.388219
+r1
+xCreateUniversalBinary
+x/Users/mozo/Documents/FakeSMC/fakesmc/build/Release/fakesmc.kext/Contents/MacOS/fakesmc
+xnormal
+xx86_64 i386 ppc
+lSLF07#2@96"CreateUniversalBinary build/Release/fakesmc.kext/Contents/MacOS/fakesmc normal "x86_64 i386 ppc"297102110#297102110#0(0"0(0#0#53"/Users/mozo/Documents/FakeSMC/fakesmc/x86_64 i386 ppc4324455640#492"    cd /Users/mozo/Documents/FakeSMC/fakesmc    /usr/bin/lipo -create /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/x86_64/fakesmc /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/fakesmc /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/fakesmc -output /Users/mozo/Documents/FakeSMC/fakesmc/build/Release/fakesmc.kext/Contents/MacOS/fakesmc0#
+
+CCreateUniversalBinary /Users/mozo/Documents/FakeSMC/fakesmc/build/Release/fakesmc.kext/Contents/MacOS/fakesmc normal "x86_64 i386"
+r0
+
+CLd /Users/mozo/Documents/FakeSMC/fakesmc/build/Release/fakesmc.kext/Contents/MacOS/fakesmc normal x86_64
+r0
+
+CLd /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/fakesmc normal i386
+s297102109.696217
+e297102109.771193
+r1
+xLd
+x/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/fakesmc
+xnormal
+xi386
+lSLF07#2@112"Link /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/fakesmc297102109#297102109#0(0"0(0#0#0"4324455640#732"    cd /Users/mozo/Documents/FakeSMC/fakesmc    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/g++-4.2 -arch i386 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/mozo/Documents/FakeSMC/fakesmc/build/Release -F/Users/mozo/Documents/FakeSMC/fakesmc/build/Release -filelist /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/fakesmc.LinkFileList -mmacosx-version-min=10.6 -fopenmp -lcpp_kext -Xlinker -kext -nostdlib -lkmodc++ /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/fakesmc_info.o -lkmod -lcc_kext -o /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/fakesmc0#
+
+CLd /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/fakesmc normal ppc
+s297102110.270245
+e297102110.348358
+r1
+xLd
+x/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/fakesmc
+xnormal
+xppc
+lSLF07#2@111"Link /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/fakesmc297102110#297102110#0(0"0(0#0#0"4324455640#728"    cd /Users/mozo/Documents/FakeSMC/fakesmc    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/g++-4.2 -arch ppc -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/mozo/Documents/FakeSMC/fakesmc/build/Release -F/Users/mozo/Documents/FakeSMC/fakesmc/build/Release -filelist /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/fakesmc.LinkFileList -mmacosx-version-min=10.6 -fopenmp -lcpp_kext -Xlinker -kext -nostdlib -lkmodc++ /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/fakesmc_info.o -lkmod -lcc_kext -o /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/fakesmc0#
+
+CLd /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/x86_64/fakesmc normal x86_64
+s297102108.963536
+e297102109.132408
+r1
+xLd
+x/Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/x86_64/fakesmc
+xnormal
+xx86_64
+lSLF07#2@114"Link /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/x86_64/fakesmc297102108#297102109#0(0"0(0#0#0"4324455640#740"    cd /Users/mozo/Documents/FakeSMC/fakesmc    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/g++-4.2 -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/mozo/Documents/FakeSMC/fakesmc/build/Release -F/Users/mozo/Documents/FakeSMC/fakesmc/build/Release -filelist /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/x86_64/fakesmc.LinkFileList -mmacosx-version-min=10.6 -fopenmp -lcpp_kext -Xlinker -kext -nostdlib -lkmodc++ /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/x86_64/fakesmc_info.o -lkmod -lcc_kext -o /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/x86_64/fakesmc0#
+
+CProcessInfoPlistFile /Users/mozo/Documents/FakeSMC/fakesmc/build/Release/fakesmc.kext/Contents/Info.plist Info.plist
+r0
+
+CTouch /Users/mozo/Documents/FakeSMC/fakesmc/build/Release/fakesmc.kext
+s297102110.388278
+e297102110.390674
+r1
+xTouch
+x/Users/mozo/Documents/FakeSMC/fakesmc/build/Release/fakesmc.kext
+lSLF07#2@70"Touch /Users/mozo/Documents/FakeSMC/fakesmc/build/Release/fakesmc.kext297102110#297102110#0(0"0(0#0#0"4324455640#132"    cd /Users/mozo/Documents/FakeSMC/fakesmc    /usr/bin/touch -c /Users/mozo/Documents/FakeSMC/fakesmc/build/Release/fakesmc.kext0#
+
