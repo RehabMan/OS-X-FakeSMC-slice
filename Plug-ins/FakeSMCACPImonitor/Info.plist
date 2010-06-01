@@ -33,7 +33,7 @@
 			<key>IOMatchCategory</key>
 			<string>ACPImonitor</string>
 			<key>IONameMatch</key>
-			<string>thermal-zone</string>
+			<string>monitor</string>
 			<key>IOProviderClass</key>
 			<string>IOACPIPlatformDevice</string>
 		</dict>
