@@ -1,8 +1,0 @@
-0000000047e88395000000000001c25e ff3e28bfde9d3e8ee6c077ab9d071504 ffffffffffffffffffffffffffffffff 36140 /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release Leopard/fakesmc.build/Objects-normal/i386/IOACPIPlatformDeviceCh.o
-000000000bedb0d100000000000060e1 15779093eb2f8aa237ddeb157a265865 ffffffffffffffffffffffffffffffff 28564 /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release Leopard/fakesmc.build/Objects-normal/i386/fakesmc.o
-bf183203f94472942aeb2cfa0d646739 309db5c3337356e6da5c9d5accccaf72 ffffffffffffffffffffffffffffffff 102 /Users/mozo/Documents/FakeSMC/fakesmc/build/Release Leopard/fakesmc.kext
-901a68f609c2ff3e9fe98e29e759a535 76e87f9cd1437fcf9b630daf637ceb62 ffffffffffffffffffffffffffffffff 48904 /Users/mozo/Documents/FakeSMC/fakesmc/build/Release Leopard/fakesmc.kext/Contents/MacOS/fakesmc
-000000004c0533a80000000000000198 7a53d0da76c406db4ef4129700794b9d ffffffffffffffffffffffffffffffff 640 /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release Leopard/fakesmc.build/Objects-normal/i386/fakesmc_info.o
-000000004c0533580000000000000030 755278dd089d5803ab12b4f48ef6357d ffffffffffffffffffffffffffffffff 92 /Users/mozo/Documents/FakeSMC/fakesmc/build/Release Leopard/fakesmc.kext/Contents/Resources/English.lproj/InfoPlist.strings
-00000000000000000000000000000000 2cb85db4655d993e85731b8807b71c23 ffffffffffffffffffffffffffffffff 2465 /Users/mozo/Documents/FakeSMC/fakesmc/build/Release Leopard/fakesmc.kext/Contents/Info.plist
-ffffffffffffffffffffffffffffffff ffffffffffffffffffffffffffffffff ffffffffffffffffffffffffffffffff 0 /Users/mozo/Documents/FakeSMC/fakesmc/build/fakesmc.build/Release Leopard/fakesmc.build/Objects-normal/i386/fakesmc_vers.o
