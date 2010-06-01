@@ -67,7 +67,7 @@ IOService* IntelThermalMonitorPlugin::probe(IOService *provider, SInt32 *score)
 		return 0;
 	}
 	
-	CpuCount = /*cpuid_info()->core_count;*/cpuid_count_cores();
+	CpuCount = cpuid_info()->core_count;//cpuid_count_cores();
 	
 	if(CpuCount == 0)
 	{
@@ -137,21 +137,6 @@ IOService* IntelThermalMonitorPlugin::probe(IOService *provider, SInt32 *score)
 				case 0x25: // Intel Core i3, i5, i7 LGA1156 (32nm)
 				case 0x2C: // Intel Core i7 LGA1366 (32nm) 6 Core
 					CpuCoreiX = true;
-					
-					OSDictionary * iocpu = serviceMatching("IOCPU");
-					if (iocpu) 
-					{
-						OSIterator * iterator = getMatchingServices(iocpu);
-						if (iterator) 
-						{
-							CpuCount = 0;
-							
-							while (iterator->getNextObject()) 
-							{
-								CpuCount++;
-							}
-						}
-					}
 					
 					for (int i = 0; i < CpuCount; i++)
 						TjMaxCoreiX[i] = (rdmsr64(MSR_IA32_TEMPERATURE_TARGET) >> 16) & 0xFF;

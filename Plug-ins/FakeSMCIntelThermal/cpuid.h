@@ -22,6 +22,15 @@ i386_cpu_info_t	*cpuid_info(void)
 	return 	&cpuid_cpu_info;
 }
 
+uint32_t cpuid_count_cores()
+{
+	uint32_t cpuid_reg[4];
+	
+	do_cpuid(1, cpuid_reg);
+	
+	return bitfield(cpuid_reg[1], 23, 16);
+}
+
 static void cpuid_update_generic_info()
 {
     uint32_t cpuid_reg[4];
@@ -137,13 +146,23 @@ static void cpuid_update_generic_info()
         info_p->cpuid_arch_perf_fixed_width = bitfield(cpuid_reg[edx],12, 5);
 		
     }
-}
-uint32_t cpuid_count_cores()
-{
-	uint32_t cpuid_reg[4];
 	
-	do_cpuid(1, cpuid_reg);
-	
-	return bitfield(cpuid_reg[1], 23, 16);
+	switch (info_p->cpuid_family)
+	{
+		case 0x1A: // Intel Core i7 LGA1366 (45nm)
+		case 0x1E: // Intel Core i5, i7 LGA1156 (45nm)
+		case 0x25: // Intel Core i3, i5, i7 LGA1156 (32nm)
+		case 0x2C: // Intel Core i7 LGA1366 (32nm) 6 Core
+		{
+			uint64_t msr = rdmsr64(0x035);
+			cpuid_info()->core_count   = bitfield((uint32_t)msr, 31, 16);
+			cpuid_info()->thread_count = bitfield((uint32_t)msr, 15,  0);
+		} break;
+		default:
+		{
+			do_cpuid(1, cpuid_reg);
+			info_p->core_count = bitfield(cpuid_reg[1], 23, 16);
+		} break;
+	}
 }
 
