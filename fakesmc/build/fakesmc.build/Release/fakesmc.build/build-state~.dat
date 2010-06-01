@@ -1,336 +1,0 @@
-Tfakesmc
-v7
-r0
-t296845426.829430
-cCheck dependencies
-cProcessInfoPlistFile "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/Release/fakesmc.kext/Contents/Info.plist" Info.plist
-cCopyStringsFile "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/Release/fakesmc.kext/Contents/Resources/English.lproj/InfoPlist.strings" English.lproj/InfoPlist.strings
-cCompileC build/fakesmc.build/Release/fakesmc.build/Objects-normal/x86_64/fakesmc.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp" normal x86_64 c++ com.apple.compilers.gcc.4_2
-cCompileC build/fakesmc.build/Release/fakesmc.build/Objects-normal/x86_64/IOACPIPlatformDeviceCh.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/IOACPIPlatformDeviceCh.cpp" normal x86_64 c++ com.apple.compilers.gcc.4_2
-cCompileC build/fakesmc.build/Release/fakesmc.build/Objects-normal/x86_64/fakesmc_info.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/fakesmc_info.c" normal x86_64 c com.apple.compilers.gcc.4_2
-cCompileC build/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/fakesmc.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
-cCompileC build/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/IOACPIPlatformDeviceCh.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/IOACPIPlatformDeviceCh.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
-cCompileC build/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/fakesmc_info.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/fakesmc_info.c" normal i386 c com.apple.compilers.gcc.4_2
-cCompileC build/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/fakesmc.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp" normal ppc c++ com.apple.compilers.gcc.4_2
-cLd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/fakesmc" normal i386
-cCompileC build/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/IOACPIPlatformDeviceCh.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/IOACPIPlatformDeviceCh.cpp" normal ppc c++ com.apple.compilers.gcc.4_2
-cCompileC build/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/fakesmc_info.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/fakesmc_info.c" normal ppc c com.apple.compilers.gcc.4_2
-cLd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/fakesmc" normal ppc
-
-N/Developer/SDKs/MacOSX10.6.sdk
-c000000004BE0165B00000000000000EE
-t1272976987
-s238
-
-N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/IOService.h
-c000000004A73D653000000000001F49D
-t1249105491
-s128157
-
-N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/IOTimerEventSource.h
-c000000004A73D6540000000000002B1D
-t1249105492
-s11037
-
-N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/acpi/IOACPIPlatformDevice.h
-c000000004A73D8B80000000000002B75
-t1249106104
-s11125
-
-N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/pci/IOPCIDevice.h
-c000000004A73D8C70000000000008708
-t1249106119
-s34568
-
-N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/English.lproj/InfoPlist.strings
-c000000004C0148B50000000000000030
-t1275152565
-s48
-
-N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/IOACPIPlatformDeviceCh.cpp
-c000000004C0148B50000000000003BD9
-t1275152565
-s15321
-i"IOACPIPlatformDeviceCh.h"
-
-N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/IOACPIPlatformDeviceCh.h
-c000000004C0148B50000000000000D1B
-t1275152565
-s3355
-i<IOKit/IOService.h>
-i<IOKit/acpi/IOACPIPlatformDevice.h>
-i<IOKit/acpi/IOACPIPlatformDevice.h>
-
-N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/Release/fakesmc.kext
-t2
-s0
-
-N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/Release/fakesmc.kext/Contents/Info.plist
-t1275152624
-s2416
-
-N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/Release/fakesmc.kext/Contents/MacOS/fakesmc
-t2
-s0
-
-N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/Release/fakesmc.kext/Contents/Resources/English.lproj/InfoPlist.strings
-t1275152625
-s92
-
-N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/fakesmc_info.c
-c000000004C0148F0000000000000019A
-t1275152624
-s410
-
-N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/IOACPIPlatformDeviceCh.o
-t1275152626
-s35372
-
-N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/fakesmc
-t1275152626
-s48200
-
-N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/fakesmc.LinkFileList
-c000000004C0148F00000000000000127
-t1275152624
-s295
-
-N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/fakesmc.o
-t1275152625
-s28260
-
-N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/fakesmc_info.o
-t1275152625
-s580
-
-N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/IOACPIPlatformDeviceCh.o
-t1275152626
-s41396
-
-N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/fakesmc
-t1275152626
-s59268
-
-N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/fakesmc.LinkFileList
-c000000004C0148F00000000000000125
-t1275152624
-s293
-
-N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/fakesmc.o
-t1275152626
-s34492
-
-N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/fakesmc_info.o
-t1275152626
-s580
-
-N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/x86_64/IOACPIPlatformDeviceCh.o
-t1275152625
-s37188
-
-N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/x86_64/fakesmc
-t2
-s0
-
-N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/x86_64/fakesmc.LinkFileList
-c000000004C0148F0000000000000012B
-t1275152624
-s299
-
-N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/x86_64/fakesmc.o
-t2
-s0
-
-N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/x86_64/fakesmc_info.o
-t1275152625
-s768
-
-N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp
-c000000004C0148F000000000000015C6
-t1275152624
-s5574
-i"fakesmc.h"
-
-N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.h
-c000000004C0148B500000000000003C8
-t1275152565
-s968
-i<IOKit/IOService.h>
-i<IOKit/pci/IOPCIDevice.h>
-i<IOKit/IOTimerEventSource.h>
-i<IOKit/acpi/IOACPIPlatformDevice.h>
-i<IOACPIPlatformDeviceCh.h>
-
-NInfo.plist
-c000000004C0148B50000000000000942
-t1275152565
-s2370
-
-CCheck dependencies
-r0
-lSLF07#2@18"Check dependencies296845424#296845424#0(0"0(0#1#0"7947009927035180032#0"0#
-
-CCompileC build/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/IOACPIPlatformDeviceCh.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/IOACPIPlatformDeviceCh.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
-s296845425.552084
-e296845426.177579
-r1
-xCompileC
-xbuild/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/IOACPIPlatformDeviceCh.o
-x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/IOACPIPlatformDeviceCh.cpp
-xnormal
-xi386
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@102"Compile /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/IOACPIPlatformDeviceCh.cpp296845425#296845426#0(0"0(0#0#94"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/IOACPIPlatformDeviceCh.cpp4324459736#1952"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -mmacosx-version-min=10.6 -fopenmp -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-generated-files.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-own-target-headers.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-all-target-headers.hmap" -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-project-headers.hmap" "-F/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/Release" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/Release/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/i386" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources" -c "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/IOACPIPlatformDeviceCh.cpp" -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/IOACPIPlatformDeviceCh.o"0#
-
-CCompileC build/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/fakesmc.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
-s296845425.203953
-e296845425.674600
-r1
-xCompileC
-xbuild/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/fakesmc.o
-x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp
-xnormal
-xi386
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@87"Compile /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp296845425#296845425#0(0"0(0#0#79"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp4324459736#1922"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -mmacosx-version-min=10.6 -fopenmp -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-generated-files.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-own-target-headers.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-all-target-headers.hmap" -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-project-headers.hmap" "-F/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/Release" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/Release/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/i386" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources" -c "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp" -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/fakesmc.o"0#
-
-CCompileC build/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/fakesmc_info.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/fakesmc_info.c" normal i386 c com.apple.compilers.gcc.4_2
-s296845425.674732
-e296845425.724785
-r1
-xCompileC
-xbuild/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/fakesmc_info.o
-x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/fakesmc_info.c
-xnormal
-xi386
-xc
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@147"Compile /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/fakesmc_info.c296845425#296845425#0(0"0(0#0#139"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/fakesmc_info.c4324459736#1934"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch i386 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -fopenmp -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-generated-files.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-own-target-headers.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-all-target-headers.hmap" -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-project-headers.hmap" "-F/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/Release" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/Release/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/i386" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources" -c "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/fakesmc_info.c" -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/fakesmc_info.o"0#
-
-CCompileC build/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/IOACPIPlatformDeviceCh.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/IOACPIPlatformDeviceCh.cpp" normal ppc c++ com.apple.compilers.gcc.4_2
-s296845426.282930
-e296845426.756984
-r1
-xCompileC
-xbuild/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/IOACPIPlatformDeviceCh.o
-x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/IOACPIPlatformDeviceCh.cpp
-xnormal
-xppc
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@102"Compile /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/IOACPIPlatformDeviceCh.cpp296845426#296845426#0(0"0(0#0#94"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/IOACPIPlatformDeviceCh.cpp4324459736#1959"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch ppc -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -mtune=G4 -mmacosx-version-min=10.6 -fopenmp -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-generated-files.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-own-target-headers.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-all-target-headers.hmap" -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-project-headers.hmap" "-F/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/Release" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/Release/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/ppc" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources" -c "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/IOACPIPlatformDeviceCh.cpp" -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/IOACPIPlatformDeviceCh.o"0#
-
-CCompileC build/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/fakesmc.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp" normal ppc c++ com.apple.compilers.gcc.4_2
-s296845425.724905
-e296845426.493188
-r1
-xCompileC
-xbuild/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/fakesmc.o
-x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp
-xnormal
-xppc
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@87"Compile /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp296845425#296845426#0(0"0(0#0#79"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp4324459736#1929"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch ppc -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -mtune=G4 -mmacosx-version-min=10.6 -fopenmp -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-generated-files.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-own-target-headers.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-all-target-headers.hmap" -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-project-headers.hmap" "-F/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/Release" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/Release/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/ppc" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources" -c "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp" -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/fakesmc.o"0#
-
-CCompileC build/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/fakesmc_info.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/fakesmc_info.c" normal ppc c com.apple.compilers.gcc.4_2
-s296845426.493423
-e296845426.674376
-r1
-xCompileC
-xbuild/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/fakesmc_info.o
-x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/fakesmc_info.c
-xnormal
-xppc
-xc
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@147"Compile /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/fakesmc_info.c296845426#296845426#0(0"0(0#0#139"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/fakesmc_info.c4324459736#1941"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch ppc -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -mtune=G4 -mmacosx-version-min=10.6 -fopenmp -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-generated-files.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-own-target-headers.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-all-target-headers.hmap" -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-project-headers.hmap" "-F/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/Release" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/Release/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/ppc" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources" -c "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/fakesmc_info.c" -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/fakesmc_info.o"0#
-
-CCompileC build/fakesmc.build/Release/fakesmc.build/Objects-normal/x86_64/IOACPIPlatformDeviceCh.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/IOACPIPlatformDeviceCh.cpp" normal x86_64 c++ com.apple.compilers.gcc.4_2
-s296845425.121603
-e296845425.551974
-r1
-xCompileC
-xbuild/fakesmc.build/Release/fakesmc.build/Objects-normal/x86_64/IOACPIPlatformDeviceCh.o
-x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/IOACPIPlatformDeviceCh.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@102"Compile /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/IOACPIPlatformDeviceCh.cpp296845425#296845425#0(0"0(0#0#94"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/IOACPIPlatformDeviceCh.cpp4324459736#1958"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -mmacosx-version-min=10.6 -fopenmp -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-generated-files.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-own-target-headers.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-all-target-headers.hmap" -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-project-headers.hmap" "-F/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/Release" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/Release/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/x86_64" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources" -c "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/IOACPIPlatformDeviceCh.cpp" -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/x86_64/IOACPIPlatformDeviceCh.o"0#
-
-CCompileC build/fakesmc.build/Release/fakesmc.build/Objects-normal/x86_64/fakesmc.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp" normal x86_64 c++ com.apple.compilers.gcc.4_2
-s296845425.119065
-e296845425.121505
-r0
-xCompileC
-xbuild/fakesmc.build/Release/fakesmc.build/Objects-normal/x86_64/fakesmc.o
-x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@87"Compile /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp296845425#296845425#0(3976"In file included from /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp:1:/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.h:5:36: error: IOACPIPlatformDeviceCh.h: No such file or directoryIn file included from /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp:1:/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.h:9: error: 'OnKeyReadCallback' has not been declared/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.h:10: error: 'OnKeyReadCallback' has not been declared/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp:7: error: expected constructor, destructor, or type conversion before '*' token/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp: In function 'void FakeSMCAddKey(const char*, uint8_t, char*)':/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp:11: error: 'smcNode' was not declared in this scope/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp: In function 'void FakeSMCAddKey(const char*, const char*, uint8_t, char*)':/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp:17: error: 'smcNode' was not declared in this scope/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp: At global scope:/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp:21: error: 'OnKeyReadCallback' has not been declared/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp: In function 'void FakeSMCAddKeyCallback(const char*, uint8_t, char*, int)':/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp:23: error: 'smcNode' was not declared in this scope/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp: At global scope:/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp:27: error: 'OnKeyReadCallback' has not been declared/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp: In function 'void FakeSMCAddKeyCallback(const char*, const char*, uint8_t, char*, int)':/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp:29: error: 'smcNode' was not declared in this scope/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp: In function 'char* FakeSMCGetKey(const char*)':/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp:35: error: 'SMCData' was not declared in this scope/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp:35: error: expected `)' before 'node'/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp:36: error: 'node' was not declared in this scope/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp: In function 'void FakeSMCRemoveKeyCallback(const char*)':/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp:43: error: 'SMCData' was not declared in this scope/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp:43: error: expected `)' before 'node'/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp:43: error: 'node' was not declared in this scope/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp: In member function 'virtual bool FakeSMC::start(IOService*)':/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp:82: error: 'smcNode' was not declared in this scope/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp:82: error: expected type-specifier before 'IOACPIPlatformDeviceCh'/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp:82: error: expected `;' before 'IOACPIPlatformDeviceCh'21(4@51"IOACPIPlatformDeviceCh.h: No such file or directory296845425#105#143#2(7@101"In file included from /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp296845425#18446744073709551615#0#0(6@79"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp296845424#1#0#1#0#0"0(13@132"IOACPIPlatformDeviceCh.h: No such file or directory in /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.h296845425#18446744073709551615#0#0(6@77"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.h296845365#5#0#5#0#0"0(6@77"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.h296845365#5#0#5#0#28"*: No such file or directory0(4@41"'OnKeyReadCallback' has not been declared296845425#353#130#2(7@101"In file included from /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp296845425#18446744073709551615#0#0(6@79"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp296845424#1#0#1#0#0"0(13@122"'OnKeyReadCallback' has not been declared in /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.h296845425#18446744073709551615#0#0(6@77"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.h296845365#9#0#9#0#0"0(6@77"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.h296845365#9#0#9#0#25"'*' has not been declared0(4@41"'OnKeyReadCallback' has not been declared296845425#483#131#2(7@101"In file included from /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp296845425#18446744073709551615#0#0(6@79"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp296845424#1#0#1#0#0"0(13@122"'OnKeyReadCallback' has not been declared in /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.h296845425#18446744073709551615#0#0(6@77"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.h296845365#10#0#10#0#0"0(6@77"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.h296845365#10#0#10#0#25"'*' has not been declared0(4@69"Expected constructor, destructor, or type conversion before '*' token296845425#614#160#0(6@79"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp296845424#7#0#7#0#19"expected * before *0(4@40"'smcNode' was not declared in this scope296845425#918#132#0(6@79"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp296845424#11#0#11#0#34"'*' was not declared in this scope0(4@40"'smcNode' was not declared in this scope296845425#1207#132#0(6@79"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp296845424#17#0#17#0#34"'*' was not declared in this scope0(23@16"At global scope:296845425#1339#98#0(6@79"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp296845424#0#0#0#0#0"0(4@41"'OnKeyReadCallback' has not been declared296845425#1437#133#0(6@79"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp296845424#21#0#21#0#25"'*' has not been declared0(4@40"'smcNode' was not declared in this scope296845425#1727#132#0(6@79"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp296845424#23#0#23#0#34"'*' was not declared in this scope0(23@16"At global scope:296845425#1859#98#0(6@79"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp296845424#0#0#0#0#0"0(4@41"'OnKeyReadCallback' has not been declared296845425#1957#133#0(6@79"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp296845424#27#0#27#0#25"'*' has not been declared0(4@40"'smcNode' was not declared in this scope296845425#2260#132#0(6@79"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp296845424#29#0#29#0#34"'*' was not declared in this scope0(4@40"'SMCData' was not declared in this scope296845425#2521#132#0(6@79"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp296845424#35#0#35#0#34"'*' was not declared in this scope0(4@26"Expected `)' before 'node'296845425#2653#118#0(6@79"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp296845424#35#0#35#0#19"expected * before *0(4@37"'node' was not declared in this scope296845425#2771#129#0(6@79"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp296845424#36#0#36#0#34"'*' was not declared in this scope0(4@40"'SMCData' was not declared in this scope296845425#3039#132#0(6@79"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp296845424#43#0#43#0#34"'*' was not declared in this scope0(4@26"Expected `)' before 'node'296845425#3171#118#0(6@79"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp296845424#43#0#43#0#19"expected * before *0(4@37"'node' was not declared in this scope296845425#3289#129#0(6@79"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp296845424#43#0#43#0#34"'*' was not declared in this scope0(4@40"'smcNode' was not declared in this scope296845425#3561#132#0(6@79"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp296845424#82#0#82#0#34"'*' was not declared in this scope0(4@55"Expected type-specifier before 'IOACPIPlatformDeviceCh'296845425#3693#147#0(6@79"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp296845424#82#0#82#0#19"expected * before *0(4@44"Expected `;' before 'IOACPIPlatformDeviceCh'296845425#3840#136#0(6@79"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp296845424#82#0#82#0#19"expected * before *0(0#0#79"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp4324459736#1928"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -mmacosx-version-min=10.6 -fopenmp -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-generated-files.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-own-target-headers.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-all-target-headers.hmap" -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-project-headers.hmap" "-F/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/Release" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/Release/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/x86_64" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources" -c "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/fakesmc.cpp" -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/x86_64/fakesmc.o"1#
-
-CCompileC build/fakesmc.build/Release/fakesmc.build/Objects-normal/x86_64/fakesmc_info.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/fakesmc_info.c" normal x86_64 c com.apple.compilers.gcc.4_2
-s296845425.123050
-e296845425.203830
-r1
-xCompileC
-xbuild/fakesmc.build/Release/fakesmc.build/Objects-normal/x86_64/fakesmc_info.o
-x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/fakesmc_info.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@147"Compile /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/fakesmc_info.c296845425#296845425#0(0"0(0#0#139"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/fakesmc_info.c4324459736#1940"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -fopenmp -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-generated-files.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-own-target-headers.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-all-target-headers.hmap" -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/fakesmc-project-headers.hmap" "-F/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/Release" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/Release/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/x86_64" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources" -c "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/DerivedSources/fakesmc_info.c" -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/x86_64/fakesmc_info.o"0#
-
-CCopyStringsFile "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/Release/fakesmc.kext/Contents/Resources/English.lproj/InfoPlist.strings" English.lproj/InfoPlist.strings
-s296845424.943683
-e296845425.118929
-r1
-xCopyStringsFile
-x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/Release/fakesmc.kext/Contents/Resources/English.lproj/InfoPlist.strings
-xEnglish.lproj/InfoPlist.strings
-lSLF07#2@36"Copy English.lproj/InfoPlist.strings296845424#296845425#0(0"0(0#0#99"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/English.lproj/InfoPlist.strings4324459736#430"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc"    setenv ICONV /usr/bin/iconv    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings --validate --inputencoding utf-8 --outputencoding UTF-16 English.lproj/InfoPlist.strings --outdir "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/Release/fakesmc.kext/Contents/Resources/English.lproj"0#
-
-CCreateUniversalBinary "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/Release/fakesmc.kext/Contents/MacOS/fakesmc" normal "x86_64 i386 ppc"
-r0
-
-CLd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/fakesmc" normal i386
-s296845426.177698
-e296845426.282802
-r1
-xLd
-x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/fakesmc
-xnormal
-xi386
-lSLF07#2@142"Link /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/fakesmc296845426#296845426#0(0"0(0#0#0"4324459736#924"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc"    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/g++-4.2 -arch i386 -isysroot /Developer/SDKs/MacOSX10.6.sdk "-L/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/Release" "-F/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/Release" -filelist "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/fakesmc.LinkFileList" -mmacosx-version-min=10.6 -fopenmp -lcpp_kext -Xlinker -kext -nostdlib -lkmodc++ "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/fakesmc_info.o" -lkmod -lcc_kext -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/i386/fakesmc"0#
-
-CLd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/fakesmc" normal ppc
-s296845426.757090
-e296845426.829322
-r1
-xLd
-x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/fakesmc
-xnormal
-xppc
-lSLF07#2@141"Link /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/fakesmc296845426#296845426#0(0"0(0#0#0"4324459736#920"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc"    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/g++-4.2 -arch ppc -isysroot /Developer/SDKs/MacOSX10.6.sdk "-L/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/Release" "-F/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/Release" -filelist "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/fakesmc.LinkFileList" -mmacosx-version-min=10.6 -fopenmp -lcpp_kext -Xlinker -kext -nostdlib -lkmodc++ "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/fakesmc_info.o" -lkmod -lcc_kext -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/ppc/fakesmc"0#
-
-CLd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/fakesmc.build/Release/fakesmc.build/Objects-normal/x86_64/fakesmc" normal x86_64
-r0
-
-CProcessInfoPlistFile "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/Release/fakesmc.kext/Contents/Info.plist" Info.plist
-s296845424.926378
-e296845424.943574
-r1
-xProcessInfoPlistFile
-x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/Release/fakesmc.kext/Contents/Info.plist
-xInfo.plist
-lSLF07#2@18"Process Info.plist296845424#296845424#0(0"0(0#0#78"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/Info.plist5773736147078574080#275"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc"    builtin-infoPlistUtility Info.plist -expandbuildsettings -platform macosx -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/Release/fakesmc.kext/Contents/Info.plist"0#
-
-CTouch "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/fakesmc/build/Release/fakesmc.kext"
-r0
-
