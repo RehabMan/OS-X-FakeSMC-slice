@@ -1,0 +1,541 @@
+// !$*UTF8*$!
+{
+	089C1669FE841209C02AAC07 /* Project object */ = {
+		activeArchitecturePreference = i386;
+		activeBuildConfigurationName = Release;
+		activeSDKPreference = macosx10.6;
+		activeTarget = 32D94FC30562CBF700B6AF17 /* FakeSMCLPCMonitor */;
+		codeSenseManager = 4C6F29C211969B5D002DCCFF /* Code sense */;
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					404,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					364,
+					60,
+					20,
+					48.16259765625,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 297177182;
+			PBXWorkspaceStateSaveDate = 297177182;
+		};
+		perUserProjectItems = {
+			4C5242B611B69066000CF8C9 /* PlistBookmark */ = 4C5242B611B69066000CF8C9 /* PlistBookmark */;
+			4C5242B711B69066000CF8C9 /* PBXTextBookmark */ = 4C5242B711B69066000CF8C9 /* PBXTextBookmark */;
+			4C5242B811B69066000CF8C9 /* PBXTextBookmark */ = 4C5242B811B69066000CF8C9 /* PBXTextBookmark */;
+			4C5242C111B690A7000CF8C9 /* XCBuildMessageTextBookmark */ = 4C5242C111B690A7000CF8C9 /* XCBuildMessageTextBookmark */;
+			4C5242C211B690A7000CF8C9 /* PBXTextBookmark */ = 4C5242C211B690A7000CF8C9 /* PBXTextBookmark */;
+			4C5242C511B690CA000CF8C9 /* PBXTextBookmark */ = 4C5242C511B690CA000CF8C9 /* PBXTextBookmark */;
+			4C5242D011B69351000CF8C9 /* PBXTextBookmark */ = 4C5242D011B69351000CF8C9 /* PBXTextBookmark */;
+			4C5242D111B69351000CF8C9 /* PBXTextBookmark */ = 4C5242D111B69351000CF8C9 /* PBXTextBookmark */;
+			4C5242D211B69351000CF8C9 /* PBXTextBookmark */ = 4C5242D211B69351000CF8C9 /* PBXTextBookmark */;
+			4C5242D311B69351000CF8C9 /* PBXTextBookmark */ = 4C5242D311B69351000CF8C9 /* PBXTextBookmark */;
+			4C5242D411B69351000CF8C9 /* PBXTextBookmark */ = 4C5242D411B69351000CF8C9 /* PBXTextBookmark */;
+			4C5242D511B69351000CF8C9 /* PBXTextBookmark */ = 4C5242D511B69351000CF8C9 /* PBXTextBookmark */;
+			4C5242D611B69351000CF8C9 /* PBXTextBookmark */ = 4C5242D611B69351000CF8C9 /* PBXTextBookmark */;
+			4C5242D911B69393000CF8C9 /* PBXTextBookmark */ = 4C5242D911B69393000CF8C9 /* PBXTextBookmark */;
+			4C5242DA11B693E8000CF8C9 /* XCBuildMessageTextBookmark */ = 4C5242DA11B693E8000CF8C9 /* XCBuildMessageTextBookmark */;
+			4C5242DB11B693E8000CF8C9 /* PBXTextBookmark */ = 4C5242DB11B693E8000CF8C9 /* PBXTextBookmark */;
+			4C5242DE11B69551000CF8C9 /* PBXTextBookmark */ = 4C5242DE11B69551000CF8C9 /* PBXTextBookmark */;
+			4C5242DF11B69551000CF8C9 /* PBXTextBookmark */ = 4C5242DF11B69551000CF8C9 /* PBXTextBookmark */;
+			4C5242E011B69551000CF8C9 /* PBXTextBookmark */ = 4C5242E011B69551000CF8C9 /* PBXTextBookmark */;
+			4C5242E111B69551000CF8C9 /* PBXTextBookmark */ = 4C5242E111B69551000CF8C9 /* PBXTextBookmark */;
+			4C5242E211B69551000CF8C9 /* PBXTextBookmark */ = 4C5242E211B69551000CF8C9 /* PBXTextBookmark */;
+			4C5242E311B69551000CF8C9 /* PBXTextBookmark */ = 4C5242E311B69551000CF8C9 /* PBXTextBookmark */;
+			4C5242E411B69551000CF8C9 /* PBXTextBookmark */ = 4C5242E411B69551000CF8C9 /* PBXTextBookmark */;
+			4C82C52511B68544006A029D = 4C82C52511B68544006A029D /* PBXTextBookmark */;
+			4C82C52611B68544006A029D = 4C82C52611B68544006A029D /* PBXTextBookmark */;
+			4C82C52711B68544006A029D = 4C82C52711B68544006A029D /* PBXTextBookmark */;
+			4C82C52811B68544006A029D = 4C82C52811B68544006A029D /* PBXTextBookmark */;
+			4C82C52911B68544006A029D = 4C82C52911B68544006A029D /* PBXTextBookmark */;
+			4C82C52A11B68544006A029D = 4C82C52A11B68544006A029D /* PBXTextBookmark */;
+			4C82C52B11B68544006A029D = 4C82C52B11B68544006A029D /* PBXTextBookmark */;
+			4C82C52C11B68544006A029D = 4C82C52C11B68544006A029D /* PBXTextBookmark */;
+			4C82C52D11B68544006A029D = 4C82C52D11B68544006A029D /* PlistBookmark */;
+			4C82C52E11B68544006A029D = 4C82C52E11B68544006A029D /* PlistBookmark */;
+			4CFF407E1196ABAB00D6D9B2 = 4CFF407E1196ABAB00D6D9B2 /* PBXTextBookmark */;
+		};
+		sourceControlManager = 4C6F29C111969B5D002DCCFF /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	1A224C3EFF42367911CA2CB7 /* FakeSMCLPCMonitor.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {845, 455}}";
+			sepNavSelRange = "{733, 0}";
+			sepNavVisRange = "{0, 977}";
+		};
+	};
+	1A224C3FFF42367911CA2CB7 /* FakeSMCLPCMonitor.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {684, 1352}}";
+			sepNavSelRange = "{1138, 0}";
+			sepNavVisRange = "{1059, 843}";
+		};
+	};
+	32D94FC30562CBF700B6AF17 /* FakeSMCLPCMonitor */ = {
+		activeExec = 0;
+	};
+	4C5242B611B69066000CF8C9 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 32D94FCF0562CBF700B6AF17 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			IOKitPersonalities,
+			LPCMonitorPlugin,
+			IOResourceMatch,
+		);
+		name = "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	4C5242B711B69066000CF8C9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCLPCMonitor.cpp */;
+		name = "FakeSMCLPCMonitor.cpp: 68";
+		rLen = 0;
+		rLoc = 1740;
+		rType = 0;
+		vrLen = 905;
+		vrLoc = 878;
+	};
+	4C5242B811B69066000CF8C9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCLPCMonitor.cpp */;
+		name = "FakeSMCLPCMonitor.cpp: 68";
+		rLen = 0;
+		rLoc = 1740;
+		rType = 0;
+		vrLen = 837;
+		vrLoc = 1115;
+	};
+	4C5242C111B690A7000CF8C9 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Assignment of read-only variable 'ITE_HEATSINK_TEMPERATURE_OFFSET'";
+		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCLPCMonitor.cpp */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 72;
+		rType = 1;
+	};
+	4C5242C211B690A7000CF8C9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCLPCMonitor.cpp */;
+		name = "FakeSMCLPCMonitor.cpp: 67";
+		rLen = 0;
+		rLoc = 1636;
+		rType = 0;
+		vrLen = 385;
+		vrLoc = 1392;
+	};
+	4C5242C511B690CA000CF8C9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCLPCMonitor.cpp */;
+		name = "FakeSMCLPCMonitor.cpp: 67";
+		rLen = 0;
+		rLoc = 1636;
+		rType = 0;
+		vrLen = 233;
+		vrLoc = 1803;
+	};
+	4C5242D011B69351000CF8C9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3EFF42367911CA2CB7 /* FakeSMCLPCMonitor.h */;
+		name = "FakeSMCLPCMonitor.h: 11";
+		rLen = 0;
+		rLoc = 208;
+		rType = 0;
+		vrLen = 907;
+		vrLoc = 29;
+	};
+	4C5242D111B69351000CF8C9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCLPCMonitor.cpp */;
+		name = "FakeSMCLPCMonitor.cpp: 68";
+		rLen = 0;
+		rLoc = 1738;
+		rType = 0;
+		vrLen = 793;
+		vrLoc = 1042;
+	};
+	4C5242D211B69351000CF8C9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AEEC326111B4414E0048ED14 /* Fintek.h */;
+		name = "Fintek.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 741;
+		vrLoc = 0;
+	};
+	4C5242D311B69351000CF8C9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AEAD028E11B173120016B8F9 /* IT87x.h */;
+		name = "IT87x.h: 50";
+		rLen = 0;
+		rLoc = 1365;
+		rType = 0;
+		vrLen = 867;
+		vrLoc = 633;
+	};
+	4C5242D411B69351000CF8C9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AEAD028F11B173120016B8F9 /* IT87x.cpp */;
+		name = "IT87x.cpp: 176";
+		rLen = 0;
+		rLoc = 3679;
+		rType = 0;
+		vrLen = 708;
+		vrLoc = 3034;
+	};
+	4C5242D511B69351000CF8C9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AEAD02B511B176980016B8F9 /* SuperIO.h */;
+		name = "SuperIO.h: 79";
+		rLen = 0;
+		rLoc = 1637;
+		rType = 0;
+		vrLen = 517;
+		vrLoc = 1356;
+	};
+	4C5242D611B69351000CF8C9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AEAD02B511B176980016B8F9 /* SuperIO.h */;
+		name = "SuperIO.h: 81";
+		rLen = 0;
+		rLoc = 1663;
+		rType = 0;
+		vrLen = 502;
+		vrLoc = 1215;
+	};
+	4C5242D911B69393000CF8C9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AEAD02B511B176980016B8F9 /* SuperIO.h */;
+		name = "SuperIO.h: 81";
+		rLen = 0;
+		rLoc = 1663;
+		rType = 0;
+		vrLen = 502;
+		vrLoc = 1215;
+	};
+	4C5242DA11B693E8000CF8C9 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "No matching function for call to 'SuperIO::Init(UInt8&, UInt8&)'";
+		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCLPCMonitor.cpp */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 76;
+		rType = 1;
+	};
+	4C5242DB11B693E8000CF8C9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCLPCMonitor.cpp */;
+		name = "FakeSMCLPCMonitor.cpp: 72";
+		rLen = 0;
+		rLoc = 1766;
+		rType = 0;
+		vrLen = 495;
+		vrLoc = 935;
+	};
+	4C5242DE11B69551000CF8C9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AEAD02B511B176980016B8F9 /* SuperIO.h */;
+		name = "SuperIO.h: 81";
+		rLen = 0;
+		rLoc = 1663;
+		rType = 0;
+		vrLen = 502;
+		vrLoc = 1215;
+	};
+	4C5242DF11B69551000CF8C9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AE17D8AB11B2D76700E3BEFD /* fakesmc.h */;
+		name = "fakesmc.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 847;
+		vrLoc = 0;
+	};
+	4C5242E011B69551000CF8C9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AEAD02B611B176980016B8F9 /* SuperIO.cpp */;
+		name = "SuperIO.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 621;
+		vrLoc = 0;
+	};
+	4C5242E111B69551000CF8C9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AEAD041711B18D4B0016B8F9 /* Winbond.cpp */;
+		name = "Winbond.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 716;
+		vrLoc = 0;
+	};
+	4C5242E211B69551000CF8C9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3EFF42367911CA2CB7 /* FakeSMCLPCMonitor.h */;
+		name = "FakeSMCLPCMonitor.h: 25";
+		rLen = 0;
+		rLoc = 733;
+		rType = 0;
+		vrLen = 977;
+		vrLoc = 0;
+	};
+	4C5242E311B69551000CF8C9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCLPCMonitor.cpp */;
+		name = "FakeSMCLPCMonitor.cpp: 32";
+		rLen = 0;
+		rLoc = 676;
+		rType = 0;
+		vrLen = 585;
+		vrLoc = 341;
+	};
+	4C5242E411B69551000CF8C9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCLPCMonitor.cpp */;
+		name = "FakeSMCLPCMonitor.cpp: 78";
+		rLen = 0;
+		rLoc = 1812;
+		rType = 0;
+		vrLen = 846;
+		vrLoc = 1107;
+	};
+	4C6F29C111969B5D002DCCFF /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	4C6F29C211969B5D002DCCFF /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	4C6F2A1311969FA3002DCCFF /* proc_reg.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = proc_reg.h;
+		path = /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/i386/proc_reg.h;
+		sourceTree = "<absolute>";
+	};
+	4C82C52511B68544006A029D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AEAD028F11B173120016B8F9 /* IT87x.cpp */;
+		name = "IT87x.cpp: 219";
+		rLen = 0;
+		rLoc = 4626;
+		rType = 0;
+		vrLen = 629;
+		vrLoc = 0;
+	};
+	4C82C52611B68544006A029D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AEAD028E11B173120016B8F9 /* IT87x.h */;
+		name = "IT87x.h: 30";
+		rLen = 0;
+		rLoc = 678;
+		rType = 0;
+		vrLen = 904;
+		vrLoc = 541;
+	};
+	4C82C52711B68544006A029D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AE17D8AB11B2D76700E3BEFD /* fakesmc.h */;
+		name = "fakesmc.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 850;
+		vrLoc = 0;
+	};
+	4C82C52811B68544006A029D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AEAD02B511B176980016B8F9 /* SuperIO.h */;
+		name = "SuperIO.h: 89";
+		rLen = 0;
+		rLoc = 1784;
+		rType = 0;
+		vrLen = 534;
+		vrLoc = 1339;
+	};
+	4C82C52911B68544006A029D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AEAD02B611B176980016B8F9 /* SuperIO.cpp */;
+		name = "SuperIO.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 669;
+		vrLoc = 0;
+	};
+	4C82C52A11B68544006A029D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AEEC326111B4414E0048ED14 /* Fintek.h */;
+		name = "Fintek.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 769;
+		vrLoc = 0;
+	};
+	4C82C52B11B68544006A029D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3EFF42367911CA2CB7 /* FakeSMCLPCMonitor.h */;
+		name = "FakeSMCLPCMonitor.h: 11";
+		rLen = 0;
+		rLoc = 208;
+		rType = 0;
+		vrLen = 936;
+		vrLoc = 0;
+	};
+	4C82C52C11B68544006A029D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCLPCMonitor.cpp */;
+		name = "FakeSMCLPCMonitor.cpp: 68";
+		rLen = 0;
+		rLoc = 1740;
+		rType = 0;
+		vrLen = 908;
+		vrLoc = 875;
+	};
+	4C82C52D11B68544006A029D /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 32D94FCF0562CBF700B6AF17 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			IOKitPersonalities,
+			LPCMonitorPlugin,
+			ITE_HEATSINK_TEMPERATURE_OFFSET,
+		);
+		name = "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/Info.plist";
+		rLen = 1;
+		rLoc = 0;
+	};
+	4C82C52E11B68544006A029D /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 32D94FCF0562CBF700B6AF17 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			IOKitPersonalities,
+			LPCMonitorPlugin,
+			ITE_HEATSINK_TEMPERATURE_OFFSET,
+		);
+		name = "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775808;
+	};
+	4CFF407E1196ABAB00D6D9B2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4C6F2A1311969FA3002DCCFF /* proc_reg.h */;
+		name = "proc_reg.h: 350";
+		rLen = 0;
+		rLoc = 11341;
+		rType = 0;
+		vrLen = 1769;
+		vrLoc = 0;
+	};
+	AE17D8AB11B2D76700E3BEFD /* fakesmc.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {754, 637}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 847}";
+		};
+	};
+	AEAD028E11B173120016B8F9 /* IT87x.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {582, 767}}";
+			sepNavSelRange = "{1135, 0}";
+			sepNavVisRange = "{633, 867}";
+		};
+	};
+	AEAD028F11B173120016B8F9 /* IT87x.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {747, 3406}}";
+			sepNavSelRange = "{3952, 0}";
+			sepNavVisRange = "{3311, 888}";
+		};
+	};
+	AEAD02B511B176980016B8F9 /* SuperIO.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {582, 1235}}";
+			sepNavSelRange = "{1663, 0}";
+			sepNavVisRange = "{1215, 502}";
+		};
+	};
+	AEAD02B611B176980016B8F9 /* SuperIO.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {582, 832}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 621}";
+		};
+	};
+	AEAD041611B18D4B0016B8F9 /* Winbond.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {582, 871}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 829}";
+		};
+	};
+	AEAD041711B18D4B0016B8F9 /* Winbond.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {656, 5629}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 716}";
+		};
+	};
+	AEEC326111B4414E0048ED14 /* Fintek.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {582, 559}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 741}";
+		};
+	};
+}

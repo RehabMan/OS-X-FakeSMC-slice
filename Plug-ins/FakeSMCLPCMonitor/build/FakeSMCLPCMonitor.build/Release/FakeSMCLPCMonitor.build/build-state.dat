@@ -1,0 +1,441 @@
+TFakeSMCLPCMonitor
+v7
+r0
+t297179136.251025
+cCheck dependencies
+cProcessInfoPlistFile "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCLPCMonitor.kext/Contents/Info.plist" Info.plist
+cCopyStringsFile "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCLPCMonitor.kext/Contents/Resources/English.lproj/InfoPlist.strings" English.lproj/InfoPlist.strings
+cCompileC build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/i386/FakeSMCLPCMonitor.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/FakeSMCLPCMonitor.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
+cCompileC build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/i386/IT87x.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/IT87x.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
+cCompileC build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/i386/SuperIO.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/SuperIO.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
+cCompileC build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/i386/Winbond.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/Winbond.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
+cCompileC build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/i386/Fintek.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/Fintek.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
+cCompileC build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/i386/FakeSMCLPCMonitor_info.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/DerivedSources/FakeSMCLPCMonitor_info.c" normal i386 c com.apple.compilers.gcc.4_2
+cLd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/i386/FakeSMCLPCMonitor" normal i386
+cCompileC build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/x86_64/FakeSMCLPCMonitor.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/FakeSMCLPCMonitor.cpp" normal x86_64 c++ com.apple.compilers.gcc.4_2
+cCompileC build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/x86_64/IT87x.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/IT87x.cpp" normal x86_64 c++ com.apple.compilers.gcc.4_2
+cCompileC build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/x86_64/SuperIO.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/SuperIO.cpp" normal x86_64 c++ com.apple.compilers.gcc.4_2
+cCompileC build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/x86_64/Winbond.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/Winbond.cpp" normal x86_64 c++ com.apple.compilers.gcc.4_2
+cCompileC build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/x86_64/Fintek.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/Fintek.cpp" normal x86_64 c++ com.apple.compilers.gcc.4_2
+cCompileC build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/x86_64/FakeSMCLPCMonitor_info.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/DerivedSources/FakeSMCLPCMonitor_info.c" normal x86_64 c com.apple.compilers.gcc.4_2
+cLd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/x86_64/FakeSMCLPCMonitor" normal x86_64
+cCreateUniversalBinary "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCLPCMonitor.kext/Contents/MacOS/FakeSMCLPCMonitor" normal "i386 x86_64"
+cTouch "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCLPCMonitor.kext"
+
+N/Developer/SDKs/MacOSX10.6.sdk
+c000000004BE0165B00000000000000EE
+t1272976987
+s238
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/IOLib.h
+c000000004A73D6520000000000004DDF
+t1249105490
+s19935
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/IOService.h
+c000000004A73D653000000000001F49D
+t1249105491
+s128157
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/architecture/i386/pio.h
+c000000004A73D66C0000000000000DC6
+t1249105516
+s3526
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/OSTypes.h
+c000000004A73D6500000000000000E42
+t1249105488
+s3650
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/English.lproj/InfoPlist.strings
+c000000004C06366A0000000000000032
+t1275475562
+s50
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/FakeSMCLPCMonitor.cpp
+c000000004C06607F000000000000085B
+t1275486335
+s2139
+i"FakeSMCLPCMonitor.h"
+i<IOKit/IOLib.h>
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/FakeSMCLPCMonitor.h
+c000000004C065DCD00000000000003DF
+t1275485645
+s991
+i<IOKit/IOService.h>
+i"IT87x.h"
+i"Winbond.h"
+i"Fintek.h"
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/Fintek.cpp
+c000000004C06366A0000000000000600
+t1275475562
+s1536
+i"Fintek.h"
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/Fintek.h
+c000000004C06366A00000000000003D1
+t1275475562
+s977
+i"SuperIO.h"
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/IT87x.cpp
+c000000004C065F7F0000000000001546
+t1275486079
+s5446
+i<IOKit/IOService.h>
+i"IT87x.h"
+i"fakesmc.h"
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/IT87x.h
+c000000004C065F7F00000000000005DD
+t1275486079
+s1501
+i"SuperIO.h"
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/SuperIO.cpp
+c000000004C06366A0000000000000771
+t1275475562
+s1905
+i"SuperIO.h"
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/SuperIO.h
+c000000004C06366A0000000000000752
+t1275475562
+s1874
+i<libkern/OSTypes.h>
+i<architecture/i386/pio.h>
+i<IOKit/IOLib.h>
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/Winbond.cpp
+c000000004C06366A0000000000002247
+t1275475562
+s8775
+i"Winbond.h"
+i"fakesmc.h"
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/Winbond.h
+c000000004C06366A000000000000076A
+t1275475562
+s1898
+i"SuperIO.h"
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/DerivedSources/FakeSMCLPCMonitor_info.c
+c000000004C06484000000000000001BD
+t1275480128
+s445
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/i386/FakeSMCLPCMonitor
+t1275486335
+s37628
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/i386/FakeSMCLPCMonitor.LinkFileList
+c000000004C0648400000000000000386
+t1275480128
+s902
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/i386/FakeSMCLPCMonitor.o
+t1275486335
+s25952
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/i386/FakeSMCLPCMonitor_info.o
+t1275480129
+s580
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/i386/Fintek.o
+t1275480129
+s844
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/i386/IT87x.o
+t1275486080
+s3896
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/i386/SuperIO.o
+t1275480128
+s1736
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/i386/Winbond.o
+t1275480129
+s5836
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/x86_64/FakeSMCLPCMonitor
+t1275486336
+s40240
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/x86_64/FakeSMCLPCMonitor.LinkFileList
+c000000004C0648400000000000000390
+t1275480128
+s912
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/x86_64/FakeSMCLPCMonitor.o
+t1275486336
+s27172
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/x86_64/FakeSMCLPCMonitor_info.o
+t1275480130
+s768
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/x86_64/Fintek.o
+t1275480130
+s960
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/x86_64/IT87x.o
+t1275486080
+s4264
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/x86_64/SuperIO.o
+t1275480129
+s2352
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/x86_64/Winbond.o
+t1275480130
+s6176
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCLPCMonitor.kext
+t1275486336
+s102
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCLPCMonitor.kext/Contents/Info.plist
+t1275480876
+s1670
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCLPCMonitor.kext/Contents/MacOS/FakeSMCLPCMonitor
+t1275486336
+s85296
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCLPCMonitor.kext/Contents/Resources/English.lproj/InfoPlist.strings
+t1275480128
+s96
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/fakesmc.h
+c000000004C06366A0000000000000493
+t1275475562
+s1171
+
+NInfo.plist
+c000000004C064B2C0000000000000681
+t1275480876
+s1665
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies297179135#297179135#0(0"0(0#1#0"4324459736#0"0#
+
+CCompileC build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/i386/FakeSMCLPCMonitor.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/FakeSMCLPCMonitor.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
+s297179135.566712
+e297179135.884562
+r1
+xCompileC
+xbuild/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/i386/FakeSMCLPCMonitor.o
+x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/FakeSMCLPCMonitor.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@116"Compile /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/FakeSMCLPCMonitor.cpp297179135#297179135#0(165"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/SuperIO.h:89: warning: 'void Update(const char*, char*)' defined but not used1(22@54"'void Update(const char*, char*)' defined but not used297179135#0#165#0(6@96"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/SuperIO.h297168362#89#0#89#0#24"'*' defined but not used0(0#0#108"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/FakeSMCLPCMonitor.cpp4324459736#2423"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-function -Wunused-parameter -Wunused-variable -Wunused-value -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -ftree-vectorize -mmacosx-version-min=10.6 -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/FakeSMCLPCMonitor-generated-files.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/FakeSMCLPCMonitor-own-target-headers.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/FakeSMCLPCMonitor-all-target-headers.hmap" -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/FakeSMCLPCMonitor-project-headers.hmap" "-F/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/DerivedSources/i386" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/DerivedSources" -c "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/FakeSMCLPCMonitor.cpp" -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/i386/FakeSMCLPCMonitor.o"0#
+
+CCompileC build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/i386/FakeSMCLPCMonitor_info.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/DerivedSources/FakeSMCLPCMonitor_info.c" normal i386 c com.apple.compilers.gcc.4_2
+s297172929.147144
+e297172929.199408
+r1
+xCompileC
+xbuild/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/i386/FakeSMCLPCMonitor_info.o
+x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/DerivedSources/FakeSMCLPCMonitor_info.c
+xnormal
+xi386
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@196"Compile /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/DerivedSources/FakeSMCLPCMonitor_info.c297172929#297172929#0(0"0(0#0#188"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/DerivedSources/FakeSMCLPCMonitor_info.c4324459736#2466"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch i386 -fmessage-length=0 -pipe -nostdinc -std=gnu99 -fno-builtin -Wno-trigraphs -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-function -Wunused-parameter -Wunused-variable -Wunused-value -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -ftree-vectorize -mmacosx-version-min=10.6 -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/FakeSMCLPCMonitor-generated-files.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/FakeSMCLPCMonitor-own-target-headers.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/FakeSMCLPCMonitor-all-target-headers.hmap" -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/FakeSMCLPCMonitor-project-headers.hmap" "-F/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/DerivedSources/i386" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/DerivedSources" -c "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/DerivedSources/FakeSMCLPCMonitor_info.c" -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/i386/FakeSMCLPCMonitor_info.o"0#
+
+CCompileC build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/i386/Fintek.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/Fintek.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
+s297172928.956422
+e297172929.193243
+r1
+xCompileC
+xbuild/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/i386/Fintek.o
+x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/Fintek.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.gcc.4_2
+o/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/SuperIO.h:89: warning: 'void Update(const char*, char*)' defined but not used
+lSLF07#2@105"Compile /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/Fintek.cpp297172928#297172929#0(165"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/SuperIO.h:89: warning: 'void Update(const char*, char*)' defined but not used1(22@54"'void Update(const char*, char*)' defined but not used297172929#0#165#0(6@96"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/SuperIO.h297168362#89#0#89#0#24"'*' defined but not used0(0#0#97"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/Fintek.cpp4324459736#2401"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-function -Wunused-parameter -Wunused-variable -Wunused-value -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -ftree-vectorize -mmacosx-version-min=10.6 -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/FakeSMCLPCMonitor-generated-files.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/FakeSMCLPCMonitor-own-target-headers.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/FakeSMCLPCMonitor-all-target-headers.hmap" -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/FakeSMCLPCMonitor-project-headers.hmap" "-F/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/DerivedSources/i386" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/DerivedSources" -c "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/Fintek.cpp" -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/i386/Fintek.o"0#
+
+CCompileC build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/i386/IT87x.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/IT87x.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
+s297178879.531653
+e297178880.139644
+r1
+xCompileC
+xbuild/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/i386/IT87x.o
+x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/IT87x.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@104"Compile /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/IT87x.cpp297178879#297178880#0(0"0(0#0#96"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/IT87x.cpp4324459736#2399"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-function -Wunused-parameter -Wunused-variable -Wunused-value -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -ftree-vectorize -mmacosx-version-min=10.6 -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/FakeSMCLPCMonitor-generated-files.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/FakeSMCLPCMonitor-own-target-headers.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/FakeSMCLPCMonitor-all-target-headers.hmap" -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/FakeSMCLPCMonitor-project-headers.hmap" "-F/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/DerivedSources/i386" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/DerivedSources" -c "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/IT87x.cpp" -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/i386/IT87x.o"0#
+
+CCompileC build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/i386/SuperIO.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/SuperIO.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
+s297172928.685682
+e297172928.956234
+r1
+xCompileC
+xbuild/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/i386/SuperIO.o
+x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/SuperIO.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.gcc.4_2
+o/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/SuperIO.h:89: warning: 'void Update(const char*, char*)' defined but not used
+lSLF07#2@106"Compile /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/SuperIO.cpp297172928#297172928#0(165"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/SuperIO.h:89: warning: 'void Update(const char*, char*)' defined but not used1(22@54"'void Update(const char*, char*)' defined but not used297172928#0#165#0(6@96"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/SuperIO.h297168362#89#0#89#0#24"'*' defined but not used0(0#0#98"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/SuperIO.cpp4324459736#2403"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-function -Wunused-parameter -Wunused-variable -Wunused-value -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -ftree-vectorize -mmacosx-version-min=10.6 -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/FakeSMCLPCMonitor-generated-files.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/FakeSMCLPCMonitor-own-target-headers.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/FakeSMCLPCMonitor-all-target-headers.hmap" -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/FakeSMCLPCMonitor-project-headers.hmap" "-F/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/DerivedSources/i386" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/DerivedSources" -c "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/SuperIO.cpp" -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/i386/SuperIO.o"0#
+
+CCompileC build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/i386/Winbond.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/Winbond.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
+s297172928.735066
+e297172929.146997
+r1
+xCompileC
+xbuild/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/i386/Winbond.o
+x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/Winbond.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@106"Compile /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/Winbond.cpp297172928#297172929#0(0"0(0#0#98"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/Winbond.cpp4324459736#2403"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-function -Wunused-parameter -Wunused-variable -Wunused-value -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -ftree-vectorize -mmacosx-version-min=10.6 -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/FakeSMCLPCMonitor-generated-files.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/FakeSMCLPCMonitor-own-target-headers.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/FakeSMCLPCMonitor-all-target-headers.hmap" -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/FakeSMCLPCMonitor-project-headers.hmap" "-F/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/DerivedSources/i386" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/DerivedSources" -c "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/Winbond.cpp" -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/i386/Winbond.o"0#
+
+CCompileC build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/x86_64/FakeSMCLPCMonitor.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/FakeSMCLPCMonitor.cpp" normal x86_64 c++ com.apple.compilers.gcc.4_2
+s297179135.887309
+e297179136.215255
+r1
+xCompileC
+xbuild/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/x86_64/FakeSMCLPCMonitor.o
+x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/FakeSMCLPCMonitor.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.gcc.4_2
+o/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/SuperIO.h:89: warning: 'void Update(const char*, char*)' defined but not used
+lSLF07#2@116"Compile /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/FakeSMCLPCMonitor.cpp297179135#297179136#0(165"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/SuperIO.h:89: warning: 'void Update(const char*, char*)' defined but not used1(22@54"'void Update(const char*, char*)' defined but not used297179136#0#165#0(6@96"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/SuperIO.h297168362#89#0#89#0#24"'*' defined but not used0(0#0#108"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/FakeSMCLPCMonitor.cpp4324459736#2429"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-function -Wunused-parameter -Wunused-variable -Wunused-value -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -ftree-vectorize -mmacosx-version-min=10.6 -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/FakeSMCLPCMonitor-generated-files.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/FakeSMCLPCMonitor-own-target-headers.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/FakeSMCLPCMonitor-all-target-headers.hmap" -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/FakeSMCLPCMonitor-project-headers.hmap" "-F/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/DerivedSources/x86_64" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/DerivedSources" -c "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/FakeSMCLPCMonitor.cpp" -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/x86_64/FakeSMCLPCMonitor.o"0#
+
+CCompileC build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/x86_64/FakeSMCLPCMonitor_info.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/DerivedSources/FakeSMCLPCMonitor_info.c" normal x86_64 c com.apple.compilers.gcc.4_2
+s297172930.154579
+e297172930.196484
+r1
+xCompileC
+xbuild/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/x86_64/FakeSMCLPCMonitor_info.o
+x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/DerivedSources/FakeSMCLPCMonitor_info.c
+xnormal
+xx86_64
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@196"Compile /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/DerivedSources/FakeSMCLPCMonitor_info.c297172930#297172930#0(0"0(0#0#188"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/DerivedSources/FakeSMCLPCMonitor_info.c4324459736#2472"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -nostdinc -std=gnu99 -fno-builtin -Wno-trigraphs -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-function -Wunused-parameter -Wunused-variable -Wunused-value -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -ftree-vectorize -mmacosx-version-min=10.6 -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/FakeSMCLPCMonitor-generated-files.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/FakeSMCLPCMonitor-own-target-headers.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/FakeSMCLPCMonitor-all-target-headers.hmap" -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/FakeSMCLPCMonitor-project-headers.hmap" "-F/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/DerivedSources/x86_64" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/DerivedSources" -c "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/DerivedSources/FakeSMCLPCMonitor_info.c" -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/x86_64/FakeSMCLPCMonitor_info.o"0#
+
+CCompileC build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/x86_64/Fintek.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/Fintek.cpp" normal x86_64 c++ com.apple.compilers.gcc.4_2
+s297172929.995339
+e297172930.215477
+r1
+xCompileC
+xbuild/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/x86_64/Fintek.o
+x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/Fintek.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.gcc.4_2
+o/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/SuperIO.h:89: warning: 'void Update(const char*, char*)' defined but not used
+lSLF07#2@105"Compile /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/Fintek.cpp297172929#297172930#0(165"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/SuperIO.h:89: warning: 'void Update(const char*, char*)' defined but not used1(22@54"'void Update(const char*, char*)' defined but not used297172930#0#165#0(6@96"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/SuperIO.h297168362#89#0#89#0#24"'*' defined but not used0(0#0#97"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/Fintek.cpp4324459736#2407"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-function -Wunused-parameter -Wunused-variable -Wunused-value -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -ftree-vectorize -mmacosx-version-min=10.6 -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/FakeSMCLPCMonitor-generated-files.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/FakeSMCLPCMonitor-own-target-headers.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/FakeSMCLPCMonitor-all-target-headers.hmap" -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/FakeSMCLPCMonitor-project-headers.hmap" "-F/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/DerivedSources/x86_64" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/DerivedSources" -c "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/Fintek.cpp" -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/x86_64/Fintek.o"0#
+
+CCompileC build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/x86_64/IT87x.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/IT87x.cpp" normal x86_64 c++ com.apple.compilers.gcc.4_2
+s297178880.210881
+e297178880.577551
+r1
+xCompileC
+xbuild/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/x86_64/IT87x.o
+x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/IT87x.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@104"Compile /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/IT87x.cpp297178880#297178880#0(0"0(0#0#96"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/IT87x.cpp4324459736#2405"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-function -Wunused-parameter -Wunused-variable -Wunused-value -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -ftree-vectorize -mmacosx-version-min=10.6 -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/FakeSMCLPCMonitor-generated-files.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/FakeSMCLPCMonitor-own-target-headers.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/FakeSMCLPCMonitor-all-target-headers.hmap" -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/FakeSMCLPCMonitor-project-headers.hmap" "-F/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/DerivedSources/x86_64" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/DerivedSources" -c "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/IT87x.cpp" -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/x86_64/IT87x.o"0#
+
+CCompileC build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/x86_64/SuperIO.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/SuperIO.cpp" normal x86_64 c++ com.apple.compilers.gcc.4_2
+s297172929.711278
+e297172929.995183
+r1
+xCompileC
+xbuild/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/x86_64/SuperIO.o
+x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/SuperIO.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.gcc.4_2
+o/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/SuperIO.h:89: warning: 'void Update(const char*, char*)' defined but not used
+lSLF07#2@106"Compile /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/SuperIO.cpp297172929#297172929#0(165"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/SuperIO.h:89: warning: 'void Update(const char*, char*)' defined but not used1(22@54"'void Update(const char*, char*)' defined but not used297172929#0#165#0(6@96"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/SuperIO.h297168362#89#0#89#0#24"'*' defined but not used0(0#0#98"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/SuperIO.cpp4324459736#2409"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-function -Wunused-parameter -Wunused-variable -Wunused-value -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -ftree-vectorize -mmacosx-version-min=10.6 -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/FakeSMCLPCMonitor-generated-files.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/FakeSMCLPCMonitor-own-target-headers.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/FakeSMCLPCMonitor-all-target-headers.hmap" -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/FakeSMCLPCMonitor-project-headers.hmap" "-F/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/DerivedSources/x86_64" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/DerivedSources" -c "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/SuperIO.cpp" -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/x86_64/SuperIO.o"0#
+
+CCompileC build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/x86_64/Winbond.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/Winbond.cpp" normal x86_64 c++ com.apple.compilers.gcc.4_2
+s297172929.737073
+e297172930.154346
+r1
+xCompileC
+xbuild/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/x86_64/Winbond.o
+x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/Winbond.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@106"Compile /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/Winbond.cpp297172929#297172930#0(0"0(0#0#98"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/Winbond.cpp4324459736#2409"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-function -Wunused-parameter -Wunused-variable -Wunused-value -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -ftree-vectorize -mmacosx-version-min=10.6 -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/FakeSMCLPCMonitor-generated-files.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/FakeSMCLPCMonitor-own-target-headers.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/FakeSMCLPCMonitor-all-target-headers.hmap" -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/FakeSMCLPCMonitor-project-headers.hmap" "-F/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/DerivedSources/x86_64" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/DerivedSources" -c "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/Winbond.cpp" -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/x86_64/Winbond.o"0#
+
+CCopyStringsFile "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCLPCMonitor.kext/Contents/Resources/English.lproj/InfoPlist.strings" English.lproj/InfoPlist.strings
+s297172928.218880
+e297172928.265943
+r1
+xCopyStringsFile
+x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCLPCMonitor.kext/Contents/Resources/English.lproj/InfoPlist.strings
+xEnglish.lproj/InfoPlist.strings
+lSLF07#2@36"Copy English.lproj/InfoPlist.strings297172928#297172928#0(0"0(0#0#118"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/English.lproj/InfoPlist.strings4324459736#478"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor"    setenv ICONV /usr/bin/iconv    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings --validate --inputencoding utf-8 --outputencoding UTF-16 English.lproj/InfoPlist.strings --outdir "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCLPCMonitor.kext/Contents/Resources/English.lproj"0#
+
+CCreateUniversalBinary "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCLPCMonitor.kext/Contents/MacOS/FakeSMCLPCMonitor" normal "i386 x86_64"
+s297179136.232171
+e297179136.246105
+r1
+xCreateUniversalBinary
+x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCLPCMonitor.kext/Contents/MacOS/FakeSMCLPCMonitor
+xnormal
+xi386 x86_64
+lSLF07#2@112"CreateUniversalBinary build/Release/FakeSMCLPCMonitor.kext/Contents/MacOS/FakeSMCLPCMonitor normal "i386 x86_64"297179136#297179136#0(0"0(0#0#98"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/i386 x86_644324459736#669"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor"    /usr/bin/lipo -create "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/i386/FakeSMCLPCMonitor" "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/x86_64/FakeSMCLPCMonitor" -output "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCLPCMonitor.kext/Contents/MacOS/FakeSMCLPCMonitor"0#
+
+CLd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/i386/FakeSMCLPCMonitor" normal i386
+s297179135.885184
+e297179135.940283
+r1
+xLd
+x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/i386/FakeSMCLPCMonitor
+xnormal
+xi386
+lSLF07#2@191"Link /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/i386/FakeSMCLPCMonitor297179135#297179135#0(0"0(0#0#0"4324459736#1119"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor"    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/g++-4.2 -arch i386 -isysroot /Developer/SDKs/MacOSX10.6.sdk "-L/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release" "-F/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release" -filelist "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/i386/FakeSMCLPCMonitor.LinkFileList" -mmacosx-version-min=10.6 -lcpp_kext -Xlinker -kext -nostdlib -lkmodc++ "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/i386/FakeSMCLPCMonitor_info.o" -lkmod -lcc_kext -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/i386/FakeSMCLPCMonitor"0#
+
+CLd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/x86_64/FakeSMCLPCMonitor" normal x86_64
+s297179136.215370
+e297179136.232051
+r1
+xLd
+x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/x86_64/FakeSMCLPCMonitor
+xnormal
+xx86_64
+lSLF07#2@193"Link /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/x86_64/FakeSMCLPCMonitor297179136#297179136#0(0"0(0#0#0"4324459736#1127"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor"    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/g++-4.2 -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.6.sdk "-L/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release" "-F/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release" -filelist "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/x86_64/FakeSMCLPCMonitor.LinkFileList" -mmacosx-version-min=10.6 -lcpp_kext -Xlinker -kext -nostdlib -lkmodc++ "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/x86_64/FakeSMCLPCMonitor_info.o" -lkmod -lcc_kext -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCLPCMonitor.build/Objects-normal/x86_64/FakeSMCLPCMonitor"0#
+
+CProcessInfoPlistFile "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCLPCMonitor.kext/Contents/Info.plist" Info.plist
+s297173676.689863
+e297173676.704487
+r1
+xProcessInfoPlistFile
+x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCLPCMonitor.kext/Contents/Info.plist
+xInfo.plist
+lSLF07#2@18"Process Info.plist297173676#297173676#0(0"0(0#0#97"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/Info.plist4324459736#323"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor"    builtin-infoPlistUtility Info.plist -expandbuildsettings -platform macosx -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCLPCMonitor.kext/Contents/Info.plist"0#
+
+CTouch "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCLPCMonitor.kext"
+s297179136.246247
+e297179136.250963
+r1
+xTouch
+x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCLPCMonitor.kext
+lSLF07#2@129"Touch /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCLPCMonitor.kext297179136#297179136#0(0"0(0#0#0"4324459736#244"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor"    /usr/bin/touch -c "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCLPCMonitor.kext"0#
+
