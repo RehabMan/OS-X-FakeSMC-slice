@@ -1,0 +1,3 @@
+/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCx3100plugin/FakeSMCx3100plugin.cpp:30: error: expected constructor, destructor, or type conversion before '(' token
+/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCx3100plugin/FakeSMCx3100plugin.cpp:41: error: variable or field 'Update' declared void
+/Users/slice/FakeSMC_mozo/fakesmc/Plug-ins/FakeSMCx3100plugin/FakeSMCx3100plugin.cpp:41: error: 'SMCData' was not declared in this scope
