@@ -39,9 +39,13 @@
 				<key>$Num</key>
 				<data>AQ==</data>
 				<key>ACID</key>
-				<data>AAAAAAAA</data>
+				<data>QEFCQ0RF</data>
 				<key>BALG</key>
-				<data>AAAAAAAA</data>
+				<data>MzQ1Njc4</data>
+				<key>EPCI</key>
+				<data>AQ==</data>
+				<key>F0ID</key>
+				<string>System Fan</string>
 				<key>LSOF</key>
 				<data>AQ==</data>
 				<key>LSSB</key>
@@ -64,6 +68,8 @@
 				<string>easedontsteal(c)AppleComputerInc</string>
 				<key>REV </key>
 				<data>ATAPAAAD</data>
+				<key>RPlt</key>
+				<data>bTcxAAAA</data>
 			</dict>
 			<key>debug</key>
 			<false/>
@@ -77,13 +83,13 @@
 		<string>1.0.0d1</string>
 		<key>com.apple.kernel.6.0</key>
 		<string>7.9.9</string>
-		<key>com.apple.kpi.iokit</key>
-		<string>7.0</string>
-		<key>com.apple.kpi.libkern</key>
-		<string>8.0.0d0</string>
-		<key>com.apple.kpi.unsupported</key>
-		<string>8.0.0b1</string>
+		<key>com.apple.kernel.iokit</key>
+		<string>7.9.9</string>
+		<key>com.apple.kernel.libkern</key>
+		<string>7.9.9</string>
 	</dict>
+	<key>OSBundleCompatibleVersion</key>
+	<string>1.0</string>
 	<key>OSBundleRequired</key>
 	<string>Root</string>
 </dict>

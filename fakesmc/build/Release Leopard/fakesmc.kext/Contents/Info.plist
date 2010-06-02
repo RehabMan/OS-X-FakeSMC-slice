@@ -42,12 +42,18 @@
 				</data>
 				<key>ACID</key>
 				<data>
-				AAAAAAAA
+				QEFCQ0RF
 				</data>
 				<key>BALG</key>
 				<data>
-				AAAAAAAA
+				MzQ1Njc4
 				</data>
+				<key>EPCI</key>
+				<data>
+				AQ==
+				</data>
+				<key>F0ID</key>
+				<string>System Fan</string>
 				<key>LSOF</key>
 				<data>
 				AQ==
@@ -88,6 +94,10 @@
 				<data>
 				ATAPAAAD
 				</data>
+				<key>RPlt</key>
+				<data>
+				bTcxAAAA
+				</data>
 			</dict>
 			<key>debug</key>
 			<false/>
@@ -95,18 +105,18 @@
 			<string>smc-napa</string>
 		</dict>
 	</dict>
+	<key>OSBundleCompatibleVersion</key>
+	<string>1.0</string>
 	<key>OSBundleLibraries</key>
 	<dict>
 		<key>com.apple.iokit.IOACPIFamily</key>
 		<string>1.0.0d1</string>
 		<key>com.apple.kernel.6.0</key>
 		<string>7.9.9</string>
-		<key>com.apple.kpi.iokit</key>
-		<string>7.0</string>
-		<key>com.apple.kpi.libkern</key>
-		<string>8.0.0d0</string>
-		<key>com.apple.kpi.unsupported</key>
-		<string>8.0.0b1</string>
+		<key>com.apple.kernel.iokit</key>
+		<string>7.9.9</string>
+		<key>com.apple.kernel.libkern</key>
+		<string>7.9.9</string>
 	</dict>
 	<key>OSBundleRequired</key>
 	<string>Root</string>
