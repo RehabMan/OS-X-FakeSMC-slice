@@ -1,0 +1,456 @@
+TFakeSMCSuperIOMonitor
+v7
+r0
+t297447185.187592
+cCheck dependencies
+cProcessInfoPlistFile /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCSuperIOMonitor.kext/Contents/Info.plist Info.plist
+cCopyStringsFile /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCSuperIOMonitor.kext/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
+cCompileC build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/i386/FakeSMCLPCMonitor.o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/FakeSMCLPCMonitor.cpp normal i386 c++ com.apple.compilers.gcc.4_2
+cCompileC build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/i386/IT87x.o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/IT87x.cpp normal i386 c++ com.apple.compilers.gcc.4_2
+cCompileC build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/i386/SuperIO.o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/SuperIO.cpp normal i386 c++ com.apple.compilers.gcc.4_2
+cCompileC build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/i386/Winbond.o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/Winbond.cpp normal i386 c++ com.apple.compilers.gcc.4_2
+cCompileC build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/i386/Fintek.o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/Fintek.cpp normal i386 c++ com.apple.compilers.gcc.4_2
+cCompileC build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/i386/FakeSMCSuperIOMonitor_info.o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/DerivedSources/FakeSMCSuperIOMonitor_info.c normal i386 c com.apple.compilers.gcc.4_2
+cCompileC build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/x86_64/FakeSMCLPCMonitor.o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/FakeSMCLPCMonitor.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+cLd /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/i386/FakeSMCSuperIOMonitor normal i386
+cCompileC build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/x86_64/IT87x.o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/IT87x.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+cCompileC build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/x86_64/SuperIO.o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/SuperIO.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+cCompileC build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/x86_64/Winbond.o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/Winbond.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+cCompileC build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/x86_64/Fintek.o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/Fintek.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+cCompileC build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/x86_64/FakeSMCSuperIOMonitor_info.o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/DerivedSources/FakeSMCSuperIOMonitor_info.c normal x86_64 c com.apple.compilers.gcc.4_2
+cLd /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/x86_64/FakeSMCSuperIOMonitor normal x86_64
+cCreateUniversalBinary /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCSuperIOMonitor.kext/Contents/MacOS/FakeSMCSuperIOMonitor normal "i386 x86_64"
+cGenerateDSYMFile /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCSuperIOMonitor.kext.dSYM /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCSuperIOMonitor.kext/Contents/MacOS/FakeSMCSuperIOMonitor
+cTouch /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCSuperIOMonitor.kext
+
+N/Developer/SDKs/MacOSX10.6.sdk
+c000000004ABBF0FD00000000000000EE
+t1253830909
+s238
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/IOLib.h
+c000000004A73D6520000000000004DDF
+t1249105490
+s19935
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/IOService.h
+c000000004A73D653000000000001F49D
+t1249105491
+s128157
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/architecture/i386/pio.h
+c000000004A73D66C0000000000000DC6
+t1249105516
+s3526
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/OSTypes.h
+c000000004A73D6500000000000000E42
+t1249105488
+s3650
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/English.lproj/InfoPlist.strings
+c000000004BFBF4630000000000000032
+t1274803299
+s50
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/FakeSMCLPCMonitor.cpp
+c000000004C055A020000000000000530
+t1275419138
+s1328
+i"FakeSMCLPCMonitor.h"
+i<IOKit/IOLib.h>
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/FakeSMCLPCMonitor.h
+c000000004C040D0B00000000000003A8
+t1275333899
+s936
+i<IOKit/IOService.h>
+i"IT87x.h"
+i"Winbond.h"
+i"Fintek.h"
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/Fintek.cpp
+c000000004C0423740000000000000600
+t1275339636
+s1536
+i"Fintek.h"
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/Fintek.h
+c000000004C055AA600000000000003D1
+t1275419302
+s977
+i"SuperIO.h"
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/IT87x.cpp
+c000000004C0A77390000000000001551
+t1275754297
+s5457
+i<IOKit/IOService.h>
+i"IT87x.h"
+i"fakesmc.h"
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/IT87x.h
+c000000004C0A754C000000000000055F
+t1275753804
+s1375
+i"SuperIO.h"
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/SuperIO.cpp
+c000000004C0559F70000000000000771
+t1275419127
+s1905
+i"SuperIO.h"
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/SuperIO.h
+c000000004C055AA60000000000000752
+t1275419302
+s1874
+i<libkern/OSTypes.h>
+i<architecture/i386/pio.h>
+i<IOKit/IOLib.h>
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/Winbond.cpp
+c000000004C055AA60000000000002247
+t1275419302
+s8775
+i"Winbond.h"
+i"fakesmc.h"
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/Winbond.h
+c000000004C0559F7000000000000076A
+t1275419127
+s1898
+i"SuperIO.h"
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/DerivedSources/FakeSMCSuperIOMonitor_info.c
+c000000004C0A778F00000000000001BD
+t1275754383
+s445
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/i386/FakeSMCLPCMonitor.o
+t1275754384
+s132988
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/i386/FakeSMCSuperIOMonitor
+t1275754384
+s43976
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/i386/FakeSMCSuperIOMonitor.LinkFileList
+c000000004C0A778F0000000000000304
+t1275754383
+s772
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/i386/FakeSMCSuperIOMonitor_info.o
+t1275754384
+s3860
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/i386/Fintek.o
+t1275754384
+s8820
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/i386/IT87x.o
+t1275754384
+s50644
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/i386/SuperIO.o
+t1275754384
+s8224
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/i386/Winbond.o
+t1275754384
+s25812
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/x86_64/FakeSMCLPCMonitor.o
+t1275754384
+s134320
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/x86_64/FakeSMCSuperIOMonitor
+t1275754385
+s48296
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/x86_64/FakeSMCSuperIOMonitor.LinkFileList
+c000000004C0A778F000000000000030E
+t1275754383
+s782
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/x86_64/FakeSMCSuperIOMonitor_info.o
+t1275754385
+s4160
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/x86_64/Fintek.o
+t1275754385
+s9736
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/x86_64/IT87x.o
+t1275754384
+s53492
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/x86_64/SuperIO.o
+t1275754384
+s9484
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/x86_64/Winbond.o
+t1275754385
+s29824
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCSuperIOMonitor.kext
+t1275754385
+s102
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCSuperIOMonitor.kext.dSYM
+t1275754385
+s102
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCSuperIOMonitor.kext/Contents/Info.plist
+t1275754383
+s1620
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCSuperIOMonitor.kext/Contents/MacOS/FakeSMCSuperIOMonitor
+t1275754385
+s97448
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCSuperIOMonitor.kext/Contents/Resources/English.lproj/InfoPlist.strings
+t1275754383
+s96
+
+N/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/fakesmc.h
+c000000004C02B8A30000000000000493
+t1275246755
+s1171
+
+NInfo.plist
+c000000004C0A75E7000000000000063F
+t1275753959
+s1599
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies297447183#297447183#0(0"0(0#1#0"4324455640#0"0#
+
+CCompileC build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/i386/FakeSMCLPCMonitor.o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/FakeSMCLPCMonitor.cpp normal i386 c++ com.apple.compilers.gcc.4_2
+s297447183.842835
+e297447184.170813
+r1
+xCompileC
+xbuild/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/i386/FakeSMCLPCMonitor.o
+x/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/FakeSMCLPCMonitor.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.gcc.4_2
+o/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/SuperIO.h:89: warning: 'void Update(const char*, char*)' defined but not used
+lSLF07#2@86"Compile /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/FakeSMCLPCMonitor.cpp297447183#297447184#0(135"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/SuperIO.h:89: warning: 'void Update(const char*, char*)' defined but not used1(22@54"'void Update(const char*, char*)' defined but not used297447184#0#135#0(6@66"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/SuperIO.h297112102#89#0#89#0#24"'*' defined but not used0(0#0#78"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/FakeSMCLPCMonitor.cpp4324455640#2125"    cd /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-function -Wunused-parameter -Wunused-variable -Wunused-value -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -ftree-vectorize -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/FakeSMCSuperIOMonitor-generated-files.hmap -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/FakeSMCSuperIOMonitor-own-target-headers.hmap -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/FakeSMCSuperIOMonitor-all-target-headers.hmap -iquote /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/FakeSMCSuperIOMonitor-project-headers.hmap -F/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/DerivedSources/i386 -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/DerivedSources -c /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/FakeSMCLPCMonitor.cpp -o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/i386/FakeSMCLPCMonitor.o0#
+
+CCompileC build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/i386/FakeSMCSuperIOMonitor_info.o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/DerivedSources/FakeSMCSuperIOMonitor_info.c normal i386 c com.apple.compilers.gcc.4_2
+s297447184.426593
+e297447184.469807
+r1
+xCompileC
+xbuild/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/i386/FakeSMCSuperIOMonitor_info.o
+x/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/DerivedSources/FakeSMCSuperIOMonitor_info.c
+xnormal
+xi386
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@174"Compile /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/DerivedSources/FakeSMCSuperIOMonitor_info.c297447184#297447184#0(0"0(0#0#166"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/DerivedSources/FakeSMCSuperIOMonitor_info.c4324455640#2169"    cd /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch i386 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-function -Wunused-parameter -Wunused-variable -Wunused-value -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -ftree-vectorize -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/FakeSMCSuperIOMonitor-generated-files.hmap -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/FakeSMCSuperIOMonitor-own-target-headers.hmap -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/FakeSMCSuperIOMonitor-all-target-headers.hmap -iquote /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/FakeSMCSuperIOMonitor-project-headers.hmap -F/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/DerivedSources/i386 -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/DerivedSources -c /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/DerivedSources/FakeSMCSuperIOMonitor_info.c -o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/i386/FakeSMCSuperIOMonitor_info.o0#
+
+CCompileC build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/i386/Fintek.o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/Fintek.cpp normal i386 c++ com.apple.compilers.gcc.4_2
+s297447184.273638
+e297447184.438857
+r1
+xCompileC
+xbuild/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/i386/Fintek.o
+x/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/Fintek.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.gcc.4_2
+o/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/SuperIO.h:89: warning: 'void Update(const char*, char*)' defined but not used
+lSLF07#2@75"Compile /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/Fintek.cpp297447184#297447184#0(135"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/SuperIO.h:89: warning: 'void Update(const char*, char*)' defined but not used1(22@54"'void Update(const char*, char*)' defined but not used297447184#0#135#0(6@66"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/SuperIO.h297112102#89#0#89#0#24"'*' defined but not used0(0#0#67"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/Fintek.cpp4324455640#2103"    cd /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-function -Wunused-parameter -Wunused-variable -Wunused-value -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -ftree-vectorize -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/FakeSMCSuperIOMonitor-generated-files.hmap -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/FakeSMCSuperIOMonitor-own-target-headers.hmap -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/FakeSMCSuperIOMonitor-all-target-headers.hmap -iquote /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/FakeSMCSuperIOMonitor-project-headers.hmap -F/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/DerivedSources/i386 -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/DerivedSources -c /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/Fintek.cpp -o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/i386/Fintek.o0#
+
+CCompileC build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/i386/IT87x.o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/IT87x.cpp normal i386 c++ com.apple.compilers.gcc.4_2
+s297447183.843697
+e297447184.116492
+r1
+xCompileC
+xbuild/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/i386/IT87x.o
+x/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/IT87x.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@74"Compile /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/IT87x.cpp297447183#297447184#0(0"0(0#0#66"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/IT87x.cpp4324455640#2101"    cd /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-function -Wunused-parameter -Wunused-variable -Wunused-value -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -ftree-vectorize -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/FakeSMCSuperIOMonitor-generated-files.hmap -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/FakeSMCSuperIOMonitor-own-target-headers.hmap -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/FakeSMCSuperIOMonitor-all-target-headers.hmap -iquote /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/FakeSMCSuperIOMonitor-project-headers.hmap -F/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/DerivedSources/i386 -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/DerivedSources -c /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/IT87x.cpp -o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/i386/IT87x.o0#
+
+CCompileC build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/i386/SuperIO.o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/SuperIO.cpp normal i386 c++ com.apple.compilers.gcc.4_2
+s297447184.116572
+e297447184.273560
+r1
+xCompileC
+xbuild/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/i386/SuperIO.o
+x/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/SuperIO.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.gcc.4_2
+o/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/SuperIO.h:89: warning: 'void Update(const char*, char*)' defined but not used
+lSLF07#2@76"Compile /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/SuperIO.cpp297447184#297447184#0(135"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/SuperIO.h:89: warning: 'void Update(const char*, char*)' defined but not used1(22@54"'void Update(const char*, char*)' defined but not used297447184#0#135#0(6@66"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/SuperIO.h297112102#89#0#89#0#24"'*' defined but not used0(0#0#68"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/SuperIO.cpp4324455640#2105"    cd /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-function -Wunused-parameter -Wunused-variable -Wunused-value -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -ftree-vectorize -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/FakeSMCSuperIOMonitor-generated-files.hmap -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/FakeSMCSuperIOMonitor-own-target-headers.hmap -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/FakeSMCSuperIOMonitor-all-target-headers.hmap -iquote /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/FakeSMCSuperIOMonitor-project-headers.hmap -F/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/DerivedSources/i386 -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/DerivedSources -c /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/SuperIO.cpp -o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/i386/SuperIO.o0#
+
+CCompileC build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/i386/Winbond.o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/Winbond.cpp normal i386 c++ com.apple.compilers.gcc.4_2
+s297447184.170895
+e297447184.426514
+r1
+xCompileC
+xbuild/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/i386/Winbond.o
+x/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/Winbond.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@76"Compile /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/Winbond.cpp297447184#297447184#0(0"0(0#0#68"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/Winbond.cpp4324455640#2105"    cd /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-function -Wunused-parameter -Wunused-variable -Wunused-value -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -ftree-vectorize -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/FakeSMCSuperIOMonitor-generated-files.hmap -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/FakeSMCSuperIOMonitor-own-target-headers.hmap -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/FakeSMCSuperIOMonitor-all-target-headers.hmap -iquote /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/FakeSMCSuperIOMonitor-project-headers.hmap -F/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/DerivedSources/i386 -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/DerivedSources -c /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/Winbond.cpp -o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/i386/Winbond.o0#
+
+CCompileC build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/x86_64/FakeSMCLPCMonitor.o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/FakeSMCLPCMonitor.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+s297447184.438934
+e297447184.756996
+r1
+xCompileC
+xbuild/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/x86_64/FakeSMCLPCMonitor.o
+x/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/FakeSMCLPCMonitor.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.gcc.4_2
+o/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/SuperIO.h:89: warning: 'void Update(const char*, char*)' defined but not used
+lSLF07#2@86"Compile /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/FakeSMCLPCMonitor.cpp297447184#297447184#0(135"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/SuperIO.h:89: warning: 'void Update(const char*, char*)' defined but not used1(22@54"'void Update(const char*, char*)' defined but not used297447184#0#135#0(6@66"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/SuperIO.h297112102#89#0#89#0#24"'*' defined but not used0(0#0#78"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/FakeSMCLPCMonitor.cpp4324455640#2131"    cd /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-function -Wunused-parameter -Wunused-variable -Wunused-value -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -ftree-vectorize -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/FakeSMCSuperIOMonitor-generated-files.hmap -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/FakeSMCSuperIOMonitor-own-target-headers.hmap -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/FakeSMCSuperIOMonitor-all-target-headers.hmap -iquote /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/FakeSMCSuperIOMonitor-project-headers.hmap -F/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/DerivedSources/x86_64 -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/DerivedSources -c /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/FakeSMCLPCMonitor.cpp -o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/x86_64/FakeSMCLPCMonitor.o0#
+
+CCompileC build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/x86_64/FakeSMCSuperIOMonitor_info.o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/DerivedSources/FakeSMCSuperIOMonitor_info.c normal x86_64 c com.apple.compilers.gcc.4_2
+s297447185.080535
+e297447185.114641
+r1
+xCompileC
+xbuild/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/x86_64/FakeSMCSuperIOMonitor_info.o
+x/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/DerivedSources/FakeSMCSuperIOMonitor_info.c
+xnormal
+xx86_64
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@174"Compile /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/DerivedSources/FakeSMCSuperIOMonitor_info.c297447185#297447185#0(0"0(0#0#166"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/DerivedSources/FakeSMCSuperIOMonitor_info.c4324455640#2175"    cd /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-function -Wunused-parameter -Wunused-variable -Wunused-value -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -ftree-vectorize -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/FakeSMCSuperIOMonitor-generated-files.hmap -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/FakeSMCSuperIOMonitor-own-target-headers.hmap -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/FakeSMCSuperIOMonitor-all-target-headers.hmap -iquote /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/FakeSMCSuperIOMonitor-project-headers.hmap -F/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/DerivedSources/x86_64 -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/DerivedSources -c /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/DerivedSources/FakeSMCSuperIOMonitor_info.c -o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/x86_64/FakeSMCSuperIOMonitor_info.o0#
+
+CCompileC build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/x86_64/Fintek.o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/Fintek.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+s297447184.924521
+e297447185.080448
+r1
+xCompileC
+xbuild/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/x86_64/Fintek.o
+x/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/Fintek.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.gcc.4_2
+o/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/SuperIO.h:89: warning: 'void Update(const char*, char*)' defined but not used
+lSLF07#2@75"Compile /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/Fintek.cpp297447184#297447185#0(135"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/SuperIO.h:89: warning: 'void Update(const char*, char*)' defined but not used1(22@54"'void Update(const char*, char*)' defined but not used297447185#0#135#0(6@66"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/SuperIO.h297112102#89#0#89#0#24"'*' defined but not used0(0#0#67"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/Fintek.cpp4324455640#2109"    cd /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-function -Wunused-parameter -Wunused-variable -Wunused-value -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -ftree-vectorize -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/FakeSMCSuperIOMonitor-generated-files.hmap -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/FakeSMCSuperIOMonitor-own-target-headers.hmap -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/FakeSMCSuperIOMonitor-all-target-headers.hmap -iquote /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/FakeSMCSuperIOMonitor-project-headers.hmap -F/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/DerivedSources/x86_64 -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/DerivedSources -c /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/Fintek.cpp -o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/x86_64/Fintek.o0#
+
+CCompileC build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/x86_64/IT87x.o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/IT87x.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+s297447184.507897
+e297447184.799533
+r1
+xCompileC
+xbuild/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/x86_64/IT87x.o
+x/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/IT87x.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@74"Compile /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/IT87x.cpp297447184#297447184#0(0"0(0#0#66"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/IT87x.cpp4324455640#2107"    cd /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-function -Wunused-parameter -Wunused-variable -Wunused-value -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -ftree-vectorize -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/FakeSMCSuperIOMonitor-generated-files.hmap -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/FakeSMCSuperIOMonitor-own-target-headers.hmap -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/FakeSMCSuperIOMonitor-all-target-headers.hmap -iquote /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/FakeSMCSuperIOMonitor-project-headers.hmap -F/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/DerivedSources/x86_64 -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/DerivedSources -c /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/IT87x.cpp -o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/x86_64/IT87x.o0#
+
+CCompileC build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/x86_64/SuperIO.o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/SuperIO.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+s297447184.757075
+e297447184.924437
+r1
+xCompileC
+xbuild/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/x86_64/SuperIO.o
+x/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/SuperIO.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.gcc.4_2
+o/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/SuperIO.h:89: warning: 'void Update(const char*, char*)' defined but not used
+lSLF07#2@76"Compile /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/SuperIO.cpp297447184#297447184#0(135"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/SuperIO.h:89: warning: 'void Update(const char*, char*)' defined but not used1(22@54"'void Update(const char*, char*)' defined but not used297447184#0#135#0(6@66"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/SuperIO.h297112102#89#0#89#0#24"'*' defined but not used0(0#0#68"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/SuperIO.cpp4324455640#2111"    cd /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-function -Wunused-parameter -Wunused-variable -Wunused-value -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -ftree-vectorize -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/FakeSMCSuperIOMonitor-generated-files.hmap -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/FakeSMCSuperIOMonitor-own-target-headers.hmap -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/FakeSMCSuperIOMonitor-all-target-headers.hmap -iquote /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/FakeSMCSuperIOMonitor-project-headers.hmap -F/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/DerivedSources/x86_64 -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/DerivedSources -c /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/SuperIO.cpp -o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/x86_64/SuperIO.o0#
+
+CCompileC build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/x86_64/Winbond.o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/Winbond.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+s297447184.799613
+e297447185.086656
+r1
+xCompileC
+xbuild/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/x86_64/Winbond.o
+x/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/Winbond.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@76"Compile /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/Winbond.cpp297447184#297447185#0(0"0(0#0#68"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/Winbond.cpp4324455640#2111"    cd /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-function -Wunused-parameter -Wunused-variable -Wunused-value -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -ftree-vectorize -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/FakeSMCSuperIOMonitor-generated-files.hmap -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/FakeSMCSuperIOMonitor-own-target-headers.hmap -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/FakeSMCSuperIOMonitor-all-target-headers.hmap -iquote /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/FakeSMCSuperIOMonitor-project-headers.hmap -F/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/DerivedSources/x86_64 -I/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/DerivedSources -c /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/Winbond.cpp -o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/x86_64/Winbond.o0#
+
+CCopyStringsFile /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCSuperIOMonitor.kext/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
+s297447183.809497
+e297447183.842757
+r1
+xCopyStringsFile
+x/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCSuperIOMonitor.kext/Contents/Resources/English.lproj/InfoPlist.strings
+xEnglish.lproj/InfoPlist.strings
+lSLF07#2@36"Copy English.lproj/InfoPlist.strings297447183#297447183#0(0"0(0#0#88"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/English.lproj/InfoPlist.strings4324455640#418"    cd /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor    setenv ICONV /usr/bin/iconv    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings --validate --inputencoding utf-8 --outputencoding UTF-16 English.lproj/InfoPlist.strings --outdir /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCSuperIOMonitor.kext/Contents/Resources/English.lproj0#
+
+CCreateUniversalBinary /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCSuperIOMonitor.kext/Contents/MacOS/FakeSMCSuperIOMonitor normal "i386 x86_64"
+s297447185.133761
+e297447185.144540
+r1
+xCreateUniversalBinary
+x/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCSuperIOMonitor.kext/Contents/MacOS/FakeSMCSuperIOMonitor
+xnormal
+xi386 x86_64
+lSLF07#2@120"CreateUniversalBinary build/Release/FakeSMCSuperIOMonitor.kext/Contents/MacOS/FakeSMCSuperIOMonitor normal "i386 x86_64"297447185#297447185#0(0"0(0#0#68"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/i386 x86_644324455640#565"    cd /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor    /usr/bin/lipo -create /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/i386/FakeSMCSuperIOMonitor /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/x86_64/FakeSMCSuperIOMonitor -output /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCSuperIOMonitor.kext/Contents/MacOS/FakeSMCSuperIOMonitor0#
+
+CGenerateDSYMFile /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCSuperIOMonitor.kext.dSYM /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCSuperIOMonitor.kext/Contents/MacOS/FakeSMCSuperIOMonitor
+s297447185.144617
+e297447185.183342
+r1
+xGenerateDSYMFile
+x/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCSuperIOMonitor.kext.dSYM
+x/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCSuperIOMonitor.kext/Contents/MacOS/FakeSMCSuperIOMonitor
+lSLF07#2@140"GenerateDSYMFile build/Release/FakeSMCSuperIOMonitor.kext.dSYM build/Release/FakeSMCSuperIOMonitor.kext/Contents/MacOS/FakeSMCSuperIOMonitor297447185#297447185#0(0"0(0#0#134"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCSuperIOMonitor.kext/Contents/MacOS/FakeSMCSuperIOMonitor4324455640#337"    cd /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor    /Developer/usr/bin/dsymutil /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCSuperIOMonitor.kext/Contents/MacOS/FakeSMCSuperIOMonitor -o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCSuperIOMonitor.kext.dSYM0#
+
+CLd /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/i386/FakeSMCSuperIOMonitor normal i386
+s297447184.469891
+e297447184.507819
+r1
+xLd
+x/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/i386/FakeSMCSuperIOMonitor
+xnormal
+xi386
+lSLF07#2@169"Link /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/i386/FakeSMCSuperIOMonitor297447184#297447184#0(0"0(0#0#0"4324455640#951"    cd /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/g++-4.2 -arch i386 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release -F/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release -filelist /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/i386/FakeSMCSuperIOMonitor.LinkFileList -mmacosx-version-min=10.6 -lcpp_kext -Xlinker -kext -nostdlib -lkmodc++ /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/i386/FakeSMCSuperIOMonitor_info.o -lkmod -lcc_kext -o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/i386/FakeSMCSuperIOMonitor0#
+
+CLd /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/x86_64/FakeSMCSuperIOMonitor normal x86_64
+s297447185.114717
+e297447185.133683
+r1
+xLd
+x/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/x86_64/FakeSMCSuperIOMonitor
+xnormal
+xx86_64
+lSLF07#2@171"Link /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/x86_64/FakeSMCSuperIOMonitor297447185#297447185#0(0"0(0#0#0"4324455640#959"    cd /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/g++-4.2 -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release -F/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release -filelist /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/x86_64/FakeSMCSuperIOMonitor.LinkFileList -mmacosx-version-min=10.6 -lcpp_kext -Xlinker -kext -nostdlib -lkmodc++ /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/x86_64/FakeSMCSuperIOMonitor_info.o -lkmod -lcc_kext -o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/FakeSMCLPCMonitor.build/Release/FakeSMCSuperIOMonitor.build/Objects-normal/x86_64/FakeSMCSuperIOMonitor0#
+
+CProcessInfoPlistFile /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCSuperIOMonitor.kext/Contents/Info.plist Info.plist
+s297447183.806836
+e297447183.809440
+r1
+xProcessInfoPlistFile
+x/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCSuperIOMonitor.kext/Contents/Info.plist
+xInfo.plist
+lSLF07#2@18"Process Info.plist297447183#297447183#0(0"0(0#0#67"/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/Info.plist4324455640#263"    cd /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor    builtin-infoPlistUtility Info.plist -expandbuildsettings -platform macosx -o /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCSuperIOMonitor.kext/Contents/Info.plist0#
+
+CTouch /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCSuperIOMonitor.kext
+s297447185.183412
+e297447185.187562
+r1
+xTouch
+x/Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCSuperIOMonitor.kext
+lSLF07#2@103"Touch /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCSuperIOMonitor.kext297447185#297447185#0(0"0(0#0#0"4324455640#184"    cd /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor    /usr/bin/touch -c /Users/mozo/Documents/fakesmc/Plug-ins/FakeSMCLPCMonitor/build/Release/FakeSMCSuperIOMonitor.kext0#
+
