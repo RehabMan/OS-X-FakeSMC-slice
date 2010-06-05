@@ -1,297 +1,0 @@
-TFakeSMCnVidiaMonitor
-v7
-r0
-t297338574.260468
-cCheck dependencies
-cProcessInfoPlistFile "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext/Contents/Info.plist" Info.plist
-cCopyStringsFile "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext/Contents/Resources/English.lproj/InfoPlist.strings" English.lproj/InfoPlist.strings
-cCompileC build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/PTKawainVi.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/PTKawainVi.cpp" normal x86_64 c++ com.apple.compilers.gcc.4_2
-cCompileC build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/FakeSMCnVidiaMonitor_info.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/FakeSMCnVidiaMonitor_info.c" normal x86_64 c com.apple.compilers.gcc.4_2
-cLd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/FakeSMCnVidiaMonitor" normal x86_64
-cCompileC build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/PTKawainVi.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/PTKawainVi.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
-cCompileC build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/FakeSMCnVidiaMonitor_info.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/FakeSMCnVidiaMonitor_info.c" normal i386 c com.apple.compilers.gcc.4_2
-cCompileC build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/PTKawainVi.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/PTKawainVi.cpp" normal ppc c++ com.apple.compilers.gcc.4_2
-cLd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/FakeSMCnVidiaMonitor" normal i386
-cCompileC build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/FakeSMCnVidiaMonitor_info.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/FakeSMCnVidiaMonitor_info.c" normal ppc c com.apple.compilers.gcc.4_2
-cLd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/FakeSMCnVidiaMonitor" normal ppc
-cCreateUniversalBinary "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext/Contents/MacOS/FakeSMCnVidiaMonitor" normal "x86_64 i386 ppc"
-cGenerateDSYMFile "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext.dSYM" "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext/Contents/MacOS/FakeSMCnVidiaMonitor"
-cTouch "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext"
-
-N/Developer/SDKs/MacOSX10.6.sdk
-c000000004BE0165B00000000000000EE
-t1272976987
-s238
-
-N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/IOTimerEventSource.h
-c000000004A73D6540000000000002B1D
-t1249105492
-s11037
-
-N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/pci/IOPCIDevice.h
-c000000004A73D8C70000000000008708
-t1249106119
-s34568
-
-N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/English.lproj/InfoPlist.strings
-c000000004C074DC50000000000000032
-t1275547077
-s50
-
-N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/PTKawainVi.cpp
-c000000004C08CF4C000000000000587A
-t1275645772
-s22650
-i"PTKawainVi.h"
-i"fakesmc.h"
-
-N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/PTKawainVi.h
-c000000004C074DC50000000000000608
-t1275547077
-s1544
-i<IOKit/pci/IOPCIDevice.h>
-i<IOKit/IOTimerEventSource.h>
-
-N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/FakeSMCnVidiaMonitor_info.c
-c000000004C074DC400000000000001AB
-t1275547076
-s427
-
-N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/FakeSMCnVidiaMonitor
-t1275645773
-s43236
-
-N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/FakeSMCnVidiaMonitor.LinkFileList
-c000000004C074DC300000000000000BF
-t1275547075
-s191
-
-N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/FakeSMCnVidiaMonitor_info.o
-t1275645759
-s3924
-
-N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/PTKawainVi.o
-t1275645773
-s169200
-
-N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/FakeSMCnVidiaMonitor
-t1275645774
-s58788
-
-N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/FakeSMCnVidiaMonitor.LinkFileList
-c000000004C074DC300000000000000BE
-t1275547075
-s190
-
-N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/FakeSMCnVidiaMonitor_info.o
-t1275645760
-s3924
-
-N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/PTKawainVi.o
-t1275645773
-s188304
-
-N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/FakeSMCnVidiaMonitor
-t1275645773
-s45600
-
-N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/FakeSMCnVidiaMonitor.LinkFileList
-c000000004C074DC400000000000000C1
-t1275547076
-s193
-
-N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/FakeSMCnVidiaMonitor_info.o
-t1275645759
-s4224
-
-N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/PTKawainVi.o
-t1275645773
-s170060
-
-N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext
-t1275645774
-s136
-
-N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext.dSYM
-t1275645774
-s136
-
-N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext/Contents/Info.plist
-t1275645759
-s1567
-
-N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext/Contents/MacOS/FakeSMCnVidiaMonitor
-t1275645774
-s157092
-
-N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext/Contents/Resources/English.lproj/InfoPlist.strings
-t1275645759
-s96
-
-N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/fakesmc.h
-c000000004C074DC5000000000000044D
-t1275547077
-s1101
-
-NInfo.plist
-c000000004C074DC50000000000000648
-t1275547077
-s1608
-
-CCheck dependencies
-r0
-lSLF07#2@18"Check dependencies297338572#297338572#0(0"0(0#1#0"4324459736#0"0#
-
-CCompileC build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/FakeSMCnVidiaMonitor_info.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/FakeSMCnVidiaMonitor_info.c" normal i386 c com.apple.compilers.gcc.4_2
-s297338559.475340
-e297338559.543248
-r1
-xCompileC
-xbuild/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/FakeSMCnVidiaMonitor_info.o
-x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/FakeSMCnVidiaMonitor_info.c
-xnormal
-xi386
-xc
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@208"Compile /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/FakeSMCnVidiaMonitor_info.c297338559#297338559#0(0"0(0#0#200"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/FakeSMCnVidiaMonitor_info.c4324459736#2506"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch i386 -fmessage-length=0 -pipe -nostdinc -std=gnu99 -fno-builtin -Wno-trigraphs -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-generated-files.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-own-target-headers.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-all-target-headers.hmap" -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-project-headers.hmap" "-F/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/i386" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources" -c "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/FakeSMCnVidiaMonitor_info.c" -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/FakeSMCnVidiaMonitor_info.o"0#
-
-CCompileC build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/PTKawainVi.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/PTKawainVi.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
-s297338573.063165
-e297338573.714592
-r1
-xCompileC
-xbuild/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/PTKawainVi.o
-x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/PTKawainVi.cpp
-xnormal
-xi386
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@112"Compile /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/PTKawainVi.cpp297338573#297338573#0(0"0(0#0#104"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/PTKawainVi.cpp4324459736#2437"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -mmacosx-version-min=10.6 -gdwarf-2 -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-generated-files.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-own-target-headers.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-all-target-headers.hmap" -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-project-headers.hmap" "-F/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/i386" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources" -c "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/PTKawainVi.cpp" -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/PTKawainVi.o"0#
-
-CCompileC build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/FakeSMCnVidiaMonitor_info.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/FakeSMCnVidiaMonitor_info.c" normal ppc c com.apple.compilers.gcc.4_2
-s297338559.670761
-e297338560.029103
-r1
-xCompileC
-xbuild/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/FakeSMCnVidiaMonitor_info.o
-x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/FakeSMCnVidiaMonitor_info.c
-xnormal
-xppc
-xc
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@208"Compile /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/FakeSMCnVidiaMonitor_info.c297338559#297338560#0(0"0(0#0#200"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/FakeSMCnVidiaMonitor_info.c4324459736#2513"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch ppc -fmessage-length=0 -pipe -nostdinc -std=gnu99 -fno-builtin -Wno-trigraphs -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -mtune=G5 -mmacosx-version-min=10.6 -gdwarf-2 -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-generated-files.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-own-target-headers.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-all-target-headers.hmap" -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-project-headers.hmap" "-F/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/ppc" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources" -c "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/FakeSMCnVidiaMonitor_info.c" -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/FakeSMCnVidiaMonitor_info.o"0#
-
-CCompileC build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/PTKawainVi.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/PTKawainVi.cpp" normal ppc c++ com.apple.compilers.gcc.4_2
-s297338573.280647
-e297338573.979811
-r1
-xCompileC
-xbuild/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/PTKawainVi.o
-x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/PTKawainVi.cpp
-xnormal
-xppc
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@112"Compile /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/PTKawainVi.cpp297338573#297338573#0(0"0(0#0#104"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/PTKawainVi.cpp4324459736#2444"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch ppc -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -mtune=G5 -mmacosx-version-min=10.6 -gdwarf-2 -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-generated-files.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-own-target-headers.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-all-target-headers.hmap" -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-project-headers.hmap" "-F/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/ppc" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources" -c "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/PTKawainVi.cpp" -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/PTKawainVi.o"0#
-
-CCompileC build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/FakeSMCnVidiaMonitor_info.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/FakeSMCnVidiaMonitor_info.c" normal x86_64 c com.apple.compilers.gcc.4_2
-s297338559.371657
-e297338559.475215
-r1
-xCompileC
-xbuild/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/FakeSMCnVidiaMonitor_info.o
-x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/FakeSMCnVidiaMonitor_info.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@208"Compile /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/FakeSMCnVidiaMonitor_info.c297338559#297338559#0(0"0(0#0#200"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/FakeSMCnVidiaMonitor_info.c4913256135273047040#2512"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -nostdinc -std=gnu99 -fno-builtin -Wno-trigraphs -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-generated-files.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-own-target-headers.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-all-target-headers.hmap" -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-project-headers.hmap" "-F/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/x86_64" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources" -c "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/FakeSMCnVidiaMonitor_info.c" -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/FakeSMCnVidiaMonitor_info.o"0#
-
-CCompileC build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/PTKawainVi.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/PTKawainVi.cpp" normal x86_64 c++ com.apple.compilers.gcc.4_2
-s297338572.522183
-e297338573.061995
-r1
-xCompileC
-xbuild/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/PTKawainVi.o
-x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/PTKawainVi.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@112"Compile /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/PTKawainVi.cpp297338572#297338573#0(0"0(0#0#104"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/PTKawainVi.cpp4324459736#2443"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -mmacosx-version-min=10.6 -gdwarf-2 -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-generated-files.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-own-target-headers.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-all-target-headers.hmap" -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/FakeSMCnVidiaMonitor-project-headers.hmap" "-F/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources/x86_64" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/DerivedSources" -c "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/PTKawainVi.cpp" -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/PTKawainVi.o"0#
-
-CCopyStringsFile "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext/Contents/Resources/English.lproj/InfoPlist.strings" English.lproj/InfoPlist.strings
-s297338559.121971
-e297338559.368024
-r1
-xCopyStringsFile
-x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext/Contents/Resources/English.lproj/InfoPlist.strings
-xEnglish.lproj/InfoPlist.strings
-lSLF07#2@36"Copy English.lproj/InfoPlist.strings297338559#297338559#0(0"0(0#0#121"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/English.lproj/InfoPlist.strings4324459736#487"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor"    setenv ICONV /usr/bin/iconv    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings --validate --inputencoding utf-8 --outputencoding UTF-16 English.lproj/InfoPlist.strings --outdir "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext/Contents/Resources/English.lproj"0#
-
-CCreateUniversalBinary "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext/Contents/MacOS/FakeSMCnVidiaMonitor" normal "x86_64 i386 ppc"
-s297338574.091701
-e297338574.110457
-r1
-xCreateUniversalBinary
-x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext/Contents/MacOS/FakeSMCnVidiaMonitor
-xnormal
-xx86_64 i386 ppc
-lSLF07#2@122"CreateUniversalBinary build/Release/FakeSMCnVidiaMonitor.kext/Contents/MacOS/FakeSMCnVidiaMonitor normal "x86_64 i386 ppc"297338574#297338574#0(0"0(0#0#105"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/x86_64 i386 ppc4324459736#905"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor"    /usr/bin/lipo -create "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/FakeSMCnVidiaMonitor" "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/FakeSMCnVidiaMonitor" "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/FakeSMCnVidiaMonitor" -output "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext/Contents/MacOS/FakeSMCnVidiaMonitor"0#
-
-CGenerateDSYMFile "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext.dSYM" "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext/Contents/MacOS/FakeSMCnVidiaMonitor"
-s297338574.110563
-e297338574.256588
-r1
-xGenerateDSYMFile
-x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext.dSYM
-x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext/Contents/MacOS/FakeSMCnVidiaMonitor
-lSLF07#2@137"GenerateDSYMFile build/Release/FakeSMCnVidiaMonitor.kext.dSYM build/Release/FakeSMCnVidiaMonitor.kext/Contents/MacOS/FakeSMCnVidiaMonitor297338574#297338574#0(0"0(0#0#165"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext/Contents/MacOS/FakeSMCnVidiaMonitor4324459736#439"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor"    /Developer/usr/bin/dsymutil "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext/Contents/MacOS/FakeSMCnVidiaMonitor" -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext.dSYM"0#
-
-CLd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/FakeSMCnVidiaMonitor" normal i386
-s297338573.714703
-e297338573.818083
-r1
-xLd
-x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/FakeSMCnVidiaMonitor
-xnormal
-xi386
-lSLF07#2@203"Link /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/FakeSMCnVidiaMonitor297338573#297338573#0(0"0(0#0#0"4324459736#1164"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor"    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/g++-4.2 -arch i386 -isysroot /Developer/SDKs/MacOSX10.6.sdk "-L/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release" "-F/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release" -filelist "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/FakeSMCnVidiaMonitor.LinkFileList" -mmacosx-version-min=10.6 -lcpp_kext -Xlinker -kext -nostdlib -lkmodc++ "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/FakeSMCnVidiaMonitor_info.o" -lkmod -lcc_kext -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/i386/FakeSMCnVidiaMonitor"0#
-
-CLd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/FakeSMCnVidiaMonitor" normal ppc
-s297338573.979962
-e297338574.091458
-r1
-xLd
-x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/FakeSMCnVidiaMonitor
-xnormal
-xppc
-lSLF07#2@202"Link /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/FakeSMCnVidiaMonitor297338573#297338574#0(0"0(0#0#0"4324459736#1160"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor"    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/g++-4.2 -arch ppc -isysroot /Developer/SDKs/MacOSX10.6.sdk "-L/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release" "-F/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release" -filelist "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/FakeSMCnVidiaMonitor.LinkFileList" -mmacosx-version-min=10.6 -lcpp_kext -Xlinker -kext -nostdlib -lkmodc++ "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/FakeSMCnVidiaMonitor_info.o" -lkmod -lcc_kext -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/ppc/FakeSMCnVidiaMonitor"0#
-
-CLd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/FakeSMCnVidiaMonitor" normal x86_64
-s297338573.062201
-e297338573.280391
-r1
-xLd
-x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/FakeSMCnVidiaMonitor
-xnormal
-xx86_64
-lSLF07#2@205"Link /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/FakeSMCnVidiaMonitor297338573#297338573#0(0"0(0#0#0"4324459736#1172"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor"    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/g++-4.2 -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.6.sdk "-L/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release" "-F/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release" -filelist "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/FakeSMCnVidiaMonitor.LinkFileList" -mmacosx-version-min=10.6 -lcpp_kext -Xlinker -kext -nostdlib -lkmodc++ "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/FakeSMCnVidiaMonitor_info.o" -lkmod -lcc_kext -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/FakeSMCnVidiaMonitor.build/Release/FakeSMCnVidiaMonitor.build/Objects-normal/x86_64/FakeSMCnVidiaMonitor"0#
-
-CProcessInfoPlistFile "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext/Contents/Info.plist" Info.plist
-s297338559.077259
-e297338559.121839
-r1
-xProcessInfoPlistFile
-x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext/Contents/Info.plist
-xInfo.plist
-lSLF07#2@18"Process Info.plist297338559#297338559#0(0"0(0#0#100"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/Info.plist5057372452790037504#332"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor"    builtin-infoPlistUtility Info.plist -expandbuildsettings -platform macosx -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext/Contents/Info.plist"0#
-
-CTouch "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext"
-s297338574.256681
-e297338574.260409
-r1
-xTouch
-x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext
-lSLF07#2@135"Touch /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext297338574#297338574#0(0"0(0#0#0"4324459736#253"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor"    /usr/bin/touch -c "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCnVidiaMonitor/build/Release/FakeSMCnVidiaMonitor.kext"0#
-
