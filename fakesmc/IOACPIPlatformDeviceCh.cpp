@@ -396,20 +396,30 @@ void IOACPIPlatformDeviceCh::FixUpKeysNum()
 //if replace_flag = 0 - existing key will not be overwrited, if != 0 - will be overwrited.
 SMCData IOACPIPlatformDeviceCh::SMCAddKey(const char * keyname, uint8_t keylen, char * keydata, uint32_t replace_flag)
 {
-	return SMCAddKey(keyname, "", keylen, keydata, replace_flag, NULL);
+	return SMCAddKey(keyname, "", keylen, keydata, replace_flag, NULL, NULL);
 }
 
 SMCData IOACPIPlatformDeviceCh::SMCAddKey(const char * keyname, uint8_t keylen, char * keydata, uint32_t replace_flag, OnKeyReadCallback onkeyread)
 {
-	return SMCAddKey(keyname, "", keylen, keydata, replace_flag, onkeyread);
+	return SMCAddKey(keyname, "", keylen, keydata, replace_flag, onkeyread, NULL);
+}
+
+SMCData IOACPIPlatformDeviceCh::SMCAddKey(const char * keyname, uint8_t keylen, char * keydata, uint32_t replace_flag, OnKeyReadCallback onkeyread, OnKeyWriteCallback onkeywrite)
+{
+	return SMCAddKey(keyname, "", keylen, keydata, replace_flag, onkeyread, onkeywrite);
 }
 
 SMCData IOACPIPlatformDeviceCh::SMCAddKey(const char * keyname, const char * keytype, uint8_t keylen, char * keydata, uint32_t replace_flag)
 {
-	return SMCAddKey(keyname, keytype, keylen, keydata, replace_flag, NULL);
+	return SMCAddKey(keyname, keytype, keylen, keydata, replace_flag, NULL, NULL);
 }
 
 SMCData IOACPIPlatformDeviceCh::SMCAddKey(const char * keyname, const char * keytype, uint8_t keylen, char * keydata, uint32_t replace_flag, OnKeyReadCallback onkeyread)
+{
+	return SMCAddKey(keyname, keytype, keylen, keydata, replace_flag, onkeyread, NULL);
+}
+
+SMCData IOACPIPlatformDeviceCh::SMCAddKey(const char * keyname, const char * keytype, uint8_t keylen, char * keydata, uint32_t replace_flag, OnKeyReadCallback onkeyread, OnKeyWriteCallback onkeywrite)
 {
 	SMCData SMCkey=0;
 	SMCData PrevKey=0;
@@ -418,14 +428,27 @@ SMCData IOACPIPlatformDeviceCh::SMCAddKey(const char * keyname, const char * key
 	
 	if(SMCkey)
 	{
-		if(replace_flag != 0) 
+		bool* drop;
+		if (SMCkey->onkeywrite)
+		{
+			SMCkey->onkeywrite(keyname, SMCkey->data, drop);
+		}
+		else
+		{
+			drop = false;
+		}
+		
+		if(replace_flag != 0 && !drop) 
 		{
 			if (strlen(keytype) > 0) bcopy(keytype, SMCkey->type, 5);
 			SMCkey->len = keylen;
 			IOFree(SMCkey->data, keylen);
 			SMCkey->data = (char*) IOMalloc(keylen);
 			bcopy(keydata, SMCkey->data,keylen);
-			SMCkey->onkeyread = onkeyread;
+			if (onkeyread)
+				SMCkey->onkeyread = onkeyread;
+			if (onkeywrite)
+				SMCkey->onkeywrite = onkeywrite;
 			//			IOLog("FakeSMC: replacing key (%s Len=%d)\n", keyname, SMCkey->len);
 		}
 		return SMCkey;
@@ -450,7 +473,10 @@ SMCData IOACPIPlatformDeviceCh::SMCAddKey(const char * keyname, const char * key
 	SMCkey->key = (char*) IOMalloc(5);
 	SMCkey->type = (char*) IOMalloc(5); 
 	SMCkey->data = (char*) IOMalloc(keylen);
-	SMCkey->onkeyread = onkeyread;
+	if (onkeyread)
+		SMCkey->onkeyread = onkeyread;
+	if (onkeywrite)
+		SMCkey->onkeywrite = onkeywrite;
 	
 	bzero(SMCkey->data, keylen);
 	bcopy(keyname, SMCkey->key, 5); //size of key name is 4 chars + \0
@@ -476,7 +502,9 @@ SMCData IOACPIPlatformDeviceCh::SMCAddKey(const char * keyname, const char * key
 				break;
 		}
 	}
-	bcopy(keydata, SMCkey->data,keylen);
+	
+	if(keydata)
+		bcopy(keydata, SMCkey->data,keylen);
 	
 	return SMCkey;
 }

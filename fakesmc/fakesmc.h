@@ -7,7 +7,9 @@
 void FakeSMCAddKey (const char*, uint8_t, char*);
 void FakeSMCAddKey (const char*, const char*, uint8_t, char*);
 void FakeSMCAddKeyCallback (const char*, uint8_t, char*, OnKeyReadCallback);
+void FakeSMCAddKeyCallback (const char*, uint8_t, char*, OnKeyReadCallback, OnKeyWriteCallback);
 void FakeSMCAddKeyCallback (const char*, const char*, uint8_t, char*, OnKeyReadCallback);
+void FakeSMCAddKeyCallback (const char*, const char*, uint8_t, char*, OnKeyReadCallback, OnKeyWriteCallback);
 char* FakeSMCGetKey (const char*);
 void FakeSMCRemoveKeyCallback(const char*);
 

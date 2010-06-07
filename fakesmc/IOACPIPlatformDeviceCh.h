@@ -27,6 +27,7 @@ struct AppleSMCData;
 
 typedef struct AppleSMCData* SMCData;
 typedef void (*OnKeyReadCallback)(const char*, char*);
+typedef void (*OnKeyWriteCallback)(const char*, char*, bool*);
 
 struct AppleSMCData {
 	uint8_t len;
@@ -34,6 +35,7 @@ struct AppleSMCData {
 	char *type;
 	char *data;
 	OnKeyReadCallback onkeyread;
+	OnKeyWriteCallback onkeywrite;
 	SMCData next;
 };
 
@@ -103,9 +105,10 @@ class IOACPIPlatformDeviceCh : public IOACPIPlatformDevice
 	
 	virtual SMCData SMCAddKey(const char * keyname, uint8_t keylen, char * keydata, uint32_t replace_flag); //returns a pointer to key struct, so we can modify it later 
 	virtual SMCData SMCAddKey(const char * keyname, uint8_t keylen, char * keydata, uint32_t replace_flag, OnKeyReadCallback onkeyread);
-	
+	virtual SMCData SMCAddKey(const char * keyname, uint8_t keylen, char * keydata, uint32_t replace_flag, OnKeyReadCallback onkeyread, OnKeyWriteCallback onkeywrite);
 	virtual SMCData SMCAddKey(const char * keyname, const char * keytype, uint8_t keylen, char * keydata, uint32_t replace_flag);
 	virtual SMCData SMCAddKey(const char * keyname, const char * keytype, uint8_t keylen, char * keydata, uint32_t replace_flag, OnKeyReadCallback onkeyread);
+	virtual SMCData SMCAddKey(const char * keyname, const char * keytype, uint8_t keylen, char * keydata, uint32_t replace_flag, OnKeyReadCallback onkeyread, OnKeyWriteCallback onkeywrite);
 	
 	virtual SMCData FindSMCKey(const char * keyname);
 	

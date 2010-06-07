@@ -24,9 +24,21 @@ void FakeSMCAddKeyCallback (const char* keyname, uint8_t keylen, char* keydata, 
 	smcNode->FixUpKeysNum();
 }
 
+void FakeSMCAddKeyCallback (const char* keyname, uint8_t keylen, char* keydata, OnKeyReadCallback onkeyread, OnKeyWriteCallback onkeywrite)
+{
+	smcNode->SMCAddKey(keyname, keylen, keydata, 1, onkeyread, onkeywrite);
+	smcNode->FixUpKeysNum();
+}
+
 void FakeSMCAddKeyCallback (const char* keyname, const char* keytype, uint8_t keylen, char* keydata, OnKeyReadCallback onkeyread)
 {
-	smcNode->SMCAddKey(keyname, keytype, keylen, keydata, 1, onkeyread);
+	smcNode->SMCAddKey(keyname, keytype, keylen, keydata, 1, onkeyread, NULL);
+	smcNode->FixUpKeysNum();
+}
+
+void FakeSMCAddKeyCallback (const char* keyname, const char* keytype, uint8_t keylen, char* keydata, OnKeyReadCallback onkeyread, OnKeyWriteCallback onkeywrite)
+{
+	smcNode->SMCAddKey(keyname, keytype, keylen, keydata, 1, onkeyread, onkeywrite);
 	smcNode->FixUpKeysNum();
 }
 
@@ -40,7 +52,11 @@ char* FakeSMCGetKey (const char* keyname)
 
 void FakeSMCRemoveKeyCallback (const char* keyname)
 {
-	if(SMCData node = smcNode->FindSMCKey(keyname)) node->onkeyread = NULL;
+	if(SMCData node = smcNode->FindSMCKey(keyname))
+	{
+		node->onkeyread = NULL;
+		node->onkeywrite = NULL;
+	}
 }
 
 #define super IOService
