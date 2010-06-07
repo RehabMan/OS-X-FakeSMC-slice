@@ -10,14 +10,17 @@
 #ifndef _FAKESMC_H 
 #define _FAKESMC_H
 
-typedef void (*OnKeyReadCallback)(const char*, char*);
+typedef void (*OnKeyReadCallback)(const char* key, char* data);
+typedef void (*OnKeyWriteCallback)(const char* key, char* data, bool* drop);
 
 void FakeSMCAddKey (const char*, uint8_t, char*);
 void FakeSMCAddKey (const char*, const char*, uint8_t, char*);
 void FakeSMCAddKeyCallback (const char*, uint8_t, char*, OnKeyReadCallback);
+void FakeSMCAddKeyCallback (const char*, uint8_t, char*, OnKeyReadCallback, OnKeyWriteCallback);
 void FakeSMCAddKeyCallback (const char*, const char*, uint8_t, char*, OnKeyReadCallback);
+void FakeSMCAddKeyCallback (const char*, const char*, uint8_t, char*, OnKeyReadCallback, OnKeyWriteCallback);
 char* FakeSMCGetKey (const char*);
-void FakeSMCRemoveKeyCallback (const char*);
+void FakeSMCRemoveKeyCallback(const char*);
 
 static bool CompareKeys(const char* key1, const char* key2)
 {

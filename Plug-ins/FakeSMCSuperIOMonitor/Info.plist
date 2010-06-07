@@ -53,7 +53,7 @@
 		<key>com.apple.kpi.unsupported</key>
 		<string>9.0</string>
 		<key>org.netkas.fakesmc</key>
-		<string>2.6.2</string>
+		<string>2.6.3</string>
 	</dict>
 </dict>
 </plist>
