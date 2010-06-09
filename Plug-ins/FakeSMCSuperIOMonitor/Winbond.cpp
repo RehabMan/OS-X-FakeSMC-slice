@@ -219,26 +219,26 @@ bool Winbond::Probe()
 			}
 		}
 		
+		Select(WINBOND_HARDWARE_MONITOR_LDN);
+		
+		Address = ReadWord(SUPERIO_BASE_ADDRESS_REGISTER);          
+		
+		IOSleep(1000);
+		
+		UInt16 verify = ReadWord(SUPERIO_BASE_ADDRESS_REGISTER);
+		
+		Exit();
+		
+		if (Address != verify || Address < 0x100 || (Address & 0xF007) != 0)
+			continue;
+		
 		if (Model == UnknownModel)
 		{
-			Exit();
+			InfoLog("found unsupported Winbond chip ID=0x%x REVISION=0x%x on ADDRESS=0x%x", id, revision, Address);
 			continue;
 		} 
 		else
 		{
-			Select(WINBOND_HARDWARE_MONITOR_LDN);
-			
-			Address = ReadWord(SUPERIO_BASE_ADDRESS_REGISTER);          
-			
-			IOSleep(1000);
-			
-			UInt16 verify = ReadWord(SUPERIO_BASE_ADDRESS_REGISTER);
-			
-			Exit();
-			
-			if (Address != verify || Address < 0x100 || (Address & 0xF007) != 0)
-				continue;
-						
 			return true;
 		}
 	}

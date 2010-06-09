@@ -13,6 +13,13 @@
 #ifndef _SUPERIO_H 
 #define _SUPERIO_H
 
+#define DebugOn FALSE
+
+#define LogPrefix "FakeSMCSuperIOMonitor: "
+#define DebugLog(string, args...)	do { if (DebugOn) { IOLog (LogPrefix "[Debug] " string "\n", ## args); } } while(0)
+#define WarningLog(string, args...) do { IOLog (LogPrefix "[Warning] " string "\n", ## args); } while(0)
+#define InfoLog(string, args...)	do { IOLog (LogPrefix string "\n", ## args); } while(0)
+
 #include <architecture/i386/pio.h>
 #include <libkern/OSTypes.h>
 

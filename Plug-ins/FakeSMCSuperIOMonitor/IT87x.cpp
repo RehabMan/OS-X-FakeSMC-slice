@@ -86,40 +86,40 @@ bool IT87x::Probe()
 				break;
 		}
 		
+		Select(IT87_ENVIRONMENT_CONTROLLER_LDN);
+		
+		Address = ReadWord(SUPERIO_BASE_ADDRESS_REGISTER);
+		
+		IOSleep(1000);
+		
+		UInt16 verify = ReadWord(SUPERIO_BASE_ADDRESS_REGISTER);
+		
+		Exit();
+		
+		if (Address != verify || Address < 0x100 || (Address & 0xF007) != 0)
+			continue;
+		
+		bool* valid;
+		UInt8 vendorId;
+		
+		vendorId = ReadByte(ITE_VENDOR_ID_REGISTER, valid);
+		
+		if (!valid || vendorId != ITE_VENDOR_ID)
+			continue;
+		
+		if ((ReadByte(ITE_CONFIGURATION_REGISTER, valid) & 0x10) == 0)
+			continue;
+		
+		if (!valid)
+			continue;
+		
 		if (Model == UnknownModel)
 		{
-			Exit();
+			InfoLog("found unsupported ITE chip ID=0x%x on ADDRESS=0x%x", chipID, Address);
 			continue;
 		} 
 		else
-		{			
-			Select(IT87_ENVIRONMENT_CONTROLLER_LDN);
-			
-			Address = ReadWord(SUPERIO_BASE_ADDRESS_REGISTER);
-			
-			IOSleep(1000);
-			
-			UInt16 verify = ReadWord(SUPERIO_BASE_ADDRESS_REGISTER);
-			
-			Exit();
-			
-			if (Address != verify || Address < 0x100 || (Address & 0xF007) != 0)
-				continue;
-			
-			bool* valid;
-			UInt8 vendorId;
-			
-			vendorId = ReadByte(ITE_VENDOR_ID_REGISTER, valid);
-			
-			if (!valid || vendorId != ITE_VENDOR_ID)
-				continue;
-			
-			if ((ReadByte(ITE_CONFIGURATION_REGISTER, valid) & 0x10) == 0)
-				continue;
-			
-			if (!valid)
-				continue;
-						
+		{		
 			return true;			
 		}
 	}
