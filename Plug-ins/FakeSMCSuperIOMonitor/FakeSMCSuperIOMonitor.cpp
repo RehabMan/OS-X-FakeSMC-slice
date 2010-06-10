@@ -40,10 +40,19 @@ IOService* SuperIOMonitorPlugin::probe(IOService *provider, SInt32 *score)
 			
 			if(!superio->Probe())
 			{
+				delete superio;
+				
+				superio = new Fintek();
+				
+				DebugLog("Probing Fintek...");
+				
+				if(!superio->Probe())
+				{
 				InfoLog("No supported Super I/O chip found!");
 				return 0;
 			}
 		}
+	}
 	}
 	
 	InfoLog("Found %s Super I/O chip", superio->GetModelName());

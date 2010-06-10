@@ -15,6 +15,9 @@
 
 #include "SuperIO.h"
 
+#define FINTEK_VENDOR_ID	0x3419
+
+
 const UInt8 FINTEK_PORTS_COUNT = 2;
 const UInt16 FINTEK_PORT[2] = { 0x2e, 0x4e };
 

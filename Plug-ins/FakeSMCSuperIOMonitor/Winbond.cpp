@@ -131,6 +131,11 @@ bool Winbond::Probe()
 		UInt8 id = SuperIO::ReadByte(SUPERIO_CHIP_ID_REGISTER);
 		UInt8 revision = SuperIO::ReadByte(SUPERIO_CHIP_REVISION_REGISTER);
 		
+		UInt8 ven1ID = SuperIO::ReadByte(VENDOR_ID_BYTE1_REG);
+		UInt8 ven2ID = SuperIO::ReadByte(VENDOR_ID_BYTE2_REG);
+		IOLog("FakeSMC_SuperIO probe: SuperIO chip=%02x %02x vendor=%02x %02x\n", id,
+			  revision,  ven1ID, ven2ID);
+		
 		switch (id) 
 		{		
 			case 0x52:
