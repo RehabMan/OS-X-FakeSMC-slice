@@ -15,6 +15,9 @@
 
 #include "SuperIO.h"
 
+const UInt8 FINTEK_PORTS_COUNT = 2;
+const UInt16 FINTEK_PORT[2] = { 0x2e, 0x4e };
+
 // Hardware Monitor
 const UInt8 FINTEK_ADDRESS_REGISTER_OFFSET = 0x05;
 const UInt8 FINTEK_DATA_REGISTER_OFFSET = 0x06;

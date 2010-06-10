@@ -15,6 +15,9 @@
 
 #include "SuperIO.h"
 
+const UInt8 WINBOND_PORTS_COUNT = 5;
+const UInt16 WINBOND_PORT[5] = { 0x2e, 0x4e, 0x3f0, 0x370, 0x250};
+
 const UInt8 WINBOND_HARDWARE_MONITOR_LDN	= 0x0B;
 
 const UInt16 WINBOND_VENDOR_ID = 0x5CA3;
@@ -54,6 +57,7 @@ protected:
 	short	ReadTemperature(UInt8 index);
 	UInt64	SetBit(UInt64 target, UInt32 bit, UInt32 value);
 	void	UpdateRPM();
+	void	SetPorts(UInt8 index);
 	void	Enter();
 	void	Exit();
 public:	

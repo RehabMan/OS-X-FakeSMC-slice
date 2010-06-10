@@ -15,6 +15,9 @@
 
 #include "SuperIO.h"
 
+const UInt8 ITE_PORTS_COUNT = 3;
+const UInt16 ITE_PORT[3] = { 0x2e, 0x4e, 0x370 };
+
 const UInt8 IT87_ENVIRONMENT_CONTROLLER_LDN = 0x04;
 
 // ITE
@@ -40,12 +43,12 @@ class IT87x : public SuperIO
 private:
 	UInt8	TemperatureIndex[2];
 protected:
-public:	
 	UInt8 	ReadByte(UInt8 reg, bool* valid);
 	UInt16	ReadRPM(UInt8 num);
+	void	SetPorts(UInt8 index);
 	void	Enter();
 	void	Exit();
-	
+public:	
 	virtual bool	Probe();
 	virtual void	Init();
 	virtual void	Finish();

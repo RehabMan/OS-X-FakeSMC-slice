@@ -13,6 +13,12 @@
 #include "Winbond.h"
 #include "fakesmc.h"
 
+void Winbond::SetPorts(UInt8 index)
+{
+	RegisterPort = WINBOND_PORT[index];
+	ValuePort = WINBOND_PORT[index] + 1;
+}
+
 void Winbond::Enter()
 {
 	outb(RegisterPort, 0x87);
@@ -116,7 +122,7 @@ bool Winbond::Probe()
 {	
 	Model = UnknownModel;
 	
-	for (int i = 0; i < 2; i++) 
+	for (int i = 0; i < WINBOND_PORTS_COUNT; i++) 
 	{
 		SetPorts(i);
 		

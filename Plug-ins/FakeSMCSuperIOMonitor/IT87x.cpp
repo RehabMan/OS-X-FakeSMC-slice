@@ -14,12 +14,26 @@
 #include "IT87x.h"
 #include "fakesmc.h"
 
+void IT87x::SetPorts(UInt8 index)
+{
+	RegisterPort = ITE_PORT[index];
+	ValuePort = ITE_PORT[index] + 1;
+}
+
 void IT87x::Enter()
 {
 	outb(RegisterPort, 0x87);
 	outb(RegisterPort, 0x01);
 	outb(RegisterPort, 0x55);
-	outb(RegisterPort, 0x55);
+	
+	if (RegisterPort == 0x4e) 
+	{
+		outb(RegisterPort, 0xaa);
+	}
+	else
+	{
+		outb(RegisterPort, 0x55);
+	}
 }
 
 void IT87x::Exit()
@@ -56,7 +70,7 @@ bool IT87x::Probe()
 {
 	Model = UnknownModel;
 	
-	for (int i = 0; i < 2; i++) 
+	for (int i = 0; i < ITE_PORTS_COUNT; i++) 
 	{
 		SetPorts(i);
 		

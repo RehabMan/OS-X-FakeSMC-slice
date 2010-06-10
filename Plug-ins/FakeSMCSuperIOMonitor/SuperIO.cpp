@@ -12,12 +12,6 @@
 
 #include "SuperIO.h"
 
-void SuperIO::SetPorts(UInt8 index)
-{
-	RegisterPort = SUPERIO_REGISTER_PORT[index];
-	ValuePort = SUPERIO_VALUE_PORT[index];
-}
-
 UInt8 SuperIO::ReadByte(UInt8 reg)
 {
 	outb(RegisterPort, reg);

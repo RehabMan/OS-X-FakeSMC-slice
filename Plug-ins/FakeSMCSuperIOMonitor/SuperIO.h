@@ -26,9 +26,6 @@
 #include <IOKit/IOLib.h>
 #include <IOKit/IOService.h>
 
-const UInt8 SUPERIO_REGISTER_PORT[2] = { 0x2e, 0x4e };
-const UInt8 SUPERIO_VALUE_PORT[2] = { 0x2f, 0x4f };
-
 // Registers
 const UInt8 SUPERIO_CONFIGURATION_CONTROL_REGISTER	= 0x02;
 const UInt8 SUPERIO_DEVCIE_SELECT_REGISTER			= 0x07;
@@ -78,7 +75,6 @@ protected:
 	const char*		FanName[5];
 	UInt8			FanIndex[5];
 
-	void			SetPorts(UInt8 index);
 	UInt8			ReadByte(UInt8 reg);
 	UInt16			ReadWord(UInt8 reg);
 	void			Select(UInt8 logicalDeviceNumber);
