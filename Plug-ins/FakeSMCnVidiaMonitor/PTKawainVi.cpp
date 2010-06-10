@@ -483,9 +483,11 @@ void PTKawainVi::UpdateF(const char* key, char* data) {
 			case 0x41:
 			case 0x43:
 			case 0x44:
+			//case 0x46:
 			case 0x47:
 			case 0x4b: 
 				nVfan=int(nv43_get_fanspeed())<<2;
+				break;
 			case 0x50:
 			case 0x84:
 			case 0x86:
@@ -494,6 +496,7 @@ void PTKawainVi::UpdateF(const char* key, char* data) {
 			case 0x92:
 			//case 0x200:
 				nVfan=int(g84_get_fanspeed())<<2;
+				break;
 			default:
 				nVfan=0;
 		}
