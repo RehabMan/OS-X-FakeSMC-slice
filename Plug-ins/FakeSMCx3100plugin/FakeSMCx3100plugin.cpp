@@ -9,7 +9,7 @@
 #define kTimeoutMSecs 1000
 #define fVendor "vendor-id"
 #define fDevice "device-id"
-#define fArch  "NVDA,current_arch"
+//#define fArch  "NVDA,current_arch"
 #define kIOPCIConfigBaseAddress0 0x10
 #define kMCHBAR	0x48
 #define TSC1	0x1001
@@ -36,15 +36,17 @@ x3100plugin * x3100service;
 
 #define super IOService
 static void Update(const char* key, char* data) {	
-	if(CompareKeys(key, "TG0P"))
+	if(CompareKeys(key, "TG0D"))
 	{
 		data[0] = x3100service->update(0);
 		data[1] = 0;
-	} else  if(CompareKeys(key, "TG0D"))
+	} 
+/*	else  if(CompareKeys(key, "TG0D"))
 	{		
 		data[0] = x3100service->update(1);
 		data[1] = 0;
 	}
+ */
 }
 
 int x3100plugin::update(int keyN)
@@ -81,7 +83,8 @@ int x3100plugin::update(int keyN)
 				IOLog("Fx3100: value check keyN=%d TR=%d\n", keyN, value);
 			}			
 */			 
-		} else 
+		}
+/*		else 
 		{
 			OUTVID(TIC2, 3);
 			if ((INVID16(TSC2) & (1<<15)) && !(INVID16(TSC2) & (1<<8))) {   //enabled and ready
@@ -91,11 +94,12 @@ int x3100plugin::update(int keyN)
 					IODelay(10000);
 				}				
 				value = INVID8(TR2);		
-/*				if (count < 8) {
+				if (count < 8) {
 					IOLog("Fx3100: value check keyN=%d TR=%d\n", keyN, value);
-				} */
 			}
 		}
+	}
+ */
 	}
 	return(127 - value);
 }
@@ -155,7 +159,7 @@ x3100plugin::start( IOService * provider ) {
 			{
 				//		UInt32 addr = map->getPhysicalAddress();
 				mmio_base = (volatile UInt8 *)mmio->getVirtualAddress();
-#if 1				
+#if 0				
 				IOLog("Fx3100: MCHBAR mapped\n");
 				for (int i=0; i<0x2f; i +=16) {
 					IOLog("%04lx: ", (long unsigned int)i+0x1000);
@@ -177,10 +181,10 @@ x3100plugin::start( IOService * provider ) {
 	char value[2];
 	value[0] = 10;
 	value[1] = 0;
-	FakeSMCAddKeyCallback("TG0P", "sp78", 2, value, &Update);
+	//	FakeSMCAddKeyCallback("TG0P", "sp78", 2, value, &Update);
 	FakeSMCAddKeyCallback("TG0D", "sp78", 2, value, &Update);
 	
-	IOLog("Fx3100: keys TG0P, TG0D registered\n");	
+	IOLog("Fx3100: key TG0D registered\n");	
 	x3100service = this;
 /*	
 	registerService(0);
@@ -207,7 +211,7 @@ bool x3100plugin::init(OSDictionary *properties)
 
 void x3100plugin::stop (IOService* provider)
 {
-	FakeSMCRemoveKeyCallback("TG0P");
+	//	FakeSMCRemoveKeyCallback("TG0P");
 	FakeSMCRemoveKeyCallback("TG0D");
 	super::stop(provider);
 }
