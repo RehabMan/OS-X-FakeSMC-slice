@@ -13,6 +13,13 @@
 #include "Winbond.h"
 #include "Fintek.h"
 
+#define DebugOn FALSE
+
+#define LogPrefix "FakeSMCSuperIOMonitor: "
+#define DebugLog(string, args...)	do { if (DebugOn) { IOLog (LogPrefix "[Debug] " string "\n", ## args); } } while(0)
+#define WarningLog(string, args...) do { IOLog (LogPrefix "[Warning] " string "\n", ## args); } while(0)
+#define InfoLog(string, args...)	do { IOLog (LogPrefix string "\n", ## args); } while(0)
+
 class SuperIOMonitorPlugin : public IOService
 {
     OSDeclareDefaultStructors(SuperIOMonitorPlugin)    
