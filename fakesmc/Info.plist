@@ -39,7 +39,7 @@
 				<key>$Num</key>
 				<data>AQ==</data>
 				<key>ACID</key>
-				<data>AAAAAAAA</data>
+				<data>REFCQ0VG</data>
 				<key>BALG</key>
 				<data>AAAAAAAA</data>
 				<key>LSOF</key>
@@ -83,6 +83,6 @@
 	<key>OSBundleRequired</key>
 	<string>Root</string>
 	<key>OSBundleCompatibleVersion</key>
-	<string>2.6.1</string>
+	<string>2.0</string>
 </dict>
 </plist>
