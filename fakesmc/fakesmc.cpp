@@ -80,7 +80,7 @@ bool FakeSMC::start (IOService *provider)
 	OSData *          tmpData    = 0;
 	OSData *          tmpDatak    = 0;
 	OSString *tmpString = 0;
-	UInt32 line = 0x06;
+	UInt64 line = 0x06;
 	OSSymbol * gIntelPICName;
 	const char * nodeName = "APP0001";
 	const char * nodeComp = "smc-napa";
