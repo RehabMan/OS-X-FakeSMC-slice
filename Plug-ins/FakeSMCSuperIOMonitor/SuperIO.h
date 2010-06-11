@@ -30,16 +30,6 @@ const UInt8 VENDOR_ID_BYTE1_REG						= 0x23;
 const UInt8 VENDOR_ID_BYTE2_REG						= 0x24;
 const UInt8 SUPERIO_BASE_ADDRESS_REGISTER			= 0x60;
 
-inline UInt16 fp2e_Encode(UInt16 value)
-{
-	UInt16 dec = value / 1000;
-	UInt16 frc = value - (dec * 1000);
-	
-	UInt16 result = (dec << 14) | (frc << 4);
-	
-	return (result & 0xff00) >> 8 | (result & 0x00ff) | 0xb;
-}
-
 enum ChipModel
 {
 	UnknownModel = 0,

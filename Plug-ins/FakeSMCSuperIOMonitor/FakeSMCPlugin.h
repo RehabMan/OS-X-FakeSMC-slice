@@ -31,6 +31,14 @@ void FakeSMCAddKey (const char*, const char*, uint8_t, char*, FakeSMCPlugin*);
 char* FakeSMCReadKey (const char*);
 void FakeSMCRemoveKeyBinding (const char*);
 
+inline UInt16 fp2e_Encode(UInt16 value)
+{
+	UInt16 dec = (float)value / 1000.0f;
+	UInt16 frc = value - (dec * 1000);
+	
+	return (dec << 14) | (frc << 4) | 0xb;
+}
+
 inline bool CompareKeys(const char* key1, const char* key2)
 {
 	return ((key1[0] == key2[0]) && (key1[1] == key2[1]) && (key1[2] == key2[2]) && (key1[3] == key2[3]));
