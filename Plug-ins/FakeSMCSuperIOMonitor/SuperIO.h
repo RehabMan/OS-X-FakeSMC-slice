@@ -17,14 +17,9 @@
 #include <libkern/OSTypes.h>
 #include <IOKit/IOLib.h>
 #include <IOKit/IOService.h>
+
 #include "FakeSMCPlugin.h"
-
-#define DebugOn FALSE
-
-#define LogPrefix "FakeSMCSuperIOMonitor: "
-#define DebugLog(string, args...)	do { if (DebugOn) { IOLog (LogPrefix "[Debug] " string "\n", ## args); } } while(0)
-#define WarningLog(string, args...) do { IOLog (LogPrefix "[Warning] " string "\n", ## args); } while(0)
-#define InfoLog(string, args...)	do { IOLog (LogPrefix string "\n", ## args); } while(0)
+#include "Sensor.h"
 
 // Registers
 const UInt8 SUPERIO_CONFIGURATION_CONTROL_REGISTER	= 0x02;
@@ -35,7 +30,17 @@ const UInt8 VENDOR_ID_BYTE1_REG						= 0x23;
 const UInt8 VENDOR_ID_BYTE2_REG						= 0x24;
 const UInt8 SUPERIO_BASE_ADDRESS_REGISTER			= 0x60;
 
-enum SuperIOModel
+inline UInt16 fp2e_Encode(UInt16 value)
+{
+	UInt16 dec = value / 1000;
+	UInt16 frc = value - (dec * 1000);
+	
+	UInt16 result = (dec << 14) | (frc << 4);
+	
+	return (result & 0xff00) >> 8 | (result & 0x00ff) | 0xb;
+}
+
+enum ChipModel
 {
 	UnknownModel = 0,
 	
@@ -62,13 +67,16 @@ enum SuperIOModel
     F71889F = 0x0723 
 };
 
-class SuperIO : public FakeSMCPlugin
+class SuperIO
 {
 private:
+	Sensor*			m_Sensor;
 protected:
 	UInt16			Address;
 	UInt8			RegisterPort;
 	UInt8			ValuePort;
+	
+	ChipModel		Model;
 	
 	UInt16			LastVcore;
 	
@@ -77,21 +85,20 @@ protected:
 	const char*		FanName[5];
 	UInt8			FanIndex[5];
 
+	void			RegisterSensor(Sensor* sensor);
+	void			FlushSensors();
+	
 	UInt8			ReadByte(UInt8 reg);
 	UInt16			ReadWord(UInt8 reg);
 	void			Select(UInt8 logicalDeviceNumber);
 	
 public:
-	SuperIOModel	Model;
 	const char*		GetModelName();
 	void			LoadConfiguration(IOService* provider);
 	
 	virtual bool	Probe();
 	virtual void	Init();
 	virtual void	Finish();
-	
-	virtual void	OnKeyRead(const char* key, char* data);
-	virtual void	OnKeyWrite(const char* key, char* data);
 };
 
 #endif

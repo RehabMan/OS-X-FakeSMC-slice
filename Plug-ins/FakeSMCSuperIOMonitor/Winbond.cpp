@@ -12,10 +12,68 @@
 
 #include "Winbond.h"
 
-void Winbond::SetPorts(UInt8 index)
+void WinbondTemperatureSensor::OnKeyRead(__unused const char* key, char* data)
 {
-	RegisterPort = WINBOND_PORT[index];
-	ValuePort = WINBOND_PORT[index] + 1;
+	data[0] = Winbond_ReadTemperature(m_Address, 0);
+	data[1] = 0;
+}
+
+void WinbondTemperatureSensor::OnKeyWrite(__unused const char* key, __unused char* data)
+{
+	
+}
+
+void WinbondVoltageSensor::OnKeyRead(__unused const char* key, char* data)
+{
+	float voltage; 
+	
+	switch (m_Model) 
+	{
+		case W83627HF:
+		case W83627THF:
+		case W83687THF:
+		{
+			UInt8 vrmConfiguration = Winbond_ReadByte(m_Address, m_Offset, 0x18);
+			UInt16 V = Winbond_ReadByte(m_Address, m_Offset, WINBOND_VOLTAGE_BASE_REG);
+			
+			if ((vrmConfiguration & 0x01) == 0)
+				voltage = 16.0f * V; // VRM8 formula
+			else
+				voltage = 4.88f * V + 690.0f; // VRM9 formula
+			
+			break;
+		}
+		default:
+		{
+			UInt16 V = Winbond_ReadByte(m_Address, m_Offset, WINBOND_VOLTAGE_BASE_REG);
+			voltage = 8 * V;
+			
+			break;
+		}
+	}
+	
+	UInt16 value = fp2e_Encode(voltage);
+	
+	data[0] = (value & 0xff00) >> 8;
+	data[1] = value & 0x00ff;
+}
+
+void WinbondVoltageSensor::OnKeyWrite(__unused const char* key, __unused char* data)
+{
+	
+}
+
+void WinbondTachometerSensor::OnKeyRead(__unused const char* key, char* data)
+{
+	UInt16 value = Winbond_ReadTachometer(m_Address, m_Offset, false);
+	
+	data[0] = (value >> 6) & 0xff;
+	data[1] = (value << 2) & 0xff;
+}
+
+void WinbondTachometerSensor::OnKeyWrite(__unused const char* key, __unused char* data)
+{
+	
 }
 
 void Winbond::Enter()
@@ -29,111 +87,19 @@ void Winbond::Exit()
 	outb(RegisterPort, 0xAA);
 }
 
-UInt8 Winbond::ReadByte(UInt8 bank, UInt8 reg) 
-{
-	outb((UInt16)(Address + WINBOND_ADDRESS_REGISTER_OFFSET), WINBOND_BANK_SELECT_REGISTER);
-	outb((UInt16)(Address + WINBOND_DATA_REGISTER_OFFSET), bank);
-	outb((UInt16)(Address + WINBOND_ADDRESS_REGISTER_OFFSET), reg);
-	return inb((UInt16)(Address + WINBOND_DATA_REGISTER_OFFSET));
-}
-
-void Winbond::WriteByte(UInt8 bank, UInt8 reg, UInt8 value)
-{
-	outb((UInt16)(Address + WINBOND_ADDRESS_REGISTER_OFFSET), WINBOND_BANK_SELECT_REGISTER);
-	outb((UInt16)(Address + WINBOND_DATA_REGISTER_OFFSET), bank);
-	outb((UInt16)(Address + WINBOND_ADDRESS_REGISTER_OFFSET), reg);
-	outb((UInt16)(Address + WINBOND_DATA_REGISTER_OFFSET), value); 
-}
-
-short Winbond::ReadTemperature(UInt8 index)
-{
-	UInt32 value = ReadByte(WINBOND_TEMPERATURE_BANK[index], WINBOND_TEMPERATURE_REG[index]) << 1;
-	
-	if (WINBOND_TEMPERATURE_BANK[index] > 0) 
-		value |= ReadByte(WINBOND_TEMPERATURE_BANK[index], (UInt8)(WINBOND_TEMPERATURE_REG[index] + 1)) >> 7;
-	
-	float temperature = (float)value / 2.0f;
-	
-	return temperature;
-}
-
-UInt64 Winbond::SetBit(UInt64 target, UInt32 bit, UInt32 value)
-{
-	if (((value & 1) == value) && bit >= 0 && bit <= 63)
-	{
-		UInt64 mask = (((UInt64)1) << bit);
-		return value > 0 ? target | mask : target & ~mask;
-	}
-	
-	return value;
-}
-
-void Winbond::UpdateRPM()
-{
-	UInt64 bits = 0;
-	
-	for (int i = 0; i < 5; i++)
-		bits = (bits << 8) | ReadByte(0, WINBOND_FAN_BIT_REG[i]);
-	
-	UInt64 newBits = bits;
-	
-	for (int i = 0; i < 5; i++)
-	{
-		int count = ReadByte(WINBOND_FAN_TACHO_BANK[i], WINBOND_FAN_TACHO_REG[i]);
-		
-		// assemble fan divisor
-		int divisorBits = (int)(
-								(((bits >> WINBOND_FAN_DIV_BIT2[i]) & 1) << 2) |
-								(((bits >> WINBOND_FAN_DIV_BIT1[i]) & 1) << 1) |
-								((bits >> WINBOND_FAN_DIV_BIT0[i]) & 1));
-		int divisor = 1 << divisorBits;
-		
-		FanValue[i] = (count < 0xff) ? 1.35e6f / (float)(count * divisor) : 0;
-		FanValueObsolete[i] = false;
-		
-		// update fan divisor
-		if (count > 192 && divisorBits < 7) 
-			divisorBits++;
-		if (count < 96 && divisorBits > 0)
-			divisorBits--;
-		
-		newBits = SetBit(newBits, WINBOND_FAN_DIV_BIT2[i], 
-								(divisorBits >> 2) & 1);
-		newBits = SetBit(newBits, WINBOND_FAN_DIV_BIT1[i], 
-								(divisorBits >> 1) & 1);
-		newBits = SetBit(newBits, WINBOND_FAN_DIV_BIT0[i], 
-								divisorBits & 1);
-	}
-	
-	// write new fan divisors 
-	for (int i = 4; i >= 0; i--) 
-	{
-		UInt8 oldByte = (UInt8)(bits & 0xFF);
-		UInt8 newByte = (UInt8)(newBits & 0xFF);
-		bits = bits >> 8;
-		newBits = newBits >> 8;
-		if (oldByte != newByte) 
-			WriteByte(0, WINBOND_FAN_BIT_REG[i], newByte);        
-	}
-}
-
 bool Winbond::Probe()
 {	
 	Model = UnknownModel;
 	
 	for (int i = 0; i < WINBOND_PORTS_COUNT; i++) 
 	{
-		SetPorts(i);
+		RegisterPort	= WINBOND_PORT[i];
+		ValuePort		= WINBOND_PORT[i] + 1;
 		
 		Enter();
 		
 		UInt8 id = SuperIO::ReadByte(SUPERIO_CHIP_ID_REGISTER);
 		UInt8 revision = SuperIO::ReadByte(SUPERIO_CHIP_REVISION_REGISTER);
-		
-		UInt8 ven1ID = SuperIO::ReadByte(VENDOR_ID_BYTE1_REG);
-		UInt8 ven2ID = SuperIO::ReadByte(VENDOR_ID_BYTE2_REG);
-		IOLog("FakeSMC_SuperIO probe: SuperIO chip=%02x %02x vendor=%02x %02x\n", id,
-			  revision,  ven1ID, ven2ID);
 		
 		switch (id) 
 		{		
@@ -258,25 +224,23 @@ bool Winbond::Probe()
 
 void Winbond::Init()
 {	
-	char value[2];
-	
 	switch (Model) 
 	{
 		case W83667HG:
 		case W83667HGB:
 		{
 			// do not add temperature sensor registers that read PECI
-			UInt8 flag = ReadByte(0, WINBOND_TEMPERATURE_SOURCE_SELECT_REG);
+			UInt8 flag = Winbond_ReadByte(Address, 0, WINBOND_TEMPERATURE_SOURCE_SELECT_REG);
 			
 			// Heatsink
-			if ((flag & 0x04) == 0)	FakeSMCAddKey("Th0H", "sp78", 2, value, this);
-			
+			if ((flag & 0x04) == 0)	RegisterSensor(new WinbondTemperatureSensor(Address, 0, "Th0H", "sp78", 2));
+		
 			/*if ((flag & 0x40) == 0)
 			 list.Add(new Sensor(TEMPERATURE_NAME[1], 1, null,
 			 SensorType.Temperature, this, parameter));*/
 			
 			// Northbridge
-			FakeSMCAddKey("TN0P", "sp78", 2, value, this);
+			RegisterSensor(new WinbondTemperatureSensor(Address, 2, "TN0P", "sp78", 2));
 			
 			break;
 		}
@@ -285,17 +249,17 @@ void Winbond::Init()
 		case W83627DHGP:
 		{
 			// do not add temperature sensor registers that read PECI
-			UInt8 sel = ReadByte(0, WINBOND_TEMPERATURE_SOURCE_SELECT_REG);
+			UInt8 sel = Winbond_ReadByte(Address, 0, WINBOND_TEMPERATURE_SOURCE_SELECT_REG);
 			
 			// Heatsink
-			if ((sel & 0x07) == 0) FakeSMCAddKey("Th0H", "sp78", 2, value, this);
+			if ((sel & 0x07) == 0) RegisterSensor(new WinbondTemperatureSensor(Address, 0, "Th0H", "sp78", 2));
 			
 			/*if ((sel & 0x70) == 0)
 			 list.Add(new Sensor(TEMPERATURE_NAME[1], 1, null,
 			 SensorType.Temperature, this, parameter));*/
 			
 			// Northbridge
-			FakeSMCAddKey("TN0P", "sp78", 2, value, this);
+			RegisterSensor(new WinbondTemperatureSensor(Address, 2, "TN0P", "sp78", 2));
 			
 			break;
 		}
@@ -304,21 +268,21 @@ void Winbond::Init()
 		{
 			// no PECI support, add all sensors
 			// Heatsink
-			FakeSMCAddKey("Th0H", "sp78", 2, value, this);
+			RegisterSensor(new WinbondTemperatureSensor(Address, 0, "Th0H", "sp78", 2));
 			// Northbridge
-			FakeSMCAddKey("TN0P", "sp78", 2, value, this);
+			RegisterSensor(new WinbondTemperatureSensor(Address, 2, "TN0P", "sp78", 2));
 			break;
 		}
 	}
 	
 	// CPU Vcore
-	FakeSMCAddKey("VC0C", "fp2e", 2, value, this);
-	FakeSMCAddKey("VC0c", "ui16", 2, value, this);
+	RegisterSensor(new WinbondVoltageSensor(Address, Model, 0, "VC0C", "fp2e", 2));
+	//FakeSMCAddKey("VC0c", "ui16", 2, value, this);
 	
 	// FANs
 	FanOffset = GetFNum();
 	
-	UpdateRPM();
+	Winbond_ReadTachometer(Address, 0, true);
 	
 	for (int i = 0; i < 5; i++) 
 	{
@@ -334,7 +298,7 @@ void Winbond::Init()
 			}
 			
 			snprintf(key, 5, "F%dAc", FanOffset + FanCount);
-			FakeSMCAddKey(key, "fpe2", 2, value, this);
+			RegisterSensor(new WinbondTachometerSensor(Address, i, key, "fpe2", 2));
 			
 			FanIndex[FanCount++] = i;
 		}
@@ -345,105 +309,6 @@ void Winbond::Init()
 
 void Winbond::Finish()
 {
-	FakeSMCRemoveKeyBinding("Th0H");
-	FakeSMCRemoveKeyBinding("TN0P");
-	FakeSMCRemoveKeyBinding("VC0C");
-	FakeSMCRemoveKeyBinding("VC0c");
-	for (int i = FanOffset; i < FanOffset + FanCount; i++) 
-	{
-		char key[5];
-		snprintf(key, 5, "F%dAc", i);
-		FakeSMCRemoveKeyBinding(key);
-	}
+	FlushSensors();
 	UpdateFNum(-FanCount);
-}
-
-void Winbond::OnKeyRead(const char *key, char *data)
-{
-	// Heatsink
-	if(CompareKeys(key, "Th0H"))
-	{
-		data[0] = ReadTemperature(0);
-		data[1] = 0;
-	}
-	
-	// Northbridge
-	if(CompareKeys(key, "TN0P"))
-	{
-		data[0] = ReadTemperature(2);
-		data[1] = 0;
-	}
-	
-	// CPU Vcore
-	if(CompareKeys(key, "VC0C"))
-	{
-		float voltage; 
-		
-		switch (Model) 
-		{
-			case W83627HF:
-			case W83627THF:
-			case W83687THF:
-			{
-				UInt8 vrmConfiguration = ReadByte(0, 0x18);
-				LastVcore = ReadByte(0, WINBOND_VOLTAGE_BASE_REG);
-				
-				if ((vrmConfiguration & 0x01) == 0)
-					voltage = 16.0f * LastVcore; // VRM8 formula
-				else
-					voltage = 4.88f * LastVcore + 690.0f; // VRM9 formula
-				
-				break;
-			}
-			default:
-			{
-				LastVcore = ReadByte(0, WINBOND_VOLTAGE_BASE_REG);
-				voltage = 8 * LastVcore;
-				
-				break;
-			}
-		}
-		
-		UInt16 dec = voltage / 1000;
-		UInt16 frc = voltage - (dec * 1000);
-		
-		UInt16 value = (dec << 14) | (frc << 4);
-		
-		data[0] = (value & 0xff00) >> 8;
-		data[1] = (value & 0x00ff) | 0x3;
-	}
-	
-	if(CompareKeys(key, "VC0c"))
-	{
-		data[0] = (LastVcore & 0xff00) >> 8;
-		data[1] = LastVcore & 0x00ff;
-	}
-	
-	// Fans
-	for (int i = FanOffset; i < FanOffset + FanCount; i++)
-	{
-		char name[5];
-		
-		snprintf(name, 5, "F%dAc", i);
-		
-		if(CompareKeys(key, name))
-		{
-			UInt8 index = FanIndex[key[1] - 48 - FanOffset];
-			
-			if(FanValueObsolete[index])
-				UpdateRPM();
-			
-			UInt16 value = FanValue[index];
-			
-			FanValueObsolete[index] = true;
-			
-			data[0] = (value >> 6) & 0xff;
-			data[1] = (value << 2) & 0xff;
-		}
-	}
-}
-
-void Winbond::OnKeyWrite(const char* key, char* data)
-{
-	
 }

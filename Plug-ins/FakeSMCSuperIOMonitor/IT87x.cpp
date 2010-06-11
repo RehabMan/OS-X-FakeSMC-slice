@@ -13,10 +13,60 @@
 #include <IOKit/IOService.h>
 #include "IT87x.h"
 
-void IT87x::SetPorts(UInt8 index)
+void IT87xTemperatureSensor::OnKeyRead(__unused const char* key, char* data)
 {
-	RegisterPort = ITE_PORT[index];
-	ValuePort = ITE_PORT[index] + 1;
+	bool* valid;
+	
+	UInt8 value = IT87x_ReadTemperature(m_Address, m_Offset, valid);
+	
+	if(valid)
+	{
+		data[0] = value;
+		data[1] = 0;
+	}
+}
+
+void IT87xTemperatureSensor::OnKeyWrite(__unused const char* key, __unused char* data)
+{
+	
+}
+
+void IT87xVoltageSensor::OnKeyRead(__unused const char* key, char* data)
+{
+	bool* valid;
+	
+	UInt16 V = IT87x_ReadByte(m_Address, ITE_VOLTAGE_BASE_REG + m_Offset, valid) << 4;
+	
+	if (valid)
+	{
+		UInt16 value = fp2e_Encode(V);
+		
+		data[0] = (value & 0xff00) >> 8;
+		data[1] = value & 0x00ff;
+	}
+}
+
+void IT87xVoltageSensor::OnKeyWrite(__unused const char* key, __unused char* data)
+{
+	
+}
+
+void IT87xTachometerSensor::OnKeyRead(__unused const char* key, char* data)
+{
+	bool* valid;
+	
+	UInt16 value = IT87x_ReadTachometer(m_Address, m_Offset, valid);
+	
+	if(valid)
+	{
+		data[0] = (value >> 6) & 0xff;
+		data[1] = (value << 2) & 0xff;
+	}
+}
+
+void IT87xTachometerSensor::OnKeyWrite(__unused const char* key, __unused char* data)
+{
+	
 }
 
 void IT87x::Enter()
@@ -41,37 +91,14 @@ void IT87x::Exit()
 	outb(ValuePort, 0x02);
 }
 
-UInt8 IT87x::ReadByte(UInt8 reg, bool* valid)
-{
-	outb(Address + ITE_ADDRESS_REGISTER_OFFSET, reg);
-	UInt8 value = inb(Address + ITE_DATA_REGISTER_OFFSET);
-	
-	valid = (bool*)(reg == inb(Address + ITE_DATA_REGISTER_OFFSET));
-	
-	return value;
-}
-
-UInt16 IT87x::ReadRPM(UInt8 num)
-{
-	bool* valid;
-	int value = ReadByte(ITE_FAN_TACHOMETER_REG[num], valid);
-	
-	if(valid)
-	{
-		value |= ReadByte(ITE_FAN_TACHOMETER_EXT_REG[num], valid) << 8;
-		value = valid && value > 0x3f && value < 0xffff ? (float)(1350000 + value) / (float)(value * 2) : 0;
-	}
-	
-	return value;
-}
-
 bool IT87x::Probe()
 {
 	Model = UnknownModel;
 	
 	for (int i = 0; i < ITE_PORTS_COUNT; i++) 
 	{
-		SetPorts(i);
+		RegisterPort	= ITE_PORT[i];
+		ValuePort		= ITE_PORT[i] + 1;
 		
 		Enter();
 		
@@ -80,19 +107,11 @@ bool IT87x::Probe()
 		switch (chipID)
 		{
 			case IT8712F:
-				Model = IT8712F; 
-				break;
 			case IT8716F:
-				Model = IT8716F; 
-				break;
 			case IT8718F:
-				Model = IT8718F; 
-				break;
 			case IT8720F: 
-				Model = IT8720F; 
-				break;
 			case IT8726F: 
-				Model = IT8726F; 
+				Model = (ChipModel)chipID; 
 				break; 
 			default: 
 				Model = UnknownModel;
@@ -115,12 +134,12 @@ bool IT87x::Probe()
 		bool* valid;
 		UInt8 vendorId;
 		
-		vendorId = ReadByte(ITE_VENDOR_ID_REGISTER, valid);
+		vendorId = IT87x_ReadByte(Address, ITE_VENDOR_ID_REGISTER, valid);
 		
 		if (!valid || vendorId != ITE_VENDOR_ID)
 			continue;
 		
-		if ((ReadByte(ITE_CONFIGURATION_REGISTER, valid) & 0x10) == 0)
+		if ((IT87x_ReadByte(Address, ITE_CONFIGURATION_REGISTER, valid) & 0x10) == 0)
 			continue;
 		
 		if (!valid)
@@ -141,8 +160,8 @@ bool IT87x::Probe()
 }
 
 void IT87x::Init()
-{
-	char value[2];
+{	
+	bool* valid;
 	
 	// Temperature semi-autodetection
 	
@@ -150,14 +169,13 @@ void IT87x::Init()
 	
 	for (int i = 2; i >= 0; i--) 
 	{
-		bool* valid;
-		UInt8 t = ReadByte(ITE_TEMPERATURE_BASE_REG + i, valid);
+		UInt8 t = IT87x_ReadTemperature(Address, i, valid);
 		
 		// Second chance
 		if (!valid || t == 0 || t > 128 )
 		{
 			IOSleep(500);
-			t = ReadByte(ITE_TEMPERATURE_BASE_REG + i, valid);
+			t = IT87x_ReadTemperature(Address, i, valid);
 		}
 		
 		if (valid && t > 0 && t < 128)
@@ -167,14 +185,12 @@ void IT87x::Init()
 				case 0:
 				{
 					// Heatsink
-					TemperatureIndex[0] = i;
-					FakeSMCAddKey("Th0H", "sp78", 2, value, this);
+					RegisterSensor(new IT87xTemperatureSensor(Address, i, "Th0H", "sp78", 2));
 				} break;
 				case 1:
 				{
 					// Northbridge
-					TemperatureIndex[1] = i;
-					FakeSMCAddKey("TN0P", "sp78", 2, value, this);
+					RegisterSensor(new IT87xTemperatureSensor(Address, i, "TN0P", "sp78", 2));
 				} break;
 			}
 			
@@ -183,8 +199,8 @@ void IT87x::Init()
 	}
 
 	// CPU Vcore
-	FakeSMCAddKey("VC0C", "fp2e", 2, value, this);
-	FakeSMCAddKey("VC0c", "ui16", 2, value, this);
+	RegisterSensor(new IT87xVoltageSensor(Address, 0, "VC0C", "fp2e", 2));
+	//FakeSMCAddKey("VC0c", "ui16", 2, value, this);
 	
 	// FANs
 	FanOffset = GetFNum();
@@ -194,16 +210,16 @@ void IT87x::Init()
 		char key[5];
 		bool fanName = FanName[i] && strlen(FanName[i]) > 0;
 		
-		if ( fanName || ReadRPM(i) > 0)
+		if ( fanName || IT87x_ReadTachometer(Address, i, valid) > 0)
 		{	
-			if(fanName)
+			if(valid || fanName)
 			{
 				snprintf(key, 5, "F%dID", FanOffset + FanCount);
 				FakeSMCAddKey(key, "ch8*", strlen(FanName[i]), (char*)FanName[i]);
 			}
 			
 			snprintf(key, 5, "F%dAc", FanOffset + FanCount);
-			FakeSMCAddKey(key, "fpe2", 2, value, this);
+			RegisterSensor(new IT87xTachometerSensor(Address, i, key, "fpe2", 2));
 			
 			FanIndex[FanCount++] = i;
 		}
@@ -214,88 +230,6 @@ void IT87x::Init()
 
 void IT87x::Finish()
 {
-	FakeSMCRemoveKeyBinding("Th0H");
-	FakeSMCRemoveKeyBinding("TN0P");
-	FakeSMCRemoveKeyBinding("VC0C");
-	FakeSMCRemoveKeyBinding("VC0c");
-	for (int i = FanOffset; i < FanOffset + FanCount; i++) 
-	{
-		char key[5];
-		snprintf(key, 5, "F%dAc", i);
-		FakeSMCRemoveKeyBinding(key);
-	}
+	FlushSensors();
 	UpdateFNum(-FanCount);
-}
-
-void IT87x::OnKeyRead(const char *key, char *data)
-{
-	bool* valid;
-	
-	// Heatsink
-	if(CompareKeys(key, "Th0H"))
-	{
-		char value = ReadByte(ITE_TEMPERATURE_BASE_REG + TemperatureIndex[0], valid);
-		
-		if(valid)
-		{
-			data[0] = value;
-			data[1] = 0;
-		}
-	}
-	
-	// Northbridge
-	if(CompareKeys(key, "TN0P"))
-	{
-		char value = ReadByte(ITE_TEMPERATURE_BASE_REG + TemperatureIndex[1], valid);
-		
-		if(valid)
-		{
-			data[0] = value;
-			data[1] = 0;
-		}
-	}
-	
-	// CPU Vcore
-	if(CompareKeys(key, "VC0C"))
-	{
-		LastVcore = ReadByte(ITE_VOLTAGE_BASE_REG + 0, valid) << 4;
-		
-		if (valid)
-		{
-			UInt16 dec = LastVcore / 1000;
-			UInt16 frc = LastVcore - (dec * 1000);
-			
-			UInt16 value = (dec << 14) | (frc << 4);
-			
-			data[0] = (value & 0xff00) >> 8;
-			data[1] = (value & 0x00ff) | 0xb;
-		}
-	}
-	
-	if(CompareKeys(key, "VC0c"))
-	{
-		data[0] = (LastVcore & 0xff00) >> 8;
-		data[1] = LastVcore & 0x00ff;
-	}
-	
-	// FANs
-	for (int i = FanOffset; i < FanOffset + FanCount; i++)
-	{
-		char name[5];
-		
-		snprintf(name, 5, "F%dAc", i);
-		
-		if(CompareKeys(key, name))
-		{
-			short value = ReadRPM(FanIndex[key[1] - 48 - FanOffset]);
-			
-			data[0] = (value >> 6) & 0xff;
-			data[1] = (value << 2) & 0xff;
-		}
-	}
-}
-
-void IT87x::OnKeyWrite(const char* key, char* data)
-{
-	
 }

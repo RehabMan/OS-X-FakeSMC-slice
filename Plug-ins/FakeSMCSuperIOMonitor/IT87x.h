@@ -38,23 +38,83 @@ const UInt8 ITE_VOLTAGE_BASE_REG = 0x20;
 
 const float ITE_VOLTAGE_GAIN[] = {1, 1, 1, (6.8f / 10 + 1), 1, 1, 1, 1, 1 };
 
+// ITE base functions definition
+
+inline UInt8 IT87x_ReadByte(UInt16 address, UInt8 reg, bool* valid)
+{
+	outb(address + ITE_ADDRESS_REGISTER_OFFSET, reg);
+	
+	UInt8 value = inb(address + ITE_DATA_REGISTER_OFFSET);
+	valid = (bool*)(reg == inb(address + ITE_DATA_REGISTER_OFFSET));
+	
+	return value;
+}
+
+inline UInt8 IT87x_ReadTemperature(UInt16 address, UInt8 index, bool* valid)
+{
+	return IT87x_ReadByte(address, ITE_TEMPERATURE_BASE_REG + index, valid);
+}
+
+inline UInt16 IT87x_ReadTachometer(UInt16 address, UInt8 index, bool* valid)
+{
+	int value = IT87x_ReadByte(address, ITE_FAN_TACHOMETER_REG[index], valid);
+	
+	if(valid)
+	{
+		value |= IT87x_ReadByte(address, ITE_FAN_TACHOMETER_EXT_REG[index], valid) << 8;
+		value = valid && value > 0x3f && value < 0xffff ? (float)(1350000 + value) / (float)(value * 2) : 0;
+	}
+	
+	return value;
+}
+
+// ITE classes definition
+
+class IT87xTemperatureSensor : public Sensor 
+{
+public:
+	IT87xTemperatureSensor(UInt16 address, UInt8 offset, const char* key, const char* type, UInt8 size) : Sensor(address, offset, key, type, size)
+	{
+		//
+	};
+	
+	virtual void	OnKeyRead(const char* key, char* data);
+	virtual void	OnKeyWrite(const char* key, char* data);
+};
+
+class IT87xVoltageSensor : public Sensor 
+{
+public:
+	IT87xVoltageSensor(UInt16 address, UInt8 offset, const char* key, const char* type, UInt8 size) : Sensor(address, offset, key, type, size)
+	{
+		//
+	};
+	
+	virtual void	OnKeyRead(const char* key, char* data);
+	virtual void	OnKeyWrite(const char* key, char* data);
+};
+
+class IT87xTachometerSensor : public Sensor 
+{
+public:
+	IT87xTachometerSensor(UInt16 address, UInt8 offset, const char* key, const char* type, UInt8 size) : Sensor(address, offset, key, type, size)
+	{
+		//
+	};
+	
+	virtual void	OnKeyRead(const char* key, char* data);
+	virtual void	OnKeyWrite(const char* key, char* data);
+};
+
 class IT87x : public SuperIO
 {
-private:
-	UInt8	TemperatureIndex[2];
 protected:
-	UInt8 	ReadByte(UInt8 reg, bool* valid);
-	UInt16	ReadRPM(UInt8 num);
-	void	SetPorts(UInt8 index);
 	void	Enter();
 	void	Exit();
 public:	
 	virtual bool	Probe();
 	virtual void	Init();
 	virtual void	Finish();
-	
-	virtual void	OnKeyRead(const char* key, char* data);
-	virtual void	OnKeyWrite(const char* key, char* data);
 };
 
 #endif

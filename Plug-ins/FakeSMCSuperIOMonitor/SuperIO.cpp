@@ -12,6 +12,26 @@
 
 #include "SuperIO.h"
 
+void SuperIO::RegisterSensor(Sensor* sensor)
+{
+	sensor->Next = m_Sensor;
+	m_Sensor = sensor;
+}
+
+void SuperIO::FlushSensors()
+{
+	Sensor* sensor = m_Sensor;
+	
+	while (sensor) 
+	{
+		Sensor* next = sensor->Next;
+		
+		delete sensor;
+		
+		sensor = next;
+	}
+}
+
 UInt8 SuperIO::ReadByte(UInt8 reg)
 {
 	outb(RegisterPort, reg);
@@ -77,14 +97,4 @@ void SuperIO::LoadConfiguration(IOService* provider)
 		
 		fanIDs->release();
     }
-}
-
-void SuperIO::OnKeyRead(const char* key, char* data)
-{
-	
-}
-
-void SuperIO::OnKeyWrite(const char* key, char* data)
-{
-	
 }
