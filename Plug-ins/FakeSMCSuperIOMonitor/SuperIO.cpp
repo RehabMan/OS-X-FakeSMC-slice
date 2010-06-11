@@ -78,3 +78,13 @@ void SuperIO::LoadConfiguration(IOService* provider)
 		fanIDs->release();
     }
 }
+
+void SuperIO::OnKeyRead(const char* key, char* data)
+{
+	
+}
+
+void SuperIO::OnKeyWrite(const char* key, char* data)
+{
+	
+}

@@ -12,7 +12,6 @@
 
 #include <IOKit/IOService.h>
 #include "IT87x.h"
-#include "fakesmc.h"
 
 void IT87x::SetPorts(UInt8 index)
 {
@@ -145,8 +144,6 @@ void IT87x::Init()
 {
 	char value[2];
 	
-	Instance = this;
-	
 	// Temperature semi-autodetection
 	
 	int count = 0;
@@ -171,13 +168,13 @@ void IT87x::Init()
 				{
 					// Heatsink
 					TemperatureIndex[0] = i;
-					FakeSMCAddKeyCallback("Th0H", "sp78", 2, value, &::Update);
+					FakeSMCAddKey("Th0H", "sp78", 2, value, this);
 				} break;
 				case 1:
 				{
 					// Northbridge
 					TemperatureIndex[1] = i;
-					FakeSMCAddKeyCallback("TN0P", "sp78", 2, value, &::Update);
+					FakeSMCAddKey("TN0P", "sp78", 2, value, this);
 				} break;
 			}
 			
@@ -186,8 +183,8 @@ void IT87x::Init()
 	}
 
 	// CPU Vcore
-	FakeSMCAddKeyCallback("VC0C", "fp2e", 2, value, &::Update);
-	FakeSMCAddKeyCallback("VC0c", "ui16", 2, value, &::Update);
+	FakeSMCAddKey("VC0C", "fp2e", 2, value, this);
+	FakeSMCAddKey("VC0c", "ui16", 2, value, this);
 	
 	// FANs
 	FanOffset = GetFNum();
@@ -206,7 +203,7 @@ void IT87x::Init()
 			}
 			
 			snprintf(key, 5, "F%dAc", FanOffset + FanCount);
-			FakeSMCAddKeyCallback(key, "fpe2", 2, value, &::Update);
+			FakeSMCAddKey(key, "fpe2", 2, value, this);
 			
 			FanIndex[FanCount++] = i;
 		}
@@ -217,20 +214,20 @@ void IT87x::Init()
 
 void IT87x::Finish()
 {
-	FakeSMCRemoveKeyCallback("Th0H");
-	FakeSMCRemoveKeyCallback("TN0P");
-	FakeSMCRemoveKeyCallback("VC0C");
-	FakeSMCRemoveKeyCallback("VC0c");
+	FakeSMCRemoveKeyBinding("Th0H");
+	FakeSMCRemoveKeyBinding("TN0P");
+	FakeSMCRemoveKeyBinding("VC0C");
+	FakeSMCRemoveKeyBinding("VC0c");
 	for (int i = FanOffset; i < FanOffset + FanCount; i++) 
 	{
 		char key[5];
 		snprintf(key, 5, "F%dAc", i);
-		FakeSMCRemoveKeyCallback(key);
+		FakeSMCRemoveKeyBinding(key);
 	}
 	UpdateFNum(-FanCount);
 }
 
-void IT87x::Update(const char *key, char *data)
+void IT87x::OnKeyRead(const char *key, char *data)
 {
 	bool* valid;
 	
@@ -296,4 +293,9 @@ void IT87x::Update(const char *key, char *data)
 			data[1] = (value << 2) & 0xff;
 		}
 	}
+}
+
+void IT87x::OnKeyWrite(const char* key, char* data)
+{
+	
 }

@@ -7,9 +7,9 @@
 #include "FakeSMCSuperIOMonitor.h"
 
 #define super IOService
-OSDefineMetaClassAndStructors(SuperIOMonitorPlugin, IOService)
+OSDefineMetaClassAndStructors(FakeSMCSuperIOMonitor, IOService)
 
-bool SuperIOMonitorPlugin::init(OSDictionary *properties)
+bool FakeSMCSuperIOMonitor::init(OSDictionary *properties)
 {
 	DebugLog("Initialising...");
 	
@@ -18,7 +18,7 @@ bool SuperIOMonitorPlugin::init(OSDictionary *properties)
 	return true;
 }
 
-IOService* SuperIOMonitorPlugin::probe(IOService *provider, SInt32 *score)
+IOService* FakeSMCSuperIOMonitor::probe(IOService *provider, SInt32 *score)
 {
 	DebugLog("Probing...");
 	
@@ -62,7 +62,7 @@ IOService* SuperIOMonitorPlugin::probe(IOService *provider, SInt32 *score)
 	return this;
 }
 
-bool SuperIOMonitorPlugin::start(IOService * provider)
+bool FakeSMCSuperIOMonitor::start(IOService * provider)
 {
 	DebugLog("Starting...");
 	
@@ -80,7 +80,7 @@ bool SuperIOMonitorPlugin::start(IOService * provider)
 	return true;
 }
 
-void SuperIOMonitorPlugin::stop (IOService* provider)
+void FakeSMCSuperIOMonitor::stop (IOService* provider)
 {
 	DebugLog("Stoping...");
 	
@@ -90,7 +90,7 @@ void SuperIOMonitorPlugin::stop (IOService* provider)
 	super::stop(provider);
 }
 
-void SuperIOMonitorPlugin::free ()
+void FakeSMCSuperIOMonitor::free ()
 {
 	DebugLog("Freeing...");
 	

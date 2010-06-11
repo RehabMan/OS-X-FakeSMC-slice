@@ -53,7 +53,8 @@ public:
 	virtual void	Init();
 	virtual void	Finish();
 	
-	virtual void	Update(const char* key, char* data);
+	virtual void	OnKeyRead(const char* key, char* data);
+	virtual void	OnKeyWrite(const char* key, char* data);
 };
 
 #endif

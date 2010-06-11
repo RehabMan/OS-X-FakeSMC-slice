@@ -20,13 +20,13 @@
 #define WarningLog(string, args...) do { IOLog (LogPrefix "[Warning] " string "\n", ## args); } while(0)
 #define InfoLog(string, args...)	do { IOLog (LogPrefix string "\n", ## args); } while(0)
 
-class SuperIOMonitorPlugin : public IOService
+class FakeSMCSuperIOMonitor : public IOService
 {
-    OSDeclareDefaultStructors(SuperIOMonitorPlugin)    
+    OSDeclareDefaultStructors(FakeSMCSuperIOMonitor)    
 private:
 
 protected:
-	SuperIO*	superio;
+	SuperIO*			superio;
 public:	
 	virtual bool		init(OSDictionary *properties=0);
 	virtual IOService*	probe(IOService *provider, SInt32 *score);

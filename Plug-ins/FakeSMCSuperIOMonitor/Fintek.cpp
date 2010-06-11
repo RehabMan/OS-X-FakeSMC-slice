@@ -11,7 +11,6 @@
  */
 
 #include "Fintek.h"
-#include "fakesmc.h"
 
 UInt8 Fintek::ReadByte(UInt8 reg) 
 {

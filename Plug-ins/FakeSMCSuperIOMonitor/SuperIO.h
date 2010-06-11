@@ -13,18 +13,18 @@
 #ifndef _SUPERIO_H 
 #define _SUPERIO_H
 
+#include <architecture/i386/pio.h>
+#include <libkern/OSTypes.h>
+#include <IOKit/IOLib.h>
+#include <IOKit/IOService.h>
+#include "FakeSMCPlugin.h"
+
 #define DebugOn FALSE
 
 #define LogPrefix "FakeSMCSuperIOMonitor: "
 #define DebugLog(string, args...)	do { if (DebugOn) { IOLog (LogPrefix "[Debug] " string "\n", ## args); } } while(0)
 #define WarningLog(string, args...) do { IOLog (LogPrefix "[Warning] " string "\n", ## args); } while(0)
 #define InfoLog(string, args...)	do { IOLog (LogPrefix string "\n", ## args); } while(0)
-
-#include <architecture/i386/pio.h>
-#include <libkern/OSTypes.h>
-
-#include <IOKit/IOLib.h>
-#include <IOKit/IOService.h>
 
 // Registers
 const UInt8 SUPERIO_CONFIGURATION_CONTROL_REGISTER	= 0x02;
@@ -62,7 +62,7 @@ enum SuperIOModel
     F71889F = 0x0723 
 };
 
-class SuperIO
+class SuperIO : public FakeSMCPlugin
 {
 private:
 protected:
@@ -90,14 +90,8 @@ public:
 	virtual void	Init();
 	virtual void	Finish();
 	
-	virtual void	Update(const char* key, char* data);
+	virtual void	OnKeyRead(const char* key, char* data);
+	virtual void	OnKeyWrite(const char* key, char* data);
 };
-
-static SuperIO* Instance;
-
-static void Update(const char* key, char* data)
-{
-	Instance->Update(key, data);
-}
 
 #endif

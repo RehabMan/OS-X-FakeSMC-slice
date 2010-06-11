@@ -17,9 +17,9 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.2.1</string>
+	<string>2.0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.2.1</string>
+	<string>2.0</string>
 	<key>IOKitPersonalities</key>
 	<dict>
 		<key>SuperIOMonitorPlugin</key>
@@ -27,9 +27,9 @@
 			<key>CFBundleIdentifier</key>
 			<string>org.mozodojo.${PRODUCT_NAME}</string>
 			<key>IOClass</key>
-			<string>SuperIOMonitorPlugin</string>
+			<string>FakeSMCSuperIOMonitor</string>
 			<key>IOMatchCategory</key>
-			<string>SuperIOMonitorPlugin</string>
+			<string>FakeSMCSuperIOMonitor</string>
 			<key>IOProviderClass</key>
 			<string>IOResources</string>
 			<key>IOResourceMatch</key>
@@ -52,8 +52,8 @@
 		<string>9.0</string>
 		<key>com.apple.kpi.unsupported</key>
 		<string>9.0</string>
-		<key>org.netkas.fakesmc</key>
-		<string>2.6.3</string>
+		<key>org.netkas.FakeSMC</key>
+		<string>2.7</string>
 	</dict>
 </dict>
 </plist>

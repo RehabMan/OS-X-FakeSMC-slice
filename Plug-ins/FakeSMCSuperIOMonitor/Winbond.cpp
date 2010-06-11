@@ -11,7 +11,6 @@
  */
 
 #include "Winbond.h"
-#include "fakesmc.h"
 
 void Winbond::SetPorts(UInt8 index)
 {
@@ -261,8 +260,6 @@ void Winbond::Init()
 {	
 	char value[2];
 	
-	Instance = this;
-	
 	switch (Model) 
 	{
 		case W83667HG:
@@ -272,14 +269,14 @@ void Winbond::Init()
 			UInt8 flag = ReadByte(0, WINBOND_TEMPERATURE_SOURCE_SELECT_REG);
 			
 			// Heatsink
-			if ((flag & 0x04) == 0)	FakeSMCAddKeyCallback("Th0H", "sp78", 2, value, &::Update);
+			if ((flag & 0x04) == 0)	FakeSMCAddKey("Th0H", "sp78", 2, value, this);
 			
 			/*if ((flag & 0x40) == 0)
 			 list.Add(new Sensor(TEMPERATURE_NAME[1], 1, null,
 			 SensorType.Temperature, this, parameter));*/
 			
 			// Northbridge
-			FakeSMCAddKeyCallback("TN0P", "sp78", 2, value, &::Update);
+			FakeSMCAddKey("TN0P", "sp78", 2, value, this);
 			
 			break;
 		}
@@ -291,14 +288,14 @@ void Winbond::Init()
 			UInt8 sel = ReadByte(0, WINBOND_TEMPERATURE_SOURCE_SELECT_REG);
 			
 			// Heatsink
-			if ((sel & 0x07) == 0) FakeSMCAddKeyCallback("Th0H", "sp78", 2, value, &::Update);
+			if ((sel & 0x07) == 0) FakeSMCAddKey("Th0H", "sp78", 2, value, this);
 			
 			/*if ((sel & 0x70) == 0)
 			 list.Add(new Sensor(TEMPERATURE_NAME[1], 1, null,
 			 SensorType.Temperature, this, parameter));*/
 			
 			// Northbridge
-			FakeSMCAddKeyCallback("TN0P", "sp78", 2, value, &::Update);
+			FakeSMCAddKey("TN0P", "sp78", 2, value, this);
 			
 			break;
 		}
@@ -307,16 +304,16 @@ void Winbond::Init()
 		{
 			// no PECI support, add all sensors
 			// Heatsink
-			FakeSMCAddKeyCallback("Th0H", "sp78", 2, value, &::Update);
+			FakeSMCAddKey("Th0H", "sp78", 2, value, this);
 			// Northbridge
-			FakeSMCAddKeyCallback("TN0P", "sp78", 2, value, &::Update);
+			FakeSMCAddKey("TN0P", "sp78", 2, value, this);
 			break;
 		}
 	}
 	
 	// CPU Vcore
-	FakeSMCAddKeyCallback("VC0C", "fp2e", 2, value, &::Update);
-	FakeSMCAddKeyCallback("VC0c", "ui16", 2, value, &::Update);
+	FakeSMCAddKey("VC0C", "fp2e", 2, value, this);
+	FakeSMCAddKey("VC0c", "ui16", 2, value, this);
 	
 	// FANs
 	FanOffset = GetFNum();
@@ -337,7 +334,7 @@ void Winbond::Init()
 			}
 			
 			snprintf(key, 5, "F%dAc", FanOffset + FanCount);
-			FakeSMCAddKeyCallback(key, "fpe2", 2, value, &::Update);
+			FakeSMCAddKey(key, "fpe2", 2, value, this);
 			
 			FanIndex[FanCount++] = i;
 		}
@@ -348,20 +345,20 @@ void Winbond::Init()
 
 void Winbond::Finish()
 {
-	FakeSMCRemoveKeyCallback("Th0H");
-	FakeSMCRemoveKeyCallback("TN0P");
-	FakeSMCRemoveKeyCallback("VC0C");
-	FakeSMCRemoveKeyCallback("VC0c");
+	FakeSMCRemoveKeyBinding("Th0H");
+	FakeSMCRemoveKeyBinding("TN0P");
+	FakeSMCRemoveKeyBinding("VC0C");
+	FakeSMCRemoveKeyBinding("VC0c");
 	for (int i = FanOffset; i < FanOffset + FanCount; i++) 
 	{
 		char key[5];
 		snprintf(key, 5, "F%dAc", i);
-		FakeSMCRemoveKeyCallback(key);
+		FakeSMCRemoveKeyBinding(key);
 	}
 	UpdateFNum(-FanCount);
 }
 
-void Winbond::Update(const char *key, char *data)
+void Winbond::OnKeyRead(const char *key, char *data)
 {
 	// Heatsink
 	if(CompareKeys(key, "Th0H"))
@@ -444,4 +441,9 @@ void Winbond::Update(const char *key, char *data)
 			data[1] = (value << 2) & 0xff;
 		}
 	}
+}
+
+void Winbond::OnKeyWrite(const char* key, char* data)
+{
+	
 }
