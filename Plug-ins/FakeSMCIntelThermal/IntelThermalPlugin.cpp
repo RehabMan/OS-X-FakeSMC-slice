@@ -123,7 +123,7 @@ void IntelThermalPlugin::Start()
 		
 		snprintf(key, 5, "TC%xD", i);
 		
-		FakeSMCAddKeyBinding(key, "sp78", 0x02, value, this);
+		FakeSMCAddKey(key, "sp78", 0x02, value, this);
 	}
 }
 
