@@ -18,19 +18,19 @@ void FakeSMCAddKey (const char* keyname, const char* keytype, uint8_t keylen, ch
 	smcNode->FixUpKeysNum();
 }
 
-void FakeSMCAddKeyBinding(const char* keyname, uint8_t keylen, char* keydata, FakeSMCPlugin* binding)
+void FakeSMCAddKey(const char* keyname, uint8_t keylen, char* keydata, FakeSMCPlugin* binding)
 {
 	smcNode->SMCAddKey(keyname, keylen, keydata, 1, binding);
 	smcNode->FixUpKeysNum();
 }
 
-void FakeSMCAddKeyBinding (const char* keyname, const char* keytype, uint8_t keylen, char* keydata, FakeSMCPlugin* binding)
+void FakeSMCAddKey (const char* keyname, const char* keytype, uint8_t keylen, char* keydata, FakeSMCPlugin* binding)
 {
 	smcNode->SMCAddKey(keyname, keytype, keylen, keydata, 1, binding);
 	smcNode->FixUpKeysNum();
 }
 
-char* FakeSMCGetKeyData (const char* keyname)
+char* FakeSMCReadKey (const char* keyname)
 {
 	if(SMCData node = smcNode->FindSMCKey(keyname)) 
 		return node->data;

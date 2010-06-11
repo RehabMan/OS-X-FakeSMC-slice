@@ -19,9 +19,9 @@ public:
 
 void FakeSMCAddKey (const char*, uint8_t, char*);
 void FakeSMCAddKey (const char*, const char*, uint8_t, char*);
-void FakeSMCAddKeyBinding (const char*, uint8_t, char*, FakeSMCPlugin*);
-void FakeSMCAddKeyBinding (const char*, const char*, uint8_t, char*, FakeSMCPlugin*);
-char* FakeSMCGetKeyData (const char*);
+void FakeSMCAddKey (const char*, uint8_t, char*, FakeSMCPlugin*);
+void FakeSMCAddKey (const char*, const char*, uint8_t, char*, FakeSMCPlugin*);
+char* FakeSMCReadKey (const char*);
 void FakeSMCRemoveKeyBinding (const char*);
 
 #endif

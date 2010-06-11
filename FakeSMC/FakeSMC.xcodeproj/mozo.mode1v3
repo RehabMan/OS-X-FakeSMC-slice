@@ -229,6 +229,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -276,8 +278,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>13</integer>
-									<integer>12</integer>
+									<integer>2</integer>
+									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -303,7 +305,7 @@
 							<real>177</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>370 361 900 618 0 0 1280 1002 </string>
+						<string>331 312 900 618 0 0 1280 1002 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -319,7 +321,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Info-pre106.plist</string>
+								<string>FakeSMCPlugin.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -327,21 +329,21 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>Info-pre106.plist</string>
+										<string>FakeSMCPlugin.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>AEDA56CB11C24AF2004AF999</string>
+										<string>AEA21D5511C292DF00A689B7</string>
 										<key>history</key>
 										<array>
 											<string>AED1938111B90C650099F943</string>
 											<string>AEE7718211C2425800A838B7</string>
-											<string>AED9D0D611C243EE00E47460</string>
-											<string>AED9D0D711C243EE00E47460</string>
 											<string>AED9D0FA11C2448F00E47460</string>
 											<string>AEDA56B611C2490E004AF999</string>
 											<string>AEDA56B811C2490E004AF999</string>
-											<string>AEDA56B911C2490E004AF999</string>
+											<string>AEDC100B11C254D200A44427</string>
+											<string>AEDC100E11C254D200A44427</string>
+											<string>AEA21D5411C292DF00A689B7</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -355,7 +357,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {679, 572}}</string>
 								<key>RubberWindowFrame</key>
-								<string>370 361 900 618 0 0 1280 1002 </string>
+								<string>331 312 900 618 0 0 1280 1002 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -375,7 +377,7 @@
 								<key>Frame</key>
 								<string>{{0, 577}, {679, 0}}</string>
 								<key>RubberWindowFrame</key>
-								<string>370 361 900 618 0 0 1280 1002 </string>
+								<string>331 312 900 618 0 0 1280 1002 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -399,9 +401,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>AEDA56A011C248AD004AF999</string>
+				<string>AEA21D5611C292DF00A689B7</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>AEDA56A111C248AD004AF999</string>
+				<string>AEA21D5711C292DF00A689B7</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -540,10 +542,10 @@
 	<key>WindowOrderList</key>
 	<array>
 		<string>AE95EDCE11A3BB7D00AE9201</string>
-		<string>/Users/mozo/Documents/FakeSMC/FakeSMC/fakesmc.xcodeproj</string>
+		<string>/Users/mozo/Documents/FakeSMC/fakesmc/fakesmc.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>370 361 900 618 0 0 1280 1002 </string>
+	<string>331 312 900 618 0 0 1280 1002 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -620,7 +622,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>AE95EDCE11A3BB7D00AE9201</string>
-				<string>AEDA56A211C248AD004AF999</string>
+				<string>AEA21D5811C292DF00A689B7</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
