@@ -27,9 +27,9 @@
 			<key>CFBundleIdentifier</key>
 			<string>org.mozodojo.${PRODUCT_NAME}</string>
 			<key>IOClass</key>
-			<string>${PRODUCT_NAME}</string>
+			<string>FakeSMCIntelThermal</string>
 			<key>IOMatchCategory</key>
-			<string>${PRODUCT_NAME}</string>
+			<string>FakeSMCIntelThermal</string>
 			<key>IOProviderClass</key>
 			<string>IOResources</string>
 			<key>IOResourceMatch</key>
