@@ -12,7 +12,7 @@
 #include <i386/proc_reg.h>
 
 #include "cpuid.h"
-#include "FakeSMCPlugin.h"
+#include "FakeSMCBinding.h"
 
 #define DebugOn FALSE
 
@@ -44,7 +44,7 @@ inline void IntelThermal(__unused void* magic)
 	}
 };
 
-class IntelThermalPlugin : public FakeSMCPlugin
+class IntelThermalPlugin : public FakeSMCBinding
 {
 private:
 	UInt8	m_CpuCount;

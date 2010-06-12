@@ -159,7 +159,7 @@ void IntelThermalPlugin::OnKeyRead(const char* key, char* data)
 	data[1] = 0;
 }
 
-void IntelThermalPlugin::OnKeyWrite(const char* key, char* data)
+void IntelThermalPlugin::OnKeyWrite(__unused const char* key, __unused char* data)
 {
 	
 }

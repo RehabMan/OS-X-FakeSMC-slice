@@ -11,7 +11,7 @@
 		32D94FC80562CBF700B6AF17 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
 		32D94FCA0562CBF700B6AF17 /* FakeSMCIntelThermal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCIntelThermal.cpp */; settings = {ATTRIBUTES = (); }; };
 		AEA9A4D311B4994300449262 /* cpuid.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA9A4D211B4994300449262 /* cpuid.h */; };
-		AEB840A911C2388600ED0754 /* FakeSMCPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = AEB840A811C2388600ED0754 /* FakeSMCPlugin.h */; };
+		AEB840A911C2388600ED0754 /* FakeSMCBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = AEB840A811C2388600ED0754 /* FakeSMCBinding.h */; };
 		AEB840B511C238E500ED0754 /* IntelThermalPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = AEB840B311C238E500ED0754 /* IntelThermalPlugin.h */; };
 		AEB840B611C238E500ED0754 /* IntelThermalPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEB840B411C238E500ED0754 /* IntelThermalPlugin.cpp */; };
 /* End PBXBuildFile section */
@@ -24,7 +24,7 @@
 		32D94FD00562CBF700B6AF17 /* FakeSMCIntelThermal.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FakeSMCIntelThermal.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DA8362C06AD9B9200E5AC22 /* Kernel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kernel.framework; path = /System/Library/Frameworks/Kernel.framework; sourceTree = "<absolute>"; };
 		AEA9A4D211B4994300449262 /* cpuid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpuid.h; sourceTree = "<group>"; };
-		AEB840A811C2388600ED0754 /* FakeSMCPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeSMCPlugin.h; sourceTree = "<group>"; };
+		AEB840A811C2388600ED0754 /* FakeSMCBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeSMCBinding.h; sourceTree = "<group>"; };
 		AEB840B311C238E500ED0754 /* IntelThermalPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntelThermalPlugin.h; sourceTree = "<group>"; };
 		AEB840B411C238E500ED0754 /* IntelThermalPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IntelThermalPlugin.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,7 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				AEA9A4D211B4994300449262 /* cpuid.h */,
-				AEB840A811C2388600ED0754 /* FakeSMCPlugin.h */,
+				AEB840A811C2388600ED0754 /* FakeSMCBinding.h */,
 				AEB840B311C238E500ED0754 /* IntelThermalPlugin.h */,
 				AEB840B411C238E500ED0754 /* IntelThermalPlugin.cpp */,
 				1A224C3EFF42367911CA2CB7 /* FakeSMCIntelThermal.h */,
@@ -90,7 +90,7 @@
 			files = (
 				32D94FC60562CBF700B6AF17 /* FakeSMCIntelThermal.h in Headers */,
 				AEA9A4D311B4994300449262 /* cpuid.h in Headers */,
-				AEB840A911C2388600ED0754 /* FakeSMCPlugin.h in Headers */,
+				AEB840A911C2388600ED0754 /* FakeSMCBinding.h in Headers */,
 				AEB840B511C238E500ED0754 /* IntelThermalPlugin.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
