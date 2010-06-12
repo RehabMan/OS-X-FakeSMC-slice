@@ -34,7 +34,9 @@
 			<string>IOResources</string>
 			<key>IOResourceMatch</key>
 			<string>IOKit</string>
-			<key>FANs</key>
+			<key>Enable Fan Control</key>
+			<true/>
+			<key>Fan Names</key>
 			<array>
 				<string></string>
 				<string></string>

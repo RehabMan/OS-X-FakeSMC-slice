@@ -62,6 +62,8 @@ class SuperIO
 private:
 	Sensor*			m_Sensor;
 protected:
+	bool			m_FanControl;
+	
 	UInt16			Address;
 	UInt8			RegisterPort;
 	UInt8			ValuePort;
@@ -84,6 +86,7 @@ protected:
 	
 public:
 	const char*		GetModelName();
+	UInt16			GetAddress() { return Address; };
 	void			LoadConfiguration(IOService* provider);
 	
 	virtual bool	Probe();

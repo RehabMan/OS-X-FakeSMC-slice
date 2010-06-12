@@ -51,6 +51,14 @@ void IT87xVoltageSensor::OnKeyWrite(__unused const char* key, __unused char* dat
 	
 }
 
+void IT87xTachometerSensor::FanForcePWM(UInt16 slope)
+{
+	InfoLog("Forcing Fan #%d to %d%%", m_Offset, slope);
+	
+	outb(m_Address+ITE_ADDRESS_REGISTER_OFFSET, ITE_FAN_FORCE_PWM_REG[m_Offset]);
+	outb(m_Address+ITE_DATA_REGISTER_OFFSET, slope);
+}
+
 void IT87xTachometerSensor::OnKeyRead(__unused const char* key, char* data)
 {
 	bool* valid;
@@ -64,9 +72,22 @@ void IT87xTachometerSensor::OnKeyRead(__unused const char* key, char* data)
 	}
 }
 
-void IT87xTachometerSensor::OnKeyWrite(__unused const char* key, __unused char* data)
+void IT87xTachometerSensor::OnKeyWrite(const char* key, char* data)
 {
-	
+	if (m_FanControl && CompareKeys(m_FminKey, key))
+	{
+		UInt16 rpm = (UInt16(data[0]) << 8 | (data[1] & 0xff)) >> 2;
+		
+		if (m_MaxRpm != m_MinRpm)
+		{
+			UInt8 slope = UInt8(100*(rpm - m_MinRpm) / (m_MaxRpm - m_MinRpm));
+			
+			InfoLog("Fan #%d RPM=%d%%, MAX%d, MIN%d",m_Offset, rpm, slope, m_MaxRpm, m_MinRpm);
+			
+			outb(m_Address + ITE_ADDRESS_REGISTER_OFFSET, ITE_START_PWM_VALUE_REG[m_Offset]);
+			outb(m_Address + ITE_DATA_REGISTER_OFFSET, slope);
+		}
+	}
 }
 
 void IT87x::Enter()
@@ -219,7 +240,7 @@ void IT87x::Init()
 			}
 			
 			snprintf(key, 5, "F%dAc", FanOffset + FanCount);
-			RegisterSensor(new IT87xTachometerSensor(Address, i, key, "fpe2", 2));
+			RegisterSensor(new IT87xTachometerSensor(Address, i, FanOffset + FanCount, m_FanControl, key, "fpe2", 2));
 			
 			FanIndex[FanCount++] = i;
 		}
