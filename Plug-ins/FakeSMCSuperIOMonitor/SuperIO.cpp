@@ -12,23 +12,23 @@
 
 #include "SuperIO.h"
 
-void SuperIO::RegisterSensor(Sensor* sensor)
+void SuperIO::Bind(Binding* binding)
 {
-	sensor->Next = m_Sensor;
-	m_Sensor = sensor;
+	binding->Next = m_Binding;
+	m_Binding = binding;
 }
 
-void SuperIO::FlushSensors()
+void SuperIO::FlushBindings()
 {
-	Sensor* sensor = m_Sensor;
+	Binding* iterator = m_Binding;
 	
-	while (sensor) 
+	while (iterator)
 	{
-		Sensor* next = sensor->Next;
+		Binding* next = iterator->Next;
 		
-		delete sensor;
+		delete iterator;
 		
-		sensor = next;
+		iterator = next;
 	}
 }
 

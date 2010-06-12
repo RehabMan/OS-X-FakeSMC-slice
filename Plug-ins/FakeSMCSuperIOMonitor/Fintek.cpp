@@ -170,9 +170,9 @@ bool Fintek::Probe()
 void Fintek::Init()
 {
 	// Heatsink
-	RegisterSensor(new FintekTemperatureSensor(Address, Model, 0, "Th0H", "sp78", 2));
+	Bind(new FintekTemperatureSensor(Address, Model, 0, "Th0H", "sp78", 2));
 	// Northbridge
-	RegisterSensor(new FintekTemperatureSensor(Address, Model, 1, "TN0P", "sp78", 2));
+	Bind(new FintekTemperatureSensor(Address, Model, 1, "TN0P", "sp78", 2));
 	
 	switch (Model) 
 	{
@@ -180,7 +180,7 @@ void Fintek::Init()
 			break;
         default:
 			// CPU Vcore
-			RegisterSensor(new FintekVoltageSensor(Address, 1, "VC0C", "fp2e", 2));
+			Bind(new FintekVoltageSensor(Address, 1, "VC0C", "fp2e", 2));
 			break;
 	}
 	
@@ -200,7 +200,7 @@ void Fintek::Init()
 			}
 			
 			snprintf(key, 5, "F%dAc", FanOffset + FanCount);
-			RegisterSensor(new FintekTachometerSensor(Address, i, key, "fpe2", 2));
+			Bind(new FintekTachometerSensor(Address, i, key, "fpe2", 2));
 			
 			FanIndex[FanCount++] = i;
 		}
@@ -211,6 +211,6 @@ void Fintek::Init()
 
 void Fintek::Finish()
 {
-	FlushSensors();
+	FlushBindings();
 	UpdateFNum(-FanCount);
 }

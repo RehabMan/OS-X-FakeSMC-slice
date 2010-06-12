@@ -68,9 +68,9 @@ void IT87xTachometerSensor::OnKeyWrite(__unused const char* key, __unused char* 
 {
 }
 
-void IT87xTachometerController::FanForcePWM(UInt16 slope)
+void IT87xTachometerController::ForcePWM(UInt16 slope)
 {
-	DebugLog("Forcing Fan #%d to %d%%", m_Offset, slope);
+	DebugLog("Forcing Fan #%d to %d%%", m_Offset, (UInt8)(((float)slope * 100.0f) / 127.0f));
 	
 	outb(m_Address+ITE_ADDRESS_REGISTER_OFFSET, ITE_FAN_FORCE_PWM_REG[m_Offset]);
 	outb(m_Address+ITE_DATA_REGISTER_OFFSET, slope);
@@ -86,9 +86,9 @@ void IT87xTachometerController::OnKeyWrite(__unused const char* key, char* data)
 	
 	if (m_MaxRpm != m_MinRpm)
 	{
-		UInt8 slope = UInt8(100*(rpm - m_MinRpm) / (m_MaxRpm - m_MinRpm));
+		UInt8 slope = UInt8(127*(rpm - m_MinRpm) / (m_MaxRpm - m_MinRpm));
 		
-		DebugLog("Fan #%d RPM=%drpm, MAX=%drpm, MIN=%drpm", m_Offset, rpm, slope, m_MaxRpm, m_MinRpm);
+		DebugLog("Fan #%d RPM=%drpm, SLOPE=%d%%, MAX=%drpm, MIN=%drpm", m_Offset, rpm, (UInt8)(((float)slope * 100.0f) / 127.0f), m_MaxRpm, m_MinRpm);
 		
 		outb(m_Address + ITE_ADDRESS_REGISTER_OFFSET, ITE_START_PWM_VALUE_REG[m_Offset]);
 		outb(m_Address + ITE_DATA_REGISTER_OFFSET, slope);
@@ -211,12 +211,12 @@ void IT87x::Init()
 				case 0:
 				{
 					// Heatsink
-					RegisterSensor(new IT87xTemperatureSensor(Address, i, "Th0H", "sp78", 2));
+					Bind(new IT87xTemperatureSensor(Address, i, "Th0H", "sp78", 2));
 				} break;
 				case 1:
 				{
 					// Northbridge
-					RegisterSensor(new IT87xTemperatureSensor(Address, i, "TN0P", "sp78", 2));
+					Bind(new IT87xTemperatureSensor(Address, i, "TN0P", "sp78", 2));
 				} break;
 			}
 			
@@ -225,7 +225,7 @@ void IT87x::Init()
 	}
 
 	// CPU Vcore
-	RegisterSensor(new IT87xVoltageSensor(Address, 0, "VC0C", "fp2e", 2));
+	Bind(new IT87xVoltageSensor(Address, 0, "VC0C", "fp2e", 2));
 	//FakeSMCAddKey("VC0c", "ui16", 2, value, this);
 	
 	// FANs
@@ -245,13 +245,10 @@ void IT87x::Init()
 			}
 			
 			snprintf(key, 5, "F%dAc", FanOffset + FanCount);
-			RegisterSensor(new IT87xTachometerSensor(Address, i, key, "fpe2", 2));
+			Bind(new IT87xTachometerSensor(Address, i, key, "fpe2", 2));
 			
 			if (m_FanControl)
-			{
-				snprintf(key, 5, "F%dMn", FanOffset + FanCount);
-				RegisterSensor(new IT87xTachometerController(Address, i, FanOffset + FanCount, key, "fpe2", 2));
-			}
+				Bind(new IT87xTachometerController(Address, i, FanOffset + FanCount));
 			
 			FanIndex[FanCount++] = i;
 		}
@@ -262,6 +259,6 @@ void IT87x::Init()
 
 void IT87x::Finish()
 {
-	FlushSensors();
+	FlushBindings();
 	UpdateFNum(-FanCount);
 }

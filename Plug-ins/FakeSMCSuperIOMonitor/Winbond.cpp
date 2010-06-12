@@ -233,14 +233,14 @@ void Winbond::Init()
 			UInt8 flag = Winbond_ReadByte(Address, 0, WINBOND_TEMPERATURE_SOURCE_SELECT_REG);
 			
 			// Heatsink
-			if ((flag & 0x04) == 0)	RegisterSensor(new WinbondTemperatureSensor(Address, 0, "Th0H", "sp78", 2));
+			if ((flag & 0x04) == 0)	Bind(new WinbondTemperatureSensor(Address, 0, "Th0H", "sp78", 2));
 		
 			/*if ((flag & 0x40) == 0)
 			 list.Add(new Sensor(TEMPERATURE_NAME[1], 1, null,
 			 SensorType.Temperature, this, parameter));*/
 			
 			// Northbridge
-			RegisterSensor(new WinbondTemperatureSensor(Address, 2, "TN0P", "sp78", 2));
+			Bind(new WinbondTemperatureSensor(Address, 2, "TN0P", "sp78", 2));
 			
 			break;
 		}
@@ -252,14 +252,14 @@ void Winbond::Init()
 			UInt8 sel = Winbond_ReadByte(Address, 0, WINBOND_TEMPERATURE_SOURCE_SELECT_REG);
 			
 			// Heatsink
-			if ((sel & 0x07) == 0) RegisterSensor(new WinbondTemperatureSensor(Address, 0, "Th0H", "sp78", 2));
+			if ((sel & 0x07) == 0) Bind(new WinbondTemperatureSensor(Address, 0, "Th0H", "sp78", 2));
 			
 			/*if ((sel & 0x70) == 0)
 			 list.Add(new Sensor(TEMPERATURE_NAME[1], 1, null,
 			 SensorType.Temperature, this, parameter));*/
 			
 			// Northbridge
-			RegisterSensor(new WinbondTemperatureSensor(Address, 2, "TN0P", "sp78", 2));
+			Bind(new WinbondTemperatureSensor(Address, 2, "TN0P", "sp78", 2));
 			
 			break;
 		}
@@ -268,15 +268,15 @@ void Winbond::Init()
 		{
 			// no PECI support, add all sensors
 			// Heatsink
-			RegisterSensor(new WinbondTemperatureSensor(Address, 0, "Th0H", "sp78", 2));
+			Bind(new WinbondTemperatureSensor(Address, 0, "Th0H", "sp78", 2));
 			// Northbridge
-			RegisterSensor(new WinbondTemperatureSensor(Address, 2, "TN0P", "sp78", 2));
+			Bind(new WinbondTemperatureSensor(Address, 2, "TN0P", "sp78", 2));
 			break;
 		}
 	}
 	
 	// CPU Vcore
-	RegisterSensor(new WinbondVoltageSensor(Address, Model, 0, "VC0C", "fp2e", 2));
+	Bind(new WinbondVoltageSensor(Address, Model, 0, "VC0C", "fp2e", 2));
 	//FakeSMCAddKey("VC0c", "ui16", 2, value, this);
 	
 	// FANs
@@ -298,7 +298,7 @@ void Winbond::Init()
 			}
 			
 			snprintf(key, 5, "F%dAc", FanOffset + FanCount);
-			RegisterSensor(new WinbondTachometerSensor(Address, i, key, "fpe2", 2));
+			Bind(new WinbondTachometerSensor(Address, i, key, "fpe2", 2));
 			
 			FanIndex[FanCount++] = i;
 		}
@@ -309,6 +309,6 @@ void Winbond::Init()
 
 void Winbond::Finish()
 {
-	FlushSensors();
+	FlushBindings();
 	UpdateFNum(-FanCount);
 }

@@ -31,6 +31,49 @@ void FakeSMCAddKey (const char*, const char*, uint8_t, char*, FakeSMCBinding*);
 char* FakeSMCReadKey (const char*);
 void FakeSMCRemoveKeyBinding (const char*);
 
+class Binding : public FakeSMCBinding
+{
+protected:
+	char*			m_Key;
+public:
+	Binding*		Next;
+	
+	Binding()
+	{
+	};
+	
+	Binding(const char* key, const char* type, UInt8 size)
+	{
+		InfoLog("Binding key %s", key);
+		
+		m_Key = (char*)IOMalloc(5);
+		bcopy(key, m_Key, 5);
+		
+		char* value = (char*)IOMalloc(size);
+		FakeSMCAddKey(key, type, size, value, this);
+		IOFree(value, size);
+	};
+	
+	~Binding()
+	{
+		if (m_Key)
+		{
+			InfoLog("Removing key %s binding", m_Key);
+			
+			IOFree(m_Key, 5);
+			FakeSMCRemoveKeyBinding(m_Key);
+		}
+	};
+	
+	const char* GetKey() 
+	{ 
+		return m_Key; 
+	};
+	
+	virtual void OnKeyRead(__unused const char* key, __unused char* data) {};
+	virtual void OnKeyWrite(__unused const char* key, __unused char* data) {};
+};
+
 inline UInt16 fp2e_Encode(UInt16 value)
 {
 	UInt16 dec = (float)value / 1000.0f;
@@ -42,6 +85,14 @@ inline UInt16 fp2e_Encode(UInt16 value)
 inline bool CompareKeys(const char* key1, const char* key2)
 {
 	return ((key1[0] == key2[0]) && (key1[1] == key2[1]) && (key1[2] == key2[2]) && (key1[3] == key2[3]));
+}
+
+inline int GetIndex(const char* value, int index)
+{
+	if (value[index] >= 'A') 
+		return value[index] - 55;
+	
+	return value[index] - 48;
 }
 
 inline UInt8 GetFNum()

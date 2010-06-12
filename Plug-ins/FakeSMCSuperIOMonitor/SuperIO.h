@@ -19,7 +19,6 @@
 #include <IOKit/IOService.h>
 
 #include "FakeSMCBinding.h"
-#include "Sensor.h"
 
 // Registers
 const UInt8 SUPERIO_CONFIGURATION_CONTROL_REGISTER	= 0x02;
@@ -60,7 +59,7 @@ enum ChipModel
 class SuperIO
 {
 private:
-	Sensor*			m_Sensor;
+	Binding*		m_Binding;
 protected:
 	bool			m_FanControl;
 	
@@ -77,8 +76,8 @@ protected:
 	const char*		FanName[5];
 	UInt8			FanIndex[5];
 
-	void			RegisterSensor(Sensor* sensor);
-	void			FlushSensors();
+	void			Bind(Binding* binding);
+	void			FlushBindings();
 	
 	UInt8			ReadByte(UInt8 reg);
 	UInt16			ReadWord(UInt8 reg);
@@ -92,6 +91,25 @@ public:
 	virtual bool	Probe();
 	virtual void	Init();
 	virtual void	Finish();
+};
+
+// Sensor
+
+class Sensor : public Binding
+{
+protected:
+	UInt16		m_Address;
+	UInt8		m_Offset;
+	
+public:
+	Sensor(UInt16 address, UInt8 offset, const char* key, const char* type, UInt8 size) : Binding(key, type, size)
+	{
+		m_Address = address;
+		m_Offset = offset;
+	};
+	
+	virtual void OnKeyRead(__unused const char* key, __unused char* data) {};
+	virtual void OnKeyWrite(__unused const char* key, __unused char* data) {};
 };
 
 #endif

@@ -16,8 +16,6 @@
 		AEAD02B811B176980016B8F9 /* SuperIO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEAD02B611B176980016B8F9 /* SuperIO.cpp */; };
 		AEAD041811B18D4B0016B8F9 /* Winbond.h in Headers */ = {isa = PBXBuildFile; fileRef = AEAD041611B18D4B0016B8F9 /* Winbond.h */; };
 		AEAD041911B18D4B0016B8F9 /* Winbond.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEAD041711B18D4B0016B8F9 /* Winbond.cpp */; };
-		AED46ADB11C2A5EB000FE16A /* Sensor.h in Headers */ = {isa = PBXBuildFile; fileRef = AED46AD911C2A5EB000FE16A /* Sensor.h */; };
-		AED46ADC11C2A5EB000FE16A /* Sensor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AED46ADA11C2A5EB000FE16A /* Sensor.cpp */; };
 		AEDC0F8311C2503D00A44427 /* FakeSMCBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = AEDC0F8211C2503D00A44427 /* FakeSMCBinding.h */; };
 		AEEC326311B4414E0048ED14 /* Fintek.h in Headers */ = {isa = PBXBuildFile; fileRef = AEEC326111B4414E0048ED14 /* Fintek.h */; };
 		AEEC326411B4414E0048ED14 /* Fintek.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEEC326211B4414E0048ED14 /* Fintek.cpp */; };
@@ -36,8 +34,6 @@
 		AEAD02B611B176980016B8F9 /* SuperIO.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SuperIO.cpp; sourceTree = "<group>"; };
 		AEAD041611B18D4B0016B8F9 /* Winbond.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Winbond.h; sourceTree = "<group>"; };
 		AEAD041711B18D4B0016B8F9 /* Winbond.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Winbond.cpp; sourceTree = "<group>"; };
-		AED46AD911C2A5EB000FE16A /* Sensor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sensor.h; sourceTree = "<group>"; };
-		AED46ADA11C2A5EB000FE16A /* Sensor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sensor.cpp; sourceTree = "<group>"; };
 		AEDC0F8211C2503D00A44427 /* FakeSMCBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeSMCBinding.h; sourceTree = "<group>"; };
 		AEEC326111B4414E0048ED14 /* Fintek.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fintek.h; sourceTree = "<group>"; };
 		AEEC326211B4414E0048ED14 /* Fintek.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Fintek.cpp; sourceTree = "<group>"; };
@@ -86,8 +82,6 @@
 			isa = PBXGroup;
 			children = (
 				AEDC0F8211C2503D00A44427 /* FakeSMCBinding.h */,
-				AED46AD911C2A5EB000FE16A /* Sensor.h */,
-				AED46ADA11C2A5EB000FE16A /* Sensor.cpp */,
 				AEAD02B511B176980016B8F9 /* SuperIO.h */,
 				AEAD02B611B176980016B8F9 /* SuperIO.cpp */,
 				AEAD028E11B173120016B8F9 /* IT87x.h */,
@@ -115,7 +109,6 @@
 				AEAD041811B18D4B0016B8F9 /* Winbond.h in Headers */,
 				AEEC326311B4414E0048ED14 /* Fintek.h in Headers */,
 				AEDC0F8311C2503D00A44427 /* FakeSMCBinding.h in Headers */,
-				AED46ADB11C2A5EB000FE16A /* Sensor.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,7 +186,6 @@
 				AEAD02B811B176980016B8F9 /* SuperIO.cpp in Sources */,
 				AEAD041911B18D4B0016B8F9 /* Winbond.cpp in Sources */,
 				AEEC326411B4414E0048ED14 /* Fintek.cpp in Sources */,
-				AED46ADC11C2A5EB000FE16A /* Sensor.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
