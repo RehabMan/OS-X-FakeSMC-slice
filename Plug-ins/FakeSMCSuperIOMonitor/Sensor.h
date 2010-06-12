@@ -13,9 +13,9 @@
 #include <libkern/OSTypes.h>
 #include <IOKit/IOLib.h>
 
-#include "FakeSMCPlugin.h"
+#include "FakeSMCBinding.h"
 
-class Sensor : public FakeSMCPlugin
+class Sensor : public FakeSMCBinding
 {
 private:
 protected:

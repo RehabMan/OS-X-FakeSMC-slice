@@ -153,7 +153,7 @@ public:
 		snprintf(m_FminKey, 5, "F%dMn", index);
 		FakeSMCAddKey(m_FminKey, "fpe2", 2, value);
 		
-		IOLog("%d\n", m_MinRpm);
+		DebugLog("Fan #%d MIN=%drpm", m_Offset, m_MinRpm);
 		
 		//Restore temperature sensor selection
 		FanForcePWM(TempBackup);

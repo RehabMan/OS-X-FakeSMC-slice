@@ -1,5 +1,5 @@
 /*
- *  FakeSMCPlugin.h
+ *  FakeSMCBinding.h
  *  fakesmc
  *
  *  Created by Mozodojo on 11/06/10.
@@ -10,14 +10,14 @@
 #ifndef FAKESMCPLUGIN_H
 #define FAKESMCPLUGIN_H
 
-#define DebugOn FALSE
+#define DebugOn TRUE
 
 #define LogPrefix "FakeSMCSuperIOMonitor: "
 #define DebugLog(string, args...)	do { if (DebugOn) { IOLog (LogPrefix "[Debug] " string "\n", ## args); } } while(0)
 #define WarningLog(string, args...) do { IOLog (LogPrefix "[Warning] " string "\n", ## args); } while(0)
 #define InfoLog(string, args...)	do { IOLog (LogPrefix string "\n", ## args); } while(0)
 
-class FakeSMCPlugin 
+class FakeSMCBinding 
 {
 public:
 	virtual void OnKeyRead(const char* key, char* data);
@@ -26,8 +26,8 @@ public:
 
 void FakeSMCAddKey (const char*, uint8_t, char*);
 void FakeSMCAddKey (const char*, const char*, uint8_t, char*);
-void FakeSMCAddKey (const char*, uint8_t, char*, FakeSMCPlugin*);
-void FakeSMCAddKey (const char*, const char*, uint8_t, char*, FakeSMCPlugin*);
+void FakeSMCAddKey (const char*, uint8_t, char*, FakeSMCBinding*);
+void FakeSMCAddKey (const char*, const char*, uint8_t, char*, FakeSMCBinding*);
 char* FakeSMCReadKey (const char*);
 void FakeSMCRemoveKeyBinding (const char*);
 

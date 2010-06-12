@@ -70,7 +70,7 @@ void IT87xTachometerSensor::OnKeyWrite(__unused const char* key, __unused char* 
 
 void IT87xTachometerController::FanForcePWM(UInt16 slope)
 {
-	InfoLog("Forcing Fan #%d to %d%%", m_Offset, slope);
+	DebugLog("Forcing Fan #%d to %d%%", m_Offset, slope);
 	
 	outb(m_Address+ITE_ADDRESS_REGISTER_OFFSET, ITE_FAN_FORCE_PWM_REG[m_Offset]);
 	outb(m_Address+ITE_DATA_REGISTER_OFFSET, slope);
@@ -88,7 +88,7 @@ void IT87xTachometerController::OnKeyWrite(__unused const char* key, char* data)
 	{
 		UInt8 slope = UInt8(100*(rpm - m_MinRpm) / (m_MaxRpm - m_MinRpm));
 		
-		InfoLog("Fan #%d RPM=%d, MAX%d, MIN%d", m_Offset, rpm, slope, m_MaxRpm, m_MinRpm);
+		DebugLog("Fan #%d RPM=%drpm, MAX=%drpm, MIN=%drpm", m_Offset, rpm, slope, m_MaxRpm, m_MinRpm);
 		
 		outb(m_Address + ITE_ADDRESS_REGISTER_OFFSET, ITE_START_PWM_VALUE_REG[m_Offset]);
 		outb(m_Address + ITE_DATA_REGISTER_OFFSET, slope);

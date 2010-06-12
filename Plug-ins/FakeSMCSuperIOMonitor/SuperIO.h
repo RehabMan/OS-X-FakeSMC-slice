@@ -18,7 +18,7 @@
 #include <IOKit/IOLib.h>
 #include <IOKit/IOService.h>
 
-#include "FakeSMCPlugin.h"
+#include "FakeSMCBinding.h"
 #include "Sensor.h"
 
 // Registers
