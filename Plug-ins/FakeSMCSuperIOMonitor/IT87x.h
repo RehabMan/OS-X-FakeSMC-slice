@@ -98,8 +98,18 @@ public:
 
 class IT87xTachometerSensor : public Sensor 
 {
+public:
+	IT87xTachometerSensor(UInt16 address, UInt8 offset, const char* key, const char* type, UInt8 size) : Sensor(address, offset, key, type, size)
+	{
+	};
+	
+	virtual void	OnKeyRead(const char* key, char* data);
+	virtual void	OnKeyWrite(const char* key, char* data);
+};
+
+class IT87xTachometerController : public Sensor 
+{
 private:
-	bool	m_FanControl;
 	char	m_FminKey[5];
 	UInt16	m_MinRpm;
 	UInt16	m_MaxRpm;
@@ -107,56 +117,52 @@ private:
 	void	FanForcePWM(UInt16 slope);
 	
 public:
-	IT87xTachometerSensor(UInt16 address, UInt8 offset, UInt8 index, bool fanControl, const char* key, const char* type, UInt8 size) : Sensor(address, offset, key, type, size)
+	IT87xTachometerController(UInt16 address, UInt8 offset, UInt8 index, const char* key, const char* type, UInt8 size) : Sensor(address, offset, key, type, size)
 	{
-		m_FanControl = fanControl;
+		bool* valid;
+		char value[2];
+		char tmpKey[5];
 		
-		if (m_FanControl)
-		{
-			bool* valid;
-			char value[2];
-			char tmpKey[5];
-					
-			//Back up temperature sensor selestion
-			outb(m_Address + ITE_ADDRESS_REGISTER_OFFSET, ITE_FAN_FORCE_PWM_REG[m_Offset]);
-			UInt16 TempBackup = inb(m_Address+ITE_DATA_REGISTER_OFFSET);
-			
-			//Determine maximum speed
-			FanForcePWM(0x7f);
-			
-			IOSleep(5000);
-			
-			m_MaxRpm = IT87x_ReadTachometer(m_Address, m_Offset, valid);
-			
-			value[0] = (m_MaxRpm << 2) >> 8;
-			value[1] = (m_MaxRpm << 2) & 0xff;
-			
-			snprintf(tmpKey, 5, "F%dMx", index);
-			FakeSMCAddKey(tmpKey, "fpe2", 2, value);
-			
-			//Determine minimum speed
-			FanForcePWM(0);
-			
-			IOSleep(5000);
-			
-			m_MinRpm = IT87x_ReadTachometer(m_Address, m_Offset, valid);
-			
-			value[0] = (m_MinRpm << 2) >> 8;
-			value[1] = (m_MinRpm << 2) & 0xff;
-			
-			snprintf(m_FminKey, 5, "F%dMn", index);
-			FakeSMCAddKey(m_FminKey, "fpe2", 2, value, this);
-			
-			IOLog("%d\n", m_MinRpm);
-			
-			//Restore temperature sensor selection
-			FanForcePWM(TempBackup);
-		}
+		//Back up temperature sensor selestion
+		outb(m_Address + ITE_ADDRESS_REGISTER_OFFSET, ITE_FAN_FORCE_PWM_REG[m_Offset]);
+		UInt16 TempBackup = inb(m_Address+ITE_DATA_REGISTER_OFFSET);
+		
+		//Determine maximum speed
+		FanForcePWM(0x7f);
+		
+		IOSleep(5000);
+		
+		m_MaxRpm = IT87x_ReadTachometer(m_Address, m_Offset, valid);
+		
+		value[0] = (m_MaxRpm << 2) >> 8;
+		value[1] = (m_MaxRpm << 2) & 0xff;
+		
+		snprintf(tmpKey, 5, "F%dMx", index);
+		FakeSMCAddKey(tmpKey, "fpe2", 2, value);
+		
+		//Determine minimum speed
+		FanForcePWM(0);
+		
+		IOSleep(5000);
+		
+		m_MinRpm = IT87x_ReadTachometer(m_Address, m_Offset, valid);
+		
+		value[0] = (m_MinRpm << 2) >> 8;
+		value[1] = (m_MinRpm << 2) & 0xff;
+		
+		snprintf(m_FminKey, 5, "F%dMn", index);
+		FakeSMCAddKey(m_FminKey, "fpe2", 2, value);
+		
+		IOLog("%d\n", m_MinRpm);
+		
+		//Restore temperature sensor selection
+		FanForcePWM(TempBackup);
 	};
 	
 	virtual void	OnKeyRead(const char* key, char* data);
 	virtual void	OnKeyWrite(const char* key, char* data);
 };
+
 
 class IT87x : public SuperIO
 {
