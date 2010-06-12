@@ -1,5 +1,5 @@
 /*
- *  FakeSMCPlugin.h
+ *  FakeSMCBinding.h
  *  fakesmc
  *
  *  Created by Mozodojo on 11/06/10.
@@ -7,10 +7,10 @@
  *
  */
 
-#ifndef FAKESMCPLUGIN_H
-#define FAKESMCPLUGIN_H
+#ifndef FAKESMCBINDING_H
+#define FAKESMCBINDING_H
 
-class FakeSMCPlugin 
+class FakeSMCBinding 
 {
 public:
 	virtual void OnKeyRead(const char* key, char* data);
@@ -19,8 +19,8 @@ public:
 
 void FakeSMCAddKey (const char*, uint8_t, char*);
 void FakeSMCAddKey (const char*, const char*, uint8_t, char*);
-void FakeSMCAddKey (const char*, uint8_t, char*, FakeSMCPlugin*);
-void FakeSMCAddKey (const char*, const char*, uint8_t, char*, FakeSMCPlugin*);
+void FakeSMCAddKey (const char*, uint8_t, char*, FakeSMCBinding*);
+void FakeSMCAddKey (const char*, const char*, uint8_t, char*, FakeSMCBinding*);
 char* FakeSMCReadKey (const char*);
 void FakeSMCRemoveKeyBinding (const char*);
 

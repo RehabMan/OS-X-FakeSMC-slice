@@ -5,7 +5,6 @@
 #include <IOKit/pci/IOPCIDevice.h>
 #include <IOKit/IOTimerEventSource.h>
 #include <IOKit/acpi/IOACPIPlatformDevice.h>
-#include <FakeSMCPlugin.h>
 #include <IOACPIPlatformDeviceCh.h>
 
 class FakeSMC : public IOService

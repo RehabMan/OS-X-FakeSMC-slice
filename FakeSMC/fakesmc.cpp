@@ -1,5 +1,5 @@
 #include "fakesmc.h"
-//#include "IOACPIPlatformDeviceCh.h"
+#include "FakeSMCBinding.h"
 
 #define SMC_DATA_PORT 0x00
 #define SMC_CMD_PORT 0x04
@@ -18,13 +18,13 @@ void FakeSMCAddKey (const char* keyname, const char* keytype, uint8_t keylen, ch
 	smcNode->FixUpKeysNum();
 }
 
-void FakeSMCAddKey(const char* keyname, uint8_t keylen, char* keydata, FakeSMCPlugin* binding)
+void FakeSMCAddKey(const char* keyname, uint8_t keylen, char* keydata, FakeSMCBinding* binding)
 {
 	smcNode->SMCAddKey(keyname, keylen, keydata, 1, binding);
 	smcNode->FixUpKeysNum();
 }
 
-void FakeSMCAddKey (const char* keyname, const char* keytype, uint8_t keylen, char* keydata, FakeSMCPlugin* binding)
+void FakeSMCAddKey (const char* keyname, const char* keytype, uint8_t keylen, char* keydata, FakeSMCBinding* binding)
 {
 	smcNode->SMCAddKey(keyname, keytype, keylen, keydata, 1, binding);
 	smcNode->FixUpKeysNum();

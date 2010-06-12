@@ -14,6 +14,7 @@
 #include <IOKit/acpi/IOACPIPlatformDevice.h>
 
 #include "fakesmc.h"
+#include "FakeSMCBinding.h"
 
 struct AppleSMCStatus {
 	uint8_t cmd;
@@ -40,7 +41,7 @@ struct AppleSMCData {
 	char *key;
 	char *type;
 	char *data;
-	FakeSMCPlugin* binding;
+	FakeSMCBinding* binding;
 	SMCData next;
 };
 
@@ -109,9 +110,9 @@ class IOACPIPlatformDeviceCh : public IOACPIPlatformDevice
 	virtual void	SMCSetup();
 	
 	virtual SMCData SMCAddKey(const char * keyname, uint8_t keylen, char * keydata, uint32_t replace_flag); //returns a pointer to key struct, so we can modify it later 
-	virtual SMCData SMCAddKey(const char * keyname, uint8_t keylen, char * keydata, uint32_t replace_flag, FakeSMCPlugin* binding);
+	virtual SMCData SMCAddKey(const char * keyname, uint8_t keylen, char * keydata, uint32_t replace_flag, FakeSMCBinding* binding);
 	virtual SMCData SMCAddKey(const char * keyname, const char * keytype, uint8_t keylen, char * keydata, uint32_t replace_flag);
-	virtual SMCData SMCAddKey(const char * keyname, const char * keytype, uint8_t keylen, char * keydata, uint32_t replace_flag, FakeSMCPlugin* binding);
+	virtual SMCData SMCAddKey(const char * keyname, const char * keytype, uint8_t keylen, char * keydata, uint32_t replace_flag, FakeSMCBinding* binding);
 
 	
 	virtual SMCData FindSMCKey(const char * keyname);

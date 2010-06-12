@@ -398,7 +398,7 @@ SMCData IOACPIPlatformDeviceCh::SMCAddKey(const char * keyname, uint8_t keylen, 
 	return SMCAddKey(keyname, "", keylen, keydata, replace_flag, NULL);
 }
 
-SMCData IOACPIPlatformDeviceCh::SMCAddKey(const char * keyname, uint8_t keylen, char * keydata, uint32_t replace_flag, FakeSMCPlugin* binding)
+SMCData IOACPIPlatformDeviceCh::SMCAddKey(const char * keyname, uint8_t keylen, char * keydata, uint32_t replace_flag, FakeSMCBinding* binding)
 {
 	return SMCAddKey(keyname, "", keylen, keydata, replace_flag, binding);
 }
@@ -408,7 +408,7 @@ SMCData IOACPIPlatformDeviceCh::SMCAddKey(const char * keyname, const char * key
 	return SMCAddKey(keyname, keytype, keylen, keydata, replace_flag, NULL);
 }
 
-SMCData IOACPIPlatformDeviceCh::SMCAddKey(const char * keyname, const char * keytype, uint8_t keylen, char * keydata, uint32_t replace_flag, FakeSMCPlugin* binding)
+SMCData IOACPIPlatformDeviceCh::SMCAddKey(const char * keyname, const char * keytype, uint8_t keylen, char * keydata, uint32_t replace_flag, FakeSMCBinding* binding)
 {
 	SMCData SMCkey=0;
 	SMCData PrevKey=0;
