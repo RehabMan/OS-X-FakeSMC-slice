@@ -417,9 +417,6 @@ SMCData IOACPIPlatformDeviceCh::SMCAddKey(const char * keyname, const char * key
 	
 	if(SMCkey)
 	{
-		if (SMCkey->binding != NULL)
-			SMCkey->binding->OnKeyWrite(keyname, SMCkey->data);
-		
 		if(replace_flag != 0) 
 		{
 			if (strlen(keytype) > 0) bcopy(keytype, SMCkey->type, 5);
@@ -427,6 +424,10 @@ SMCData IOACPIPlatformDeviceCh::SMCAddKey(const char * keyname, const char * key
 			IOFree(SMCkey->data, keylen);
 			SMCkey->data = (char*) IOMalloc(keylen);
 			bcopy(keydata, SMCkey->data,keylen);
+			
+			if (SMCkey->binding != NULL)
+				SMCkey->binding->OnKeyWrite(keyname, SMCkey->data);
+			
 			if (binding) SMCkey->binding = binding;
 			//			IOLog("FakeSMC: replacing key (%s Len=%d)\n", keyname, SMCkey->len);
 		}
