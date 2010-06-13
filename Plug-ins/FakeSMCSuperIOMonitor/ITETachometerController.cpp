@@ -22,7 +22,8 @@ void ITETachometerController::Initialize()
 	bool* valid;
 	
 	//Back up temperature sensor selection
-	m_Default = ITE_ReadByte(m_Address, ITE_FAN_FORCE_PWM_REG[m_Offset], valid);
+	m_DefaultForcePWM = ITE_ReadByte(m_Address, ITE_FAN_FORCE_PWM_REG[m_Offset], valid);
+	m_DefaultStartPWM = ITE_ReadByte(m_Address, ITE_START_PWM_VALUE_REG[m_Offset], valid);
 	
 	if (valid)
 	{
@@ -54,7 +55,7 @@ void ITETachometerController::Initialize()
 		};
 	
 		//Restore temperature sensor selection
-		ForcePWM(m_Default);
+		ForcePWM(m_DefaultForcePWM);
 			
 		m_Maximum = m_Maximum / 50 * 50;
 		
@@ -74,7 +75,7 @@ void ITETachometerController::Initialize()
 		snprintf(tmpKey, 5, "F%dTg", m_Index);
 		FakeSMCAddKey(tmpKey, "fpe2", 2, value);
 				
-		if (m_Maximum > initial + 50)
+		if (m_Maximum > initial + 100)
 		{
 			value[0] = 0;//(initial << 2) >> 8;
 			value[1] = 0;//(initial << 2) & 0xff;
@@ -105,24 +106,14 @@ void ITETachometerController::OnKeyRead(__unused const char* key, __unused char*
 
 void ITETachometerController::OnKeyWrite(__unused const char* key, char* data)
 {
-	UInt16 hi = data[0] << 6;
-	UInt16 lo = data[1] >> 2;
-	UInt16 rpm = hi | lo;
-	
-	if (rpm <= m_Maximum)
-	{
-		UInt8 slope = (rpm * 0x7f) / m_Maximum;
+	UInt16 rpm = (UInt16(data[0] << 8) | (data[1] & 0xff)) >> 2;
+	UInt8 slope = rpm * 127 / m_Maximum;
 			
-		if (slope == 0)
-		{
-			ForcePWM(m_Default);
-		}
-		else 
-		{
-			DebugLog("Fan #%d SLOPE=0x%x RPM=%drpm", m_Offset, slope, rpm);
-				
-			outb(m_Address + ITE_ADDRESS_REGISTER_OFFSET, ITE_START_PWM_VALUE_REG[m_Offset]);
-			outb(m_Address + ITE_DATA_REGISTER_OFFSET, slope);
-		}
-	}
+	if (slope == 0)
+		slope = m_DefaultStartPWM;
+	
+	DebugLog("Fan #%d SLOPE=0x%x RPM=%drpm", m_Offset, slope, rpm);
+		
+	outb(m_Address + ITE_ADDRESS_REGISTER_OFFSET, ITE_START_PWM_VALUE_REG[m_Offset]);
+	outb(m_Address + ITE_DATA_REGISTER_OFFSET, slope);
 }

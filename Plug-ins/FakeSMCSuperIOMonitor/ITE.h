@@ -35,8 +35,8 @@ const UInt8 ITE_VENDOR_ID_REGISTER = 0x58;
 const UInt8 ITE_FAN_TACHOMETER_16_BIT_ENABLE_REGISTER = 0x0c;
 const UInt8 ITE_FAN_TACHOMETER_REG[5] = { 0x0d, 0x0e, 0x0f, 0x80, 0x82 };
 const UInt8 ITE_FAN_TACHOMETER_EXT_REG[5] = { 0x18, 0x19, 0x1a, 0x81, 0x83 };
-const UInt8 ITE_FAN_FORCE_PWM_REG[5] = { 0x17, 0x16, 0x15, 0x88, 0x89 };
-const UInt8 ITE_START_PWM_VALUE_REG[5] = { 0x73, 0x6b, 0x63, 0x9b, 0x93 };
+const UInt8 ITE_FAN_FORCE_PWM_REG[5] = { 0x15, 0x16, 0x17, 0x88, 0x89 };
+const UInt8 ITE_START_PWM_VALUE_REG[5] = { 0x63, 0x6b, 0x73, 0x93, 0x9b };
 const UInt8 ITE_VOLTAGE_BASE_REG = 0x20;
 
 const float ITE_VOLTAGE_GAIN[] = {1, 1, 1, (6.8f / 10 + 1), 1, 1, 1, 1, 1 };

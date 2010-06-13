@@ -20,12 +20,13 @@ private:
 	UInt8	m_Offset;
 	UInt8	m_Index;
 	
-	UInt8	m_Default;
+	UInt8	m_DefaultForcePWM;
+	UInt8	m_DefaultStartPWM;
 	UInt16	m_Maximum;
 	
 	void	ForcePWM(UInt8 slope);
 public:
-	ITETachometerController(UInt16 address, UInt8 offset, UInt8 index)
+	ITETachometerController(UInt16 address, UInt8 offset, UInt8 index) : Binding()
 	{
 		m_Address = address;
 		m_Offset = offset;
