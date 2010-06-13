@@ -14,6 +14,7 @@
 #define _FINTEK_H 
 
 #include "SuperIO.h"
+#include "Sensor.h"
 
 const UInt8 FINTEK_PORTS_COUNT = 2;
 const UInt16 FINTEK_PORT[2] = { 0x2e, 0x4e };

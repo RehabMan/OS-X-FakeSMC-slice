@@ -9,7 +9,7 @@
 
 #include <IOKit/IOService.h>
 
-#include "IT87x.h"
+#include "ITE.h"
 #include "Winbond.h"
 #include "Fintek.h"
 

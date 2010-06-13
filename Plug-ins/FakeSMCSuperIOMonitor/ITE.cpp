@@ -1,5 +1,5 @@
 /*
- *  IT87x.cpp
+ *  ITE.cpp
  *  FakeSMCLPCMonitor
  *
  *  Created by Mozodojo on 29/05/10.
@@ -11,13 +11,15 @@
  */
 
 #include <IOKit/IOService.h>
-#include "IT87x.h"
 
-void IT87xTemperatureSensor::OnKeyRead(__unused const char* key, char* data)
+#include "ITE.h"
+#include "ITETachometerController.h"
+
+void ITETemperatureSensor::OnKeyRead(__unused const char* key, char* data)
 {
 	bool* valid;
 	
-	UInt8 value = IT87x_ReadTemperature(m_Address, m_Offset, valid);
+	UInt8 value = ITE_ReadTemperature(m_Address, m_Offset, valid);
 	
 	if(valid)
 	{
@@ -26,16 +28,16 @@ void IT87xTemperatureSensor::OnKeyRead(__unused const char* key, char* data)
 	}
 }
 
-void IT87xTemperatureSensor::OnKeyWrite(__unused const char* key, __unused char* data)
+void ITETemperatureSensor::OnKeyWrite(__unused const char* key, __unused char* data)
 {
 	
 }
 
-void IT87xVoltageSensor::OnKeyRead(__unused const char* key, char* data)
+void ITEVoltageSensor::OnKeyRead(__unused const char* key, char* data)
 {
 	bool* valid;
 	
-	UInt16 V = IT87x_ReadByte(m_Address, ITE_VOLTAGE_BASE_REG + m_Offset, valid) << 4;
+	UInt16 V = ITE_ReadByte(m_Address, ITE_VOLTAGE_BASE_REG + m_Offset, valid) << 4;
 	
 	if (valid)
 	{
@@ -46,16 +48,16 @@ void IT87xVoltageSensor::OnKeyRead(__unused const char* key, char* data)
 	}
 }
 
-void IT87xVoltageSensor::OnKeyWrite(__unused const char* key, __unused char* data)
+void ITEVoltageSensor::OnKeyWrite(__unused const char* key, __unused char* data)
 {
 	
 }
 
-void IT87xTachometerSensor::OnKeyRead(__unused const char* key, char* data)
+void ITETachometerSensor::OnKeyRead(__unused const char* key, char* data)
 {
 	bool* valid;
 	
-	UInt16 value = IT87x_ReadTachometer(m_Address, m_Offset, valid);
+	UInt16 value = ITE_ReadTachometer(m_Address, m_Offset, valid);
 	
 	if(valid)
 	{
@@ -64,38 +66,11 @@ void IT87xTachometerSensor::OnKeyRead(__unused const char* key, char* data)
 	}
 }
 
-void IT87xTachometerSensor::OnKeyWrite(__unused const char* key, __unused char* data)
+void ITETachometerSensor::OnKeyWrite(__unused const char* key, __unused char* data)
 {
 }
 
-void IT87xTachometerController::ForcePWM(UInt8 slope)
-{
-	DebugLog("Forcing Fan #%d SLOPE=0x%x", m_Offset, slope);
-	
-	outb(m_Address+ITE_ADDRESS_REGISTER_OFFSET, ITE_FAN_FORCE_PWM_REG[m_Offset]);
-	outb(m_Address+ITE_DATA_REGISTER_OFFSET, slope);
-}
-
-void IT87xTachometerController::OnKeyRead(__unused const char* key, __unused char* data)
-{
-}
-
-void IT87xTachometerController::OnKeyWrite(__unused const char* key, char* data)
-{
-	UInt16 rpm = (UInt16(data[0]) << 8 | (data[1] & 0xff)) >> 2;
-	
-	if (m_MaxRpm != m_MinRpm)
-	{
-		UInt8 slope = UInt8((127*(rpm - m_MinRpm)) / (m_MaxRpm - m_MinRpm));
-		
-		DebugLog("Fan #%d SLOPE=0x%x RPM=%drpm MIN=%drpm MAX=%drpm", m_Offset, slope, rpm, m_MinRpm, m_MaxRpm);
-		
-		outb(m_Address + ITE_ADDRESS_REGISTER_OFFSET, ITE_START_PWM_VALUE_REG[m_Offset]);
-		outb(m_Address + ITE_DATA_REGISTER_OFFSET, slope);
-	}
-}
-
-void IT87x::Enter()
+void ITE::Enter()
 {
 	outb(RegisterPort, 0x87);
 	outb(RegisterPort, 0x01);
@@ -111,13 +86,13 @@ void IT87x::Enter()
 	}
 }
 
-void IT87x::Exit()
+void ITE::Exit()
 {
 	outb(RegisterPort, SUPERIO_CONFIGURATION_CONTROL_REGISTER);
 	outb(ValuePort, 0x02);
 }
 
-bool IT87x::Probe()
+bool ITE::Probe()
 {
 	Model = UnknownModel;
 	
@@ -160,12 +135,12 @@ bool IT87x::Probe()
 		bool* valid;
 		UInt8 vendorId;
 		
-		vendorId = IT87x_ReadByte(Address, ITE_VENDOR_ID_REGISTER, valid);
+		vendorId = ITE_ReadByte(Address, ITE_VENDOR_ID_REGISTER, valid);
 		
 		if (!valid || vendorId != ITE_VENDOR_ID)
 			continue;
 		
-		if ((IT87x_ReadByte(Address, ITE_CONFIGURATION_REGISTER, valid) & 0x10) == 0)
+		if ((ITE_ReadByte(Address, ITE_CONFIGURATION_REGISTER, valid) & 0x10) == 0)
 			continue;
 		
 		if (!valid)
@@ -185,7 +160,7 @@ bool IT87x::Probe()
 	return false;
 }
 
-void IT87x::Init()
+void ITE::Init()
 {	
 	bool* valid;
 	
@@ -194,14 +169,14 @@ void IT87x::Init()
 	int count = 0;
 	
 	for (int i = 2; i >= 0; i--) 
-	{
-		UInt8 t = IT87x_ReadTemperature(Address, i, valid);
+	{		
+		UInt8 t = ITE_ReadTemperature(Address, i, valid);
 		
 		// Second chance
 		if (!valid || t == 0 || t > 128 )
 		{
-			IOSleep(500);
-			t = IT87x_ReadTemperature(Address, i, valid);
+			IOSleep(1000);
+			t = ITE_ReadTemperature(Address, i, valid);
 		}
 		
 		if (valid && t > 0 && t < 128)
@@ -211,12 +186,12 @@ void IT87x::Init()
 				case 0:
 				{
 					// Heatsink
-					Bind(new IT87xTemperatureSensor(Address, i, "Th0H", "sp78", 2));
+					Bind(new ITETemperatureSensor(Address, i, "Th0H", "sp78", 2));
 				} break;
 				case 1:
 				{
 					// Northbridge
-					Bind(new IT87xTemperatureSensor(Address, i, "TN0P", "sp78", 2));
+					Bind(new ITETemperatureSensor(Address, i, "TN0P", "sp78", 2));
 				} break;
 			}
 			
@@ -225,7 +200,7 @@ void IT87x::Init()
 	}
 
 	// CPU Vcore
-	Bind(new IT87xVoltageSensor(Address, 0, "VC0C", "fp2e", 2));
+	Bind(new ITEVoltageSensor(Address, 0, "VC0C", "fp2e", 2));
 	//FakeSMCAddKey("VC0c", "ui16", 2, value, this);
 	
 	// FANs
@@ -236,19 +211,22 @@ void IT87x::Init()
 		char key[5];
 		bool fanName = FanName[i] && strlen(FanName[i]) > 0;
 		
-		if ( fanName || IT87x_ReadTachometer(Address, i, valid) > 0)
+		if (fanName || ITE_ReadTachometer(Address, i, valid) > 0)
 		{	
-			if(valid || fanName)
+			if (!fanName && !valid)
+				continue;
+			
+			if (fanName)
 			{
 				snprintf(key, 5, "F%dID", FanOffset + FanCount);
 				FakeSMCAddKey(key, "ch8*", strlen(FanName[i]), (char*)FanName[i]);
 			}
 			
 			snprintf(key, 5, "F%dAc", FanOffset + FanCount);
-			Bind(new IT87xTachometerSensor(Address, i, key, "fpe2", 2));
+			Bind(new ITETachometerSensor(Address, i, key, "fpe2", 2));
 			
 			if (m_FanControl)
-				Bind(new IT87xTachometerController(Address, i, FanOffset + FanCount));
+				Bind(new ITETachometerController(Address, i, FanOffset + FanCount));
 			
 			FanIndex[FanCount++] = i;
 		}
@@ -257,7 +235,7 @@ void IT87x::Init()
 	UpdateFNum(FanCount);
 }
 
-void IT87x::Finish()
+void ITE::Finish()
 {
 	FlushBindings();
 	UpdateFNum(-FanCount);

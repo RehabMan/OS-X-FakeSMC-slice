@@ -13,12 +13,10 @@
 #ifndef _SUPERIO_H 
 #define _SUPERIO_H
 
-#include <architecture/i386/pio.h>
-#include <libkern/OSTypes.h>
-#include <IOKit/IOLib.h>
 #include <IOKit/IOService.h>
 
 #include "FakeSMCBinding.h"
+#include "Binding.h"
 
 // Registers
 const UInt8 SUPERIO_CONFIGURATION_CONTROL_REGISTER	= 0x02;
@@ -91,31 +89,6 @@ public:
 	virtual bool	Probe();
 	virtual void	Init();
 	virtual void	Finish();
-};
-
-// Sensor
-
-class Sensor : public Binding
-{
-protected:
-	UInt16		m_Address;
-	UInt8		m_Offset;
-	
-public:
-	Sensor(UInt16 address, UInt8 offset, const char* key, const char* type, UInt8 size) : Binding(key, type, size)
-	{
-		m_Address = address;
-		m_Offset = offset;
-	};
-	
-	virtual void OnKeyRead(__unused const char* key, __unused char* data)
-	{
-		// Or it will be link error on kextload
-	};
-	virtual void OnKeyWrite(__unused const char* key, __unused char* data)
-	{
-		// Or it will be link error on kextload
-	};
 };
 
 #endif

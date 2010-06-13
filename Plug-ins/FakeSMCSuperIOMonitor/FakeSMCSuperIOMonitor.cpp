@@ -26,7 +26,7 @@ IOService* FakeSMCSuperIOMonitor::probe(IOService *provider, SInt32 *score)
 	
 	if(superio == NULL)
 	{
-		superio = new IT87x();
+		superio = new ITE();
 		
 		DebugLog("Probing ITE...");
 		
