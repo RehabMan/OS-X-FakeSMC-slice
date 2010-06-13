@@ -32,10 +32,10 @@ const UInt8 ITE_CONFIGURATION_REGISTER = 0x00;
 const UInt8 ITE_TEMPERATURE_BASE_REG = 0x29;
 const UInt8 ITE_VENDOR_ID_REGISTER = 0x58;
 const UInt8 ITE_FAN_TACHOMETER_16_BIT_ENABLE_REGISTER = 0x0c;
-const UInt8 ITE_FAN_TACHOMETER_REG[] = { 0x0d, 0x0e, 0x0f, 0x80, 0x82 };
-const UInt8 ITE_FAN_TACHOMETER_EXT_REG[] = { 0x18, 0x19, 0x1a, 0x81, 0x83 };
-const UInt8 ITE_FAN_FORCE_PWM_REG[] = { 0x17, 0x16, 0x15 };
-const UInt8 ITE_START_PWM_VALUE_REG[] = { 0x73, 0x6b, 0x63 };
+const UInt8 ITE_FAN_TACHOMETER_REG[5] = { 0x0d, 0x0e, 0x0f, 0x80, 0x82 };
+const UInt8 ITE_FAN_TACHOMETER_EXT_REG[5] = { 0x18, 0x19, 0x1a, 0x81, 0x83 };
+const UInt8 ITE_FAN_FORCE_PWM_REG[5] = { 0x17, 0x16, 0x15, 0x88, 0x89 };
+const UInt8 ITE_START_PWM_VALUE_REG[5] = { 0x73, 0x6b, 0x63, 0x9b, 0x93 };
 const UInt8 ITE_VOLTAGE_BASE_REG = 0x20;
 
 const float ITE_VOLTAGE_GAIN[] = {1, 1, 1, (6.8f / 10 + 1), 1, 1, 1, 1, 1 };
@@ -117,7 +117,7 @@ private:
 	int		m_MinRpm;
 	int		m_MaxRpm;
 	
-	void	ForcePWM(UInt16 slope);
+	void	ForcePWM(UInt8 slope);
 	
 public:
 	IT87xTachometerController(UInt16 address, UInt8 offset, UInt8 index)
@@ -139,7 +139,7 @@ public:
 			//Determine maximum speed
 			ForcePWM(0x7f);
 			
-			IOSleep(5000);
+			IOSleep(7000);
 			
 			m_MaxRpm = (IT87x_ReadTachometer(m_Address, m_Offset, valid) / 50 + 1) * 50;
 			
@@ -149,12 +149,14 @@ public:
 			//Determine minimum speed
 			ForcePWM(0);
 			
-			IOSleep(5000);
+			IOSleep(7000);
 			
 			m_MinRpm = (IT87x_ReadTachometer(m_Address, m_Offset, valid) / 50) * 50;
 			
 			if (m_MaxRpm - m_MinRpm > 50)
 			{
+				m_MinRpm = 0;
+				
 				snprintf(tmpKey, 5, "F%dMx", m_Index);
 				FakeSMCAddKey(tmpKey, "fpe2", 2, value);
 				
@@ -162,9 +164,7 @@ public:
 				value[1] = (m_MinRpm << 2) & 0xff;
 				
 				DebugLog("Fan #%d MIN=%drpm MAX=%drpm", m_Offset, m_MinRpm, m_MaxRpm);
-				
-				
-									
+
 				m_Key = (char*)IOMalloc(5);
 				snprintf(m_Key, 5, "F%dMn", m_Index);
 				
@@ -175,8 +175,6 @@ public:
 			
 			//Restore temperature sensor selection
 			ForcePWM(TempBackup);
-			
-			IOSleep(1000);
 		}
 	};
 	

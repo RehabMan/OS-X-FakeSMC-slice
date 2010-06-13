@@ -108,8 +108,14 @@ public:
 		m_Offset = offset;
 	};
 	
-	virtual void OnKeyRead(__unused const char* key, __unused char* data) {};
-	virtual void OnKeyWrite(__unused const char* key, __unused char* data) {};
+	virtual void OnKeyRead(__unused const char* key, __unused char* data)
+	{
+		// Or it will be link error on kextload
+	};
+	virtual void OnKeyWrite(__unused const char* key, __unused char* data)
+	{
+		// Or it will be link error on kextload
+	};
 };
 
 #endif

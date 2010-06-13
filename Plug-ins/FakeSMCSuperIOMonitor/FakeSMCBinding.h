@@ -70,8 +70,14 @@ public:
 		return m_Key; 
 	};
 	
-	virtual void OnKeyRead(__unused const char* key, __unused char* data) {};
-	virtual void OnKeyWrite(__unused const char* key, __unused char* data) {};
+	virtual void OnKeyRead(__unused const char* key, __unused char* data)
+	{
+		// Or it will be link error on kextload
+	};
+	virtual void OnKeyWrite(__unused const char* key, __unused char* data)
+	{
+		// Or it will be link error on kextload
+	};
 };
 
 inline UInt16 fp2e_Encode(UInt16 value)
