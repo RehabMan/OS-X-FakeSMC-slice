@@ -12,6 +12,31 @@
 
 #include "SuperIO.h"
 
+bool setBoolean(const char * symbol, bool value, OSDictionary * dictionary)
+{
+	OSBoolean * boolean = value ? kOSBooleanTrue : kOSBooleanFalse;
+	
+	if (boolean)
+	{
+		dictionary->setObject(symbol, boolean);
+		return true;
+	}
+	
+	return false;
+}
+
+bool setArray(const char * symbol, OSArray * value, OSDictionary * dictionary)
+{
+	dictionary->setObject(symbol, value);
+	return true;
+}
+
+bool setDictionary(const char * symbol, OSDictionary * value, OSDictionary * dictionary)
+{
+	dictionary->setObject(symbol, value);
+	return true;
+}
+
 void SuperIO::Bind(Binding* binding)
 {
 	binding->Next = m_Binding;
@@ -32,15 +57,15 @@ void SuperIO::FlushBindings()
 	}
 }
 
-UInt8 SuperIO::ReadByte(UInt8 reg)
+UInt8 SuperIO::ListenPortByte(UInt8 reg)
 {
 	outb(RegisterPort, reg);
 	return inb(ValuePort);
 }
 
-UInt16 SuperIO::ReadWord(UInt8 reg)
+UInt16 SuperIO::ListenPortWord(UInt8 reg)
 {
-	return ((SuperIO::ReadByte(reg) << 8) | SuperIO::ReadByte(reg + 1));
+	return ((SuperIO::ListenPortByte(reg) << 8) | SuperIO::ListenPortByte(reg + 1));
 }
 
 void SuperIO::Select(UInt8 logicalDeviceNumber)
@@ -79,6 +104,8 @@ const char* SuperIO::GetModelName()
 
 void SuperIO::LoadConfiguration(IOService* provider)
 {
+	m_Service = provider;
+	
 	OSBoolean* fanControl = OSDynamicCast(OSBoolean, provider->getProperty("Enable Fan Control"));
 	
 	m_FanControl = fanControl->getValue();

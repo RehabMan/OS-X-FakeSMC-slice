@@ -16,7 +16,7 @@
 
 #define DebugOn TRUE
 
-#define LogPrefix "FakeSMCSuperIOMonitor: "
+#define LogPrefix "FakeSMCSuperIO: "
 #define DebugLog(string, args...)	do { if (DebugOn) { IOLog (LogPrefix "[Debug] " string "\n", ## args); } } while(0)
 #define WarningLog(string, args...) do { IOLog (LogPrefix "[Warning] " string "\n", ## args); } while(0)
 #define InfoLog(string, args...)	do { IOLog (LogPrefix string "\n", ## args); } while(0)

@@ -11,30 +11,48 @@
  */
 
 #include "Winbond.h"
+#include "WinbondSensors.h"
 
-void WinbondTemperatureSensor::OnKeyRead(__unused const char* key, char* data)
+UInt8 Winbond::ReadByte(UInt8 bank, UInt8 reg) 
 {
-	data[0] = Winbond_ReadTemperature(m_Address, 0);
-	data[1] = 0;
+	outb((UInt16)(Address + WINBOND_ADDRESS_REGISTER_OFFSET), WINBOND_BANK_SELECT_REGISTER);
+	outb((UInt16)(Address + WINBOND_DATA_REGISTER_OFFSET), bank);
+	outb((UInt16)(Address + WINBOND_ADDRESS_REGISTER_OFFSET), reg);
+	return inb((UInt16)(Address + WINBOND_DATA_REGISTER_OFFSET));
 }
 
-void WinbondTemperatureSensor::OnKeyWrite(__unused const char* key, __unused char* data)
+void Winbond::WriteByte(UInt8 bank, UInt8 reg, UInt8 value)
 {
+	outb((UInt16)(Address + WINBOND_ADDRESS_REGISTER_OFFSET), WINBOND_BANK_SELECT_REGISTER);
+	outb((UInt16)(Address + WINBOND_DATA_REGISTER_OFFSET), bank);
+	outb((UInt16)(Address + WINBOND_ADDRESS_REGISTER_OFFSET), reg);
+	outb((UInt16)(Address + WINBOND_DATA_REGISTER_OFFSET), value); 
+}
+
+SInt16 Winbond::ReadTemperature(UInt8 index)
+{
+	UInt32 value = Winbond::ReadByte(WINBOND_TEMPERATURE_BANK[index], WINBOND_TEMPERATURE_REG[index]) << 1;
 	
+	if (WINBOND_TEMPERATURE_BANK[index] > 0) 
+		value |= Winbond::ReadByte(WINBOND_TEMPERATURE_BANK[index], (UInt8)(WINBOND_TEMPERATURE_REG[index] + 1)) >> 7;
+	
+	float temperature = (float)value / 2.0f;
+	
+	return temperature;
 }
 
-void WinbondVoltageSensor::OnKeyRead(__unused const char* key, char* data)
+SInt16 Winbond::ReadVoltage(UInt8 index)
 {
 	float voltage; 
 	
-	switch (m_Model) 
+	switch (Model) 
 	{
 		case W83627HF:
 		case W83627THF:
 		case W83687THF:
 		{
-			UInt8 vrmConfiguration = Winbond_ReadByte(m_Address, m_Offset, 0x18);
-			UInt16 V = Winbond_ReadByte(m_Address, m_Offset, WINBOND_VOLTAGE_BASE_REG);
+			UInt8 vrmConfiguration = ReadByte(index, 0x18);
+			UInt16 V = Winbond::ReadByte(index, WINBOND_VOLTAGE_BASE_REG);
 			
 			if ((vrmConfiguration & 0x01) == 0)
 				voltage = 16.0f * V; // VRM8 formula
@@ -45,35 +63,81 @@ void WinbondVoltageSensor::OnKeyRead(__unused const char* key, char* data)
 		}
 		default:
 		{
-			UInt16 V = Winbond_ReadByte(m_Address, m_Offset, WINBOND_VOLTAGE_BASE_REG);
+			UInt16 V = Winbond::ReadByte(index, WINBOND_VOLTAGE_BASE_REG);
 			voltage = 8 * V;
 			
 			break;
 		}
 	}
-	
-	UInt16 value = fp2e_Encode(voltage);
-	
-	data[0] = (value & 0xff00) >> 8;
-	data[1] = value & 0x00ff;
+
+	return voltage;
 }
 
-void WinbondVoltageSensor::OnKeyWrite(__unused const char* key, __unused char* data)
+UInt64 SetBit(UInt64 target, UInt32 bit, UInt32 value)
 {
+	if (((value & 1) == value) && bit >= 0 && bit <= 63)
+	{
+		UInt64 mask = (((UInt64)1) << bit);
+		return value > 0 ? target | mask : target & ~mask;
+	}
 	
+	return value;
 }
 
-void WinbondTachometerSensor::OnKeyRead(__unused const char* key, char* data)
+SInt16 Winbond::ReadTachometer(UInt8 index, bool force_update)
 {
-	UInt16 value = Winbond_ReadTachometer(m_Address, m_Offset, false);
+	if (m_FanValueObsolete[index] || force_update)
+	{
+		UInt64 bits = 0;
+		
+		for (int i = 0; i < 5; i++)
+			bits = (bits << 8) | Winbond::ReadByte(0, WINBOND_FAN_BIT_REG[i]);
+		
+		UInt64 newBits = bits;
+		
+		for (int i = 0; i < 5; i++)
+		{
+			int count = Winbond::ReadByte(WINBOND_FAN_TACHO_BANK[i], WINBOND_FAN_TACHO_REG[i]);
+			
+			// assemble fan divisor
+			int divisorBits = (int)(
+									(((bits >> WINBOND_FAN_DIV_BIT2[i]) & 1) << 2) |
+									(((bits >> WINBOND_FAN_DIV_BIT1[i]) & 1) << 1) |
+									((bits >> WINBOND_FAN_DIV_BIT0[i]) & 1));
+			int divisor = 1 << divisorBits;
+			
+			m_FanValue[i] = (count < 0xff) ? 1.35e6f / (float)(count * divisor) : 0;
+			m_FanValueObsolete[i] = false;
+			
+			// update fan divisor
+			if (count > 192 && divisorBits < 7) 
+				divisorBits++;
+			if (count < 96 && divisorBits > 0)
+				divisorBits--;
+			
+			newBits = SetBit(newBits, WINBOND_FAN_DIV_BIT2[i], 
+									 (divisorBits >> 2) & 1);
+			newBits = SetBit(newBits, WINBOND_FAN_DIV_BIT1[i], 
+									 (divisorBits >> 1) & 1);
+			newBits = SetBit(newBits, WINBOND_FAN_DIV_BIT0[i], 
+									 divisorBits & 1);
+		}
+		
+		// write new fan divisors 
+		for (int i = 4; i >= 0; i--) 
+		{
+			UInt8 oldByte = (UInt8)(bits & 0xFF);
+			UInt8 newByte = (UInt8)(newBits & 0xFF);
+			bits = bits >> 8;
+			newBits = newBits >> 8;
+			if (oldByte != newByte) 
+				WriteByte(0, WINBOND_FAN_BIT_REG[i], newByte);        
+		}
+	}
 	
-	data[0] = (value >> 6) & 0xff;
-	data[1] = (value << 2) & 0xff;
-}
-
-void WinbondTachometerSensor::OnKeyWrite(__unused const char* key, __unused char* data)
-{
+	m_FanValueObsolete[index] = true;
 	
+	return m_FanValue[index];
 }
 
 void Winbond::Enter()
@@ -89,6 +153,8 @@ void Winbond::Exit()
 
 bool Winbond::Probe()
 {	
+	DebugLog("Probing Winbond...");
+	
 	Model = UnknownModel;
 	
 	for (int i = 0; i < WINBOND_PORTS_COUNT; i++) 
@@ -197,11 +263,11 @@ bool Winbond::Probe()
 		
 		Select(WINBOND_HARDWARE_MONITOR_LDN);
 		
-		Address = ReadWord(SUPERIO_BASE_ADDRESS_REGISTER);          
+		Address = ListenPortWord(SUPERIO_BASE_ADDRESS_REGISTER);          
 		
 		IOSleep(1000);
 		
-		UInt16 verify = ReadWord(SUPERIO_BASE_ADDRESS_REGISTER);
+		UInt16 verify = ListenPortWord(SUPERIO_BASE_ADDRESS_REGISTER);
 		
 		Exit();
 		
@@ -230,17 +296,17 @@ void Winbond::Init()
 		case W83667HGB:
 		{
 			// do not add temperature sensor registers that read PECI
-			UInt8 flag = Winbond_ReadByte(Address, 0, WINBOND_TEMPERATURE_SOURCE_SELECT_REG);
+			UInt8 flag = ReadByte(0, WINBOND_TEMPERATURE_SOURCE_SELECT_REG);
 			
 			// Heatsink
-			if ((flag & 0x04) == 0)	Bind(new WinbondTemperatureSensor(Address, 0, "Th0H", "sp78", 2));
+			if ((flag & 0x04) == 0)	Bind(new WinbondTemperatureSensor(this, 0, "Th0H", "sp78", 2));
 		
 			/*if ((flag & 0x40) == 0)
 			 list.Add(new Sensor(TEMPERATURE_NAME[1], 1, null,
 			 SensorType.Temperature, this, parameter));*/
 			
 			// Northbridge
-			Bind(new WinbondTemperatureSensor(Address, 2, "TN0P", "sp78", 2));
+			Bind(new WinbondTemperatureSensor(this, 2, "TN0P", "sp78", 2));
 			
 			break;
 		}
@@ -249,17 +315,17 @@ void Winbond::Init()
 		case W83627DHGP:
 		{
 			// do not add temperature sensor registers that read PECI
-			UInt8 sel = Winbond_ReadByte(Address, 0, WINBOND_TEMPERATURE_SOURCE_SELECT_REG);
+			UInt8 sel = ReadByte(0, WINBOND_TEMPERATURE_SOURCE_SELECT_REG);
 			
 			// Heatsink
-			if ((sel & 0x07) == 0) Bind(new WinbondTemperatureSensor(Address, 0, "Th0H", "sp78", 2));
+			if ((sel & 0x07) == 0) Bind(new WinbondTemperatureSensor(this, 0, "Th0H", "sp78", 2));
 			
 			/*if ((sel & 0x70) == 0)
 			 list.Add(new Sensor(TEMPERATURE_NAME[1], 1, null,
 			 SensorType.Temperature, this, parameter));*/
 			
 			// Northbridge
-			Bind(new WinbondTemperatureSensor(Address, 2, "TN0P", "sp78", 2));
+			Bind(new WinbondTemperatureSensor(this, 2, "TN0P", "sp78", 2));
 			
 			break;
 		}
@@ -268,28 +334,28 @@ void Winbond::Init()
 		{
 			// no PECI support, add all sensors
 			// Heatsink
-			Bind(new WinbondTemperatureSensor(Address, 0, "Th0H", "sp78", 2));
+			Bind(new WinbondTemperatureSensor(this, 0, "Th0H", "sp78", 2));
 			// Northbridge
-			Bind(new WinbondTemperatureSensor(Address, 2, "TN0P", "sp78", 2));
+			Bind(new WinbondTemperatureSensor(this, 2, "TN0P", "sp78", 2));
 			break;
 		}
 	}
 	
 	// CPU Vcore
-	Bind(new WinbondVoltageSensor(Address, Model, 0, "VC0C", "fp2e", 2));
+	Bind(new WinbondVoltageSensor(this, 0, "VC0C", "fp2e", 2));
 	//FakeSMCAddKey("VC0c", "ui16", 2, value, this);
 	
 	// FANs
 	FanOffset = GetFNum();
 	
-	Winbond_ReadTachometer(Address, 0, true);
+	ReadTachometer(0, true);
 	
 	for (int i = 0; i < 5; i++) 
 	{
 		char key[5];
 		bool fanName = FanName[i] && strlen(FanName[i]) > 0;
 		
-		if (fanName || FanValue[i] > 0)
+		if (fanName || m_FanValue[i] > 0)
 		{	
 			if(fanName)
 			{
@@ -298,7 +364,7 @@ void Winbond::Init()
 			}
 			
 			snprintf(key, 5, "F%dAc", FanOffset + FanCount);
-			Bind(new WinbondTachometerSensor(Address, i, key, "fpe2", 2));
+			Bind(new WinbondTachometerSensor(this, i, key, "fpe2", 2));
 			
 			FanIndex[FanCount++] = i;
 		}

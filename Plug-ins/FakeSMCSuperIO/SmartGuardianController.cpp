@@ -1,5 +1,5 @@
 /*
- *  ITETachometerController.cpp
+ *  SmartGuardianController.cpp
  *  FakeSMCSuperIOMonitor
  *
  *  Created by Mozodojo on 13/06/10.
@@ -7,30 +7,30 @@
  *
  */
 
-#include "ITETachometerController.h"
+#include "SmartGuardianController.h"
 
-void ITETachometerController::ForcePWM(UInt8 slope)
+void SmartGuardianController::ForcePWM(UInt8 slope)
 {
 	DebugLog("Forcing Fan #%d SLOPE=0x%x", m_Offset, slope);
 	
-	outb(m_Address+ITE_ADDRESS_REGISTER_OFFSET, ITE_SMARTGUARDIAN_FORCE_PWM[m_Offset]);
-	outb(m_Address+ITE_DATA_REGISTER_OFFSET, slope);
+	outb(m_Provider->GetAddress() + ITE_ADDRESS_REGISTER_OFFSET, ITE_SMARTGUARDIAN_FORCE_PWM[m_Offset]);
+	outb(m_Provider->GetAddress() + ITE_DATA_REGISTER_OFFSET, slope);
 }
 
-void ITETachometerController::Initialize()
+void SmartGuardianController::Initialize()
 {
 	bool* valid;
+	char tmpKey[5];
 	
 	//Back up temperature sensor selection
-	m_DefaultForcePWM = ITE_ReadByte(m_Address, ITE_SMARTGUARDIAN_FORCE_PWM[m_Offset], valid);
-	m_DefaultStartPWM = ITE_ReadByte(m_Address, ITE_SMARTGUARDIAN_START_PWM[m_Offset], valid);
+	m_DefaultForcePWM = m_Provider->ReadByte(ITE_SMARTGUARDIAN_FORCE_PWM[m_Offset], valid);
+	m_DefaultStartPWM = m_Provider->ReadByte(ITE_SMARTGUARDIAN_START_PWM[m_Offset], valid);
 	
 	if (valid)
 	{
-		char tmpKey[5];
 		char value[2];
 		
-		UInt16 initial = m_Maximum = ITE_ReadTachometer(m_Address, m_Offset, valid);
+		UInt16 initial = m_Maximum = m_Provider->ReadTachometer(m_Offset);
 		
 		//Forcing maximum speed
 		ForcePWM(0x7f);
@@ -42,7 +42,7 @@ void ITETachometerController::Initialize()
 		{
 			IOSleep(1000);
 			
-			m_Maximum = ITE_ReadTachometer(m_Address, m_Offset, valid);
+			m_Maximum = m_Provider->ReadTachometer(m_Offset);
 			
 			if (m_Maximum < last + 50)
 			{
@@ -100,11 +100,11 @@ void ITETachometerController::Initialize()
 	}	
 }
 
-void ITETachometerController::OnKeyRead(__unused const char* key, __unused char* data)
+void SmartGuardianController::OnKeyRead(__unused const char* key, __unused char* data)
 {
 }
 
-void ITETachometerController::OnKeyWrite(__unused const char* key, char* data)
+void SmartGuardianController::OnKeyWrite(__unused const char* key, char* data)
 {
 	UInt16 rpm = (UInt16(data[0] << 8) | (data[1] & 0xff)) >> 2;
 	UInt8 slope = rpm * 127 / m_Maximum;
@@ -114,6 +114,6 @@ void ITETachometerController::OnKeyWrite(__unused const char* key, char* data)
 	
 	DebugLog("Fan #%d SLOPE=0x%x RPM=%drpm", m_Offset, slope, rpm);
 		
-	outb(m_Address + ITE_ADDRESS_REGISTER_OFFSET, ITE_SMARTGUARDIAN_START_PWM[m_Offset]);
-	outb(m_Address + ITE_DATA_REGISTER_OFFSET, slope);
+	outb(m_Provider->GetAddress() + ITE_ADDRESS_REGISTER_OFFSET, ITE_SMARTGUARDIAN_START_PWM[m_Offset]);
+	outb(m_Provider->GetAddress() + ITE_DATA_REGISTER_OFFSET, slope);
 }

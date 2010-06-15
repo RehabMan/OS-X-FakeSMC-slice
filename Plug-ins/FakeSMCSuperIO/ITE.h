@@ -14,7 +14,6 @@
 #define _IT87X_H
 
 #include "SuperIO.h"
-#include "Sensor.h"
 
 const UInt8 ITE_PORTS_COUNT = 4;
 const UInt16 ITE_PORT[] = { 0x2e, 0x4e, 0x290, 0x370 };
@@ -39,72 +38,13 @@ const UInt8 ITE_VOLTAGE_BASE_REG = 0x20;
 
 const float ITE_VOLTAGE_GAIN[] = {1, 1, 1, (6.8f / 10 + 1), 1, 1, 1, 1, 1 };
 
-// ITE base functions definition
-
-inline UInt8 ITE_ReadByte(UInt16 address, UInt8 reg, bool* valid)
-{
-	outb(address + ITE_ADDRESS_REGISTER_OFFSET, reg);
-	
-	UInt8 value = inb(address + ITE_DATA_REGISTER_OFFSET);
-	valid = (bool*)(reg == inb(address + ITE_DATA_REGISTER_OFFSET));
-	
-	return value;
-}
-
-inline UInt8 ITE_ReadTemperature(UInt16 address, UInt8 index, bool* valid)
-{
-	return ITE_ReadByte(address, ITE_TEMPERATURE_BASE_REG + index, valid);
-}
-
-inline UInt16 ITE_ReadTachometer(UInt16 address, UInt8 index, bool* valid)
-{
-	int value = ITE_ReadByte(address, ITE_FAN_TACHOMETER_REG[index], valid);
-	
-	if(valid)
-	{
-		value |= ITE_ReadByte(address, ITE_FAN_TACHOMETER_EXT_REG[index], valid) << 8;
-		value = valid && value > 0x3f && value < 0xffff ? (float)(1350000 + value) / (float)(value * 2) : 0;
-	}
-	
-	return value;
-}
-
-// ITE classes definition
-
-class ITETemperatureSensor : public Sensor 
-{
-public:
-	ITETemperatureSensor(UInt16 address, UInt8 offset, const char* key, const char* type, UInt8 size) : Sensor(address, offset, key, type, size)
-	{
-		
-	};
-	
-	virtual void	OnKeyRead(const char* key, char* data);
-	virtual void	OnKeyWrite(const char* key, char* data);
-};
-
-class ITEVoltageSensor : public Sensor 
-{
-public:
-	ITEVoltageSensor(UInt16 address, UInt8 offset, const char* key, const char* type, UInt8 size) : Sensor(address, offset, key, type, size)
-	{
-		//
-	};
-	
-	virtual void	OnKeyRead(const char* key, char* data);
-	virtual void	OnKeyWrite(const char* key, char* data);
-};
-
-class ITETachometerSensor : public Sensor 
-{
-public:
-	ITETachometerSensor(UInt16 address, UInt8 offset, const char* key, const char* type, UInt8 size) : Sensor(address, offset, key, type, size)
-	{
-	};
-	
-	virtual void	OnKeyRead(const char* key, char* data);
-	virtual void	OnKeyWrite(const char* key, char* data);
-};
+const UInt8 ITE_SMARTGUARDIAN_FORCE_PWM[5]				= { 0x15, 0x16, 0x17, 0x88, 0x89 };
+const UInt8 ITE_SMARTGUARDIAN_TEMPERATURE_OFF[5]		= { 0x60, 0x68, 0x70, 0x90, 0x98 };
+const UInt8 ITE_SMARTGUARDIAN_TEMPERATURE_START[5]		= { 0x61, 0x69, 0x71, 0x91, 0x99 };
+const UInt8 ITE_SMARTGUARDIAN_TEMPERATURE_FULL_ON[5]	= { 0x62, 0x6a, 0x72, 0x92, 0x9a };
+const UInt8 ITE_SMARTGUARDIAN_START_PWM[5]				= { 0x63, 0x6b, 0x73, 0x93, 0x9b };
+const UInt8 ITE_SMARTGUARDIAN_CONTROL[5]				= { 0x64, 0x6c, 0x74, 0x94, 0x9c };
+const UInt8 ITE_SMARTGUARDIAN_TEMPERATURE_FULL_OFF[5]	= { 0x65, 0x6d, 0x75, 0x95, 0x9d };
 
 class ITE : public SuperIO
 {
@@ -113,6 +53,12 @@ protected:
 	void	Exit();
 public:	
 	bool			IsFanControlled() { return m_FanControl; };
+	
+	virtual UInt8	ReadByte(UInt8 index, bool* valid);
+	virtual UInt16	ReadWord(UInt8 index1, UInt8 index2, bool* valid);
+	virtual SInt16	ReadTemperature(UInt8 index);
+	virtual SInt16	ReadVoltage(UInt8 index);
+	virtual SInt16	ReadTachometer(UInt8 index);
 	
 	virtual bool	Probe();
 	virtual void	Init();

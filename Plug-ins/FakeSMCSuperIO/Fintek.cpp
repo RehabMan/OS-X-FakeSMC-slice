@@ -11,49 +11,77 @@
  */
 
 #include "Fintek.h"
+#include "FintekSensors.h"
 
-void FintekTemperatureSensor::OnKeyRead(__unused const char* key, char* data)
+UInt8 Fintek::ReadByte(UInt8 reg) 
 {
-	data[0] = Fintek_ReadTemperature(m_Address, m_Model, m_Offset);
-	data[1] = 0;
-}
+	outb(Address + FINTEK_ADDRESS_REGISTER_OFFSET, reg);
+	return inb(Address + FINTEK_DATA_REGISTER_OFFSET);
+} 
 
-void FintekTemperatureSensor::OnKeyWrite(__unused const char* key, __unused char* data)
+SInt16 Fintek::ReadTemperature(UInt8 index)
 {
+	float value;
 	
-}
-
-void FintekVoltageSensor::OnKeyRead(__unused const char* key, char* data)
-{
-	UInt16 value = Fintek_ReadByte(m_Address, FINTEK_VOLTAGE_BASE_REG + m_Offset) << 4;
-	float V = (m_Offset == 1 ? 0.5f : 1.0f) * 0.001f * value;
-	
-	value = fp2e_Encode(V);
-	
-	data[0] = (value & 0xff00) >> 8;
-	data[1] = value & 0x00ff;
-}
-
-void FintekVoltageSensor::OnKeyWrite(__unused const char* key, __unused char* data)
-{
-	
-}
-
-void FintekTachometerSensor::OnKeyRead(__unused const char* key, char* data)
-{
-	int value = Fintek_ReadTachometer(m_Address, m_Offset);
-		
-	if (value > 0)
+	switch (Model) 
 	{
-		data[0] = (value >> 6) & 0xff;
-		data[1] = (value << 2) & 0xff;
+		case F71858: 
+		{
+			int tableMode = 0x3 & Fintek::ReadByte(FINTEK_TEMPERATURE_CONFIG_REG);
+			int high = Fintek::ReadByte(FINTEK_TEMPERATURE_BASE_REG + 2 * index);
+			int low = Fintek::ReadByte(FINTEK_TEMPERATURE_BASE_REG + 2 * index + 1);      
+			
+			if (high != 0xbb && high != 0xcc) 
+			{
+                int bits = 0;
+				
+                switch (tableMode) 
+				{
+					case 0: bits = 0; break;
+					case 1: bits = 0; break;
+					case 2: bits = (high & 0x80) << 8; break;
+					case 3: bits = (low & 0x01) << 15; break;
+                }
+                bits |= high << 7;
+                bits |= (low & 0xe0) >> 1;
+				
+                short value = (short)(bits & 0xfff0);
+				
+				return (float)value / 128.0f;
+			} 
+			else 
+			{
+                return 0;
+			}
+		} break;
+		default: 
+		{
+            value = Fintek::ReadByte(FINTEK_TEMPERATURE_BASE_REG + 2 * (index + 1));
+		} break;
 	}
+	
+	return value;
 }
 
-void FintekTachometerSensor::OnKeyWrite(__unused const char* key, __unused char* data)
+SInt16 Fintek::ReadVoltage(UInt8 index)
 {
-	
+	UInt16 value = Fintek::ReadByte(FINTEK_VOLTAGE_BASE_REG + index) << 4;
+	float V = (index == 1 ? 0.5f : 1.0f) * 0.001f * value;
+
+	return V;
 }
+
+SInt16 Fintek::ReadTachometer(UInt8 index)
+{
+	int value = Fintek::ReadByte(FINTEK_FAN_TACHOMETER_REG[index]) << 8;
+	value |= Fintek::ReadByte(FINTEK_FAN_TACHOMETER_REG[index] + 1);
+	
+	if (value > 0)
+		value = (value < 0x0fff) ? 1.5e6f / value : 0;
+	
+	return value;
+}
+
 
 void Fintek::Enter()
 {
@@ -68,6 +96,8 @@ void Fintek::Exit()
 
 bool Fintek::Probe()
 {
+	DebugLog("Probing Fintek...");
+	
 	Model = UnknownModel;
 	
 	for (int i = 0; i < FINTEK_PORTS_COUNT; i++) 
@@ -79,8 +109,8 @@ bool Fintek::Probe()
 		
 		UInt8 logicalDeviceNumber = 0;
 		
-        UInt8 id = Fintek_ReadByte(Address, FINTEK_CHIP_ID_REGISTER);
-        UInt8 revision = Fintek_ReadByte(Address, FINTEK_CHIP_REVISION_REGISTER);
+        UInt8 id = ListenPortByte(FINTEK_CHIP_ID_REGISTER);
+        UInt8 revision = ListenPortByte(FINTEK_CHIP_REVISION_REGISTER);
         
         switch (id) 
 		{
@@ -142,11 +172,11 @@ bool Fintek::Probe()
 		
 		Select(logicalDeviceNumber);
 		
-		Address = ReadWord(SUPERIO_BASE_ADDRESS_REGISTER);          
+		Address = ListenPortWord(SUPERIO_BASE_ADDRESS_REGISTER);          
 		
 		IOSleep(1000);
 		
-		UInt16 verify = ReadWord(SUPERIO_BASE_ADDRESS_REGISTER);
+		UInt16 verify = ListenPortWord(SUPERIO_BASE_ADDRESS_REGISTER);
 		
 		Exit();
 		
@@ -170,9 +200,9 @@ bool Fintek::Probe()
 void Fintek::Init()
 {
 	// Heatsink
-	Bind(new FintekTemperatureSensor(Address, Model, 0, "Th0H", "sp78", 2));
+	Bind(new FintekTemperatureSensor(this, 0, "Th0H", "sp78", 2));
 	// Northbridge
-	Bind(new FintekTemperatureSensor(Address, Model, 1, "TN0P", "sp78", 2));
+	Bind(new FintekTemperatureSensor(this, 1, "TN0P", "sp78", 2));
 	
 	switch (Model) 
 	{
@@ -180,7 +210,7 @@ void Fintek::Init()
 			break;
         default:
 			// CPU Vcore
-			Bind(new FintekVoltageSensor(Address, 1, "VC0C", "fp2e", 2));
+			Bind(new FintekVoltageSensor(this, 1, "VC0C", "fp2e", 2));
 			break;
 	}
 	
@@ -191,7 +221,7 @@ void Fintek::Init()
 		char key[5];
 		bool fanName = FanName[i] && strlen(FanName[i]) > 0;
 		
-		if (fanName || Fintek_ReadTachometer(Address, i) > 0)
+		if (fanName || ReadTachometer(i) > 0)
 		{	
 			if(fanName)
 			{
@@ -200,7 +230,7 @@ void Fintek::Init()
 			}
 			
 			snprintf(key, 5, "F%dAc", FanOffset + FanCount);
-			Bind(new FintekTachometerSensor(Address, i, key, "fpe2", 2));
+			Bind(new FintekTachometerSensor(this, i, key, "fpe2", 2));
 			
 			FanIndex[FanCount++] = i;
 		}

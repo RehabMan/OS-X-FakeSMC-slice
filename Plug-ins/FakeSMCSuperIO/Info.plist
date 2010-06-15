@@ -35,7 +35,7 @@
 			<key>IOResourceMatch</key>
 			<string>IOKit</string>
 			<key>Enable Fan Control</key>
-			<false/>
+			<true/>
 			<key>Fan Names</key>
 			<array>
 				<string></string>

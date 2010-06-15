@@ -59,6 +59,7 @@ class SuperIO
 private:
 	Binding*		m_Binding;
 protected:
+	IOService*		m_Service;
 	bool			m_FanControl;
 	
 	UInt16			Address;
@@ -77,18 +78,26 @@ protected:
 	void			Bind(Binding* binding);
 	void			FlushBindings();
 	
-	UInt8			ReadByte(UInt8 reg);
-	UInt16			ReadWord(UInt8 reg);
+	UInt8			ListenPortByte(UInt8 reg);
+	UInt16			ListenPortWord(UInt8 reg);
 	void			Select(UInt8 logicalDeviceNumber);
 	
 public:
+	IOService*		GetService() { return m_Service; };
 	const char*		GetModelName();
 	UInt16			GetAddress() { return Address; };
-	void			LoadConfiguration(IOService* provider);
 	
-	virtual bool	Probe();
-	virtual void	Init();
-	virtual void	Finish();
+	virtual void	LoadConfiguration(IOService* provider);
+	
+	virtual UInt8	ReadByte(...) { return 0; };
+	virtual UInt16	ReadWord(...) { return 0; };
+	virtual SInt16	ReadTemperature(...) { return 0; };
+	virtual SInt16	ReadVoltage(...) { return 0; };
+	virtual SInt16	ReadTachometer(...) { return 0; };
+	
+	virtual bool	Probe() { return false; };
+	virtual void	Init() {};
+	virtual void	Finish() {};
 };
 
 #endif
