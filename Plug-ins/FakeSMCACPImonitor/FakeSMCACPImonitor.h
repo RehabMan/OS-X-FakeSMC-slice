@@ -14,8 +14,8 @@ private:
 	
 protected:
 	//	void	Update(SMCData node);
-	IOWorkLoop *		TZWorkLoop;
-	IOTimerEventSource * TZPollTimer;
+//	IOWorkLoop *		TZWorkLoop;
+//	IOTimerEventSource * TZPollTimer;
 	
 public:
 	void Update(const char* key, char* data);
@@ -25,7 +25,7 @@ public:
 	virtual bool		init(OSDictionary *properties=0);
 	virtual void		free(void);
 	virtual void		stop(IOService *provider);
-	IOReturn			poller( void );
+//	IOReturn			poller( void );
 };
 
 class Binding : public FakeSMCBinding 
