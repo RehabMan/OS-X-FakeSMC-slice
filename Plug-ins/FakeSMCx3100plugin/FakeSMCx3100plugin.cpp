@@ -35,20 +35,27 @@ x3100plugin * x3100service;
 //static int count=0;
 
 #define super IOService
-static void Update(const char* key, char* data) {	
+void x3100plugin::Update(const char* key, char* data) {	
 	if(CompareKeys(key, "TG0D"))
 	{
-		data[0] = x3100service->update(0);
+		short value;
+			if (mmio_base) {
+				OUTVID(TIC1, 3);
+				//		if ((INVID16(TSC1) & (1<<15)) && !(INVID16(TSC1) & (1<<8)))//enabled and ready
+				for (int i=0; i<1000; i++) {  //attempts to ready
+					
+					if (INVID16(TSS1) & (1<<10))   //valid?
+						break;
+					IOSleep(10);
+				}				
+				value = INVID8(TR1);
+			}				
+				
+		data[0] = 140 - value;
 		data[1] = 0;
 	} 
-/*	else  if(CompareKeys(key, "TG0D"))
-	{		
-		data[0] = x3100service->update(1);
-		data[1] = 0;
-	}
- */
 }
-
+#if 0
 int x3100plugin::update(int keyN)
 {	
 	short value;  //unused
@@ -75,7 +82,7 @@ int x3100plugin::update(int keyN)
 		   
 				if (INVID16(TSS1) & (1<<10))   //valid?
 					break;
-				IODelay(10000);
+				IOSleep(10);
 			}				
 			value = INVID8(TR1);
 /*			
@@ -103,6 +110,7 @@ int x3100plugin::update(int keyN)
 	}
 	return(127 - value);
 }
+#endif
 
 IOService*
 x3100plugin::probe(IOService *provider, SInt32 *score)
@@ -160,7 +168,7 @@ x3100plugin::start( IOService * provider ) {
 				//		UInt32 addr = map->getPhysicalAddress();
 				mmio_base = (volatile UInt8 *)mmio->getVirtualAddress();
 #if 0				
-				IOLog("Fx3100: MCHBAR mapped\n");
+				InfoLog(" MCHBAR mapped\n");
 				for (int i=0; i<0x2f; i +=16) {
 					IOLog("%04lx: ", (long unsigned int)i+0x1000);
 					for (int j=0; j<16; j += 1) {
@@ -173,18 +181,19 @@ x3100plugin::start( IOService * provider ) {
 			}
 			else
 			{
-				IOLog("Fx3100: MCHBAR failed to map\n");
+				InfoLog(" MCHBAR failed to map\n");
 				return -1;
 			}			
-		}		
-
+		}	
+	
+	m_Binding = new Binding(this);
 	char value[2];
 	value[0] = 10;
 	value[1] = 0;
 	//	FakeSMCAddKeyCallback("TG0P", "sp78", 2, value, &Update);
-	FakeSMCAddKeyCallback("TG0D", "sp78", 2, value, &Update);
+	FakeSMCAddKey("TG0D", "sp78", 2, value, m_Binding);
 	
-	IOLog("Fx3100: key TG0D registered\n");	
+	InfoLog(" key TG0D registered\n");	
 	x3100service = this;
 /*	
 	registerService(0);
@@ -212,7 +221,9 @@ bool x3100plugin::init(OSDictionary *properties)
 void x3100plugin::stop (IOService* provider)
 {
 	//	FakeSMCRemoveKeyCallback("TG0P");
-	FakeSMCRemoveKeyCallback("TG0D");
+	FakeSMCRemoveKeyBinding("TG0D");
+	delete m_Binding;
+	
 	super::stop(provider);
 }
 
