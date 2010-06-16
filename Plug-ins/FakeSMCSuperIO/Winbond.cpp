@@ -171,16 +171,77 @@ bool Winbond::Probe()
 		{		
 			case 0x52:
 			{
-				switch (revision)
+				switch (revision & 0xf0)
 				{
-					case 0x17:
-					case 0x3A:
-					case 0x41:
+					case 0x10:
+					case 0x30:
+					case 0x40:
 						Model = W83627HF;
 						break;
+					case 0x70:
+						Model = W83977CTF;
+						break;
+					case 0xf0:
+						Model = W83977EF;
+						break;
+						
+				}
+			}
+			case 0x59:
+			{
+				switch (revision & 0xf0)
+				{
+					case 0x50:
+						Model = W83627SF;
+						break;						
 				}
 				break;
 			}
+				
+			case 0x60:
+			{
+				switch (revision & 0xf0)
+				{
+					case 0x10:
+						Model = W83697HF;
+						break;						
+				}
+				break;
+			}
+				
+			case 0x61:
+			{
+				switch (revision & 0xf0)
+				{
+					case 0x00:
+						Model = W83L517D;
+						break;						
+				}
+				break;
+			}
+				
+			case 0x68:
+			{
+				switch (revision & 0xf0)
+				{
+					case 0x10:
+						Model = W83697SF;
+						break;						
+				}
+				break;
+			}
+				
+			case 0x70:
+			{
+				switch (revision & 0xf0)
+				{
+					case 0x80:
+						Model = W83637HF;
+						break;						
+				}
+				break;
+			}
+				
 				
 			case 0x82:
 			{
@@ -216,12 +277,43 @@ bool Winbond::Probe()
 				break;
 			}
 				
+			case 0x97:
+			{
+				switch (revision)
+				{
+					case 0x71:
+						Model = W83977FA;
+						break;
+					case 0x73:
+						Model = W83977TF;
+						break;
+					case 0x74:
+						Model = W83977ATF;
+						break;
+					case 0x77:
+						Model = W83977AF;
+						break;
+				}
+				break;
+			}	
+				
 			case 0xA0:
 			{
 				switch (revision & 0xF0)
 				{
 					case 0x20: 
 						Model = W83627DHG; 
+						break;   
+				}
+				break;
+			}
+				
+			case 0xA2:
+			{
+				switch (revision & 0xF0)
+				{
+					case 0x30: 
+						Model = W83627UHG; 
 						break;   
 				}
 				break;
@@ -258,6 +350,25 @@ bool Winbond::Probe()
 						break;
 				}
 				break; 
+			}
+			default: 
+			{
+				switch (id & 0x0f) {
+					case 0x0a:
+						Model = W83877F;
+						break;
+					case 0x0b:
+						Model = W83877AF;
+						break;
+					case 0x0c:
+						Model = W83877TF;
+						break;
+					case 0x0d:
+						Model = W83877ATF;
+						break;
+					default:
+						break;
+				}
 			}
 		}
 		
