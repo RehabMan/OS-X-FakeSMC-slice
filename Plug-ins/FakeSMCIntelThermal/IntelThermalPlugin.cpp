@@ -52,19 +52,19 @@ bool IntelThermalPlugin::Probe()
 						switch (m_CpuCount) 
 					{
 						case 2:
-							m_TjMax = 80 + 10; break;
+							m_TjMax = 80; break;
 						case 4:
-							m_TjMax = 90 + 10; break;
+							m_TjMax = 90; break;
 						default:
-							m_TjMax = 85 + 10; break;
+							m_TjMax = 85; break;
 					}
-						m_TjMax = 80 + 10; break;
+						m_TjMax = 80; break;
 					case 0x0B: // G0
-						m_TjMax = 90 + 10; break;
+						m_TjMax = 90; break;
 					case 0x0D: // M0
-						m_TjMax = 85 + 10; break;
+						m_TjMax = 85; break;
 					default:
-						m_TjMax = 85 + 10; break;
+						m_TjMax = 85; break;
 				}
 					break;
 					
