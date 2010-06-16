@@ -43,13 +43,13 @@
 		<key>org.netkas.FakeSMC</key>
 		<string>2.7</string>
 		<key>com.apple.kpi.iokit</key>
-		<string>10.0</string>
+		<string>9.0</string>
 		<key>com.apple.kpi.libkern</key>
 		<string>9.0</string>
 		<key>com.apple.iokit.IOPCIFamily</key>
 		<string>2.6</string>
 		<key>com.apple.kpi.unsupported</key>
-		<string>10.0</string>
+		<string>9.0</string>
 		<key>com.apple.NVDAResman</key>
 		<string>1.2.0</string>
 		<key>com.apple.driver.AppleSMC</key>
