@@ -9,51 +9,6 @@
 #define super IOService
 OSDefineMetaClassAndStructors(FakeSMCSuperIOMonitor, IOService)
 
-bool setNumber(const char * symbol, UInt32 value, OSDictionary * dictionary)
-{
-	OSNumber * number = OSNumber::withNumber(value, 32);
-	
-	if (number)
-	{
-		dictionary->setObject(symbol, number);
-		return true;
-	}
-	
-	return false;
-}
-
-bool setString(const char * symbol, char * value, OSDictionary * dictionary)
-{
-	OSString * string = OSString::withCString(value);
-	
-	if (string)
-	{
-		dictionary->setObject(symbol, string);
-		return true;
-	}
-	
-	return false;
-}
-
-bool setString(const char * symbol, const char * value, OSDictionary * dictionary)
-{
-	OSString * string = OSString::withCString(value);
-	
-	if (string)
-	{
-		dictionary->setObject(symbol, string);
-		return true;
-	}
-	
-	return false;
-}
-
-bool setString(const char * symbol, const OSSymbol * value, OSDictionary * dictionary)
-{
-	dictionary->setObject(symbol, value);
-	return true;
-}
-
 bool FakeSMCSuperIOMonitor::init(OSDictionary *properties)
 {
 	DebugLog("Initialising...");

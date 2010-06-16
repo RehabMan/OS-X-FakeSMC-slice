@@ -186,80 +186,7 @@ void ITE::Init()
 	// CPU Vcore
 	Bind(new ITEVoltageSensor(this, 0, "VC0C", "fp2e", 2));
 	
-	// FANs
-	/*OSDictionary * dictionary = OSDictionary::withCapacity(0);
-
-	if (dictionary)
-	{
-		OSDictionary * faninfo = OSDictionary::withCapacity(0);
-		
-		UInt8 control = ReadByte(ITE_SMARTGUARDIAN_CONTROL[m_Offset]);
-		
-		setBoolean("Temperature Smothing", (control & 0x80) == 0x80, faninfo);
-		setBoolean("Temperature Limit of Full speed OFF", (control & 0x40) == 0x40, faninfo);
-		setBoolean("Fan spin-UP", (control & 0x20) == 0x20, faninfo);
-		
-		switch (control & 0x18) 
-		{
-			case 0:
-				setNumber("Fan spin-UP Time (ms)", 0, faninfo);
-				break;
-			case 0x8:
-				setNumber("Fan spin-UP Time (ms)", 125, faninfo);
-				break;
-			case 0x10:
-				setNumber("Fan spin-UP Time (ms)", 325, faninfo);
-				break;
-			case 0x18:
-				setNumber("Fan spin-UP Time (ms)", 1000, faninfo);
-				break;
-		}
-		
-		switch (control & 0x07) 
-		{
-			case 0:
-				setNumber("Slope PWM", 0, faninfo);
-				break;
-			case 1:
-				setNumber("Slope PWM", 1, faninfo);
-				break;
-			case 2:
-				setNumber("Slope PWM", 2, faninfo);
-				break;
-			case 3:
-				setNumber("Slope PWM", 4, faninfo);
-				break;
-			case 4:
-				setNumber("Slope PWM", 8, faninfo);
-				break;
-			case 5:
-				setNumber("Slope PWM", 16, faninfo);
-				break;
-			case 6:
-				setNumber("Slope PWM", 32, faninfo);
-				break;
-			case 7:
-				setNumber("Slope PWM", 64, faninfo);
-				break;
-		}
-		
-		setNumber("Temperature limit of Fan stop", m_Provider->ReadByte(ITE_SMARTGUARDIAN_TEMPERATURE_OFF[m_Offset]), faninfo);
-		setNumber("Temperature limit of Fan start", m_Provider->ReadByte(ITE_SMARTGUARDIAN_TEMPERATURE_START[m_Offset]), faninfo);
-		setNumber("Temperature limit of Fan full speed ON", m_Provider->ReadByte(ITE_SMARTGUARDIAN_TEMPERATURE_FULL_ON[m_Offset]), faninfo);
-		setNumber("Temperature limit of Fan full speed OFF", m_Provider->ReadByte(ITE_SMARTGUARDIAN_TEMPERATURE_FULL_OFF[m_Offset]), faninfo);
-		setNumber("Start PWM value", m_Provider->ReadByte(ITE_SMARTGUARDIAN_START_PWM[m_Offset]), faninfo);
-		
-		snprintf(tmpKey, 5, "Fan%d", m_Offset);
-		dictionary->setObject(tmpKey, faninfo);
-		faninfo->release();
-		
-		if (newDict)
-		{
-			m_Provider->GetService()->setProperty("SmartGuardian", dictionary);
-			dictionary->release();
-		}
-	}	*/
-	
+	// FANs	
 	FanOffset = GetFNum();
 	
 	for (int i = 0; i < 5; i++) 
@@ -277,6 +204,64 @@ void ITE::Init()
 			
 			snprintf(key, 5, "F%dAc", FanOffset + FanCount);
 			Bind(new ITETachometerSensor(this, i, key, "fpe2", 2));
+			
+			// Show SmartGuardian info
+			bool* valid;
+			UInt8 control = ReadByte(ITE_SMARTGUARDIAN_CONTROL[i], valid);
+			
+			InfoLog("Fan#%d Temperature Smothing %s", i, (control & 0x80) == 0x80 ? "Enabled" : "Disabled");
+			InfoLog("Fan#%d Temperature Limit of Full speed OFF %s", i, (control & 0x40) == 0x40 ? "On" : "Off");
+			InfoLog("Fan#%d Spin-UP %s", i, (control & 0x20) == 0x20 ? "Enabled" : "Disabled");
+						
+			switch (control & 0x18) 
+			{
+				case 0:
+					InfoLog("Fan#%d Spin-UP Time %d(ms)",i , 0);
+					break;
+				case 0x8:
+					InfoLog("Fan#%d Spin-UP Time %d(ms)",i , 125);
+					break;
+				case 0x10:
+					InfoLog("Fan#%d Spin-UP Time %d(ms)",i , 325);
+					break;
+				case 0x18:
+					InfoLog("Fan#%d Spin-UP Time %d(ms)",i , 1000);
+					break;
+			}
+			
+			switch (control & 0x07) 
+			{
+				case 0:
+					InfoLog("Fan#%d Slope PWM %d",i , 0);
+					break;
+				case 1:
+					InfoLog("Fan#%d Slope PWM %d",i , 1);
+					break;
+				case 2:
+					InfoLog("Fan#%d Slope PWM %d",i , 2);
+					break;
+				case 3:
+					InfoLog("Fan#%d Slope PWM %d",i , 4);
+					break;
+				case 4:
+					InfoLog("Fan#%d Slope PWM %d",i , 8);
+					break;
+				case 5:
+					InfoLog("Fan#%d Slope PWM %d",i , 16);
+					break;
+				case 6:
+					InfoLog("Fan#%d Slope PWM %d",i , 32);
+					break;
+				case 7:
+					InfoLog("Fan#%d Slope PWM %d",i , 64);
+					break;
+			}
+			
+			InfoLog("Fan#%d Temperature limit of stop %d",i , ReadByte(ITE_SMARTGUARDIAN_TEMPERATURE_OFF[i], valid));
+			InfoLog("Fan#%d Temperature limit of start %d",i , ReadByte(ITE_SMARTGUARDIAN_TEMPERATURE_START[i], valid));
+			InfoLog("Fan#%d Temperature limit of full speed ON %d",i , ReadByte(ITE_SMARTGUARDIAN_TEMPERATURE_FULL_ON[i], valid));
+			InfoLog("Fan#%d Temperature limit of full speed OFF %d",i , ReadByte(ITE_SMARTGUARDIAN_TEMPERATURE_FULL_OFF[i], valid));
+			InfoLog("Fan#%d Start PWM value %d",i ,ReadByte(ITE_SMARTGUARDIAN_START_PWM[i], valid));
 			
 			if (m_FanControl)
 				Bind(new SmartGuardianController(this, i, FanOffset + FanCount));
