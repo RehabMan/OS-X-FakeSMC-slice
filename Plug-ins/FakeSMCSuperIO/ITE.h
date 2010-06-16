@@ -15,8 +15,8 @@
 
 #include "SuperIO.h"
 
-const UInt8 ITE_PORTS_COUNT = 4;
-const UInt16 ITE_PORT[] = { 0x2e, 0x4e, 0x290, 0x370 };
+const UInt8 ITE_PORTS_COUNT = 5;
+const UInt16 ITE_PORT[] = { 0x2e, 0x4e, 0x25e, 0x290, 0x370 };
 
 const UInt8 IT87_ENVIRONMENT_CONTROLLER_LDN = 0x04;
 
