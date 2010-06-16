@@ -40,8 +40,8 @@
 	</dict>
 	<key>OSBundleLibraries</key>
 	<dict>
-		<key>org.netkas.fakesmc</key>
-		<string>2.6.1</string>
+		<key>org.netkas.FakeSMC</key>
+		<string>2.7</string>
 		<key>com.apple.iokit.IOACPIFamily</key>
 		<string>1.2</string>
 		<key>com.apple.kpi.bsd</key>
