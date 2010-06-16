@@ -1,0 +1,443 @@
+TSMCITEController
+v7
+r0
+t298371991.044364
+cCheck dependencies
+cProcessInfoPlistFile "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release/SMCITEController.kext/Contents/Info.plist" Info.plist
+cCopyStringsFile "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release/SMCITEController.kext/Contents/Resources/English.lproj/InfoPlist.strings" English.lproj/InfoPlist.strings
+cCompileC build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/i386/ITESMCController.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/ITESMCController.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
+cCompileC build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/i386/ITE.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/ITE.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
+cCompileC build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/i386/SuperIO.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/SuperIO.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
+cCompileC build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/i386/SmartGuardianController.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/SmartGuardianController.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
+cCompileC build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/i386/ITESensors.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/ITESensors.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
+cCompileC build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/i386/SMCITEController_info.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/DerivedSources/SMCITEController_info.c" normal i386 c com.apple.compilers.gcc.4_2
+cCompileC build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/x86_64/ITESMCController.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/ITESMCController.cpp" normal x86_64 c++ com.apple.compilers.gcc.4_2
+cLd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/i386/SMCITEController" normal i386
+cCompileC build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/x86_64/ITE.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/ITE.cpp" normal x86_64 c++ com.apple.compilers.gcc.4_2
+cCompileC build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/x86_64/SuperIO.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/SuperIO.cpp" normal x86_64 c++ com.apple.compilers.gcc.4_2
+cCompileC build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/x86_64/SmartGuardianController.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/SmartGuardianController.cpp" normal x86_64 c++ com.apple.compilers.gcc.4_2
+cCompileC build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/x86_64/ITESensors.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/ITESensors.cpp" normal x86_64 c++ com.apple.compilers.gcc.4_2
+cCompileC build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/x86_64/SMCITEController_info.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/DerivedSources/SMCITEController_info.c" normal x86_64 c com.apple.compilers.gcc.4_2
+cLd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/x86_64/SMCITEController" normal x86_64
+cCreateUniversalBinary "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release/SMCITEController.kext/Contents/MacOS/SMCITEController" normal "i386 x86_64"
+cTouch "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release/SMCITEController.kext"
+
+N/Developer/SDKs/MacOSX10.6.sdk
+c000000004BE0165B00000000000000EE
+t1272976987
+s238
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/IOLib.h
+c000000004A73D6520000000000004DDF
+t1249105490
+s19935
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/IOService.h
+c000000004A73D653000000000001F49D
+t1249105491
+s128157
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/architecture/i386/pio.h
+c000000004A73D66C0000000000000DC6
+t1249105516
+s3526
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/OSTypes.h
+c000000004A73D6500000000000000E42
+t1249105488
+s3650
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/Binding.h
+c000000004C1892D30000000000000417
+t1276678867
+s1047
+i"FakeSMCBinding.h"
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/English.lproj/InfoPlist.strings
+c000000004C1880780000000000000032
+t1276674168
+s50
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/FakeSMCBinding.h
+c000000004C1893BE00000000000007C1
+t1276679102
+s1985
+i<architecture/i386/pio.h>
+i<libkern/OSTypes.h>
+i<IOKit/IOLib.h>
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/ITE.cpp
+c000000004C1889EC000000000000103E
+t1276676588
+s4158
+i<IOKit/IOService.h>
+i"ITE.h"
+i"ITESensors.h"
+i"SmartGuardianController.h"
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/ITE.h
+c000000004C18828A00000000000008A0
+t1276674698
+s2208
+i"SuperIO.h"
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/ITESMCController.cpp
+c000000004C1892D30000000000000510
+t1276678867
+s1296
+i"ITESMCController.h"
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/ITESMCController.h
+c000000004C1892D30000000000000268
+t1276678867
+s616
+i<IOKit/IOService.h>
+i"ITE.h"
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/ITESensors.cpp
+c000000004C18807800000000000003CD
+t1276674168
+s973
+i"ITESensors.h"
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/ITESensors.h
+c000000004C1880780000000000000606
+t1276674168
+s1542
+i"ITE.h"
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/SmartGuardianController.cpp
+c000000004C1892D30000000000000BA5
+t1276678867
+s2981
+i"SmartGuardianController.h"
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/SmartGuardianController.h
+c000000004C1892D30000000000000340
+t1276678867
+s832
+i"Binding.h"
+i"ITE.h"
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/SuperIO.cpp
+c000000004C188218000000000000097A
+t1276674584
+s2426
+i"SuperIO.h"
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/SuperIO.h
+c000000004C1892FC0000000000000784
+t1276678908
+s1924
+i<IOKit/IOService.h>
+i"FakeSMCBinding.h"
+i"Binding.h"
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release/SMCITEController.kext
+t1276679191
+s102
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release/SMCITEController.kext/Contents/Info.plist
+t1276679189
+s1685
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release/SMCITEController.kext/Contents/MacOS/SMCITEController
+t1276679191
+s83248
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release/SMCITEController.kext/Contents/Resources/English.lproj/InfoPlist.strings
+t1276679189
+s96
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/DerivedSources/SMCITEController_info.c
+c000000004C18941500000000000001BD
+t1276679189
+s445
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/i386/ITE.o
+t1276679189
+s5056
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/i386/ITESMCController.o
+t1276679189
+s25460
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/i386/ITESensors.o
+t1276679190
+s1228
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/i386/SMCITEController
+t1276679190
+s36920
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/i386/SMCITEController.LinkFileList
+c000000004C189415000000000000037E
+t1276679189
+s894
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/i386/SMCITEController_info.o
+t1276679190
+s580
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/i386/SmartGuardianController.o
+t1276679190
+s2600
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/i386/SuperIO.o
+t1276679189
+s3324
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/x86_64/ITE.o
+t1276679190
+s5904
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/x86_64/ITESMCController.o
+t1276679190
+s26512
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/x86_64/ITESensors.o
+t1276679191
+s1540
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/x86_64/SMCITEController
+t1276679191
+s38192
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/x86_64/SMCITEController.LinkFileList
+c000000004C1894150000000000000388
+t1276679189
+s904
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/x86_64/SMCITEController_info.o
+t1276679190
+s768
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/x86_64/SmartGuardianController.o
+t1276679190
+s3104
+
+N/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/x86_64/SuperIO.o
+t1276679190
+s3724
+
+NInfo.plist
+c000000004C1892D30000000000000696
+t1276678867
+s1686
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies298371989#298371989#0(0"0(0#1#0"4300911832#0"0#
+
+CCompileC build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/i386/ITE.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/ITE.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
+s298371989.426829
+e298371989.745585
+r1
+xCompileC
+xbuild/SMCITEController.build/Release/SMCITEController.build/Objects-normal/i386/ITE.o
+x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/ITE.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@99"Compile /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/ITE.cpp298371989#298371989#0(0"0(0#0#91"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/ITE.cpp4300911832#2344"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-function -Wunused-parameter -Wunused-variable -Wunused-value -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -ftree-vectorize -mmacosx-version-min=10.6 -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/SMCITEController-generated-files.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/SMCITEController-own-target-headers.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/SMCITEController-all-target-headers.hmap" -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/SMCITEController-project-headers.hmap" "-F/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/DerivedSources/i386" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/DerivedSources" -c "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/ITE.cpp" -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/i386/ITE.o"0#
+
+CCompileC build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/i386/ITESMCController.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/ITESMCController.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
+s298371989.425677
+e298371989.785502
+r1
+xCompileC
+xbuild/SMCITEController.build/Release/SMCITEController.build/Objects-normal/i386/ITESMCController.o
+x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/ITESMCController.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@112"Compile /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/ITESMCController.cpp298371989#298371989#0(0"0(0#0#104"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/ITESMCController.cpp4300911832#2370"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-function -Wunused-parameter -Wunused-variable -Wunused-value -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -ftree-vectorize -mmacosx-version-min=10.6 -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/SMCITEController-generated-files.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/SMCITEController-own-target-headers.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/SMCITEController-all-target-headers.hmap" -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/SMCITEController-project-headers.hmap" "-F/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/DerivedSources/i386" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/DerivedSources" -c "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/ITESMCController.cpp" -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/i386/ITESMCController.o"0#
+
+CCompileC build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/i386/ITESensors.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/ITESensors.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
+s298371990.002285
+e298371990.222984
+r1
+xCompileC
+xbuild/SMCITEController.build/Release/SMCITEController.build/Objects-normal/i386/ITESensors.o
+x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/ITESensors.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@106"Compile /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/ITESensors.cpp298371990#298371990#0(0"0(0#0#98"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/ITESensors.cpp4300911832#2358"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-function -Wunused-parameter -Wunused-variable -Wunused-value -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -ftree-vectorize -mmacosx-version-min=10.6 -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/SMCITEController-generated-files.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/SMCITEController-own-target-headers.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/SMCITEController-all-target-headers.hmap" -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/SMCITEController-project-headers.hmap" "-F/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/DerivedSources/i386" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/DerivedSources" -c "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/ITESensors.cpp" -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/i386/ITESensors.o"0#
+
+CCompileC build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/i386/SMCITEController_info.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/DerivedSources/SMCITEController_info.c" normal i386 c com.apple.compilers.gcc.4_2
+s298371990.038106
+e298371990.142710
+r1
+xCompileC
+xbuild/SMCITEController.build/Release/SMCITEController.build/Objects-normal/i386/SMCITEController_info.o
+x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/DerivedSources/SMCITEController_info.c
+xnormal
+xi386
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@190"Compile /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/DerivedSources/SMCITEController_info.c298371990#298371990#0(0"0(0#0#182"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/DerivedSources/SMCITEController_info.c4300911832#2400"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch i386 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-function -Wunused-parameter -Wunused-variable -Wunused-value -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -ftree-vectorize -mmacosx-version-min=10.6 -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/SMCITEController-generated-files.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/SMCITEController-own-target-headers.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/SMCITEController-all-target-headers.hmap" -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/SMCITEController-project-headers.hmap" "-F/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/DerivedSources/i386" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/DerivedSources" -c "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/DerivedSources/SMCITEController_info.c" -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/i386/SMCITEController_info.o"0#
+
+CCompileC build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/i386/SmartGuardianController.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/SmartGuardianController.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
+s298371989.785624
+e298371990.037981
+r1
+xCompileC
+xbuild/SMCITEController.build/Release/SMCITEController.build/Objects-normal/i386/SmartGuardianController.o
+x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/SmartGuardianController.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@119"Compile /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/SmartGuardianController.cpp298371989#298371990#0(0"0(0#0#111"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/SmartGuardianController.cpp4300911832#2384"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-function -Wunused-parameter -Wunused-variable -Wunused-value -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -ftree-vectorize -mmacosx-version-min=10.6 -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/SMCITEController-generated-files.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/SMCITEController-own-target-headers.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/SMCITEController-all-target-headers.hmap" -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/SMCITEController-project-headers.hmap" "-F/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/DerivedSources/i386" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/DerivedSources" -c "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/SmartGuardianController.cpp" -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/i386/SmartGuardianController.o"0#
+
+CCompileC build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/i386/SuperIO.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/SuperIO.cpp" normal i386 c++ com.apple.compilers.gcc.4_2
+s298371989.745714
+e298371990.002152
+r1
+xCompileC
+xbuild/SMCITEController.build/Release/SMCITEController.build/Objects-normal/i386/SuperIO.o
+x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/SuperIO.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@103"Compile /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/SuperIO.cpp298371989#298371990#0(0"0(0#0#95"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/SuperIO.cpp4300911832#2352"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-function -Wunused-parameter -Wunused-variable -Wunused-value -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -ftree-vectorize -mmacosx-version-min=10.6 -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/SMCITEController-generated-files.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/SMCITEController-own-target-headers.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/SMCITEController-all-target-headers.hmap" -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/SMCITEController-project-headers.hmap" "-F/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/DerivedSources/i386" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/DerivedSources" -c "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/SuperIO.cpp" -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/i386/SuperIO.o"0#
+
+CCompileC build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/x86_64/ITE.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/ITE.cpp" normal x86_64 c++ com.apple.compilers.gcc.4_2
+s298371990.286313
+e298371990.677797
+r1
+xCompileC
+xbuild/SMCITEController.build/Release/SMCITEController.build/Objects-normal/x86_64/ITE.o
+x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/ITE.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@99"Compile /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/ITE.cpp298371990#298371990#0(0"0(0#0#91"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/ITE.cpp4300911832#2350"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-function -Wunused-parameter -Wunused-variable -Wunused-value -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -ftree-vectorize -mmacosx-version-min=10.6 -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/SMCITEController-generated-files.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/SMCITEController-own-target-headers.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/SMCITEController-all-target-headers.hmap" -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/SMCITEController-project-headers.hmap" "-F/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/DerivedSources/x86_64" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/DerivedSources" -c "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/ITE.cpp" -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/x86_64/ITE.o"0#
+
+CCompileC build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/x86_64/ITESMCController.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/ITESMCController.cpp" normal x86_64 c++ com.apple.compilers.gcc.4_2
+s298371990.142833
+e298371990.481713
+r1
+xCompileC
+xbuild/SMCITEController.build/Release/SMCITEController.build/Objects-normal/x86_64/ITESMCController.o
+x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/ITESMCController.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@112"Compile /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/ITESMCController.cpp298371990#298371990#0(0"0(0#0#104"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/ITESMCController.cpp4300911832#2376"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-function -Wunused-parameter -Wunused-variable -Wunused-value -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -ftree-vectorize -mmacosx-version-min=10.6 -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/SMCITEController-generated-files.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/SMCITEController-own-target-headers.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/SMCITEController-all-target-headers.hmap" -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/SMCITEController-project-headers.hmap" "-F/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/DerivedSources/x86_64" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/DerivedSources" -c "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/ITESMCController.cpp" -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/x86_64/ITESMCController.o"0#
+
+CCompileC build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/x86_64/ITESensors.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/ITESensors.cpp" normal x86_64 c++ com.apple.compilers.gcc.4_2
+s298371990.782616
+e298371991.023508
+r1
+xCompileC
+xbuild/SMCITEController.build/Release/SMCITEController.build/Objects-normal/x86_64/ITESensors.o
+x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/ITESensors.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@106"Compile /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/ITESensors.cpp298371990#298371991#0(0"0(0#0#98"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/ITESensors.cpp4300911832#2364"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-function -Wunused-parameter -Wunused-variable -Wunused-value -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -ftree-vectorize -mmacosx-version-min=10.6 -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/SMCITEController-generated-files.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/SMCITEController-own-target-headers.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/SMCITEController-all-target-headers.hmap" -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/SMCITEController-project-headers.hmap" "-F/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/DerivedSources/x86_64" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/DerivedSources" -c "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/ITESensors.cpp" -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/x86_64/ITESensors.o"0#
+
+CCompileC build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/x86_64/SMCITEController_info.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/DerivedSources/SMCITEController_info.c" normal x86_64 c com.apple.compilers.gcc.4_2
+s298371990.953787
+e298371990.988860
+r1
+xCompileC
+xbuild/SMCITEController.build/Release/SMCITEController.build/Objects-normal/x86_64/SMCITEController_info.o
+x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/DerivedSources/SMCITEController_info.c
+xnormal
+xx86_64
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@190"Compile /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/DerivedSources/SMCITEController_info.c298371990#298371990#0(0"0(0#0#182"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/DerivedSources/SMCITEController_info.c4300911832#2406"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-function -Wunused-parameter -Wunused-variable -Wunused-value -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -ftree-vectorize -mmacosx-version-min=10.6 -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/SMCITEController-generated-files.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/SMCITEController-own-target-headers.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/SMCITEController-all-target-headers.hmap" -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/SMCITEController-project-headers.hmap" "-F/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/DerivedSources/x86_64" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/DerivedSources" -c "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/DerivedSources/SMCITEController_info.c" -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/x86_64/SMCITEController_info.o"0#
+
+CCompileC build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/x86_64/SmartGuardianController.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/SmartGuardianController.cpp" normal x86_64 c++ com.apple.compilers.gcc.4_2
+s298371990.677918
+e298371990.953661
+r1
+xCompileC
+xbuild/SMCITEController.build/Release/SMCITEController.build/Objects-normal/x86_64/SmartGuardianController.o
+x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/SmartGuardianController.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@119"Compile /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/SmartGuardianController.cpp298371990#298371990#0(0"0(0#0#111"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/SmartGuardianController.cpp4300911832#2390"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-function -Wunused-parameter -Wunused-variable -Wunused-value -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -ftree-vectorize -mmacosx-version-min=10.6 -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/SMCITEController-generated-files.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/SMCITEController-own-target-headers.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/SMCITEController-all-target-headers.hmap" -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/SMCITEController-project-headers.hmap" "-F/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/DerivedSources/x86_64" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/DerivedSources" -c "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/SmartGuardianController.cpp" -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/x86_64/SmartGuardianController.o"0#
+
+CCompileC build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/x86_64/SuperIO.o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/SuperIO.cpp" normal x86_64 c++ com.apple.compilers.gcc.4_2
+s298371990.481835
+e298371990.782370
+r1
+xCompileC
+xbuild/SMCITEController.build/Release/SMCITEController.build/Objects-normal/x86_64/SuperIO.o
+x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/SuperIO.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@103"Compile /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/SuperIO.cpp298371990#298371990#0(0"0(0#0#95"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/SuperIO.cpp4300911832#2358"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-function -Wunused-parameter -Wunused-variable -Wunused-value -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -ftree-vectorize -mmacosx-version-min=10.6 -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/SMCITEController-generated-files.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/SMCITEController-own-target-headers.hmap" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/SMCITEController-all-target-headers.hmap" -iquote "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/SMCITEController-project-headers.hmap" "-F/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release/include" -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/DerivedSources/x86_64" "-I/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/DerivedSources" -c "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/SuperIO.cpp" -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/x86_64/SuperIO.o"0#
+
+CCopyStringsFile "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release/SMCITEController.kext/Contents/Resources/English.lproj/InfoPlist.strings" English.lproj/InfoPlist.strings
+s298371989.257306
+e298371989.425442
+r1
+xCopyStringsFile
+x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release/SMCITEController.kext/Contents/Resources/English.lproj/InfoPlist.strings
+xEnglish.lproj/InfoPlist.strings
+lSLF07#2@36"Copy English.lproj/InfoPlist.strings298371989#298371989#0(0"0(0#0#115"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/English.lproj/InfoPlist.strings4300911832#471"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO"    setenv ICONV /usr/bin/iconv    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings --validate --inputencoding utf-8 --outputencoding UTF-16 English.lproj/InfoPlist.strings --outdir "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release/SMCITEController.kext/Contents/Resources/English.lproj"0#
+
+CCreateUniversalBinary "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release/SMCITEController.kext/Contents/MacOS/SMCITEController" normal "i386 x86_64"
+s298371991.037112
+e298371991.041432
+r1
+xCreateUniversalBinary
+x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release/SMCITEController.kext/Contents/MacOS/SMCITEController
+xnormal
+xi386 x86_64
+lSLF07#2@110"CreateUniversalBinary build/Release/SMCITEController.kext/Contents/MacOS/SMCITEController normal "i386 x86_64"298371991#298371991#0(0"0(0#0#95"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/i386 x86_644300911832#649"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO"    /usr/bin/lipo -create "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/i386/SMCITEController" "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/x86_64/SMCITEController" -output "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release/SMCITEController.kext/Contents/MacOS/SMCITEController"0#
+
+CLd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/i386/SMCITEController" normal i386
+s298371990.223102
+e298371990.286186
+r1
+xLd
+x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/i386/SMCITEController
+xnormal
+xi386
+lSLF07#2@185"Link /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/i386/SMCITEController298371990#298371990#0(0"0(0#0#0"4300911832#1092"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO"    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/g++-4.2 -arch i386 -isysroot /Developer/SDKs/MacOSX10.6.sdk "-L/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release" "-F/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release" -filelist "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/i386/SMCITEController.LinkFileList" -mmacosx-version-min=10.6 -lcpp_kext -Xlinker -kext -nostdlib -lkmodc++ "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/i386/SMCITEController_info.o" -lkmod -lcc_kext -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/i386/SMCITEController"0#
+
+CLd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/x86_64/SMCITEController" normal x86_64
+s298371991.023617
+e298371991.036989
+r1
+xLd
+x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/x86_64/SMCITEController
+xnormal
+xx86_64
+lSLF07#2@187"Link /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/x86_64/SMCITEController298371991#298371991#0(0"0(0#0#0"4300911832#1100"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO"    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/g++-4.2 -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.6.sdk "-L/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release" "-F/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release" -filelist "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/x86_64/SMCITEController.LinkFileList" -mmacosx-version-min=10.6 -lcpp_kext -Xlinker -kext -nostdlib -lkmodc++ "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/x86_64/SMCITEController_info.o" -lkmod -lcc_kext -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/SMCITEController.build/Release/SMCITEController.build/Objects-normal/x86_64/SMCITEController"0#
+
+CProcessInfoPlistFile "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release/SMCITEController.kext/Contents/Info.plist" Info.plist
+s298371989.253573
+e298371989.257180
+r1
+xProcessInfoPlistFile
+x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release/SMCITEController.kext/Contents/Info.plist
+xInfo.plist
+lSLF07#2@18"Process Info.plist298371989#298371989#0(0"0(0#0#94"/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/Info.plist4300911832#316"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO"    builtin-infoPlistUtility Info.plist -expandbuildsettings -platform macosx -o "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release/SMCITEController.kext/Contents/Info.plist"0#
+
+CTouch "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release/SMCITEController.kext"
+s298371991.041538
+e298371991.044310
+r1
+xTouch
+x/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release/SMCITEController.kext
+lSLF07#2@125"Touch /Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release/SMCITEController.kext298371991#298371991#0(0"0(0#0#0"4300911832#237"    cd "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO"    /usr/bin/touch -c "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/FakeSMCSuperIO/build/Release/SMCITEController.kext"0#
+
