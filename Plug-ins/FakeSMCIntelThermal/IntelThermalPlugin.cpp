@@ -48,6 +48,8 @@ bool IntelThermalPlugin::Probe()
 				case 0x0F: // Intel Core (65nm)
 					switch (CpuStepping) 
 				{
+					case 0x02: // G0
+						m_TjMax = 95; break;
 					case 0x06: // B2
 						switch (m_CpuCount) 
 					{
