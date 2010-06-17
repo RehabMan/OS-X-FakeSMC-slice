@@ -48,10 +48,10 @@ class IntelThermalPlugin : public FakeSMCBinding
 {
 private:
 	UInt8	m_CpuCount;
-	UInt8	m_TjMax;
 	bool	m_CpuCoreiX;
 	UInt	m_TjMaxCoreiX[MaxCpuCount];
 public:
+	UInt8	m_TjMax;
 	bool			Probe();
     void			Start();
 	void			Stop();
