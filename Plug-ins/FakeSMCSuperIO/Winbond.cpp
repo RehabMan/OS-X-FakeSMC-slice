@@ -164,8 +164,8 @@ bool Winbond::Probe()
 		
 		Enter();
 		
-		UInt8 id = SuperIO::ReadByte(SUPERIO_CHIP_ID_REGISTER);
-		UInt8 revision = SuperIO::ReadByte(SUPERIO_CHIP_REVISION_REGISTER);
+		UInt8 id = ListenPortByte(SUPERIO_CHIP_ID_REGISTER);
+		UInt8 revision = ListenPortByte(SUPERIO_CHIP_REVISION_REGISTER);
 		
 		switch (id) 
 		{		
