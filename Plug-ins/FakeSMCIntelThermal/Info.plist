@@ -34,6 +34,8 @@
 			<string>IOResources</string>
 			<key>IOResourceMatch</key>
 			<string>IOKit</string>
+			<key>TJMax</key>
+			<integer>0</integer>
 		</dict>
 	</dict>
 	<key>OSBundleLibraries</key>
