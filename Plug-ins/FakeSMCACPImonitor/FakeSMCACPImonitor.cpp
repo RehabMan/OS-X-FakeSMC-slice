@@ -18,10 +18,13 @@ void ACPImonitor::Update(const char* key, char* data)
 			return;
 		}
 	// FANs
-	if(CompareKeys(key, "F0Ac") || CompareKeys(key, "F1Ac") || CompareKeys(key, "F2Ac") || CompareKeys(key, "F3Ac") || CompareKeys(key, "F4Ac") || CompareKeys(key, "F5Ac"))
+	if((key[0]=='F')&&(key[2]=='A')&&(key[3]=='c'))
 	{
 		UInt8 num = key[1] - 48;
-		snprintf(knm, 5, "SMC%d", num);
+		if ((num < FanOffset)||(num>(FanOffset+FCount-1))) {
+			return; //it is not our FAN
+		}
+		snprintf(knm, 5, "SMC%d", num - FanOffset);
 		if (kIOReturnSuccess == TZDevice->evaluateInteger(knm, &tmp)){	
 			t2 = tmp;
 			value = (int)(~t2) * 10;
@@ -97,6 +100,7 @@ bool ACPImonitor::start(IOService * provider)
 	UInt32 tmp;
 	
 	m_Binding = new Binding(this);
+	FanOffset = GetFNum();
 	
 	//Here is Fan in ACPI	
 	for (int i=0; i<10; i++) 
@@ -105,11 +109,11 @@ bool ACPImonitor::start(IOService * provider)
 		if (kIOReturnSuccess == TZDevice->evaluateInteger(key, &tmp)){		
 			value[0] = 0x0;
 			value[1] = 0x0;
-			snprintf(key, 5, "F%dAc", i);
+			snprintf(key, 5, "F%dAc", i+FanOffset);
 			FakeSMCAddKey(key, "fpe2", 2, value, m_Binding);
 			IOLog("FakeSMC_ACPI: %s registered\n", key);
 			FCount = i+1;
-		}
+		} else break;
 	}
 	
 //	value[0] = FCount;
@@ -236,7 +240,7 @@ void ACPImonitor::stop (IOService* provider)
 	char key[5];
 	for (int i=0; i<FCount; i++) 
 	{
-		snprintf(key, 5, "F%dAc", i);
+		snprintf(key, 5, "F%dAc", i+FanOffset);
 		FakeSMCRemoveKeyBinding(key);
 	}
 	UpdateFNum(-FCount);

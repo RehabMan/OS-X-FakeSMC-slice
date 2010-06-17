@@ -9,6 +9,8 @@ class ACPImonitor : public IOService
     OSDeclareDefaultStructors(ACPImonitor)    
 private:
 	int TCount, FCount, SMCx[30];
+	UInt8			FanOffset;
+
 	IOACPIPlatformDevice * TZDevice;
 	FakeSMCBinding* m_Binding;
 	
