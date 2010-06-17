@@ -128,11 +128,13 @@ void SuperIO::LoadConfiguration(IOService* provider)
 	
 	OSBoolean* fanControl = OSDynamicCast(OSBoolean, provider->getProperty("Enable Fan Control"));
 	
-	m_FanControl = fanControl->getValue();
+	if (fanControl)
+		m_FanControl = fanControl->getValue();
 	
 	OSArray* fanIDs = OSDynamicCast(OSArray, provider->getProperty("Fan Names"));
 	
-	if (fanIDs) fanIDs = OSArray::withArray(fanIDs);
+	if (fanIDs) 
+		fanIDs = OSArray::withArray(fanIDs);
 	
     if (fanIDs) 
 	{

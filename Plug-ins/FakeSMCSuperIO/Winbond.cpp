@@ -351,6 +351,7 @@ bool Winbond::Probe()
 				}
 				break; 
 			}
+				
 			default: 
 			{
 				switch (id & 0x0f) {
@@ -365,8 +366,6 @@ bool Winbond::Probe()
 						break;
 					case 0x0d:
 						Model = W83877ATF;
-						break;
-					default:
 						break;
 				}
 			}

@@ -16,6 +16,12 @@
 #include "ITESensors.h"
 #include "SmartGuardianController.h"
 
+void ITE::WriteByte(UInt8 reg, UInt8 value)
+{
+	outb(Address + ITE_ADDRESS_REGISTER_OFFSET, reg);
+	outb(Address + ITE_DATA_REGISTER_OFFSET, value);
+}
+
 UInt8 ITE::ReadByte(UInt8 index, bool* valid)
 {
 	outb(Address + ITE_ADDRESS_REGISTER_OFFSET, index);
@@ -186,6 +192,134 @@ void ITE::Init()
 	// CPU Vcore
 	Bind(new ITEVoltageSensor(this, 0, "VC0C", "fp2e", 2));
 	
+	// SmartGuardian Setup
+	OSDictionary* dictionary = OSDynamicCast(OSDictionary, m_Service->getProperty("SmartGuardian"));
+	
+	if (dictionary)
+	{
+		OSBoolean* enabled = OSDynamicCast(OSBoolean, dictionary->getObject("Enabled"));
+		
+		if (enabled && enabled->getValue())
+		{
+			for (int i = 0; i < 3; i++) 
+			{
+				char key[5];
+				
+				snprintf(key, 5, "Fan%d", i);
+				
+				OSDictionary* fanInfo = OSDynamicCast(OSDictionary, dictionary->getObject(key));
+				
+				if (fanInfo)
+				{
+					const OSBoolean* tmpBool;
+					const OSNumber* tmpNumber;
+					
+					UInt8 control = 0;
+					
+					if ((tmpBool = OSDynamicCast(OSBoolean, fanInfo->getObject("Temperature Smothing"))) != NULL)
+						if (tmpBool->getValue())
+						{
+							control |= 0x80;
+						}
+						
+					if ((tmpBool = OSDynamicCast(OSBoolean, fanInfo->getObject("Full Speed OFF Temperature Limit"))) != NULL)
+						if (tmpBool->getValue())
+						{
+							control |= 0x40;
+						}
+					
+					if ((tmpBool = OSDynamicCast(OSBoolean, fanInfo->getObject("Spin-Up"))) != NULL)
+						if (tmpBool->getValue())
+						{
+							control |= 0x20;
+						}
+					
+					if ((tmpNumber = OSDynamicCast(OSNumber, fanInfo->getObject("Spin-Up Time"))) != NULL)
+						switch (tmpNumber->unsigned16BitValue())
+						{
+							case 0:
+								break;
+							case 125:
+								control |= 0x08;
+								break;
+							case 325:
+								control |= 0x10;
+								break;
+							case 1000:
+								control |= 0x18;
+								break;
+						}
+					
+					if ((tmpNumber = OSDynamicCast(OSNumber, fanInfo->getObject("Slope PWM"))) != NULL)
+						switch (tmpNumber->unsigned8BitValue())
+						{
+							case 1:
+								control |= 1;
+								break;
+							case 2:
+								control |= 2;
+								break;
+							case 4:
+								control |= 3;
+								break;
+							case 8:
+								control |= 4;
+								break;
+							case 16:
+								control |= 5;
+								break;
+							case 32:
+								control |= 6;
+								break;
+							case 64:
+								control |= 7;
+								break;
+						}
+					
+					// Write control
+					WriteByte(ITE_SMARTGUARDIAN_CONTROL[i], control);
+					IOSleep(50);
+					
+					if ((tmpNumber = OSDynamicCast(OSNumber, fanInfo->getObject("Fan Start Temperature"))) != NULL)
+					{
+						WriteByte(ITE_SMARTGUARDIAN_TEMPERATURE_START[i], tmpNumber->unsigned8BitValue());
+						IOSleep(50);
+					}
+					
+					if ((tmpNumber = OSDynamicCast(OSNumber, fanInfo->getObject("Fan Stop Temperature"))) != NULL)
+					{
+						WriteByte(ITE_SMARTGUARDIAN_TEMPERATURE_STOP[i], tmpNumber->unsigned8BitValue());
+						IOSleep(50);
+					}
+					
+					/*if ((tmpNumber = OSDynamicCast(OSNumber, fanInfo->getObject("Full Speed ON Temperature"))) != NULL)
+					{
+						WriteByte(ITE_SMARTGUARDIAN_TEMPERATURE_FULL_ON[i], tmpNumber->unsigned8BitValue());
+						IOSleep(50);
+					}*/
+					
+					if ((tmpNumber = OSDynamicCast(OSNumber, fanInfo->getObject("Full Speed OFF Temperature"))) != NULL)
+					{
+						WriteByte(ITE_SMARTGUARDIAN_TEMPERATURE_FULL_OFF[i], tmpNumber->unsigned8BitValue());
+						IOSleep(50);
+					}
+					
+					if ((tmpNumber = OSDynamicCast(OSNumber, fanInfo->getObject("Start PWM Value"))) != NULL)
+					{
+						WriteByte(ITE_SMARTGUARDIAN_START_PWM[i], tmpNumber->unsigned8BitValue());
+						IOSleep(50);
+					}
+					
+					if ((tmpNumber = OSDynamicCast(OSNumber, fanInfo->getObject("Force PWM Value"))) != NULL)
+					{
+						WriteByte(ITE_SMARTGUARDIAN_FORCE_PWM[i], tmpNumber->unsigned8BitValue());
+						IOSleep(50);
+					}
+				}
+			}
+		}
+	}
+	
 	// FANs	
 	FanOffset = GetFNum();
 	
@@ -210,7 +344,7 @@ void ITE::Init()
 			UInt8 control = ReadByte(ITE_SMARTGUARDIAN_CONTROL[i], valid);
 			
 			InfoLog("Fan#%d Temperature Smothing %s", i, (control & 0x80) == 0x80 ? "Enabled" : "Disabled");
-			InfoLog("Fan#%d Temperature Limit of Full speed OFF %s", i, (control & 0x40) == 0x40 ? "On" : "Off");
+			InfoLog("Fan#%d Full Speed Off Temperature Limit %s", i, (control & 0x40) == 0x40 ? "On" : "Off");
 			InfoLog("Fan#%d Spin-UP %s", i, (control & 0x20) == 0x20 ? "Enabled" : "Disabled");
 						
 			switch (control & 0x18) 
@@ -257,11 +391,12 @@ void ITE::Init()
 					break;
 			}
 			
-			InfoLog("Fan#%d Temperature limit of stop %d",i , ReadByte(ITE_SMARTGUARDIAN_TEMPERATURE_OFF[i], valid));
-			InfoLog("Fan#%d Temperature limit of start %d",i , ReadByte(ITE_SMARTGUARDIAN_TEMPERATURE_START[i], valid));
-			InfoLog("Fan#%d Temperature limit of full speed ON %d",i , ReadByte(ITE_SMARTGUARDIAN_TEMPERATURE_FULL_ON[i], valid));
-			InfoLog("Fan#%d Temperature limit of full speed OFF %d",i , ReadByte(ITE_SMARTGUARDIAN_TEMPERATURE_FULL_OFF[i], valid));
+			InfoLog("Fan#%d Start Temperature %d",i , ReadByte(ITE_SMARTGUARDIAN_TEMPERATURE_START[i], valid));
+			InfoLog("Fan#%d Stop Temperature %d",i , ReadByte(ITE_SMARTGUARDIAN_TEMPERATURE_STOP[i], valid));
+			InfoLog("Fan#%d Full Speed ON Temperature %d",i , ReadByte(ITE_SMARTGUARDIAN_TEMPERATURE_FULL_ON[i], valid));
+			InfoLog("Fan#%d Full Speed OFF Temperature %d",i , ReadByte(ITE_SMARTGUARDIAN_TEMPERATURE_FULL_OFF[i], valid));
 			InfoLog("Fan#%d Start PWM value %d",i ,ReadByte(ITE_SMARTGUARDIAN_START_PWM[i], valid));
+			InfoLog("Fan#%d Force PWM value %d",i ,ReadByte(ITE_SMARTGUARDIAN_FORCE_PWM[i], valid));
 			
 			if (m_FanControl)
 				Bind(new SmartGuardianController(this, i, FanOffset + FanCount));

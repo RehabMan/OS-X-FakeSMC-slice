@@ -39,7 +39,7 @@ const UInt8 ITE_VOLTAGE_BASE_REG = 0x20;
 const float ITE_VOLTAGE_GAIN[] = {1, 1, 1, (6.8f / 10 + 1), 1, 1, 1, 1, 1 };
 
 const UInt8 ITE_SMARTGUARDIAN_FORCE_PWM[5]				= { 0x15, 0x16, 0x17, 0x88, 0x89 };
-const UInt8 ITE_SMARTGUARDIAN_TEMPERATURE_OFF[5]		= { 0x60, 0x68, 0x70, 0x90, 0x98 };
+const UInt8 ITE_SMARTGUARDIAN_TEMPERATURE_STOP[5]		= { 0x60, 0x68, 0x70, 0x90, 0x98 };
 const UInt8 ITE_SMARTGUARDIAN_TEMPERATURE_START[5]		= { 0x61, 0x69, 0x71, 0x91, 0x99 };
 const UInt8 ITE_SMARTGUARDIAN_TEMPERATURE_FULL_ON[5]	= { 0x62, 0x6a, 0x72, 0x92, 0x9a };
 const UInt8 ITE_SMARTGUARDIAN_START_PWM[5]				= { 0x63, 0x6b, 0x73, 0x93, 0x9b };
@@ -53,6 +53,7 @@ protected:
 	void	Exit();
 public:	
 	bool			IsFanControlled() { return m_FanControl; };
+	void			WriteByte(UInt8 reg, UInt8 value);
 	
 	virtual UInt8	ReadByte(UInt8 index, bool* valid);
 	virtual UInt16	ReadWord(UInt8 index1, UInt8 index2, bool* valid);
