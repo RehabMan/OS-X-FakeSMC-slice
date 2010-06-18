@@ -13,7 +13,7 @@ void SmartGuardianController::ForcePWM(UInt8 slope)
 {
 	DebugLog("Forcing Fan #%d SLOPE=0x%x", m_Offset, slope);
 	
-	outb(m_Provider->GetAddress() + ITE_ADDRESS_REGISTER_OFFSET, ITE_SMARTGUARDIAN_FORCE_PWM[m_Offset]);
+	outb(m_Provider->GetAddress() + ITE_ADDRESS_REGISTER_OFFSET, ITE_SMARTGUARDIAN_PWM_CONTROL[m_Offset]);
 	outb(m_Provider->GetAddress() + ITE_DATA_REGISTER_OFFSET, slope);
 }
 
@@ -23,7 +23,7 @@ void SmartGuardianController::Initialize()
 	char tmpKey[5];
 	
 	//Back up temperature sensor selection
-	m_DefaultForcePWM = m_Provider->ReadByte(ITE_SMARTGUARDIAN_FORCE_PWM[m_Offset], valid);
+	m_DefaultForcePWM = m_Provider->ReadByte(ITE_SMARTGUARDIAN_PWM_CONTROL[m_Offset], valid);
 	m_DefaultStartPWM = m_Provider->ReadByte(ITE_SMARTGUARDIAN_START_PWM[m_Offset], valid);
 	
 	if (valid)

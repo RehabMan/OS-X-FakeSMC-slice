@@ -17,9 +17,9 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>2.1</string>
+	<string>2.2</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.1</string>
+	<string>2.2</string>
 	<key>IOKitPersonalities</key>
 	<dict>
 		<key>SuperIOMonitorPlugin</key>
@@ -34,142 +34,106 @@
 			<string>IOResources</string>
 			<key>IOResourceMatch</key>
 			<string>IOKit</string>
-			<key>SmartGuardian</key>
+			<key>SmartGuardian Override</key>
 			<dict>
 				<key>Enabled</key>
 				<false/>
 				<key>Fan0</key>
 				<dict>
-					<key>Temperature Smothing</key>
+					<key>Enabled</key>
 					<true/>
-					<key>Full Speed OFF Temperature Limit</key>
+					<key>PWM smoothing</key>
 					<true/>
-					<key>Spin-Up</key>
-					<true/>
-					<key>Spin-Up Time</key>
-					<integer>1000</integer>
 					<key>Slope PWM</key>
-					<integer>1</integer>
+					<integer>32</integer>
+					<key>PWM Automatic Operation</key>
+					<true/>
+					<key>Automatic Operation Temperature Input</key>
+					<string>TMPPIN2</string>
+					<key>Software Operation PWM Value</key>
+					<string>32</string>
 					<key>Fan Start Temperature </key>
 					<integer>20</integer>
 					<key>Fan Stop Temperature</key>
 					<integer>0</integer>
-					<key>Full Speed ON Temperature</key>
-					<integer>65</integer>
-					<key>Full Speed OFF Temperature</key>
-					<integer>50</integer>
 					<key>Start PWM Value</key>
-					<integer>0</integer>
-					<key>Force PWM Value</key>
-					<string>253</string>
+					<integer>32</integer>
 				</dict>
 				<key>Fan1</key>
 				<dict>
-					<key>Temperature Smothing</key>
+					<key>Enabled</key>
 					<true/>
-					<key>Full Speed Off Temperature Limit</key>
+					<key>PWM smoothing</key>
 					<true/>
-					<key>Spin-Up</key>
-					<true/>
-					<key>Spin-Up Time</key>
-					<integer>1000</integer>
 					<key>Slope PWM</key>
-					<integer>1</integer>
+					<integer>16</integer>
+					<key>PWM Automatic Operation</key>
+					<true/>
+					<key>Automatic Operation Temperature Input</key>
+					<string>TMPPIN1</string>
+					<key>Software Operation PWM Value</key>
+					<string>32</string>
 					<key>Fan Start Temperature </key>
 					<integer>20</integer>
 					<key>Fan Stop Temperature</key>
 					<integer>0</integer>
-					<key>Full Speed ON Temperature</key>
-					<integer>65</integer>
-					<key>Full Speed OFF Temperature</key>
-					<integer>50</integer>
 					<key>Start PWM Value</key>
-					<integer>0</integer>
-					<key>Force PWM Value</key>
-					<string>252</string>
+					<integer>32</integer>
 				</dict>
 				<key>Fan2</key>
 				<dict>
-					<key>Temperature Smothing</key>
+					<key>Enabled</key>
+					<false/>
+					<key>PWM smoothing</key>
 					<true/>
-					<key>Full Speed Off Temperature Limit</key>
-					<true/>
-					<key>Spin-Up</key>
-					<true/>
-					<key>Spin-Up Time</key>
-					<integer>1000</integer>
 					<key>Slope PWM</key>
 					<integer>1</integer>
+					<key>PWM Automatic Operation</key>
+					<true/>
+					<key>Automatic Operation Temperature Input</key>
+					<string>TMPPIN1</string>
+					<key>Software Operation PWM Value</key>
+					<string>32</string>
 					<key>Fan Start Temperature </key>
 					<integer>20</integer>
 					<key>Fan Stop Temperature</key>
 					<integer>0</integer>
-					<key>Full Speed ON Temperature</key>
-					<integer>65</integer>
-					<key>Full Speed OFF Temperature</key>
-					<integer>50</integer>
 					<key>Start PWM Value</key>
-					<integer>0</integer>
-					<key>Force PWM Value</key>
-					<string>0</string>
+					<integer>1</integer>
 				</dict>
 				<key>Fan3</key>
 				<dict>
-					<key>Temperature Smothing</key>
+					<key>Enabled</key>
 					<true/>
-					<key>Full Speed Off Temperature Limit</key>
+					<key>PWM Automatic Operation</key>
 					<true/>
-					<key>Spin-Up</key>
-					<true/>
-					<key>Spin-Up Time</key>
-					<integer>1000</integer>
-					<key>Slope PWM</key>
-					<integer>1</integer>
-					<key>Fan Start Temperature </key>
-					<integer>20</integer>
-					<key>Fan Stop Temperature</key>
-					<integer>0</integer>
-					<key>Full Speed ON Temperature</key>
-					<integer>65</integer>
-					<key>Full Speed OFF Temperature</key>
-					<integer>50</integer>
+					<key>Automatic Operation Temperature Input</key>
+					<string>TMPPIN1</string>
+					<key>Software Operation PWM Value</key>
+					<string>32</string>
 					<key>Start PWM Value</key>
-					<integer>0</integer>
-					<key>Force PWM Value</key>
-					<string>252</string>
+					<integer>48</integer>
 				</dict>
 				<key>Fan4</key>
 				<dict>
-					<key>Temperature Smothing</key>
+					<key>Enabled</key>
+					<false/>
+					<key>PWM Automatic Operation</key>
 					<true/>
-					<key>Full Speed Off Temperature Limit</key>
-					<true/>
-					<key>Spin-Up</key>
-					<true/>
-					<key>Spin-Up Time</key>
-					<integer>1000</integer>
-					<key>Slope PWM</key>
-					<integer>1</integer>
-					<key>Fan Start Temperature </key>
-					<integer>20</integer>
-					<key>Fan Stop Temperature</key>
-					<integer>0</integer>
-					<key>Full Speed ON Temperature</key>
-					<integer>65</integer>
-					<key>Full Speed OFF Temperature</key>
-					<integer>50</integer>
+					<key>Automatic Operation Temperature Input</key>
+					<string>TMPPIN1</string>
+					<key>Software Operation PWM Value</key>
+					<string>8</string>
 					<key>Start PWM Value</key>
-					<integer>0</integer>
-					<key>Force PWM Value</key>
-					<string>0</string>
+					<integer>35</integer>
 				</dict>
 			</dict>
 			<key>Fan Names</key>
 			<array>
+				<string>Processor</string>
+				<string>Intake</string>
 				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
+				<string>Exhaust</string>
 				<string></string>
 			</array>
 		</dict>

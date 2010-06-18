@@ -26,19 +26,19 @@ IOService* FakeSMCSuperIOMonitor::probe(IOService *provider, SInt32 *score)
 	
 	if(superio == NULL)
 	{
-		superio = new ITE();
+		superio = new Winbond();
 			
 		if(!superio->Probe())
 		{
 			delete superio;
 			
-			superio = new Winbond();
+			superio = new Fintek();
 					
 			if(!superio->Probe())
 			{
 				delete superio;
 				
-				superio = new Fintek();
+				superio = new ITE();
 								
 				if(!superio->Probe())
 				{
