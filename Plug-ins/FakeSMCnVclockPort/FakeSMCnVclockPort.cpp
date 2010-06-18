@@ -232,6 +232,9 @@ bool		PTnVmon::start	(IOService* provider) {
 			int no=GetFNum();
 			snprintf(key, 5, "F%dAc", no);
 			fanSensor[card_number]=new FanSensor(key, "fpe2", 2);
+			snprintf(key, 5, "F%dID", no);
+			char name[4] = "GPU";
+			FakeSMCAddKey(key, "ch8*", 4, name);
 			UpdateFNum(1);
 			printf("Current fanspeed: %d RPM\n", 	nv_card->get_i2c_fanspeed_rpm(nv_card->sensor));
 		}
@@ -240,6 +243,9 @@ bool		PTnVmon::start	(IOService* provider) {
 			int no=GetFNum();
 			snprintf(key, 5, "F%dAc", no);
 			fanSensor[card_number]=new FanSensor(key, "fpe2", 2);
+			snprintf(key, 5, "F%dID", no);
+			char name[4] = "GPU";
+			FakeSMCAddKey(key, "ch8*", 4, name);
 			UpdateFNum(1);
 			printf("Current fanspeed: %.1f%%\n", nv_card->get_fanspeed());
 		}
