@@ -36,6 +36,14 @@
 			<string>monitor</string>
 			<key>IOProviderClass</key>
 			<string>IOACPIPlatformDevice</string>
+			<key>Fan Names</key>
+			<array>
+				<string>System Fan</string>
+				<string>Processor Fan</string>
+				<string>Power Fan</string>
+				<string>Intake Fan</string>
+				<string>Exhaust Fan</string>
+			</array>
 		</dict>
 	</dict>
 	<key>OSBundleLibraries</key>

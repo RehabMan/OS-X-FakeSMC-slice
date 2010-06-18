@@ -2,7 +2,8 @@
 {
 	089C1669FE841209C02AAC07 /* Project object */ = {
 		activeArchitecturePreference = i386;
-		activeBuildConfigurationName = Release;
+		activeBuildConfigurationName = "Release Leopard";
+		activeSDKPreference = macosx10.5;
 		activeTarget = 32D94FC30562CBF700B6AF17 /* FakeSMCACPImonitor */;
 		addToTargets = (
 			32D94FC30562CBF700B6AF17 /* FakeSMCACPImonitor */,
@@ -55,22 +56,18 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 298483578;
-			PBXWorkspaceStateSaveDate = 298483578;
+			PBXPerProjectTemplateStateSaveDate = 298556159;
+			PBXWorkspaceStateSaveDate = 298556159;
 		};
 		perUserProjectItems = {
+			120AE17A11CA92DB00B3F088 = 120AE17A11CA92DB00B3F088 /* PBXTextBookmark */;
 			124F3DBD11C91424000E7F21 = 124F3DBD11C91424000E7F21 /* PBXTextBookmark */;
-			124F3DBF11C91424000E7F21 = 124F3DBF11C91424000E7F21 /* PBXTextBookmark */;
-			129D55AA11C93BA600AF8F27 = 129D55AA11C93BA600AF8F27 /* PBXTextBookmark */;
-			129D55B511C93C1800AF8F27 = 129D55B511C93C1800AF8F27 /* PBXTextBookmark */;
-			129D55B611C93C1800AF8F27 = 129D55B611C93C1800AF8F27 /* PlistBookmark */;
-			129D55B711C93C1800AF8F27 = 129D55B711C93C1800AF8F27 /* PlistBookmark */;
 			12B8EC5F11AC7CAA00EAD0A7 = 12B8EC5F11AC7CAA00EAD0A7 /* PBXTextBookmark */;
-			12D74B3711CA82FA00ADA405 /* PlistBookmark */ = 12D74B3711CA82FA00ADA405 /* PlistBookmark */;
-			12D74B3811CA82FA00ADA405 /* PBXTextBookmark */ = 12D74B3811CA82FA00ADA405 /* PBXTextBookmark */;
-			12D74B3911CA82FA00ADA405 /* PBXTextBookmark */ = 12D74B3911CA82FA00ADA405 /* PBXTextBookmark */;
-			12D74B3A11CA82FA00ADA405 /* PBXTextBookmark */ = 12D74B3A11CA82FA00ADA405 /* PBXTextBookmark */;
-			12D74B3B11CA82FA00ADA405 /* PBXTextBookmark */ = 12D74B3B11CA82FA00ADA405 /* PBXTextBookmark */;
+			12C4F0BC11CB9B0700D6D356 /* PBXTextBookmark */ = 12C4F0BC11CB9B0700D6D356 /* PBXTextBookmark */;
+			12D74B3711CA82FA00ADA405 = 12D74B3711CA82FA00ADA405 /* PlistBookmark */;
+			12D74B3811CA82FA00ADA405 = 12D74B3811CA82FA00ADA405 /* PBXTextBookmark */;
+			12D74B3911CA82FA00ADA405 = 12D74B3911CA82FA00ADA405 /* PBXTextBookmark */;
+			12D74B4211CA832C00ADA405 = 12D74B4211CA832C00ADA405 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 12B8EC4B11AC735400EAD0A7 /* Source Control */;
 		userBuildSettings = {
@@ -83,6 +80,16 @@
 			sepNavVisRange = "{0, 45}";
 		};
 	};
+	120AE17A11CA92DB00B3F088 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCACPImonitor.cpp */;
+		name = "FakeSMCACPImonitor.cpp: 24";
+		rLen = 0;
+		rLoc = 467;
+		rType = 0;
+		vrLen = 786;
+		vrLoc = 0;
+	};
 	124F3DBD11C91424000E7F21 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 089C167EFE841241C02AAC07 /* English */;
@@ -92,61 +99,6 @@
 		rType = 0;
 		vrLen = 45;
 		vrLoc = 0;
-	};
-	124F3DBF11C91424000E7F21 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = AE4109E611C6A99A00C572D3 /* FakeSMCBinding.h */;
-		name = "FakeSMCBinding.h: 20";
-		rLen = 0;
-		rLoc = 433;
-		rType = 0;
-		vrLen = 1163;
-		vrLoc = 218;
-	};
-	129D55AA11C93BA600AF8F27 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1A224C3EFF42367911CA2CB7 /* FakeSMCACPImonitor.h */;
-		name = "FakeSMCACPImonitor.h: 21";
-		rLen = 41;
-		rLoc = 472;
-		rType = 0;
-		vrLen = 830;
-		vrLoc = 0;
-	};
-	129D55B511C93C1800AF8F27 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCACPImonitor.cpp */;
-		name = "FakeSMCACPImonitor.cpp: 243";
-		rLen = 23;
-		rLoc = 7406;
-		rType = 0;
-		vrLen = 928;
-		vrLoc = 6197;
-	};
-	129D55B611C93C1800AF8F27 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 32D94FCF0562CBF700B6AF17 /* Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-			OSBundleLibraries,
-		);
-		name = "/Users/slice/FakeSMC_mozo/rev171/fakesmc/Plug-ins/FakeSMCACPImonitor/Info.plist";
-		rLen = 0;
-		rLoc = 9223372036854775808;
-	};
-	129D55B711C93C1800AF8F27 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 32D94FCF0562CBF700B6AF17 /* Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-			OSBundleLibraries,
-			com.apple.iokit.IOACPIFamily,
-		);
-		name = "/Users/slice/FakeSMC_mozo/rev171/fakesmc/Plug-ins/FakeSMCACPImonitor/Info.plist";
-		rLen = 0;
-		rLoc = 9223372036854775808;
 	};
 	12B8EC4B11AC735400EAD0A7 /* Source Control */ = {
 		isa = PBXSourceControlManager;
@@ -171,6 +123,16 @@
 		vrLen = 343;
 		vrLoc = 0;
 	};
+	12C4F0BC11CB9B0700D6D356 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCACPImonitor.cpp */;
+		name = "FakeSMCACPImonitor.cpp: 24";
+		rLen = 0;
+		rLoc = 467;
+		rType = 0;
+		vrLen = 776;
+		vrLoc = 0;
+	};
 	12D74B3711CA82FA00ADA405 /* PlistBookmark */ = {
 		isa = PlistBookmark;
 		fRef = 32D94FCF0562CBF700B6AF17 /* Info.plist */;
@@ -182,7 +144,7 @@
 		);
 		name = "/Users/slice/FakeSMC_mozo/rev171/fakesmc/Plug-ins/FakeSMCACPImonitor/Info.plist";
 		rLen = 0;
-		rLoc = 9223372036854775807;
+		rLoc = 9223372036854775808;
 	};
 	12D74B3811CA82FA00ADA405 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -204,17 +166,7 @@
 		vrLen = 1106;
 		vrLoc = 134;
 	};
-	12D74B3A11CA82FA00ADA405 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCACPImonitor.cpp */;
-		name = "FakeSMCACPImonitor.cpp: 24";
-		rLen = 0;
-		rLoc = 467;
-		rType = 0;
-		vrLen = 789;
-		vrLoc = 0;
-	};
-	12D74B3B11CA82FA00ADA405 /* PBXTextBookmark */ = {
+	12D74B4211CA832C00ADA405 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCACPImonitor.cpp */;
 		name = "FakeSMCACPImonitor.cpp: 24";
@@ -233,9 +185,9 @@
 	};
 	1A224C3FFF42367911CA2CB7 /* FakeSMCACPImonitor.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {856, 3601}}";
-			sepNavSelRange = "{467, 0}";
-			sepNavVisRange = "{0, 789}";
+			sepNavIntBoundsRect = "{{0, 0}, {856, 3926}}";
+			sepNavSelRange = "{3949, 0}";
+			sepNavVisRange = "{3534, 883}";
 			sepNavWindowFrame = "{{435, 87}, {802, 791}}";
 		};
 	};

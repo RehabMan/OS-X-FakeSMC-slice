@@ -98,9 +98,11 @@ bool ACPImonitor::start(IOService * provider)
 	char value[2];
 	FCount = 0;
 	UInt32 tmp;
+	const char*		FanName;
 	
 	m_Binding = new Binding(this);
 	FanOffset = GetFNum();
+	
 	
 	//Here is Fan in ACPI	
 	for (int i=0; i<10; i++) 
@@ -115,6 +117,24 @@ bool ACPImonitor::start(IOService * provider)
 			FCount = i+1;
 		} else break;
 	}
+	
+	OSArray* fanIDs = OSDynamicCast(OSArray, provider->getProperty("Fan Names"));
+	
+	if (fanIDs) 
+		fanIDs = OSArray::withArray(fanIDs);
+	
+    if (fanIDs) 
+	{
+		for (UInt32 i = 0; i < FCount; i++)
+		{
+			OSString* name = OSDynamicCast(OSString, fanIDs->getObject(i)); 
+			FanName = name->getCStringNoCopy();
+			snprintf(key, 5, "F%dID", FanOffset + i);
+			FakeSMCAddKey(key, "ch8*", strlen(FanName), (char*)FanName);
+		}		
+		fanIDs->release();
+    }
+	
 	
 //	value[0] = FCount;
 //	FakeSMCAddKey("FNum", 1, value);
