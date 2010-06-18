@@ -14,7 +14,6 @@
 
 #include "ITE.h"
 #include "ITESensors.h"
-#include "SmartGuardianController.h"
 
 void ITE::WriteByte(UInt8 reg, UInt8 value)
 {
@@ -235,7 +234,7 @@ void ITE::Init()
 							// SmartGuardian FAN Control
 							control = 0;
 							
-							if ((tmpBool = OSDynamicCast(OSBoolean, fanInfo->getObject("PWM smoothing"))) != NULL)
+							if ((tmpBool = OSDynamicCast(OSBoolean, fanInfo->getObject("PWM Smoothing"))) != NULL)
 							{
 								if (tmpBool->getValue())
 								{
@@ -248,25 +247,13 @@ void ITE::Init()
 								switch (tmpNumber->unsigned8BitValue())
 								{
 									case 1:
-										control |= 1;
-										break;
 									case 2:
-										control |= 2;
-										break;
 									case 4:
-										control |= 3;
-										break;
 									case 8:
-										control |= 4;
-										break;
 									case 16:
-										control |= 5;
-										break;
 									case 32:
-										control |= 6;
-										break;
 									case 64:
-										control |= 7;
+										control |= tmpNumber->unsigned8BitValue();
 										break;
 								}
 							}
@@ -285,44 +272,44 @@ void ITE::Init()
 								WriteByte(ITE_SMARTGUARDIAN_TEMPERATURE_STOP[i], tmpNumber->unsigned8BitValue());
 								IOSleep(50);
 							}
-						}
-						
-						// PWM Control
-						control = 0;
-						
-						if ((tmpBool = OSDynamicCast(OSBoolean, fanInfo->getObject("PWM Automatic Operation"))) != NULL)
-						{
-							control |= 0x80;
+
+							// PWM Control
+							control = 0;
 							
-							if ((tmpString = OSDynamicCast(OSString, fanInfo->getObject("Automatic Operation Temperature Input"))) != NULL)
+							if ((tmpBool = OSDynamicCast(OSBoolean, fanInfo->getObject("PWM Automatic Operation"))) != NULL)
 							{
-								if (tmpString->isEqualTo("TMPPIN1"))
+								control |= 0x80;
+								
+								if ((tmpString = OSDynamicCast(OSString, fanInfo->getObject("Automatic Operation Temperature Input"))) != NULL)
 								{
-									control |= 0x0;
+									if (tmpString->isEqualTo("TMPPIN1"))
+									{
+										control |= 0x0;
+									}
+									else if (tmpString->isEqualTo("TMPPIN2"))
+									{
+										control |= 0x1;
+									}
+									else if (tmpString->isEqualTo("TMPPIN3"))
+									{
+										control |= 0x2;
+									}
+									else 
+									{
+										control |= 0x3;
+									}
 								}
-								else if (tmpString->isEqualTo("TMPPIN2"))
-								{
-									control |= 0x1;
-								}
-								else if (tmpString->isEqualTo("TMPPIN3"))
-								{
-									control |= 0x2;
-								}
-								else 
-								{
-									control |= 0x3;
-								}
+								
+								WriteByte(ITE_SMARTGUARDIAN_PWM_CONTROL[i], control);
+								IOSleep(50);
 							}
-							
-							WriteByte(ITE_SMARTGUARDIAN_PWM_CONTROL[i], control);
-							IOSleep(50);
-						}
-						else if ((tmpNumber = OSDynamicCast(OSNumber, fanInfo->getObject("Software Operation PWM Value"))) != NULL)
-						{
-							control |= (tmpNumber->unsigned8BitValue() & 0x7f);
-							
-							WriteByte(ITE_SMARTGUARDIAN_PWM_CONTROL[i], control);
-							IOSleep(50);
+							else if ((tmpNumber = OSDynamicCast(OSNumber, fanInfo->getObject("Software Operation PWM Value"))) != NULL)
+							{
+								control |= (tmpNumber->unsigned8BitValue() & 0x7f);
+								
+								WriteByte(ITE_SMARTGUARDIAN_PWM_CONTROL[i], control);
+								IOSleep(50);
+							}
 						}
 						
 						if ((tmpNumber = OSDynamicCast(OSNumber, fanInfo->getObject("Start PWM Value"))) != NULL)
@@ -400,9 +387,6 @@ void ITE::Init()
 
 			
 			InfoLog("Fan#%d Start PWM value %d",i ,ReadByte(ITE_SMARTGUARDIAN_START_PWM[i], valid));
-						
-			if (m_FanControl)
-				Bind(new SmartGuardianController(this, i, FanOffset + FanCount));
 			
 			FanIndex[FanCount++] = i;
 		}

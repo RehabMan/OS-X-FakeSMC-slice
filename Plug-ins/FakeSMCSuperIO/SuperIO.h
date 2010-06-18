@@ -80,7 +80,6 @@ private:
 	Binding*		m_Binding;
 protected:
 	IOService*		m_Service;
-	bool			m_FanControl;
 	
 	UInt16			Address;
 	UInt8			RegisterPort;

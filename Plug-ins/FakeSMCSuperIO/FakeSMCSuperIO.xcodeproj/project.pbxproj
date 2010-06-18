@@ -24,8 +24,6 @@
 		AEDC0A0811C8030700912FC5 /* WinbondSensors.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEDC0A0611C8030700912FC5 /* WinbondSensors.cpp */; };
 		AEDC0F8311C2503D00A44427 /* FakeSMCBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = AEDC0F8211C2503D00A44427 /* FakeSMCBinding.h */; };
 		AEE9021911C5431100088C05 /* Binding.h in Headers */ = {isa = PBXBuildFile; fileRef = AEE9021711C5431100088C05 /* Binding.h */; };
-		AEE9024C11C5449A00088C05 /* SmartGuardianController.h in Headers */ = {isa = PBXBuildFile; fileRef = AEE9024A11C5449A00088C05 /* SmartGuardianController.h */; };
-		AEE9024D11C5449A00088C05 /* SmartGuardianController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEE9024B11C5449A00088C05 /* SmartGuardianController.cpp */; };
 		AEEC326311B4414E0048ED14 /* Fintek.h in Headers */ = {isa = PBXBuildFile; fileRef = AEEC326111B4414E0048ED14 /* Fintek.h */; };
 		AEEC326411B4414E0048ED14 /* Fintek.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEEC326211B4414E0048ED14 /* Fintek.cpp */; };
 /* End PBXBuildFile section */
@@ -51,8 +49,6 @@
 		AEDC0A0611C8030700912FC5 /* WinbondSensors.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WinbondSensors.cpp; sourceTree = "<group>"; };
 		AEDC0F8211C2503D00A44427 /* FakeSMCBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeSMCBinding.h; sourceTree = "<group>"; };
 		AEE9021711C5431100088C05 /* Binding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Binding.h; sourceTree = "<group>"; };
-		AEE9024A11C5449A00088C05 /* SmartGuardianController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmartGuardianController.h; sourceTree = "<group>"; };
-		AEE9024B11C5449A00088C05 /* SmartGuardianController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SmartGuardianController.cpp; sourceTree = "<group>"; };
 		AEEC326111B4414E0048ED14 /* Fintek.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fintek.h; sourceTree = "<group>"; };
 		AEEC326211B4414E0048ED14 /* Fintek.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Fintek.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,8 +103,6 @@
 				AEAD028F11B173120016B8F9 /* ITE.cpp */,
 				AEDC09FD11C8028700912FC5 /* ITESensors.h */,
 				AEDC09FE11C8028700912FC5 /* ITESensors.cpp */,
-				AEE9024A11C5449A00088C05 /* SmartGuardianController.h */,
-				AEE9024B11C5449A00088C05 /* SmartGuardianController.cpp */,
 				AEAD041611B18D4B0016B8F9 /* Winbond.h */,
 				AEAD041711B18D4B0016B8F9 /* Winbond.cpp */,
 				AEDC0A0511C8030700912FC5 /* WinbondSensors.h */,
@@ -137,7 +131,6 @@
 				AEEC326311B4414E0048ED14 /* Fintek.h in Headers */,
 				AEDC0F8311C2503D00A44427 /* FakeSMCBinding.h in Headers */,
 				AEE9021911C5431100088C05 /* Binding.h in Headers */,
-				AEE9024C11C5449A00088C05 /* SmartGuardianController.h in Headers */,
 				AEDC09FF11C8028700912FC5 /* ITESensors.h in Headers */,
 				AEDC0A0711C8030700912FC5 /* WinbondSensors.h in Headers */,
 				AE0D5B4911C80E39000C2425 /* FintekSensors.h in Headers */,
@@ -218,7 +211,6 @@
 				AEAD02B811B176980016B8F9 /* SuperIO.cpp in Sources */,
 				AEAD041911B18D4B0016B8F9 /* Winbond.cpp in Sources */,
 				AEEC326411B4414E0048ED14 /* Fintek.cpp in Sources */,
-				AEE9024D11C5449A00088C05 /* SmartGuardianController.cpp in Sources */,
 				AEDC0A0011C8028800912FC5 /* ITESensors.cpp in Sources */,
 				AEDC0A0811C8030700912FC5 /* WinbondSensors.cpp in Sources */,
 				AE0D5B4A11C80E39000C2425 /* FintekSensors.cpp in Sources */,

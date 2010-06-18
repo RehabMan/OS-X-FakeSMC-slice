@@ -53,7 +53,6 @@ protected:
 	void	Enter();
 	void	Exit();
 public:	
-	bool			IsFanControlled() { return m_FanControl; };
 	void			WriteByte(UInt8 reg, UInt8 value);
 	
 	virtual UInt8	ReadByte(UInt8 index, bool* valid);

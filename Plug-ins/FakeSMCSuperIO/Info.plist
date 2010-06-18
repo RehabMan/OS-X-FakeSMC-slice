@@ -37,15 +37,15 @@
 			<key>SmartGuardian Override</key>
 			<dict>
 				<key>Enabled</key>
-				<false/>
+				<true/>
 				<key>Fan0</key>
 				<dict>
 					<key>Enabled</key>
-					<true/>
-					<key>PWM smoothing</key>
+					<false/>
+					<key>PWM Smoothing</key>
 					<true/>
 					<key>Slope PWM</key>
-					<integer>32</integer>
+					<integer>8</integer>
 					<key>PWM Automatic Operation</key>
 					<true/>
 					<key>Automatic Operation Temperature Input</key>
@@ -57,16 +57,16 @@
 					<key>Fan Stop Temperature</key>
 					<integer>0</integer>
 					<key>Start PWM Value</key>
-					<integer>32</integer>
+					<integer>35</integer>
 				</dict>
 				<key>Fan1</key>
 				<dict>
 					<key>Enabled</key>
-					<true/>
-					<key>PWM smoothing</key>
+					<false/>
+					<key>PWM Smoothing</key>
 					<true/>
 					<key>Slope PWM</key>
-					<integer>16</integer>
+					<integer>8</integer>
 					<key>PWM Automatic Operation</key>
 					<true/>
 					<key>Automatic Operation Temperature Input</key>
@@ -78,20 +78,20 @@
 					<key>Fan Stop Temperature</key>
 					<integer>0</integer>
 					<key>Start PWM Value</key>
-					<integer>32</integer>
+					<integer>35</integer>
 				</dict>
 				<key>Fan2</key>
 				<dict>
 					<key>Enabled</key>
 					<false/>
-					<key>PWM smoothing</key>
+					<key>PWM Smoothing</key>
 					<true/>
 					<key>Slope PWM</key>
-					<integer>1</integer>
+					<integer>8</integer>
 					<key>PWM Automatic Operation</key>
 					<true/>
 					<key>Automatic Operation Temperature Input</key>
-					<string>TMPPIN1</string>
+					<string>TMPPIN2</string>
 					<key>Software Operation PWM Value</key>
 					<string>32</string>
 					<key>Fan Start Temperature </key>
@@ -99,33 +99,21 @@
 					<key>Fan Stop Temperature</key>
 					<integer>0</integer>
 					<key>Start PWM Value</key>
-					<integer>1</integer>
+					<integer>35</integer>
 				</dict>
 				<key>Fan3</key>
 				<dict>
 					<key>Enabled</key>
-					<true/>
-					<key>PWM Automatic Operation</key>
-					<true/>
-					<key>Automatic Operation Temperature Input</key>
-					<string>TMPPIN1</string>
-					<key>Software Operation PWM Value</key>
-					<string>32</string>
+					<false/>
 					<key>Start PWM Value</key>
-					<integer>48</integer>
+					<integer>64</integer>
 				</dict>
 				<key>Fan4</key>
 				<dict>
 					<key>Enabled</key>
 					<false/>
-					<key>PWM Automatic Operation</key>
-					<true/>
-					<key>Automatic Operation Temperature Input</key>
-					<string>TMPPIN1</string>
-					<key>Software Operation PWM Value</key>
-					<string>8</string>
 					<key>Start PWM Value</key>
-					<integer>35</integer>
+					<integer>64</integer>
 				</dict>
 			</dict>
 			<key>Fan Names</key>
