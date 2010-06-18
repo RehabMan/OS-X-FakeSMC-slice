@@ -129,7 +129,7 @@ bool ACPImonitor::start(IOService * provider)
 		{
 			OSString* name = OSDynamicCast(OSString, fanIDs->getObject(i)); 
 			FanName = name->getCStringNoCopy();
-			snprintf(key, 5, "F%dID", FanOffset + i);
+			snprintf(key, 5, "F%dID", (int)(FanOffset + i));
 			FakeSMCAddKey(key, "ch8*", strlen(FanName), (char*)FanName);
 		}		
 		fanIDs->release();
