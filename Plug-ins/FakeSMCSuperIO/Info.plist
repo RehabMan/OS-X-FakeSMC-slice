@@ -37,15 +37,15 @@
 			<key>SmartGuardian Override</key>
 			<dict>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Fan0</key>
 				<dict>
 					<key>Enabled</key>
-					<false/>
+					<true/>
 					<key>PWM Smoothing</key>
 					<true/>
 					<key>Slope PWM</key>
-					<integer>8</integer>
+					<integer>64</integer>
 					<key>PWM Automatic Operation</key>
 					<true/>
 					<key>Automatic Operation Temperature Input</key>
@@ -118,10 +118,10 @@
 			</dict>
 			<key>Fan Names</key>
 			<array>
-				<string>Processor</string>
-				<string>Intake</string>
 				<string></string>
-				<string>Exhaust</string>
+				<string></string>
+				<string></string>
+				<string></string>
 				<string></string>
 			</array>
 		</dict>
