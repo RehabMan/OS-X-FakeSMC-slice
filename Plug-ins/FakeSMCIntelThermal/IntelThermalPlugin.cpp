@@ -9,6 +9,31 @@
 
 #include "IntelThermalPlugin.h"
 
+UInt8 IntelThermalPlugin::GetTemperature(UInt8 index)
+{
+	if (index > MaxCpuCount)
+		return 0;
+	
+	if (GlobalThermalValueObsolete[index])
+	{
+		UInt32 magic = 0;
+	
+		for (int i = 0 ; i < cpuid_info()->core_count; i++)
+		{
+			mp_rendezvous_no_intrs(IntelThermal, &magic);
+		}
+	}
+	else 
+	{
+		GlobalThermalValueObsolete[index] = true;
+	}
+	
+	if (m_CpuCoreiX)
+		return m_TjMaxCoreiX[index] - GlobalThermalValue[index];
+	
+	return m_TjMax - GlobalThermalValue[index];
+}
+
 bool IntelThermalPlugin::Probe()
 {
 	cpuid_update_generic_info();
@@ -147,21 +172,7 @@ void IntelThermalPlugin::Stop()
 
 void IntelThermalPlugin::OnKeyRead(const char* key, char* data)
 {
-	UInt32 magic = 0;
-		
-	mp_rendezvous_no_intrs(IntelThermal, &magic);
-		
-	UInt8 cpun = GetIndex(key[2]);
-		
-	if(m_CpuCoreiX)
-	{
-		data[0] = m_TjMaxCoreiX[cpun] - GlobalThermal[cpun];
-	}
-	else 
-	{
-		data[0] = m_TjMax - GlobalThermal[cpun];
-	}
-		
+	data[0] = GetTemperature(GetIndex(key[2]));
 	data[1] = 0;
 }
 

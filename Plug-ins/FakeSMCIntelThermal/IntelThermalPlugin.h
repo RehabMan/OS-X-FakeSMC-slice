@@ -31,7 +31,8 @@
 extern "C" void mp_rendezvous_no_intrs(void (*action_func)(void *), void * arg);
 extern "C" int cpu_number(void);
 
-static UInt8 GlobalThermal[MaxCpuCount];
+static UInt8 GlobalThermalValue[MaxCpuCount];
+static bool	GlobalThermalValueObsolete[MaxCpuCount];
 
 inline void IntelThermal(__unused void* magic)
 {
@@ -40,7 +41,11 @@ inline void IntelThermal(__unused void* magic)
 	if(cpn < MaxCpuCount)
 	{
 		UInt64 msr = rdmsr64(MSR_IA32_THERM_STATUS);
-		if (msr & 0x80000000) GlobalThermal[cpn] = (msr >> 16) & 0x7F;
+		if (msr & 0x80000000)
+		{ 
+			GlobalThermalValue[cpn] = (msr >> 16) & 0x7F;
+			GlobalThermalValueObsolete[cpn] = false;
+		}
 	}
 };
 
@@ -49,9 +54,12 @@ class IntelThermalPlugin : public FakeSMCBinding
 private:
 	UInt8	m_CpuCount;
 	bool	m_CpuCoreiX;
-	UInt	m_TjMaxCoreiX[MaxCpuCount];
+	UInt8	m_TjMaxCoreiX[MaxCpuCount];
 public:
-	UInt8	m_TjMax;
+	UInt8			m_TjMax;
+	
+	UInt8			GetTemperature(UInt8 index);
+	
 	bool			Probe();
     void			Start();
 	void			Stop();
