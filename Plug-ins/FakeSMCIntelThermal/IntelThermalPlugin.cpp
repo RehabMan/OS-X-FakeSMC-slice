@@ -23,10 +23,8 @@ UInt8 IntelThermalPlugin::GetTemperature(UInt8 index)
 			mp_rendezvous_no_intrs(IntelThermal, &magic);
 		}
 	}
-	else 
-	{
-		GlobalThermalValueObsolete[index] = true;
-	}
+
+	GlobalThermalValueObsolete[index] = true;
 	
 	if (m_CpuCoreiX)
 		return m_TjMaxCoreiX[index] - GlobalThermalValue[index];
