@@ -408,15 +408,22 @@ void Winbond::Init()
 			// do not add temperature sensor registers that read PECI
 			UInt8 flag = ReadByte(0, WINBOND_TEMPERATURE_SOURCE_SELECT_REG);
 			
-			// Heatsink
-			if ((flag & 0x04) == 0)	Bind(new WinbondTemperatureSensor(this, 0, "Th0H", "sp78", 2));
-		
+			if ((flag & 0x04) == 0)	
+			{
+				// Heatsink
+				Bind(new WinbondTemperatureSensor(this, 0, "Th0H", "sp78", 2));
+				// Northbridge
+				Bind(new WinbondTemperatureSensor(this, 2, "TN0P", "sp78", 2));
+			}
+			else 
+			{
+				// Heatsink
+				Bind(new WinbondTemperatureSensor(this, 2, "Th0H", "sp78", 2));
+			}
+
 			/*if ((flag & 0x40) == 0)
 			 list.Add(new Sensor(TEMPERATURE_NAME[1], 1, null,
 			 SensorType.Temperature, this, parameter));*/
-			
-			// Northbridge
-			Bind(new WinbondTemperatureSensor(this, 2, "TN0P", "sp78", 2));
 			
 			break;
 		}
@@ -427,15 +434,22 @@ void Winbond::Init()
 			// do not add temperature sensor registers that read PECI
 			UInt8 sel = ReadByte(0, WINBOND_TEMPERATURE_SOURCE_SELECT_REG);
 			
-			// Heatsink
-			if ((sel & 0x07) == 0) Bind(new WinbondTemperatureSensor(this, 0, "Th0H", "sp78", 2));
-			
+			if ((sel & 0x07) == 0) 
+			{
+				// Heatsink
+				Bind(new WinbondTemperatureSensor(this, 0, "Th0H", "sp78", 2));
+				// Northbridge
+				Bind(new WinbondTemperatureSensor(this, 2, "TN0P", "sp78", 2));
+			}
+			else
+			{
+				// Heatsink
+				Bind(new WinbondTemperatureSensor(this, 2, "Th0H", "sp78", 2));
+			}
+
 			/*if ((sel & 0x70) == 0)
 			 list.Add(new Sensor(TEMPERATURE_NAME[1], 1, null,
 			 SensorType.Temperature, this, parameter));*/
-			
-			// Northbridge
-			Bind(new WinbondTemperatureSensor(this, 2, "TN0P", "sp78", 2));
 			
 			break;
 		}
