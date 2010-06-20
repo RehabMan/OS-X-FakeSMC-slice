@@ -415,15 +415,18 @@ void Winbond::Init()
 				// Northbridge
 				Bind(new WinbondTemperatureSensor(this, 2, "TN0P", "sp78", 2));
 			}
-			else 
+			else if ((flag & 0x40) == 0)
 			{
 				// Heatsink
-				Bind(new WinbondTemperatureSensor(this, 2, "Th0H", "sp78", 2));
+				Bind(new WinbondTemperatureSensor(this, 1, "Th0H", "sp78", 2));
+				// Northbridge
+				Bind(new WinbondTemperatureSensor(this, 2, "TN0P", "sp78", 2));
 			}
-
-			/*if ((flag & 0x40) == 0)
-			 list.Add(new Sensor(TEMPERATURE_NAME[1], 1, null,
-			 SensorType.Temperature, this, parameter));*/
+			else
+			{
+				// Northbridge
+				Bind(new WinbondTemperatureSensor(this, 1, "TN0P", "sp78", 2));
+			}
 			
 			break;
 		}
@@ -441,15 +444,18 @@ void Winbond::Init()
 				// Northbridge
 				Bind(new WinbondTemperatureSensor(this, 2, "TN0P", "sp78", 2));
 			}
+			else if ((sel & 0x70) == 0)
+			{
+				// Heatsink
+				Bind(new WinbondTemperatureSensor(this, 1, "Th0H", "sp78", 2));
+				// Northbridge
+				Bind(new WinbondTemperatureSensor(this, 2, "TN0P", "sp78", 2));
+			}
 			else
 			{
 				// Heatsink
 				Bind(new WinbondTemperatureSensor(this, 2, "Th0H", "sp78", 2));
 			}
-
-			/*if ((sel & 0x70) == 0)
-			 list.Add(new Sensor(TEMPERATURE_NAME[1], 1, null,
-			 SensorType.Temperature, this, parameter));*/
 			
 			break;
 		}
