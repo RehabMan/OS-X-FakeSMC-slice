@@ -1,0 +1,388 @@
+// !$*UTF8*$!
+{
+	089C1669FE841209C02AAC07 /* Project object */ = {
+		activeArchitecturePreference = i386;
+		activeBuildConfigurationName = Release;
+		activeSDKPreference = macosx10.6;
+		activeTarget = 32D94FC30562CBF700B6AF17 /* SMCWinbondController */;
+		addToTargets = (
+			32D94FC30562CBF700B6AF17 /* SMCWinbondController */,
+		);
+		codeSenseManager = 4C6F29C211969B5D002DCCFF /* Code sense */;
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					502,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					364,
+					60,
+					20,
+					48.16259765625,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 298711385;
+			PBXWorkspaceStateSaveDate = 298711385;
+		};
+		perUserProjectItems = {
+			4C07684411B2E3EA00710233 /* PBXTextBookmark */ = 4C07684411B2E3EA00710233 /* PBXTextBookmark */;
+			4C07684611B2E3EA00710233 /* PBXTextBookmark */ = 4C07684611B2E3EA00710233 /* PBXTextBookmark */;
+			4C07684811B2E3EA00710233 /* PBXTextBookmark */ = 4C07684811B2E3EA00710233 /* PBXTextBookmark */;
+			4C07684C11B2E3EA00710233 /* PBXTextBookmark */ = 4C07684C11B2E3EA00710233 /* PBXTextBookmark */;
+			4C07686711B2E49B00710233 /* PBXTextBookmark */ = 4C07686711B2E49B00710233 /* PBXTextBookmark */;
+			4C40560A11CCD2D300FFE147 /* PBXTextBookmark */ = 4C40560A11CCD2D300FFE147 /* PBXTextBookmark */;
+			4C40561F11CD0CB200FFE147 /* PlistBookmark */ = 4C40561F11CD0CB200FFE147 /* PlistBookmark */;
+			4C40562011CD0CB200FFE147 /* PBXTextBookmark */ = 4C40562011CD0CB200FFE147 /* PBXTextBookmark */;
+			4C40565111CD355E00FFE147 /* PBXTextBookmark */ = 4C40565111CD355E00FFE147 /* PBXTextBookmark */;
+			4CC248CC11CE04E00054DEC3 /* PBXTextBookmark */ = 4CC248CC11CE04E00054DEC3 /* PBXTextBookmark */;
+			4CC248CD11CE04E00054DEC3 /* PBXTextBookmark */ = 4CC248CD11CE04E00054DEC3 /* PBXTextBookmark */;
+			4CC248CE11CE04E00054DEC3 /* PBXTextBookmark */ = 4CC248CE11CE04E00054DEC3 /* PBXTextBookmark */;
+			4CC248CF11CE04E00054DEC3 /* PBXTextBookmark */ = 4CC248CF11CE04E00054DEC3 /* PBXTextBookmark */;
+			4CC248D011CE04E00054DEC3 /* PBXTextBookmark */ = 4CC248D011CE04E00054DEC3 /* PBXTextBookmark */;
+			4CC248D111CE04E00054DEC3 /* PBXTextBookmark */ = 4CC248D111CE04E00054DEC3 /* PBXTextBookmark */;
+			4CC248D211CE04E00054DEC3 /* PBXTextBookmark */ = 4CC248D211CE04E00054DEC3 /* PBXTextBookmark */;
+			4CC248D311CE04E00054DEC3 /* PBXTextBookmark */ = 4CC248D311CE04E00054DEC3 /* PBXTextBookmark */;
+			4CFF407E1196ABAB00D6D9B2 /* PBXTextBookmark */ = 4CFF407E1196ABAB00D6D9B2 /* PBXTextBookmark */;
+		};
+		sourceControlManager = 4C6F29C111969B5D002DCCFF /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	1A224C3EFF42367911CA2CB7 /* FakeSMCSuperIOMonitor.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1066, 411}}";
+			sepNavSelRange = "{186, 0}";
+			sepNavVisRange = "{0, 601}";
+		};
+	};
+	1A224C3FFF42367911CA2CB7 /* FakeSMCSuperIOMonitor.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1066, 1040}}";
+			sepNavSelRange = "{668, 0}";
+			sepNavVisRange = "{893, 394}";
+		};
+	};
+	32D94FC30562CBF700B6AF17 /* SMCWinbondController */ = {
+		activeExec = 0;
+	};
+	4C07684411B2E3EA00710233 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4C07684511B2E3EA00710233 /* errno.h */;
+		name = "errno.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1395;
+		vrLoc = 2775;
+	};
+	4C07684511B2E3EA00710233 /* errno.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = errno.h;
+		path = /System/Library/Frameworks/Kernel.framework/Headers/sys/errno.h;
+		sourceTree = "<absolute>";
+	};
+	4C07684611B2E3EA00710233 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4C07684711B2E3EA00710233 /* ev.h */;
+		name = "ev.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 607;
+		vrLoc = 1590;
+	};
+	4C07684711B2E3EA00710233 /* ev.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = ev.h;
+		path = /System/Library/Frameworks/Kernel.framework/Headers/sys/ev.h;
+		sourceTree = "<absolute>";
+	};
+	4C07684811B2E3EA00710233 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4C07684911B2E3EA00710233 /* IOLib.h */;
+		name = "IOLib.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 694;
+		vrLoc = 19241;
+	};
+	4C07684911B2E3EA00710233 /* IOLib.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = IOLib.h;
+		path = /System/Library/Frameworks/Kernel.framework/Headers/IOKit/IOLib.h;
+		sourceTree = "<absolute>";
+	};
+	4C07684C11B2E3EA00710233 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AEAD02B611B176980016B8F9 /* SuperIO.cpp */;
+		name = "SuperIO.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 603;
+		vrLoc = 0;
+	};
+	4C07686711B2E49B00710233 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		name = "fakesmc.h: 38";
+		rLen = 0;
+		rLoc = 894;
+		rType = 0;
+		vrLen = 528;
+		vrLoc = 595;
+	};
+	4C40560A11CCD2D300FFE147 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3EFF42367911CA2CB7 /* FakeSMCSuperIOMonitor.h */;
+		name = "FakeSMCSuperIOMonitor.h: 13";
+		rLen = 0;
+		rLoc = 186;
+		rType = 0;
+		vrLen = 601;
+		vrLoc = 0;
+	};
+	4C40561F11CD0CB200FFE147 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 32D94FCF0562CBF700B6AF17 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Plug-ins/SMCWinbondController/Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775808;
+	};
+	4C40562011CD0CB200FFE147 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCSuperIOMonitor.cpp */;
+		name = "FakeSMCSuperIOMonitor.cpp: 34";
+		rLen = 0;
+		rLoc = 668;
+		rType = 0;
+		vrLen = 394;
+		vrLoc = 893;
+	};
+	4C40565111CD355E00FFE147 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AEDC0F8211C2503D00A44427 /* FakeSMCBinding.h */;
+		name = "FakeSMCBinding.h: 19";
+		rLen = 0;
+		rLoc = 334;
+		rType = 0;
+		vrLen = 446;
+		vrLoc = 1467;
+	};
+	4C6F29C111969B5D002DCCFF /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	4C6F29C211969B5D002DCCFF /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	4C6F2A1311969FA3002DCCFF /* proc_reg.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = proc_reg.h;
+		path = /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/i386/proc_reg.h;
+		sourceTree = "<absolute>";
+	};
+	4CC248CC11CE04E00054DEC3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AEDC0A0611C8030700912FC5 /* WinbondSensors.cpp */;
+		name = "WinbondSensors.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1007;
+		vrLoc = 0;
+	};
+	4CC248CD11CE04E00054DEC3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AEAD02B511B176980016B8F9 /* SuperIO.h */;
+		name = "SuperIO.h: 69";
+		rLen = 0;
+		rLoc = 1441;
+		rType = 0;
+		vrLen = 1052;
+		vrLoc = 995;
+	};
+	4CC248CE11CE04E00054DEC3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4CD33A0911CBB7D900AF9FCC /* SmartFanIIIController.h */;
+		name = "SmartFanIIIController.h: 26";
+		rLen = 0;
+		rLoc = 471;
+		rType = 0;
+		vrLen = 829;
+		vrLoc = 0;
+	};
+	4CC248CF11CE04E00054DEC3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AEAD041611B18D4B0016B8F9 /* Winbond.h */;
+		name = "Winbond.h: 42";
+		rLen = 0;
+		rLoc = 1257;
+		rType = 0;
+		vrLen = 1788;
+		vrLoc = 0;
+	};
+	4CC248D011CE04E00054DEC3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4CD33A0711CBB7D600AF9FCC /* SmartFanIIIController.cpp */;
+		name = "SmartFanIIIController.cpp: 27";
+		rLen = 0;
+		rLoc = 612;
+		rType = 0;
+		vrLen = 930;
+		vrLoc = 1250;
+	};
+	4CC248D111CE04E00054DEC3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AEDC0A0511C8030700912FC5 /* WinbondSensors.h */;
+		name = "WinbondSensors.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1345;
+		vrLoc = 0;
+	};
+	4CC248D211CE04E00054DEC3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AEAD041711B18D4B0016B8F9 /* Winbond.cpp */;
+		name = "Winbond.cpp: 480";
+		rLen = 0;
+		rLoc = 9426;
+		rType = 0;
+		vrLen = 1573;
+		vrLoc = 0;
+	};
+	4CC248D311CE04E00054DEC3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AEAD041711B18D4B0016B8F9 /* Winbond.cpp */;
+		name = "Winbond.cpp: 15";
+		rLen = 0;
+		rLoc = 354;
+		rType = 0;
+		vrLen = 1685;
+		vrLoc = 131;
+	};
+	4CD33A0711CBB7D600AF9FCC /* SmartFanIIIController.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {684, 2392}}";
+			sepNavSelRange = "{612, 0}";
+			sepNavVisRange = "{1250, 930}";
+		};
+	};
+	4CD33A0911CBB7D900AF9FCC /* SmartFanIIIController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {680, 699}}";
+			sepNavSelRange = "{471, 0}";
+			sepNavVisRange = "{0, 829}";
+		};
+	};
+	4CFF407E1196ABAB00D6D9B2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4C6F2A1311969FA3002DCCFF /* proc_reg.h */;
+		name = "proc_reg.h: 350";
+		rLen = 0;
+		rLoc = 11341;
+		rType = 0;
+		vrLen = 1769;
+		vrLoc = 0;
+	};
+	AEAD02B511B176980016B8F9 /* SuperIO.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1105, 1417}}";
+			sepNavSelRange = "{1441, 0}";
+			sepNavVisRange = "{1121, 537}";
+			sepNavWindowFrame = "{{25, 46}, {1575, 829}}";
+		};
+	};
+	AEAD02B611B176980016B8F9 /* SuperIO.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {717, 1742}}";
+			sepNavSelRange = "{2743, 0}";
+			sepNavVisRange = "{0, 371}";
+		};
+	};
+	AEAD041611B18D4B0016B8F9 /* Winbond.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {680, 910}}";
+			sepNavSelRange = "{1257, 0}";
+			sepNavVisRange = "{0, 1788}";
+		};
+	};
+	AEAD041711B18D4B0016B8F9 /* Winbond.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {838, 6136}}";
+			sepNavSelRange = "{354, 0}";
+			sepNavVisRange = "{131, 1685}";
+			sepNavWindowFrame = "{{15, 58}, {894, 815}}";
+		};
+	};
+	AEDC0A0511C8030700912FC5 /* WinbondSensors.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1125, 871}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1345}";
+		};
+	};
+	AEDC0A0611C8030700912FC5 /* WinbondSensors.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {680, 699}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1007}";
+		};
+	};
+	AEDC0F8211C2503D00A44427 /* FakeSMCBinding.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1066, 1157}}";
+			sepNavSelRange = "{334, 0}";
+			sepNavVisRange = "{1467, 446}";
+		};
+	};
+}

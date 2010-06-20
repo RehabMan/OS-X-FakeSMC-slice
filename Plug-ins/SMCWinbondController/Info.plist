@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleName</key>
+	<string>${PRODUCT_NAME}</string>
+	<key>CFBundleIdentifier</key>
+	<string>org.mozodojo.${PRODUCT_NAME}</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundlePackageType</key>
+	<string>KEXT</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>2.2</string>
+	<key>CFBundleShortVersionString</key>
+	<string>2.2</string>
+	<key>IOKitPersonalities</key>
+	<dict>
+		<key>SuperIOMonitorPlugin</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>org.mozodojo.${PRODUCT_NAME}</string>
+			<key>IOClass</key>
+			<string>FakeSMCSuperIOMonitor</string>
+			<key>IOMatchCategory</key>
+			<string>FakeSMCSuperIOMonitor</string>
+			<key>IOProviderClass</key>
+			<string>IOResources</string>
+			<key>IOResourceMatch</key>
+			<string>IOKit</string>
+			<key>SmartGuardian Override</key>
+			<dict>
+				<key>Enabled</key>
+				<false/>
+				<key>Fan0</key>
+				<dict>
+					<key>Enabled</key>
+					<true/>
+					<key>PWM smoothing</key>
+					<true/>
+					<key>Slope PWM</key>
+					<integer>32</integer>
+					<key>PWM Automatic Operation</key>
+					<true/>
+					<key>Automatic Operation Temperature Input</key>
+					<string>TMPPIN2</string>
+					<key>Software Operation PWM Value</key>
+					<string>32</string>
+					<key>Fan Start Temperature </key>
+					<integer>20</integer>
+					<key>Fan Stop Temperature</key>
+					<integer>0</integer>
+					<key>Start PWM Value</key>
+					<integer>32</integer>
+				</dict>
+				<key>Fan1</key>
+				<dict>
+					<key>Enabled</key>
+					<true/>
+					<key>PWM smoothing</key>
+					<true/>
+					<key>Slope PWM</key>
+					<integer>16</integer>
+					<key>PWM Automatic Operation</key>
+					<true/>
+					<key>Automatic Operation Temperature Input</key>
+					<string>TMPPIN1</string>
+					<key>Software Operation PWM Value</key>
+					<string>32</string>
+					<key>Fan Start Temperature </key>
+					<integer>20</integer>
+					<key>Fan Stop Temperature</key>
+					<integer>0</integer>
+					<key>Start PWM Value</key>
+					<integer>32</integer>
+				</dict>
+				<key>Fan2</key>
+				<dict>
+					<key>Enabled</key>
+					<false/>
+					<key>PWM smoothing</key>
+					<true/>
+					<key>Slope PWM</key>
+					<integer>1</integer>
+					<key>PWM Automatic Operation</key>
+					<true/>
+					<key>Automatic Operation Temperature Input</key>
+					<string>TMPPIN1</string>
+					<key>Software Operation PWM Value</key>
+					<string>32</string>
+					<key>Fan Start Temperature </key>
+					<integer>20</integer>
+					<key>Fan Stop Temperature</key>
+					<integer>0</integer>
+					<key>Start PWM Value</key>
+					<integer>1</integer>
+				</dict>
+				<key>Fan3</key>
+				<dict>
+					<key>Enabled</key>
+					<true/>
+					<key>PWM Automatic Operation</key>
+					<true/>
+					<key>Automatic Operation Temperature Input</key>
+					<string>TMPPIN1</string>
+					<key>Software Operation PWM Value</key>
+					<string>32</string>
+					<key>Start PWM Value</key>
+					<integer>48</integer>
+				</dict>
+				<key>Fan4</key>
+				<dict>
+					<key>Enabled</key>
+					<false/>
+					<key>PWM Automatic Operation</key>
+					<true/>
+					<key>Automatic Operation Temperature Input</key>
+					<string>TMPPIN1</string>
+					<key>Software Operation PWM Value</key>
+					<string>8</string>
+					<key>Start PWM Value</key>
+					<integer>35</integer>
+				</dict>
+			</dict>
+			<key>Fan Names</key>
+			<array>
+				<string>Processor</string>
+				<string>Intake</string>
+				<string></string>
+				<string>Exhaust</string>
+				<string></string>
+			</array>
+		</dict>
+	</dict>
+	<key>OSBundleLibraries</key>
+	<dict>
+		<key>com.apple.kpi.iokit</key>
+		<string>9.0</string>
+		<key>com.apple.kpi.libkern</key>
+		<string>9.0</string>
+		<key>com.apple.kpi.unsupported</key>
+		<string>9.0</string>
+		<key>org.netkas.FakeSMC</key>
+		<string>2.7</string>
+	</dict>
+</dict>
+</plist>
