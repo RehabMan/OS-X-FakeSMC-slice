@@ -61,6 +61,7 @@ bool IntelThermalPlugin::Probe()
 	UInt32 CpuStepping =  cpuid_info()->cpuid_stepping;
 	
 	InfoLog("CPU family 0x%x, model 0x%x, stepping 0x%x", (unsigned int)CpuFamily, (unsigned int)CpuModel, (unsigned int)CpuStepping);
+	InfoLog("Found %d cores %d threads", m_CpuCount, cpuid_info()->thread_count);
 	if (m_TjMax) {
 		InfoLog("Manually CPU Tjmax %d", m_TjMax);
 		
@@ -133,8 +134,10 @@ bool IntelThermalPlugin::Probe()
 		} 
 			break;
 	}
-	
-	InfoLog("CPU Tjmax %d", m_TjMax);
+	if (m_CpuCoreiX) {
+		InfoLog("CPU Tjmax %d", m_TjMaxCoreiX[0]);
+	} else 
+		InfoLog("CPU Tjmax %d", m_TjMax);
 
 	return true;
 }
