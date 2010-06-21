@@ -18,6 +18,7 @@ protected:
 	//	void	Update(SMCData node);
 //	IOWorkLoop *		TZWorkLoop;
 //	IOTimerEventSource * TZPollTimer;
+	const char*			FanName[5];
 	
 public:
 	void Update(const char* key, char* data);
