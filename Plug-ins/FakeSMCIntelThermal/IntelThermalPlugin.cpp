@@ -134,10 +134,18 @@ bool IntelThermalPlugin::Probe()
 		} 
 			break;
 	}
-	if (m_CpuCoreiX) {
-		InfoLog("CPU Tjmax %d", m_TjMaxCoreiX[0]);
-	} else 
+	
+	if (m_CpuCoreiX) 
+	{
+		for (int i = 0; i < m_CpuCount; i++)
+		{
+			InfoLog("CPU#%X Tjmax %d", i, m_TjMaxCoreiX[i]);
+		}
+	} 
+	else 
+	{
 		InfoLog("CPU Tjmax %d", m_TjMax);
+	}
 
 	return true;
 }
