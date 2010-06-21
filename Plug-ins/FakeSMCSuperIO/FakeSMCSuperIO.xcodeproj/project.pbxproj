@@ -12,6 +12,7 @@
 		32D94FCA0562CBF700B6AF17 /* FakeSMCSuperIOMonitor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCSuperIOMonitor.cpp */; settings = {ATTRIBUTES = (); }; };
 		AE0D5B4911C80E39000C2425 /* FintekSensors.h in Headers */ = {isa = PBXBuildFile; fileRef = AE0D5B4711C80E39000C2425 /* FintekSensors.h */; };
 		AE0D5B4A11C80E39000C2425 /* FintekSensors.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE0D5B4811C80E39000C2425 /* FintekSensors.cpp */; };
+		AEA7559411CFCF0700299353 /* cpuid.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA7559311CFCF0700299353 /* cpuid.h */; };
 		AEAD029011B173120016B8F9 /* ITE.h in Headers */ = {isa = PBXBuildFile; fileRef = AEAD028E11B173120016B8F9 /* ITE.h */; };
 		AEAD029111B173120016B8F9 /* ITE.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEAD028F11B173120016B8F9 /* ITE.cpp */; };
 		AEAD02B711B176980016B8F9 /* SuperIO.h in Headers */ = {isa = PBXBuildFile; fileRef = AEAD02B511B176980016B8F9 /* SuperIO.h */; };
@@ -37,6 +38,7 @@
 		8DA8362C06AD9B9200E5AC22 /* Kernel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kernel.framework; path = /System/Library/Frameworks/Kernel.framework; sourceTree = "<absolute>"; };
 		AE0D5B4711C80E39000C2425 /* FintekSensors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FintekSensors.h; sourceTree = "<group>"; };
 		AE0D5B4811C80E39000C2425 /* FintekSensors.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FintekSensors.cpp; sourceTree = "<group>"; };
+		AEA7559311CFCF0700299353 /* cpuid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpuid.h; sourceTree = "<group>"; };
 		AEAD028E11B173120016B8F9 /* ITE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITE.h; sourceTree = "<group>"; };
 		AEAD028F11B173120016B8F9 /* ITE.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ITE.cpp; sourceTree = "<group>"; };
 		AEAD02B511B176980016B8F9 /* SuperIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperIO.h; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 		247142CAFF3F8F9811CA285C /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				AEA7559311CFCF0700299353 /* cpuid.h */,
 				AEDC0F8211C2503D00A44427 /* FakeSMCBinding.h */,
 				AEE9021711C5431100088C05 /* Binding.h */,
 				AEAD02B511B176980016B8F9 /* SuperIO.h */,
@@ -134,6 +137,7 @@
 				AEDC09FF11C8028700912FC5 /* ITESensors.h in Headers */,
 				AEDC0A0711C8030700912FC5 /* WinbondSensors.h in Headers */,
 				AE0D5B4911C80E39000C2425 /* FintekSensors.h in Headers */,
+				AEA7559411CFCF0700299353 /* cpuid.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

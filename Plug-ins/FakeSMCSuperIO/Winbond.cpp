@@ -12,6 +12,7 @@
 
 #include "Winbond.h"
 #include "WinbondSensors.h"
+#include "cpuid.h"
 
 UInt8 Winbond::ReadByte(UInt8 bank, UInt8 reg) 
 {
@@ -400,74 +401,93 @@ bool Winbond::Probe()
 
 void Winbond::Init()
 {	
-	switch (Model) 
+	SuperIO::Init();
+	
+	bool isCpuCore_i = false;
+	
+	if (strcmp(cpuid_info()->cpuid_vendor, CPUID_VID_INTEL) != 0) 
 	{
-		case W83667HG:
-		case W83667HGB:
+		switch (cpuid_info()->cpuid_family)
 		{
-			// do not add temperature sensor registers that read PECI
-			UInt8 flag = ReadByte(0, WINBOND_TEMPERATURE_SOURCE_SELECT_REG);
-			
-			if ((flag & 0x04) == 0)	
+			case 0x6:
 			{
+				switch (cpuid_info()->cpuid_model)
+				{
+					case 0x1A: // Intel Core i7 LGA1366 (45nm)
+					case 0x1E: // Intel Core i5, i7 LGA1156 (45nm)
+					case 0x25: // Intel Core i3, i5, i7 LGA1156 (32nm)
+					case 0x2C: // Intel Core i7 LGA1366 (32nm) 6 Core
+						isCpuCore_i = true;
+						break;
+				}
+			}	break;
+		}
+	}
+	
+	if (isCpuCore_i)
+	{
+		// Heatsink
+		Bind(new WinbondTemperatureSensor(this, 2, "Th0H", "sp78", 2));
+	}
+	else 
+	{	
+		switch (Model) 
+		{
+			case W83667HG:
+			case W83667HGB:
+			{
+				// do not add temperature sensor registers that read PECI
+				UInt8 flag = ReadByte(0, WINBOND_TEMPERATURE_SOURCE_SELECT_REG);
+				
+				if ((flag & 0x04) == 0)	
+				{
+					// Heatsink
+					Bind(new WinbondTemperatureSensor(this, 0, "Th0H", "sp78", 2));
+				}
+				else if ((flag & 0x40) == 0)
+				{
+					// Heatsink
+					Bind(new WinbondTemperatureSensor(this, 1, "Th0H", "sp78", 2));
+				}
+
+				// Northbridge
+				Bind(new WinbondTemperatureSensor(this, 2, "TN0P", "sp78", 2));
+				
+				break;
+			}
+				
+			case W83627DHG:        
+			case W83627DHGP:
+			{
+				// do not add temperature sensor registers that read PECI
+				UInt8 sel = ReadByte(0, WINBOND_TEMPERATURE_SOURCE_SELECT_REG);
+				
+				if ((sel & 0x07) == 0) 
+				{
+					// Heatsink
+					Bind(new WinbondTemperatureSensor(this, 0, "Th0H", "sp78", 2));
+				}
+				else if ((sel & 0x70) == 0)
+				{
+					// Heatsink
+					Bind(new WinbondTemperatureSensor(this, 0, "Th0H", "sp78", 2));
+				}
+				
+				// Northbridge
+				Bind(new WinbondTemperatureSensor(this, 2, "TN0P", "sp78", 2));
+				
+				break;
+			}
+				
+			default:
+			{
+				// no PECI support, add all sensors
 				// Heatsink
 				Bind(new WinbondTemperatureSensor(this, 0, "Th0H", "sp78", 2));
 				// Northbridge
 				Bind(new WinbondTemperatureSensor(this, 2, "TN0P", "sp78", 2));
+				break;
 			}
-			else if ((flag & 0x40) == 0)
-			{
-				// Heatsink
-				Bind(new WinbondTemperatureSensor(this, 1, "Th0H", "sp78", 2));
-				// Northbridge
-				Bind(new WinbondTemperatureSensor(this, 2, "TN0P", "sp78", 2));
-			}
-			else
-			{
-				// Northbridge
-				Bind(new WinbondTemperatureSensor(this, 1, "TN0P", "sp78", 2));
-			}
-			
-			break;
-		}
-			
-		case W83627DHG:        
-		case W83627DHGP:
-		{
-			// do not add temperature sensor registers that read PECI
-			UInt8 sel = ReadByte(0, WINBOND_TEMPERATURE_SOURCE_SELECT_REG);
-			
-			if ((sel & 0x07) == 0) 
-			{
-				// Heatsink
-				Bind(new WinbondTemperatureSensor(this, 0, "Th0H", "sp78", 2));
-				// Northbridge
-				Bind(new WinbondTemperatureSensor(this, 2, "TN0P", "sp78", 2));
-			}
-			else if ((sel & 0x70) == 0)
-			{
-				// Heatsink
-				Bind(new WinbondTemperatureSensor(this, 1, "Th0H", "sp78", 2));
-				// Northbridge
-				Bind(new WinbondTemperatureSensor(this, 2, "TN0P", "sp78", 2));
-			}
-			else
-			{
-				// Heatsink
-				Bind(new WinbondTemperatureSensor(this, 2, "Th0H", "sp78", 2));
-			}
-			
-			break;
-		}
-			
-		default:
-		{
-			// no PECI support, add all sensors
-			// Heatsink
-			Bind(new WinbondTemperatureSensor(this, 0, "Th0H", "sp78", 2));
-			// Northbridge
-			Bind(new WinbondTemperatureSensor(this, 2, "TN0P", "sp78", 2));
-			break;
 		}
 	}
 	

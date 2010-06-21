@@ -42,7 +42,9 @@ IOService* FakeSMCSuperIOMonitor::probe(IOService *provider, SInt32 *score)
 								
 				if(!superio->Probe())
 				{
-					InfoLog("No supported Super I/O chip found!");
+					delete superio;
+					
+					InfoLog("No supported Super I/O chip has found!");
 					return 0;
 				}
 			}

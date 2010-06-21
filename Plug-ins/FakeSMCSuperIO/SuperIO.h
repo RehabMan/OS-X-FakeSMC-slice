@@ -17,6 +17,7 @@
 
 #include "FakeSMCBinding.h"
 #include "Binding.h"
+#include "cpuid.h"
 
 // Registers
 const UInt8 SUPERIO_CONFIGURATION_CONTROL_REGISTER	= 0x02;
@@ -115,7 +116,7 @@ public:
 	virtual SInt16	ReadTachometer(...) { return 0; };
 	
 	virtual bool	Probe() { return false; };
-	virtual void	Init() {};
+	virtual void	Init() { cpuid_update_generic_info(); };
 	virtual void	Finish() {};
 };
 
