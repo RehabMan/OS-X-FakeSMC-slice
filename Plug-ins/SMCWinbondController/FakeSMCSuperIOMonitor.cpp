@@ -11,7 +11,7 @@ OSDefineMetaClassAndStructors(FakeSMCSuperIOMonitor, IOService)
 
 bool FakeSMCSuperIOMonitor::init(OSDictionary *properties)
 {
-	DebugLog("Initialising...");
+	//DebugLog("Initializing...");
 	
     super::init(properties);
 	
@@ -20,7 +20,7 @@ bool FakeSMCSuperIOMonitor::init(OSDictionary *properties)
 
 IOService* FakeSMCSuperIOMonitor::probe(IOService *provider, SInt32 *score)
 {
-	DebugLog("Probing...");
+	//DebugLog("Probing...");
 	
 	if (super::probe(provider, score) != this) return 0;
 	
@@ -44,7 +44,7 @@ IOService* FakeSMCSuperIOMonitor::probe(IOService *provider, SInt32 *score)
 
 bool FakeSMCSuperIOMonitor::start(IOService * provider)
 {
-	DebugLog("Starting...");
+	//DebugLog("Starting...");
 	
 	if (!super::start(provider)) return false;
 	
@@ -62,7 +62,7 @@ bool FakeSMCSuperIOMonitor::start(IOService * provider)
 
 void FakeSMCSuperIOMonitor::stop (IOService* provider)
 {
-	DebugLog("Stoping...");
+	//DebugLog("Stopping...");
 	
 	if(superio)
 		superio->Finish();
@@ -72,7 +72,7 @@ void FakeSMCSuperIOMonitor::stop (IOService* provider)
 
 void FakeSMCSuperIOMonitor::free ()
 {
-	DebugLog("Freeing...");
+	//DebugLog("Freeing...");
 	
 	delete superio;
 	

@@ -25,7 +25,7 @@ public:
 	
 	Binding(const char* key, const char* type, UInt8 size)
 	{
-		InfoLog("Binding key %s", key);
+		//InfoLog("Binding key %s", key);
 		
 		m_Key = (char*)IOMalloc(5);
 		bcopy(key, m_Key, 5);
@@ -39,7 +39,7 @@ public:
 	{
 		if (m_Key)
 		{
-			InfoLog("Removing key %s binding", m_Key);
+			//InfoLog("Removing key %s binding", m_Key);
 			
 			IOFree(m_Key, 5);
 			FakeSMCRemoveKeyBinding(m_Key);
