@@ -50,8 +50,8 @@
 		<string>9.0</string>
 		<key>com.apple.kpi.unsupported</key>
 		<string>9.0</string>
-		<key>org.netkas.fakesmc</key>
-		<string>2.6.1</string>
+		<key>org.netkas.FakeSMC</key>
+		<string>2.7</string>
 	</dict>
 </dict>
 </plist>
