@@ -22,7 +22,7 @@ IOService* FakeSMCSuperIOMonitor::probe(IOService *provider, SInt32 *score)
 {
 	//DebugLog("Probing...");
 	
-	if (super::probe(provider, score) != this) return 0;
+	if (super::probe(provider, score) != this) return false;
 	
 	if(!superio)
 	{
@@ -49,14 +49,10 @@ bool FakeSMCSuperIOMonitor::start(IOService * provider)
 	if (!super::start(provider)) return false;
 	
 	if(superio)
-	{
 		superio->Init();
-	}
 	else 
-	{
 		return false;
-	}
-
+	
 	return true;
 }
 
