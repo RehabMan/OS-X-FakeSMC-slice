@@ -24,17 +24,11 @@ IOService* FakeSMCSuperIOMonitor::probe(IOService *provider, SInt32 *score)
 	
 	if (super::probe(provider, score) != this) return false;
 	
-	if(!superio)
-	{
-		superio = new Winbond();
-			
-		if(!superio->Probe())
-		{
-			InfoLog("No supported Super I/O chip found!");
-			return false;
-		}
-	}
+	superio = new Winbond();
 	
+	if(!superio->Probe())
+		return false;
+			
 	InfoLog("Found %s Super I/O chip", superio->GetModelName());
 
 	superio->LoadConfiguration(this);
