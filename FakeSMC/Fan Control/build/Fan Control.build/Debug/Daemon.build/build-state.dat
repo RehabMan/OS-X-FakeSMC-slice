@@ -1,0 +1,258 @@
+TDaemon
+v7
+r0
+t298894417.080985
+cCheck dependencies
+cProcessPCH /var/folders/Q0/Q0K5jQjpGSaJGBVodmhfok+++TU/-Caches-/com.apple.Xcode.504/SharedPrecompiledHeaders/AppKit-edqcmvqwpxkqmxbubwikrbvvxjnn/AppKit.h.gch /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/AppKit.framework/Headers/AppKit.h normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC "build/Fan Control.build/Debug/Daemon.build/Objects-normal/i386/MFDaemon.o" "/Users/Michael/Desktop/Source Code/MFDaemon.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC "build/Fan Control.build/Debug/Daemon.build/Objects-normal/i386/smc.o" "/Users/Michael/Desktop/Source Code/smc.c" normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC "build/Fan Control.build/Debug/Daemon.build/Objects-normal/i386/main.o" "/Users/Michael/Desktop/Source Code/main.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+cLd "/Users/Michael/Desktop/Source Code/build/Debug/FanControlDaemon" normal i386
+
+N/Developer/SDKs/MacOSX10.4u.sdk
+c000000004A1199E200000000000000EE
+t1242667490
+s238
+
+N/Developer/SDKs/MacOSX10.4u.sdk/System/Library/Frameworks/AppKit.framework/Headers/AppKit.h
+c000000004628C8C90000000000001504
+t1177077961
+s5380
+
+N/Developer/SDKs/MacOSX10.4u.sdk/System/Library/Frameworks/Cocoa.framework/Headers/Cocoa.h
+c0000000040C4AA6800000000000001E5
+t1086630504
+s485
+
+N/Developer/SDKs/MacOSX10.4u.sdk/System/Library/Frameworks/IOKit.framework/Headers/IOKitLib.h
+c0000000046F2350C000000000000F6CD
+t1190278412
+s63181
+
+N/Developer/SDKs/MacOSX10.4u.sdk/usr/include/stdio.h
+c00000000463BAA5A0000000000003B7F
+t1178315354
+s15231
+
+N/Developer/SDKs/MacOSX10.4u.sdk/usr/include/stdlib.h
+c00000000463BAA5A0000000000002647
+t1178315354
+s9799
+
+N/Developer/SDKs/MacOSX10.4u.sdk/usr/include/string.h
+c00000000463BAA5A00000000000014D3
+t1178315354
+s5331
+
+N/Developer/SDKs/MacOSX10.4u.sdk/usr/include/unistd.h
+c00000000463BAA5A0000000000004EED
+t1178315354
+s20205
+
+N/Developer/SDKs/MacOSX10.6.sdk
+c000000004BE0165B00000000000000EE
+t1272976987
+s238
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/AppKit.framework/Headers/AppKit.h
+c000000004A67D2A800000000000017ED
+t1248318120
+s6125
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Cocoa.framework/Headers/Cocoa.h
+c0000000040C4AA6800000000000001E5
+t1086630504
+s485
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/IOKit.framework/Headers/IOKitLib.h
+c000000004A4D52090000000000012048
+t1246581257
+s73800
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/stdio.h
+c000000004A5C14A70000000000004174
+t1247548583
+s16756
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/stdlib.h
+c000000004A5C14A70000000000002DF5
+t1247548583
+s11765
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/string.h
+c000000004A5C14A70000000000001731
+t1247548583
+s5937
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/unistd.h
+c000000004A5C14A7000000000000563E
+t1247548583
+s22078
+
+N/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004BC1384E0000000000B37440
+t1270954062
+s11760704
+
+N/System/Library/Frameworks/IOKit.framework/IOKit
+c000000004BBD310E0000000000172A20
+t1270690062
+s1518112
+
+N/Users/Michael/Desktop/Source Code/MFDaemon.h
+c00000000472254060000000000000418
+t1193432070
+s1048
+i<Cocoa/Cocoa.h>
+i"MFProtocol.h"
+
+N/Users/Michael/Desktop/Source Code/MFDaemon.m
+c000000004C208C4000000000000015E6
+t1277201472
+s5606
+i"MFDaemon.h"
+i"MFProtocol.h"
+i"MFDefinitions.h"
+i"smc.h"
+
+N/Users/Michael/Desktop/Source Code/MFDefinitions.h
+c00000000472254060000000000000346
+t1193432070
+s838
+
+N/Users/Michael/Desktop/Source Code/MFProtocol.h
+c000000004722540600000000000004E2
+t1193432070
+s1250
+
+N/Users/Michael/Desktop/Source Code/build/Debug/FanControlDaemon
+t1277201473
+s27548
+
+N/Users/Michael/Desktop/Source Code/build/Fan Control.build/Debug/Daemon.build/Objects-normal/i386/FanControlDaemon.LinkFileList
+c000000004C2066AC000000000000013E
+t1277191852
+s318
+
+N/Users/Michael/Desktop/Source Code/build/Fan Control.build/Debug/Daemon.build/Objects-normal/i386/MFDaemon.o
+t1277201473
+s17372
+
+N/Users/Michael/Desktop/Source Code/build/Fan Control.build/Debug/Daemon.build/Objects-normal/i386/main.o
+t1277191858
+s8616
+
+N/Users/Michael/Desktop/Source Code/build/Fan Control.build/Debug/Daemon.build/Objects-normal/i386/smc.o
+t1277191858
+s20948
+
+N/Users/Michael/Desktop/Source Code/main.m
+c00000000472320D60000000000000724
+t1193484502
+s1828
+i<Cocoa/Cocoa.h>
+i<unistd.h>
+i"MFDaemon.h"
+i"MFProtocol.h"
+
+N/Users/Michael/Desktop/Source Code/smc.c
+c00000000472254060000000000002DFF
+t1193432070
+s11775
+i<unistd.h>
+i<stdio.h>
+i<stdlib.h>
+i<string.h>
+i<IOKit/IOKitLib.h>
+i"smc.h"
+
+N/Users/Michael/Desktop/Source Code/smc.h
+c000000004C2066AC0000000000000BA4
+t1277191852
+s2980
+
+N/var/folders/Q0/Q0K5jQjpGSaJGBVodmhfok+++TU/-Caches-/com.apple.Xcode.504/SharedPrecompiledHeaders/AppKit-bazunbwhnqfbxobnnkxkwbzcgpts/AppKit.h.gch
+t2
+s0
+
+N/var/folders/Q0/Q0K5jQjpGSaJGBVodmhfok+++TU/-Caches-/com.apple.Xcode.504/SharedPrecompiledHeaders/AppKit-edqcmvqwpxkqmxbubwikrbvvxjnn/AppKit.h.gch
+t1277191857
+s56071184
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies298894417#298894417#0(0"0(0#1#0"4300911832#0"0#
+
+CCompileC "build/Fan Control.build/Debug/Daemon.build/Objects-normal/i386/MFDaemon.o" "/Users/Michael/Desktop/Source Code/MFDaemon.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+s298894272.177753
+e298894273.052959
+r1
+xCompileC
+xbuild/Fan Control.build/Debug/Daemon.build/Objects-normal/i386/MFDaemon.o
+x/Users/Michael/Desktop/Source Code/MFDaemon.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/Michael/Desktop/Source Code/MFDaemon.m: In function '-[MFDaemon timer:]':
+o/Users/Michael/Desktop/Source Code/MFDaemon.m:102: warning: unused variable 'step'
+lSLF07#2@53"Compile /Users/Michael/Desktop/Source Code/MFDaemon.m298894272#298894273#0(164"/Users/Michael/Desktop/Source Code/MFDaemon.m: In function '-[MFDaemon timer:]':/Users/Michael/Desktop/Source Code/MFDaemon.m:102: warning: unused variable 'step'1(22@22"Unused variable 'step'298894272#81#83#0(6@45"/Users/Michael/Desktop/Source Code/MFDaemon.m298894272#102#0#102#0#19"unused variable '*'0(0#0#45"/Users/Michael/Desktop/Source Code/MFDaemon.m4300911832#1064"    cd "/Users/Michael/Desktop/Source Code"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 "-I/Users/Michael/Desktop/Source Code/build/Fan Control.build/Debug/Daemon.build/FanControlDaemon.hmap" "-F/Users/Michael/Desktop/Source Code/build/Debug" "-I/Users/Michael/Desktop/Source Code/build/Debug/include" "-I/Users/Michael/Desktop/Source Code/build/Fan Control.build/Debug/Daemon.build/DerivedSources/i386" "-I/Users/Michael/Desktop/Source Code/build/Fan Control.build/Debug/Daemon.build/DerivedSources" -include /var/folders/Q0/Q0K5jQjpGSaJGBVodmhfok+++TU/-Caches-/com.apple.Xcode.504/SharedPrecompiledHeaders/AppKit-edqcmvqwpxkqmxbubwikrbvvxjnn/AppKit.h -c "/Users/Michael/Desktop/Source Code/MFDaemon.m" -o "/Users/Michael/Desktop/Source Code/build/Fan Control.build/Debug/Daemon.build/Objects-normal/i386/MFDaemon.o"0#
+
+CCompileC "build/Fan Control.build/Debug/Daemon.build/Objects-normal/i386/main.o" "/Users/Michael/Desktop/Source Code/main.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+s298884658.474340
+e298884658.803923
+r1
+xCompileC
+xbuild/Fan Control.build/Debug/Daemon.build/Objects-normal/i386/main.o
+x/Users/Michael/Desktop/Source Code/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/Michael/Desktop/Source Code/main.m: In function 'main':
+o/Users/Michael/Desktop/Source Code/main.m:40: warning: 'defaultConnection' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSConnection.h:50)
+lSLF07#2@49"Compile /Users/Michael/Desktop/Source Code/main.m298884658#298884658#0(270"/Users/Michael/Desktop/Source Code/main.m: In function 'main':/Users/Michael/Desktop/Source Code/main.m:40: warning: 'defaultConnection' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSConnection.h:50)1(22@151"'defaultConnection' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSConnection.h:50)298884658#63#207#0(6@41"/Users/Michael/Desktop/Source Code/main.m215177302#40#0#40#0#33"'*' is deprecated (declared at *)0(0#0#41"/Users/Michael/Desktop/Source Code/main.m4300911832#1056"    cd "/Users/Michael/Desktop/Source Code"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 "-I/Users/Michael/Desktop/Source Code/build/Fan Control.build/Debug/Daemon.build/FanControlDaemon.hmap" "-F/Users/Michael/Desktop/Source Code/build/Debug" "-I/Users/Michael/Desktop/Source Code/build/Debug/include" "-I/Users/Michael/Desktop/Source Code/build/Fan Control.build/Debug/Daemon.build/DerivedSources/i386" "-I/Users/Michael/Desktop/Source Code/build/Fan Control.build/Debug/Daemon.build/DerivedSources" -include /var/folders/Q0/Q0K5jQjpGSaJGBVodmhfok+++TU/-Caches-/com.apple.Xcode.504/SharedPrecompiledHeaders/AppKit-edqcmvqwpxkqmxbubwikrbvvxjnn/AppKit.h -c "/Users/Michael/Desktop/Source Code/main.m" -o "/Users/Michael/Desktop/Source Code/build/Fan Control.build/Debug/Daemon.build/Objects-normal/i386/main.o"0#
+
+CCompileC "build/Fan Control.build/Debug/Daemon.build/Objects-normal/i386/smc.o" "/Users/Michael/Desktop/Source Code/smc.c" normal i386 objective-c com.apple.compilers.gcc.4_2
+s298884658.014092
+e298884658.519428
+r1
+xCompileC
+xbuild/Fan Control.build/Debug/Daemon.build/Objects-normal/i386/smc.o
+x/Users/Michael/Desktop/Source Code/smc.c
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/Michael/Desktop/Source Code/smc.c: In function 'SMCCall':
+o/Users/Michael/Desktop/Source Code/smc.c:163: warning: 'IOConnectMethodStructureIStructureO' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/IOKit.framework/Headers/IOKitLib.h:1402)
+o/Users/Michael/Desktop/Source Code/smc.c: In function 'SMCReadKey':
+o/Users/Michael/Desktop/Source Code/smc.c:184: warning: format not a string literal and no format arguments
+lSLF07#2@48"Compile /Users/Michael/Desktop/Source Code/smc.c298884658#298884658#0(458"/Users/Michael/Desktop/Source Code/smc.c: In function 'SMCCall':/Users/Michael/Desktop/Source Code/smc.c:163: warning: 'IOConnectMethodStructureIStructureO' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/IOKit.framework/Headers/IOKitLib.h:1402)/Users/Michael/Desktop/Source Code/smc.c: In function 'SMCReadKey':/Users/Michael/Desktop/Source Code/smc.c:184: warning: format not a string literal and no format arguments2(22@162"'IOConnectMethodStructureIStructureO' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/IOKit.framework/Headers/IOKitLib.h:1402)298884658#65#218#0(6@40"/Users/Michael/Desktop/Source Code/smc.c215124870#163#0#163#0#33"'*' is deprecated (declared at *)0(22@51"Format not a string literal and no format arguments298884658#351#107#0(6@40"/Users/Michael/Desktop/Source Code/smc.c215124870#184#0#184#0#51"format not a string literal and no format arguments0(0#0#40"/Users/Michael/Desktop/Source Code/smc.c4300911832#1054"    cd "/Users/Michael/Desktop/Source Code"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 "-I/Users/Michael/Desktop/Source Code/build/Fan Control.build/Debug/Daemon.build/FanControlDaemon.hmap" "-F/Users/Michael/Desktop/Source Code/build/Debug" "-I/Users/Michael/Desktop/Source Code/build/Debug/include" "-I/Users/Michael/Desktop/Source Code/build/Fan Control.build/Debug/Daemon.build/DerivedSources/i386" "-I/Users/Michael/Desktop/Source Code/build/Fan Control.build/Debug/Daemon.build/DerivedSources" -include /var/folders/Q0/Q0K5jQjpGSaJGBVodmhfok+++TU/-Caches-/com.apple.Xcode.504/SharedPrecompiledHeaders/AppKit-edqcmvqwpxkqmxbubwikrbvvxjnn/AppKit.h -c "/Users/Michael/Desktop/Source Code/smc.c" -o "/Users/Michael/Desktop/Source Code/build/Fan Control.build/Debug/Daemon.build/Objects-normal/i386/smc.o"0#
+
+CLd "/Users/Michael/Desktop/Source Code/build/Debug/FanControlDaemon" normal i386
+s298894273.053160
+e298894273.141599
+r1
+xLd
+x/Users/Michael/Desktop/Source Code/build/Debug/FanControlDaemon
+xnormal
+xi386
+lSLF07#2@68"Link /Users/Michael/Desktop/Source Code/build/Debug/FanControlDaemon298894273#298894273#0(0"0(0#0#0"4300911832#584"    cd "/Users/Michael/Desktop/Source Code"    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/SDKs/MacOSX10.6.sdk "-L/Users/Michael/Desktop/Source Code/build/Debug" "-F/Users/Michael/Desktop/Source Code/build/Debug" -filelist "/Users/Michael/Desktop/Source Code/build/Fan Control.build/Debug/Daemon.build/Objects-normal/i386/FanControlDaemon.LinkFileList" -mmacosx-version-min=10.6 -framework Foundation -framework AppKit -framework Foundation -framework IOKit -o "/Users/Michael/Desktop/Source Code/build/Debug/FanControlDaemon"0#
+
+CProcessPCH /var/folders/Q0/Q0K5jQjpGSaJGBVodmhfok+++TU/-Caches-/com.apple.Xcode.504/SharedPrecompiledHeaders/AppKit-bazunbwhnqfbxobnnkxkwbzcgpts/AppKit.h.gch /Developer/SDKs/MacOSX10.4u.sdk/System/Library/Frameworks/AppKit.framework/Headers/AppKit.h normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CProcessPCH /var/folders/Q0/Q0K5jQjpGSaJGBVodmhfok+++TU/-Caches-/com.apple.Xcode.504/SharedPrecompiledHeaders/AppKit-edqcmvqwpxkqmxbubwikrbvvxjnn/AppKit.h.gch /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/AppKit.framework/Headers/AppKit.h normal i386 objective-c com.apple.compilers.gcc.4_2
+s298884652.269711
+e298884658.011288
+r1
+xProcessPCH
+x/var/folders/Q0/Q0K5jQjpGSaJGBVodmhfok+++TU/-Caches-/com.apple.Xcode.504/SharedPrecompiledHeaders/AppKit-edqcmvqwpxkqmxbubwikrbvvxjnn/AppKit.h.gch
+x/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/AppKit.framework/Headers/AppKit.h
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@101"Precompile /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/AppKit.framework/Headers/AppKit.h298884652#298884658#0(0"0(0#0#90"/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/AppKit.framework/Headers/AppKit.h4300911832#998"    cd "/Users/Michael/Desktop/Source Code"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 "-I/Users/Michael/Desktop/Source Code/build/Fan Control.build/Debug/Daemon.build/FanControlDaemon.hmap" "-F/Users/Michael/Desktop/Source Code/build/Debug" "-I/Users/Michael/Desktop/Source Code/build/Debug/include" "-I/Users/Michael/Desktop/Source Code/build/Fan Control.build/Debug/Daemon.build/DerivedSources/i386" "-I/Users/Michael/Desktop/Source Code/build/Fan Control.build/Debug/Daemon.build/DerivedSources" -c /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/AppKit.framework/Headers/AppKit.h -o /var/folders/Q0/Q0K5jQjpGSaJGBVodmhfok+++TU/-Caches-/com.apple.Xcode.504/SharedPrecompiledHeaders/AppKit-edqcmvqwpxkqmxbubwikrbvvxjnn/AppKit.h.gch0#
+

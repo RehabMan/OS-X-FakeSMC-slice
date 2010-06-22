@@ -1,0 +1,293 @@
+TPreference Pane
+v7
+r0
+t298894417.166745
+cCheck dependencies
+cProcessInfoPlistFile "/Users/Michael/Desktop/Source Code/build/Debug/Fan Control.prefPane/Contents/Info.plist" Info.plist
+cStripNIB "/Users/Michael/Desktop/Source Code/PreferencePane.nib"
+cCpResource "build/Debug/Fan Control.prefPane/Contents/Resources/FanControl.icns" FanControl.icns
+cCopyTiffFile "/Users/Michael/Desktop/Source Code/build/Debug/Fan Control.prefPane/Contents/Resources/PrefPaneIcon.tiff" PrefPaneIcon.tiff
+cProcessPCH /var/folders/Q0/Q0K5jQjpGSaJGBVodmhfok+++TU/-Caches-/com.apple.Xcode.504/SharedPrecompiledHeaders/AppKit-guogujgykowhdpdfejfsjfwomdlz/AppKit.h.gch /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/AppKit.framework/Headers/AppKit.h normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC "build/Fan Control.build/Debug/Preference Pane.build/Objects-normal/i386/MFPreferencePane.o" "/Users/Michael/Desktop/Source Code/MFPreferencePane.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC "build/Fan Control.build/Debug/Preference Pane.build/Objects-normal/i386/MFChartView.o" "/Users/Michael/Desktop/Source Code/MFChartView.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC "build/Fan Control.build/Debug/Preference Pane.build/Objects-normal/i386/MFTemperatureTransformer.o" "/Users/Michael/Desktop/Source Code/MFTemperatureTransformer.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+cLd "/Users/Michael/Desktop/Source Code/build/Debug/Fan Control.prefPane/Contents/MacOS/Fan Control" normal i386
+cTouch "/Users/Michael/Desktop/Source Code/build/Debug/Fan Control.prefPane"
+
+N/Developer/SDKs/MacOSX10.4u.sdk
+c000000004A1199E200000000000000EE
+t1242667490
+s238
+
+N/Developer/SDKs/MacOSX10.4u.sdk/System/Library/Frameworks/AppKit.framework/Headers/AppKit.h
+c000000004628C8C90000000000001504
+t1177077961
+s5380
+
+N/Developer/SDKs/MacOSX10.4u.sdk/System/Library/Frameworks/Cocoa.framework/Headers/Cocoa.h
+c0000000040C4AA6800000000000001E5
+t1086630504
+s485
+
+N/Developer/SDKs/MacOSX10.4u.sdk/System/Library/Frameworks/PreferencePanes.framework/Headers/NSPreferencePane.h
+c000000004628DF2B0000000000001B6C
+t1177083691
+s7020
+
+N/Developer/SDKs/MacOSX10.6.sdk
+c000000004BE0165B00000000000000EE
+t1272976987
+s238
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/AppKit.framework/Headers/AppKit.h
+c000000004A67D2A800000000000017ED
+t1248318120
+s6125
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Cocoa.framework/Headers/Cocoa.h
+c0000000040C4AA6800000000000001E5
+t1086630504
+s485
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/PreferencePanes.framework/Headers/NSPreferencePane.h
+c000000004A49A2AC0000000000001B6C
+t1246339756
+s7020
+
+N/System/Library/Frameworks/PreferencePanes.framework/PreferencePanes
+c000000004BBD495900000000000B8DC0
+t1270696281
+s757184
+
+N/Users/Michael/Desktop/Source Code/FanControl.icns
+c00000000472254060000000000010C26
+t1193432070
+s68646
+
+N/Users/Michael/Desktop/Source Code/MFChartView.h
+c00000000472254060000000000000489
+t1193432070
+s1161
+i<Cocoa/Cocoa.h>
+
+N/Users/Michael/Desktop/Source Code/MFChartView.m
+c00000000472254060000000000000E23
+t1193432070
+s3619
+i"MFChartView.h"
+i"MFDefinitions.h"
+
+N/Users/Michael/Desktop/Source Code/MFDefinitions.h
+c00000000472254060000000000000346
+t1193432070
+s838
+
+N/Users/Michael/Desktop/Source Code/MFPreferencePane.h
+c0000000047225406000000000000068C
+t1193432070
+s1676
+i<Cocoa/Cocoa.h>
+i<NSPreferencePane.h>
+
+N/Users/Michael/Desktop/Source Code/MFPreferencePane.m
+c00000000472254060000000000000E48
+t1193432070
+s3656
+i"MFPreferencePane.h"
+i"MFProtocol.h"
+i"MFTemperatureTransformer.h"
+i"MFChartView.h"
+
+N/Users/Michael/Desktop/Source Code/MFProtocol.h
+c000000004722540600000000000004E2
+t1193432070
+s1250
+
+N/Users/Michael/Desktop/Source Code/MFTemperatureTransformer.h
+c000000004722540600000000000003CE
+t1193432070
+s974
+i<Cocoa/Cocoa.h>
+
+N/Users/Michael/Desktop/Source Code/MFTemperatureTransformer.m
+c0000000047225406000000000000060C
+t1193432070
+s1548
+i"MFTemperatureTransformer.h"
+
+N/Users/Michael/Desktop/Source Code/PrefPaneIcon.tiff
+c000000004722540600000000000061D0
+t1193432070
+s25040
+
+N/Users/Michael/Desktop/Source Code/PreferencePane.nib
+c000000004723689900000000000000AA
+t1193502873
+s170
+
+N/Users/Michael/Desktop/Source Code/build/Debug/Fan Control.prefPane
+t1277191866
+s102
+
+N/Users/Michael/Desktop/Source Code/build/Debug/Fan Control.prefPane/Contents/Info.plist
+t1277191859
+s911
+
+N/Users/Michael/Desktop/Source Code/build/Debug/Fan Control.prefPane/Contents/MacOS/Fan Control
+t1277191866
+s25832
+
+N/Users/Michael/Desktop/Source Code/build/Debug/Fan Control.prefPane/Contents/Resources/FanControl.icns
+t1277191859
+s68646
+
+N/Users/Michael/Desktop/Source Code/build/Debug/Fan Control.prefPane/Contents/Resources/PrefPaneIcon.tiff
+t1277191859
+s25040
+
+N/Users/Michael/Desktop/Source Code/build/Debug/Fan Control.prefPane/Contents/Resources/PreferencePane.nib
+t1277191859
+s18203
+
+N/Users/Michael/Desktop/Source Code/build/Fan Control.build/Debug/Preference Pane.build/Objects-normal/i386/Fan Control.LinkFileList
+c000000004C2066B3000000000000017D
+t1277191859
+s381
+
+N/Users/Michael/Desktop/Source Code/build/Fan Control.build/Debug/Preference Pane.build/Objects-normal/i386/MFChartView.o
+t1277191865
+s19712
+
+N/Users/Michael/Desktop/Source Code/build/Fan Control.build/Debug/Preference Pane.build/Objects-normal/i386/MFPreferencePane.o
+t1277191865
+s26548
+
+N/Users/Michael/Desktop/Source Code/build/Fan Control.build/Debug/Preference Pane.build/Objects-normal/i386/MFTemperatureTransformer.o
+t1277191866
+s8820
+
+N/var/folders/Q0/Q0K5jQjpGSaJGBVodmhfok+++TU/-Caches-/com.apple.Xcode.504/SharedPrecompiledHeaders/AppKit-gcuedbiaxbilrfaqaybyycnddcqk/AppKit.h.gch
+t2
+s0
+
+N/var/folders/Q0/Q0K5jQjpGSaJGBVodmhfok+++TU/-Caches-/com.apple.Xcode.504/SharedPrecompiledHeaders/AppKit-guogujgykowhdpdfejfsjfwomdlz/AppKit.h.gch
+t1277191865
+s56071184
+
+NInfo.plist
+c000000004723247300000000000003E8
+t1193485427
+s1000
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies298894417#298894417#0(0"0(0#1#0"4300911832#0"0#
+
+CCompileC "build/Fan Control.build/Debug/Preference Pane.build/Objects-normal/i386/MFChartView.o" "/Users/Michael/Desktop/Source Code/MFChartView.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+s298884665.322897
+e298884665.804380
+r1
+xCompileC
+xbuild/Fan Control.build/Debug/Preference Pane.build/Objects-normal/i386/MFChartView.o
+x/Users/Michael/Desktop/Source Code/MFChartView.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@56"Compile /Users/Michael/Desktop/Source Code/MFChartView.m298884665#298884665#0(0"0(0#0#48"/Users/Michael/Desktop/Source Code/MFChartView.m4300911832#1194"    cd "/Users/Michael/Desktop/Source Code"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 "-I/Users/Michael/Desktop/Source Code/build/Fan Control.build/Debug/Preference Pane.build/Fan Control.hmap" "-F/Users/Michael/Desktop/Source Code/build/Debug" "-I/Users/Michael/Desktop/Source Code/build/Debug/include" -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/PreferencePanes.framework/Headers "-I/Users/Michael/Desktop/Source Code/build/Fan Control.build/Debug/Preference Pane.build/DerivedSources/i386" "-I/Users/Michael/Desktop/Source Code/build/Fan Control.build/Debug/Preference Pane.build/DerivedSources" -include /var/folders/Q0/Q0K5jQjpGSaJGBVodmhfok+++TU/-Caches-/com.apple.Xcode.504/SharedPrecompiledHeaders/AppKit-guogujgykowhdpdfejfsjfwomdlz/AppKit.h -c "/Users/Michael/Desktop/Source Code/MFChartView.m" -o "/Users/Michael/Desktop/Source Code/build/Fan Control.build/Debug/Preference Pane.build/Objects-normal/i386/MFChartView.o"0#
+
+CCompileC "build/Fan Control.build/Debug/Preference Pane.build/Objects-normal/i386/MFPreferencePane.o" "/Users/Michael/Desktop/Source Code/MFPreferencePane.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+s298884665.320553
+e298884665.793228
+r1
+xCompileC
+xbuild/Fan Control.build/Debug/Preference Pane.build/Objects-normal/i386/MFPreferencePane.o
+x/Users/Michael/Desktop/Source Code/MFPreferencePane.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@61"Compile /Users/Michael/Desktop/Source Code/MFPreferencePane.m298884665#298884665#0(0"0(0#0#53"/Users/Michael/Desktop/Source Code/MFPreferencePane.m4300911832#1204"    cd "/Users/Michael/Desktop/Source Code"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 "-I/Users/Michael/Desktop/Source Code/build/Fan Control.build/Debug/Preference Pane.build/Fan Control.hmap" "-F/Users/Michael/Desktop/Source Code/build/Debug" "-I/Users/Michael/Desktop/Source Code/build/Debug/include" -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/PreferencePanes.framework/Headers "-I/Users/Michael/Desktop/Source Code/build/Fan Control.build/Debug/Preference Pane.build/DerivedSources/i386" "-I/Users/Michael/Desktop/Source Code/build/Fan Control.build/Debug/Preference Pane.build/DerivedSources" -include /var/folders/Q0/Q0K5jQjpGSaJGBVodmhfok+++TU/-Caches-/com.apple.Xcode.504/SharedPrecompiledHeaders/AppKit-guogujgykowhdpdfejfsjfwomdlz/AppKit.h -c "/Users/Michael/Desktop/Source Code/MFPreferencePane.m" -o "/Users/Michael/Desktop/Source Code/build/Fan Control.build/Debug/Preference Pane.build/Objects-normal/i386/MFPreferencePane.o"0#
+
+CCompileC "build/Fan Control.build/Debug/Preference Pane.build/Objects-normal/i386/MFTemperatureTransformer.o" "/Users/Michael/Desktop/Source Code/MFTemperatureTransformer.m" normal i386 objective-c com.apple.compilers.gcc.4_2
+s298884665.793479
+e298884666.111358
+r1
+xCompileC
+xbuild/Fan Control.build/Debug/Preference Pane.build/Objects-normal/i386/MFTemperatureTransformer.o
+x/Users/Michael/Desktop/Source Code/MFTemperatureTransformer.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@69"Compile /Users/Michael/Desktop/Source Code/MFTemperatureTransformer.m298884665#298884666#0(0"0(0#0#61"/Users/Michael/Desktop/Source Code/MFTemperatureTransformer.m4300911832#1220"    cd "/Users/Michael/Desktop/Source Code"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 "-I/Users/Michael/Desktop/Source Code/build/Fan Control.build/Debug/Preference Pane.build/Fan Control.hmap" "-F/Users/Michael/Desktop/Source Code/build/Debug" "-I/Users/Michael/Desktop/Source Code/build/Debug/include" -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/PreferencePanes.framework/Headers "-I/Users/Michael/Desktop/Source Code/build/Fan Control.build/Debug/Preference Pane.build/DerivedSources/i386" "-I/Users/Michael/Desktop/Source Code/build/Fan Control.build/Debug/Preference Pane.build/DerivedSources" -include /var/folders/Q0/Q0K5jQjpGSaJGBVodmhfok+++TU/-Caches-/com.apple.Xcode.504/SharedPrecompiledHeaders/AppKit-guogujgykowhdpdfejfsjfwomdlz/AppKit.h -c "/Users/Michael/Desktop/Source Code/MFTemperatureTransformer.m" -o "/Users/Michael/Desktop/Source Code/build/Fan Control.build/Debug/Preference Pane.build/Objects-normal/i386/MFTemperatureTransformer.o"0#
+
+CCopyTiffFile "/Users/Michael/Desktop/Source Code/build/Debug/Fan Control.prefPane/Contents/Resources/PrefPaneIcon.tiff" PrefPaneIcon.tiff
+s298884659.264632
+e298884659.354404
+r1
+xCopyTiffFile
+x/Users/Michael/Desktop/Source Code/build/Debug/Fan Control.prefPane/Contents/Resources/PrefPaneIcon.tiff
+xPrefPaneIcon.tiff
+lSLF07#2@22"Copy PrefPaneIcon.tiff298884659#298884659#0(0"0(0#0#52"/Users/Michael/Desktop/Source Code/PrefPaneIcon.tiff4300911832#250"    cd "/Users/Michael/Desktop/Source Code"    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copytiff PrefPaneIcon.tiff --outdir "/Users/Michael/Desktop/Source Code/build/Debug/Fan Control.prefPane/Contents/Resources"0#
+
+CCpResource "build/Debug/Fan Control.prefPane/Contents/Resources/FanControl.icns" FanControl.icns
+s298884659.262243
+e298884659.348633
+r1
+xCpResource
+xbuild/Debug/Fan Control.prefPane/Contents/Resources/FanControl.icns
+xFanControl.icns
+lSLF07#2@20"Copy FanControl.icns298884659#298884659#0(0"0(0#0#50"/Users/Michael/Desktop/Source Code/FanControl.icns4300911832#334"    cd "/Users/Michael/Desktop/Source Code"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks "/Users/Michael/Desktop/Source Code/FanControl.icns" "/Users/Michael/Desktop/Source Code/build/Debug/Fan Control.prefPane/Contents/Resources"0#
+
+CLd "/Users/Michael/Desktop/Source Code/build/Debug/Fan Control.prefPane/Contents/MacOS/Fan Control" normal i386
+s298884666.111754
+e298884666.207794
+r1
+xLd
+x/Users/Michael/Desktop/Source Code/build/Debug/Fan Control.prefPane/Contents/MacOS/Fan Control
+xnormal
+xi386
+lSLF07#2@99"Link /Users/Michael/Desktop/Source Code/build/Debug/Fan Control.prefPane/Contents/MacOS/Fan Control298884666#298884666#0(0"0(0#0#0"4300911832#615"    cd "/Users/Michael/Desktop/Source Code"    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/gcc-4.2 -arch i386 -bundle -isysroot /Developer/SDKs/MacOSX10.6.sdk "-L/Users/Michael/Desktop/Source Code/build/Debug" "-F/Users/Michael/Desktop/Source Code/build/Debug" -filelist "/Users/Michael/Desktop/Source Code/build/Fan Control.build/Debug/Preference Pane.build/Objects-normal/i386/Fan Control.LinkFileList" -mmacosx-version-min=10.6 -framework Foundation -framework AppKit -framework PreferencePanes -o "/Users/Michael/Desktop/Source Code/build/Debug/Fan Control.prefPane/Contents/MacOS/Fan Control"0#
+
+CProcessInfoPlistFile "/Users/Michael/Desktop/Source Code/build/Debug/Fan Control.prefPane/Contents/Info.plist" Info.plist
+s298884659.218759
+e298884659.223634
+r1
+xProcessInfoPlistFile
+x/Users/Michael/Desktop/Source Code/build/Debug/Fan Control.prefPane/Contents/Info.plist
+xInfo.plist
+lSLF07#2@18"Process Info.plist298884659#298884659#0(0"0(0#0#45"/Users/Michael/Desktop/Source Code/Info.plist4300911832#215"    cd "/Users/Michael/Desktop/Source Code"    builtin-infoPlistUtility Info.plist -expandbuildsettings -platform macosx -o "/Users/Michael/Desktop/Source Code/build/Debug/Fan Control.prefPane/Contents/Info.plist"0#
+
+CProcessPCH /var/folders/Q0/Q0K5jQjpGSaJGBVodmhfok+++TU/-Caches-/com.apple.Xcode.504/SharedPrecompiledHeaders/AppKit-gcuedbiaxbilrfaqaybyycnddcqk/AppKit.h.gch /Developer/SDKs/MacOSX10.4u.sdk/System/Library/Frameworks/AppKit.framework/Headers/AppKit.h normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CProcessPCH /var/folders/Q0/Q0K5jQjpGSaJGBVodmhfok+++TU/-Caches-/com.apple.Xcode.504/SharedPrecompiledHeaders/AppKit-guogujgykowhdpdfejfsjfwomdlz/AppKit.h.gch /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/AppKit.framework/Headers/AppKit.h normal i386 objective-c com.apple.compilers.gcc.4_2
+s298884659.489891
+e298884665.320202
+r1
+xProcessPCH
+x/var/folders/Q0/Q0K5jQjpGSaJGBVodmhfok+++TU/-Caches-/com.apple.Xcode.504/SharedPrecompiledHeaders/AppKit-guogujgykowhdpdfejfsjfwomdlz/AppKit.h.gch
+x/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/AppKit.framework/Headers/AppKit.h
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@101"Precompile /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/AppKit.framework/Headers/AppKit.h298884659#298884665#0(0"0(0#0#90"/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/AppKit.framework/Headers/AppKit.h4300911832#1113"    cd "/Users/Michael/Desktop/Source Code"    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 "-I/Users/Michael/Desktop/Source Code/build/Fan Control.build/Debug/Preference Pane.build/Fan Control.hmap" "-F/Users/Michael/Desktop/Source Code/build/Debug" "-I/Users/Michael/Desktop/Source Code/build/Debug/include" -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/PreferencePanes.framework/Headers "-I/Users/Michael/Desktop/Source Code/build/Fan Control.build/Debug/Preference Pane.build/DerivedSources/i386" "-I/Users/Michael/Desktop/Source Code/build/Fan Control.build/Debug/Preference Pane.build/DerivedSources" -c /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/AppKit.framework/Headers/AppKit.h -o /var/folders/Q0/Q0K5jQjpGSaJGBVodmhfok+++TU/-Caches-/com.apple.Xcode.504/SharedPrecompiledHeaders/AppKit-guogujgykowhdpdfejfsjfwomdlz/AppKit.h.gch0#
+
+CStripNIB "/Users/Michael/Desktop/Source Code/PreferencePane.nib"
+s298884659.223843
+e298884659.489232
+r1
+xStripNIB
+x/Users/Michael/Desktop/Source Code/PreferencePane.nib
+lSLF07#2@27"StripNIB PreferencePane.nib298884659#298884659#0(0"0(0#0#53"/Users/Michael/Desktop/Source Code/PreferencePane.nib4300911832#282"    cd "/Users/Michael/Desktop/Source Code"    /Developer/usr/bin/ibtool --strip "/Users/Michael/Desktop/Source Code/build/Debug/Fan Control.prefPane/Contents/Resources/PreferencePane.nib" --output-format human-readable-text "/Users/Michael/Desktop/Source Code/PreferencePane.nib"0#
+
+CTouch "/Users/Michael/Desktop/Source Code/build/Debug/Fan Control.prefPane"
+s298884666.208027
+e298884666.214924
+r1
+xTouch
+x/Users/Michael/Desktop/Source Code/build/Debug/Fan Control.prefPane
+lSLF07#2@73"Touch /Users/Michael/Desktop/Source Code/build/Debug/Fan Control.prefPane298884666#298884666#0(0"0(0#0#0"4300911832#136"    cd "/Users/Michael/Desktop/Source Code"    /usr/bin/touch -c "/Users/Michael/Desktop/Source Code/build/Debug/Fan Control.prefPane"0#
+

@@ -1,0 +1,30 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = MFChartView; LANGUAGE = ObjC; SUPERCLASS = NSView; }, 
+        {
+            CLASS = MFPreferencePane; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                chartView = MFChartView; 
+                fileOwnerController = NSObjectController; 
+                leftFanField = NSTextField; 
+                rightFanField = NSTextField; 
+                temperatureField = NSTextField; 
+            }; 
+            SUPERCLASS = NSPreferencePane; 
+        }, 
+        {
+            CLASS = NSPreferencePane; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                "_firstKeyView" = NSView; 
+                "_initialKeyView" = NSView; 
+                "_lastKeyView" = NSView; 
+                "_window" = NSWindow; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}
