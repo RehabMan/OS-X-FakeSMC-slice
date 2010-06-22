@@ -192,7 +192,7 @@ void ITE::Init()
 	Bind(new ITEVoltageSensor(this, 0, "VC0C", "fp2e", 2));
 	
 	// SmartGuardian Setup
-	OSDictionary* dictionary = OSDynamicCast(OSDictionary, m_Service->getProperty("SmartGuardian Override"));
+	OSDictionary* dictionary = OSDynamicCast(OSDictionary, m_Service->getProperty("SmartGuardian"));
 	
 	if (dictionary)
 	{
@@ -200,7 +200,7 @@ void ITE::Init()
 		
 		if (enabled && enabled->getValue())
 		{
-			InfoLog("SmartGuardian Activated for all FANs");
+			InfoLog("SmartGuardian Mode activated for all FANs");
 			
 			bool* valid;
 			UInt8 control = ReadByte(ITE_SMARTGUARDIAN_MAIN_CONTROL, valid);
@@ -208,115 +208,116 @@ void ITE::Init()
 			control |= 0x7;
 			
 			WriteByte(ITE_SMARTGUARDIAN_MAIN_CONTROL, control);
+		}
+		
+		for (int i = 0; i < 5; i++) 
+		{
+			UInt8 control;
+			char key[5];
 			
-			for (int i = 0; i < 5; i++) 
-			{
-				char key[5];
+			snprintf(key, 5, "Fan%d", i);
+			
+			OSDictionary* fanInfo = OSDynamicCast(OSDictionary, dictionary->getObject(key));
+			
+			if (fanInfo)
+			{				
+				enabled = OSDynamicCast(OSBoolean, fanInfo->getObject("Enabled"));
 				
-				snprintf(key, 5, "Fan%d", i);
-				
-				OSDictionary* fanInfo = OSDynamicCast(OSDictionary, dictionary->getObject(key));
-				
-				if (fanInfo)
-				{				
-					enabled = OSDynamicCast(OSBoolean, fanInfo->getObject("Enabled"));
+				if (enabled && enabled->getValue())
+				{
+					InfoLog("SmartGuardian using custom configuration for Fan#%d", i);
 					
-					if (enabled && enabled->getValue())
+					const OSBoolean* tmpBool;
+					const OSNumber* tmpNumber;
+					const OSString* tmpString;
+					
+					if (i < 3) 
 					{
-						InfoLog("SmartGuardian using custom configuration for Fan#%d", i);
+						// SmartGuardian FAN Control
+						control = 0;
 						
-						const OSBoolean* tmpBool;
-						const OSNumber* tmpNumber;
-						const OSString* tmpString;
-						
-						if (i < 3) 
+						if ((tmpBool = OSDynamicCast(OSBoolean, fanInfo->getObject("PWM Smoothing"))) != NULL)
 						{
-							// SmartGuardian FAN Control
-							control = 0;
-							
-							if ((tmpBool = OSDynamicCast(OSBoolean, fanInfo->getObject("PWM Smoothing"))) != NULL)
-							{
-								if (tmpBool->getValue())
-								{
-									control |= 0x80;
-								}
-							}
-								
-							if ((tmpNumber = OSDynamicCast(OSNumber, fanInfo->getObject("Slope PWM"))) != NULL)
-							{
-								switch (tmpNumber->unsigned8BitValue())
-								{
-									case 1:
-									case 2:
-									case 4:
-									case 8:
-									case 16:
-									case 32:
-									case 64:
-										control |= tmpNumber->unsigned8BitValue();
-										break;
-								}
-							}
-							
-							WriteByte(ITE_SMARTGUARDIAN_CONTROL[i], control);
-							IOSleep(50);
-							
-							if ((tmpNumber = OSDynamicCast(OSNumber, fanInfo->getObject("Fan Start Temperature"))) != NULL)
-							{
-								WriteByte(ITE_SMARTGUARDIAN_TEMPERATURE_START[i], tmpNumber->unsigned8BitValue());
-								IOSleep(50);
-							}
-							
-							if ((tmpNumber = OSDynamicCast(OSNumber, fanInfo->getObject("Fan Stop Temperature"))) != NULL)
-							{
-								WriteByte(ITE_SMARTGUARDIAN_TEMPERATURE_STOP[i], tmpNumber->unsigned8BitValue());
-								IOSleep(50);
-							}
-
-							// PWM Control
-							control = 0;
-							
-							if ((tmpBool = OSDynamicCast(OSBoolean, fanInfo->getObject("PWM Automatic Operation"))) != NULL)
+							if (tmpBool->getValue())
 							{
 								control |= 0x80;
-								
-								if ((tmpString = OSDynamicCast(OSString, fanInfo->getObject("Automatic Operation Temperature Input"))) != NULL)
-								{
-									if (tmpString->isEqualTo("TMPPIN1"))
-									{
-										control |= 0x0;
-									}
-									else if (tmpString->isEqualTo("TMPPIN2"))
-									{
-										control |= 0x1;
-									}
-									else if (tmpString->isEqualTo("TMPPIN3"))
-									{
-										control |= 0x2;
-									}
-									else 
-									{
-										control |= 0x3;
-									}
-								}
-								
-								WriteByte(ITE_SMARTGUARDIAN_PWM_CONTROL[i], control);
-								IOSleep(50);
 							}
-							else if ((tmpNumber = OSDynamicCast(OSNumber, fanInfo->getObject("Software Operation PWM Value"))) != NULL)
+						}
+							
+						if ((tmpNumber = OSDynamicCast(OSNumber, fanInfo->getObject("Slope PWM"))) != NULL)
+						{
+							switch (tmpNumber->unsigned8BitValue())
 							{
-								control |= (tmpNumber->unsigned8BitValue() & 0x7f);
-								
-								WriteByte(ITE_SMARTGUARDIAN_PWM_CONTROL[i], control);
-								IOSleep(50);
+								case 1:
+								case 2:
+								case 4:
+								case 8:
+								case 16:
+								case 32:
+								case 64:
+									control |= tmpNumber->unsigned8BitValue();
+									break;
 							}
 						}
 						
-						if ((tmpNumber = OSDynamicCast(OSNumber, fanInfo->getObject("Start PWM Value"))) != NULL)
+						WriteByte(ITE_SMARTGUARDIAN_CONTROL[i], control);
+						IOSleep(50);
+						
+						if ((tmpNumber = OSDynamicCast(OSNumber, fanInfo->getObject("Fan Start Temperature"))) != NULL)
 						{
-							WriteByte(ITE_SMARTGUARDIAN_START_PWM[i], tmpNumber->unsigned8BitValue());
+							WriteByte(ITE_SMARTGUARDIAN_TEMPERATURE_START[i], tmpNumber->unsigned8BitValue());
 							IOSleep(50);
 						}
+						
+						if ((tmpNumber = OSDynamicCast(OSNumber, fanInfo->getObject("Fan Stop Temperature"))) != NULL)
+						{
+							WriteByte(ITE_SMARTGUARDIAN_TEMPERATURE_STOP[i], tmpNumber->unsigned8BitValue());
+							IOSleep(50);
+						}
+
+						// PWM Control
+						control = 0;
+						
+						if ((tmpBool = OSDynamicCast(OSBoolean, fanInfo->getObject("PWM Automatic Operation"))) != NULL)
+						{
+							control |= 0x80;
+							
+							if ((tmpString = OSDynamicCast(OSString, fanInfo->getObject("Automatic Operation Temperature Input"))) != NULL)
+							{
+								if (tmpString->isEqualTo("TMPPIN1"))
+								{
+									control |= 0x0;
+								}
+								else if (tmpString->isEqualTo("TMPPIN2"))
+								{
+									control |= 0x1;
+								}
+								else if (tmpString->isEqualTo("TMPPIN3"))
+								{
+									control |= 0x2;
+								}
+								else 
+								{
+									control |= 0x3;
+								}
+							}
+							
+							WriteByte(ITE_SMARTGUARDIAN_PWM_CONTROL[i], control);
+							IOSleep(50);
+						}
+						else if ((tmpNumber = OSDynamicCast(OSNumber, fanInfo->getObject("Software Operation PWM Value"))) != NULL)
+						{
+							control |= (tmpNumber->unsigned8BitValue() & 0x7f);
+							
+							WriteByte(ITE_SMARTGUARDIAN_PWM_CONTROL[i], control);
+							IOSleep(50);
+						}
+					}
+					
+					if ((tmpNumber = OSDynamicCast(OSNumber, fanInfo->getObject("Start PWM Value"))) != NULL)
+					{
+						WriteByte(ITE_SMARTGUARDIAN_START_PWM[i], tmpNumber->unsigned8BitValue());
+						IOSleep(50);
 					}
 				}
 			}

@@ -470,7 +470,7 @@ void Winbond::Init()
 				else if ((sel & 0x70) == 0)
 				{
 					// Heatsink
-					Bind(new WinbondTemperatureSensor(this, 0, "Th0H", "sp78", 2));
+					Bind(new WinbondTemperatureSensor(this, 1, "Th0H", "sp78", 2));
 				}
 				
 				// Northbridge
