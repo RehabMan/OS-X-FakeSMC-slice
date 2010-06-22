@@ -98,8 +98,11 @@ void SmartGuardianController::Initialize()
 			m_Key = (char*)IOMalloc(5);
 			snprintf(m_Key, 5, "F%dMn", m_Index);
 					
-			InfoLog("Binding key %s", m_Key);
+			//InfoLog("Binding key %s", m_Key);
 					
+			FakeSMCAddKey(m_Key, "fpe2", 2, value, this);
+			
+			snprintf(m_Key, 5, "F%dTg", m_Index);
 			FakeSMCAddKey(m_Key, "fpe2", 2, value, this);
 		}
 		else 
@@ -119,11 +122,11 @@ void SmartGuardianController::OnKeyRead(__unused const char* key, __unused char*
 {
 }
 
-void SmartGuardianController::OnKeyWrite(__unused const char* key, char* data)
+void SmartGuardianController::OnKeyWrite(const char* key, char* data)
 {
+	UInt8 slope;
 	if (m_Maximum>m_Minimum){
 		UInt16 rpm = (UInt16(data[0] << 8) | (data[1] & 0xff)) >> 2;
-		UInt8 slope;
 		if (rpm<m_Minimum)
 			slope=0;
 		else if (rpm>m_Maximum)
@@ -131,8 +134,12 @@ void SmartGuardianController::OnKeyWrite(__unused const char* key, char* data)
 		else
 			slope = (rpm-m_Minimum) * 127 / (m_Maximum-m_Minimum);
 		//DebugLog("Fan %d start slope=0x%x", m_Offset, slope, rpm);
-		
-		outb(m_Provider->GetAddress() + ITE_ADDRESS_REGISTER_OFFSET, m_Provider->ITE_SMARTGUARDIAN_START_PWM[m_Offset]);
+	}
+	
+	if ((key[2]=='M')&&(key[3]=='n')) {
+		outb(m_Provider->GetAddress() + ITE_ADDRESS_REGISTER_OFFSET, m_Provider->ITE_SMARTGUARDIAN_START_PWM[m_Offset]);	
 		outb(m_Provider->GetAddress() + ITE_DATA_REGISTER_OFFSET, slope);
 	}
+	else if ((key[2]=='T')&&(key[3]=='g')/*&&(FakeSMCReadKey("FS!\0")[0]&(1<<GetIndex(key, 1)))*/)
+		ForcePWM(slope);
 }
