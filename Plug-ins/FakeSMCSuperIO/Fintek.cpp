@@ -185,7 +185,7 @@ bool Fintek::Probe()
 		
 		if (Model == UnknownModel)
 		{
-			InfoLog("found unsupported Fintek chip ID=0x%x REVISION=0x%x on ADDRESS=0x%x", id, revision, Address);
+			InfoLog("Found unsupported Fintek chip ID=0x%x REVISION=0x%x on ADDRESS=0x%x", id, revision, Address);
 			continue;
 		} 
 		else

@@ -401,9 +401,9 @@ bool Winbond::Probe()
 
 void Winbond::Init()
 {	
-	SuperIO::Init();
-	
 	bool isCpuCore_i = false;
+	
+	cpuid_update_generic_info();
 	
 	if (strcmp(cpuid_info()->cpuid_vendor, CPUID_VID_INTEL) != 0) 
 	{

@@ -12,6 +12,7 @@
 #include "ITE.h"
 #include "Winbond.h"
 #include "Fintek.h"
+#include "SMSC.h"
 
 class FakeSMCSuperIOMonitor : public IOService
 {

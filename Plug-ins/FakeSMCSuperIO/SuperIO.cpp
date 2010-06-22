@@ -117,6 +117,7 @@ const char* SuperIO::GetModelName()
         case W83877TF: return "Winbond W83877TF"; break;
         case W83877ATF: return "Winbond W83877ATF"; break;
 			
+		case UnknownSMCS: return "Unknown SMSC (SMSC is not supported now)"; break;
     };
 	
 	return "Unknown";

@@ -72,7 +72,9 @@ enum ChipModel
     F71869 = 0x0814,
     F71882 = 0x0541,
     F71889ED = 0x0909,
-    F71889F = 0x0723 
+    F71889F = 0x0723,
+	
+	UnknownSMCS = 0xffff
 };
 
 class SuperIO
@@ -116,7 +118,7 @@ public:
 	virtual SInt16	ReadTachometer(...) { return 0; };
 	
 	virtual bool	Probe() { return false; };
-	virtual void	Init() { cpuid_update_generic_info(); };
+	virtual void	Init() {};
 	virtual void	Finish() {};
 };
 
