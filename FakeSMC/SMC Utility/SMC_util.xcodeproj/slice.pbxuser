@@ -1,0 +1,177 @@
+// !$*UTF8*$!
+{
+	08FB7793FE84155DC02AAC07 /* Project object */ = {
+		activeArchitecturePreference = i386;
+		activeBuildConfigurationName = Release;
+		activeExecutable = 12A1B70510BD2DA800C38530 /* SMC_util */;
+		activeSDKPreference = macosx10.5;
+		activeTarget = 8DD76FA90486AB0100D96B5E /* SMC_util */;
+		addToTargets = (
+			8DD76FA90486AB0100D96B5E /* SMC_util */,
+		);
+		codeSenseManager = 12A1B70F10BD2DBE00C38530 /* Code sense */;
+		executables = (
+			12A1B70510BD2DA800C38530 /* SMC_util */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					575,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 297090733;
+			PBXWorkspaceStateSaveDate = 297090733;
+		};
+		perUserProjectItems = {
+			121219DC11B53F15006BE424 /* XCBuildMessageTextBookmark */ = 121219DC11B53F15006BE424 /* XCBuildMessageTextBookmark */;
+			121219DD11B53F15006BE424 /* PBXTextBookmark */ = 121219DD11B53F15006BE424 /* PBXTextBookmark */;
+			127B03E310BF3D9F00CF4A8F /* PBXTextBookmark */ = 127B03E310BF3D9F00CF4A8F /* PBXTextBookmark */;
+			127B041810BF43E700CF4A8F /* PBXTextBookmark */ = 127B041810BF43E700CF4A8F /* PBXTextBookmark */;
+			129D5CA810BDD14200F9FC5E /* PBXTextBookmark */ = 129D5CA810BDD14200F9FC5E /* PBXTextBookmark */;
+		};
+		sourceControlManager = 12A1B70E10BD2DBE00C38530 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	121219DC11B53F15006BE424 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "'IOConnectMethodStructureIStructureO' is deprecated (declared at /Developer/SDKs/MacOSX10.5.sdk/System/Library/Frameworks/IOKit.framework/Headers/IOKitLib.h:1314)";
+		fRef = 12A1B71010BD2DCC00C38530 /* smc.c */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 171;
+		rType = 1;
+	};
+	121219DD11B53F15006BE424 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12A1B71010BD2DCC00C38530 /* smc.c */;
+		name = "smc.c: 172";
+		rLen = 0;
+		rLoc = 4310;
+		rType = 0;
+		vrLen = 777;
+		vrLoc = 3927;
+	};
+	127B03E310BF3D9F00CF4A8F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12A1B71110BD2DCC00C38530 /* smc.h */;
+		name = "smc.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1088;
+		vrLoc = 335;
+	};
+	127B040A10BF430F00CF4A8F /* CFBag.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = CFBag.h;
+		path = /System/Library/Frameworks/CoreFoundation.framework/Versions/A/Headers/CFBag.h;
+		sourceTree = "<absolute>";
+	};
+	127B041810BF43E700CF4A8F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 127B040A10BF430F00CF4A8F /* CFBag.h */;
+		name = "CFBag.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1098;
+		vrLoc = 0;
+	};
+	129D5CA810BDD14200F9FC5E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12A1B72D10BD358F00C38530 /* IOKitLib.h */;
+		name = "IOKitLib.h: 768";
+		rLen = 25;
+		rLoc = 39132;
+		rType = 0;
+		vrLen = 835;
+		vrLoc = 38505;
+	};
+	12A1B70510BD2DA800C38530 /* SMC_util */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = SMC_util;
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	12A1B70E10BD2DBE00C38530 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	12A1B70F10BD2DBE00C38530 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	12A1B71010BD2DCC00C38530 /* smc.c */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {753, 6526}}";
+			sepNavSelRange = "{4310, 0}";
+			sepNavVisRange = "{3927, 777}";
+		};
+	};
+	12A1B71110BD2DCC00C38530 /* smc.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {753, 1144}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{335, 1088}";
+		};
+	};
+	12A1B72D10BD358F00C38530 /* IOKitLib.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = IOKitLib.h;
+		path = /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/IOKit.framework/Versions/A/Headers/IOKitLib.h;
+		sourceTree = "<absolute>";
+	};
+	8DD76FA90486AB0100D96B5E /* SMC_util */ = {
+		activeExec = 0;
+		executables = (
+			12A1B70510BD2DA800C38530 /* SMC_util */,
+		);
+	};
+}
