@@ -426,13 +426,13 @@ int main(int argc, char *argv[])
 				op = OP_WRITE;
             {
                 int i;
-                char c[5];
-                for (i = 0; i < strlen(optarg); i++)
+                char c[3];
+                for (i = 0; i < strlen(optarg)/2; i++)
                 {
-                    snprintf(c, 4, "%c%c%c%c", optarg[i * 2], optarg[(i * 2) + 1], optarg[(i * 2) + 2], optarg[(i * 2) + 3]);
+                    snprintf(c, 3, "%c%c", optarg[i * 2], optarg[(i * 2) + 1]);
                     val.bytes[i] = (int) strtol(c, NULL, 16);
                 }
-                val.dataSize = i / 2;
+                val.dataSize = i;
 				/* if ((val.dataSize * 2) != strlen(optarg))
 				 {
 				 printf("Error: value is not valid\n");
