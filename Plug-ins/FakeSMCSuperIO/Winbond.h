@@ -16,7 +16,7 @@
 #include "SuperIO.h"
 
 const UInt8 WINBOND_PORTS_COUNT = 5;
-const UInt16 WINBOND_PORT[5] = { 0x2e, 0x4e, 0x3f0, 0x370, 0x250};
+const UInt16 WINBOND_PORT[5] = { 0x2e, 0x4e, 0x3f0, 0x370, 0x250 };
 
 const UInt8 WINBOND_HARDWARE_MONITOR_LDN	= 0x0B;
 

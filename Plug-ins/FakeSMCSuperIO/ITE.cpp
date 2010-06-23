@@ -139,7 +139,7 @@ bool ITE::Probe()
 		
 		if (Model == UnknownModel)
 		{
-			InfoLog("found unsupported ITE chip ID=0x%x on ADDRESS=0x%x", chipID, Address);
+			InfoLog("Found unsupported ITE chip ID=0x%x on ADDRESS=0x%x", chipID, Address);
 			continue;
 		} 
 		else

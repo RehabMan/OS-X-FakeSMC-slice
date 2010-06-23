@@ -387,7 +387,7 @@ bool Winbond::Probe()
 		
 		if (Model == UnknownModel)
 		{
-			InfoLog("found unsupported Winbond chip ID=0x%x REVISION=0x%x on ADDRESS=0x%x", id, revision, Address);
+			InfoLog("Found unsupported Winbond chip ID=0x%x REVISION=0x%x on ADDRESS=0x%x", id, revision, Address);
 			continue;
 		} 
 		else

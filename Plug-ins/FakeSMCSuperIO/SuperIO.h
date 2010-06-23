@@ -74,7 +74,7 @@ enum ChipModel
     F71889ED = 0x0909,
     F71889F = 0x0723,
 	
-	UnknownSMCS = 0xffff
+	UnknownSMSC = 0xffff
 };
 
 class SuperIO

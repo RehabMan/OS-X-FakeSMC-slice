@@ -24,35 +24,32 @@ IOService* FakeSMCSuperIOMonitor::probe(IOService *provider, SInt32 *score)
 	
 	if (super::probe(provider, score) != this) return 0;
 	
-	if(superio == NULL)
-	{
-		superio = new Winbond();
+	superio = new Fintek();
 			
+	if(!superio->Probe())
+	{
+		delete superio;
+		
+		superio = new Winbond();
+				
 		if(!superio->Probe())
 		{
 			delete superio;
 			
-			superio = new Fintek();
-					
+			superio = new SMSC();
+			
 			if(!superio->Probe())
 			{
 				delete superio;
-				
-				superio = new SMSC();
-				
+			
+				superio = new ITE();
+								
 				if(!superio->Probe())
 				{
 					delete superio;
-				
-					superio = new ITE();
-									
-					if(!superio->Probe())
-					{
-						delete superio;
-						
-						InfoLog("No supported Super I/O chip has been found!");
-						return 0;
-					}
+					
+					InfoLog("No supported Super I/O chip has been found!");
+					return 0;
 				}
 			}
 		}

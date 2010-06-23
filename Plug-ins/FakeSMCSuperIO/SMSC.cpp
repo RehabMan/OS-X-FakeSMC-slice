@@ -38,7 +38,9 @@ bool SMSC::Probe()
 		
 		if (id != 0 && id != 0xffff)
 		{
-			Model = UnknownSMCS;
+			InfoLog("Found unsupported SMSC chip ID=0x%x", id);
+			
+			Model = UnknownSMSC;
 			return true;
 		}
 	}
