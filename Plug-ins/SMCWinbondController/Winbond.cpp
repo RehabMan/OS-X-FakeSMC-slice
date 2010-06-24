@@ -496,7 +496,7 @@ void Winbond::Init()
 			snprintf(key, 5, "F%dAc", FanOffset + FanCount);
 			Bind(new WinbondTachometerSensor(this, i, key, "fpe2", 2));
 			
-			if (m_FanControl)
+			if (m_FanControl&&(i<2))
 				Bind(new SmartFanIIIController(this, i, FanOffset + FanCount));
 
 			

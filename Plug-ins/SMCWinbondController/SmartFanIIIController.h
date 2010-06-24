@@ -25,6 +25,8 @@ private:
 	UInt16	m_Maximum;
 	UInt16	m_Minimum;
 	
+	bool	m_DCMode;
+	
 	void	ForcePWM(UInt8 slope);
 public:
 	SmartFanIIIController(Winbond* provider, UInt8 offset, UInt8 index) : Binding()

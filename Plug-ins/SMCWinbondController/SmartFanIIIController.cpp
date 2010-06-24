@@ -13,7 +13,7 @@ void SmartFanIIIController::ForcePWM(UInt8 slope)
 {
 	DebugLog("Forcing Fan #%d SLOPE=0x%x", m_Offset, slope);
 	
-	//FIXME: Check for DC and PWM mode (if DC, then only 6 bits are used!)
+	//This doesn't switch fans to manual mode!
 	
 	outb(m_Provider->GetAddress()+WINBOND_ADDRESS_REGISTER_OFFSET, WINBOND_FAN_OUTPUT_VALUE[0]);
 	outb(m_Provider->GetAddress()+WINBOND_DATA_REGISTER_OFFSET, slope);
@@ -21,43 +21,37 @@ void SmartFanIIIController::ForcePWM(UInt8 slope)
 
 void SmartFanIIIController::Initialize()
 {
-	if (m_Index>2)
+	if (m_Offset<2)
 	{
 
 		//bool* valid;
 		char tmpKey[5];
 	
-		//Back up config register
-	
+		//Back up config register	
 		outb(m_Provider->GetAddress() + WINBOND_ADDRESS_REGISTER_OFFSET, WINBOND_FAN_CONFIG);
 		UInt8 config=inb(m_Provider->GetAddress()+WINBOND_DATA_REGISTER_OFFSET);
 	
-			switch((config&0x30)>>4) {
-				case 0x00:
-					IOLog("Fan %d is in manual mode\n", m_Index);
-					break;
-				case 0x01:
-					IOLog("Fan %d is in Thermal Cruise(TM) mode\n", m_Index);
-					break;
-				case 0x2:
-					IOLog("Fan %d is in Fan Speed Cruise(TM) mode (why???)\n", m_Index);
-					break;
-				case 0x3:
-					IOLog("Fan %d is in Smart Fan III(TM) mode\n", m_Index);			
-			}
-	
-		//Switch to manual mode
+		switch (m_Offset) {
+			case 0:
+				m_DCMode=!(!(config&0x02));
+				break;
+			case 1:
+				m_DCMode=!(!(config&0x01));
+				break;
+		}
+		
+		//Switch all fans to manual mode
 		outb(m_Provider->GetAddress()+WINBOND_ADDRESS_REGISTER_OFFSET, WINBOND_FAN_CONFIG);
-		outb(m_Provider->GetAddress()+WINBOND_DATA_REGISTER_OFFSET, config&0xcf);
+		outb(m_Provider->GetAddress()+WINBOND_DATA_REGISTER_OFFSET, config&0xc3);
 	
-	
+		
 	
 		char value[2];
 		
 		UInt16 initial = m_Maximum = m_Provider->ReadTachometer(m_Offset, false);
 		
 		//Forcing maximum speed
-		ForcePWM(0xff);
+		ForcePWM(0xff); //or should reserved bits be always 0?
 		
 		UInt16 last = initial, count = 0;
 		
@@ -69,13 +63,9 @@ void SmartFanIIIController::Initialize()
 			m_Maximum = m_Provider->ReadTachometer(m_Offset, false);
 			
 			if (m_Maximum < last + 50)
-			{
 				count++;
-			}
 			else 
-			{
 				last = m_Maximum;
-			}
 		};
 		
 		//Forcing minimum speed
@@ -91,13 +81,9 @@ void SmartFanIIIController::Initialize()
 			m_Minimum = m_Provider->ReadTachometer(m_Offset, false);
 			
 			if (m_Minimum > last - 50)
-			{
 				count++;
-			}
 			else 
-			{
 				last = m_Minimum;
-			}
 		}
 		
 	
@@ -114,16 +100,16 @@ void SmartFanIIIController::Initialize()
 		
 		initial = initial / 50 * 50;
 		
-		value[0] = (initial << 2) >> 8;
-		value[1] = (initial << 2) & 0xff;
+		/*value[0] = 0;
+		value[1] = 0;
 		
 		snprintf(tmpKey, 5, "F%dTg", m_Index);
-		FakeSMCAddKey(tmpKey, "fpe2", 2, value);
+		FakeSMCAddKey(tmpKey, "fpe2", 2, value);*/
 				
 		if (m_Maximum > initial + 100)
 		{
-			value[0] = 0;//(initial << 2) >> 8;
-			value[1] = 0;//(initial << 2) & 0xff;
+			value[0] = (m_Minimum<<2)>>8;
+			value[1] = (m_Minimum<<2)&0xff;
 					
 			m_Key = (char*)IOMalloc(5);
 			snprintf(m_Key, 5, "F%dMn", m_Index);
@@ -162,9 +148,13 @@ void SmartFanIIIController::OnKeyWrite(__unused const char* key, char* data)
 		if (rpm<m_Minimum)
 			slope=0;
 		else if (rpm>m_Maximum)
-			slope=0x7f;
-		else
-			slope = (rpm-m_Minimum) * 127 / (m_Maximum-m_Minimum);
+			slope=0xff; //or should reserved bits be always 0?
+		else {
+			if (m_DCMode)
+				slope = (rpm-m_Minimum) * 255 / (m_Maximum-m_Minimum);
+			else
+				slope = ((rpm-m_Minimum) * 63 / (m_Maximum-m_Minimum))<<2;
+			}
 		//DebugLog("Fan %d start slope=0x%x", m_Offset, slope, rpm);
 		
 		outb(m_Provider->GetAddress() + WINBOND_ADDRESS_REGISTER_OFFSET, WINBOND_SMARTFANIII_MIN_PWM[m_Offset]);
