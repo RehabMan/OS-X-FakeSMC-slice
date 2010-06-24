@@ -15,9 +15,10 @@
 
 #include <IOKit/IOService.h>
 
-#include "FakeSMCBinding.h"
-#include "Binding.h"
 #include "cpuid.h"
+#include "BaseDefinitions.h"
+
+const UInt16 SUPERIO_STANDART_PORT[] = { 0x2e, 0x4e };
 
 // Registers
 const UInt8 SUPERIO_CONFIGURATION_CONTROL_REGISTER	= 0x02;
@@ -84,18 +85,16 @@ private:
 protected:
 	IOService*		m_Service;
 	
-	UInt16			Address;
-	UInt8			RegisterPort;
-	UInt8			ValuePort;
+	UInt16			m_Address;
+	UInt8			m_RegisterPort;
+	UInt8			m_ValuePort;
 	
-	ChipModel		Model;
+	UInt16			m_Model;
 	
-	UInt16			LastVcore;
-	
-	UInt8			FanOffset;
-	UInt8			FanCount;
-	const char*		FanName[5];
-	UInt8			FanIndex[5];
+	UInt8			m_FanOffset;
+	UInt8			m_FanCount;
+	const char*		m_FanName[5];
+	UInt8			m_FanIndex[5];
 
 	void			Bind(Binding* binding);
 	void			FlushBindings();
@@ -107,7 +106,7 @@ protected:
 public:
 	IOService*		GetService() { return m_Service; };
 	const char*		GetModelName();
-	UInt16			GetAddress() { return Address; };
+	UInt16			GetAddress() { return m_Address; };
 	
 	virtual void	LoadConfiguration(IOService* provider);
 	
@@ -117,7 +116,13 @@ public:
 	virtual SInt16	ReadVoltage(...) { return 0; };
 	virtual SInt16	ReadTachometer(...) { return 0; };
 	
-	virtual bool	Probe() { return false; };
+	virtual UInt8	GetPortsCount() { return 2; };
+	virtual void	SelectPort(UInt8 index) { m_RegisterPort = SUPERIO_STANDART_PORT[index]; m_ValuePort = SUPERIO_STANDART_PORT[index] + 1; };
+	virtual void	Enter() {};
+	virtual void	Exit() {};
+	virtual bool	ProbeCurrentPort() { return false; };
+	
+	virtual bool	Probe();
 	virtual void	Init() {};
 	virtual void	Finish() {};
 };

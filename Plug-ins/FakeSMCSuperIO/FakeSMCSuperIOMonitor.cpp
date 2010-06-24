@@ -24,6 +24,8 @@ IOService* FakeSMCSuperIOMonitor::probe(IOService *provider, SInt32 *score)
 	
 	if (super::probe(provider, score) != this) return 0;
 	
+	InfoLog("Probing Fintek");
+	
 	superio = new Fintek();
 			
 	if(!superio->Probe())
@@ -31,10 +33,14 @@ IOService* FakeSMCSuperIOMonitor::probe(IOService *provider, SInt32 *score)
 		delete superio;
 		
 		superio = new Winbond();
+		
+		InfoLog("Probing Winbond");
 				
 		if(!superio->Probe())
 		{
 			delete superio;
+			
+			InfoLog("Probing SMSC");
 			
 			superio = new SMSC();
 			
@@ -43,6 +49,8 @@ IOService* FakeSMCSuperIOMonitor::probe(IOService *provider, SInt32 *score)
 				delete superio;
 			
 				superio = new ITE();
+				
+				InfoLog("Probing ITE");
 								
 				if(!superio->Probe())
 				{
@@ -55,7 +63,7 @@ IOService* FakeSMCSuperIOMonitor::probe(IOService *provider, SInt32 *score)
 		}
 	}
 	
-	InfoLog("Found %s Super I/O chip", superio->GetModelName());
+	InfoLog("Found %s Super I/O chip on 0x%x", superio->GetModelName(), superio->GetAddress());
 
 	superio->LoadConfiguration(this);
 	

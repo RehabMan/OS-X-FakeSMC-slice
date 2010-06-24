@@ -16,18 +16,18 @@
 
 UInt8 Winbond::ReadByte(UInt8 bank, UInt8 reg) 
 {
-	outb((UInt16)(Address + WINBOND_ADDRESS_REGISTER_OFFSET), WINBOND_BANK_SELECT_REGISTER);
-	outb((UInt16)(Address + WINBOND_DATA_REGISTER_OFFSET), bank);
-	outb((UInt16)(Address + WINBOND_ADDRESS_REGISTER_OFFSET), reg);
-	return inb((UInt16)(Address + WINBOND_DATA_REGISTER_OFFSET));
+	outb((UInt16)(m_Address + WINBOND_ADDRESS_REGISTER_OFFSET), WINBOND_BANK_SELECT_REGISTER);
+	outb((UInt16)(m_Address + WINBOND_DATA_REGISTER_OFFSET), bank);
+	outb((UInt16)(m_Address + WINBOND_ADDRESS_REGISTER_OFFSET), reg);
+	return inb((UInt16)(m_Address + WINBOND_DATA_REGISTER_OFFSET));
 }
 
 void Winbond::WriteByte(UInt8 bank, UInt8 reg, UInt8 value)
 {
-	outb((UInt16)(Address + WINBOND_ADDRESS_REGISTER_OFFSET), WINBOND_BANK_SELECT_REGISTER);
-	outb((UInt16)(Address + WINBOND_DATA_REGISTER_OFFSET), bank);
-	outb((UInt16)(Address + WINBOND_ADDRESS_REGISTER_OFFSET), reg);
-	outb((UInt16)(Address + WINBOND_DATA_REGISTER_OFFSET), value); 
+	outb((UInt16)(m_Address + WINBOND_ADDRESS_REGISTER_OFFSET), WINBOND_BANK_SELECT_REGISTER);
+	outb((UInt16)(m_Address + WINBOND_DATA_REGISTER_OFFSET), bank);
+	outb((UInt16)(m_Address + WINBOND_ADDRESS_REGISTER_OFFSET), reg);
+	outb((UInt16)(m_Address + WINBOND_DATA_REGISTER_OFFSET), value); 
 }
 
 SInt16 Winbond::ReadTemperature(UInt8 index)
@@ -46,7 +46,7 @@ SInt16 Winbond::ReadVoltage(UInt8 index)
 {
 	float voltage; 
 	
-	switch (Model) 
+	switch (m_Model) 
 	{
 		case W83627HF:
 		case W83627THF:
@@ -143,260 +143,244 @@ SInt16 Winbond::ReadTachometer(UInt8 index, bool force_update)
 
 void Winbond::Enter()
 {
-	outb(RegisterPort, 0x87);
-	outb(RegisterPort, 0x87);
+	outb(m_RegisterPort, 0x87);
+	outb(m_RegisterPort, 0x87);
 }
 
 void Winbond::Exit()
 {
-	outb(RegisterPort, 0xAA);
+	outb(m_RegisterPort, 0xAA);
+	outb(m_RegisterPort, SUPERIO_CONFIGURATION_CONTROL_REGISTER);
+	outb(m_ValuePort, 0x02);
 }
 
-bool Winbond::Probe()
+bool Winbond::ProbeCurrentPort()
 {	
-	DebugLog("Probing Winbond...");
+	UInt8 id = ListenPortByte(SUPERIO_CHIP_ID_REGISTER);
+	UInt8 revision = ListenPortByte(SUPERIO_CHIP_REVISION_REGISTER);
 	
-	Model = UnknownModel;
-	
-	for (int i = 0; i < WINBOND_PORTS_COUNT; i++) 
-	{
-		RegisterPort	= WINBOND_PORT[i];
-		ValuePort		= WINBOND_PORT[i] + 1;
-		
-		Enter();
-		
-		UInt8 id = ListenPortByte(SUPERIO_CHIP_ID_REGISTER);
-		UInt8 revision = ListenPortByte(SUPERIO_CHIP_REVISION_REGISTER);
-		
-		switch (id) 
-		{		
-			case 0x52:
+	switch (id) 
+	{		
+		case 0x52:
+		{
+			switch (revision & 0xf0)
 			{
-				switch (revision & 0xf0)
-				{
-					case 0x10:
-					case 0x30:
-					case 0x40:
-						Model = W83627HF;
-						break;
-					case 0x70:
-						Model = W83977CTF;
-						break;
-					case 0xf0:
-						Model = W83977EF;
-						break;
-						
-				}
-			}
-			case 0x59:
-			{
-				switch (revision & 0xf0)
-				{
-					case 0x50:
-						Model = W83627SF;
-						break;						
-				}
-				break;
-			}
-				
-			case 0x60:
-			{
-				switch (revision & 0xf0)
-				{
-					case 0x10:
-						Model = W83697HF;
-						break;						
-				}
-				break;
-			}
-				
-			case 0x61:
-			{
-				switch (revision & 0xf0)
-				{
-					case 0x00:
-						Model = W83L517D;
-						break;						
-				}
-				break;
-			}
-				
-			case 0x68:
-			{
-				switch (revision & 0xf0)
-				{
-					case 0x10:
-						Model = W83697SF;
-						break;						
-				}
-				break;
-			}
-				
-			case 0x70:
-			{
-				switch (revision & 0xf0)
-				{
-					case 0x80:
-						Model = W83637HF;
-						break;						
-				}
-				break;
-			}
-				
-				
-			case 0x82:
-			{
-				switch (revision)
-				{
-					case 0x83:
-						Model = W83627THF;
-						break;
-				}
-				break;
-			}
-				
-			case 0x85:
-			{
-				switch (revision)
-				{
-					case 0x41:
-						Model = W83687THF;
-						break;
-				}
-				break;
-			}
-				
-			case 0x88:
-			{
-				switch (revision & 0xF0)
-				{
-					case 0x50:
-					case 0x60:
-						Model = W83627EHF;
-						break;
-				}
-				break;
-			}
-				
-			case 0x97:
-			{
-				switch (revision)
-				{
-					case 0x71:
-						Model = W83977FA;
-						break;
-					case 0x73:
-						Model = W83977TF;
-						break;
-					case 0x74:
-						Model = W83977ATF;
-						break;
-					case 0x77:
-						Model = W83977AF;
-						break;
-				}
-				break;
-			}	
-				
-			case 0xA0:
-			{
-				switch (revision & 0xF0)
-				{
-					case 0x20: 
-						Model = W83627DHG; 
-						break;   
-				}
-				break;
-			}
-				
-			case 0xA2:
-			{
-				switch (revision & 0xF0)
-				{
-					case 0x30: 
-						Model = W83627UHG; 
-						break;   
-				}
-				break;
-			}
-				
-			case 0xA5:
-			{
-				switch (revision & 0xF0)
-				{
-					case 0x10:
-						Model = W83667HG;
-						break;
-				}
-				break;
-			}
-				
-			case 0xB0:
-			{
-				switch (revision & 0xF0)
-				{
-					case 0x70:
-						Model = W83627DHGP;
-						break;
-				}
-				break;
-			}
-				
-			case 0xB3:
-			{
-				switch (revision & 0xF0)
-				{
-					case 0x50:
-						Model = W83667HGB;
-						break;
-				}
-				break; 
-			}
-				
-			default: 
-			{
-				switch (id & 0x0f) {
-					case 0x0a:
-						Model = W83877F;
-						break;
-					case 0x0b:
-						Model = W83877AF;
-						break;
-					case 0x0c:
-						Model = W83877TF;
-						break;
-					case 0x0d:
-						Model = W83877ATF;
-						break;
-				}
+				case 0x10:
+				case 0x30:
+				case 0x40:
+					m_Model = W83627HF;
+					break;
+				case 0x70:
+					m_Model = W83977CTF;
+					break;
+				case 0xf0:
+					m_Model = W83977EF;
+					break;
+					
 			}
 		}
-		
-		Select(WINBOND_HARDWARE_MONITOR_LDN);
-		
-		Address = ListenPortWord(SUPERIO_BASE_ADDRESS_REGISTER);          
-		
-		IOSleep(1000);
-		
-		UInt16 verify = ListenPortWord(SUPERIO_BASE_ADDRESS_REGISTER);
-		
-		Exit();
-		
-		if (Address != verify || Address < 0x100 || (Address & 0xF007) != 0)
-			continue;
-		
-		if (Model == UnknownModel)
+		case 0x59:
 		{
-			InfoLog("Found unsupported Winbond chip ID=0x%x REVISION=0x%x on ADDRESS=0x%x", id, revision, Address);
-			continue;
-		} 
-		else
+			switch (revision & 0xf0)
+			{
+				case 0x50:
+					m_Model = W83627SF;
+					break;						
+			}
+			break;
+		}
+			
+		case 0x60:
 		{
-			return true;
+			switch (revision & 0xf0)
+			{
+				case 0x10:
+					m_Model = W83697HF;
+					break;						
+			}
+			break;
+		}
+			
+		case 0x61:
+		{
+			switch (revision & 0xf0)
+			{
+				case 0x00:
+					m_Model = W83L517D;
+					break;						
+			}
+			break;
+		}
+			
+		case 0x68:
+		{
+			switch (revision & 0xf0)
+			{
+				case 0x10:
+					m_Model = W83697SF;
+					break;						
+			}
+			break;
+		}
+			
+		case 0x70:
+		{
+			switch (revision & 0xf0)
+			{
+				case 0x80:
+					m_Model = W83637HF;
+					break;						
+			}
+			break;
+		}
+			
+			
+		case 0x82:
+		{
+			switch (revision)
+			{
+				case 0x83:
+					m_Model = W83627THF;
+					break;
+			}
+			break;
+		}
+			
+		case 0x85:
+		{
+			switch (revision)
+			{
+				case 0x41:
+					m_Model = W83687THF;
+					break;
+			}
+			break;
+		}
+			
+		case 0x88:
+		{
+			switch (revision & 0xF0)
+			{
+				case 0x50:
+				case 0x60:
+					m_Model = W83627EHF;
+					break;
+			}
+			break;
+		}
+			
+		case 0x97:
+		{
+			switch (revision)
+			{
+				case 0x71:
+					m_Model = W83977FA;
+					break;
+				case 0x73:
+					m_Model = W83977TF;
+					break;
+				case 0x74:
+					m_Model = W83977ATF;
+					break;
+				case 0x77:
+					m_Model = W83977AF;
+					break;
+			}
+			break;
+		}	
+			
+		case 0xA0:
+		{
+			switch (revision & 0xF0)
+			{
+				case 0x20: 
+					m_Model = W83627DHG; 
+					break;   
+			}
+			break;
+		}
+			
+		case 0xA2:
+		{
+			switch (revision & 0xF0)
+			{
+				case 0x30: 
+					m_Model = W83627UHG; 
+					break;   
+			}
+			break;
+		}
+			
+		case 0xA5:
+		{
+			switch (revision & 0xF0)
+			{
+				case 0x10:
+					m_Model = W83667HG;
+					break;
+			}
+			break;
+		}
+			
+		case 0xB0:
+		{
+			switch (revision & 0xF0)
+			{
+				case 0x70:
+					m_Model = W83627DHGP;
+					break;
+			}
+			break;
+		}
+			
+		case 0xB3:
+		{
+			switch (revision & 0xF0)
+			{
+				case 0x50:
+					m_Model = W83667HGB;
+					break;
+			}
+			break; 
+		}
+			
+		default: 
+		{
+			switch (id & 0x0f) {
+				case 0x0a:
+					m_Model = W83877F;
+					break;
+				case 0x0b:
+					m_Model = W83877AF;
+					break;
+				case 0x0c:
+					m_Model = W83877TF;
+					break;
+				case 0x0d:
+					m_Model = W83877ATF;
+					break;
+			}
 		}
 	}
 	
-	return false;
+	Select(WINBOND_HARDWARE_MONITOR_LDN);
+	
+	m_Address = ListenPortWord(SUPERIO_BASE_ADDRESS_REGISTER);          
+	
+	IOSleep(1000);
+	
+	UInt16 verify = ListenPortWord(SUPERIO_BASE_ADDRESS_REGISTER);
+
+	if (m_Address != verify || m_Address < 0x100 || (m_Address & 0xF007) != 0)
+		return false;
+	
+	if (m_Model == UnknownModel)
+	{
+		InfoLog("Found unsupported Winbond chip ID=0x%x REVISION=0x%x on 0x%x", id, revision, m_Address);
+		return false;
+	}
+	
+	return true;
 }
 
 void Winbond::Init()
@@ -431,7 +415,7 @@ void Winbond::Init()
 	}
 	else 
 	{	
-		switch (Model) 
+		switch (m_Model) 
 		{
 			case W83667HG:
 			case W83667HGB:
@@ -496,35 +480,35 @@ void Winbond::Init()
 	//FakeSMCAddKey("VC0c", "ui16", 2, value, this);
 	
 	// FANs
-	FanOffset = GetFNum();
+	m_FanOffset = GetFNum();
 	
 	ReadTachometer(0, true);
 	
 	for (int i = 0; i < 5; i++) 
 	{
 		char key[5];
-		bool fanName = FanName[i] && strlen(FanName[i]) > 0;
+		bool fanName = m_FanName[i] && strlen(m_FanName[i]) > 0;
 		
 		if (fanName || m_FanValue[i] > 0)
 		{	
 			if(fanName)
 			{
-				snprintf(key, 5, "F%dID", FanOffset + FanCount);
-				FakeSMCAddKey(key, "ch8*", strlen(FanName[i]), (char*)FanName[i]);
+				snprintf(key, 5, "F%dID", m_FanOffset + m_FanCount);
+				FakeSMCAddKey(key, "ch8*", strlen(m_FanName[i]), (char*)m_FanName[i]);
 			}
 			
-			snprintf(key, 5, "F%dAc", FanOffset + FanCount);
+			snprintf(key, 5, "F%dAc", m_FanOffset + m_FanCount);
 			Bind(new WinbondTachometerSensor(this, i, key, "fpe2", 2));
 			
-			FanIndex[FanCount++] = i;
+			m_FanIndex[m_FanCount++] = i;
 		}
 	}
 	
-	UpdateFNum(FanCount);
+	UpdateFNum(m_FanCount);
 }
 
 void Winbond::Finish()
 {
 	FlushBindings();
-	UpdateFNum(-FanCount);
+	UpdateFNum(-m_FanCount);
 }

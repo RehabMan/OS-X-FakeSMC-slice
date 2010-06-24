@@ -11,38 +11,26 @@
 
 void SMSC::Enter()
 {
-	outb(RegisterPort, 0x55);
+	outb(m_RegisterPort, 0x55);
 }
 
 void SMSC::Exit()
 {
-	outb(RegisterPort, 0xAA);
+	outb(m_RegisterPort, 0xAA);
+	outb(m_RegisterPort, SUPERIO_CONFIGURATION_CONTROL_REGISTER);
+	outb(m_ValuePort, 0x02);
 }
 
-bool SMSC::Probe()
+bool SMSC::ProbeCurrentPort()
 {
-	DebugLog("Probing SMSC...");
+	UInt16 id = ListenPortWord(SUPERIO_CHIP_ID_REGISTER);
 	
-	Model = UnknownModel;
-	
-	for (int i = 0; i < SMSC_PORTS_COUNT; i++) 
+	if (id != 0 && id != 0xffff)
 	{
-		RegisterPort	= SMSC_PORT[i];
-		ValuePort		= SMSC_PORT[i] + 1;
+		InfoLog("Found unsupported SMSC chip ID=0x%x", id);
 		
-		Enter();
-		
-        UInt16 id = ListenPortWord(SUPERIO_CHIP_ID_REGISTER);
-		
-		Exit();
-		
-		if (id != 0 && id != 0xffff)
-		{
-			InfoLog("Found unsupported SMSC chip ID=0x%x", id);
-			
-			Model = UnknownSMSC;
-			return true;
-		}
+		m_Model = UnknownSMSC;
+		return true;
 	}
 	
 	return false;

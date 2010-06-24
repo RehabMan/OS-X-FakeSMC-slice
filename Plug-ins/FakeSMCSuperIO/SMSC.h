@@ -17,11 +17,12 @@ const UInt16 SMSC_PORT[] = { 0x2e, 0x4e };
 
 class SMSC : public SuperIO
 {
-protected:
-	void	Enter();
-	void	Exit();
 public:	
-	virtual bool	Probe();
+	virtual void	Enter();
+	virtual void	Exit();
+	
+	virtual bool	ProbeCurrentPort();
+	
 	virtual void	Init();
 	virtual void	Finish();
 };

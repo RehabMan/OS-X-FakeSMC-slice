@@ -17,9 +17,9 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>2.2.2</string>
+	<string>2.3</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.2.2</string>
+	<string>2.3</string>
 	<key>IOKitPersonalities</key>
 	<dict>
 		<key>SuperIOMonitorPlugin</key>
@@ -38,7 +38,7 @@
 			<dict>
 				<key>Enabled</key>
 				<false/>
-				<key>Fan - All Values Sample</key>
+				<key>Fan[All Values Sample]</key>
 				<dict>
 					<key>Enabled</key>
 					<true/>
@@ -63,8 +63,72 @@
 				<dict>
 					<key>Enabled</key>
 					<false/>
+					<key>PWM Smoothing</key>
+					<true/>
+					<key>Slope PWM</key>
+					<integer>16</integer>
+					<key>PWM Automatic Operation</key>
+					<true/>
+					<key>Automatic Operation Temperature Input</key>
+					<string>TMPPIN2</string>
+					<key>Fan Start Temperature </key>
+					<integer>20</integer>
+					<key>Fan Stop Temperature</key>
+					<integer>0</integer>
 					<key>Start PWM Value</key>
-					<integer>168</integer>
+					<integer>35</integer>
+				</dict>
+				<key>Fan1</key>
+				<dict>
+					<key>Enabled</key>
+					<false/>
+					<key>PWM Smoothing</key>
+					<true/>
+					<key>Slope PWM</key>
+					<integer>16</integer>
+					<key>PWM Automatic Operation</key>
+					<true/>
+					<key>Automatic Operation Temperature Input</key>
+					<string>TMPPIN1</string>
+					<key>Fan Start Temperature </key>
+					<integer>20</integer>
+					<key>Fan Stop Temperature</key>
+					<integer>0</integer>
+					<key>Start PWM Value</key>
+					<integer>35</integer>
+				</dict>
+				<key>Fan2</key>
+				<dict>
+					<key>Enabled</key>
+					<false/>
+					<key>PWM Smoothing</key>
+					<true/>
+					<key>Slope PWM</key>
+					<integer>16</integer>
+					<key>PWM Automatic Operation</key>
+					<true/>
+					<key>Automatic Operation Temperature Input</key>
+					<string>TMPPIN1</string>
+					<key>Fan Start Temperature </key>
+					<integer>20</integer>
+					<key>Fan Stop Temperature</key>
+					<integer>0</integer>
+					<key>Start PWM Value</key>
+					<integer>35</integer>
+				</dict>
+				<key>Fan3</key>
+				<dict>
+					<key>Enabled</key>
+					<false/>
+					<key>Start PWM Value</key>
+					<integer>35</integer>
+				</dict>
+				<key>Fan4</key>
+				<dict>
+					<key>Enabled</key>
+					<false/>
+					<key>Start PWM Value</key>
+					<integer>35</integer>
 				</dict>
 			</dict>
 			<key>Fan Names</key>

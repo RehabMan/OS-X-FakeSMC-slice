@@ -17,17 +17,17 @@
 
 void ITE::WriteByte(UInt8 reg, UInt8 value)
 {
-	outb(Address + ITE_ADDRESS_REGISTER_OFFSET, reg);
-	outb(Address + ITE_DATA_REGISTER_OFFSET, value);
+	outb(m_Address + ITE_ADDRESS_REGISTER_OFFSET, reg);
+	outb(m_Address + ITE_DATA_REGISTER_OFFSET, value);
 }
 
 UInt8 ITE::ReadByte(UInt8 index, bool* valid)
 {
-	outb(Address + ITE_ADDRESS_REGISTER_OFFSET, index);
+	outb(m_Address + ITE_ADDRESS_REGISTER_OFFSET, index);
 	
-	UInt8 value = inb(Address + ITE_DATA_REGISTER_OFFSET);
+	UInt8 value = inb(m_Address + ITE_DATA_REGISTER_OFFSET);
 	
-	valid = (bool*)(index == inb(Address + ITE_DATA_REGISTER_OFFSET));
+	valid = (bool*)(index == inb(m_Address + ITE_DATA_REGISTER_OFFSET));
 	
 	return value;
 }
@@ -61,94 +61,77 @@ SInt16 ITE::ReadTachometer(UInt8 index)
 
 void ITE::Enter()
 {
-	outb(RegisterPort, 0x87);
-	outb(RegisterPort, 0x01);
-	outb(RegisterPort, 0x55);
+	outb(m_RegisterPort, 0x87);
+	outb(m_RegisterPort, 0x01);
+	outb(m_RegisterPort, 0x55);
 	
-	if (RegisterPort == 0x4e) 
+	if (m_RegisterPort == 0x4e) 
 	{
-		outb(RegisterPort, 0xaa);
+		outb(m_RegisterPort, 0xaa);
 	}
 	else
 	{
-		outb(RegisterPort, 0x55);
+		outb(m_RegisterPort, 0x55);
 	}
 }
 
 void ITE::Exit()
 {
-	outb(RegisterPort, SUPERIO_CONFIGURATION_CONTROL_REGISTER);
-	outb(ValuePort, 0x02);
+	outb(m_RegisterPort, SUPERIO_CONFIGURATION_CONTROL_REGISTER);
+	outb(m_ValuePort, 0x02);
 }
 
-bool ITE::Probe()
+bool ITE::ProbeCurrentPort()
 {
-	DebugLog("Probing ITE...");
+	UInt16 chipID = ListenPortWord(SUPERIO_CHIP_ID_REGISTER);
 	
-	Model = UnknownModel;
-	
-	for (int i = 0; i < ITE_PORTS_COUNT; i++) 
+	switch (chipID)
 	{
-		RegisterPort	= ITE_PORT[i];
-		ValuePort		= ITE_PORT[i] + 1;
-		
-		Enter();
-		
-		UInt16 chipID = ListenPortWord(SUPERIO_CHIP_ID_REGISTER);
-		
-		switch (chipID)
-		{
-			case IT8712F:
-			case IT8716F:
-			case IT8718F:
-			case IT8720F: 
-			case IT8726F: 
-				Model = (ChipModel)chipID; 
-				break; 
-			default: 
-				Model = UnknownModel;
-				break;
-		}
-		
-		Select(IT87_ENVIRONMENT_CONTROLLER_LDN);
-		
-		Address = ListenPortWord(SUPERIO_BASE_ADDRESS_REGISTER);
-		
-		IOSleep(1000);
-		
-		UInt16 verify = ListenPortWord(SUPERIO_BASE_ADDRESS_REGISTER);
-		
-		Exit();
-		
-		if (Address != verify || Address < 0x100 || (Address & 0xF007) != 0)
-			continue;
-		
-		bool* valid;
-		UInt8 vendorId;
-		
-		vendorId = ReadByte(ITE_VENDOR_ID_REGISTER, valid);
-		
-		if (!valid || vendorId != ITE_VENDOR_ID)
-			continue;
-		
-		if ((ReadByte(ITE_CONFIGURATION_REGISTER, valid) & 0x10) == 0)
-			continue;
-		
-		if (!valid)
-			continue;
-		
-		if (Model == UnknownModel)
-		{
-			InfoLog("Found unsupported ITE chip ID=0x%x on ADDRESS=0x%x", chipID, Address);
-			continue;
-		} 
-		else
-		{		
-			return true;			
-		}
+		case IT8712F:
+		case IT8716F:
+		case IT8718F:
+		case IT8720F: 
+		case IT8726F: 
+			m_Model = chipID; 
+			break; 
+		default: 
+			m_Model = UnknownModel;
+			break;
 	}
 	
-	return false;
+	Select(IT87_ENVIRONMENT_CONTROLLER_LDN);
+	
+	m_Address = ListenPortWord(SUPERIO_BASE_ADDRESS_REGISTER);
+	
+	IOSleep(1000);
+	
+	UInt16 verify = ListenPortWord(SUPERIO_BASE_ADDRESS_REGISTER);
+	
+	
+	if (m_Address != verify || m_Address < 0x100 || (m_Address & 0xF007) != 0)
+		return false;
+	
+	bool* valid;
+	UInt8 vendorId;
+	
+	vendorId = ReadByte(ITE_VENDOR_ID_REGISTER, valid);
+	
+	if (!valid || vendorId != ITE_VENDOR_ID)
+		return false;
+	
+	if ((ReadByte(ITE_CONFIGURATION_REGISTER, valid) & 0x10) == 0)
+		return false;
+	
+	if (!valid)
+		return false;
+	
+	if (m_Model == UnknownModel)
+	{
+		InfoLog("Found unsupported ITE chip ID=0x%x on ADDRESS=0x%x", chipID, m_Address);
+		return false;
+	}
+		
+	return true;
 }
 
 void ITE::Init()
@@ -325,22 +308,22 @@ void ITE::Init()
 	}
 	
 	// FANs	
-	FanOffset = GetFNum();
+	m_FanOffset = GetFNum();
 	
 	for (int i = 0; i < 5; i++) 
 	{
 		char key[5];
-		bool fanName = FanName[i] && strlen(FanName[i]) > 0;
+		bool fanName = m_FanName[i] && strlen(m_FanName[i]) > 0;
 		
 		if (fanName || ReadTachometer(i) > 0)
 		{
 			if (fanName)
 			{
-				snprintf(key, 5, "F%dID", FanOffset + FanCount);
-				FakeSMCAddKey(key, "ch8*", strlen(FanName[i]), (char*)FanName[i]);
+				snprintf(key, 5, "F%dID", m_FanOffset + m_FanCount);
+				FakeSMCAddKey(key, "ch8*", strlen(m_FanName[i]), (char*)m_FanName[i]);
 			}
 			
-			snprintf(key, 5, "F%dAc", FanOffset + FanCount);
+			snprintf(key, 5, "F%dAc", m_FanOffset + m_FanCount);
 			Bind(new ITETachometerSensor(this, i, key, "fpe2", 2));
 			
 			// Show SmartGuardian info
@@ -389,15 +372,15 @@ void ITE::Init()
 			
 			InfoLog("Fan#%d Start PWM value %d",i ,ReadByte(ITE_SMARTGUARDIAN_START_PWM[i], valid));
 			
-			FanIndex[FanCount++] = i;
+			m_FanIndex[m_FanCount++] = i;
 		}
 	}
 	
-	UpdateFNum(FanCount);
+	UpdateFNum(m_FanCount);
 }
 
 void ITE::Finish()
 {
 	FlushBindings();
-	UpdateFNum(-FanCount);
+	UpdateFNum(-m_FanCount);
 }

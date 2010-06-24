@@ -15,15 +15,15 @@
 
 UInt8 Fintek::ReadByte(UInt8 reg) 
 {
-	outb(Address + FINTEK_ADDRESS_REGISTER_OFFSET, reg);
-	return inb(Address + FINTEK_DATA_REGISTER_OFFSET);
+	outb(m_Address + FINTEK_ADDRESS_REGISTER_OFFSET, reg);
+	return inb(m_Address + FINTEK_DATA_REGISTER_OFFSET);
 } 
 
 SInt16 Fintek::ReadTemperature(UInt8 index)
 {
 	float value;
 	
-	switch (Model) 
+	switch (m_Model) 
 	{
 		case F71858: 
 		{
@@ -85,116 +85,100 @@ SInt16 Fintek::ReadTachometer(UInt8 index)
 
 void Fintek::Enter()
 {
-	outb(RegisterPort, 0x87);
-	outb(RegisterPort, 0x87);
+	outb(m_RegisterPort, 0x87);
+	outb(m_RegisterPort, 0x87);
 }
 
 void Fintek::Exit()
 {
-	outb(RegisterPort, 0xAA);
+	outb(m_RegisterPort, 0xAA);
+	outb(m_RegisterPort, SUPERIO_CONFIGURATION_CONTROL_REGISTER);
+	outb(m_ValuePort, 0x02);
 }
 
-bool Fintek::Probe()
+bool Fintek::ProbeCurrentPort()
 {
-	DebugLog("Probing Fintek...");
+	UInt8 logicalDeviceNumber = 0;
 	
-	Model = UnknownModel;
+	UInt8 id = ListenPortByte(FINTEK_CHIP_ID_REGISTER);
+	UInt8 revision = ListenPortByte(FINTEK_CHIP_REVISION_REGISTER);
 	
-	for (int i = 0; i < FINTEK_PORTS_COUNT; i++) 
+	switch (id) 
 	{
-		RegisterPort	= FINTEK_PORT[i];
-		ValuePort		= FINTEK_PORT[i] + 1;
-		
-		Enter();
-		
-		UInt8 logicalDeviceNumber = 0;
-		
-        UInt8 id = ListenPortByte(FINTEK_CHIP_ID_REGISTER);
-        UInt8 revision = ListenPortByte(FINTEK_CHIP_REVISION_REGISTER);
-        
-        switch (id) 
+		case 0x05:
 		{
-			case 0x05:
+			switch (revision) 
 			{
-				switch (revision) 
-				{
-					case 0x07:
-						Model = F71858;
-						logicalDeviceNumber = F71858_HARDWARE_MONITOR_LDN;
-						break;
-					case 0x41:
-						Model = F71882;
-						logicalDeviceNumber = FINTEK_HARDWARE_MONITOR_LDN;
-						break;              
-				}
-			} break;
-			case 0x06:
-			{
-				switch (revision) 
-				{
-					case 0x01:
-						Model = F71862;
-						logicalDeviceNumber = FINTEK_HARDWARE_MONITOR_LDN;
-						break;              
-				} 
-			} break;
-			case 0x07:
-			{
-				switch (revision)
-				{
-					case 0x23:
-						Model = F71889F;
-						logicalDeviceNumber = FINTEK_HARDWARE_MONITOR_LDN;
-						break;              
-				} 
-			} break;
-			case 0x08:
-			{
-				switch (revision)
-				{
-					case 0x14:
-						Model = F71869;
-						logicalDeviceNumber = FINTEK_HARDWARE_MONITOR_LDN;
-						break;              
-				}
-			} break;
-			case 0x09:
-			{
-				switch (revision)
-				{
-					case 0x09:
-						Model = F71889ED;
-						logicalDeviceNumber = FINTEK_HARDWARE_MONITOR_LDN;
-						break;              
-				}
-			} break;
-		}
-		
-		Select(logicalDeviceNumber);
-		
-		Address = ListenPortWord(SUPERIO_BASE_ADDRESS_REGISTER);          
-		
-		IOSleep(1000);
-		
-		UInt16 verify = ListenPortWord(SUPERIO_BASE_ADDRESS_REGISTER);
-		
-		Exit();
-		
-		if (Address != verify || Address < 0x100 || (Address & 0xF007) != 0)
-			continue;
-		
-		if (Model == UnknownModel)
+				case 0x07:
+					m_Model = F71858;
+					logicalDeviceNumber = F71858_HARDWARE_MONITOR_LDN;
+					break;
+				case 0x41:
+					m_Model = F71882;
+					logicalDeviceNumber = FINTEK_HARDWARE_MONITOR_LDN;
+					break;              
+			}
+		} break;
+		case 0x06:
 		{
-			InfoLog("Found unsupported Fintek chip ID=0x%x REVISION=0x%x on ADDRESS=0x%x", id, revision, Address);
-			continue;
-		} 
-		else
+			switch (revision) 
+			{
+				case 0x01:
+					m_Model = F71862;
+					logicalDeviceNumber = FINTEK_HARDWARE_MONITOR_LDN;
+					break;              
+			} 
+		} break;
+		case 0x07:
 		{
-			return true;
-		}
+			switch (revision)
+			{
+				case 0x23:
+					m_Model = F71889F;
+					logicalDeviceNumber = FINTEK_HARDWARE_MONITOR_LDN;
+					break;              
+			} 
+		} break;
+		case 0x08:
+		{
+			switch (revision)
+			{
+				case 0x14:
+					m_Model = F71869;
+					logicalDeviceNumber = FINTEK_HARDWARE_MONITOR_LDN;
+					break;              
+			}
+		} break;
+		case 0x09:
+		{
+			switch (revision)
+			{
+				case 0x09:
+					m_Model = F71889ED;
+					logicalDeviceNumber = FINTEK_HARDWARE_MONITOR_LDN;
+					break;              
+			}
+		} break;
 	}
 	
-	return false;
+	Select(logicalDeviceNumber);
+	
+	m_Address = ListenPortWord(SUPERIO_BASE_ADDRESS_REGISTER);          
+	
+	IOSleep(1000);
+	
+	UInt16 verify = ListenPortWord(SUPERIO_BASE_ADDRESS_REGISTER);
+	
+	if (m_Address != verify || m_Address < 0x100 || (m_Address & 0xF007) != 0)
+		return false;
+	
+	if (m_Model == UnknownModel)
+	{
+		InfoLog("Found unsupported Fintek chip ID=0x%x REVISION=0x%x on 0x%x", id, revision, m_Address);
+		return false;
+	} 
+	
+	return true;
 }
 
 void Fintek::Init()
@@ -204,7 +188,7 @@ void Fintek::Init()
 	// Northbridge
 	Bind(new FintekTemperatureSensor(this, 1, "TN0P", "sp78", 2));
 	
-	switch (Model) 
+	switch (m_Model) 
 	{
         case F71858:
 			break;
@@ -214,33 +198,33 @@ void Fintek::Init()
 			break;
 	}
 	
-	FanOffset = GetFNum();
+	m_FanOffset = GetFNum();
 	
-	for (int i = 0; i < (Model == F71882 ? 4 : 3); i++) 
+	for (int i = 0; i < (m_Model == F71882 ? 4 : 3); i++) 
 	{
 		char key[5];
-		bool fanName = FanName[i] && strlen(FanName[i]) > 0;
+		bool fanName = m_FanName[i] && strlen(m_FanName[i]) > 0;
 		
 		if (fanName || ReadTachometer(i) > 0)
 		{	
 			if(fanName)
 			{
-				snprintf(key, 5, "F%dID", FanOffset + FanCount);
-				FakeSMCAddKey(key, "ch8*", strlen(FanName[i]), (char*)FanName[i]);
+				snprintf(key, 5, "F%dID", m_FanOffset + m_FanCount);
+				FakeSMCAddKey(key, "ch8*", strlen(m_FanName[i]), (char*)m_FanName[i]);
 			}
 			
-			snprintf(key, 5, "F%dAc", FanOffset + FanCount);
+			snprintf(key, 5, "F%dAc", m_FanOffset + m_FanCount);
 			Bind(new FintekTachometerSensor(this, i, key, "fpe2", 2));
 			
-			FanIndex[FanCount++] = i;
+			m_FanIndex[m_FanCount++] = i;
 		}
 	}
 	
-	UpdateFNum(FanCount);
+	UpdateFNum(m_FanCount);
 }
 
 void Fintek::Finish()
 {
 	FlushBindings();
-	UpdateFNum(-FanCount);
+	UpdateFNum(-m_FanCount);
 }

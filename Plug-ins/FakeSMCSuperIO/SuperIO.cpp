@@ -59,8 +59,8 @@ void SuperIO::FlushBindings()
 
 UInt8 SuperIO::ListenPortByte(UInt8 reg)
 {
-	outb(RegisterPort, reg);
-	return inb(ValuePort);
+	outb(m_RegisterPort, reg);
+	return inb(m_ValuePort);
 }
 
 UInt16 SuperIO::ListenPortWord(UInt8 reg)
@@ -70,13 +70,13 @@ UInt16 SuperIO::ListenPortWord(UInt8 reg)
 
 void SuperIO::Select(UInt8 logicalDeviceNumber)
 {
-	outb(RegisterPort, SUPERIO_DEVCIE_SELECT_REGISTER);
-	outb(ValuePort, logicalDeviceNumber);
+	outb(m_RegisterPort, SUPERIO_DEVCIE_SELECT_REGISTER);
+	outb(m_ValuePort, logicalDeviceNumber);
 }
 
 const char* SuperIO::GetModelName()
 {
-	switch (Model) 
+	switch (m_Model) 
 	{
         case F71858: return "Fintek F71858"; break;
         case F71862: return "Fintek F71862"; break;
@@ -141,9 +141,35 @@ void SuperIO::LoadConfiguration(IOService* provider)
 		for (UInt32 i = 0; i < count; i++)
 		{
 			OSString* name = OSDynamicCast(OSString, fanIDs->getObject(i)); 
-			FanName[i] = name->getCStringNoCopy();
+			m_FanName[i] = name->getCStringNoCopy();
 		}
 		
 		fanIDs->release();
     }
+}
+
+bool SuperIO::Probe()
+{
+	m_Model = UnknownModel;
+	
+	// To be safe
+	Exit();
+	
+	for (UInt8 i = 0; i < GetPortsCount(); i++)
+	{
+		SelectPort(i);
+		
+		Enter();
+		
+		if (ProbeCurrentPort())
+		{
+			Exit();
+			
+			return true;
+		}
+		
+		Exit();
+	}
+	
+	return false;
 }

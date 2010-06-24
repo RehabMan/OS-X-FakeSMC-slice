@@ -15,9 +15,6 @@
 
 #include "SuperIO.h"
 
-const UInt8 ITE_PORTS_COUNT = 5;
-const UInt16 ITE_PORT[] = { 0x2e, 0x4e, 0x25e, 0x290, 0x370 };
-
 const UInt8 IT87_ENVIRONMENT_CONTROLLER_LDN = 0x04;
 
 // ITE
@@ -49,9 +46,6 @@ const UInt8 ITE_SMARTGUARDIAN_CONTROL[5]				= { 0x64, 0x6c, 0x74, 0x94, 0x9c };
 
 class ITE : public SuperIO
 {
-protected:
-	void	Enter();
-	void	Exit();
 public:	
 	void			WriteByte(UInt8 reg, UInt8 value);
 	
@@ -61,7 +55,11 @@ public:
 	virtual SInt16	ReadVoltage(UInt8 index);
 	virtual SInt16	ReadTachometer(UInt8 index);
 	
-	virtual bool	Probe();
+	virtual void	Enter();
+	virtual void	Exit();
+	
+	virtual bool	ProbeCurrentPort();
+	
 	virtual void	Init();
 	virtual void	Finish();
 };

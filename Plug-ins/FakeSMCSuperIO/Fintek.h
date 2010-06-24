@@ -15,9 +15,6 @@
 
 #include "SuperIO.h"
 
-const UInt8 FINTEK_PORTS_COUNT = 2;
-const UInt16 FINTEK_PORT[2] = { 0x2e, 0x4e };
-
 // Registers
 const UInt8 FINTEK_CONFIGURATION_CONTROL_REGISTER = 0x02;
 const UInt8 FINTEK_DEVCIE_SELECT_REGISTER = 0x07;
@@ -42,16 +39,17 @@ const UInt8 FINTEK_FAN_TACHOMETER_REG[] = { 0xA0, 0xB0, 0xC0, 0xD0 };
 
 class Fintek : public SuperIO
 {
-protected:
-	void	Enter();
-	void	Exit();
 public:	
 	virtual UInt8	ReadByte(UInt8 index);
 	virtual SInt16	ReadTemperature(UInt8 index);
 	virtual SInt16	ReadVoltage(UInt8 index);
 	virtual SInt16	ReadTachometer(UInt8 index);
 	
-	virtual bool	Probe();
+	virtual void	Enter();
+	virtual void	Exit();
+	
+	virtual bool	ProbeCurrentPort();
+	
 	virtual void	Init();
 	virtual void	Finish();
 };
