@@ -18,15 +18,13 @@
 #include "cpuid.h"
 #include "BaseDefinitions.h"
 
-const UInt16 SUPERIO_STANDART_PORT[] = { 0x2e, 0x4e };
+const UInt8 SUPERIO_STANDART_PORT[] = { 0x2e, 0x4e };
 
 // Registers
 const UInt8 SUPERIO_CONFIGURATION_CONTROL_REGISTER	= 0x02;
 const UInt8 SUPERIO_DEVCIE_SELECT_REGISTER			= 0x07;
 const UInt8 SUPERIO_CHIP_ID_REGISTER				= 0x20;
 const UInt8 SUPERIO_CHIP_REVISION_REGISTER			= 0x21;
-const UInt8 VENDOR_ID_BYTE1_REG						= 0x23;
-const UInt8 VENDOR_ID_BYTE2_REG						= 0x24;
 const UInt8 SUPERIO_BASE_ADDRESS_REGISTER			= 0x60;
 
 enum ChipModel

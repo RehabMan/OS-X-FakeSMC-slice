@@ -63,9 +63,8 @@ public:
 		if (m_Key)
 		{
 			InfoLog("Removing key %s binding", m_Key);
-			
-			IOFree(m_Key, 5);
 			FakeSMCRemoveKeyBinding(m_Key);
+			IOFree(m_Key, 5);
 		}
 	};
 	
