@@ -363,6 +363,12 @@ bool Winbond::ProbeCurrentPort()
 		}
 	}
 	
+	if (m_Model == UnknownModel)
+	{
+		InfoLog("Found unsupported Winbond chip ID=0x%x REVISION=0x%x", id, revision);
+		return false;
+	}
+	
 	Select(WINBOND_HARDWARE_MONITOR_LDN);
 	
 	m_Address = ListenPortWord(SUPERIO_BASE_ADDRESS_REGISTER);          
@@ -373,12 +379,6 @@ bool Winbond::ProbeCurrentPort()
 
 	if (m_Address != verify || m_Address < 0x100 || (m_Address & 0xF007) != 0)
 		return false;
-	
-	if (m_Model == UnknownModel)
-	{
-		InfoLog("Found unsupported Winbond chip ID=0x%x REVISION=0x%x on 0x%x", id, revision, m_Address);
-		return false;
-	}
 	
 	return true;
 }

@@ -161,6 +161,12 @@ bool Fintek::ProbeCurrentPort()
 		} break;
 	}
 	
+	if (m_Model == UnknownModel)
+	{
+		InfoLog("Found unsupported Fintek chip ID=0x%x REVISION=0x%x", id, revision);
+		return false;
+	} 
+	
 	Select(logicalDeviceNumber);
 	
 	m_Address = ListenPortWord(SUPERIO_BASE_ADDRESS_REGISTER);          
@@ -171,12 +177,6 @@ bool Fintek::ProbeCurrentPort()
 	
 	if (m_Address != verify || m_Address < 0x100 || (m_Address & 0xF007) != 0)
 		return false;
-	
-	if (m_Model == UnknownModel)
-	{
-		InfoLog("Found unsupported Fintek chip ID=0x%x REVISION=0x%x on 0x%x", id, revision, m_Address);
-		return false;
-	} 
 	
 	return true;
 }

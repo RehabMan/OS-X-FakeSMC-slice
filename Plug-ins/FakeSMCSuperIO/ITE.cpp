@@ -94,9 +94,9 @@ bool ITE::ProbeCurrentPort()
 		case IT8726F: 
 			m_Model = chipID; 
 			break; 
-		default: 
-			m_Model = UnknownModel;
-			break;
+		default:
+			InfoLog("Found unsupported ITE chip ID=0x%x", chipID);
+			return false;
 	}
 	
 	Select(IT87_ENVIRONMENT_CONTROLLER_LDN);
@@ -124,12 +124,6 @@ bool ITE::ProbeCurrentPort()
 	
 	if (!valid)
 		return false;
-	
-	if (m_Model == UnknownModel)
-	{
-		InfoLog("Found unsupported ITE chip ID=0x%x on ADDRESS=0x%x", chipID, m_Address);
-		return false;
-	}
 		
 	return true;
 }
