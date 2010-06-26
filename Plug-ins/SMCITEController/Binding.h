@@ -19,13 +19,10 @@ protected:
 public:
 	Binding*		Next;
 	
-	Binding()
-	{
-	};
+	Binding(){};
 	
-	Binding(const char* key, const char* type, UInt8 size)
-	{
-		InfoLog("Binding key %s", key);
+	Binding(const char* key, const char* type, UInt8 size){
+		//InfoLog("Binding key %s", key);
 		
 		m_Key = (char*)IOMalloc(5);
 		bcopy(key, m_Key, 5);
@@ -35,30 +32,18 @@ public:
 		IOFree(value, size);
 	};
 	
-	~Binding()
-	{
-		if (m_Key)
-		{
-			InfoLog("Removing key %s binding", m_Key);
-			
-			IOFree(m_Key, 5);
+	~Binding() {
+		if (m_Key) {
+			//InfoLog("Removing key %s binding", m_Key);
 			FakeSMCRemoveKeyBinding(m_Key);
+			IOFree(m_Key, 5);
 		}
 	};
 	
-	const char* GetKey() 
-	{ 
-		return m_Key; 
-	};
+	const char* GetKey() {return m_Key;};
 	
-	virtual void OnKeyRead(__unused const char* key, __unused char* data)
-	{
-		// Or it will be link error on kextload
-	};
-	virtual void OnKeyWrite(__unused const char* key, __unused char* data)
-	{
-		// Or it will be link error on kextload
-	};
+	virtual void OnKeyRead(__unused const char* key, __unused char* data){};
+	virtual void OnKeyWrite(__unused const char* key, __unused char* data){};
 };
 
 #endif
