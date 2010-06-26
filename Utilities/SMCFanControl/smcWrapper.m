@@ -31,66 +31,34 @@ NSString * const smc_checksum=@"75a31ec0a358ae4efcb9835660b453a44eef6e3";
 	SMCOpen(&conn);
 }
 
-+(float) get_maintemp{
+float getTemp(UInt32Char_t key){
+	SMCVal_t val;
+	SMCReadKey2(key, &val, conn);
+	return ((val.bytes[0]<<8+val.bytes[1]>>2)>>6);
+}
+
++(float) get_maintemp:(int)core_number{
 	UInt32Char_t  key;
-	SMCVal_t      val;
+	//SMCVal_t      val;
 	//kern_return_t result;
 	float c_temp;
 	
-	NSRange range_pro=[[MachineDefaults computerModel] rangeOfString:@"MacPro"];
-	if (range_pro.length > 0) {
-		//special readout for MacPro
-		c_temp=[smcWrapper get_mptemp];
-	} else {
-		int i=0;
-		sprintf(key, "TC%dD", i);
-		SMCReadKey2(key, &val,conn);
-		c_temp= ((val.bytes[0] * 256 + val.bytes[1]) >> 2)/64;
-		//workaround for imac 24" (just for testing).
-		if (c_temp<0) {
-			int i=0;
-			sprintf(key, "TC%dH", i);
-			SMCReadKey2(key, &val,conn);
-			c_temp= ((val.bytes[0] * 256 + val.bytes[1]) >> 2)/64;
-		}
-		//last try
-		if (c_temp<0) {
-			sprintf(key, "TC%cH", 'A');
-			SMCReadKey2(key, &val,conn);
-			c_temp= ((val.bytes[0] * 256 + val.bytes[1]) >> 2)/64;
-		}
+	sprintf(key, "TC%dD", core_number);
+	c_temp=getTemp(key);
+	//workaround for imac 24" (just for testing).
+	if (c_temp<0) {
+		sprintf(key, "TC%dH", core_number);
+		c_temp=getTemp(key);
 	}
+	//last try
+	if (c_temp<0) {
+		sprintf(key, "TC%cH", 'A'+core_number);
+		c_temp=getTemp(key);
+	}
+	
 	//for macpro different strategy
 	
 	return c_temp;
-}
-
-
-//temperature-readout for MacPro contributed by Victor Boyer
-+(float) get_mptemp{
-    UInt32Char_t  keyA;
-    UInt32Char_t  keyB;
-    SMCVal_t      valA;
-    SMCVal_t      valB;
-   // kern_return_t resultA;
-   // kern_return_t resultB;
-    sprintf(keyA, "TCAH");
-	SMCReadKey2(keyA, &valA,conn);
-    sprintf(keyB, "TCBH");
-	SMCReadKey2(keyB, &valB,conn);
-    float c_tempA= ((valA.bytes[0] * 256 + valA.bytes[1]) >> 2)/64.0;
-    float c_tempB= ((valB.bytes[0] * 256 + valB.bytes[1]) >> 2)/64.0;
-    int i_tempA, i_tempB;
-    if (c_tempA < c_tempB)
-    {
-        i_tempB = round(c_tempB);
-        return i_tempB;
-    }
-    else
-    {
-        i_tempA = round(c_tempA);
-        return i_tempA;
-    }
 }
 
 +(int) get_fan_rpm:(int)fan_number{

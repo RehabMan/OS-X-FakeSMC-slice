@@ -1,4 +1,4 @@
-/*
+﻿/*
  *	FanControl
  *
  *	Copyright (c) 2006 Hendrik Holtmann
@@ -211,11 +211,21 @@ NSString *authpw;
 	[statusItem setMenu: theMenu];
 	[statusItem setEnabled: YES];
 	[statusItem setHighlightMode:YES];
-	[statusItem setTitle:@""];
+	[statusItem setTitle:@"SMC1"];
 	int i;
-	for(i=0;i<[s_menus count];i++) {
+	for(i=0;i<[s_menus count];i++)
 		[theMenu insertItem:[s_menus objectAtIndex:i] atIndex:i];
-	};
+	
+	
+	anotherStatusItem = [[[NSStatusBar systemStatusBar] statusItemWithLength: NSVariableStatusItemLength] retain];
+	[anotherStatusItem setMenu: theMenu];
+	[anotherStatusItem setEnabled: YES];
+	[anotherStatusItem setHighlightMode:YES];
+	[anotherStatusItem setTitle:@"SMC2"];
+	/*for(i=0;i<[s_menus count];i++) {
+		[theMenu insertItem:[s_menus objectAtIndex:i] atIndex:i];
+	};*/
+	
 }
 
 
@@ -282,7 +292,7 @@ NSString *authpw;
 //reads fan data and updates the gui
 -(void) readFanData:(NSTimer*)timer{
 	
-	//NSString *temp;
+	NSString *temp;
 	NSString *fan;
 
 	//populate Menu Items with recent Data
@@ -320,9 +330,10 @@ NSString *authpw;
 	NSMutableParagraphStyle*	paragraphStyle;
 	NSMutableString* someString;
 	switch ([[defaults objectForKey:@"MenuBar"] intValue]) {
-		case 0:
+		case 0: //Temperature and fan speed (dual-line)
+			//Fan speed
 			fsize=9;
-			[statusItem setLength:96];
+			[statusItem setLength:40*([fans count]/2)];
 			someString=[[NSMutableString alloc] init];
 			for (i=0; i<[fans count]; i++) {
 				fan=[NSString stringWithFormat:@"%@",[nc stringForObjectValue:[NSNumber numberWithFloat:[smcWrapper get_fan_rpm:i]]]];
@@ -345,14 +356,36 @@ NSString *authpw;
 			[paragraphStyle release];
 			[s_status release];			
 			[someString release];
+			//Temperature
+			[anotherStatusItem setLength:35*4/2];
+			someString=[[NSMutableString alloc] init];
+			for (i=0; i<4; i++) {
+				temp=[NSString stringWithFormat:@"%@˚C",[nc stringForObjectValue:[NSNumber numberWithFloat:[smcWrapper get_maintemp:i]]]];
+				[someString appendFormat:@"%@", temp];
+				if (i==4/2-1)
+					[someString appendFormat:@"\n"];
+				else 
+					[someString appendFormat:@" "];
+				
+			}
+			s_status=[[NSMutableAttributedString alloc] initWithString:someString];
+			[s_status addAttribute:NSFontAttributeName value:[NSFont fontWithName:@"Lucida Grande" size:9] range:NSMakeRange(0,[s_status length])];
+			[s_status addAttribute:NSForegroundColorAttributeName value:(NSColor*)[NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"MenuColor"]]  range:NSMakeRange(0,[s_status length])];
+			[anotherStatusItem setAttributedTitle:s_status];
+			[anotherStatusItem setImage:nil];
+			[anotherStatusItem setAlternateImage:nil];
+			[s_status release];
+			[someString release];
+			
 			break;
 		
-		case 1:
+		case 1: //Temperature and fan speed (single line)
+			//Fan speed
 			[statusItem setLength:(30*[fans count])];
 			someString=[[NSMutableString alloc] init];
 			for (i=0; i<[fans count]; i++) {
-				fan=[NSString stringWithFormat:@"%@ ",[nc stringForObjectValue:[NSNumber numberWithFloat:[smcWrapper get_fan_rpm:i]]]];
-				[someString appendFormat:@"%@", fan];
+				fan=[NSString stringWithFormat:@"%@",[nc stringForObjectValue:[NSNumber numberWithFloat:[smcWrapper get_fan_rpm:i]]]];
+				[someString appendFormat:@"%@ ", fan];
 			}
 			s_status=[[NSMutableAttributedString alloc] initWithString:someString];
 			[s_status addAttribute:NSFontAttributeName value:[NSFont fontWithName:@"Lucida Grande" size:10] range:NSMakeRange(0,[s_status length])];
@@ -362,23 +395,42 @@ NSString *authpw;
 			[statusItem setAlternateImage:nil];
 			[s_status release];
 			[someString release];
+			//Temperature
+			[anotherStatusItem setLength:30*4];
+			someString=[[NSMutableString alloc] init];
+			for (i=0; i<4; i++) {
+				temp=[NSString stringWithFormat:@"%@˚C",[nc stringForObjectValue:[NSNumber numberWithFloat:[smcWrapper get_maintemp:i]]]];
+				[someString appendFormat:@"%@ ", temp];
+			}
+			s_status=[[NSMutableAttributedString alloc] initWithString:someString];
+			[s_status addAttribute:NSFontAttributeName value:[NSFont fontWithName:@"Lucida Grande" size:12] range:NSMakeRange(0,[s_status length])];
+			[s_status addAttribute:NSForegroundColorAttributeName value:(NSColor*)[NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"MenuColor"]]  range:NSMakeRange(0,[s_status length])];
+			[anotherStatusItem setAttributedTitle:s_status];
+			[anotherStatusItem setImage:nil];
+			[anotherStatusItem setAlternateImage:nil];
+			[s_status release];
+			[someString release];
 			break;
-			
+					
 			
 		case 2:
 			[statusItem setLength:26]; 
 			[statusItem setTitle:nil];
 			someString=[[NSMutableString alloc] init];
 			for (i=0; i<[fans count]; i++) {
-				fan=[NSString stringWithFormat:@"%@ ",[nc stringForObjectValue:[NSNumber numberWithFloat:[smcWrapper get_fan_rpm:i]]]];
-				[someString appendFormat:@"%@", fan];
+				fan=[NSString stringWithFormat:@"%@",[nc stringForObjectValue:[NSNumber numberWithFloat:[smcWrapper get_fan_rpm:i]]]];
+				[someString appendFormat:@"%@ ", fan];
+			}
+			for (i=0; i<4; i++) {
+				temp=[NSString stringWithFormat:@"%@˚C",[nc stringForObjectValue:[NSNumber numberWithFloat:[smcWrapper get_maintemp:i]]]];
+				[someString appendFormat:@"%@ ", temp];
 			}
 			[statusItem setToolTip:someString];
 			[statusItem setImage:menu_image];
 			[statusItem setAlternateImage:menu_image_alt];
 			[someString release];
 			break;
-
+						
  
 	}
 }

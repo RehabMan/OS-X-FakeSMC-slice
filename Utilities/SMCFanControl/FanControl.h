@@ -83,7 +83,9 @@
 
 	IBOutlet id colorSelector;
 		
-	NSStatusItem *statusItem;
+	NSStatusItem* statusItem;
+	
+	NSStatusItem* anotherStatusItem;
 	
 	NSMutableArray* s_menus;
 	
