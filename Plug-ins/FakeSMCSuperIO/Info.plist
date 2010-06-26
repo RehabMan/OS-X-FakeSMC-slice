@@ -34,6 +34,37 @@
 			<string>IOResources</string>
 			<key>IOResourceMatch</key>
 			<string>IOKit</string>
+			<key>Fan Control</key>
+			<dict>
+				<key>Enabled</key>
+				<false/>
+				<key>Fan0</key>
+				<dict>
+					<key>Temperature Source</key>
+					<string>Processor</string>
+					<key>Start Temperature, ℃</key>
+					<integer>20</integer>
+					<key>Start Throttle, %</key>
+					<integer>30</integer>
+					<key>High Temperature, ℃</key>
+					<integer>50</integer>
+					<key>High Throttle, %</key>
+					<integer>100</integer>
+				</dict>
+				<key>Fan1</key>
+				<dict>
+					<key>Temperature Source</key>
+					<string>System</string>
+					<key>Start Temperature, ℃</key>
+					<integer>20</integer>
+					<key>Start Throttle, %</key>
+					<integer>30</integer>
+					<key>High Temperature, ℃</key>
+					<integer>50</integer>
+					<key>High Throttle, %</key>
+					<integer>100</integer>
+				</dict>
+			</dict>
 			<key>SmartGuardian</key>
 			<dict>
 				<key>Enabled</key>

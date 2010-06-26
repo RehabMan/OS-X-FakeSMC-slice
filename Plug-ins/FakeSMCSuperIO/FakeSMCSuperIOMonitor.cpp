@@ -9,6 +9,19 @@
 #define super IOService
 OSDefineMetaClassAndStructors(FakeSMCSuperIOMonitor, IOService)
 
+IOReturn FakeSMCSuperIOMonitor::controllerTimerEvent(void)
+{
+	m_TimerEventSource->setTimeoutMS(3000);
+	
+	if (superio)
+	{
+		superio->ControllersTimerEvent();
+		return kIOReturnSuccess;
+	}
+	
+	return kIOReturnInvalid;
+}
+
 bool FakeSMCSuperIOMonitor::init(OSDictionary *properties)
 {
 	DebugLog("Initialising...");
@@ -24,9 +37,9 @@ IOService* FakeSMCSuperIOMonitor::probe(IOService *provider, SInt32 *score)
 	
 	if (super::probe(provider, score) != this) return 0;
 	
-	InfoLog("Probing Fintek");
-	
 	superio = new Fintek();
+	
+	InfoLog("Probing Fintek");
 			
 	if(!superio->Probe())
 	{
@@ -39,10 +52,10 @@ IOService* FakeSMCSuperIOMonitor::probe(IOService *provider, SInt32 *score)
 		if(!superio->Probe())
 		{
 			delete superio;
+						
+			superio = new SMSC();
 			
 			InfoLog("Probing SMSC");
-			
-			superio = new SMSC();
 			
 			if(!superio->Probe())
 			{
@@ -67,6 +80,15 @@ IOService* FakeSMCSuperIOMonitor::probe(IOService *provider, SInt32 *score)
 
 	superio->LoadConfiguration(this);
 	
+	if (!m_WorkLoop)
+		m_WorkLoop = getWorkLoop();
+	
+	if (!m_TimerEventSource)
+		m_TimerEventSource = IOTimerEventSource::timerEventSource(this, OSMemberFunctionCast(IOTimerEventSource::Action, this, &FakeSMCSuperIOMonitor::controllerTimerEvent));
+	
+	if (m_WorkLoop && m_TimerEventSource)
+		m_WorkLoop->addEventSource(m_TimerEventSource);
+	
 	return this;
 }
 
@@ -79,6 +101,18 @@ bool FakeSMCSuperIOMonitor::start(IOService * provider)
 	if(superio)
 	{
 		superio->Init();
+		
+		if (superio->HasControllers())
+		{
+			if (m_WorkLoop && m_TimerEventSource)
+			{
+				controllerTimerEvent();
+			}
+			else 
+			{
+				WarningLog("Controllers workloop doesn't activated!");
+			}
+		}
 	}
 	else 
 	{
@@ -92,6 +126,9 @@ void FakeSMCSuperIOMonitor::stop (IOService* provider)
 {
 	DebugLog("Stoping...");
 	
+	if (m_TimerEventSource)
+		m_TimerEventSource->cancelTimeout();
+	
 	if(superio)
 		superio->Finish();
 
@@ -102,7 +139,8 @@ void FakeSMCSuperIOMonitor::free ()
 {
 	DebugLog("Freeing...");
 	
-	delete superio;
+	if (superio)
+		delete superio;
 	
 	super::free ();
 }

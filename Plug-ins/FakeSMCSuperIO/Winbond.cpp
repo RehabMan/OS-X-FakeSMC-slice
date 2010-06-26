@@ -159,6 +159,9 @@ bool Winbond::ProbeCurrentPort()
 	UInt8 id = ListenPortByte(SUPERIO_CHIP_ID_REGISTER);
 	UInt8 revision = ListenPortByte(SUPERIO_CHIP_REVISION_REGISTER);
 	
+	if (id == 0 || id == 0xff || revision == 0 || revision == 0xff)
+		return false;
+	
 	switch (id) 
 	{		
 		case 0x52:
@@ -411,7 +414,7 @@ void Winbond::Init()
 	if (isCpuCore_i)
 	{
 		// Heatsink
-		Bind(new WinbondTemperatureSensor(this, 2, "Th0H", "sp78", 2));
+		AddBinding(new WinbondTemperatureSensor(this, 2, "Th0H", "sp78", 2));
 	}
 	else 
 	{	
@@ -426,16 +429,16 @@ void Winbond::Init()
 				if ((flag & 0x04) == 0)	
 				{
 					// Heatsink
-					Bind(new WinbondTemperatureSensor(this, 0, "Th0H", "sp78", 2));
+					AddBinding(new WinbondTemperatureSensor(this, 0, "Th0H", "sp78", 2));
 				}
 				else if ((flag & 0x40) == 0)
 				{
 					// Heatsink
-					Bind(new WinbondTemperatureSensor(this, 1, "Th0H", "sp78", 2));
+					AddBinding(new WinbondTemperatureSensor(this, 1, "Th0H", "sp78", 2));
 				}
 
 				// Northbridge
-				Bind(new WinbondTemperatureSensor(this, 2, "TN0P", "sp78", 2));
+				AddBinding(new WinbondTemperatureSensor(this, 2, "TN0P", "sp78", 2));
 				
 				break;
 			}
@@ -449,16 +452,16 @@ void Winbond::Init()
 				if ((sel & 0x07) == 0) 
 				{
 					// Heatsink
-					Bind(new WinbondTemperatureSensor(this, 0, "Th0H", "sp78", 2));
+					AddBinding(new WinbondTemperatureSensor(this, 0, "Th0H", "sp78", 2));
 				}
 				else if ((sel & 0x70) == 0)
 				{
 					// Heatsink
-					Bind(new WinbondTemperatureSensor(this, 1, "Th0H", "sp78", 2));
+					AddBinding(new WinbondTemperatureSensor(this, 1, "Th0H", "sp78", 2));
 				}
 				
 				// Northbridge
-				Bind(new WinbondTemperatureSensor(this, 2, "TN0P", "sp78", 2));
+				AddBinding(new WinbondTemperatureSensor(this, 2, "TN0P", "sp78", 2));
 				
 				break;
 			}
@@ -467,16 +470,16 @@ void Winbond::Init()
 			{
 				// no PECI support, add all sensors
 				// Heatsink
-				Bind(new WinbondTemperatureSensor(this, 0, "Th0H", "sp78", 2));
+				AddBinding(new WinbondTemperatureSensor(this, 0, "Th0H", "sp78", 2));
 				// Northbridge
-				Bind(new WinbondTemperatureSensor(this, 2, "TN0P", "sp78", 2));
+				AddBinding(new WinbondTemperatureSensor(this, 2, "TN0P", "sp78", 2));
 				break;
 			}
 		}
 	}
 	
 	// CPU Vcore
-	Bind(new WinbondVoltageSensor(this, 0, "VC0C", "fp2e", 2));
+	AddBinding(new WinbondVoltageSensor(this, 0, "VC0C", "fp2e", 2));
 	//FakeSMCAddKey("VC0c", "ui16", 2, value, this);
 	
 	// FANs
@@ -498,7 +501,7 @@ void Winbond::Init()
 			}
 			
 			snprintf(key, 5, "F%dAc", m_FanOffset + m_FanCount);
-			Bind(new WinbondTachometerSensor(this, i, key, "fpe2", 2));
+			AddBinding(new WinbondTachometerSensor(this, i, key, "fpe2", 2));
 			
 			m_FanIndex[m_FanCount++] = i;
 		}

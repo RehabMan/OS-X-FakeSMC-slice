@@ -18,10 +18,13 @@ class FakeSMCSuperIOMonitor : public IOService
 {
     OSDeclareDefaultStructors(FakeSMCSuperIOMonitor)    
 private:
-
+	IOWorkLoop *			m_WorkLoop;
+	IOTimerEventSource *	m_TimerEventSource;
 protected:
 	SuperIO*			superio;
 public:	
+	virtual IOReturn	controllerTimerEvent(void);
+	
 	virtual bool		init(OSDictionary *properties=0);
 	virtual IOService*	probe(IOService *provider, SInt32 *score);
     virtual bool		start(IOService *provider);

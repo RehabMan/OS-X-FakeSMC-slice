@@ -14,6 +14,7 @@
 #define _SUPERIO_H
 
 #include <IOKit/IOService.h>
+#include <IOKit/IOTimerEventSource.h>
 
 #include "cpuid.h"
 #include "BaseDefinitions.h"
@@ -103,7 +104,8 @@ enum ChipModel
 class SuperIO
 {
 private:
-	Binding*		m_Binding;
+	Binding*				m_Binding;
+	Controller*				m_Controller;
 protected:
 	IOService*		m_Service;
 	
@@ -117,9 +119,12 @@ protected:
 	UInt8			m_FanCount;
 	const char*		m_FanName[5];
 	UInt8			m_FanIndex[5];
-
-	void			Bind(Binding* binding);
+	
+	void			AddBinding(Binding* binding);
 	void			FlushBindings();
+	
+	void			AddController(Controller* controller);
+	void			FlushControllers();
 	
 	UInt8			ListenPortByte(UInt8 reg);
 	UInt16			ListenPortWord(UInt8 reg);
@@ -129,24 +134,26 @@ public:
 	IOService*		GetService() { return m_Service; };
 	const char*		GetModelName();
 	UInt16			GetAddress() { return m_Address; };
+	bool			HasControllers() { return m_Controller != NULL; };
+		
+	virtual void		LoadConfiguration(IOService* provider);
 	
-	virtual void	LoadConfiguration(IOService* provider);
+	virtual UInt8		ReadByte(...) { return 0; };
+	virtual UInt16		ReadWord(...) { return 0; };
+	virtual SInt16		ReadTemperature(...) { return 0; };
+	virtual SInt16		ReadVoltage(...) { return 0; };
+	virtual SInt16		ReadTachometer(...) { return 0; };
 	
-	virtual UInt8	ReadByte(...) { return 0; };
-	virtual UInt16	ReadWord(...) { return 0; };
-	virtual SInt16	ReadTemperature(...) { return 0; };
-	virtual SInt16	ReadVoltage(...) { return 0; };
-	virtual SInt16	ReadTachometer(...) { return 0; };
+	virtual UInt8		GetPortsCount() { return 2; };
+	virtual void		SelectPort(UInt8 index) { m_RegisterPort = SUPERIO_STANDART_PORT[index]; m_ValuePort = SUPERIO_STANDART_PORT[index] + 1; };
+	virtual void		ControllersTimerEvent();
+	virtual void		Enter() {};
+	virtual void		Exit() {};
+	virtual bool		ProbeCurrentPort() { return false; };
 	
-	virtual UInt8	GetPortsCount() { return 2; };
-	virtual void	SelectPort(UInt8 index) { m_RegisterPort = SUPERIO_STANDART_PORT[index]; m_ValuePort = SUPERIO_STANDART_PORT[index] + 1; };
-	virtual void	Enter() {};
-	virtual void	Exit() {};
-	virtual bool	ProbeCurrentPort() { return false; };
-	
-	virtual bool	Probe();
-	virtual void	Init() {};
-	virtual void	Finish() {};
+	virtual bool		Probe();
+	virtual void		Init() {};
+	virtual void		Finish() {};
 };
 
 #endif

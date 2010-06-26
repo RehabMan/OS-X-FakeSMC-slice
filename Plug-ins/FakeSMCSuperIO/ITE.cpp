@@ -14,6 +14,7 @@
 
 #include "ITE.h"
 #include "ITESensors.h"
+#include "ITEFanController.h"
 
 void ITE::WriteByte(UInt8 reg, UInt8 value)
 {
@@ -83,19 +84,22 @@ void ITE::Exit()
 
 bool ITE::ProbeCurrentPort()
 {
-	UInt16 chipID = ListenPortWord(SUPERIO_CHIP_ID_REGISTER);
+	UInt16 id = ListenPortWord(SUPERIO_CHIP_ID_REGISTER);
 	
-	switch (chipID)
+	if (id == 0 || id == 0xffff)
+		return false;
+	
+	switch (id)
 	{
 		case IT8712F:
 		case IT8716F:
 		case IT8718F:
 		case IT8720F: 
 		case IT8726F: 
-			m_Model = chipID; 
+			m_Model = id; 
 			break; 
 		default:
-			InfoLog("Found unsupported ITE chip ID=0x%x", chipID);
+			InfoLog("Found unsupported ITE chip ID=0x%x", id);
 			return false;
 	}
 	
@@ -112,11 +116,10 @@ bool ITE::ProbeCurrentPort()
 		return false;
 	
 	bool* valid;
-	UInt8 vendorId;
 	
-	vendorId = ReadByte(ITE_VENDOR_ID_REGISTER, valid);
+	UInt8 vendor = ReadByte(ITE_VENDOR_ID_REGISTER, valid);
 	
-	if (!valid || vendorId != ITE_VENDOR_ID)
+	if (!valid || vendor != ITE_VENDOR_ID)
 		return false;
 	
 	if ((ReadByte(ITE_CONFIGURATION_REGISTER, valid) & 0x10) == 0)
@@ -133,6 +136,7 @@ void ITE::Init()
 	// Temperature semi-autodetection
 	
 	int count = 0;
+	UInt8 processorIndex, systemIndex;
 	
 	for (int i = 2; i >= 0; i--) 
 	{		
@@ -152,12 +156,14 @@ void ITE::Init()
 				case 0:
 				{
 					// Heatsink
-					Bind(new ITETemperatureSensor(this, i, "Th0H", "sp78", 2));
+					AddBinding(new ITETemperatureSensor(this, i, "Th0H", "sp78", 2));
+					processorIndex = i;
 				} break;
 				case 1:
 				{
 					// Northbridge
-					Bind(new ITETemperatureSensor(this, i, "TN0P", "sp78", 2));
+					AddBinding(new ITETemperatureSensor(this, i, "TN0P", "sp78", 2));
+					systemIndex = i;
 				} break;
 			}
 			
@@ -166,7 +172,7 @@ void ITE::Init()
 	}
 
 	// CPU Vcore
-	Bind(new ITEVoltageSensor(this, 0, "VC0C", "fp2e", 2));
+	AddBinding(new ITEVoltageSensor(this, 0, "VC0C", "fp2e", 2));
 	
 	// SmartGuardian Setup
 	OSDictionary* dictionary = OSDynamicCast(OSDictionary, m_Service->getProperty("SmartGuardian"));
@@ -293,12 +299,25 @@ void ITE::Init()
 					
 					if ((tmpNumber = OSDynamicCast(OSNumber, fanInfo->getObject("Start PWM Value"))) != NULL)
 					{
-						WriteByte(ITE_SMARTGUARDIAN_START_PWM[i], tmpNumber->unsigned8BitValue());
+						WriteByte(ITE_SMARTGUARDIAN_START_PWM[i], tmpNumber->unsigned8BitValue() & 0x7f /* from 0 to 127 */);
 						IOSleep(50);
 					}
 				}
 			}
 		}
+	}
+	
+	// Fan Control
+	bool fanControlEnabled = false;
+	
+	dictionary = OSDynamicCast(OSDictionary, m_Service->getProperty("Fan Control"));
+	
+	if (dictionary)
+	{
+		OSBoolean* enabled = OSDynamicCast(OSBoolean, dictionary->getObject("Enabled"));
+		
+		if (fanControlEnabled = enabled && enabled->getValue())
+			InfoLog("Software FAN control enabled");
 	}
 	
 	// FANs	
@@ -318,8 +337,8 @@ void ITE::Init()
 			}
 			
 			snprintf(key, 5, "F%dAc", m_FanOffset + m_FanCount);
-			Bind(new ITETachometerSensor(this, i, key, "fpe2", 2));
-			
+			AddBinding(new ITETachometerSensor(this, i, key, "fpe2", 2));
+						
 			// Show SmartGuardian info
 			
 			bool* valid;
@@ -367,6 +386,67 @@ void ITE::Init()
 			InfoLog("Fan#%d Start PWM value %d",i ,ReadByte(ITE_SMARTGUARDIAN_START_PWM[i], valid));
 			
 			m_FanIndex[m_FanCount++] = i;
+			
+			// Fan Control Support
+			if (fanControlEnabled)
+			{
+				snprintf(key, 5, "Fan%d", i);
+				
+				OSDictionary* fanInfo = OSDynamicCast(OSDictionary, dictionary->getObject(key));
+				
+				if (fanInfo)
+				{
+					OSString* string = OSDynamicCast(OSString, fanInfo->getObject("Temperature Source"));
+					
+					if (!string) 
+					{
+						InfoLog("1");
+						continue;
+					}
+					
+					UInt8 input;
+					
+					if (string->isEqualTo("Processor")) 
+						input = processorIndex;
+					else if(string->isEqualTo("System"))
+						input = systemIndex;
+					else 
+					{
+						InfoLog("2");
+						continue;
+					}
+					
+					OSNumber* startTemp = OSDynamicCast(OSNumber, fanInfo->getObject("Start Temperature, ℃"));
+					
+					if (!startTemp){
+						InfoLog("3");
+						continue;
+					}
+					
+					OSNumber* highTemp = OSDynamicCast(OSNumber, fanInfo->getObject("High Temperature, ℃"));
+					
+					if (!highTemp || highTemp->unsigned8BitValue() < startTemp->unsigned8BitValue()) {
+						InfoLog("4");
+						continue;
+					}
+					
+					OSNumber* startThrottle = OSDynamicCast(OSNumber, fanInfo->getObject("Start Throttle, %"));
+					
+					if (!startThrottle) {
+						InfoLog("5");
+						continue;
+					}
+					
+					OSNumber* highThrottle = OSDynamicCast(OSNumber, fanInfo->getObject("High Throttle, %"));
+					
+					if (!highThrottle || highThrottle->unsigned8BitValue() < startThrottle->unsigned8BitValue()) {
+						InfoLog("6");
+						continue;
+					};
+
+					AddController(new ITEFanController(this, i, input, startTemp->unsigned8BitValue(), startThrottle->unsigned8BitValue(), highTemp->unsigned8BitValue(), highThrottle->unsigned8BitValue()));
+				}
+			}
 		}
 	}
 	
@@ -376,5 +456,6 @@ void ITE::Init()
 void ITE::Finish()
 {
 	FlushBindings();
+	FlushControllers();
 	UpdateFNum(-m_FanCount);
 }

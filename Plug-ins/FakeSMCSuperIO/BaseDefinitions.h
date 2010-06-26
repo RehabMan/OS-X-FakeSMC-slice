@@ -83,6 +83,14 @@ public:
 	};
 };
 
+class Controller
+{
+public:
+	Controller*	Next;
+	
+	virtual void TimerEvent() {};
+};
+
 inline UInt16 fp2e_Encode(UInt16 value)
 {
 	UInt16 dec = (float)value / 1000.0f;

@@ -12,7 +12,7 @@
 
 #include "SuperIO.h"
 
-bool setBoolean(const char * symbol, bool value, OSDictionary * dictionary)
+/*bool setBoolean(const char * symbol, bool value, OSDictionary * dictionary)
 {
 	OSBoolean * boolean = value ? kOSBooleanTrue : kOSBooleanFalse;
 	
@@ -35,9 +35,17 @@ bool setDictionary(const char * symbol, OSDictionary * value, OSDictionary * dic
 {
 	dictionary->setObject(symbol, value);
 	return true;
+}*/
+
+void SuperIO::ControllersTimerEvent()
+{
+	for (Controller* controller = m_Controller; controller; controller = controller->Next)
+	{
+		controller->TimerEvent();
+	}
 }
 
-void SuperIO::Bind(Binding* binding)
+void SuperIO::AddBinding(Binding* binding)
 {
 	binding->Next = m_Binding;
 	m_Binding = binding;
@@ -50,6 +58,26 @@ void SuperIO::FlushBindings()
 	while (iterator)
 	{
 		Binding* next = iterator->Next;
+		
+		delete iterator;
+		
+		iterator = next;
+	}
+}
+
+void SuperIO::AddController(Controller* controller)
+{	
+	controller->Next = m_Controller;
+	m_Controller = controller;
+}
+
+void SuperIO::FlushControllers()
+{
+	Controller* iterator = m_Controller;
+	
+	while (iterator)
+	{
+		Controller* next = iterator->Next;
 		
 		delete iterator;
 		

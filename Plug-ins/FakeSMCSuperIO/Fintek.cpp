@@ -103,6 +103,9 @@ bool Fintek::ProbeCurrentPort()
 	UInt8 id = ListenPortByte(FINTEK_CHIP_ID_REGISTER);
 	UInt8 revision = ListenPortByte(FINTEK_CHIP_REVISION_REGISTER);
 	
+	if (id == 0 || id == 0xff || revision == 0 || revision == 0xff)
+		return false;
+	
 	switch (id) 
 	{
 		case 0x05:
@@ -184,9 +187,9 @@ bool Fintek::ProbeCurrentPort()
 void Fintek::Init()
 {
 	// Heatsink
-	Bind(new FintekTemperatureSensor(this, 0, "Th0H", "sp78", 2));
+	AddBinding(new FintekTemperatureSensor(this, 0, "Th0H", "sp78", 2));
 	// Northbridge
-	Bind(new FintekTemperatureSensor(this, 1, "TN0P", "sp78", 2));
+	AddBinding(new FintekTemperatureSensor(this, 1, "TN0P", "sp78", 2));
 	
 	switch (m_Model) 
 	{
@@ -194,7 +197,7 @@ void Fintek::Init()
 			break;
         default:
 			// CPU Vcore
-			Bind(new FintekVoltageSensor(this, 1, "VC0C", "fp2e", 2));
+			AddBinding(new FintekVoltageSensor(this, 1, "VC0C", "fp2e", 2));
 			break;
 	}
 	
@@ -214,7 +217,7 @@ void Fintek::Init()
 			}
 			
 			snprintf(key, 5, "F%dAc", m_FanOffset + m_FanCount);
-			Bind(new FintekTachometerSensor(this, i, key, "fpe2", 2));
+			AddBinding(new FintekTachometerSensor(this, i, key, "fpe2", 2));
 			
 			m_FanIndex[m_FanCount++] = i;
 		}
