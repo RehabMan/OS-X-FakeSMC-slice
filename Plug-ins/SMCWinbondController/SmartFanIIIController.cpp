@@ -50,10 +50,28 @@ void SmartFanIIIController::Initialize()
 		
 		UInt16 initial = m_Maximum = m_Provider->ReadTachometer(m_Offset, false);
 		
+		//Forcing minimum speed
+		ForcePWM(0x00);
+		
+		UInt16 last = initial, count = 0;
+		
+		//Waiting cooler will slow down to minimum
+		while (count < 5)
+		{
+			IOSleep(1000);
+			
+			m_Minimum = m_Provider->ReadTachometer(m_Offset, false);
+			
+			if (m_Minimum > last - 50)
+				count++;
+			else 
+				last = m_Minimum;
+		}
+		
 		//Forcing maximum speed
 		ForcePWM(0xff); //or should reserved bits be always 0?
 		
-		UInt16 last = initial, count = 0;
+		count = 0;
 		
 		//Waiting cooler will speed up to maximum
 		while (count < 5)
@@ -68,23 +86,7 @@ void SmartFanIIIController::Initialize()
 				last = m_Maximum;
 		};
 		
-		//Forcing minimum speed
-		ForcePWM(0x00);
 		
-		count = 0;
-		
-		//Waiting cooler will slow down to minimum
-		while (count < 5)
-		{
-			IOSleep(1000);
-			
-			m_Minimum = m_Provider->ReadTachometer(m_Offset, false);
-			
-			if (m_Minimum > last - 50)
-				count++;
-			else 
-				last = m_Minimum;
-		}
 		
 	
 					
