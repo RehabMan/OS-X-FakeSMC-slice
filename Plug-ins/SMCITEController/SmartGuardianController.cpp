@@ -24,58 +24,51 @@ void SmartGuardianController::Initialize()
 	
 	//Back up temperature sensor selection
 	m_DefaultForcePWM = m_Provider->ReadByte(m_Provider->ITE_SMARTGUARDIAN_FORCE_PWM[m_Offset], valid);
-	m_DefaultStartPWM = m_Provider->ReadByte(m_Provider->ITE_SMARTGUARDIAN_START_PWM[m_Offset], valid);
+	m_DefaultStartPWM = m_Provider->ReadByte(m_Provider->ITE_SMARTGUARDIAN_START_PWM[m_Offset], valid);//is it needed?
 	
 	if (valid)
 	{
-		char value[2];
+		char value[2]={0x00,0x00};
+		FakeSMCAddKey("FS!\0", "ui16", 2, value);
 		
 		UInt16 initial = m_Maximum = m_Provider->ReadTachometer(m_Offset);
-		
-		//Forcing maximum speed
-		ForcePWM(0x7f);
-		
-		UInt16 last = initial, count = 0;
-		
-		//Waiting cooler will speed up to maximum
-		while (count < 5)
-		{
-			IOSleep(1000);
-			
-			m_Maximum = m_Provider->ReadTachometer(m_Offset);
-			
-			if (m_Maximum < last + 50)
-			{
-				count++;
-			}
-			else 
-			{
-				last = m_Maximum;
-			}
-		}
 		
 		//Forcing minimum speed
 		ForcePWM(0x00);
 		
-		count = 0;
+		UInt16 last = initial, count = 0;
 		
 		//Waiting cooler will slow down to minimum
-		while (count < 5)
-		{
+		while (count < 5) {
 			IOSleep(1000);
 			
 			m_Minimum = m_Provider->ReadTachometer(m_Offset);
 			
 			if (m_Minimum > last - 50)
-			{
 				count++;
-			}
 			else 
-			{
 				last = m_Minimum;
-			}
 		}
 		
+		
+		//Forcing maximum speed
+		ForcePWM(0x7f);
+		
+		count=0;
+				
+		//Waiting cooler will speed up to maximum
+		while (count < 5) {
+			IOSleep(1000);
+			
+			m_Maximum = m_Provider->ReadTachometer(m_Offset);
+			
+			if (m_Maximum < last + 50)
+				count++;
+			else 
+				last = m_Maximum;
+		}
+		
+				
 	
 		//Restore temperature sensor selection
 		ForcePWM(m_DefaultForcePWM);
@@ -140,6 +133,10 @@ void SmartGuardianController::OnKeyWrite(const char* key, char* data)
 		outb(m_Provider->GetAddress() + ITE_ADDRESS_REGISTER_OFFSET, m_Provider->ITE_SMARTGUARDIAN_START_PWM[m_Offset]);	
 		outb(m_Provider->GetAddress() + ITE_DATA_REGISTER_OFFSET, slope);
 	}
-	else if ((key[2]=='T')&&(key[3]=='g')/*&&(FakeSMCReadKey("FS!\0")[0]&(1<<GetIndex(key, 1)))*/)
-		ForcePWM(slope);
+	else if ((key[2]=='T')&&(key[3]=='g')) {
+		char* forcekey=FakeSMCReadKey("FS!\0");
+		if (forcekey)
+			if (forcekey[1]&(1<<GetIndex(key, 1)))
+				ForcePWM(slope);
+	}
 }
