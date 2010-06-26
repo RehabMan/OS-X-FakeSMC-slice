@@ -9,16 +9,14 @@
 
 #include "SmartGuardianController.h"
 
-void SmartGuardianController::ForcePWM(UInt8 slope)
-{
+void SmartGuardianController::ForcePWM(UInt8 slope) {
 	DebugLog("Forcing Fan %d to %d%%", m_Offset, slope*100/127);
 	
 	outb(m_Provider->GetAddress() + ITE_ADDRESS_REGISTER_OFFSET, m_Provider->ITE_SMARTGUARDIAN_FORCE_PWM[m_Offset]);
 	outb(m_Provider->GetAddress() + ITE_DATA_REGISTER_OFFSET, slope);
 }
 
-void SmartGuardianController::Initialize()
-{
+void SmartGuardianController::Initialize() {
 	bool* valid;
 	char tmpKey[5];
 	
@@ -26,10 +24,9 @@ void SmartGuardianController::Initialize()
 	m_DefaultForcePWM = m_Provider->ReadByte(m_Provider->ITE_SMARTGUARDIAN_FORCE_PWM[m_Offset], valid);
 	m_DefaultStartPWM = m_Provider->ReadByte(m_Provider->ITE_SMARTGUARDIAN_START_PWM[m_Offset], valid);//is it needed?
 	
-	if (valid)
-	{
+	if (valid) {
 		char value[2]={0x00,0x00};
-		FakeSMCAddKey("FS!\0", "ui16", 2, value);
+		FakeSMCAddKey("FS! ", "ui16", 2, value);
 		
 		UInt16 initial = m_Maximum = m_Provider->ReadTachometer(m_Offset);
 		
@@ -83,8 +80,7 @@ void SmartGuardianController::Initialize()
 		
 		
 		
-		if (m_Maximum > initial + 100)
-		{
+		if (m_Maximum > initial + 100) {
 			value[0] = (m_Minimum << 2) >> 8;
 			value[1] = (m_Minimum << 2) & 0xff;
 					
@@ -98,8 +94,7 @@ void SmartGuardianController::Initialize()
 			snprintf(m_Key, 5, "F%dTg", m_Index);
 			FakeSMCAddKey(m_Key, "fpe2", 2, value, this);
 		}
-		else 
-		{
+		else {
 			value[0] = (initial << 2) >> 8;
 			value[1] = (initial << 2) & 0xff;
 			
@@ -111,12 +106,9 @@ void SmartGuardianController::Initialize()
 	}	
 }
 
-void SmartGuardianController::OnKeyRead(__unused const char* key, __unused char* data)
-{
-}
+void SmartGuardianController::OnKeyRead(__unused const char* key, __unused char* data){}
 
-void SmartGuardianController::OnKeyWrite(const char* key, char* data)
-{
+void SmartGuardianController::OnKeyWrite(const char* key, char* data) {
 	UInt8 slope;
 	if (m_Maximum>m_Minimum){
 		UInt16 rpm = (UInt16(data[0] << 8) | (data[1] & 0xff)) >> 2;
@@ -134,7 +126,7 @@ void SmartGuardianController::OnKeyWrite(const char* key, char* data)
 		outb(m_Provider->GetAddress() + ITE_DATA_REGISTER_OFFSET, slope);
 	}
 	else if ((key[2]=='T')&&(key[3]=='g')) {
-		char* forcekey=FakeSMCReadKey("FS!\0");
+		char* forcekey=FakeSMCReadKey("FS! ");
 		if (forcekey)
 			if (forcekey[1]&(1<<GetIndex(key, 1)))
 				ForcePWM(slope);

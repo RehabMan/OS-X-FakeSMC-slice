@@ -16,62 +16,46 @@
 #include "ITESensors.h"
 #include "SmartGuardianController.h"
 
-UInt8 ITE::ReadByte(UInt8 index, bool* valid)
-{
+UInt8 ITE::ReadByte(UInt8 index, bool* valid) {
 	outb(Address + ITE_ADDRESS_REGISTER_OFFSET, index);
-	
-	UInt8 value = inb(Address + ITE_DATA_REGISTER_OFFSET);
-	
-	valid = (bool*)(index == inb(Address + ITE_DATA_REGISTER_OFFSET));
-	
+	UInt8 value = inb(Address + ITE_DATA_REGISTER_OFFSET);	
+	valid = (bool*)(index == inb(Address + ITE_DATA_REGISTER_OFFSET));	
 	return value;
 }
 
-UInt16 ITE::ReadWord(UInt8 index1, UInt8 index2, bool* valid)
-{	
+UInt16 ITE::ReadWord(UInt8 index1, UInt8 index2, bool* valid) {	
 	return ITE::ReadByte(index1, valid) << 8 | ITE::ReadByte(index2, valid);
 }
 
-SInt16 ITE::ReadTemperature(UInt8 index)
-{
+SInt16 ITE::ReadTemperature(UInt8 index) {
 	bool* valid;
 	return ITE::ReadByte(ITE_TEMPERATURE_BASE_REG + index, valid);
 }
 
-SInt16 ITE::ReadVoltage(UInt8 index)
-{
+SInt16 ITE::ReadVoltage(UInt8 index) {
 	bool* valid;
 	return ITE::ReadByte(ITE_VOLTAGE_BASE_REG + index, valid) << 4;
 }
 
-SInt16 ITE::ReadTachometer(UInt8 index)
-{
+SInt16 ITE::ReadTachometer(UInt8 index) {
 	bool* valid;
-	int value = ITE::ReadByte(ITE_FAN_TACHOMETER_REG[index], valid);
-	
-	value |= ITE::ReadByte(ITE_FAN_TACHOMETER_EXT_REG[index], valid) << 8;
-	
+	int value = ITE::ReadByte(ITE_FAN_TACHOMETER_REG[index], valid);	
+	value |= ITE::ReadByte(ITE_FAN_TACHOMETER_EXT_REG[index], valid) << 8;	
 	return value > 0x3f && value < 0xffff ? (float)(1350000 + value) / (float)(value * 2) : 0;
 }
 
-void ITE::Enter()
-{
+void ITE::Enter() {
 	outb(RegisterPort, 0x87);
 	outb(RegisterPort, 0x01);
 	outb(RegisterPort, 0x55);
 	
 	if (RegisterPort == 0x4e) 
-	{
 		outb(RegisterPort, 0xaa);
-	}
 	else
-	{
 		outb(RegisterPort, 0x55);
-	}
 }
 
-void ITE::Exit()
-{
+void ITE::Exit() {
 	outb(RegisterPort, SUPERIO_CONFIGURATION_CONTROL_REGISTER);
 	outb(ValuePort, 0x02);
 }
@@ -92,8 +76,7 @@ bool ITE::Probe()
 	
 	Model = UnknownModel;
 	
-	for (int i = 0; i < ITE_PORTS_COUNT; i++) 
-	{
+	for (int i = 0; i < ITE_PORTS_COUNT; i++)  {
 		RegisterPort	= ITE_PORT[i];
 		ValuePort		= ITE_PORT[i] + 1;
 		
@@ -101,8 +84,7 @@ bool ITE::Probe()
 		
 		UInt16 chipID = ListenPortWord(SUPERIO_CHIP_ID_REGISTER);
 		
-		switch (chipID)
-		{
+		switch (chipID) {
 			case IT8712F:
 			case IT8716F:
 			case IT8718F:
@@ -142,15 +124,12 @@ bool ITE::Probe()
 		if (!valid)
 			continue;
 		
-		if (Model == UnknownModel)
-		{
+		if (Model == UnknownModel) {
 			InfoLog("found unsupported ITE chip ID=0x%x on ADDRESS=0x%x", chipID, Address);
 			continue;
 		} 
 		else
-		{		
 			return true;			
-		}
 	}
 	
 	return false;
@@ -161,8 +140,7 @@ void copyArray (UInt8* dest, UInt8* src, int n){
 		dest[i]=src[i];
 }
 
-void ITE::Init()
-{
+void ITE::Init() {
 	UInt8 forceArray[5]={0x15, 0x16, 0x17, 0x88, 0x89};
 	copyArray(ITE_SMARTGUARDIAN_FORCE_PWM, forceArray, 5);
 	 //UInt8 ITE_SMARTGUARDIAN_TEMPERATURE_OFF[5]		= { 0x70, 0x68, 0x60, 0x90, 0x98 };
@@ -181,33 +159,26 @@ void ITE::Init()
 	// Temperature semi-autodetection
 	int count = 0;
 	
-	for (int i = 2; i >= 0; i--) 
-	{		
+	for (int i = 2; i >= 0; i--)  {		
 		UInt8 t = ReadTemperature(i);
 		
 		// Second chance
-		if (t == 0 || t > 128 )
-		{
+		if (t == 0 || t > 128 ) {
 			IOSleep(1000);
 			t = ReadTemperature(i);
 		}
 		
-		if (t > 0 && t < 128)
-		{
-			switch (count) 
-			{
+		if (t > 0 && t < 128) {
+			switch (count)  {
 				case 0:
-				{
 					// Heatsink
 					Bind(new ITETemperatureSensor(this, i, "Th0H", "sp78", 2));
-				} break;
+					break;
 				case 1:
-				{
 					// Northbridge
 					Bind(new ITETemperatureSensor(this, i, "TN0P", "sp78", 2));
-				} break;
-			}
-			
+					break;
+			}			
 			count++;
 		}			
 	}
@@ -218,15 +189,12 @@ void ITE::Init()
 	// FANs	
 	FanOffset = GetFNum();
 	
-	for (int i = 0; i < 5; i++) 
-	{
+	for (int i = 0; i < 5; i++)  {
 		char key[5];
 		bool fanName = FanName[i] && strlen(FanName[i]) > 0;
 		
-		if (fanName || ReadTachometer(i) > 0)
-		{
-			if (fanName)
-			{
+		if (fanName || ReadTachometer(i) > 0) {
+			if (fanName) {
 				snprintf(key, 5, "F%dID", FanOffset + FanCount);
 				FakeSMCAddKey(key, "ch8*", strlen(FanName[i]), (char*)FanName[i]);
 			}
@@ -244,8 +212,7 @@ void ITE::Init()
 	UpdateFNum(FanCount);
 }
 
-void ITE::Finish()
-{
+void ITE::Finish() {
 	FlushBindings();
 	UpdateFNum(-FanCount);
 }
