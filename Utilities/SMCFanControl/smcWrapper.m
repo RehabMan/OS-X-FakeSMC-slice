@@ -22,13 +22,24 @@
 
 #import "smcWrapper.h"
 
-NSString * const smc_checksum=@"75a31ec0a358ae4efcb9835660b453a44eef6e3";
+//NSString * const smc_checksum=@"75a31ec0a358ae4efcb9835660b453a44eef6e3";
 
 @implementation smcWrapper
 	io_connect_t conn;
 
 +(void)init{
 	SMCOpen(&conn);
+}
+
++(float)get_voltage:(UInt32Char_t)key {
+	SMCVal_t val;
+	SMCReadKey2(key, &val, conn);
+	//printf("0x%x%x\n",val.bytes[0]&0xff,val.bytes[1]&0xff);
+	UInt16 fp2e=(val.bytes[0]<<8)|(val.bytes[1]&0xff);
+	//printf("0x%x\n",fp2e);
+	UInt16 dec=fp2e>>14;
+	UInt16 frc=(fp2e&0x3ff0)>>4;
+	return (float)frc/1000.0+(float)dec;	
 }
 
 float getTemp(UInt32Char_t key){
@@ -121,7 +132,7 @@ float getTemp(UInt32Char_t key){
 	return max;
 }	
 
-+(NSString*)createCheckSum:(NSString*)path{
+/*+(NSString*)createCheckSum:(NSString*)path{
 	NSData *d=[NSData dataWithContentsOfMappedFile:path];
 	unsigned char buffer[EVP_MAX_MD_SIZE];
 	unsigned int size=EVP_MAX_MD_SIZE;
@@ -132,18 +143,18 @@ float getTemp(UInt32Char_t key){
 			[sha1 appendFormat:@"%x",(unsigned char)buffer[i]];
 	}		
 	return sha1;
-}
+}*/
 
 //call smc binary with setuid rights and apply
 +(void)setKey_external:(NSString *)key value:(NSString *)value{
 	//NSLog(@"smcFanControl: The value: %@ key:%@",value,key);
 	NSString *launchPath = [[NSBundle mainBundle]   pathForResource:@"smc" ofType:@""];
 	//first check if it's the right binary (security)
-	NSString *checksum=[smcWrapper createCheckSum:launchPath];
-	if (![checksum  isEqualToString:smc_checksum]) {
+	//NSString *checksum=[smcWrapper createCheckSum:launchPath];
+	/*if (![checksum  isEqualToString:smc_checksum]) {
 		//NSLog(@"smcFanControl: Security Error: smc-binary is not the distributed one");
 		return;
-	}
+	}*/
     NSArray *argsArray = [NSArray arrayWithObjects: @"-k",key,@"-w",value,nil];
 	NSTask *task;
     task = [[NSTask alloc] init];

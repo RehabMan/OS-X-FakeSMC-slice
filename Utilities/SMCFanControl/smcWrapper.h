@@ -30,6 +30,7 @@
 
 +(int) get_fan_rpm:(int)fan_number;
 +(float) get_maintemp:(int)core_number;
++(float)get_voltage:(UInt32Char_t)key;
 //+(float) get_mptemp;
 +(int) get_fan_num;
 +(int) get_min_speed:(int)fan_number;
