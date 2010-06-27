@@ -42,10 +42,51 @@
 	return (float)frc/1000.0+(float)dec;	
 }
 
-float getTemp(UInt32Char_t key){
++(float) getTemp:(UInt32Char_t)key{
 	SMCVal_t val;
 	SMCReadKey2(key, &val, conn);
 	return ((val.bytes[0]<<8+val.bytes[1]>>2)>>6);
+}
+
++(int)countGpuTemps{
+	int i, c=0;
+	UInt32Char_t key;
+	for (i=0; i<8; i++) {
+		sprintf(key, "TG%dD", i);
+		if ([smcWrapper getTemp:key]>0)
+			c++;
+		sprintf(key, "TG%dH", i);
+		if ([smcWrapper getTemp:key]>0)
+			c++;
+		sprintf(key, "TG%dP", i);
+		if ([smcWrapper getTemp:key]>0)
+			c++;
+	}
+	return c;
+}
+
++(int)countGpus{
+	int i, c=0;
+	UInt32Char_t key;
+	for (i=0; i<8; i++) {
+		sprintf(key, "TG%dD", i);
+		if ([smcWrapper getTemp:key]>0) {
+			c++;
+			continue;
+		}
+		sprintf(key, "TG%dH", i);
+		if ([smcWrapper getTemp:key]>0) {
+			c++;
+			continue;
+		}
+		sprintf(key, "TG%dP", i);
+		if ([smcWrapper getTemp:key]>0) {
+			c++;
+			continue;
+		}
+	}
+	return c;
+	
 }
 
 +(int) get_maintemp:(int)core_number{
@@ -55,16 +96,16 @@ float getTemp(UInt32Char_t key){
 	float c_temp;
 	
 	sprintf(key, "TC%dD", core_number);
-	c_temp=getTemp(key);
+	c_temp=[smcWrapper getTemp:key];
 	//workaround for imac 24" (just for testing).
 	if (c_temp<0) {
 		sprintf(key, "TC%dH", core_number);
-		c_temp=getTemp(key);
+		c_temp=[smcWrapper getTemp:key];
 	}
 	//last try
 	if (c_temp<0) {
 		sprintf(key, "TC%cH", 'A'+core_number);
-		c_temp=getTemp(key);
+		c_temp=[smcWrapper getTemp:key];
 	}
 	
 	//for macpro different strategy

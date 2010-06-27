@@ -28,7 +28,10 @@
 @interface smcWrapper : NSObject {
 }
 
++(int)countGpuTemps;
++(int)countGpus;
 +(int) get_fan_rpm:(int)fan_number;
++(float) getTemp:(UInt32Char_t)key;
 +(int) get_maintemp:(int)core_number;
 +(float)get_voltage:(UInt32Char_t)key;
 //+(float) get_mptemp;

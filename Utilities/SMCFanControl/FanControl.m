@@ -226,6 +226,12 @@ NSString *authpw;
 	[voltState setHighlightMode:YES];
 	[voltState setTitle:@"VOLT"];
 	
+	gpuState = [[[NSStatusBar systemStatusBar] statusItemWithLength: NSVariableStatusItemLength] retain];
+	[gpuState setMenu: theMenu];
+	[gpuState setEnabled: YES];
+	[gpuState setHighlightMode:YES];
+	[gpuState setTitle:@"VOLT"];
+	
 	int i;
 	for(i=0;i<[s_menus count];i++)
 		[theMenu insertItem:[s_menus objectAtIndex:i] atIndex:i];
@@ -299,7 +305,7 @@ NSString *authpw;
 	NSString *fan;
 	NSString *volt;
 	
-	int core_count=4/*cpuid_info()->core_count*/;
+	int core_count=2/*cpuid_info()->core_count*/;//TODO: Determine Core Count
 
 	//populate Menu Items with recent Data
 	int i, n;
@@ -328,7 +334,7 @@ NSString *authpw;
 	
 	//fan=[NSString stringWithFormat:@"%@rpm",[nc stringForObjectValue:[NSNumber numberWithFloat:[smcWrapper get_fan_rpm:selected]]]];
 
-	int fsize;	
+	int fsize, t;	
 	NSMutableAttributedString*	s_status;
 	NSMutableParagraphStyle*	paragraphStyle;
 	NSMutableString* someString;
@@ -399,58 +405,43 @@ NSString *authpw;
 			[s_status release];
 			[someString release];
 			
+			//GPU Temperatures
+			int gc=[smcWrapper countGpus];
+			if (gc) {
+				[gpuState setLength:24*[smcWrapper countGpuTemps]/gc];
+				someString=[[NSMutableString alloc] init];
+				for (i=0; i<gc; i++) {
+					sprintf(key, "TG%dD", i);
+					t=[smcWrapper getTemp:key];
+					temp=[NSString stringWithFormat:@"%d˚",t];
+					if (t>0)
+						[someString appendFormat:@"%@ ", temp];
+					sprintf(key, "TG%dH", i);
+					t=[smcWrapper getTemp:key];
+					temp=[NSString stringWithFormat:@"%d˚",t];
+					if (t>0)
+						[someString appendFormat:@"%@ ", temp];
+					sprintf(key, "TG%dP", i);
+					t=[smcWrapper getTemp:key];
+					temp=[NSString stringWithFormat:@"%d˚",t];
+					if (t>0)
+						[someString appendFormat:@"%@ ", temp];
+				
+					if (i==gc/2-1)
+						[someString appendFormat:@"\n"];
+				}
+				s_status=[[NSMutableAttributedString alloc] initWithString:someString];
+				[s_status addAttribute:NSFontAttributeName value:[NSFont fontWithName:@"Lucida Grande" size:9] range:NSMakeRange(0,[s_status length])];
+				[s_status addAttribute:NSForegroundColorAttributeName value:(NSColor*)[NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"MenuColor"]]  range:NSMakeRange(0,[s_status length])];
+				[gpuState setAttributedTitle:s_status];
+				[gpuState setImage:nil];
+				[gpuState setAlternateImage:nil];
+				[s_status release];
+				[someString release];
+			}
+			
 			break;
 		
-		case 1: //Temperature and fan speed (single line)
-			//Fan speed
-			[fanState setLength:(36*[fans count])];
-			someString=[[NSMutableString alloc] init];
-			for (i=0; i<[fans count]; i++) {
-				fan=[NSString stringWithFormat:@"%d",[smcWrapper get_fan_rpm:i]];
-				[someString appendFormat:@"%@ ", fan];
-			}
-			s_status=[[NSMutableAttributedString alloc] initWithString:someString];
-			[s_status addAttribute:NSFontAttributeName value:[NSFont fontWithName:@"Lucida Grande" size:13] range:NSMakeRange(0,[s_status length])];
-			[s_status addAttribute:NSForegroundColorAttributeName value:(NSColor*)[NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"MenuColor"]]  range:NSMakeRange(0,[s_status length])];
-			[fanState setAttributedTitle:s_status];
-			[fanState setImage:nil];
-			[fanState setAlternateImage:nil];
-			[s_status release];
-			[someString release];
-			
-			//Temperature
-			[tempState setLength:30*core_count];
-			someString=[[NSMutableString alloc] init];
-			for (i=0; i<core_count; i++) {
-				temp=[NSString stringWithFormat:@"%d˚",[smcWrapper get_maintemp:i]];
-				[someString appendFormat:@"%@ ", temp];
-			}
-			s_status=[[NSMutableAttributedString alloc] initWithString:someString];
-			[s_status addAttribute:NSFontAttributeName value:[NSFont fontWithName:@"Lucida Grande" size:13] range:NSMakeRange(0,[s_status length])];
-			[s_status addAttribute:NSForegroundColorAttributeName value:(NSColor*)[NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"MenuColor"]]  range:NSMakeRange(0,[s_status length])];
-			[tempState setAttributedTitle:s_status];
-			[tempState setImage:nil];
-			[tempState setAlternateImage:nil];
-			[s_status release];
-			[someString release];
-						
-			//Voltage
-			sprintf(key, "VC0C");
-			[voltState setLength:54];
-			someString=[[NSMutableString alloc] init];
-			volt=[NSString stringWithFormat:@"%.3fV",[smcWrapper get_voltage:key]];
-			[someString appendFormat:@"%@", volt];
-			s_status=[[NSMutableAttributedString alloc] initWithString:someString];
-			[s_status addAttribute:NSFontAttributeName value:[NSFont fontWithName:@"Lucida Grande" size:13] range:NSMakeRange(0,[s_status length])];
-			[s_status addAttribute:NSForegroundColorAttributeName value:(NSColor*)[NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"MenuColor"]]  range:NSMakeRange(0,[s_status length])];
-			[voltState setAttributedTitle:s_status];
-			[voltState setImage:nil];
-			[voltState setAlternateImage:nil];
-			[s_status release];
-			[someString release];
-			break;
-					
-			
 		case 2:
 			[fanState setLength:26]; 
 			[fanState setTitle:nil];

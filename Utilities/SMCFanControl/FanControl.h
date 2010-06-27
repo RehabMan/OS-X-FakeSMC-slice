@@ -83,11 +83,10 @@
 
 	IBOutlet id colorSelector;
 		
-	NSStatusItem* fanState;
-	
-	NSStatusItem* tempState;
-	
-	NSStatusItem* voltState;
+	NSStatusItem*	fanState;	
+	NSStatusItem*	tempState;	
+	NSStatusItem*	voltState;
+	NSStatusItem*	gpuState;
 	
 	NSMutableArray* s_menus;
 	
