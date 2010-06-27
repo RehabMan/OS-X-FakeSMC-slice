@@ -48,7 +48,7 @@ float getTemp(UInt32Char_t key){
 	return ((val.bytes[0]<<8+val.bytes[1]>>2)>>6);
 }
 
-+(float) get_maintemp:(int)core_number{
++(int) get_maintemp:(int)core_number{
 	UInt32Char_t  key;
 	//SMCVal_t      val;
 	//kern_return_t result;
