@@ -48,10 +48,10 @@
 	return ((val.bytes[0]<<8+val.bytes[1]>>2)>>6);
 }
 
-+(int)countGpuTemps{
+/*+(int)countGpuTemps{
 	int i, c=0;
 	UInt32Char_t key;
-	for (i=0; i<8; i++) {
+	for (i=0; i<2; i++) {
 		sprintf(key, "TG%dD", i);
 		if ([smcWrapper getTemp:key]>0)
 			c++;
@@ -63,12 +63,12 @@
 			c++;
 	}
 	return c;
-}
+}*/
 
 +(int)countGpus{
 	int i, c=0;
 	UInt32Char_t key;
-	for (i=0; i<8; i++) {
+	for (i=0; i<2; i++) {
 		sprintf(key, "TG%dD", i);
 		if ([smcWrapper getTemp:key]>0) {
 			c++;
@@ -98,12 +98,12 @@
 	sprintf(key, "TC%dD", core_number);
 	c_temp=[smcWrapper getTemp:key];
 	//workaround for imac 24" (just for testing).
-	if (c_temp<0) {
+	if (c_temp<=0) {
 		sprintf(key, "TC%dH", core_number);
 		c_temp=[smcWrapper getTemp:key];
 	}
 	//last try
-	if (c_temp<0) {
+	if (c_temp<=0) {
 		sprintf(key, "TC%cH", 'A'+core_number);
 		c_temp=[smcWrapper getTemp:key];
 	}
@@ -111,6 +111,16 @@
 	//for macpro different strategy
 	
 	return c_temp;
+}
+
++(int)countCores{
+	int i, c=0, t;
+	for (i=0; i<8; i++){
+		t=[smcWrapper get_maintemp:i];
+		if (t>0)
+			c++;
+	}
+	return c;
 }
 
 +(int) get_fan_rpm:(int)fan_number{

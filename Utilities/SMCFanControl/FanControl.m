@@ -41,7 +41,8 @@ SMCVal_t val;
 OSStatus status;
 NSDictionary* machine_defaults;
 NSString *authpw;
-
+int gc;
+int core_count;
 
 
 #pragma mark **Init-Methods**
@@ -58,7 +59,9 @@ NSString *authpw;
 	
 	//app in foreground for update notifications
 	[[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
-
+	
+	gc=[smcWrapper countGpus];
+	core_count=[smcWrapper countCores];
 }
 
 
@@ -97,7 +100,6 @@ NSString *authpw;
 	mdefaults=[[MachineDefaults alloc] init:nil];
 
 	s_sed=[mdefaults get_machine_defaults];
-	//TODO: Remove "Default" profile as it doesn't work
 	NSMutableArray *favorites=[NSMutableArray arrayWithObjects:
 							[NSMutableDictionary dictionaryWithObjectsAndKeys:
 							@"Default", @"Title",
@@ -230,7 +232,13 @@ NSString *authpw;
 	[gpuState setMenu: theMenu];
 	[gpuState setEnabled: YES];
 	[gpuState setHighlightMode:YES];
-	[gpuState setTitle:@"VOLT"];
+	[gpuState setTitle:@"GPU"];
+	
+	miscState = [[[NSStatusBar systemStatusBar] statusItemWithLength: NSVariableStatusItemLength] retain];
+	[miscState setMenu: theMenu];
+	[miscState setEnabled: YES];
+	[miscState setHighlightMode:YES];
+	[miscState setTitle:@"MISC"];
 	
 	int i;
 	for(i=0;i<[s_menus count];i++)
@@ -301,12 +309,6 @@ NSString *authpw;
 //reads fan data and updates the gui
 -(void) readFanData:(NSTimer*)timer{
 	
-	NSString *temp;
-	NSString *fan;
-	NSString *volt;
-	
-	int core_count=2/*cpuid_info()->core_count*/;//TODO: Determine Core Count
-
 	//populate Menu Items with recent Data
 	int i, n;
 	for(i=0; i<[smcWrapper get_fan_num]; i++){
@@ -318,146 +320,203 @@ NSString *authpw;
 		[[theMenu itemWithTag:(i+1)*10] setTitle:[NSString stringWithFormat:@"Core %d: %d˚C",n,[smcWrapper get_maintemp:i]]];
 	
 	
-	/*NSNumberFormatter *nc=[[[NSNumberFormatter alloc] init] autorelease];
-	NSNumberFormatter *ncf=[[[NSNumberFormatter alloc] init] autorelease];
-	
-
-	//avoid jumping in menu bar
-	[nc setFormat:@"000;000;-000"];
-	[ncf setFormat:@"00;00;-00"];*/
-	
-	//int selected = 0;
 	NSArray *fans = [[[FavoritesController arrangedObjects] objectAtIndex:[FavoritesController selectionIndex]] objectForKey:@"FanData"];
-	/*for (i=0;i<[fans count];i++)
-		if ([[[fans objectAtIndex:i] objectForKey:@"menu"] boolValue]==YES)
-			selected = i;*/
 	
-	//fan=[NSString stringWithFormat:@"%@rpm",[nc stringForObjectValue:[NSNumber numberWithFloat:[smcWrapper get_fan_rpm:selected]]]];
-
-	int fsize, t;	
+	int t;
+	float v;
 	NSMutableAttributedString*	s_status;
-	NSMutableParagraphStyle*	paragraphStyle;
 	NSMutableString* someString;
+	NSRange range;
+	NSNumber* strWidth=[[NSNumber alloc] initWithFloat:-3.0];
+	NSFont* font=[NSFont fontWithName:@"Lucida Grande" size:9];
 	UInt32Char_t key;
 	switch ([[defaults objectForKey:@"MenuBar"] intValue]) {
-		case 0: //Temperature and fan speed (dual-line)
+		case 0: //Everything (dual-line)
 			//Fan speed
-			fsize=9;
-			[fanState setLength:40*([fans count]/2)];
+			[fanState setLength:NSVariableStatusItemLength];
 			someString=[[NSMutableString alloc] init];
 			for (i=0; i<[fans count]; i++) {
-				fan=[NSString stringWithFormat:@"%d",[smcWrapper get_fan_rpm:i]];
-				[someString appendFormat:@"%@", fan];
-				if (i==[fans count]/2)
+				[someString appendFormat:@"%d",[smcWrapper get_fan_rpm:i]];
+				if (i==[fans count]/2-1)
 					[someString appendFormat:@"\n"];
 				else 
 					[someString appendFormat:@" "];
 
 			}
 			s_status=[[NSMutableAttributedString alloc] initWithString:someString];
-			paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
-			[paragraphStyle setAlignment:NSLeftTextAlignment];
-			[s_status addAttribute:NSFontAttributeName value:[NSFont fontWithName:@"Lucida Grande" size:fsize] range:NSMakeRange(0,[s_status length])];
-			[s_status addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0,[s_status length])];
-			[s_status addAttribute:NSForegroundColorAttributeName value:(NSColor*)[NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"MenuColor"]]  range:NSMakeRange(0,[s_status length])];
+			range=NSMakeRange(0, [s_status length]);
+			[s_status addAttribute:NSFontAttributeName value:font range:range];
+			[s_status addAttribute:NSStrokeWidthAttributeName value:strWidth range:range];
+			[s_status addAttribute:NSForegroundColorAttributeName value:(NSColor*)[NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"MenuColor"]]  range:range];
 			[fanState setAttributedTitle:s_status];
 			[fanState setImage:nil];
 			[fanState setAlternateImage:nil];
-			[paragraphStyle release];
-			[s_status release];			
+			[fanState setToolTip:nil];
 			[someString release];
+						
 			
-			
-			//Temperature
-			[tempState setLength:24*core_count/2];
-			someString=[[NSMutableString alloc] init];
-			for (i=0; i<core_count; i++) {
-				temp=[NSString stringWithFormat:@"%d˚",[smcWrapper get_maintemp:i]];
-				[someString appendFormat:@"%@", temp];
-				if (i==core_count/2-1)
-					[someString appendFormat:@"\n"];
-				else 
-					[someString appendFormat:@" "];
+			//Core Temperature
+			if (core_count) {
+				[tempState setLength:NSVariableStatusItemLength];
+				someString=[[NSMutableString alloc] init];
 				
+				for (i=0; i<core_count; i++) {
+					[someString appendFormat:@"%d˚",[smcWrapper get_maintemp:i]];
+					if (i==core_count/2-1)
+						[someString appendFormat:@"\n"];
+					else 
+						[someString appendFormat:@" "];
+				
+				}
+				[s_status initWithString:someString];
+				range=NSMakeRange(0, [s_status length]);
+				[s_status addAttribute:NSFontAttributeName value:font range:range];
+				[s_status addAttribute:NSStrokeWidthAttributeName value:strWidth range:range];
+				[s_status addAttribute:NSForegroundColorAttributeName value:(NSColor*)[NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"MenuColor"]]  range:range];
+				[tempState setAttributedTitle:s_status];
+				[someString release];
 			}
-			s_status=[[NSMutableAttributedString alloc] initWithString:someString];
-			[s_status addAttribute:NSFontAttributeName value:[NSFont fontWithName:@"Lucida Grande" size:9] range:NSMakeRange(0,[s_status length])];
-			[s_status addAttribute:NSForegroundColorAttributeName value:(NSColor*)[NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"MenuColor"]]  range:NSMakeRange(0,[s_status length])];
-			[tempState setAttributedTitle:s_status];
-			[tempState setImage:nil];
-			[tempState setAlternateImage:nil];
-			[s_status release];
+			else 
+				[tempState setLength:0];
+
+			//Northbridge and CPU Heatsink temperature
+			someString=[[NSMutableString alloc] init];
+			//[someString init];
+			
+			sprintf(key, "Th0H");
+			t=[smcWrapper getTemp:key];
+			if (t>0) 
+				[someString appendFormat:@"%d˚", t];
+						
+			sprintf(key, "TN0P");
+			t=[smcWrapper getTemp:key];
+			if (t>0) 
+				[someString appendFormat:@"\n%d˚", t];//FIXME: \n even if no CPU Heatsink temperature
+			
+			[miscState setLength:NSVariableStatusItemLength];
+			[s_status initWithString:someString];
+			range=NSMakeRange(0, [s_status length]);
+			[s_status addAttribute:NSFontAttributeName value:font range:range];
+			[s_status addAttribute:NSStrokeWidthAttributeName value:strWidth range:range];
+			[s_status addAttribute:NSForegroundColorAttributeName value:(NSColor*)[NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"MenuColor"]]  range:range];
+			[miscState setAttributedTitle:s_status];
 			[someString release];
+			
 			
 			
 			//Voltage
 			sprintf(key, "VC0C");
-			[voltState setLength:40];
-			someString=[[NSMutableString alloc] init];
-			volt=[NSString stringWithFormat:@"%.3fV",[smcWrapper get_voltage:key]];
-			[someString appendFormat:@"%@", volt];
-			s_status=[[NSMutableAttributedString alloc] initWithString:someString];
-			[s_status addAttribute:NSFontAttributeName value:[NSFont fontWithName:@"Lucida Grande" size:9] range:NSMakeRange(0,[s_status length])];
-			[s_status addAttribute:NSForegroundColorAttributeName value:(NSColor*)[NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"MenuColor"]]  range:NSMakeRange(0,[s_status length])];
-			[voltState setAttributedTitle:s_status];
-			[voltState setImage:nil];
-			[voltState setAlternateImage:nil];
-			[s_status release];
-			[someString release];
+			v=[smcWrapper get_voltage:key];
+			if (v>0.0) {
+				[voltState setLength:NSVariableStatusItemLength];
+				someString=[[NSMutableString alloc] init];
+				[someString appendFormat:@"%.3fV",v];
+				[s_status initWithString:someString];
+				range=NSMakeRange(0, [s_status length]);
+				[s_status addAttribute:NSFontAttributeName value:font range:range];
+				[s_status addAttribute:NSStrokeWidthAttributeName value:strWidth range:range];
+				[s_status addAttribute:NSForegroundColorAttributeName value:(NSColor*)[NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"MenuColor"]]  range:range];
+				[voltState setAttributedTitle:s_status];
+				[someString release];
+			}
+			else
+				[voltState setLength:0];
 			
 			//GPU Temperatures
-			int gc=[smcWrapper countGpus];
 			if (gc) {
-				[gpuState setLength:24*[smcWrapper countGpuTemps]/gc];
+				[gpuState setLength:NSVariableStatusItemLength];
 				someString=[[NSMutableString alloc] init];
 				for (i=0; i<gc; i++) {
 					sprintf(key, "TG%dD", i);
 					t=[smcWrapper getTemp:key];
-					temp=[NSString stringWithFormat:@"%d˚",t];
 					if (t>0)
-						[someString appendFormat:@"%@ ", temp];
+						[someString appendFormat:@"%d˚",t];
 					sprintf(key, "TG%dH", i);
 					t=[smcWrapper getTemp:key];
-					temp=[NSString stringWithFormat:@"%d˚",t];
 					if (t>0)
-						[someString appendFormat:@"%@ ", temp];
+						[someString appendFormat:@"%d˚",t];
 					sprintf(key, "TG%dP", i);
 					t=[smcWrapper getTemp:key];
-					temp=[NSString stringWithFormat:@"%d˚",t];
 					if (t>0)
-						[someString appendFormat:@"%@ ", temp];
+						[someString appendFormat:@"%d˚",t];
 				
 					if (i==gc/2-1)
 						[someString appendFormat:@"\n"];
 				}
-				s_status=[[NSMutableAttributedString alloc] initWithString:someString];
-				[s_status addAttribute:NSFontAttributeName value:[NSFont fontWithName:@"Lucida Grande" size:9] range:NSMakeRange(0,[s_status length])];
-				[s_status addAttribute:NSForegroundColorAttributeName value:(NSColor*)[NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"MenuColor"]]  range:NSMakeRange(0,[s_status length])];
+				[s_status initWithString:someString];
+				range=NSMakeRange(0, [s_status length]);
+				[s_status addAttribute:NSFontAttributeName value:font range:range];
+				[s_status addAttribute:NSStrokeWidthAttributeName value:strWidth range:range];
+				[s_status addAttribute:NSForegroundColorAttributeName value:(NSColor*)[NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"MenuColor"]]  range:range];
 				[gpuState setAttributedTitle:s_status];
-				[gpuState setImage:nil];
-				[gpuState setAlternateImage:nil];
 				[s_status release];
 				[someString release];
 			}
 			
 			break;
 		
-		case 2:
-			[fanState setLength:26]; 
+		case 2: //Image
+			[fanState setLength:NSVariableStatusItemLength]; 
 			[fanState setTitle:nil];
 			someString=[[NSMutableString alloc] init];
-			for (i=0; i<[fans count]; i++) {
-				fan=[NSString stringWithFormat:@"%d",[smcWrapper get_fan_rpm:i]];
-				[someString appendFormat:@"%@ ", fan];
-			}
-			for (i=0; i<core_count; i++) {
-				temp=[NSString stringWithFormat:@"%d˚C",[smcWrapper get_maintemp:i]];
-				[someString appendFormat:@"%@ ", temp];
-			}
+			
+			//Fan speed
+			for (i=0; i<[fans count]; i++, [someString appendFormat:@"\n"])
+				[someString appendFormat:@"Fan %d:%dRPM",i,[smcWrapper get_fan_rpm:i]];
+			
+			//Core temperatures
+			for (i=0; i<core_count; i++)
+				[someString appendFormat:@"\nCore %d:%d˚",i,[smcWrapper get_maintemp:i]];
+			
+			[someString appendFormat:@"\n"];
+			
+			//NB/HS temperatures
+			sprintf(key, "Th0H");
+			t=[smcWrapper getTemp:key];
+			if (t>0) 
+				[someString appendFormat:@"\nCPU Heatsink:%d˚", t];
+			
+			sprintf(key, "TN0P");
+			t=[smcWrapper getTemp:key];
+			if (t>0) 
+				[someString appendFormat:@"\nNorthbridge:%d˚", t];
+			[someString appendFormat:@"\n"];
+			
+			//Graphics
+			if (gc) 
+				for (i=0; i<gc; i++) {
+					sprintf(key, "TG%dD", i);
+					t=[smcWrapper getTemp:key];
+					if (t>0)
+						[someString appendFormat:@"\nGPU Diode:%d˚",t];
+					sprintf(key, "TG%dH", i);
+					t=[smcWrapper getTemp:key];
+					if (t>0)
+						[someString appendFormat:@"\nGPU Heatsink:%d˚",t];
+					sprintf(key, "TG%dP", i);
+					t=[smcWrapper getTemp:key];
+					if (t>0)
+						[someString appendFormat:@"\nGPU Ambient:%d˚",t];
+					[someString appendFormat:@"\n"];
+				}
+		
+			
+			//Voltage
+			sprintf(key, "VC0C");
+			v=[smcWrapper get_voltage:key];
+			if (v>0.0)
+				[someString appendFormat:@"\nCPU Core Voltage:%.3fV",v];
+			
+			
 			[fanState setToolTip:someString];
 			[fanState setImage:menu_image];
 			[fanState setAlternateImage:menu_image_alt];
 			[someString release];
+			
+			[tempState setLength:0];
+			[voltState setLength:0];
+			[miscState setLength:0];
+			[gpuState setLength:0];
 			break;
 						
  
@@ -580,20 +639,6 @@ NSString *authpw;
 
 #pragma mark **Helper-Methods**
 
-//just a helper to bringt update-info-window to the front
-- (IBAction)updateCheck:(id)sender{
-	//[[[SUUpdater alloc] init] checkForUpdates:sender];
-	[[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
-}
-
-- (IBAction)visitHomepage:(id)sender{
-	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://www.eidac.de/products"]];
-}
-
-
-- (IBAction)paypal:(id)sender{
-	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=holtmann%40campus%2dvirtuell%2ede&no_shipping=0&no_note=1&tax=0&currency_code=EUR&bn=PP%2dDonationsBF&charset=UTF%2d8&country=US"]];
-}
 
 -(void) syncBinder:(Boolean)bind{
 	//in case plist is corrupt, don't bind

@@ -108,7 +108,7 @@
 	} else {
 		NSAlert *alert = [NSAlert alertWithMessageText:NSLocalizedString(@"Alert!",nil) 
 						  defaultButton:NSLocalizedString(@"Continue",nil) alternateButton:NSLocalizedString(@"Quit",nil) otherButton:nil
-						informativeTextWithFormat:NSLocalizedString(@"SMCFanControl has not been tested on this machine yet, but it should run if you follow the instructions. \n\nIf you choose to continue, please make you have no other FanControl-software running. Otherwise please quit, deinstall the other software, restart your machine and rerun SMCFanControl!",nil)];
+						informativeTextWithFormat:NSLocalizedString(@"K-Stat-i has not been tested on this machine yet, but it should run if you follow the instructions. \n\nIf you choose to continue, please make you have no other FanControl-software running. Otherwise please quit, deinstall the other software, restart your machine and rerun SMCFanControl!",nil)];
 		int code=[alert runModal];
 		if (code==NSAlertDefaultReturn) {
 			m_defaults=[self readfrom_smc];

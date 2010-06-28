@@ -87,6 +87,7 @@
 	NSStatusItem*	tempState;	
 	NSStatusItem*	voltState;
 	NSStatusItem*	gpuState;
+	NSStatusItem*	miscState;
 	
 	NSMutableArray* s_menus;
 	
@@ -112,12 +113,9 @@
 
 -(void)terminate:(id)sender;
 
--(void)paypal:(id)sender;
-- (IBAction)visitHomepage:(id)sender;
 
 - (IBAction)closePreferences:(id)sender;
 - (IBAction)savePreferences:(id)sender;
-- (IBAction)updateCheck:(id)sender;
 
 - (void)init_statusitem;
 
