@@ -195,6 +195,36 @@ void SuperIO::LoadConfiguration(IOService* provider)
 		
 		fanIDs->release();
     }
+	
+	// Fan Control
+	OSDictionary* fanControlConfig = OSDynamicCast(OSDictionary, m_Service->getProperty("Fan Control"));
+	
+	if (fanControlConfig)
+	{
+		OSBoolean* enabled = OSDynamicCast(OSBoolean, fanControlConfig->getObject("Enabled"));
+		
+		if (enabled && enabled->getValue())
+		{
+			m_FanControl = true;
+			
+			InfoLog("Software FAN control enabled");
+			
+			enabled = OSDynamicCast(OSBoolean, fanControlConfig->getObject("Voltage Control"));
+			
+			if (enabled && enabled->getValue())
+			{
+				InfoLog("Fan Control in voltage mode");
+				
+				m_FanVoltageControlled = true;
+			}
+			else
+			{
+				InfoLog("Fan Control in PWM mode");
+			}
+		}
+	}
+	
+	cpuid_update_generic_info();
 }
 
 bool SuperIO::Probe()
@@ -210,7 +240,7 @@ bool SuperIO::Probe()
 		
 		Enter();
 		
-		if (ProbeCurrentPort())
+		if (ProbePort())
 		{
 			Exit();
 			
@@ -221,4 +251,15 @@ bool SuperIO::Probe()
 	}
 	
 	return false;
+}
+
+void SuperIO::Start()
+{
+}
+
+void SuperIO::Stop()
+{
+	FlushBindings();
+	FlushControllers();
+	UpdateFNum(-m_FanCount);
 }

@@ -13,7 +13,7 @@
 class ITEFanController : public FanController
 {
 public:
-	ITEFanController(ITE* provider, UInt8 index, OSDictionary* configuration) : FanController(provider, index, configuration)
+	ITEFanController(ITE* provider, UInt8 index) : FanController(provider, index)
 	{
 	};
 	

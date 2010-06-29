@@ -100,7 +100,7 @@ bool FakeSMCSuperIOMonitor::start(IOService * provider)
 	
 	if(superio)
 	{
-		superio->Init();
+		superio->Start();
 		
 		if (superio->GetControllers())
 		{
@@ -130,7 +130,7 @@ void FakeSMCSuperIOMonitor::stop (IOService* provider)
 		m_TimerEventSource->cancelTimeout();
 	
 	if(superio)
-		superio->Finish();
+		superio->Stop();
 
 	super::stop(provider);
 }

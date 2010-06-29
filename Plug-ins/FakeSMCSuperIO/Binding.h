@@ -10,7 +10,7 @@
 #ifndef _BINDING_H
 #define _BINDING_H
 
-#include "BaseDefinitions.h"
+#include "FakeSMC.h"
 
 class Binding : public FakeSMCBinding
 {

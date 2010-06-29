@@ -9,6 +9,72 @@
 
 #include "FanController.h"
 
+bool FanController::UpdateConfiguration(OSDictionary* configuration)
+{
+	if (!configuration)
+		return false;
+
+	OSString* tempSource = OSDynamicCast(OSString, configuration->getObject("Temperature Source"));
+	OSNumber* startTemp = OSDynamicCast(OSNumber, configuration->getObject("Start Temperature, ℃"));
+	OSNumber* highTemp = OSDynamicCast(OSNumber, configuration->getObject("High Temperature, ℃"));
+	OSNumber* startThrottle = OSDynamicCast(OSNumber, configuration->getObject("Start Throttle, %"));
+	OSNumber* highThrottle = OSDynamicCast(OSNumber, configuration->getObject("High Throttle, %"));
+	
+	const char* inputKey;
+	
+	if (!tempSource) 
+	{
+		Deactivate();
+		return false;
+	}
+	else if (tempSource->isEqualTo("Processor"))
+	{
+		inputKey = KEY_CPU_HEATSINK_TEMPERATURE;
+	}
+	else if (tempSource->isEqualTo("System"))
+	{
+		inputKey = KEY_NORTHBRIDGE_TEMPERATURE;
+	}
+	else
+	{
+		Deactivate();
+		return false;
+	}
+	
+	m_Input = 0xff;
+	
+	for (Sensor* sensor = (Sensor*)m_Provider->GetBindings(); sensor; sensor = (Sensor*)sensor->Next)
+	{
+		if (CompareKeys(sensor->GetKey(), inputKey))
+		{
+			m_Input = sensor->GetIndex();
+		}
+	}
+	
+	if (!startTemp || !highTemp || highTemp->unsigned8BitValue() < startTemp->unsigned8BitValue())
+	{
+		Deactivate();
+		return false;
+	}
+	
+	if (!startThrottle || !highThrottle || highThrottle->unsigned8BitValue() < startThrottle->unsigned8BitValue()) 
+	{
+		Deactivate();
+		return false;
+	}
+		
+	m_StartTemperature = startTemp->unsigned8BitValue();
+	m_StartThrottle = startThrottle->unsigned8BitValue();
+	m_HighTemperature = highTemp->unsigned8BitValue();
+	m_HighThrottle = highThrottle->unsigned8BitValue();
+		
+	CalculateMultiplier();
+	
+	Activate();
+		
+	return true;
+}
+
 void FanController::TimerEvent()
 {
 	if (!m_Active) 
@@ -36,7 +102,7 @@ void FanController::TimerEvent()
 		
 		m_LastValue = t;
 	}
-	else if (m_StartThrottle != m_LastValue ) 
+	else if (m_HighThrottle != m_LastValue ) 
 	{
 		m_LastValue = m_StartThrottle;
 		ForceFan(m_Index, m_StartThrottle);

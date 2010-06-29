@@ -82,7 +82,7 @@ void ITE::Exit()
 	outb(m_ValuePort, 0x02);
 }
 
-bool ITE::ProbeCurrentPort()
+bool ITE::ProbePort()
 {
 	UInt16 id = ListenPortWord(SUPERIO_CHIP_ID_REGISTER);
 	
@@ -131,7 +131,7 @@ bool ITE::ProbeCurrentPort()
 	return true;
 }
 
-void ITE::Init()
+void ITE::Start()
 {
 	// Temperature semi-autodetection
 	
@@ -155,12 +155,12 @@ void ITE::Init()
 				case 0:
 				{
 					// Heatsink
-					AddBinding(new ITETemperatureSensor(this, i, KEY_CPU_HEATSINK_TEMPERATURE, "sp78", 2));
+					AddBinding(new ITETemperatureSensor(this, i, KEY_CPU_HEATSINK_TEMPERATURE, TYPE_SP78, 2));
 				} break;
 				case 1:
 				{
 					// Northbridge
-					AddBinding(new ITETemperatureSensor(this, i, KEY_NORTHBRIDGE_TEMPERATURE, "sp78", 2));
+					AddBinding(new ITETemperatureSensor(this, i, KEY_NORTHBRIDGE_TEMPERATURE, TYPE_SP78, 2));
 				} break;
 			}
 			
@@ -169,255 +169,52 @@ void ITE::Init()
 	}
 
 	// CPU Vcore
-	AddBinding(new ITEVoltageSensor(this, 0, "VC0C", "fp2e", 2));
+	AddBinding(new ITEVoltageSensor(this, 0, KEY_CPU_VOLTAGE, TYPE_FP2E, 2));
+		
+	// FANs
 	
-	// SmartGuardian Setup
-	OSDictionary* dictionary = OSDynamicCast(OSDictionary, m_Service->getProperty("SmartGuardian"));
-	
-	if (dictionary)
+	// Fan Control Setup
+	if (m_FanControl && m_FanVoltageControlled)
 	{
-		OSBoolean* enabled = OSDynamicCast(OSBoolean, dictionary->getObject("Enabled"));
-		
-		if (enabled && enabled->getValue())
-		{
-			InfoLog("SmartGuardian Mode activated for all FANs");
-			
-			bool* valid;
-			UInt8 control = ReadByte(ITE_SMARTGUARDIAN_MAIN_CONTROL, valid);
-			
-			control |= 0x7;
-			
-			WriteByte(ITE_SMARTGUARDIAN_MAIN_CONTROL, control);
-		}
-		
-		for (int i = 0; i < 5; i++) 
-		{
-			UInt8 control;
-			char key[5];
-			
-			snprintf(key, 5, "Fan%d", i);
-			
-			OSDictionary* fanInfo = OSDynamicCast(OSDictionary, dictionary->getObject(key));
-			
-			if (fanInfo)
-			{				
-				enabled = OSDynamicCast(OSBoolean, fanInfo->getObject("Enabled"));
-				
-				if (enabled && enabled->getValue())
-				{
-					InfoLog("SmartGuardian using custom configuration for Fan#%d", i);
-					
-					const OSBoolean* tmpBool;
-					const OSNumber* tmpNumber;
-					const OSString* tmpString;
-					
-					if (i < 3) 
-					{
-						// SmartGuardian FAN Control
-						control = 0;
-						
-						if ((tmpBool = OSDynamicCast(OSBoolean, fanInfo->getObject("PWM Smoothing"))) != NULL)
-						{
-							if (tmpBool->getValue())
-							{
-								control |= 0x80;
-							}
-						}
-							
-						if ((tmpNumber = OSDynamicCast(OSNumber, fanInfo->getObject("Slope PWM"))) != NULL)
-						{
-							switch (tmpNumber->unsigned8BitValue())
-							{
-								case 1:
-								case 2:
-								case 4:
-								case 8:
-								case 16:
-								case 32:
-								case 64:
-									control |= tmpNumber->unsigned8BitValue();
-									break;
-							}
-						}
-						
-						WriteByte(ITE_SMARTGUARDIAN_CONTROL[i], control);
-						IOSleep(50);
-						
-						if ((tmpNumber = OSDynamicCast(OSNumber, fanInfo->getObject("Fan Start Temperature"))) != NULL)
-						{
-							WriteByte(ITE_SMARTGUARDIAN_TEMPERATURE_START[i], tmpNumber->unsigned8BitValue());
-							IOSleep(50);
-						}
-						
-						if ((tmpNumber = OSDynamicCast(OSNumber, fanInfo->getObject("Fan Stop Temperature"))) != NULL)
-						{
-							WriteByte(ITE_SMARTGUARDIAN_TEMPERATURE_STOP[i], tmpNumber->unsigned8BitValue());
-							IOSleep(50);
-						}
-
-						// PWM Control
-						control = 0;
-						
-						if ((tmpBool = OSDynamicCast(OSBoolean, fanInfo->getObject("PWM Automatic Operation"))) != NULL)
-						{
-							control |= 0x80;
-							
-							if ((tmpString = OSDynamicCast(OSString, fanInfo->getObject("Automatic Operation Temperature Input"))) != NULL)
-							{
-								if (tmpString->isEqualTo("TMPPIN1"))
-								{
-									control |= 0x0;
-								}
-								else if (tmpString->isEqualTo("TMPPIN2"))
-								{
-									control |= 0x1;
-								}
-								else if (tmpString->isEqualTo("TMPPIN3"))
-								{
-									control |= 0x2;
-								}
-								else 
-								{
-									control |= 0x3;
-								}
-							}
-							
-							WriteByte(ITE_SMARTGUARDIAN_PWM_CONTROL[i], control);
-							IOSleep(50);
-						}
-						else if ((tmpNumber = OSDynamicCast(OSNumber, fanInfo->getObject("Software Operation PWM Value"))) != NULL)
-						{
-							control |= (tmpNumber->unsigned8BitValue() & 0x7f);
-							
-							WriteByte(ITE_SMARTGUARDIAN_PWM_CONTROL[i], control);
-							IOSleep(50);
-						}
-					}
-					
-					if ((tmpNumber = OSDynamicCast(OSNumber, fanInfo->getObject("Start PWM Value"))) != NULL)
-					{
-						WriteByte(ITE_SMARTGUARDIAN_START_PWM[i], tmpNumber->unsigned8BitValue() & 0x7f /* from 0 to 127 */);
-						IOSleep(50);
-					}
-				}
-			}
-		}
+		bool* valid;
+		UInt8 control = ReadByte(ITE_SMARTGUARDIAN_MAIN_CONTROL, valid);
+		WriteByte(ITE_SMARTGUARDIAN_MAIN_CONTROL, control | 0x7);
 	}
 	
-	// Fan Control
-	bool fanControlEnabled = false;
-	
-	dictionary = OSDynamicCast(OSDictionary, m_Service->getProperty("Fan Control"));
-	
-	if (dictionary)
-	{
-		OSBoolean* enabled = OSDynamicCast(OSBoolean, dictionary->getObject("Enabled"));
-		
-		if (enabled && enabled->getValue())
-		{
-			fanControlEnabled = true;
-			
-			InfoLog("Software FAN control enabled");
-			
-			enabled = OSDynamicCast(OSBoolean, dictionary->getObject("Voltage Control"));
-			
-			if (enabled && enabled->getValue())
-			{
-				bool* valid;
-				UInt8 control = ReadByte(ITE_SMARTGUARDIAN_MAIN_CONTROL, valid);
-				WriteByte(ITE_SMARTGUARDIAN_MAIN_CONTROL, control | 0x7);
-			}
-		}
-	}
-	
-	// FANs	
-	m_FanOffset = GetFNum();
-	
+	// Sensors
 	for (int i = 0; i < 5; i++) 
 	{
-		char key[5];
+		char* key = (char*)IOMalloc(5);
+		
 		bool fanName = m_FanName[i] && strlen(m_FanName[i]) > 0;
 		
 		if (fanName || ReadTachometer(i) > 0)
 		{
-			if (fanName)
+			int offset = GetNextUnusedKey(KEY_FORMAT_FAN_ID, key);
+			
+			if (fanName && offset != -1)
 			{
-				snprintf(key, 5, "F%dID", m_FanOffset + m_FanCount);
-				FakeSMCAddKey(key, "ch8*", strlen(m_FanName[i]), (char*)m_FanName[i]);
-			}
-			
-			snprintf(key, 5, "F%dAc", m_FanOffset + m_FanCount);
-			AddBinding(new ITETachometerSensor(this, i, key, "fpe2", 2));
-						
-			// Show SmartGuardian info
-			
-			bool* valid;
-			UInt8 control;
-			
-			if (i < 3) 
-			{
-				control = ReadByte(ITE_SMARTGUARDIAN_CONTROL[i], valid);
+				FakeSMCAddKey(key, TYPE_CH8, strlen(m_FanName[i]), (char*)m_FanName[i]);
 				
-				InfoLog("Fan#%d PWM Smothing %s", i, (control & 0x80) == 0x80 ? "Enabled" : "Disabled");	
-				InfoLog("Fan#%d Slope PWM %d", i, control & 0x7f);
+				snprintf(key, 5, KEY_FORMAT_FAN_RPM, offset); 
+				AddBinding(new ITETachometerSensor(this, i, key, TYPE_FPE2, 2));
 				
-				InfoLog("Fan#%d Start Temperature %d",i , ReadByte(ITE_SMARTGUARDIAN_TEMPERATURE_START[i], valid));
-				InfoLog("Fan#%d Stop Temperature %d",i , ReadByte(ITE_SMARTGUARDIAN_TEMPERATURE_STOP[i], valid));
+				m_FanIndex[m_FanCount++] = i;
 			}
-
-			control = ReadByte(ITE_SMARTGUARDIAN_PWM_CONTROL[i], valid);
-			
-			InfoLog("Fan#%d PWM Automatic Operation %s", i, (control & 0x80) == 0x80 ? "Enabled" : "Disabled");
-			
-			if ((control & 0x80) == 0x80)
+			else if(GetNextUnusedKey(KEY_FORMAT_FAN_RPM, key) != -1)
 			{
-				switch (control & 0x3) 
-				{
-					case 0:
-						InfoLog("Fan#%d Automatic Operation Temperature Input TMPPIN1", i);
-						break;
-					case 1:
-						InfoLog("Fan#%d Automatic Operation Temperature Input TMPPIN2", i);
-						break;
-					case 2:
-						InfoLog("Fan#%d Automatic Operation Temperature Input TMPPIN3", i);
-						break;
-					case 3:
-						InfoLog("Fan#%d Automatic Operation Temperature Input RESERVED", i);
-						break;
-				}
+				AddBinding(new ITETachometerSensor(this, i, key, TYPE_FPE2, 2));
+				
+				m_FanIndex[m_FanCount++] = i;
 			}
-			else 
-			{
-				InfoLog("Fan#%d Software Operation PWM Value %d", i, control & 0x7f);
-			}
-
-			
-			InfoLog("Fan#%d Start PWM value %d",i ,ReadByte(ITE_SMARTGUARDIAN_START_PWM[i], valid));
-			
-			m_FanIndex[m_FanCount++] = i;
 			
 			// Fan Control Support
-			if (fanControlEnabled)
-			{
-				snprintf(key, 5, "Fan%d", i);
-				
-				OSDictionary* fanInfo = OSDynamicCast(OSDictionary, dictionary->getObject(key));
-				
-				if (fanInfo)
-				{
-					AddController(new ITEFanController(this, i, fanInfo));
-				}
-			}
+			if (m_FanControl)
+				AddController(new ITEFanController(this, i));
 		}
+		
+		IOFree(key, 5);
 	}
 	
 	UpdateFNum(m_FanCount);
-}
-
-void ITE::Finish()
-{
-	FlushBindings();
-	FlushControllers();
-	UpdateFNum(-m_FanCount);
 }

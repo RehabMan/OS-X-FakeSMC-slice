@@ -10,7 +10,7 @@
 #ifndef _FANCONTROLLER_H 
 #define _FANCONTROLLER_H
 
-#include "BaseDefinitions.h"
+#include "FakeSMC.h"
 #include "SuperIO.h"
 #include "Sensor.h"
 
@@ -31,60 +31,42 @@ protected:
 	SuperIO*	m_Provider;
 	
 public:
-	FanController(SuperIO* provider, UInt8 index, OSDictionary* configuration)
+	FanController(SuperIO* provider, UInt8 index)
 	{
 		m_Provider = provider;
 		m_Index = index;
-			
-		if (configuration)
+		
+		if (OSDictionary* fanControlConfig = OSDynamicCast(OSDictionary, m_Provider->GetService()->getProperty("Fan Control")))
 		{
-			OSString* tempSource = OSDynamicCast(OSString, configuration->getObject("Temperature Source"));
-			OSNumber* startTemp = OSDynamicCast(OSNumber, configuration->getObject("Start Temperature, ℃"));
-			OSNumber* highTemp = OSDynamicCast(OSNumber, configuration->getObject("High Temperature, ℃"));
-			OSNumber* startThrottle = OSDynamicCast(OSNumber, configuration->getObject("Start Throttle, %"));
-			OSNumber* highThrottle = OSDynamicCast(OSNumber, configuration->getObject("High Throttle, %"));
+			char key[5];
+		
+			snprintf(key, 5, "Fan%d", m_Index);
 			
-			const char* inputKey;
-			
-			if (!tempSource) 
-				return;
-			else if (tempSource->isEqualTo("Processor"))
-				inputKey = KEY_CPU_HEATSINK_TEMPERATURE;
-			else if (tempSource->isEqualTo("System"))
-				inputKey = KEY_NORTHBRIDGE_TEMPERATURE;
-			else
-				return;
-			
-			m_Input = 0xff;
-			
-			for (Sensor* sensor = (Sensor*)m_Provider->GetBindings(); sensor; sensor = (Sensor*)sensor->Next)
+			if (OSDictionary* fanConfig = OSDynamicCast(OSDictionary, fanControlConfig->getObject(key)))
 			{
-				if (CompareKeys(sensor->GetKey(), inputKey))
-				{
-					m_Input = sensor->GetIndex();
-				}
+				UpdateConfiguration(fanConfig);
 			}
-			
-			if (!startTemp || !highTemp || highTemp->unsigned8BitValue() < startTemp->unsigned8BitValue()) 
-				return;
-			
-			if (!startThrottle || !highThrottle || highThrottle->unsigned8BitValue() < startThrottle->unsigned8BitValue()) 
-				return;
-		
-			m_StartTemperature = startTemp->unsigned8BitValue();
-			m_StartThrottle = startThrottle->unsigned8BitValue();
-			m_HighTemperature = highTemp->unsigned8BitValue();
-			m_HighThrottle = highThrottle->unsigned8BitValue();
-			
-			CalculateMultiplier();
-			
-			m_Active = true;
 		}
-		
-		InfoLog("Activating software control on Fan #%d", index);
 	};
 	
-	virtual void	CalculateMultiplier() { m_Multiplier = float(m_HighThrottle - m_StartThrottle) / float(m_HighTemperature - m_StartTemperature); };
+	void Activate() 
+	{ 
+		InfoLog("Activating software control on Fan #%d", m_Index);
+		m_Active = true; 
+	};
+	
+	void Deactivate() 
+	{
+		InfoLog("Software control on Fan #%d deactivated", m_Index);
+		m_Active = false; 
+	};
+	
+	virtual void CalculateMultiplier() 
+	{ 
+		m_Multiplier = float(m_HighThrottle - m_StartThrottle) / float(m_HighTemperature - m_StartTemperature); 
+	};
+	
+	virtual bool	UpdateConfiguration(OSDictionary* configuration);
 	virtual UInt8	ReadTemperature(__unused UInt8 index) { return 0; };
 	virtual void	ForceFan(__unused UInt8 index, __unused UInt8 value) {};
 	virtual void	TimerEvent();

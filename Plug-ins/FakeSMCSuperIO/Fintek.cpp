@@ -96,7 +96,7 @@ void Fintek::Exit()
 	outb(m_ValuePort, 0x02);
 }
 
-bool Fintek::ProbeCurrentPort()
+bool Fintek::ProbePort()
 {
 	UInt8 logicalDeviceNumber = 0;
 	
@@ -184,12 +184,12 @@ bool Fintek::ProbeCurrentPort()
 	return true;
 }
 
-void Fintek::Init()
+void Fintek::Start()
 {
 	// Heatsink
-	AddBinding(new FintekTemperatureSensor(this, 0, KEY_CPU_HEATSINK_TEMPERATURE, "sp78", 2));
+	AddBinding(new FintekTemperatureSensor(this, 0, KEY_CPU_HEATSINK_TEMPERATURE, TYPE_SP78, 2));
 	// Northbridge
-	AddBinding(new FintekTemperatureSensor(this, 1, KEY_NORTHBRIDGE_TEMPERATURE, "sp78", 2));
+	AddBinding(new FintekTemperatureSensor(this, 1, KEY_NORTHBRIDGE_TEMPERATURE, TYPE_SP78, 2));
 	
 	switch (m_Model) 
 	{
@@ -197,37 +197,39 @@ void Fintek::Init()
 			break;
         default:
 			// CPU Vcore
-			AddBinding(new FintekVoltageSensor(this, 1, "VC0C", "fp2e", 2));
+			AddBinding(new FintekVoltageSensor(this, 1, KEY_CPU_VOLTAGE, TYPE_FP2E, 2));
 			break;
 	}
 	
-	m_FanOffset = GetFNum();
-	
+	// FANs
 	for (int i = 0; i < (m_Model == F71882 ? 4 : 3); i++) 
 	{
-		char key[5];
+		char* key = (char*)IOMalloc(5);
+		
 		bool fanName = m_FanName[i] && strlen(m_FanName[i]) > 0;
 		
 		if (fanName || ReadTachometer(i) > 0)
 		{	
-			if(fanName)
+			int offset = GetNextUnusedKey(KEY_FORMAT_FAN_ID, key);
+			
+			if (fanName && offset != -1)
 			{
-				snprintf(key, 5, "F%dID", m_FanOffset + m_FanCount);
-				FakeSMCAddKey(key, "ch8*", strlen(m_FanName[i]), (char*)m_FanName[i]);
+				FakeSMCAddKey(key, TYPE_CH8, strlen(m_FanName[i]), (char*)m_FanName[i]);
+				
+				snprintf(key, 5, KEY_FORMAT_FAN_RPM, offset); 
+				AddBinding(new FintekTachometerSensor(this, i, key, TYPE_FPE2, 2));
+				
+				m_FanIndex[m_FanCount++] = i;
 			}
-			
-			snprintf(key, 5, "F%dAc", m_FanOffset + m_FanCount);
-			AddBinding(new FintekTachometerSensor(this, i, key, "fpe2", 2));
-			
-			m_FanIndex[m_FanCount++] = i;
+			else if(GetNextUnusedKey(KEY_FORMAT_FAN_RPM, key) != -1)
+			{
+				AddBinding(new FintekTachometerSensor(this, i, key, TYPE_FPE2, 2));
+				m_FanIndex[m_FanCount++] = i;
+			}	
 		}
+		
+		IOFree(key, 5);
 	}
 	
 	UpdateFNum(m_FanCount);
-}
-
-void Fintek::Finish()
-{
-	FlushBindings();
-	UpdateFNum(-m_FanCount);
 }

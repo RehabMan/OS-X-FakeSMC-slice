@@ -59,10 +59,9 @@ public:
 	virtual void	Enter();
 	virtual void	Exit();
 	
-	virtual bool	ProbeCurrentPort();
+	virtual bool	ProbePort();
 	
-	virtual void	Init();
-	virtual void	Finish();
+	virtual void	Start();
 };
 
 #endif

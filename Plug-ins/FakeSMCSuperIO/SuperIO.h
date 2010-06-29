@@ -117,7 +117,9 @@ protected:
 	
 	UInt16			m_Model;
 	
-	UInt8			m_FanOffset;
+	bool			m_FanControl;
+	bool			m_FanVoltageControlled;
+	
 	UInt8			m_FanCount;
 	const char*		m_FanName[5];
 	UInt8			m_FanIndex[5];
@@ -137,7 +139,9 @@ public:
 	const char*		GetModelName();
 	UInt16			GetAddress() { return m_Address; };
 	Binding*		GetBindings() { return m_Binding; };
-	Controller*		GetControllers() { return m_Controller; }
+	Controller*		GetControllers() { return m_Controller; };
+	bool			IsFanControlEnabled() { return m_FanControl; };
+	bool			IsFanVoltageControlled() { return m_FanVoltageControlled; };
 		
 	virtual void		LoadConfiguration(IOService* provider);
 	
@@ -151,14 +155,15 @@ public:
 	
 	virtual UInt8		GetPortsCount() { return 2; };
 	virtual void		SelectPort(UInt8 index) { m_RegisterPort = SUPERIO_STANDART_PORT[index]; m_ValuePort = SUPERIO_STANDART_PORT[index] + 1; };
-	virtual void		ControllersTimerEvent();
 	virtual void		Enter() {};
 	virtual void		Exit() {};
-	virtual bool		ProbeCurrentPort() { return false; };
+	virtual bool		ProbePort() { return false; };
+	
+	virtual void		ControllersTimerEvent();
 	
 	virtual bool		Probe();
-	virtual void		Init() {};
-	virtual void		Finish() {};
+	virtual void		Start();
+	virtual void		Stop();
 };
 
 #endif

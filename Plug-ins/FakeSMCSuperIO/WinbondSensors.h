@@ -18,8 +18,11 @@ public:
 		//
 	};
 	
-	virtual void	OnKeyRead(const char* key, char* data);
-	virtual void	OnKeyWrite(const char* key, char* data);
+	virtual void OnKeyRead(__unused const char* key, char* data)
+	{
+		data[0] = m_Provider->ReadTemperature(0);
+		data[1] = 0;
+	};
 };
 
 class WinbondVoltageSensor : public Sensor 
@@ -31,8 +34,13 @@ public:
 		//
 	};
 	
-	virtual void	OnKeyRead(const char* key, char* data);
-	virtual void	OnKeyWrite(const char* key, char* data);
+	virtual void voidOnKeyRead(__unused const char* key, char* data)
+	{
+		UInt16 value = fp2e_Encode(m_Provider->ReadVoltage(m_Index));
+		
+		data[0] = (value & 0xff00) >> 8;
+		data[1] = value & 0x00ff;
+	};
 };
 
 class WinbondTachometerSensor : public Sensor 
@@ -43,6 +51,11 @@ public:
 		//
 	};
 	
-	virtual void	OnKeyRead(const char* key, char* data);
-	virtual void	OnKeyWrite(const char* key, char* data);
+	virtual void voidOnKeyRead(__unused const char* key, char* data)
+	{
+		UInt16 value = m_Provider->ReadTachometer(m_Index, false);
+		
+		data[0] = (value >> 6) & 0xff;
+		data[1] = (value << 2) & 0xff;
+	};
 };

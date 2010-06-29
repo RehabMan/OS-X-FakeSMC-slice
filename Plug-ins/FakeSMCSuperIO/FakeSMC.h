@@ -10,19 +10,29 @@
 #ifndef _BASEDEFINITIONS_H
 #define _BASEDEFINITIONS_H
 
+
+#include <architecture/i386/pio.h>
+#include <libkern/OSTypes.h>
+#include <IOKit/IOLib.h>
+
 #define DebugOn FALSE
 
-#define LogPrefix "FakeSMCSuperIO: "
+#define LogPrefix "SuperIO: "
 #define DebugLog(string, args...)	do { if (DebugOn) { IOLog (LogPrefix "[Debug] " string "\n", ## args); } } while(0)
 #define WarningLog(string, args...) do { IOLog (LogPrefix "[Warning] " string "\n", ## args); } while(0)
 #define InfoLog(string, args...)	do { IOLog (LogPrefix string "\n", ## args); } while(0)
 
 #define KEY_CPU_HEATSINK_TEMPERATURE	"Th0H"
 #define KEY_NORTHBRIDGE_TEMPERATURE		"TN0P"
+#define KEY_CPU_VOLTAGE					"VC0C"
 
-#include <architecture/i386/pio.h>
-#include <libkern/OSTypes.h>
-#include <IOKit/IOLib.h>
+#define	KEY_FORMAT_FAN_ID				"F%xID"
+#define	KEY_FORMAT_FAN_RPM				"F%xAc"
+
+#define TYPE_FPE2	"fpe2"
+#define TYPE_FP2E	"fp2e"
+#define TYPE_CH8	"ch8*"
+#define TYPE_SP78	"sp78"
 
 class FakeSMCBinding 
 {
@@ -69,6 +79,19 @@ inline UInt8 GetFNum()
 	}
 	
 	return 0;
+}
+
+inline int GetNextUnusedKey(const char* format, char* value)
+{
+	for (UInt8 i = 0; i < 16; i++)
+	{
+		snprintf(value, 5, format, i);
+		
+		if (FakeSMCReadKey(value) == NULL)
+			return i;
+	}
+	
+	return -1;
 }
 
 inline void UpdateFNum(UInt8 valueToAdd)
