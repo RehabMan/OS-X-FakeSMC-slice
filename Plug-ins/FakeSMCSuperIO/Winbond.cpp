@@ -12,6 +12,7 @@
 
 #include "Winbond.h"
 #include "WinbondSensors.h"
+#include "WinbondFanController.h"
 #include "cpuid.h"
 
 UInt8 Winbond::ReadByte(UInt8 bank, UInt8 reg) 
@@ -414,7 +415,7 @@ void Winbond::Init()
 	if (isCpuCore_i)
 	{
 		// Heatsink
-		AddBinding(new WinbondTemperatureSensor(this, 2, "Th0H", "sp78", 2));
+		AddBinding(new WinbondTemperatureSensor(this, 2, KEY_CPU_HEATSINK_TEMPERATURE, "sp78", 2));
 	}
 	else 
 	{	
@@ -429,16 +430,16 @@ void Winbond::Init()
 				if ((flag & 0x04) == 0)	
 				{
 					// Heatsink
-					AddBinding(new WinbondTemperatureSensor(this, 0, "Th0H", "sp78", 2));
+					AddBinding(new WinbondTemperatureSensor(this, 0, KEY_CPU_HEATSINK_TEMPERATURE, "sp78", 2));
 				}
-				else if ((flag & 0x40) == 0)
+				/*else if ((flag & 0x40) == 0)
 				{
 					// Heatsink
-					AddBinding(new WinbondTemperatureSensor(this, 1, "Th0H", "sp78", 2));
-				}
+					AddBinding(new WinbondTemperatureSensor(this, 1, KEY_CPU_HEATSINK_TEMPERATURE, "sp78", 2));
+				}*/
 
 				// Northbridge
-				AddBinding(new WinbondTemperatureSensor(this, 2, "TN0P", "sp78", 2));
+				AddBinding(new WinbondTemperatureSensor(this, 2, KEY_NORTHBRIDGE_TEMPERATURE, "sp78", 2));
 				
 				break;
 			}
@@ -452,16 +453,16 @@ void Winbond::Init()
 				if ((sel & 0x07) == 0) 
 				{
 					// Heatsink
-					AddBinding(new WinbondTemperatureSensor(this, 0, "Th0H", "sp78", 2));
+					AddBinding(new WinbondTemperatureSensor(this, 0, KEY_CPU_HEATSINK_TEMPERATURE, "sp78", 2));
 				}
-				else if ((sel & 0x70) == 0)
+				/*else if ((sel & 0x70) == 0)
 				{
 					// Heatsink
-					AddBinding(new WinbondTemperatureSensor(this, 1, "Th0H", "sp78", 2));
-				}
+					AddBinding(new WinbondTemperatureSensor(this, 1, KEY_CPU_HEATSINK_TEMPERATURE, "sp78", 2));
+				}*/
 				
 				// Northbridge
-				AddBinding(new WinbondTemperatureSensor(this, 2, "TN0P", "sp78", 2));
+				AddBinding(new WinbondTemperatureSensor(this, 2, KEY_NORTHBRIDGE_TEMPERATURE, "sp78", 2));
 				
 				break;
 			}
@@ -470,9 +471,9 @@ void Winbond::Init()
 			{
 				// no PECI support, add all sensors
 				// Heatsink
-				AddBinding(new WinbondTemperatureSensor(this, 0, "Th0H", "sp78", 2));
+				AddBinding(new WinbondTemperatureSensor(this, 0, KEY_CPU_HEATSINK_TEMPERATURE, "sp78", 2));
 				// Northbridge
-				AddBinding(new WinbondTemperatureSensor(this, 2, "TN0P", "sp78", 2));
+				AddBinding(new WinbondTemperatureSensor(this, 2, KEY_NORTHBRIDGE_TEMPERATURE, "sp78", 2));
 				break;
 			}
 		}

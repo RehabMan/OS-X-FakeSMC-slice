@@ -8,28 +8,12 @@
  */
 
 #include "Fintek.h"
+#include "Sensor.h"
 
-class FintekSensor : public Binding 
-{
-protected:
-	Fintek*	m_Provider;
-	UInt8	m_Offset;
-	
-public:
-	FintekSensor(Fintek* provider, UInt8 offset, const char* key, const char* type, UInt8 size) : Binding(key, type, size)
-	{
-		m_Provider = provider;
-		m_Offset = offset;
-	};
-	
-	virtual void	OnKeyRead(const char* key, char* data);
-	virtual void	OnKeyWrite(const char* key, char* data);
-};
-
-class FintekTemperatureSensor : public FintekSensor 
+class FintekTemperatureSensor : public Sensor 
 {
 public:
-	FintekTemperatureSensor(Fintek* provider, UInt8 offset, const char* key, const char* type, UInt8 size) : FintekSensor(provider, offset, key, type, size)
+	FintekTemperatureSensor(Fintek* provider, UInt8 offset, const char* key, const char* type, UInt8 size) : Sensor(provider, offset, key, type, size)
 	{
 		//
 	};
@@ -38,11 +22,11 @@ public:
 	virtual void	OnKeyWrite(const char* key, char* data);
 };
 
-class FintekVoltageSensor : public FintekSensor 
+class FintekVoltageSensor : public Sensor 
 {
 	
 public:
-	FintekVoltageSensor(Fintek* provider, UInt8 offset, const char* key, const char* type, UInt8 size) : FintekSensor(provider, offset, key, type, size)
+	FintekVoltageSensor(Fintek* provider, UInt8 offset, const char* key, const char* type, UInt8 size) : Sensor(provider, offset, key, type, size)
 	{
 		//
 	};
@@ -51,10 +35,10 @@ public:
 	virtual void	OnKeyWrite(const char* key, char* data);
 };
 
-class FintekTachometerSensor : public FintekSensor 
+class FintekTachometerSensor : public Sensor 
 {
 public:
-	FintekTachometerSensor(Fintek* provider, UInt8 offset, const char* key, const char* type, UInt8 size) : FintekSensor(provider, offset, key, type, size)
+	FintekTachometerSensor(Fintek* provider, UInt8 offset, const char* key, const char* type, UInt8 size) : Sensor(provider, offset, key, type, size)
 	{
 		//
 	};

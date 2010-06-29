@@ -136,7 +136,6 @@ void ITE::Init()
 	// Temperature semi-autodetection
 	
 	int count = 0;
-	UInt8 processorIndex, systemIndex;
 	
 	for (int i = 2; i >= 0; i--) 
 	{		
@@ -156,14 +155,12 @@ void ITE::Init()
 				case 0:
 				{
 					// Heatsink
-					AddBinding(new ITETemperatureSensor(this, i, "Th0H", "sp78", 2));
-					processorIndex = i;
+					AddBinding(new ITETemperatureSensor(this, i, KEY_CPU_HEATSINK_TEMPERATURE, "sp78", 2));
 				} break;
 				case 1:
 				{
 					// Northbridge
-					AddBinding(new ITETemperatureSensor(this, i, "TN0P", "sp78", 2));
-					systemIndex = i;
+					AddBinding(new ITETemperatureSensor(this, i, KEY_NORTHBRIDGE_TEMPERATURE, "sp78", 2));
 				} break;
 			}
 			
@@ -316,8 +313,21 @@ void ITE::Init()
 	{
 		OSBoolean* enabled = OSDynamicCast(OSBoolean, dictionary->getObject("Enabled"));
 		
-		if (fanControlEnabled = enabled && enabled->getValue())
+		if (enabled && enabled->getValue())
+		{
+			fanControlEnabled = true;
+			
 			InfoLog("Software FAN control enabled");
+			
+			enabled = OSDynamicCast(OSBoolean, dictionary->getObject("Voltage Control"));
+			
+			if (enabled && enabled->getValue())
+			{
+				bool* valid;
+				UInt8 control = ReadByte(ITE_SMARTGUARDIAN_MAIN_CONTROL, valid);
+				WriteByte(ITE_SMARTGUARDIAN_MAIN_CONTROL, control | 0x7);
+			}
+		}
 	}
 	
 	// FANs	
@@ -396,55 +406,7 @@ void ITE::Init()
 				
 				if (fanInfo)
 				{
-					OSString* string = OSDynamicCast(OSString, fanInfo->getObject("Temperature Source"));
-					
-					if (!string) 
-					{
-						InfoLog("1");
-						continue;
-					}
-					
-					UInt8 input;
-					
-					if (string->isEqualTo("Processor")) 
-						input = processorIndex;
-					else if(string->isEqualTo("System"))
-						input = systemIndex;
-					else 
-					{
-						InfoLog("2");
-						continue;
-					}
-					
-					OSNumber* startTemp = OSDynamicCast(OSNumber, fanInfo->getObject("Start Temperature, ℃"));
-					
-					if (!startTemp){
-						InfoLog("3");
-						continue;
-					}
-					
-					OSNumber* highTemp = OSDynamicCast(OSNumber, fanInfo->getObject("High Temperature, ℃"));
-					
-					if (!highTemp || highTemp->unsigned8BitValue() < startTemp->unsigned8BitValue()) {
-						InfoLog("4");
-						continue;
-					}
-					
-					OSNumber* startThrottle = OSDynamicCast(OSNumber, fanInfo->getObject("Start Throttle, %"));
-					
-					if (!startThrottle) {
-						InfoLog("5");
-						continue;
-					}
-					
-					OSNumber* highThrottle = OSDynamicCast(OSNumber, fanInfo->getObject("High Throttle, %"));
-					
-					if (!highThrottle || highThrottle->unsigned8BitValue() < startThrottle->unsigned8BitValue()) {
-						InfoLog("6");
-						continue;
-					};
-
-					AddController(new ITEFanController(this, i, input, startTemp->unsigned8BitValue(), startThrottle->unsigned8BitValue(), highTemp->unsigned8BitValue(), highThrottle->unsigned8BitValue()));
+					AddController(new ITEFanController(this, i, fanInfo));
 				}
 			}
 		}

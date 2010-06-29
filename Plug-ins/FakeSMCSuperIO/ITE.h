@@ -47,7 +47,7 @@ const UInt8 ITE_SMARTGUARDIAN_CONTROL[5]				= { 0x64, 0x6c, 0x74, 0x94, 0x9c };
 class ITE : public SuperIO
 {
 public:	
-	void			WriteByte(UInt8 reg, UInt8 value);
+	virtual void	WriteByte(UInt8 reg, UInt8 value);
 	
 	virtual UInt8	ReadByte(UInt8 index, bool* valid);
 	virtual UInt16	ReadWord(UInt8 index1, UInt8 index2, bool* valid);

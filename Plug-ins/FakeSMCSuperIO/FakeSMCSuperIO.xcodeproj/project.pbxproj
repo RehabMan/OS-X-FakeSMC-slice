@@ -21,16 +21,20 @@
 		AEAD02B811B176980016B8F9 /* SuperIO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEAD02B611B176980016B8F9 /* SuperIO.cpp */; };
 		AEAD041811B18D4B0016B8F9 /* Winbond.h in Headers */ = {isa = PBXBuildFile; fileRef = AEAD041611B18D4B0016B8F9 /* Winbond.h */; };
 		AEAD041911B18D4B0016B8F9 /* Winbond.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEAD041711B18D4B0016B8F9 /* Winbond.cpp */; };
-		AEC5E3DA11D6170E00EC6112 /* FanController.h in Headers */ = {isa = PBXBuildFile; fileRef = AEC5E3D811D6170E00EC6112 /* FanController.h */; };
+		AEB335F111D7E9AE00A35176 /* Binding.h in Headers */ = {isa = PBXBuildFile; fileRef = AEB335F011D7E9AE00A35176 /* Binding.h */; };
+		AEB3360911D7E9CF00A35176 /* Controller.h in Headers */ = {isa = PBXBuildFile; fileRef = AEB3360811D7E9CF00A35176 /* Controller.h */; };
+		AEB3361411D83FBC00A35176 /* Sensor.h in Headers */ = {isa = PBXBuildFile; fileRef = AEB3361311D83FBC00A35176 /* Sensor.h */; };
 		AEDC09FF11C8028700912FC5 /* ITESensors.h in Headers */ = {isa = PBXBuildFile; fileRef = AEDC09FD11C8028700912FC5 /* ITESensors.h */; };
 		AEDC0A0011C8028800912FC5 /* ITESensors.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEDC09FE11C8028700912FC5 /* ITESensors.cpp */; };
 		AEDC0A0711C8030700912FC5 /* WinbondSensors.h in Headers */ = {isa = PBXBuildFile; fileRef = AEDC0A0511C8030700912FC5 /* WinbondSensors.h */; };
 		AEDC0A0811C8030700912FC5 /* WinbondSensors.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEDC0A0611C8030700912FC5 /* WinbondSensors.cpp */; };
 		AEDC0F8311C2503D00A44427 /* BaseDefinitions.h in Headers */ = {isa = PBXBuildFile; fileRef = AEDC0F8211C2503D00A44427 /* BaseDefinitions.h */; };
 		AEE428DF11D672E00012DECD /* ITEFanController.h in Headers */ = {isa = PBXBuildFile; fileRef = AEE428DD11D672E00012DECD /* ITEFanController.h */; };
-		AEE428E011D672E00012DECD /* ITEFanController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEE428DE11D672E00012DECD /* ITEFanController.cpp */; };
 		AEEC326311B4414E0048ED14 /* Fintek.h in Headers */ = {isa = PBXBuildFile; fileRef = AEEC326111B4414E0048ED14 /* Fintek.h */; };
 		AEEC326411B4414E0048ED14 /* Fintek.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEEC326211B4414E0048ED14 /* Fintek.cpp */; };
+		AEF4121811D7B06C005D8ABF /* WinbondFanController.h in Headers */ = {isa = PBXBuildFile; fileRef = AEF4121611D7B06C005D8ABF /* WinbondFanController.h */; };
+		AEF4124711D7B554005D8ABF /* FanController.h in Headers */ = {isa = PBXBuildFile; fileRef = AEF4124511D7B554005D8ABF /* FanController.h */; };
+		AEF4124811D7B554005D8ABF /* FanController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEF4124611D7B554005D8ABF /* FanController.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,16 +55,20 @@
 		AEAD02B611B176980016B8F9 /* SuperIO.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SuperIO.cpp; sourceTree = "<group>"; };
 		AEAD041611B18D4B0016B8F9 /* Winbond.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Winbond.h; sourceTree = "<group>"; };
 		AEAD041711B18D4B0016B8F9 /* Winbond.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Winbond.cpp; sourceTree = "<group>"; };
-		AEC5E3D811D6170E00EC6112 /* FanController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FanController.h; sourceTree = "<group>"; };
+		AEB335F011D7E9AE00A35176 /* Binding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Binding.h; sourceTree = "<group>"; };
+		AEB3360811D7E9CF00A35176 /* Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Controller.h; sourceTree = "<group>"; };
+		AEB3361311D83FBC00A35176 /* Sensor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sensor.h; sourceTree = "<group>"; };
 		AEDC09FD11C8028700912FC5 /* ITESensors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITESensors.h; sourceTree = "<group>"; };
 		AEDC09FE11C8028700912FC5 /* ITESensors.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ITESensors.cpp; sourceTree = "<group>"; };
 		AEDC0A0511C8030700912FC5 /* WinbondSensors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WinbondSensors.h; sourceTree = "<group>"; };
 		AEDC0A0611C8030700912FC5 /* WinbondSensors.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WinbondSensors.cpp; sourceTree = "<group>"; };
 		AEDC0F8211C2503D00A44427 /* BaseDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseDefinitions.h; sourceTree = "<group>"; };
 		AEE428DD11D672E00012DECD /* ITEFanController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITEFanController.h; sourceTree = "<group>"; };
-		AEE428DE11D672E00012DECD /* ITEFanController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ITEFanController.cpp; sourceTree = "<group>"; };
 		AEEC326111B4414E0048ED14 /* Fintek.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fintek.h; sourceTree = "<group>"; };
 		AEEC326211B4414E0048ED14 /* Fintek.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Fintek.cpp; sourceTree = "<group>"; };
+		AEF4121611D7B06C005D8ABF /* WinbondFanController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WinbondFanController.h; sourceTree = "<group>"; };
+		AEF4124511D7B554005D8ABF /* FanController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FanController.h; sourceTree = "<group>"; };
+		AEF4124611D7B554005D8ABF /* FanController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FanController.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,9 +114,9 @@
 			isa = PBXGroup;
 			children = (
 				AEDC0F8211C2503D00A44427 /* BaseDefinitions.h */,
-				AEC5E3D811D6170E00EC6112 /* FanController.h */,
 				AEE9D0A211D3FE3200CDFF85 /* Utilities */,
 				AEDC8FE011D3E41A00EC17CB /* SuperIO */,
+				AEB335D911D7E38C00A35176 /* Fan Control */,
 				AE6CFBB111D3CD6C002DC828 /* ITE */,
 				AE6CFBB211D3CD7B002DC828 /* Winbond */,
 				AE6CFBB311D3CD88002DC828 /* Fintek */,
@@ -126,7 +134,6 @@
 				AEDC09FD11C8028700912FC5 /* ITESensors.h */,
 				AEDC09FE11C8028700912FC5 /* ITESensors.cpp */,
 				AEE428DD11D672E00012DECD /* ITEFanController.h */,
-				AEE428DE11D672E00012DECD /* ITEFanController.cpp */,
 			);
 			name = ITE;
 			sourceTree = "<group>";
@@ -138,6 +145,7 @@
 				AEAD041711B18D4B0016B8F9 /* Winbond.cpp */,
 				AEDC0A0511C8030700912FC5 /* WinbondSensors.h */,
 				AEDC0A0611C8030700912FC5 /* WinbondSensors.cpp */,
+				AEF4121611D7B06C005D8ABF /* WinbondFanController.h */,
 			);
 			name = Winbond;
 			sourceTree = "<group>";
@@ -162,11 +170,23 @@
 			name = SMSC;
 			sourceTree = "<group>";
 		};
+		AEB335D911D7E38C00A35176 /* Fan Control */ = {
+			isa = PBXGroup;
+			children = (
+				AEF4124511D7B554005D8ABF /* FanController.h */,
+				AEF4124611D7B554005D8ABF /* FanController.cpp */,
+			);
+			name = "Fan Control";
+			sourceTree = "<group>";
+		};
 		AEDC8FE011D3E41A00EC17CB /* SuperIO */ = {
 			isa = PBXGroup;
 			children = (
+				AEB335F011D7E9AE00A35176 /* Binding.h */,
+				AEB3360811D7E9CF00A35176 /* Controller.h */,
 				AEAD02B511B176980016B8F9 /* SuperIO.h */,
 				AEAD02B611B176980016B8F9 /* SuperIO.cpp */,
+				AEB3361311D83FBC00A35176 /* Sensor.h */,
 			);
 			name = SuperIO;
 			sourceTree = "<group>";
@@ -206,8 +226,12 @@
 				AE0D5B4911C80E39000C2425 /* FintekSensors.h in Headers */,
 				AEA7559411CFCF0700299353 /* cpuid.h in Headers */,
 				AEA932C611D11A2E008FB8FC /* SMSC.h in Headers */,
-				AEC5E3DA11D6170E00EC6112 /* FanController.h in Headers */,
 				AEE428DF11D672E00012DECD /* ITEFanController.h in Headers */,
+				AEF4121811D7B06C005D8ABF /* WinbondFanController.h in Headers */,
+				AEF4124711D7B554005D8ABF /* FanController.h in Headers */,
+				AEB335F111D7E9AE00A35176 /* Binding.h in Headers */,
+				AEB3360911D7E9CF00A35176 /* Controller.h in Headers */,
+				AEB3361411D83FBC00A35176 /* Sensor.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,7 +313,7 @@
 				AEDC0A0811C8030700912FC5 /* WinbondSensors.cpp in Sources */,
 				AE0D5B4A11C80E39000C2425 /* FintekSensors.cpp in Sources */,
 				AEA932C711D11A2E008FB8FC /* SMSC.cpp in Sources */,
-				AEE428E011D672E00012DECD /* ITEFanController.cpp in Sources */,
+				AEF4124811D7B554005D8ABF /* FanController.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

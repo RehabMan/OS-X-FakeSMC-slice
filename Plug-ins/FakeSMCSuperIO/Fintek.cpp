@@ -187,9 +187,9 @@ bool Fintek::ProbeCurrentPort()
 void Fintek::Init()
 {
 	// Heatsink
-	AddBinding(new FintekTemperatureSensor(this, 0, "Th0H", "sp78", 2));
+	AddBinding(new FintekTemperatureSensor(this, 0, KEY_CPU_HEATSINK_TEMPERATURE, "sp78", 2));
 	// Northbridge
-	AddBinding(new FintekTemperatureSensor(this, 1, "TN0P", "sp78", 2));
+	AddBinding(new FintekTemperatureSensor(this, 1, KEY_NORTHBRIDGE_TEMPERATURE, "sp78", 2));
 	
 	switch (m_Model) 
 	{

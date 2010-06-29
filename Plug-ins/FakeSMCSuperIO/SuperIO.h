@@ -17,8 +17,10 @@
 #include <IOKit/IOTimerEventSource.h>
 
 #include "cpuid.h"
-#include "BaseDefinitions.h"
+#include "Binding.h"
+#include "Controller.h"
 
+// Ports
 const UInt8 SUPERIO_STANDART_PORT[] = { 0x2e, 0x4e };
 
 // Registers
@@ -104,8 +106,8 @@ enum ChipModel
 class SuperIO
 {
 private:
-	Binding*				m_Binding;
-	Controller*				m_Controller;
+	Binding*		m_Binding;
+	Controller*		m_Controller;
 protected:
 	IOService*		m_Service;
 	
@@ -134,9 +136,12 @@ public:
 	IOService*		GetService() { return m_Service; };
 	const char*		GetModelName();
 	UInt16			GetAddress() { return m_Address; };
-	bool			HasControllers() { return m_Controller != NULL; };
+	Binding*		GetBindings() { return m_Binding; };
+	Controller*		GetControllers() { return m_Controller; }
 		
 	virtual void		LoadConfiguration(IOService* provider);
+	
+	virtual void		WriteByte(...) {};
 	
 	virtual UInt8		ReadByte(...) { return 0; };
 	virtual UInt16		ReadWord(...) { return 0; };

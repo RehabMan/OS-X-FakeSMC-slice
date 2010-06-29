@@ -8,28 +8,12 @@
  */
 
 #include "ITE.h"
+#include "Sensor.h"
 
-class ITESensor : public Binding 
-{
-protected:
-	ITE*	m_Provider;
-	UInt8	m_Offset;
-	
-public:
-	ITESensor(ITE* provider, UInt8 offset, const char* key, const char* type, UInt8 size) : Binding(key, type, size)
-	{
-		m_Provider = provider;
-		m_Offset = offset;
-	};
-	
-	virtual void	OnKeyRead(__unused const char* key, __unused char* data) {};
-	virtual void	OnKeyWrite(__unused const char* key, __unused char* data) {};
-};
-
-class ITETemperatureSensor : public ITESensor 
+class ITETemperatureSensor : public Sensor 
 {
 public:
-	ITETemperatureSensor(ITE* provider, UInt8 offset, const char* key, const char* type, UInt8 size) : ITESensor(provider, offset, key, type, size)
+	ITETemperatureSensor(ITE* provider, UInt8 offset, const char* key, const char* type, UInt8 size) : Sensor(provider, offset, key, type, size)
 	{
 		//
 	};
@@ -38,10 +22,10 @@ public:
 	virtual void	OnKeyWrite(const char* key, char* data);
 };
 
-class ITEVoltageSensor : public ITESensor 
+class ITEVoltageSensor : public Sensor 
 {
 public:
-	ITEVoltageSensor(ITE* provider, UInt8 offset, const char* key, const char* type, UInt8 size) : ITESensor(provider, offset, key, type, size)
+	ITEVoltageSensor(ITE* provider, UInt8 offset, const char* key, const char* type, UInt8 size) : Sensor(provider, offset, key, type, size)
 	{
 		//
 	};
@@ -50,10 +34,10 @@ public:
 	virtual void	OnKeyWrite(const char* key, char* data);
 };
 
-class ITETachometerSensor : public ITESensor 
+class ITETachometerSensor : public Sensor 
 {
 public:
-	ITETachometerSensor(ITE* provider, UInt8 offset, const char* key, const char* type, UInt8 size) : ITESensor(provider, offset, key, type, size)
+	ITETachometerSensor(ITE* provider, UInt8 offset, const char* key, const char* type, UInt8 size) : Sensor(provider, offset, key, type, size)
 	{
 		//
 	};

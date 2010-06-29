@@ -38,6 +38,8 @@
 			<dict>
 				<key>Enabled</key>
 				<false/>
+				<key>Voltage Control</key>
+				<true/>
 				<key>Fan0</key>
 				<dict>
 					<key>Temperature Source</key>
@@ -45,7 +47,7 @@
 					<key>Start Temperature, ℃</key>
 					<integer>20</integer>
 					<key>Start Throttle, %</key>
-					<integer>30</integer>
+					<integer>15</integer>
 					<key>High Temperature, ℃</key>
 					<integer>50</integer>
 					<key>High Throttle, %</key>
@@ -58,7 +60,7 @@
 					<key>Start Temperature, ℃</key>
 					<integer>20</integer>
 					<key>Start Throttle, %</key>
-					<integer>30</integer>
+					<integer>15</integer>
 					<key>High Temperature, ℃</key>
 					<integer>50</integer>
 					<key>High Throttle, %</key>

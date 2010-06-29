@@ -17,6 +17,9 @@
 #define WarningLog(string, args...) do { IOLog (LogPrefix "[Warning] " string "\n", ## args); } while(0)
 #define InfoLog(string, args...)	do { IOLog (LogPrefix string "\n", ## args); } while(0)
 
+#define KEY_CPU_HEATSINK_TEMPERATURE	"Th0H"
+#define KEY_NORTHBRIDGE_TEMPERATURE		"TN0P"
+
 #include <architecture/i386/pio.h>
 #include <libkern/OSTypes.h>
 #include <IOKit/IOLib.h>
@@ -34,62 +37,6 @@ void FakeSMCAddKey (const char*, uint8_t, char*, FakeSMCBinding*);
 void FakeSMCAddKey (const char*, const char*, uint8_t, char*, FakeSMCBinding*);
 char* FakeSMCReadKey (const char*);
 void FakeSMCRemoveKeyBinding (const char*);
-
-class Binding : public FakeSMCBinding
-{
-protected:
-	char*			m_Key;
-public:
-	Binding*		Next;
-	
-	Binding()
-	{
-	};
-	
-	Binding(const char* key, const char* type, UInt8 size)
-	{
-		InfoLog("Binding key %s", key);
-		
-		m_Key = (char*)IOMalloc(5);
-		bcopy(key, m_Key, 5);
-		
-		char* value = (char*)IOMalloc(size);
-		FakeSMCAddKey(key, type, size, value, this);
-		IOFree(value, size);
-	};
-	
-	~Binding()
-	{
-		if (m_Key)
-		{
-			InfoLog("Removing key %s binding", m_Key);
-			FakeSMCRemoveKeyBinding(m_Key);
-			IOFree(m_Key, 5);
-		}
-	};
-	
-	const char* GetKey() 
-	{ 
-		return m_Key; 
-	};
-	
-	virtual void OnKeyRead(__unused const char* key, __unused char* data)
-	{
-		// Or it will be link error on kextload
-	};
-	virtual void OnKeyWrite(__unused const char* key, __unused char* data)
-	{
-		// Or it will be link error on kextload
-	};
-};
-
-class Controller
-{
-public:
-	Controller*	Next;
-	
-	virtual void TimerEvent() {};
-};
 
 inline UInt16 fp2e_Encode(UInt16 value)
 {

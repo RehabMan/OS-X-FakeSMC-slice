@@ -8,28 +8,12 @@
  */
 
 #include "Winbond.h"
+#include "Sensor.h"
 
-class WinbondSensor : public Binding 
-{
-protected:
-	Winbond*	m_Provider;
-	UInt8		m_Offset;
-	
-public:
-	WinbondSensor(Winbond* provider, UInt8 offset, const char* key, const char* type, UInt8 size) : Binding(key, type, size)
-	{
-		m_Provider = provider;
-		m_Offset = offset;
-	};
-	
-	virtual void	OnKeyRead(__unused const char* key, __unused char* data) {};
-	virtual void	OnKeyWrite(__unused const char* key, __unused char* data) {};
-};
-
-class WinbondTemperatureSensor : public WinbondSensor 
+class WinbondTemperatureSensor : public Sensor 
 {
 public:
-	WinbondTemperatureSensor(Winbond* provider, UInt8 offset, const char* key, const char* type, UInt8 size) : WinbondSensor(provider, offset, key, type, size)
+	WinbondTemperatureSensor(Winbond* provider, UInt8 offset, const char* key, const char* type, UInt8 size) : Sensor(provider, offset, key, type, size)
 	{
 		//
 	};
@@ -38,11 +22,11 @@ public:
 	virtual void	OnKeyWrite(const char* key, char* data);
 };
 
-class WinbondVoltageSensor : public WinbondSensor 
+class WinbondVoltageSensor : public Sensor 
 {
 private:
 public:
-	WinbondVoltageSensor(Winbond* provider, UInt8 offset, const char* key, const char* type, UInt8 size) : WinbondSensor(provider, offset, key, type, size)
+	WinbondVoltageSensor(Winbond* provider, UInt8 offset, const char* key, const char* type, UInt8 size) : Sensor(provider, offset, key, type, size)
 	{
 		//
 	};
@@ -51,10 +35,10 @@ public:
 	virtual void	OnKeyWrite(const char* key, char* data);
 };
 
-class WinbondTachometerSensor : public WinbondSensor 
+class WinbondTachometerSensor : public Sensor 
 {
 public:
-	WinbondTachometerSensor(Winbond* provider, UInt8 offset, const char* key, const char* type, UInt8 size) : WinbondSensor(provider, offset, key, type, size)
+	WinbondTachometerSensor(Winbond* provider, UInt8 offset, const char* key, const char* type, UInt8 size) : Sensor(provider, offset, key, type, size)
 	{
 		//
 	};

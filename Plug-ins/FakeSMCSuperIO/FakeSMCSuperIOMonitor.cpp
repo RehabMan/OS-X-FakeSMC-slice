@@ -102,7 +102,7 @@ bool FakeSMCSuperIOMonitor::start(IOService * provider)
 	{
 		superio->Init();
 		
-		if (superio->HasControllers())
+		if (superio->GetControllers())
 		{
 			if (m_WorkLoop && m_TimerEventSource)
 			{
