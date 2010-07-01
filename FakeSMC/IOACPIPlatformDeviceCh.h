@@ -14,7 +14,13 @@
 #include <IOKit/acpi/IOACPIPlatformDevice.h>
 
 #include "fakesmc.h"
-#include "FakeSMCBinding.h"
+
+class FakeSMCBinding 
+{
+public:
+	virtual void OnKeyRead(const char* key, char* data);
+	virtual void OnKeyWrite(const char* key, char* data);
+};
 
 struct AppleSMCStatus {
 	uint8_t cmd;
@@ -33,8 +39,6 @@ struct AppleSMCStatus {
 struct AppleSMCData;
 
 typedef struct AppleSMCData* SMCData;
-typedef void (*OnKeyReadCallback)(const char*, char*);
-typedef void (*OnKeyWriteCallback)(const char*, char*, bool*);
 
 struct AppleSMCData {
 	uint8_t len;

@@ -38,6 +38,11 @@ char* FakeSMCReadKey (const char* keyname)
 	return NULL;
 }
 
+SMCData FakeSMCGetKey (const char* keyname)
+{
+	return smcNode->FindSMCKey(keyname);
+}
+
 void FakeSMCRemoveKeyBinding (const char* keyname)
 {
 	if(SMCData node = smcNode->FindSMCKey(keyname))
