@@ -37,7 +37,7 @@
 			<key>Fan Control</key>
 			<dict>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Voltage Control</key>
 				<true/>
 				<key>Fan0</key>
@@ -86,7 +86,7 @@
 		<key>com.apple.kpi.unsupported</key>
 		<string>9.0</string>
 		<key>org.netkas.FakeSMC</key>
-		<string>2.7</string>
+		<string>2.7.1</string>
 	</dict>
 </dict>
 </plist>

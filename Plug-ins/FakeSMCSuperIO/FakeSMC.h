@@ -41,11 +41,25 @@ public:
 	virtual void OnKeyWrite(const char* key, char* data);
 };
 
+struct AppleSMCData;
+
+typedef struct AppleSMCData* SMCData;
+
+struct AppleSMCData {
+	uint8_t len;
+	char *key;
+	char *type;
+	char *data;
+	FakeSMCBinding* binding;
+	SMCData next;
+};
+
 void FakeSMCAddKey (const char*, uint8_t, char*);
 void FakeSMCAddKey (const char*, const char*, uint8_t, char*);
 void FakeSMCAddKey (const char*, uint8_t, char*, FakeSMCBinding*);
 void FakeSMCAddKey (const char*, const char*, uint8_t, char*, FakeSMCBinding*);
 char* FakeSMCReadKey (const char*);
+SMCData FakeSMCGetKey (const char*);
 void FakeSMCRemoveKeyBinding (const char*);
 
 inline UInt16 fp2e_Encode(UInt16 value)
@@ -87,7 +101,9 @@ inline int GetNextUnusedKey(const char* format, char* value)
 	{
 		snprintf(value, 5, format, i);
 		
-		if (FakeSMCReadKey(value) == NULL)
+		SMCData node = FakeSMCGetKey(value);
+		
+		if (node->binding == NULL)
 			return i;
 	}
 	

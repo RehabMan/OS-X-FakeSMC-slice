@@ -210,9 +210,9 @@ void Fintek::Start()
 		
 		if (fanName || ReadTachometer(i) > 0)
 		{	
-			int offset = GetNextUnusedKey(KEY_FORMAT_FAN_ID, key);
+			int offset;
 			
-			if (fanName && offset != -1)
+			if (fanName && (offset = GetNextUnusedKey(KEY_FORMAT_FAN_ID, key)) != -1)
 			{
 				FakeSMCAddKey(key, TYPE_CH8, strlen(m_FanName[i]), (char*)m_FanName[i]);
 				
