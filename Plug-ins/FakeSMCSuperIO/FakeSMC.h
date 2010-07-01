@@ -103,7 +103,7 @@ inline int GetNextUnusedKey(const char* format, char* value)
 		
 		SMCData node = FakeSMCGetKey(value);
 		
-		if (node->binding == NULL)
+		if (node == NULL || node->binding == NULL)
 			return i;
 	}
 	
