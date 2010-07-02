@@ -43,9 +43,8 @@ const UInt8 WINBOND_FAN_DIV_BIT1[] = { 37, 39, 31, 9, 11 };
 const UInt8 WINBOND_FAN_DIV_BIT2[] = { 5, 6, 7, 23, 15 };
 
 // Fan Control
-const UInt8 WINBOND_FAN_CONTROL[]		= { 0x04, 0x04, 0x12, 0x62 };
+const UInt8 WINBOND_FAN_CONFIG[]		= { 0x04, 0x04, 0x12, 0x62 };
 const UInt8 WINBOND_FAN_CONTROL_BIT[]	= { 0x02, 0x04, 0x01, 0x04 };
-const UInt8 WINBOND_FAN_MODE[]			= { 0x04, 0x04, 0x12, 0x62 };
 const UInt8 WINBOND_FAN_MODE_BIT[]		= { 0x00, 0x01, 0x00, 0x06 };
 const UInt8 WINBOND_FAN_OUTPUT[]		= { 0x01, 0x03, 0x11, 0x61 };
 
