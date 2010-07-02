@@ -102,6 +102,22 @@ void SuperIO::Select(UInt8 logicalDeviceNumber)
 	outb(m_ValuePort, logicalDeviceNumber);
 }
 
+int	SuperIO::GetNextFanIndex()
+{
+	char key[5];
+	int offset;
+	
+	int id = GetNextUnusedKey(KEY_FORMAT_FAN_ID, key);
+	int ac = GetNextUnusedKey(KEY_FORMAT_FAN_SPEED, key);
+	
+	if (id != -1 || ac != -1)
+	{
+		offset = id > ac ? id : ac;
+	}
+	
+	return offset;
+}
+
 const char* SuperIO::GetModelName()
 {
 	switch (m_Model) 
@@ -261,5 +277,5 @@ void SuperIO::Stop()
 {
 	FlushBindings();
 	FlushControllers();
-	UpdateFNum(-m_FanCount);
+	UpdateFNum();
 }

@@ -492,20 +492,24 @@ void Winbond::Start()
 		
 		if (fanName || m_FanValue[i] > 0)
 		{	
-			int offset;
+			int offset = GetNextFanIndex();
 			
-			if (fanName && (offset = GetNextUnusedKey(KEY_FORMAT_FAN_ID, key)) != -1)
+			if (offset != -1) 
 			{
-				FakeSMCAddKey(key, TYPE_CH8, strlen(m_FanName[i]), (char*)m_FanName[i]);
+				if (fanName)
+				{
+					snprintf(key, 5, KEY_FORMAT_FAN_ID, offset); 
+					FakeSMCAddKey(key, TYPE_CH8, strlen(m_FanName[i]), (char*)m_FanName[i]);
+					
+					snprintf(key, 5, KEY_FORMAT_FAN_SPEED, offset); 
+					AddBinding(new WinbondTachometerSensor(this, i, key, TYPE_FPE2, 2));
+					
+					m_FanIndex[m_FanCount++] = i;
+				}
 				
-				snprintf(key, 5, KEY_FORMAT_FAN_RPM, offset); 
+				snprintf(key, 5, KEY_FORMAT_FAN_SPEED, offset); 
 				AddBinding(new WinbondTachometerSensor(this, i, key, TYPE_FPE2, 2));
 				
-				m_FanIndex[m_FanCount++] = i;
-			}
-			else if(GetNextUnusedKey(KEY_FORMAT_FAN_RPM, key) != -1)
-			{
-				AddBinding(new WinbondTachometerSensor(this, i, key, TYPE_FPE2, 2));
 				m_FanIndex[m_FanCount++] = i;
 			}			
 			
@@ -517,5 +521,5 @@ void Winbond::Start()
 		IOFree(key, 5);
 	}
 	
-	UpdateFNum(m_FanCount);
+	UpdateFNum();
 }

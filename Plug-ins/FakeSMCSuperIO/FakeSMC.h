@@ -26,8 +26,8 @@
 #define KEY_NORTHBRIDGE_TEMPERATURE		"TN0P"
 #define KEY_CPU_VOLTAGE					"VC0C"
 
-#define	KEY_FORMAT_FAN_ID				"F%xID"
-#define	KEY_FORMAT_FAN_RPM				"F%xAc"
+#define	KEY_FORMAT_FAN_ID				"F%XID"
+#define	KEY_FORMAT_FAN_SPEED			"F%XAc"
 
 #define TYPE_FPE2	"fpe2"
 #define TYPE_FP2E	"fp2e"
@@ -95,13 +95,13 @@ inline UInt8 GetFNum()
 	return 0;
 }
 
-inline int GetNextUnusedKey(const char* format, char* value)
+inline int GetNextUnusedKey(const char* format, char* key)
 {
 	for (UInt8 i = 0; i < 16; i++)
 	{
-		snprintf(value, 5, format, i);
+		snprintf(key, 5, format, i);
 		
-		SMCData node = FakeSMCGetKey(value);
+		SMCData node = FakeSMCGetKey(key);
 		
 		if (node == NULL || node->binding == NULL)
 			return i;
@@ -110,25 +110,41 @@ inline int GetNextUnusedKey(const char* format, char* value)
 	return -1;
 }
 
-inline void UpdateFNum(UInt8 valueToAdd)
+inline int GetLastKeyIndex(const char* format, bool binding)
 {
-	char* data = FakeSMCReadKey("FNum");
+	char key[5];
+	int offset = -1;
 	
-	if(data == NULL)
+	for (UInt8 i = 0; i < 16; i++)
 	{
-		char data[1];
+		snprintf(key, 5, format, i);
 		
-		data[0] = valueToAdd;
-		FakeSMCAddKey("FNum", 1, data);
+		SMCData node = FakeSMCGetKey(key);
 		
-		return;
+		if (binding)
+		{
+			if (node != NULL && node->binding != NULL) offset = i;
+		}
+		else 
+		{
+			if (node != NULL) offset = i;
+		}
 	}
-	else
-	{
-		UInt8 oldValue = data[0];
-		
-		data[0] = oldValue + valueToAdd;
-	}
+	
+	return offset;
+}
+
+inline void UpdateFNum()
+{
+	int idOffset = GetLastKeyIndex(KEY_FORMAT_FAN_ID, false);
+	int acOffset = GetLastKeyIndex(KEY_FORMAT_FAN_SPEED, true);
+	
+	char data[1];
+	
+	data[0] = idOffset > acOffset ? idOffset : acOffset;
+	data[0] += 1;
+	
+	FakeSMCAddKey("FNum", 1, data);
 }
 
 #endif

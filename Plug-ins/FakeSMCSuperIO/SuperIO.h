@@ -134,6 +134,8 @@ protected:
 	UInt16			ListenPortWord(UInt8 reg);
 	void			Select(UInt8 logicalDeviceNumber);
 	
+	int				GetNextFanIndex();
+	
 public:
 	IOService*		GetService() { return m_Service; };
 	const char*		GetModelName();

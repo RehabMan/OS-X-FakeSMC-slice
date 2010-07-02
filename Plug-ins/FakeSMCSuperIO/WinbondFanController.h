@@ -10,8 +10,6 @@
 #include "Winbond.h"
 #include "FanController.h"
 
-const UInt8 WINBOND_FAN_OUTPUT[]	= { 0x01, 0x03, 0x11, 0x61 };
-
 class WinbondFanController : public FanController
 {
 public:
