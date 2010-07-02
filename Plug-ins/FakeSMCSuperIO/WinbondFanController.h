@@ -15,7 +15,7 @@ class WinbondFanController : public FanController
 public:
 	WinbondFanController(Winbond* provider, UInt8 index) : FanController(provider, index)
 	{
-		if (m_Provider->FanControlEnabled() && index < 5)
+		if (m_Provider->FanControlEnabled() && index < 4)
 		{
 			UInt8 config = ((Winbond*)m_Provider)->ReadByte(0, WINBOND_FAN_CONFIG[index]);
 			
@@ -34,7 +34,7 @@ public:
 	
 	virtual UInt8 ReadTemperature(UInt8 index)
 	{
-		return m_Provider->ReadTemperature(index);
+		return ((Winbond*)m_Provider)->ReadTemperature(index);
 	};
 	
 	virtual void ForceFan(UInt8 index, UInt8 value) 
@@ -43,11 +43,11 @@ public:
 		{
 			value = 64.0f * value / 100.0f;
 			
-			m_Provider->WriteByte(0, WINBOND_FAN_OUTPUT[index], value << 2);
+			((Winbond*)m_Provider)->WriteByte(0, WINBOND_FAN_OUTPUT[index], value << 2);
 		}
 		else
 		{
-			m_Provider->WriteByte(0, WINBOND_FAN_OUTPUT[index], 255.0f * value / 100.0f);
+			((Winbond*)m_Provider)->WriteByte(0, WINBOND_FAN_OUTPUT[index], 255.0f * value / 100.0f);
 		}
 	};	
 };

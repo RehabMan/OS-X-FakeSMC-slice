@@ -47,7 +47,8 @@ SInt16 ITE::ReadTemperature(UInt8 index)
 SInt16 ITE::ReadVoltage(UInt8 index)
 {
 	bool* valid;
-	return ITE::ReadByte(ITE_VOLTAGE_BASE_REG + index, valid) << 4;
+	m_RawVCore = ITE::ReadByte(ITE_VOLTAGE_BASE_REG + index, valid);
+	return m_RawVCore << 4;
 }
 
 SInt16 ITE::ReadTachometer(UInt8 index)
@@ -117,12 +118,12 @@ bool ITE::ProbePort()
 	
 	bool* valid;
 	
-	UInt8 vendor = ReadByte(ITE_VENDOR_ID_REGISTER, valid);
+	UInt8 vendor = ITE::ReadByte(ITE_VENDOR_ID_REGISTER, valid);
 	
 	if (!valid || vendor != ITE_VENDOR_ID)
 		return false;
 	
-	if ((ReadByte(ITE_CONFIGURATION_REGISTER, valid) & 0x10) == 0)
+	if ((ITE::ReadByte(ITE_CONFIGURATION_REGISTER, valid) & 0x10) == 0)
 		return false;
 	
 	if (!valid)

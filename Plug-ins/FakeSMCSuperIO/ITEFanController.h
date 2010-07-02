@@ -19,11 +19,11 @@ public:
 	
 	virtual UInt8 ReadTemperature(UInt8 index)
 	{
-		return m_Provider->ReadTemperature(index);
+		return ((ITE*)m_Provider)->ReadTemperature(index);
 	};
 	
 	virtual void ForceFan(UInt8 index, UInt8 value) 
 	{ 
-		m_Provider->WriteByte(ITE_SMARTGUARDIAN_PWM_CONTROL[index], 127.0f * value / 100.0f);
+		((ITE*)m_Provider)->WriteByte(ITE_SMARTGUARDIAN_PWM_CONTROL[index], 127.0f * value / 100.0f);
 	};
 };

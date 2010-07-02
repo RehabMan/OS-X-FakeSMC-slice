@@ -25,6 +25,7 @@
 #define KEY_CPU_HEATSINK_TEMPERATURE	"Th0H"
 #define KEY_NORTHBRIDGE_TEMPERATURE		"TN0P"
 #define KEY_CPU_VOLTAGE					"VC0C"
+#define KEY_CPU_VOLTAGE_RAW				"VC0c"
 
 #define	KEY_FORMAT_FAN_ID				"F%XID"
 #define	KEY_FORMAT_FAN_SPEED			"F%XAc"
@@ -33,6 +34,7 @@
 #define TYPE_FP2E	"fp2e"
 #define TYPE_CH8	"ch8*"
 #define TYPE_SP78	"sp78"
+#define TYPE_UI16	"ui16"
 
 class FakeSMCBinding 
 {

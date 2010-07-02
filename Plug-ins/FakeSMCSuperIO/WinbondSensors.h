@@ -20,26 +20,46 @@ public:
 	
 	virtual void OnKeyRead(__unused const char* key, char* data)
 	{
-		data[0] = m_Provider->ReadTemperature(0);
+		data[0] = ((Winbond*)m_Provider)->ReadTemperature(m_Index);
 		data[1] = 0;
 	};
 };
 
 class WinbondVoltageSensor : public Sensor 
 {
-private:
 public:
-	WinbondVoltageSensor(Winbond* provider, UInt8 offset, const char* key, const char* type, UInt8 size) : Sensor(provider, offset, key, type, size)
+	WinbondVoltageSensor(Winbond* provider, UInt8 index, const char* key, const char* type, UInt8 size) : Sensor(provider, index, key, type, size)
 	{
-		//
+		if (index == 0) 
+		{
+			InfoLog("Binding key %s", KEY_CPU_VOLTAGE_RAW);
+			
+			char* value = (char*)IOMalloc(2);
+			FakeSMCAddKey(KEY_CPU_VOLTAGE_RAW, TYPE_UI16, 2, value, this);
+			IOFree(value, 2);
+		}
 	};
 	
-	virtual void voidOnKeyRead(__unused const char* key, char* data)
+	~WinbondVoltageSensor()
 	{
-		UInt16 value = fp2e_Encode(m_Provider->ReadVoltage(m_Index));
-		
-		data[0] = (value & 0xff00) >> 8;
-		data[1] = value & 0x00ff;
+		InfoLog("Removing key %s binding", KEY_CPU_VOLTAGE_RAW);
+		FakeSMCRemoveKeyBinding(KEY_CPU_VOLTAGE_RAW);
+	}
+	
+	virtual void voidOnKeyRead(const char* key, char* data)
+	{
+		if (CompareKeys(key, KEY_CPU_VOLTAGE_RAW)) 
+		{
+			data[0] = ((Winbond*)m_Provider)->GetRawVCore();
+			data[1] = 0;
+		}
+		else 
+		{
+			UInt16 value = fp2e_Encode(((Winbond*)m_Provider)->ReadVoltage(m_Index));
+			
+			data[0] = (value & 0xff00) >> 8;
+			data[1] = value & 0x00ff;
+		}
 	};
 };
 
@@ -53,7 +73,7 @@ public:
 	
 	virtual void voidOnKeyRead(__unused const char* key, char* data)
 	{
-		UInt16 value = m_Provider->ReadTachometer(m_Index, false);
+		UInt16 value = ((Winbond*)m_Provider)->ReadTachometer(m_Index, false);
 		
 		data[0] = (value >> 6) & 0xff;
 		data[1] = (value << 2) & 0xff;
