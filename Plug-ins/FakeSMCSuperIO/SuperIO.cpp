@@ -144,22 +144,22 @@ const char* SuperIO::GetModelName()
         case W83667HGB: return "Winbond W83667HG-B";
         case W83687THF: return "Winbond W83687THF";
 			//Slice
-        case W83977CTF: return "Winbond W83977CTF";
-        case W83977EF: return "Winbond W83977EF";
-        case W83977FA: return "Winbond W83977FA";
-        case W83977TF: return "Winbond W83977TF";
-        case W83977ATF: return "Winbond W83977ATF";
-        case W83977AF: return "Winbond W83977AF";
+        //case W83977CTF: return "Winbond W83977CTF";
+        //case W83977EF: return "Winbond W83977EF";
+        //case W83977FA: return "Winbond W83977FA";
+        //case W83977TF: return "Winbond W83977TF";
+        //case W83977ATF: return "Winbond W83977ATF";
+        //case W83977AF: return "Winbond W83977AF";
         case W83627SF: return "Winbond W83627SF";
         case W83697HF: return "Winbond W83697HF";
-        case W83L517D: return "Winbond W83L517D";
+        //case W83L517D: return "Winbond W83L517D";
         case W83637HF: return "Winbond W83637HF";
         case W83627UHG: return "Winbond W83627UHG";
         case W83697SF: return "Winbond W83697SF";
-        case W83877F:  return "Winbond W83877F";
-        case W83877AF: return "Winbond W83877AF";
-        case W83877TF: return "Winbond W83877TF";
-        case W83877ATF: return "Winbond W83877ATF";
+        //case W83877F:  return "Winbond W83877F";
+        //case W83877AF: return "Winbond W83877AF";
+        //case W83877TF: return "Winbond W83877TF";
+        //case W83877ATF: return "Winbond W83877ATF";
 			
 		case LPC47B27x: return "SMSC LPC47B27x";
 		case LPC47B37x: return "SMSC LPC47B37x";

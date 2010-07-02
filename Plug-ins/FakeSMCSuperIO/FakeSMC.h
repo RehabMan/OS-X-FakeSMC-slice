@@ -7,8 +7,8 @@
  *
  */
 
-#ifndef _BASEDEFINITIONS_H
-#define _BASEDEFINITIONS_H
+#ifndef _FAKESMC_H
+#define _FAKESMC_H
 
 
 #include <architecture/i386/pio.h>

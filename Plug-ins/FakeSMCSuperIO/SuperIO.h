@@ -45,30 +45,31 @@ enum ChipModel
 	
 	// Winbond
 	W83627DHG = 0xA020,
+	W83627UHG = 0xA230,
     W83627DHGP= 0xB070,
     W83627EHF = 0x8800,    
     W83627HF  = 0x5200,
 	W83627THF = 0x8283,
+	W83627SF  = 0x5950,
+	W83637HF  = 0x7080,
     W83667HG  = 0xA510,
     W83667HGB = 0xB350,
     W83687THF = 0x8541,
+	W83697HF  = 0x6010,
+	W83697SF  = 0x6810,
+	
 	//Slice
-	W83977CTF = 0x5270,
+	/*W83977CTF = 0x5270,
 	W83977EF  = 0x52F0,
 	W83977FA  = 0x9771,
 	W83977TF  = 0x9773,
 	W83977ATF = 0x9774,
 	W83977AF  = 0x9777,
-	W83627SF  = 0x5950,
-	W83697HF  = 0x6010,
 	W83L517D  = 0x6100,
-	W83637HF  = 0x7080,
-	W83627UHG = 0xA230,
-	W83697SF  = 0x6810,
 	W83877F   = 0xFA00,
 	W83877AF  = 0xFB00,
 	W83877TF  = 0xFC00,
-	W83877ATF = 0xFD00,
+	W83877ATF = 0xFD00,*/
 	
 	// Fintek
     F71858 = 0x0507,
@@ -142,8 +143,8 @@ public:
 	UInt16			GetAddress() { return m_Address; };
 	Binding*		GetBindings() { return m_Binding; };
 	Controller*		GetControllers() { return m_Controller; };
-	bool			IsFanControlEnabled() { return m_FanControl; };
-	bool			IsFanVoltageControlled() { return m_FanVoltageControlled; };
+	bool			FanControlEnabled() { return m_FanControl; };
+	bool			FanVoltageControlled() { return m_FanVoltageControlled; };
 		
 	virtual void		LoadConfiguration(IOService* provider);
 	

@@ -174,12 +174,12 @@ bool Winbond::ProbePort()
 				case 0x40:
 					m_Model = W83627HF;
 					break;
-				case 0x70:
+				/*case 0x70:
 					m_Model = W83977CTF;
 					break;
 				case 0xf0:
 					m_Model = W83977EF;
-					break;
+					break;*/
 					
 			}
 		}
@@ -205,7 +205,7 @@ bool Winbond::ProbePort()
 			break;
 		}
 			
-		case 0x61:
+		/*case 0x61:
 		{
 			switch (revision & 0xf0)
 			{
@@ -214,7 +214,7 @@ bool Winbond::ProbePort()
 					break;						
 			}
 			break;
-		}
+		}*/
 			
 		case 0x68:
 		{
@@ -273,7 +273,7 @@ bool Winbond::ProbePort()
 			break;
 		}
 			
-		case 0x97:
+		/*case 0x97:
 		{
 			switch (revision)
 			{
@@ -291,7 +291,7 @@ bool Winbond::ProbePort()
 					break;
 			}
 			break;
-		}	
+		}*/	
 			
 		case 0xA0:
 		{
@@ -348,7 +348,7 @@ bool Winbond::ProbePort()
 			break; 
 		}
 			
-		default: 
+		/*default: 
 		{
 			switch (id & 0x0f) {
 				case 0x0a:
@@ -364,7 +364,7 @@ bool Winbond::ProbePort()
 					m_Model = W83877ATF;
 					break;
 			}
-		}
+		}*/
 	}
 	
 	if (m_Model == UnknownModel)
@@ -514,8 +514,8 @@ void Winbond::Start()
 			}			
 			
 			// Fan Control Support
-			//if (m_FanControl)
-			//	AddController(new WinbondFanController(this, i));
+			if (m_FanControl)
+				AddController(new WinbondFanController(this, i));
 		}
 		
 		IOFree(key, 5);
