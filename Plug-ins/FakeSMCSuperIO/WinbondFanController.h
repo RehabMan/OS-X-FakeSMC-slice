@@ -17,13 +17,14 @@ public:
 	{
 		if (m_Provider->FanControlEnabled() && index < 5)
 		{
-			// Enable Manual Control
 			UInt8 config = ((Winbond*)m_Provider)->ReadByte(0, WINBOND_FAN_CONFIG[index]);
-			((Winbond*)m_Provider)->WriteByte(0, WINBOND_FAN_CONFIG[index], config & (1<<WINBOND_FAN_CONTROL_BIT[index]));
 			
+			// Enable Manual Control
+			config = config & (1 << WINBOND_FAN_CONTROL_BIT[index]);
 			// PWM or Voltage
-			config = ((Winbond*)m_Provider)->ReadByte(0, WINBOND_FAN_CONFIG[index]);
-			((Winbond*)m_Provider)->WriteByte(0, WINBOND_FAN_CONFIG[index], config & ((UInt8)m_Provider->FanVoltageControlled()) << WINBOND_FAN_MODE_BIT[index]);
+			config = config & ((UInt8)m_Provider->FanVoltageControlled()) << WINBOND_FAN_MODE_BIT[index];
+			
+			((Winbond*)m_Provider)->WriteByte(0, WINBOND_FAN_CONFIG[index], config);
 		}
 		else 
 		{
