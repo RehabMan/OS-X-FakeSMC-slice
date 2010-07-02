@@ -30,7 +30,7 @@ class WinbondVoltageSensor : public Sensor
 public:
 	WinbondVoltageSensor(Winbond* provider, UInt8 index, const char* key, const char* type, UInt8 size) : Sensor(provider, index, key, type, size)
 	{
-		if (index == 0) 
+		if (m_Index == 0) 
 		{
 			InfoLog("Binding key %s", KEY_CPU_VOLTAGE_RAW);
 			
@@ -42,8 +42,11 @@ public:
 	
 	~WinbondVoltageSensor()
 	{
-		InfoLog("Removing key %s binding", KEY_CPU_VOLTAGE_RAW);
-		FakeSMCRemoveKeyBinding(KEY_CPU_VOLTAGE_RAW);
+		if (m_Index == 0) 
+		{
+			InfoLog("Removing key %s binding", KEY_CPU_VOLTAGE_RAW);
+			FakeSMCRemoveKeyBinding(KEY_CPU_VOLTAGE_RAW);
+		}
 	}
 	
 	virtual void voidOnKeyRead(const char* key, char* data)

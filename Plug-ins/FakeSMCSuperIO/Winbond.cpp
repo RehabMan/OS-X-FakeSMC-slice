@@ -467,7 +467,7 @@ void Winbond::Start()
 	}
 	else 
 	{	
-		/*switch (m_Model) 
+		switch (m_Model) 
 		{
 			case W83667HG:
 			case W83667HGB:
@@ -516,15 +516,15 @@ void Winbond::Start()
 			}
 				
 			default:
-			{*/
+			{
 				// no PECI support, add all sensors
 				// Heatsink
 				AddBinding(new WinbondTemperatureSensor(this, 0, KEY_CPU_HEATSINK_TEMPERATURE, TYPE_SP78, 2));
 				// Northbridge
 				AddBinding(new WinbondTemperatureSensor(this, 2, KEY_NORTHBRIDGE_TEMPERATURE, TYPE_SP78, 2));
-				/*break;
+				break;
 			}
-		}*/
+		}
 	}
 	
 	// CPU Vcore
