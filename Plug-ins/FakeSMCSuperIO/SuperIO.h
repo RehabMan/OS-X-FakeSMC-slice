@@ -118,7 +118,7 @@ protected:
 	
 	UInt16			m_Model;
 	
-	UInt8			m_RawVCore;
+	UInt16			m_RawVCore;
 	
 	bool			m_FanControl;
 	bool			m_FanVoltageControlled;
