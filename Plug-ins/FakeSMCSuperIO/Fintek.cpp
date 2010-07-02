@@ -65,9 +65,11 @@ SInt16 Fintek::ReadTemperature(UInt8 index)
 
 SInt16 Fintek::ReadVoltage(UInt8 index)
 {
-	m_RawVCore = Fintek::ReadByte(FINTEK_VOLTAGE_BASE_REG + index);
+	UInt16 raw = Fintek::ReadByte(FINTEK_VOLTAGE_BASE_REG + index);
 	
-	float V = (index == 1 ? 0.5f : 1.0f) * 0.001f * (m_RawVCore << 4);
+	if (index == 0) m_RawVCore = raw;
+	
+	float V = (index == 1 ? 0.5f : 1.0f) * 0.001f * (raw << 4);
 	
 	return V;
 }

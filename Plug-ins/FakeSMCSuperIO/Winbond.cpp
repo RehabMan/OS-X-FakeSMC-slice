@@ -65,7 +65,7 @@ SInt16 Winbond::ReadVoltage(UInt8 index)
 	{
 		if (index == 3) gain = 2;
 		
-		voltage = 8.0f * gain * V;
+		voltage = (V << 4) * gain;
 	}
 
 	return voltage;
