@@ -53,15 +53,16 @@ public:
 	{
 		if (CompareKeys(key, KEY_CPU_VOLTAGE_RAW)) 
 		{
-			data[0] = ((Winbond*)m_Provider)->GetRawVCore();
-			data[1] = 0;
+			UInt16 vcore = ((Winbond*)m_Provider)->GetRawVCore();
+			data[0] = (vcore & 0xff00) >> 8;
+			data[1] = (vcore & 0x00ff);
 		}
 		else 
 		{
 			UInt16 value = fp2e_Encode(((Winbond*)m_Provider)->ReadVoltage(m_Index));
 			
 			data[0] = (value & 0xff00) >> 8;
-			data[1] = value & 0x00ff;
+			data[1] = (value & 0x00ff);
 		}
 	};
 };

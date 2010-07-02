@@ -145,7 +145,7 @@ public:
 	UInt16			GetAddress() { return m_Address; };
 	Binding*		GetBindings() { return m_Binding; };
 	Controller*		GetControllers() { return m_Controller; };
-	UInt8			GetRawVCore() { return m_RawVCore; };
+	UInt16			GetRawVCore() { return m_RawVCore; };
 	bool			FanControlEnabled() { return m_FanControl; };
 	bool			FanVoltageControlled() { return m_FanVoltageControlled; };
 		
