@@ -1,8 +1,8 @@
 /* add your code here */
 #include <IOKit/IOLib.h>
 #include <IOKit/pci/IOPCIDevice.h>
-#include "FakeSMCBinding.h"
 #include <nvclock.h>
+#include "FakeSMC.h"
 
 class Binding : public FakeSMCBinding {
 protected:
@@ -11,7 +11,7 @@ public:
 	Binding*		Next;	
 	Binding(){};	
 	Binding(const char* key, const char* type, UInt8 size) {
-		IOLog("Binding key %s", key);		
+		IOLog("Binding key %s/n", key);		
 		m_Key = (char*)IOMalloc(5);
 		bcopy(key, m_Key, 5);		
 		char* value = (char*)IOMalloc(size);
@@ -21,7 +21,7 @@ public:
 	
 	~Binding() {
 		if (m_Key) {
-			IOLog("Removing key %s binding", m_Key);			
+			IOLog("Removing key %s binding/n", m_Key);			
 			IOFree(m_Key, 5);
 			FakeSMCRemoveKeyBinding(m_Key);
 		}
@@ -36,14 +36,12 @@ class TemperatureSensor : public Binding {
 public:
 	TemperatureSensor(const char* key, const char* type, UInt8 size) : Binding(key, type, size) {};
 	virtual void OnKeyRead(const char* key, char* data);
-	virtual void OnKeyWrite(const char* key, char* data);
 };
 
 class FanSensor : public Binding {
 public:
 	FanSensor(const char* key, const char* type, UInt8 size) : Binding(key, type, size) {};
 	virtual void OnKeyRead(const char* key, char* data);
-	virtual void OnKeyWrite(const char* key, char* data);
 };
 
 

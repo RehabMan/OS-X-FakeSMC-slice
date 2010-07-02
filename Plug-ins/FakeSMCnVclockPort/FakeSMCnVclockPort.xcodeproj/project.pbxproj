@@ -34,8 +34,7 @@
 		4C9C69ED11C3734E005AB945 /* nvreg.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C9C69A611C3734E005AB945 /* nvreg.h */; };
 		4C9C69F311C3734E005AB945 /* xf86i2c.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C9C69AC11C3734E005AB945 /* xf86i2c.h */; };
 		4C9C69F411C3734E005AB945 /* xfree.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C9C69AD11C3734E005AB945 /* xfree.h */; };
-		4CC59B0D11C7B428009B57DC /* FakeSMCBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CC59B0C11C7B428009B57DC /* FakeSMCBinding.h */; };
-		4CDD512311C7C9810033EB25 /* FakeSMCBinding.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4CDD512211C7C9810033EB25 /* FakeSMCBinding.cpp */; };
+		4CC59B0D11C7B428009B57DC /* FakeSMC.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CC59B0C11C7B428009B57DC /* FakeSMC.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,8 +67,7 @@
 		4C9C69A611C3734E005AB945 /* nvreg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nvreg.h; sourceTree = "<group>"; };
 		4C9C69AC11C3734E005AB945 /* xf86i2c.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xf86i2c.h; sourceTree = "<group>"; };
 		4C9C69AD11C3734E005AB945 /* xfree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xfree.h; sourceTree = "<group>"; };
-		4CC59B0C11C7B428009B57DC /* FakeSMCBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeSMCBinding.h; sourceTree = "<group>"; };
-		4CDD512211C7C9810033EB25 /* FakeSMCBinding.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FakeSMCBinding.cpp; sourceTree = "<group>"; };
+		4CC59B0C11C7B428009B57DC /* FakeSMC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeSMC.h; sourceTree = "<group>"; };
 		8DA8362C06AD9B9200E5AC22 /* Kernel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kernel.framework; path = /System/Library/Frameworks/Kernel.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -115,9 +113,8 @@
 		247142CAFF3F8F9811CA285C /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				4CC59B0C11C7B428009B57DC /* FakeSMCBinding.h */,
-				4CDD512211C7C9810033EB25 /* FakeSMCBinding.cpp */,
 				4C9C698C11C3734E005AB945 /* src */,
+				4CC59B0C11C7B428009B57DC /* FakeSMC.h */,
 				1A224C3EFF42367911CA2CB7 /* FakeSMCnVclockPort.h */,
 				1A224C3FFF42367911CA2CB7 /* FakeSMCnVclockPort.cpp */,
 			);
@@ -178,7 +175,7 @@
 				4C9C69ED11C3734E005AB945 /* nvreg.h in Headers */,
 				4C9C69F311C3734E005AB945 /* xf86i2c.h in Headers */,
 				4C9C69F411C3734E005AB945 /* xfree.h in Headers */,
-				4CC59B0D11C7B428009B57DC /* FakeSMCBinding.h in Headers */,
+				4CC59B0D11C7B428009B57DC /* FakeSMC.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,7 +263,6 @@
 				4C2A787611C6AE3000CBEBF9 /* w83l785r.cpp in Sources */,
 				4C2A787711C6AE3000CBEBF9 /* w83781d.cpp in Sources */,
 				4C2A787811C6AE3000CBEBF9 /* xf86i2c.cpp in Sources */,
-				4CDD512311C7C9810033EB25 /* FakeSMCBinding.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

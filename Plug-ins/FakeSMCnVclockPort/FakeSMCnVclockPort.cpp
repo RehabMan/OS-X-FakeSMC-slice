@@ -188,7 +188,7 @@ bool		PTnVmon::start	(IOService* provider) {
 	
 	nvclock.dpy = NULL;
 	
-	char key[5];
+	char* key = (char*)IOMalloc(5);
 	
 	max_card=probe_devices();
 	
@@ -215,38 +215,33 @@ bool		PTnVmon::start	(IOService* provider) {
 
 	
 		if(nv_card->caps & (GPU_TEMP_MONITORING)){
-			snprintf(key, 5, "TG%dD", card_number);
-			tempSensor[card_number]=new TemperatureSensor(key, "sp78", 2);
+			snprintf(key, 5, KEY_FORMAT_GPU_DIODE_TEMPERATURE, card_number);
+			tempSensor[card_number]=new TemperatureSensor(key, TYPE_SP78, 2);
 		
 			if(nv_card->caps & (BOARD_TEMP_MONITORING)) {
-				snprintf(key, 5, "TG%dH", card_number);
-				tempSensor[card_number]=new TemperatureSensor(key, "sp78", 2);
+				snprintf(key, 5, KEY_FORMAT_GPU_BOARD_TEMPERATURE, card_number);
+				tempSensor[card_number]=new TemperatureSensor(key, TYPE_SP78, 2);
 			}
 		}
 		else
 			printf("Temperature monitoring isn't supported on your videocard.\n");
 		
-
-		if(nv_card->caps & I2C_FANSPEED_MONITORING){
-			int no=GetFNum();
-			snprintf(key, 5, "F%dAc", no);
-			fanSensor[card_number]=new FanSensor(key, "fpe2", 2);
-			snprintf(key, 5, "F%dID", no);
-			char name[4] = "GPU";
-			FakeSMCAddKey(key, "ch8*", 4, name);
-			UpdateFNum(1);
-		}
 		/* Various standard GeforceFX/6 also have some fanspeed monitoring support */
-		else if(nv_card->caps & GPU_FANSPEED_MONITORING){
-			int no=GetFNum();
-			snprintf(key, 5, "F%dAc", no);
-			fanSensor[card_number]=new FanSensor(key, "fpe2", 2);
-			snprintf(key, 5, "F%dID", no);
-			char name[4] = "GPU";
-			FakeSMCAddKey(key, "ch8*", 4, name);
-			UpdateFNum(1);
+		if(nv_card->caps & (I2C_FANSPEED_MONITORING || GPU_FANSPEED_MONITORING)){
+			int id=GetNextUnusedKey(KEY_FORMAT_FAN_ID, key);
+			int ac=GetNextUnusedKey(KEY_FORMAT_FAN_SPEED, key);
+			if (id!=-1 || ac!=-1) {
+				int no=id>ac ? id : ac;
+				char name[4] = "GPU";
+				snprintf(key, 5, KEY_FORMAT_FAN_ID, no);
+				FakeSMCAddKey(key, TYPE_FPE2, 4, name);			
+				snprintf(key, 5, KEY_FORMAT_FAN_SPEED, no);
+				fanSensor[card_number]=new FanSensor(key, TYPE_FPE2, 2);
+				UpdateFNum();
+			}
 		}
 	}
+	IOFree(key, 5);
 	return result;
 }
 
@@ -265,9 +260,9 @@ void		PTnVmon::stop	(IOService* provider) {
 			delete tempSensor[card_number];
 		if (fanSensor[card_number]) {
 			delete fanSensor[card_number];
-			UpdateFNum(-1);
 		}
 	}
+	UpdateFNum();
 	IOService::stop(provider);
 }
 
@@ -295,10 +290,6 @@ void TemperatureSensor::OnKeyRead(const char* key, char* data) {
 	printf("Error: temperature monitoring isn't supported on your videocard.\n");
 }
 
-void TemperatureSensor::OnKeyWrite(const char* key, char* data) {
-	
-}
-
 void FanSensor::OnKeyRead(const char* key, char* data) {
 	if(!set_card(0))
 	{
@@ -319,8 +310,4 @@ void FanSensor::OnKeyRead(const char* key, char* data) {
 		data[0]=(rpm<<2)>>8;
 		data[1]=(rpm<<2)&0xff;
 	}
-}
-
-void FanSensor::OnKeyWrite(const char* key, char* data) {
-	
 }

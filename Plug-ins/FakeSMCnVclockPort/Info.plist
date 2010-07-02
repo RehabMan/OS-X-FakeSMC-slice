@@ -41,7 +41,7 @@
 	<key>OSBundleLibraries</key>
 	<dict>
 		<key>org.netkas.FakeSMC</key>
-		<string>2.7</string>
+		<string>2.7.1</string>
 		<key>com.apple.kpi.iokit</key>
 		<string>9.0</string>
 		<key>com.apple.kpi.libkern</key>
