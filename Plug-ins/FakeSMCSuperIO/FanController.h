@@ -12,7 +12,6 @@
 
 #include "FakeSMC.h"
 #include "SuperIO.h"
-#include "Sensor.h"
 
 class FanController : public Controller 
 {

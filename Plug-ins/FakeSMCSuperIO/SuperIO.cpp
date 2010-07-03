@@ -12,77 +12,76 @@
 
 #include "SuperIO.h"
 
-/*bool setBoolean(const char * symbol, bool value, OSDictionary * dictionary)
+void SuperIO::OnKeyRead(const char* key, char* data)
 {
-	OSBoolean * boolean = value ? kOSBooleanTrue : kOSBooleanFalse;
-	
-	if (boolean)
+	for (Item* sensor = m_Sensor; sensor; sensor = sensor->Next)
 	{
-		dictionary->setObject(symbol, boolean);
-		return true;
+		uint32_t key1 = *((uint32_t*)((Sensor*)sensor)->GetKey());
+        uint32_t key2 = *((uint32_t*)key);
+		
+		if (key1 == key2)
+		{
+			((Sensor*)sensor)->OnKeyRead(data);
+		}
 	}
-	
-	return false;
 }
 
-bool setArray(const char * symbol, OSArray * value, OSDictionary * dictionary)
+void SuperIO::OnKeyWrite(const char* key, char* data)
 {
-	dictionary->setObject(symbol, value);
-	return true;
+	for (Item* sensor = m_Sensor; sensor; sensor = sensor->Next)
+	{
+		uint32_t key1 = *((uint32_t*)((Sensor*)sensor)->GetKey());
+        uint32_t key2 = *((uint32_t*)key);
+		
+		if (key1 == key2)
+		{
+			((Sensor*)sensor)->OnKeyWrite(data);
+		}
+	}
 }
-
-bool setDictionary(const char * symbol, OSDictionary * value, OSDictionary * dictionary)
-{
-	dictionary->setObject(symbol, value);
-	return true;
-}*/
 
 void SuperIO::ControllersTimerEvent()
 {
-	for (Controller* controller = m_Controller; controller; controller = controller->Next)
+	for (Item* controller = m_Controller; controller; controller = controller->Next)
 	{
-		controller->TimerEvent();
+		((Controller*)controller)->TimerEvent();
 	}
 }
 
-void SuperIO::AddBinding(Binding* binding)
+void SuperIO::AddSensor(Item* sensor)
 {
-	binding->Next = m_Binding;
-	m_Binding = binding;
+	sensor->Next = m_Sensor;
+	m_Sensor = sensor;
 }
 
-void SuperIO::FlushBindings()
-{
-	Binding* iterator = m_Binding;
-	
-	while (iterator)
-	{
-		Binding* next = iterator->Next;
-		
-		delete iterator;
-		
-		iterator = next;
-	}
-}
-
-void SuperIO::AddController(Controller* controller)
+void SuperIO::AddController(Item* controller)
 {	
 	controller->Next = m_Controller;
 	m_Controller = controller;
 }
 
-void SuperIO::FlushControllers()
+void SuperIO::FlushList(Item* start)
 {
-	Controller* iterator = m_Controller;
+	Item* iterator = start;
 	
 	while (iterator)
 	{
-		Controller* next = iterator->Next;
+		Item* next = iterator->Next;
 		
 		delete iterator;
 		
 		iterator = next;
 	}
+}
+
+void SuperIO::FlushSensors()
+{
+	FlushList(m_Sensor);
+}
+
+void SuperIO::FlushControllers()
+{
+	FlushList(m_Controller);
 }
 
 UInt8 SuperIO::ListenPortByte(UInt8 reg)
@@ -275,7 +274,7 @@ void SuperIO::Start()
 
 void SuperIO::Stop()
 {
-	FlushBindings();
+	FlushSensors();
 	FlushControllers();
 	UpdateFNum();
 }

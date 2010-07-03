@@ -20,9 +20,6 @@
 		AEAD02B811B176980016B8F9 /* SuperIO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEAD02B611B176980016B8F9 /* SuperIO.cpp */; };
 		AEAD041811B18D4B0016B8F9 /* Winbond.h in Headers */ = {isa = PBXBuildFile; fileRef = AEAD041611B18D4B0016B8F9 /* Winbond.h */; };
 		AEAD041911B18D4B0016B8F9 /* Winbond.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEAD041711B18D4B0016B8F9 /* Winbond.cpp */; };
-		AEB335F111D7E9AE00A35176 /* Binding.h in Headers */ = {isa = PBXBuildFile; fileRef = AEB335F011D7E9AE00A35176 /* Binding.h */; };
-		AEB3360911D7E9CF00A35176 /* Controller.h in Headers */ = {isa = PBXBuildFile; fileRef = AEB3360811D7E9CF00A35176 /* Controller.h */; };
-		AEB3361411D83FBC00A35176 /* Sensor.h in Headers */ = {isa = PBXBuildFile; fileRef = AEB3361311D83FBC00A35176 /* Sensor.h */; };
 		AEDC09FF11C8028700912FC5 /* ITESensors.h in Headers */ = {isa = PBXBuildFile; fileRef = AEDC09FD11C8028700912FC5 /* ITESensors.h */; };
 		AEDC0A0711C8030700912FC5 /* WinbondSensors.h in Headers */ = {isa = PBXBuildFile; fileRef = AEDC0A0511C8030700912FC5 /* WinbondSensors.h */; };
 		AEDC0F8311C2503D00A44427 /* FakeSMC.h in Headers */ = {isa = PBXBuildFile; fileRef = AEDC0F8211C2503D00A44427 /* FakeSMC.h */; };
@@ -51,9 +48,6 @@
 		AEAD02B611B176980016B8F9 /* SuperIO.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SuperIO.cpp; sourceTree = "<group>"; };
 		AEAD041611B18D4B0016B8F9 /* Winbond.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Winbond.h; sourceTree = "<group>"; };
 		AEAD041711B18D4B0016B8F9 /* Winbond.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Winbond.cpp; sourceTree = "<group>"; };
-		AEB335F011D7E9AE00A35176 /* Binding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Binding.h; sourceTree = "<group>"; };
-		AEB3360811D7E9CF00A35176 /* Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Controller.h; sourceTree = "<group>"; };
-		AEB3361311D83FBC00A35176 /* Sensor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sensor.h; sourceTree = "<group>"; };
 		AEDC09FD11C8028700912FC5 /* ITESensors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITESensors.h; sourceTree = "<group>"; };
 		AEDC0A0511C8030700912FC5 /* WinbondSensors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WinbondSensors.h; sourceTree = "<group>"; };
 		AEDC0F8211C2503D00A44427 /* FakeSMC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeSMC.h; sourceTree = "<group>"; };
@@ -172,11 +166,8 @@
 		AEDC8FE011D3E41A00EC17CB /* SuperIO */ = {
 			isa = PBXGroup;
 			children = (
-				AEB335F011D7E9AE00A35176 /* Binding.h */,
-				AEB3360811D7E9CF00A35176 /* Controller.h */,
 				AEAD02B511B176980016B8F9 /* SuperIO.h */,
 				AEAD02B611B176980016B8F9 /* SuperIO.cpp */,
-				AEB3361311D83FBC00A35176 /* Sensor.h */,
 			);
 			name = SuperIO;
 			sourceTree = "<group>";
@@ -220,9 +211,6 @@
 				AEE428DF11D672E00012DECD /* ITEFanController.h in Headers */,
 				AEF4121811D7B06C005D8ABF /* WinbondFanController.h in Headers */,
 				AEF4124711D7B554005D8ABF /* FanController.h in Headers */,
-				AEB335F111D7E9AE00A35176 /* Binding.h in Headers */,
-				AEB3360911D7E9CF00A35176 /* Controller.h in Headers */,
-				AEB3361411D83FBC00A35176 /* Sensor.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +408,7 @@
 					x86_64,
 				);
 				GCC_AUTO_VECTORIZATION = YES;
+				GCC_ENABLE_PASCAL_STRINGS = NO;
 				GCC_FAST_OBJC_DISPATCH = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = "";

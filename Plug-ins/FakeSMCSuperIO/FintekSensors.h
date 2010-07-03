@@ -8,7 +8,6 @@
  */
 
 #include "Fintek.h"
-#include "Sensor.h"
 
 class FintekTemperatureSensor : public Sensor 
 {

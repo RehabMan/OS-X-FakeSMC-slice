@@ -17,8 +17,7 @@
 #include <IOKit/IOTimerEventSource.h>
 
 #include "cpuid.h"
-#include "Binding.h"
-#include "Controller.h"
+#include "FakeSMC.h"
 
 // Ports
 const UInt8 SUPERIO_STANDART_PORT[] = { 0x2e, 0x4e };
@@ -104,11 +103,19 @@ enum ChipModel
 	SCH5317_2 = 0x8c // 0x08
 };
 
-class SuperIO
+class Item
+{
+public:
+	Item*	Next;
+};
+
+class SuperIO : public FakeSMCBinding
 {
 private:
-	Binding*		m_Binding;
-	Controller*		m_Controller;
+	Item*			m_Sensor;
+	Item*			m_Controller;
+	
+	void			FlushList(Item* start);
 protected:
 	IOService*		m_Service;
 	
@@ -129,10 +136,10 @@ protected:
 	const char*		m_FanName[5];
 	UInt8			m_FanIndex[5];
 	
-	void			AddBinding(Binding* binding);
-	void			FlushBindings();
+	void			AddSensor(Item* sensor);
+	void			FlushSensors();
 	
-	void			AddController(Controller* controller);
+	void			AddController(Item* controller);
 	void			FlushControllers();
 	
 	UInt8			ListenPortByte(UInt8 reg);
@@ -145,8 +152,8 @@ public:
 	IOService*			GetService() { return m_Service; };
 	const char*			GetModelName();
 	UInt16				GetAddress() { return m_Address; };
-	Binding*			GetBindings() { return m_Binding; };
-	Controller*			GetControllers() { return m_Controller; };
+	Item*				GetSensors() { return m_Sensor; };
+	Item*				GetControllers() { return m_Controller; };
 	UInt16				GetRawVCore() { return m_RawVCore; };
 	bool				FanControlEnabled() { return m_FanControl; };
 	bool				FanVoltageControlled() { return m_FanVoltageControlled; };
@@ -165,6 +172,66 @@ public:
 	virtual bool		Probe();
 	virtual void		Start();
 	virtual void		Stop();
+	
+	virtual void		OnKeyRead(const char* key, char* data);
+	virtual void		OnKeyWrite(const char* key, char* data);
 };
+
+class Sensor : public Item
+{
+protected:
+	SuperIO*	m_Provider;
+	UInt8		m_Index;
+	char*		m_Key;
+public:
+	
+	Sensor(SuperIO* provider, UInt8 index, const char* key, const char* type, UInt8 size)
+	{
+		m_Provider = provider;
+		m_Index = index;
+		
+		InfoLog("Binding key %s", key);
+		
+		m_Key = (char*)IOMalloc(5);
+		bcopy(key, m_Key, 5);
+		
+		char* value = (char*)IOMalloc(size);
+		FakeSMCAddKey(key, type, size, value, provider);
+		IOFree(value, size);
+	};
+	
+	~Sensor()
+	{
+		if (m_Key)
+		{
+			InfoLog("Removing key %s binding", m_Key);
+			FakeSMCRemoveKeyBinding(m_Key);
+			IOFree(m_Key, 5);
+		}
+	}
+	
+	UInt8			GetIndex() { return m_Index; };
+	const char*		GetKey() { return m_Key; };
+	
+	virtual void	OnKeyRead(__unused char* data)
+	{
+		//
+	};
+	
+	virtual void	OnKeyWrite(__unused char* data)
+	{
+		//
+	};
+};
+
+class Controller : public Item
+{
+public:
+	virtual void TimerEvent() 
+	{
+		//
+	};
+};
+
 
 #endif

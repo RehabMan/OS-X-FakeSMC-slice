@@ -190,9 +190,9 @@ bool Fintek::ProbePort()
 void Fintek::Start()
 {
 	// Heatsink
-	AddBinding(new FintekTemperatureSensor(this, 0, KEY_CPU_HEATSINK_TEMPERATURE, TYPE_SP78, 2));
+	AddSensor(new FintekTemperatureSensor(this, 0, KEY_CPU_HEATSINK_TEMPERATURE, TYPE_SP78, 2));
 	// Northbridge
-	AddBinding(new FintekTemperatureSensor(this, 1, KEY_NORTHBRIDGE_TEMPERATURE, TYPE_SP78, 2));
+	AddSensor(new FintekTemperatureSensor(this, 1, KEY_NORTHBRIDGE_TEMPERATURE, TYPE_SP78, 2));
 	
 	switch (m_Model) 
 	{
@@ -200,7 +200,7 @@ void Fintek::Start()
 			break;
         default:
 			// CPU Vcore
-			AddBinding(new FintekVoltageSensor(this, 1, KEY_CPU_VOLTAGE, TYPE_FP2E, 2));
+			AddSensor(new FintekVoltageSensor(this, 1, KEY_CPU_VOLTAGE, TYPE_FP2E, 2));
 			break;
 	}
 	
@@ -223,13 +223,13 @@ void Fintek::Start()
 					FakeSMCAddKey(key, TYPE_CH8, strlen(m_FanName[i]), (char*)m_FanName[i]);
 					
 					snprintf(key, 5, KEY_FORMAT_FAN_SPEED, offset); 
-					AddBinding(new FintekTachometerSensor(this, i, key, TYPE_FPE2, 2));
+					AddSensor(new FintekTachometerSensor(this, i, key, TYPE_FPE2, 2));
 					
 					m_FanIndex[m_FanCount++] = i;
 				}
 				
 				snprintf(key, 5, KEY_FORMAT_FAN_SPEED, offset); 
-				AddBinding(new FintekTachometerSensor(this, i, key, TYPE_FPE2, 2));
+				AddSensor(new FintekTachometerSensor(this, i, key, TYPE_FPE2, 2));
 				
 				m_FanIndex[m_FanCount++] = i;
 			}

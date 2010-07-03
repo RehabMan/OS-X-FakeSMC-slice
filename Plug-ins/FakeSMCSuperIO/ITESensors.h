@@ -8,7 +8,6 @@
  */
 
 #include "ITE.h"
-#include "Sensor.h"
 
 class ITETemperatureSensor : public Sensor 
 {
@@ -18,7 +17,7 @@ public:
 		//
 	};
 	
-	virtual void OnKeyRead(__unused const char* key, char* data)
+	virtual void OnKeyRead(char* data)
 	{
 		data[0] = ((ITE*)m_Provider)->ReadTemperature(m_Index);
 		data[1] = 0;
@@ -32,7 +31,7 @@ public:
 	{
 	};
 	
-	virtual void OnKeyRead(__unused const char* key, char* data)
+	virtual void OnKeyRead(char* data)
 	{
 		UInt16 value = fp2e_Encode(((ITE*)m_Provider)->ReadVoltage(m_Index));
 		
@@ -48,7 +47,7 @@ public:
 	{
 	};
 	
-	virtual void OnKeyRead(__unused const char* key, char* data)
+	virtual void OnKeyRead(char* data)
 	{
 		UInt16 value = ((ITE*)m_Provider)->ReadTachometer(m_Index);
 		

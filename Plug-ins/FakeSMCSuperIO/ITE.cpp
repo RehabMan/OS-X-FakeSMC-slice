@@ -156,12 +156,12 @@ void ITE::Start()
 				case 0:
 				{
 					// Heatsink
-					AddBinding(new ITETemperatureSensor(this, i, KEY_CPU_HEATSINK_TEMPERATURE, TYPE_SP78, 2));
+					AddSensor(new ITETemperatureSensor(this, i, KEY_CPU_HEATSINK_TEMPERATURE, TYPE_SP78, 2));
 				} break;
 				case 1:
 				{
 					// Northbridge
-					AddBinding(new ITETemperatureSensor(this, i, KEY_NORTHBRIDGE_TEMPERATURE, TYPE_SP78, 2));
+					AddSensor(new ITETemperatureSensor(this, i, KEY_NORTHBRIDGE_TEMPERATURE, TYPE_SP78, 2));
 				} break;
 			}
 			
@@ -170,7 +170,7 @@ void ITE::Start()
 	}
 
 	// CPU Vcore
-	AddBinding(new ITEVoltageSensor(this, 0, KEY_CPU_VOLTAGE, TYPE_FP2E, 2));
+	AddSensor(new ITEVoltageSensor(this, 0, KEY_CPU_VOLTAGE, TYPE_FP2E, 2));
 		
 	// FANs
 	
@@ -201,13 +201,13 @@ void ITE::Start()
 					FakeSMCAddKey(key, TYPE_CH8, strlen(m_FanName[i]), (char*)m_FanName[i]);
 					
 					snprintf(key, 5, KEY_FORMAT_FAN_SPEED, offset); 
-					AddBinding(new ITETachometerSensor(this, i, key, TYPE_FPE2, 2));
+					AddSensor(new ITETachometerSensor(this, i, key, TYPE_FPE2, 2));
 					
 					m_FanIndex[m_FanCount++] = i;
 				}
 				
 				snprintf(key, 5, KEY_FORMAT_FAN_SPEED, offset); 
-				AddBinding(new ITETachometerSensor(this, i, key, TYPE_FPE2, 2));
+				AddSensor(new ITETachometerSensor(this, i, key, TYPE_FPE2, 2));
 				
 				m_FanIndex[m_FanCount++] = i;
 			}

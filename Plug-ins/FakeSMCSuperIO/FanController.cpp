@@ -43,11 +43,11 @@ bool FanController::UpdateConfiguration(OSDictionary* configuration)
 	
 	m_Input = 0xff;
 	
-	for (Sensor* sensor = (Sensor*)m_Provider->GetBindings(); sensor; sensor = (Sensor*)sensor->Next)
+	for (Item* sensor = m_Provider->GetSensors(); sensor; sensor = sensor->Next)
 	{
-		if (CompareKeys(sensor->GetKey(), inputKey))
+		if (CompareKeys(((Sensor*)sensor)->GetKey(), inputKey))
 		{
-			m_Input = sensor->GetIndex();
+			m_Input = ((Sensor*)sensor)->GetIndex();
 		}
 	}
 	
