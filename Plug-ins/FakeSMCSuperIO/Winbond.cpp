@@ -50,7 +50,8 @@ SInt16 Winbond::ReadVoltage(UInt8 index)
 	
 	UInt16 V = Winbond::ReadByte(0, WINBOND_VOLTAGE + index);
 	
-	if (index = 0) m_RawVCore = V;
+	if (index = 0) 
+		m_RawVCore = V;
 	
 	if (index == 0 && (m_Model == W83627HF || m_Model == W83627THF || m_Model == W83687THF)) 
 	{
@@ -117,9 +118,9 @@ SInt16 Winbond::ReadTachometer(UInt8 index, bool force_update)
 				// Update divisors
 				if (offset != oldOffset)
 				{
-					WriteByte(0, WINBOND_TACHOMETER_DIV0[i], reg0 | (( offset       & 0x01) << WINBOND_TACHOMETER_DIV0_BIT[i]));
-					WriteByte(0, WINBOND_TACHOMETER_DIV1[i], reg1 | (((offset >> 1) & 0x01) << WINBOND_TACHOMETER_DIV1_BIT[i]));
-					WriteByte(0, WINBOND_TACHOMETER_DIV2[i], reg2 | (((offset >> 2) & 0x01) << WINBOND_TACHOMETER_DIV2_BIT[i]));
+					Winbond::WriteByte(0, WINBOND_TACHOMETER_DIV0[i], reg0 | (( offset       & 0x01) << WINBOND_TACHOMETER_DIV0_BIT[i]));
+					Winbond::WriteByte(0, WINBOND_TACHOMETER_DIV1[i], reg1 | (((offset >> 1) & 0x01) << WINBOND_TACHOMETER_DIV1_BIT[i]));
+					Winbond::WriteByte(0, WINBOND_TACHOMETER_DIV2[i], reg2 | (((offset >> 2) & 0x01) << WINBOND_TACHOMETER_DIV2_BIT[i]));
 				}
 			}
 		}
@@ -171,7 +172,7 @@ SInt16 Winbond::ReadTachometer(UInt8 index, bool force_update)
 				bits = bits >> 8;
 				newBits = newBits >> 8;
 				if (oldByte != newByte) 
-					WriteByte(0, WINBOND_TACHOMETER_DIVISOR[i], newByte);        
+					Winbond::WriteByte(0, WINBOND_TACHOMETER_DIVISOR[i], newByte);        
 			}
 		}
 	}
@@ -473,7 +474,7 @@ void Winbond::Start()
 			case W83667HGB:
 			{
 				// do not add temperature sensor registers that read PECI
-				UInt8 flag = ReadByte(0, WINBOND_TEMPERATURE_SOURCE_SELECT_REG);
+				UInt8 flag = Winbond::ReadByte(0, WINBOND_TEMPERATURE_SOURCE_SELECT_REG);
 				
 				if ((flag & 0x04) == 0)	
 				{
@@ -496,7 +497,7 @@ void Winbond::Start()
 			case W83627DHGP:
 			{
 				// do not add temperature sensor registers that read PECI
-				UInt8 sel = ReadByte(0, WINBOND_TEMPERATURE_SOURCE_SELECT_REG);
+				UInt8 sel = Winbond::ReadByte(0, WINBOND_TEMPERATURE_SOURCE_SELECT_REG);
 				
 				if ((sel & 0x07) == 0) 
 				{

@@ -40,7 +40,7 @@ const UInt8 FINTEK_FAN_TACHOMETER_REG[] = { 0xA0, 0xB0, 0xC0, 0xD0 };
 class Fintek : public SuperIO
 {
 public:	
-	virtual UInt8	ReadByte(UInt8 index);
+	virtual UInt8	ReadByte(UInt8 reg);
 	virtual SInt16	ReadTemperature(UInt8 index);
 	virtual SInt16	ReadVoltage(UInt8 index);
 	virtual SInt16	ReadTachometer(UInt8 index);

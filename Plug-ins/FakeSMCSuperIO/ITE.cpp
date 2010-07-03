@@ -22,20 +22,20 @@ void ITE::WriteByte(UInt8 reg, UInt8 value)
 	outb(m_Address + ITE_DATA_REGISTER_OFFSET, value);
 }
 
-UInt8 ITE::ReadByte(UInt8 index, bool* valid)
+UInt8 ITE::ReadByte(UInt8 reg, bool* valid)
 {
-	outb(m_Address + ITE_ADDRESS_REGISTER_OFFSET, index);
+	outb(m_Address + ITE_ADDRESS_REGISTER_OFFSET, reg);
 	
 	UInt8 value = inb(m_Address + ITE_DATA_REGISTER_OFFSET);
 	
-	valid = (bool*)(index == inb(m_Address + ITE_DATA_REGISTER_OFFSET));
+	valid = (bool*)(reg == inb(m_Address + ITE_DATA_REGISTER_OFFSET));
 	
 	return value;
 }
 
-UInt16 ITE::ReadWord(UInt8 index1, UInt8 index2, bool* valid)
+UInt16 ITE::ReadWord(UInt8 reg1, UInt8 reg2, bool* valid)
 {	
-	return ITE::ReadByte(index1, valid) << 8 | ITE::ReadByte(index2, valid);
+	return ITE::ReadByte(reg1, valid) << 8 | ITE::ReadByte(reg2, valid);
 }
 
 SInt16 ITE::ReadTemperature(UInt8 index)

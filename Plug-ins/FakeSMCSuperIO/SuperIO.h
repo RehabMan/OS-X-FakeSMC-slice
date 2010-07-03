@@ -151,13 +151,13 @@ public:
 		
 	virtual void		LoadConfiguration(IOService* provider);
 	
-	virtual void		WriteByte(...) {};
+	virtual void		WriteByte(__unused UInt8 reg, __unused UInt8 value) {};
 	
-	virtual UInt8		ReadByte(...) { return 0; };
-	virtual UInt16		ReadWord(...) { return 0; };
-	virtual SInt16		ReadTemperature(...) { return 0; };
-	virtual SInt16		ReadVoltage(...) { return 0; };
-	virtual SInt16		ReadTachometer(...) { return 0; };
+	virtual UInt8		ReadByte(__unused UInt8 reg) { return 0; };
+	virtual UInt16		ReadWord(__unused UInt8 reg) { return 0; };
+	virtual SInt16		ReadTemperature(__unused UInt8 index) { return 0; };
+	virtual SInt16		ReadVoltage(__unused UInt8 index) { return 0; };
+	virtual SInt16		ReadTachometer(__unused UInt8 index) { return 0; };
 	
 	virtual UInt8		GetPortsCount() { return 2; };
 	virtual void		SelectPort(UInt8 index) { m_RegisterPort = SUPERIO_STANDART_PORT[index]; m_ValuePort = SUPERIO_STANDART_PORT[index] + 1; };

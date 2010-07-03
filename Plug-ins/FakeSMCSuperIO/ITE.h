@@ -49,8 +49,8 @@ class ITE : public SuperIO
 public:	
 	virtual void	WriteByte(UInt8 reg, UInt8 value);
 	
-	virtual UInt8	ReadByte(UInt8 index, bool* valid);
-	virtual UInt16	ReadWord(UInt8 index1, UInt8 index2, bool* valid);
+	virtual UInt8	ReadByte(UInt8 reg, bool* valid);
+	virtual UInt16	ReadWord(UInt8 reg1, UInt8 reg2, bool* valid);
 	virtual SInt16	ReadTemperature(UInt8 index);
 	virtual SInt16	ReadVoltage(UInt8 index);
 	virtual SInt16	ReadTachometer(UInt8 index);
