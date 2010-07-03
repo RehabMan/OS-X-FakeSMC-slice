@@ -15,7 +15,10 @@ class Controller
 public:
 	Controller*	Next;
 	
-	virtual void TimerEvent() {};
+	virtual void TimerEvent() 
+	{
+		//
+	};
 };
 
 #endif

@@ -10,7 +10,6 @@
 #ifndef _FAKESMC_H
 #define _FAKESMC_H
 
-
 #include <architecture/i386/pio.h>
 #include <libkern/OSTypes.h>
 #include <IOKit/IOLib.h>
@@ -39,8 +38,14 @@
 class FakeSMCBinding 
 {
 public:
-	virtual void OnKeyRead(const char* key, char* data);
-	virtual void OnKeyWrite(const char* key, char* data);
+	virtual void OnKeyRead(__unused const char* key, __unused char* data)
+	{
+		//
+	};
+	virtual void OnKeyWrite(__unused const char* key, __unused char* data)
+	{
+		//
+	};
 };
 
 struct AppleSMCData;

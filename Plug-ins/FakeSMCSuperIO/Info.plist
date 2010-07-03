@@ -17,7 +17,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>2.3.4d6</string>
+	<string>2.3.4d7</string>
 	<key>CFBundleShortVersionString</key>
 	<string>2.3.4</string>
 	<key>IOKitPersonalities</key>
@@ -27,8 +27,6 @@
 			<key>CFBundleIdentifier</key>
 			<string>org.mozodojo.${PRODUCT_NAME}</string>
 			<key>IOClass</key>
-			<string>FakeSMCSuperIOMonitor</string>
-			<key>IOMatchCategory</key>
 			<string>FakeSMCSuperIOMonitor</string>
 			<key>IOProviderClass</key>
 			<string>IOResources</string>

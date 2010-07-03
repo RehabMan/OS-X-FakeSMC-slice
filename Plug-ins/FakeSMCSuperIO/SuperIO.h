@@ -118,6 +118,8 @@ protected:
 	
 	UInt16			m_Model;
 	
+	char*			m_TemperatureKey[3];
+	
 	UInt16			m_RawVCore;
 	
 	bool			m_FanControl;
@@ -140,27 +142,20 @@ protected:
 	int				GetNextFanIndex();
 	
 public:
-	IOService*		GetService() { return m_Service; };
-	const char*		GetModelName();
-	UInt16			GetAddress() { return m_Address; };
-	Binding*		GetBindings() { return m_Binding; };
-	Controller*		GetControllers() { return m_Controller; };
-	UInt16			GetRawVCore() { return m_RawVCore; };
-	bool			FanControlEnabled() { return m_FanControl; };
-	bool			FanVoltageControlled() { return m_FanVoltageControlled; };
+	IOService*			GetService() { return m_Service; };
+	const char*			GetModelName();
+	UInt16				GetAddress() { return m_Address; };
+	Binding*			GetBindings() { return m_Binding; };
+	Controller*			GetControllers() { return m_Controller; };
+	UInt16				GetRawVCore() { return m_RawVCore; };
+	bool				FanControlEnabled() { return m_FanControl; };
+	bool				FanVoltageControlled() { return m_FanVoltageControlled; };
 		
 	virtual void		LoadConfiguration(IOService* provider);
 	
-	virtual void		WriteByte(__unused UInt8 reg, __unused UInt8 value) {};
-	
-	virtual UInt8		ReadByte(__unused UInt8 reg) { return 0; };
-	virtual UInt16		ReadWord(__unused UInt8 reg) { return 0; };
-	virtual SInt16		ReadTemperature(__unused UInt8 index) { return 0; };
-	virtual SInt16		ReadVoltage(__unused UInt8 index) { return 0; };
-	virtual SInt16		ReadTachometer(__unused UInt8 index) { return 0; };
-	
 	virtual UInt8		GetPortsCount() { return 2; };
 	virtual void		SelectPort(UInt8 index) { m_RegisterPort = SUPERIO_STANDART_PORT[index]; m_ValuePort = SUPERIO_STANDART_PORT[index] + 1; };
+	
 	virtual void		Enter() {};
 	virtual void		Exit() {};
 	virtual bool		ProbePort() { return false; };

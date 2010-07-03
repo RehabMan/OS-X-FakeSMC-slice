@@ -25,6 +25,15 @@ public:
 	};
 	
 	UInt8 GetIndex() { return m_Index; };
+	
+	virtual void OnKeyRead(__unused const char* key, __unused char* data)
+	{
+		//
+	};
+	virtual void OnKeyWrite(__unused const char* key, __unused char* data)
+	{
+		//
+	};
 };
 
 #endif

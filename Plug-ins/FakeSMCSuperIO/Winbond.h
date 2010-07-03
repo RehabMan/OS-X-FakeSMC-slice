@@ -64,12 +64,12 @@ private:
 	UInt16	m_FanValue[5];
 	bool	m_FanValueObsolete[5];
 public:
-	virtual void	WriteByte(UInt8 bank, UInt8 reg, UInt8 value);
+	void	WriteByte(UInt8 bank, UInt8 reg, UInt8 value);
 	
-	virtual UInt8	ReadByte(UInt8 bank, UInt8 reg);
-	virtual SInt16	ReadTemperature(UInt8 index);
-	virtual SInt16	ReadVoltage(UInt8 index);
-	virtual SInt16	ReadTachometer(UInt8 index, bool force_update);
+	UInt8	ReadByte(UInt8 bank, UInt8 reg);
+	SInt16	ReadTemperature(UInt8 index);
+	SInt16	ReadVoltage(UInt8 index);
+	SInt16	ReadTachometer(UInt8 index, bool force_update);
 	
 	virtual void	Enter();
 	virtual void	Exit();

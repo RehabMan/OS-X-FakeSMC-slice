@@ -52,11 +52,11 @@ public:
 	
 	virtual void OnKeyRead(__unused const char* key, __unused char* data)
 	{
-		// Or it will be link error on kextload
+		//
 	};
 	virtual void OnKeyWrite(__unused const char* key, __unused char* data)
 	{
-		// Or it will be link error on kextload
+		//
 	};
 };
 

@@ -178,8 +178,8 @@ void ITE::Start()
 	if (m_FanControl && m_FanVoltageControlled)
 	{
 		bool* valid;
-		UInt8 control = ReadByte(ITE_SMARTGUARDIAN_MAIN_CONTROL, valid);
-		WriteByte(ITE_SMARTGUARDIAN_MAIN_CONTROL, control | 0x7);
+		UInt8 control = ITE::ReadByte(ITE_SMARTGUARDIAN_MAIN_CONTROL, valid);
+		ITE::WriteByte(ITE_SMARTGUARDIAN_MAIN_CONTROL, control | 0x7);
 	}
 	
 	// Sensors
