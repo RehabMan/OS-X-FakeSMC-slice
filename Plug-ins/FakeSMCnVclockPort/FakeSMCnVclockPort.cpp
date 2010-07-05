@@ -211,6 +211,7 @@ bool		PTnVmon::start	(IOService* provider) {
 			printf("It seems your card isn't officialy supported in FakeSMCnVclockPort yet.\n");
 			printf("The reason can be that your card is too new.\n");
 			printf("Also please tell the author the pci_id of the card for further investigation.\n");
+			printf("Continuing with it anyway\n");
 		}
 
 	
@@ -267,7 +268,7 @@ void		PTnVmon::stop	(IOService* provider) {
 }
 
 void TemperatureSensor::OnKeyRead(const char* key, char* data) {
-	if(!set_card(0)){
+	if(!set_card(key[2]-'0')){
 		char buf[80];
 		printf("Error: %s\n", get_error(buf, 80));
 		return;
@@ -291,7 +292,7 @@ void TemperatureSensor::OnKeyRead(const char* key, char* data) {
 }
 
 void FanSensor::OnKeyRead(const char* key, char* data) {
-	if(!set_card(0))
+	if(!set_card(key[2]-'0'))
 	{
 		char buf[80];
 		printf("Error: %s\n", get_error(buf, 80));

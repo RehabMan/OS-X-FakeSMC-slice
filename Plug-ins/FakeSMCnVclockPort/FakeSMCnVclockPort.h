@@ -11,7 +11,7 @@ public:
 	Binding*		Next;	
 	Binding(){};	
 	Binding(const char* key, const char* type, UInt8 size) {
-		IOLog("Binding key %s/n", key);		
+		//IOLog("Binding key %s\n", key);		
 		m_Key = (char*)IOMalloc(5);
 		bcopy(key, m_Key, 5);		
 		char* value = (char*)IOMalloc(size);
@@ -21,7 +21,7 @@ public:
 	
 	~Binding() {
 		if (m_Key) {
-			IOLog("Removing key %s binding/n", m_Key);			
+			//IOLog("Removing key %s binding\n", m_Key);			
 			IOFree(m_Key, 5);
 			FakeSMCRemoveKeyBinding(m_Key);
 		}
