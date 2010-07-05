@@ -292,7 +292,7 @@ void TemperatureSensor::OnKeyRead(const char* key, char* data) {
 }
 
 void FanSensor::OnKeyRead(const char* key, char* data) {
-	if(!set_card(key[2]-'0'))
+	if(!set_card(key[1]-'0'))
 	{
 		char buf[80];
 		printf("Error: %s\n", get_error(buf, 80));
