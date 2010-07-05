@@ -224,8 +224,7 @@ bool		PTnVmon::start	(IOService* provider) {
 				tempSensor[card_number]=new TemperatureSensor(key, TYPE_SP78, 2);
 			}
 		}
-		else
-			printf("Temperature monitoring isn't supported on your videocard.\n");
+		
 		
 		/* Various standard GeforceFX/6 also have some fanspeed monitoring support */
 		if(nv_card->caps & (I2C_FANSPEED_MONITORING || GPU_FANSPEED_MONITORING)){
@@ -233,7 +232,8 @@ bool		PTnVmon::start	(IOService* provider) {
 			int ac=GetNextUnusedKey(KEY_FORMAT_FAN_SPEED, key);
 			if (id!=-1 || ac!=-1) {
 				int no=id>ac ? id : ac;
-				char name[4] = "GPU";
+				char name[6]; 
+				snprintf (name, 6, "GPU %d", card_number);
 				snprintf(key, 5, KEY_FORMAT_FAN_ID, no);
 				FakeSMCAddKey(key, TYPE_FPE2, 4, name);			
 				snprintf(key, 5, KEY_FORMAT_FAN_SPEED, no);
