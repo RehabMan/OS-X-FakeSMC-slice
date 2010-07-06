@@ -27,21 +27,21 @@ public:
 		}
 	};
 	const char* GetKey() {return m_Key;};
-	virtual void OnKeyRead(__unused const char* key, __unused char* data){};
-	virtual void OnKeyWrite(__unused const char* key, __unused char* data){};
+	virtual IOReturn OnKeyRead(__unused const char* key, __unused char* data){return kIOReturnInvalid;};
+	virtual IOReturn OnKeyWrite(__unused const char* key, __unused char* data){return kIOReturnInvalid;};
 };
 
 
 class TemperatureSensor : public Binding {
 public:
 	TemperatureSensor(const char* key, const char* type, UInt8 size) : Binding(key, type, size) {};
-	virtual void OnKeyRead(const char* key, char* data);
+	virtual IOReturn OnKeyRead(const char* key, char* data);
 };
 
 class FanSensor : public Binding {
 public:
 	FanSensor(const char* key, const char* type, UInt8 size) : Binding(key, type, size) {};
-	virtual void OnKeyRead(const char* key, char* data);
+	virtual IOReturn OnKeyRead(const char* key, char* data);
 };
 
 

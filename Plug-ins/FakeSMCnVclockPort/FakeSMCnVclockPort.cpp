@@ -267,36 +267,37 @@ void		PTnVmon::stop	(IOService* provider) {
 	IOService::stop(provider);
 }
 
-void TemperatureSensor::OnKeyRead(const char* key, char* data) {
+IOReturn TemperatureSensor::OnKeyRead(const char* key, char* data) {
 	if(!set_card(key[2]-'0')){
 		char buf[80];
 		printf("Error: %s\n", get_error(buf, 80));
-		return;
+		return kIOReturnSuccess;
 	}
 	switch(key[3]){
 		case 'D':
 			if(nv_card->caps & (GPU_TEMP_MONITORING)){
 				data[0]=nv_card->get_gpu_temp(nv_card->sensor);
 				data[1]=0;
-				return;
+				return kIOReturnSuccess;
 			}
 			break;
 		case 'H':
 			if(nv_card->caps & (BOARD_TEMP_MONITORING)) {
 				data[0]=nv_card->get_board_temp(nv_card->sensor);
 				data[1]=0;
-				return;
+				return kIOReturnSuccess;
 			}
 	}
 	printf("Error: temperature monitoring isn't supported on your videocard.\n");
+	return kIOReturnSuccess;
 }
 
-void FanSensor::OnKeyRead(const char* key, char* data) {
+IOReturn FanSensor::OnKeyRead(const char* key, char* data) {
 	if(!set_card(key[1]-'0'))
 	{
 		char buf[80];
 		printf("Error: %s\n", get_error(buf, 80));
-		return;
+		return kIOReturnSuccess;
 	}
 	if(nv_card->caps & I2C_FANSPEED_MONITORING)
 	{
@@ -311,4 +312,5 @@ void FanSensor::OnKeyRead(const char* key, char* data) {
 		data[0]=(rpm<<2)>>8;
 		data[1]=(rpm<<2)&0xff;
 	}
+	return  kIOReturnSuccess;
 }
