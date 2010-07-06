@@ -1,5 +1,4 @@
 #include "fakesmc.h"
-#include "FakeSMCBinding.h"
 
 #define SMC_DATA_PORT 0x00
 #define SMC_CMD_PORT 0x04

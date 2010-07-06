@@ -17,9 +17,9 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>2.7.1</string>
+	<string>2.7.2</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.7.1</string>
+	<string>2.7.2</string>
 	<key>IOKitPersonalities</key>
 	<dict>
 		<key>FakeSMC</key>
@@ -81,7 +81,7 @@
 		<string>9.0.0</string>
 	</dict>
 	<key>OSBundleCompatibleVersion</key>
-	<string>2.7</string>
+	<string>2.7.2</string>
 	<key>OSBundleRequired</key>
 	<string>Root</string>
 </dict>

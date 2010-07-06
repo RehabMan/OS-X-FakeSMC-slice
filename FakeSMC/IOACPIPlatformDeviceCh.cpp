@@ -71,7 +71,9 @@ void IOACPIPlatformDeviceCh::applesmc_fill_data(struct AppleSMCStatus *s)
         uint32_t key_current = *((uint32_t*)s->key);
 		if(key_data == key_current) {
 //            IOLog("APPLESMC: Key matched (%s Len=%d Data=%s)\n", d->key, d->len, d->data);
-			if(d->binding != NULL) d->binding->OnKeyRead(d->key, d->data);	
+			if(d->binding != NULL) 
+				if(d->binding->OnKeyRead(d->key, d->data) != kIOReturnSuccess)
+					IOLog("FakeSMC: OnKeyRead unsuccessful call for key %c%c%c%c", d->key[0], d->key[1], d->key[2], d->key[3]);
             memcpy(s->data, d->data, d->len);
             return;
         }
@@ -426,7 +428,8 @@ SMCData IOACPIPlatformDeviceCh::SMCAddKey(const char * keyname, const char * key
 			bcopy(keydata, SMCkey->data,keylen);
 			
 			if (SMCkey->binding != NULL)
-				SMCkey->binding->OnKeyWrite(keyname, SMCkey->data);
+				if (SMCkey->binding->OnKeyWrite(keyname, SMCkey->data) != kIOReturnSuccess)
+					IOLog("FakeSMC: OnKeyWrite unsuccessful call for key %c%c%c%c", SMCkey->key[0], SMCkey->key[1], SMCkey->key[2], SMCkey->key[3]);
 			
 			if (binding) SMCkey->binding = binding;
 			//			IOLog("FakeSMC: replacing key (%s Len=%d)\n", keyname, SMCkey->len);

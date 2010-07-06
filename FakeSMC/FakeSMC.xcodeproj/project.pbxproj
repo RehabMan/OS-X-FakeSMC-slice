@@ -10,7 +10,6 @@
 		32D94FC60562CBF700B6AF17 /* fakesmc.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A224C3EFF42367911CA2CB7 /* fakesmc.h */; };
 		32D94FC80562CBF700B6AF17 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
 		32D94FCA0562CBF700B6AF17 /* fakesmc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A224C3FFF42367911CA2CB7 /* fakesmc.cpp */; settings = {ATTRIBUTES = (); }; };
-		AEB8407811C236B800ED0754 /* FakeSMCBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = AEB8407711C236B800ED0754 /* FakeSMCBinding.h */; };
 		E05B3D5C103D2D60006092C3 /* IOACPIPlatformDeviceCh.h in Headers */ = {isa = PBXBuildFile; fileRef = E05B3D5A103D2D60006092C3 /* IOACPIPlatformDeviceCh.h */; };
 		E05B3D5D103D2D60006092C3 /* IOACPIPlatformDeviceCh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E05B3D5B103D2D60006092C3 /* IOACPIPlatformDeviceCh.cpp */; };
 /* End PBXBuildFile section */
@@ -23,7 +22,6 @@
 		32D94FD00562CBF700B6AF17 /* FakeSMC.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FakeSMC.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DA8362C06AD9B9200E5AC22 /* Kernel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kernel.framework; path = /System/Library/Frameworks/Kernel.framework; sourceTree = "<absolute>"; };
 		ABB1314A1121F041004F70D8 /* Info-pre106.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-pre106.plist"; sourceTree = "<group>"; };
-		AEB8407711C236B800ED0754 /* FakeSMCBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeSMCBinding.h; sourceTree = "<group>"; };
 		E05B3D5A103D2D60006092C3 /* IOACPIPlatformDeviceCh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOACPIPlatformDeviceCh.h; sourceTree = "<group>"; };
 		E05B3D5B103D2D60006092C3 /* IOACPIPlatformDeviceCh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IOACPIPlatformDeviceCh.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,7 +69,6 @@
 		247142CAFF3F8F9811CA285C /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				AEB8407711C236B800ED0754 /* FakeSMCBinding.h */,
 				1A224C3EFF42367911CA2CB7 /* fakesmc.h */,
 				1A224C3FFF42367911CA2CB7 /* fakesmc.cpp */,
 				E05B3D5A103D2D60006092C3 /* IOACPIPlatformDeviceCh.h */,
@@ -89,7 +86,6 @@
 			files = (
 				32D94FC60562CBF700B6AF17 /* fakesmc.h in Headers */,
 				E05B3D5C103D2D60006092C3 /* IOACPIPlatformDeviceCh.h in Headers */,
-				AEB8407811C236B800ED0754 /* FakeSMCBinding.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
