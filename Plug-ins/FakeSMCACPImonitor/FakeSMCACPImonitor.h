@@ -2,7 +2,7 @@
 #include "IOKit/acpi/IOACPIPlatformDevice.h"
 #include <IOKit/IOTimerEventSource.h>
 
-#include "FakeSMCBinding.h"
+#include "FakeSMC.h"
 
 class ACPImonitor : public IOService
 {
@@ -42,10 +42,14 @@ public:
 		m_Monitor = monitor;
 	}
 	
-	virtual void OnKeyRead(const char* key, char* data)
+	virtual IOReturn OnKeyRead(const char* key, char* data)
 	{
 		m_Monitor->Update(key, data);
+		return kIOReturnSuccess;
 	};
 	
-	virtual void OnKeyWrite(__unused const char* key, __unused char* data) {};
+	virtual IOReturn OnKeyWrite(__unused const char* key, __unused char* data) 
+	{
+		return kIOReturnSuccess;
+	};
 };

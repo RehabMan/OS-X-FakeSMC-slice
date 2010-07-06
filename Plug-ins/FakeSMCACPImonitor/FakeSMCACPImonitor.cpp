@@ -140,7 +140,7 @@ bool ACPImonitor::start(IOService * provider)
 	
 //	value[0] = FCount;
 //	FakeSMCAddKey("FNum", 1, value);
-	UpdateFNum(FCount);
+	UpdateFNum();
 	
 	//Next step - temperature keys
 	if (kIOReturnSuccess == TZDevice->evaluateInteger("SMCA", &tmp)){		
@@ -282,7 +282,6 @@ void ACPImonitor::stop (IOService* provider)
 		snprintf(key, 5, "F%dAc", i+FanOffset);
 		FakeSMCRemoveKeyBinding(key);
 	}
-	UpdateFNum(-FCount);
 	FakeSMCRemoveKeyBinding("TC0H");
 	FakeSMCRemoveKeyBinding("TN0H");
 	FakeSMCRemoveKeyBinding("TW0P");
@@ -300,6 +299,8 @@ void ACPImonitor::stop (IOService* provider)
 	FakeSMCRemoveKeyBinding("PC1C");
 	
 	delete m_Binding;
+	
+	UpdateFNum();
 	
 	super::stop(provider);
 }

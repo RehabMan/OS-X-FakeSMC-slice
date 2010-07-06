@@ -10,7 +10,7 @@
 		32D94FC60562CBF700B6AF17 /* FakeSMCACPImonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A224C3EFF42367911CA2CB7 /* FakeSMCACPImonitor.h */; };
 		32D94FC80562CBF700B6AF17 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
 		32D94FCA0562CBF700B6AF17 /* FakeSMCACPImonitor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCACPImonitor.cpp */; settings = {ATTRIBUTES = (); }; };
-		AE4109E711C6A99A00C572D3 /* FakeSMCBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = AE4109E611C6A99A00C572D3 /* FakeSMCBinding.h */; };
+		AE4109E711C6A99A00C572D3 /* FakeSMC.h in Headers */ = {isa = PBXBuildFile; fileRef = AE4109E611C6A99A00C572D3 /* FakeSMC.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,7 +20,7 @@
 		32D94FCF0562CBF700B6AF17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32D94FD00562CBF700B6AF17 /* FakeSMCACPImonitor.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FakeSMCACPImonitor.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DA8362C06AD9B9200E5AC22 /* Kernel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kernel.framework; path = /System/Library/Frameworks/Kernel.framework; sourceTree = "<absolute>"; };
-		AE4109E611C6A99A00C572D3 /* FakeSMCBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeSMCBinding.h; sourceTree = "<group>"; };
+		AE4109E611C6A99A00C572D3 /* FakeSMC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeSMC.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +65,7 @@
 		247142CAFF3F8F9811CA285C /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				AE4109E611C6A99A00C572D3 /* FakeSMCBinding.h */,
+				AE4109E611C6A99A00C572D3 /* FakeSMC.h */,
 				1A224C3EFF42367911CA2CB7 /* FakeSMCACPImonitor.h */,
 				1A224C3FFF42367911CA2CB7 /* FakeSMCACPImonitor.cpp */,
 			);
@@ -80,7 +80,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32D94FC60562CBF700B6AF17 /* FakeSMCACPImonitor.h in Headers */,
-				AE4109E711C6A99A00C572D3 /* FakeSMCBinding.h in Headers */,
+				AE4109E711C6A99A00C572D3 /* FakeSMC.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
