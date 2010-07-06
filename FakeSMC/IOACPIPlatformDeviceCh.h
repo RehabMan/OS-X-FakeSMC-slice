@@ -14,13 +14,7 @@
 #include <IOKit/acpi/IOACPIPlatformDevice.h>
 
 #include "fakesmc.h"
-
-class FakeSMCBinding 
-{
-public:
-	virtual IOReturn OnKeyRead(const char* key, char* data) {};
-	virtual IOReturn OnKeyWrite(const char* key, char* data) {};
-};
+#include "FakeSMCBinding.h"
 
 struct AppleSMCStatus {
 	uint8_t cmd;
