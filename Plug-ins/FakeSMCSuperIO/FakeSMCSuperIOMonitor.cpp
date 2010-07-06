@@ -37,59 +37,73 @@ IOService* FakeSMCSuperIOMonitor::probe(IOService *provider, SInt32 *score)
 	
 	if (super::probe(provider, score) != this) return 0;
 	
-	superio = new Fintek();
+	// Hardware Detection Order
+	OSDictionary* dictionary = OSDynamicCast(OSDictionary, getProperty("Detection Order"));
 	
-	InfoLog("Probing Fintek");
-			
-	if(!superio->Probe())
+	if (dictionary)
 	{
-		delete superio;
+		OSCollectionIterator* i = OSCollectionIterator::withCollection(dictionary);
 		
-		superio = new Winbond();
-		
-		InfoLog("Probing Winbond");
-				
-		if(!superio->Probe())
+		while (OSSymbol* symbol = (OSSymbol*)i->getNextObject())
 		{
-			delete superio;
-						
-			superio = new SMSC();
-			
-			InfoLog("Probing SMSC");
-			
-			if(!superio->Probe())
+			OSBoolean* enabled = OSDynamicCast(OSBoolean, dictionary->getObject(symbol));
+
+			if (enabled && enabled->getValue())
 			{
-				delete superio;
-			
-				superio = new ITE();
-				
-				InfoLog("Probing ITE");
-								
-				if(!superio->Probe())
+				if (symbol->isEqualTo("Fintek"))
 				{
-					delete superio;
-					
-					InfoLog("No supported Super I/O chip has been found!");
-					return 0;
+					superio = new Fintek();
+					InfoLog("Probing Fintek");
+				}
+				else if (symbol->isEqualTo("Winbond"))
+				{
+					superio = new Winbond();
+					InfoLog("Probing Winbond");
+				}
+				else if (symbol->isEqualTo("ITE"))
+				{
+					superio = new ITE();
+					InfoLog("Probing ITE");
+				}
+				else if (symbol->isEqualTo("SMSC"))
+				{
+					superio = new SMSC();
+					InfoLog("Probing SMSC");
+				}
+				
+				if (superio)
+				{
+					if (superio->Probe()) 
+					{
+						InfoLog("Detected %s on 0x%x", superio->GetModelName(), superio->GetAddress());
+						
+						superio->LoadConfiguration(this);
+						
+						if (!m_WorkLoop)
+							m_WorkLoop = getWorkLoop();
+						
+						if (!m_TimerEventSource)
+							m_TimerEventSource = IOTimerEventSource::timerEventSource(this, OSMemberFunctionCast(IOTimerEventSource::Action, this, &FakeSMCSuperIOMonitor::controllerTimerEvent));
+						
+						if (m_WorkLoop && m_TimerEventSource)
+							m_WorkLoop->addEventSource(m_TimerEventSource);
+						
+						return this;
+					}
+					else 
+					{
+						delete superio;
+					}
 				}
 			}
 		}
+		
+		i->release();
 	}
 	
-	InfoLog("Found %s Super I/O chip on 0x%x", superio->GetModelName(), superio->GetAddress());
-
-	superio->LoadConfiguration(this);
+	InfoLog("No supported Super I/O chip has been detected!");
 	
-	if (!m_WorkLoop)
-		m_WorkLoop = getWorkLoop();
-	
-	if (!m_TimerEventSource)
-		m_TimerEventSource = IOTimerEventSource::timerEventSource(this, OSMemberFunctionCast(IOTimerEventSource::Action, this, &FakeSMCSuperIOMonitor::controllerTimerEvent));
-	
-	if (m_WorkLoop && m_TimerEventSource)
-		m_WorkLoop->addEventSource(m_TimerEventSource);
-	
-	return this;
+	return 0;
 }
 
 bool FakeSMCSuperIOMonitor::start(IOService * provider)

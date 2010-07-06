@@ -17,7 +17,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>2.3.6b0</string>
+	<string>2.3.6b1</string>
 	<key>CFBundleShortVersionString</key>
 	<string>2.3.6</string>
 	<key>IOKitPersonalities</key>
@@ -32,6 +32,17 @@
 			<string>IOResources</string>
 			<key>IOResourceMatch</key>
 			<string>IOKit</string>
+			<key>Detection Order</key>
+			<dict>
+				<key>Fintek</key>
+				<true/>
+				<key>Winbond</key>
+				<true/>
+				<key>ITE</key>
+				<true/>
+				<key>SMSC</key>
+				<true/>
+			</dict>
 			<key>Fan Control</key>
 			<dict>
 				<key>Enabled</key>

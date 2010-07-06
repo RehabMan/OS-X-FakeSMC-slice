@@ -60,15 +60,15 @@ void SuperIO::AddController(Binding* controller)
 
 void SuperIO::FlushList(Binding* start)
 {
-	Binding* iterator = start;
+	Binding* item = start;
 	
-	while (iterator)
+	while (item)
 	{
-		Binding* next = iterator->Next;
+		Binding* next = item->Next;
 		
-		delete iterator;
+		delete item;
 		
-		iterator = next;
+		item = next;
 	}
 }
 

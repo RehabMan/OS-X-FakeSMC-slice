@@ -20,7 +20,7 @@ private:
 	Sensor*	m_Input;
 	UInt8	m_Index;
 	float	m_Multiplier;
-	UInt8	m_LastValue;
+	SInt32	m_LastValue;
 	UInt8	m_StartTemperature;
 	UInt8	m_StartThrottle;
 	UInt8	m_HighThrottle;
