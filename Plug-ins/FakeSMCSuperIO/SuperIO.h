@@ -108,13 +108,13 @@ class Binding : public FakeSMCBinding
 public:
 	Binding*	Next;
 	
-	virtual void OnKeyRead(__unused const char* key, __unused char* data)
+	virtual IOReturn OnKeyRead(__unused const char* key, __unused char* data)
 	{
-		//
+		return kIOReturnInvalid;
 	};
-	virtual void OnKeyWrite(__unused const char* key, __unused char* data)
+	virtual IOReturn OnKeyWrite(__unused const char* key, __unused char* data)
 	{
-		//
+		return kIOReturnInvalid;
 	};
 };
 
@@ -167,8 +167,8 @@ public:
 	bool				FanControlEnabled() { return m_FanControl; };
 	bool				FanVoltageControlled() { return m_FanVoltageControlled; };
 	
-	void				OnKeyRead(const char* key, char* data);
-	void				OnKeyWrite(const char* key, char* data);
+	virtual IOReturn	OnKeyRead(const char* key, char* data);
+	virtual IOReturn	OnKeyWrite(const char* key, char* data);
 		
 	virtual void		LoadConfiguration(IOService* provider);
 	
@@ -224,14 +224,14 @@ public:
 	const char*		GetKey() { return m_Key; };
 	SInt32			GetValue() { return m_Value; }
 	
-	virtual void OnKeyRead(__unused const char* key, __unused char* data)
+	virtual IOReturn OnKeyRead(__unused const char* key, __unused char* data)
 	{
-		//
+		return kIOReturnInvalid;
 	};
 	 
-	virtual void OnKeyWrite(__unused const char* key, __unused char* data)
+	virtual IOReturn OnKeyWrite(__unused const char* key, __unused char* data)
 	{
-		//
+		return kIOReturnInvalid;
 	};
 };
 
@@ -243,14 +243,14 @@ public:
 		//
 	};
 	
-	virtual void OnKeyRead(__unused const char* key, __unused char* data)
+	virtual IOReturn OnKeyRead(__unused const char* key, __unused char* data)
 	{
-		//
+		return kIOReturnInvalid;
 	};
 	 
-	virtual void OnKeyWrite(__unused const char* key, __unused char* data)
+	virtual IOReturn OnKeyWrite(__unused const char* key, __unused char* data)
 	{
-		//
+		return kIOReturnInvalid;
 	};
 };
 

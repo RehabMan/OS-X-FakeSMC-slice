@@ -70,13 +70,13 @@ public:
 	virtual void	ForceFan(__unused UInt8 index, __unused UInt8 value) {};
 	virtual void	TimerEvent();
 	
-	virtual void OnKeyRead(__unused const char* key, __unused char* data)
+	virtual IOReturn OnKeyRead(__unused const char* key, __unused char* data)
 	{
-		//
+		return kIOReturnInvalid;
 	};
-	virtual void OnKeyWrite(__unused const char* key, __unused char* data)
+	virtual IOReturn OnKeyWrite(__unused const char* key, __unused char* data)
 	{
-		//
+		return kIOReturnInvalid;
 	};
 };
 

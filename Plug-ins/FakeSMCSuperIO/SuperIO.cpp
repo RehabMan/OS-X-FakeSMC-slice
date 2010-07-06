@@ -12,7 +12,7 @@
 
 #include "SuperIO.h"
 
-void SuperIO::OnKeyRead(const char* key, char* data)
+IOReturn SuperIO::OnKeyRead(const char* key, char* data)
 {
 	for (Sensor* sensor = (Sensor*)m_Sensor; sensor; sensor = (Sensor*)sensor->Next)
 	{
@@ -21,9 +21,11 @@ void SuperIO::OnKeyRead(const char* key, char* data)
 			sensor->OnKeyRead(key, data);
 		}
 	}
+	
+	return kIOReturnSuccess;
 }
 
-void SuperIO::OnKeyWrite(const char* key, char* data)
+IOReturn SuperIO::OnKeyWrite(const char* key, char* data)
 {
 	for (Sensor* sensor = (Sensor*)m_Sensor; sensor; sensor = (Sensor*)sensor->Next)
 	{
@@ -32,6 +34,8 @@ void SuperIO::OnKeyWrite(const char* key, char* data)
 			sensor->OnKeyWrite(key, data);
 		}
 	}
+	
+	return kIOReturnSuccess;
 }
 
 void SuperIO::ControllersTimerEvent()

@@ -17,9 +17,9 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>2.3.5d1</string>
+	<string>2.3.6b0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.3.5</string>
+	<string>2.3.6</string>
 	<key>IOKitPersonalities</key>
 	<dict>
 		<key>SuperIOMonitorPlugin</key>
@@ -84,7 +84,7 @@
 		<key>com.apple.kpi.unsupported</key>
 		<string>9.0</string>
 		<key>org.netkas.FakeSMC</key>
-		<string>2.7.1</string>
+		<string>2.7.2</string>
 	</dict>
 </dict>
 </plist>
