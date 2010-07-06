@@ -16,7 +16,7 @@
 
 #define DebugOn FALSE
 
-#define LogPrefix "FakeSMCIntelThermal: "
+#define LogPrefix "IntelThermal: "
 #define DebugLog(string, args...)	do { if (DebugOn) { IOLog (LogPrefix "[Debug] " string "\n", ## args); } } while(0)
 #define WarningLog(string, args...) do { IOLog (LogPrefix "[Warning] " string "\n", ## args); } while(0)
 #define InfoLog(string, args...)	do { IOLog (LogPrefix string "\n", ## args); } while(0)
@@ -64,6 +64,6 @@ public:
     void			Start();
 	void			Stop();
 	
-	virtual void	OnKeyRead(const char* key, char* data);
-	virtual void	OnKeyWrite(const char* key, char* data);
+	virtual IOReturn OnKeyRead(const char* key, char* data);
+	virtual IOReturn OnKeyWrite(const char* key, char* data);
 };
