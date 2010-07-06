@@ -169,6 +169,7 @@ const char* SuperIO::GetModelName()
 		case LPC47M233: return "SMSC LPC47M233";
 		case LPC47M292: return "SMSC LPC47M292";
 		case LPC47N252: return "SMSC LPC47N252";
+		case LPC47N217: return "SMSC LPC47N217";			
 		case LPC47S42x: return "SMSC LPC47S42x";
 		case LPC47S45x: return "SMSC LPC47S45x";
 		case LPC47U33x: return "SMSC LPC47U33x";
