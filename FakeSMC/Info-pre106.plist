@@ -20,6 +20,8 @@
 	<string>2.7.2</string>
 	<key>CFBundleShortVersionString</key>
 	<string>2.7.2</string>
+	<key>OSBundleCompatibleVersion</key>
+	<string>2.7.2</string>
 	<key>IOKitPersonalities</key>
 	<dict>
 		<key>FakeSMC</key>
