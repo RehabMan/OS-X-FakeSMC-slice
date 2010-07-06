@@ -33,10 +33,10 @@ void Winbond::WriteByte(UInt8 bank, UInt8 reg, UInt8 value)
 
 SInt16 Winbond::ReadTemperature(UInt8 index)
 {
-	UInt32 value = Winbond::ReadByte(WINBOND_TEMPERATURE_BANK[index], WINBOND_TEMPERATURE[index]) << 1;
+	UInt32 value = ReadByte(WINBOND_TEMPERATURE_BANK[index], WINBOND_TEMPERATURE[index]) << 1;
 	
 	if (WINBOND_TEMPERATURE_BANK[index] > 0) 
-		value |= Winbond::ReadByte(WINBOND_TEMPERATURE_BANK[index], (UInt8)(WINBOND_TEMPERATURE[index] + 1)) >> 7;
+		value |= ReadByte(WINBOND_TEMPERATURE_BANK[index], (UInt8)(WINBOND_TEMPERATURE[index] + 1)) >> 7;
 	
 	float temperature = (float)value / 2.0f;
 	
@@ -48,14 +48,14 @@ SInt16 Winbond::ReadVoltage(UInt8 index)
 	float voltage = 0;
 	float gain = 1;
 	
-	UInt16 V = Winbond::ReadByte(0, WINBOND_VOLTAGE + index);
+	UInt16 V = ReadByte(0, WINBOND_VOLTAGE + index);
 	
 	if (index = 0) 
 		m_RawVCore = V;
 	
 	if (index == 0 && (m_Model == W83627HF || m_Model == W83627THF || m_Model == W83687THF)) 
 	{
-		UInt8 vrmConfiguration = Winbond::ReadByte(0, 0x18);
+		UInt8 vrmConfiguration = ReadByte(0, 0x18);
 		
 		if ((vrmConfiguration & 0x01) == 0)
 			voltage = 16.0f * V; // VRM8 formula
@@ -93,9 +93,9 @@ SInt16 Winbond::ReadTachometer(UInt8 index, bool force_update)
 		{
 			for (int i = 0; i < m_FanLimit; i++)
 			{
-				UInt8 reg0 = Winbond::ReadByte(0, WINBOND_TACHOMETER_DIV0[i]);
-				UInt8 reg1 = Winbond::ReadByte(0, WINBOND_TACHOMETER_DIV1[i]);
-				UInt8 reg2 = Winbond::ReadByte(0, WINBOND_TACHOMETER_DIV2[i]);
+				UInt8 reg0 = ReadByte(0, WINBOND_TACHOMETER_DIV0[i]);
+				UInt8 reg1 = ReadByte(0, WINBOND_TACHOMETER_DIV1[i]);
+				UInt8 reg2 = ReadByte(0, WINBOND_TACHOMETER_DIV2[i]);
 				
 				UInt8 offset =	(((reg2 >> WINBOND_TACHOMETER_DIV2_BIT[i]) & 0x01) << 2) |
 				(((reg1 >> WINBOND_TACHOMETER_DIV1_BIT[i]) & 0x01) << 1) |
@@ -103,7 +103,7 @@ SInt16 Winbond::ReadTachometer(UInt8 index, bool force_update)
 				
 				UInt8 divisor = 1 << offset;
 				
-				UInt8 count = Winbond::ReadByte(WINBOND_TACHOMETER_BANK[i], WINBOND_TACHOMETER[i]);
+				UInt8 count = ReadByte(WINBOND_TACHOMETER_BANK[i], WINBOND_TACHOMETER[i]);
 				
 				m_FanValue[i] = (count < 0xff) ? 1.35e6f / (float)(count * divisor) : 0;
 				m_FanValueObsolete[i] = false;
@@ -118,9 +118,9 @@ SInt16 Winbond::ReadTachometer(UInt8 index, bool force_update)
 				// Update divisors
 				if (offset != oldOffset)
 				{
-					Winbond::WriteByte(0, WINBOND_TACHOMETER_DIV0[i], reg0 | (( offset       & 0x01) << WINBOND_TACHOMETER_DIV0_BIT[i]));
-					Winbond::WriteByte(0, WINBOND_TACHOMETER_DIV1[i], reg1 | (((offset >> 1) & 0x01) << WINBOND_TACHOMETER_DIV1_BIT[i]));
-					Winbond::WriteByte(0, WINBOND_TACHOMETER_DIV2[i], reg2 | (((offset >> 2) & 0x01) << WINBOND_TACHOMETER_DIV2_BIT[i]));
+					WriteByte(0, WINBOND_TACHOMETER_DIV0[i], reg0 | (( offset       & 0x01) << WINBOND_TACHOMETER_DIV0_BIT[i]));
+					WriteByte(0, WINBOND_TACHOMETER_DIV1[i], reg1 | (((offset >> 1) & 0x01) << WINBOND_TACHOMETER_DIV1_BIT[i]));
+					WriteByte(0, WINBOND_TACHOMETER_DIV2[i], reg2 | (((offset >> 2) & 0x01) << WINBOND_TACHOMETER_DIV2_BIT[i]));
 				}
 			}
 		}
@@ -129,7 +129,7 @@ SInt16 Winbond::ReadTachometer(UInt8 index, bool force_update)
 			UInt64 bits = 0;
 			
 			for (int i = 0; i < m_FanLimit; i++)
-				bits = (bits << 8) | Winbond::ReadByte(0, WINBOND_TACHOMETER_DIVISOR[i]);
+				bits = (bits << 8) | ReadByte(0, WINBOND_TACHOMETER_DIVISOR[i]);
 			
 			bits = bits << ((5 - m_FanLimit) * 8);
 		
@@ -145,7 +145,7 @@ SInt16 Winbond::ReadTachometer(UInt8 index, bool force_update)
 				
 				UInt8 divisor = 1 << divisorBits;
 				
-				UInt8 count = Winbond::ReadByte(WINBOND_TACHOMETER_BANK[i], WINBOND_TACHOMETER[i]);
+				UInt8 count = ReadByte(WINBOND_TACHOMETER_BANK[i], WINBOND_TACHOMETER[i]);
 				
 				m_FanValue[i] = (count < 0xff) ? 1.35e6f / (float(count * divisor)) : 0;
 				m_FanValueObsolete[i] = false;
@@ -172,7 +172,7 @@ SInt16 Winbond::ReadTachometer(UInt8 index, bool force_update)
 				bits = bits >> 8;
 				newBits = newBits >> 8;
 				if (oldByte != newByte) 
-					Winbond::WriteByte(0, WINBOND_TACHOMETER_DIVISOR[i], newByte);        
+					WriteByte(0, WINBOND_TACHOMETER_DIVISOR[i], newByte);        
 			}
 		}
 	}
@@ -474,7 +474,7 @@ void Winbond::Start()
 			case W83667HGB:
 			{
 				// do not add temperature sensor registers that read PECI
-				UInt8 flag = Winbond::ReadByte(0, WINBOND_TEMPERATURE_SOURCE_SELECT_REG);
+				UInt8 flag = ReadByte(0, WINBOND_TEMPERATURE_SOURCE_SELECT_REG);
 				
 				if ((flag & 0x04) == 0)	
 				{
@@ -497,7 +497,7 @@ void Winbond::Start()
 			case W83627DHGP:
 			{
 				// do not add temperature sensor registers that read PECI
-				UInt8 sel = Winbond::ReadByte(0, WINBOND_TEMPERATURE_SOURCE_SELECT_REG);
+				UInt8 sel = ReadByte(0, WINBOND_TEMPERATURE_SOURCE_SELECT_REG);
 				
 				if ((sel & 0x07) == 0) 
 				{

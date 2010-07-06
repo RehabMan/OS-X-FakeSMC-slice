@@ -17,7 +17,7 @@ class FanController : public Controller
 {
 private:
 	bool	m_Active;
-	UInt8	m_Input;
+	Sensor*	m_Input;
 	UInt8	m_Index;
 	float	m_Multiplier;
 	UInt8	m_LastValue;
@@ -69,6 +69,15 @@ public:
 	virtual UInt8	ReadTemperature(__unused UInt8 index) { return 0; };
 	virtual void	ForceFan(__unused UInt8 index, __unused UInt8 value) {};
 	virtual void	TimerEvent();
+	
+	virtual void OnKeyRead(__unused const char* key, __unused char* data)
+	{
+		//
+	};
+	virtual void OnKeyWrite(__unused const char* key, __unused char* data)
+	{
+		//
+	};
 };
 
 #endif

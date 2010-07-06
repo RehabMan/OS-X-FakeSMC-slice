@@ -14,59 +14,53 @@
 
 void SuperIO::OnKeyRead(const char* key, char* data)
 {
-	for (Item* sensor = m_Sensor; sensor; sensor = sensor->Next)
+	for (Sensor* sensor = (Sensor*)m_Sensor; sensor; sensor = (Sensor*)sensor->Next)
 	{
-		uint32_t key1 = *((uint32_t*)((Sensor*)sensor)->GetKey());
-        uint32_t key2 = *((uint32_t*)key);
-		
-		if (key1 == key2)
+		if (CompareKeys(sensor->GetKey(), key))
 		{
-			((Sensor*)sensor)->OnKeyRead(data);
+			sensor->OnKeyRead(key, data);
 		}
 	}
 }
 
 void SuperIO::OnKeyWrite(const char* key, char* data)
 {
-	for (Item* sensor = m_Sensor; sensor; sensor = sensor->Next)
+	for (Sensor* sensor = (Sensor*)m_Sensor; sensor; sensor = (Sensor*)sensor->Next)
 	{
-		uint32_t key1 = *((uint32_t*)((Sensor*)sensor)->GetKey());
-        uint32_t key2 = *((uint32_t*)key);
-		
-		if (key1 == key2)
+		if (CompareKeys(sensor->GetKey(), key))
 		{
-			((Sensor*)sensor)->OnKeyWrite(data);
+			sensor->OnKeyWrite(key, data);
 		}
 	}
 }
 
 void SuperIO::ControllersTimerEvent()
 {
-	for (Item* controller = m_Controller; controller; controller = controller->Next)
+	for (Binding* controller = m_Controller; controller; controller = controller->Next)
 	{
 		((Controller*)controller)->TimerEvent();
 	}
 }
 
-void SuperIO::AddSensor(Item* sensor)
+void SuperIO::AddSensor(Binding* sensor)
 {
 	sensor->Next = m_Sensor;
 	m_Sensor = sensor;
 }
 
-void SuperIO::AddController(Item* controller)
+void SuperIO::AddController(Binding* controller)
 {	
 	controller->Next = m_Controller;
 	m_Controller = controller;
 }
 
-void SuperIO::FlushList(Item* start)
+void SuperIO::FlushList(Binding* start)
 {
-	Item* iterator = start;
+	Binding* iterator = start;
 	
 	while (iterator)
 	{
-		Item* next = iterator->Next;
+		Binding* next = iterator->Next;
 		
 		delete iterator;
 		

@@ -41,13 +41,11 @@ bool FanController::UpdateConfiguration(OSDictionary* configuration)
 		return false;
 	}
 	
-	m_Input = 0xff;
-	
-	for (Item* sensor = m_Provider->GetSensors(); sensor; sensor = sensor->Next)
+	for (Binding* sensor = m_Provider->GetSensors(); sensor; sensor = sensor->Next)
 	{
 		if (CompareKeys(((Sensor*)sensor)->GetKey(), inputKey))
 		{
-			m_Input = ((Sensor*)sensor)->GetIndex();
+			m_Input = ((Sensor*)sensor);
 		}
 	}
 	
@@ -80,9 +78,9 @@ void FanController::TimerEvent()
 	if (!m_Active) 
 		return;
 	
-	if (m_Input != 0xff)
+	if (m_Input)
 	{
-		UInt8 t = ReadTemperature(m_Input);
+		SInt32 t = m_Input->GetValue();
 		
 		if (t > 0 && t != m_LastValue)
 		{

@@ -35,28 +35,28 @@ UInt8 ITE::ReadByte(UInt8 reg, bool* valid)
 
 UInt16 ITE::ReadWord(UInt8 reg1, UInt8 reg2, bool* valid)
 {	
-	return ITE::ReadByte(reg1, valid) << 8 | ITE::ReadByte(reg2, valid);
+	return ReadByte(reg1, valid) << 8 | ReadByte(reg2, valid);
 }
 
 SInt16 ITE::ReadTemperature(UInt8 index)
 {
 	bool* valid;
-	return ITE::ReadByte(ITE_TEMPERATURE_BASE_REG + index, valid);
+	return ReadByte(ITE_TEMPERATURE_BASE_REG + index, valid);
 }
 
 SInt16 ITE::ReadVoltage(UInt8 index)
 {
 	bool* valid;
-	m_RawVCore = ITE::ReadByte(ITE_VOLTAGE_BASE_REG + index, valid);
+	m_RawVCore = ReadByte(ITE_VOLTAGE_BASE_REG + index, valid);
 	return m_RawVCore << 4;
 }
 
 SInt16 ITE::ReadTachometer(UInt8 index)
 {
 	bool* valid;
-	int value = ITE::ReadByte(ITE_FAN_TACHOMETER_REG[index], valid);
+	int value = ReadByte(ITE_FAN_TACHOMETER_REG[index], valid);
 	
-	value |= ITE::ReadByte(ITE_FAN_TACHOMETER_EXT_REG[index], valid) << 8;
+	value |= ReadByte(ITE_FAN_TACHOMETER_EXT_REG[index], valid) << 8;
 	
 	return value > 0x3f && value < 0xffff ? (float)(1350000 + value) / (float)(value * 2) : 0;
 }
@@ -118,12 +118,12 @@ bool ITE::ProbePort()
 	
 	bool* valid;
 	
-	UInt8 vendor = ITE::ReadByte(ITE_VENDOR_ID_REGISTER, valid);
+	UInt8 vendor = ReadByte(ITE_VENDOR_ID_REGISTER, valid);
 	
 	if (!valid || vendor != ITE_VENDOR_ID)
 		return false;
 	
-	if ((ITE::ReadByte(ITE_CONFIGURATION_REGISTER, valid) & 0x10) == 0)
+	if ((ReadByte(ITE_CONFIGURATION_REGISTER, valid) & 0x10) == 0)
 		return false;
 	
 	if (!valid)
@@ -178,8 +178,8 @@ void ITE::Start()
 	if (m_FanControl && m_FanVoltageControlled)
 	{
 		bool* valid;
-		UInt8 control = ITE::ReadByte(ITE_SMARTGUARDIAN_MAIN_CONTROL, valid);
-		ITE::WriteByte(ITE_SMARTGUARDIAN_MAIN_CONTROL, control | 0x7);
+		UInt8 control = ReadByte(ITE_SMARTGUARDIAN_MAIN_CONTROL, valid);
+		WriteByte(ITE_SMARTGUARDIAN_MAIN_CONTROL, control | 0x7);
 	}
 	
 	// Sensors

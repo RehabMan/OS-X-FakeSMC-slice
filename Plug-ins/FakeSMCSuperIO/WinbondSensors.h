@@ -17,9 +17,11 @@ public:
 		//
 	};
 	
-	virtual void OnKeyRead(char* data)
+	virtual void OnKeyRead(__unused const char* key, char* data)
 	{
-		data[0] = ((Winbond*)m_Provider)->ReadTemperature(m_Index);
+		m_Value = ((Winbond*)m_Provider)->ReadTemperature(m_Index);
+		
+		data[0] = m_Value;
 		data[1] = 0;
 	};
 };
@@ -32,12 +34,12 @@ public:
 		//
 	};
 	
-	virtual void voidOnKeyRead(char* data)
+	virtual void OnKeyRead(__unused const char* key, char* data)
 	{
-		UInt16 value = fp2e_Encode(((Winbond*)m_Provider)->ReadVoltage(m_Index));
+		m_Value = fp2e_Encode(((Winbond*)m_Provider)->ReadVoltage(m_Index));
 					
-		data[0] = (value & 0xff00) >> 8;
-		data[1] = (value & 0x00ff);
+		data[0] = (m_Value & 0xff00) >> 8;
+		data[1] = (m_Value & 0x00ff);
 	};
 };
 
@@ -49,11 +51,11 @@ public:
 		//
 	};
 	
-	virtual void voidOnKeyRead(__unused const char* key, char* data)
+	virtual void OnKeyRead(__unused const char* key, char* data)
 	{
-		UInt16 value = ((Winbond*)m_Provider)->ReadTachometer(m_Index, false);
+		m_Value = ((Winbond*)m_Provider)->ReadTachometer(m_Index, false);
 		
-		data[0] = (value >> 6) & 0xff;
-		data[1] = (value << 2) & 0xff;
+		data[0] = (m_Value >> 6) & 0xff;
+		data[1] = (m_Value << 2) & 0xff;
 	};
 };

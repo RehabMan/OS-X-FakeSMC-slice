@@ -103,19 +103,28 @@ enum ChipModel
 	SCH5317_2 = 0x8c // 0x08
 };
 
-class Item
+class Binding : public FakeSMCBinding
 {
 public:
-	Item*	Next;
+	Binding*	Next;
+	
+	virtual void OnKeyRead(__unused const char* key, __unused char* data)
+	{
+		//
+	};
+	virtual void OnKeyWrite(__unused const char* key, __unused char* data)
+	{
+		//
+	};
 };
 
 class SuperIO : public FakeSMCBinding
 {
 private:
-	Item*			m_Sensor;
-	Item*			m_Controller;
+	Binding*			m_Sensor;
+	Binding*			m_Controller;
 	
-	void			FlushList(Item* start);
+	void			FlushList(Binding* start);
 protected:
 	IOService*		m_Service;
 	
@@ -136,10 +145,10 @@ protected:
 	const char*		m_FanName[5];
 	UInt8			m_FanIndex[5];
 	
-	void			AddSensor(Item* sensor);
+	void			AddSensor(Binding* sensor);
 	void			FlushSensors();
 	
-	void			AddController(Item* controller);
+	void			AddController(Binding* controller);
 	void			FlushControllers();
 	
 	UInt8			ListenPortByte(UInt8 reg);
@@ -152,11 +161,14 @@ public:
 	IOService*			GetService() { return m_Service; };
 	const char*			GetModelName();
 	UInt16				GetAddress() { return m_Address; };
-	Item*				GetSensors() { return m_Sensor; };
-	Item*				GetControllers() { return m_Controller; };
+	Binding*			GetSensors() { return m_Sensor; };
+	Binding*			GetControllers() { return m_Controller; };
 	UInt16				GetRawVCore() { return m_RawVCore; };
 	bool				FanControlEnabled() { return m_FanControl; };
 	bool				FanVoltageControlled() { return m_FanVoltageControlled; };
+	
+	void				OnKeyRead(const char* key, char* data);
+	void				OnKeyWrite(const char* key, char* data);
 		
 	virtual void		LoadConfiguration(IOService* provider);
 	
@@ -172,17 +184,15 @@ public:
 	virtual bool		Probe();
 	virtual void		Start();
 	virtual void		Stop();
-	
-	virtual void		OnKeyRead(const char* key, char* data);
-	virtual void		OnKeyWrite(const char* key, char* data);
 };
 
-class Sensor : public Item
+class Sensor : public Binding
 {
 protected:
 	SuperIO*	m_Provider;
 	UInt8		m_Index;
 	char*		m_Key;
+	SInt32		m_Value;
 public:
 	
 	Sensor(SuperIO* provider, UInt8 index, const char* key, const char* type, UInt8 size)
@@ -196,7 +206,7 @@ public:
 		bcopy(key, m_Key, 5);
 		
 		char* value = (char*)IOMalloc(size);
-		FakeSMCAddKey(key, type, size, value, provider);
+		FakeSMCAddKey(key, type, size, value, this);
 		IOFree(value, size);
 	};
 	
@@ -212,22 +222,33 @@ public:
 	
 	UInt8			GetIndex() { return m_Index; };
 	const char*		GetKey() { return m_Key; };
+	SInt32			GetValue() { return m_Value; }
 	
-	virtual void	OnKeyRead(__unused char* data)
+	virtual void OnKeyRead(__unused const char* key, __unused char* data)
 	{
 		//
 	};
-	
-	virtual void	OnKeyWrite(__unused char* data)
+	 
+	virtual void OnKeyWrite(__unused const char* key, __unused char* data)
 	{
 		//
 	};
 };
 
-class Controller : public Item
+class Controller : public Binding
 {
 public:
 	virtual void TimerEvent() 
+	{
+		//
+	};
+	
+	virtual void OnKeyRead(__unused const char* key, __unused char* data)
+	{
+		//
+	};
+	 
+	virtual void OnKeyWrite(__unused const char* key, __unused char* data)
 	{
 		//
 	};

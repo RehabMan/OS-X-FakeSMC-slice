@@ -38,14 +38,8 @@
 class FakeSMCBinding 
 {
 public:
-	virtual void OnKeyRead(__unused const char* key, __unused char* data)
-	{
-		//
-	};
-	virtual void OnKeyWrite(__unused const char* key, __unused char* data)
-	{
-		//
-	};
+	virtual void OnKeyRead(const char* key, char* data);
+	virtual void OnKeyWrite(const char* key, char* data);
 };
 
 struct AppleSMCData;
@@ -79,7 +73,10 @@ inline UInt16 fp2e_Encode(UInt16 value)
 
 inline bool CompareKeys(const char* key1, const char* key2)
 {
-	return ((key1[0] == key2[0]) && (key1[1] == key2[1]) && (key1[2] == key2[2]) && (key1[3] == key2[3]));
+	uint32_t key1_t = *((uint32_t*)key1);
+	uint32_t key2_t = *((uint32_t*)key2);
+
+	return key1_t == key2_t;
 }
 
 inline int GetIndex(const char* value, int index)

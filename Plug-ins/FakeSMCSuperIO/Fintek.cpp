@@ -27,9 +27,9 @@ SInt16 Fintek::ReadTemperature(UInt8 index)
 	{
 		case F71858: 
 		{
-			int tableMode = 0x3 & Fintek::ReadByte(FINTEK_TEMPERATURE_CONFIG_REG);
-			int high = Fintek::ReadByte(FINTEK_TEMPERATURE_BASE_REG + 2 * index);
-			int low = Fintek::ReadByte(FINTEK_TEMPERATURE_BASE_REG + 2 * index + 1);      
+			int tableMode = 0x3 & ReadByte(FINTEK_TEMPERATURE_CONFIG_REG);
+			int high = ReadByte(FINTEK_TEMPERATURE_BASE_REG + 2 * index);
+			int low = ReadByte(FINTEK_TEMPERATURE_BASE_REG + 2 * index + 1);      
 			
 			if (high != 0xbb && high != 0xcc) 
 			{
@@ -56,7 +56,7 @@ SInt16 Fintek::ReadTemperature(UInt8 index)
 		} break;
 		default: 
 		{
-            value = Fintek::ReadByte(FINTEK_TEMPERATURE_BASE_REG + 2 * (index + 1));
+            value = ReadByte(FINTEK_TEMPERATURE_BASE_REG + 2 * (index + 1));
 		} break;
 	}
 	
@@ -65,7 +65,7 @@ SInt16 Fintek::ReadTemperature(UInt8 index)
 
 SInt16 Fintek::ReadVoltage(UInt8 index)
 {
-	UInt16 raw = Fintek::ReadByte(FINTEK_VOLTAGE_BASE_REG + index);
+	UInt16 raw = ReadByte(FINTEK_VOLTAGE_BASE_REG + index);
 	
 	if (index == 0) m_RawVCore = raw;
 	
@@ -76,8 +76,8 @@ SInt16 Fintek::ReadVoltage(UInt8 index)
 
 SInt16 Fintek::ReadTachometer(UInt8 index)
 {
-	int value = Fintek::ReadByte(FINTEK_FAN_TACHOMETER_REG[index]) << 8;
-	value |= Fintek::ReadByte(FINTEK_FAN_TACHOMETER_REG[index] + 1);
+	int value = ReadByte(FINTEK_FAN_TACHOMETER_REG[index]) << 8;
+	value |= ReadByte(FINTEK_FAN_TACHOMETER_REG[index] + 1);
 	
 	if (value > 0)
 		value = (value < 0x0fff) ? 1.5e6f / value : 0;
