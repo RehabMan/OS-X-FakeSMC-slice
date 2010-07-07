@@ -71,6 +71,24 @@ void SMSC::Exit()
 	outb(m_ValuePort, 0x02);
 }
 
+UInt8 SMSC::ReadByte(UInt8 ldn, UInt8 reg) 
+{
+	outb(m_RegisterPort, SUPERIO_DEVICE_SELECT_REGISTER);
+	outb(m_ValuePort, ldn);
+	outb(m_RegisterPort, reg);
+	return inb(m_ValuePort);
+}
+
+void SMSC::WriteByte(UInt8 ldn, UInt8 reg, UInt8 value)
+{
+	outb(m_RegisterPort, SUPERIO_DEVICE_SELECT_REGISTER);
+	outb(m_ValuePort, ldn);
+	outb(m_RegisterPort, reg);
+	outb(m_ValuePort, value); 
+}
+
+
+
 bool SMSC::ProbePort()
 {
 	UInt16 id = ListenPortByte(SUPERIO_CHIP_ID_REGISTER);

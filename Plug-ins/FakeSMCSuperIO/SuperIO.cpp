@@ -95,7 +95,7 @@ UInt16 SuperIO::ListenPortWord(UInt8 reg)
 
 void SuperIO::Select(UInt8 logicalDeviceNumber)
 {
-	outb(m_RegisterPort, SUPERIO_DEVCIE_SELECT_REGISTER);
+	outb(m_RegisterPort, SUPERIO_DEVICE_SELECT_REGISTER);
 	outb(m_ValuePort, logicalDeviceNumber);
 }
 
