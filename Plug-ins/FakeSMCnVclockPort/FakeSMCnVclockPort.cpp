@@ -227,7 +227,7 @@ bool		PTnVmon::start	(IOService* provider) {
 		
 		
 		/* Various standard GeforceFX/6 also have some fanspeed monitoring support */
-		if(nv_card->caps & (I2C_FANSPEED_MONITORING || GPU_FANSPEED_MONITORING)){
+		if(nv_card->caps & (I2C_FANSPEED_MONITORING) || (nv_card->caps&GPU_FANSPEED_MONITORING)){
 			int id=GetNextUnusedKey(KEY_FORMAT_FAN_ID, key);
 			int ac=GetNextUnusedKey(KEY_FORMAT_FAN_SPEED, key);
 			if (id!=-1 || ac!=-1) {
