@@ -67,8 +67,9 @@ void SMSC::Enter()
 void SMSC::Exit()
 {
 	outb(m_RegisterPort, 0xAA);
-	outb(m_RegisterPort, SUPERIO_CONFIGURATION_CONTROL_REGISTER);
-	outb(m_ValuePort, 0x02);
+	//Slice - ????
+//	outb(m_RegisterPort, SUPERIO_CONFIGURATION_CONTROL_REGISTER);
+//	outb(m_ValuePort, 0x02);
 }
 
 UInt8 SMSC::ReadByte(UInt8 ldn, UInt8 reg) 
