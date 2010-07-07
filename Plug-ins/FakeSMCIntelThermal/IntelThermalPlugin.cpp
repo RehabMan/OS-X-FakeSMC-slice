@@ -187,7 +187,7 @@ IOReturn IntelThermalPlugin::OnKeyRead(const char* key, char* data)
 	return kIOReturnSuccess;
 }
 
-IOReturn IntelThermalPlugin::OnKeyWrite(const char* key, char* data)
+IOReturn IntelThermalPlugin::OnKeyWrite(__unused const char* key, __unused char* data)
 {
 	return kIOReturnSuccess;
 }
