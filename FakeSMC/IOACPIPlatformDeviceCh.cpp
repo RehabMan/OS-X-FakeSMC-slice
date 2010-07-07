@@ -73,7 +73,7 @@ void IOACPIPlatformDeviceCh::applesmc_fill_data(struct AppleSMCStatus *s)
 //            IOLog("APPLESMC: Key matched (%s Len=%d Data=%s)\n", d->key, d->len, d->data);
 			if(d->binding != NULL) 
 				if(d->binding->OnKeyRead(d->key, d->data) != kIOReturnSuccess)
-					IOLog("FakeSMC: OnKeyRead unsuccessful call for key %c%c%c%c", d->key[0], d->key[1], d->key[2], d->key[3]);
+					IOLog("FakeSMC: OnKeyRead unsuccessful call for key %c%c%c%c\n", d->key[0], d->key[1], d->key[2], d->key[3]);
             memcpy(s->data, d->data, d->len);
             return;
         }
