@@ -11,6 +11,8 @@
 		32D94FC80562CBF700B6AF17 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
 		32D94FCA0562CBF700B6AF17 /* FakeSMCSuperIOMonitor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCSuperIOMonitor.cpp */; settings = {ATTRIBUTES = (); }; };
 		AE0D5B4911C80E39000C2425 /* FintekSensors.h in Headers */ = {isa = PBXBuildFile; fileRef = AE0D5B4711C80E39000C2425 /* FintekSensors.h */; };
+		AE8EEE7411E65C7B00A476CF /* Sensor.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8EEE7311E65C7B00A476CF /* Sensor.h */; };
+		AE8EEE7611E65C8500A476CF /* Controller.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8EEE7511E65C8500A476CF /* Controller.h */; };
 		AEA7559411CFCF0700299353 /* cpuid.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA7559311CFCF0700299353 /* cpuid.h */; };
 		AEA932C611D11A2E008FB8FC /* SMSC.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA932C411D11A2E008FB8FC /* SMSC.h */; };
 		AEA932C711D11A2E008FB8FC /* SMSC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEA932C511D11A2E008FB8FC /* SMSC.cpp */; };
@@ -39,6 +41,8 @@
 		32D94FD00562CBF700B6AF17 /* FakeSMCSuperIO.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FakeSMCSuperIO.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DA8362C06AD9B9200E5AC22 /* Kernel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kernel.framework; path = /System/Library/Frameworks/Kernel.framework; sourceTree = "<absolute>"; };
 		AE0D5B4711C80E39000C2425 /* FintekSensors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FintekSensors.h; sourceTree = "<group>"; };
+		AE8EEE7311E65C7B00A476CF /* Sensor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sensor.h; sourceTree = "<group>"; };
+		AE8EEE7511E65C8500A476CF /* Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Controller.h; sourceTree = "<group>"; };
 		AEA7559311CFCF0700299353 /* cpuid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpuid.h; sourceTree = "<group>"; };
 		AEA932C411D11A2E008FB8FC /* SMSC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSC.h; sourceTree = "<group>"; };
 		AEA932C511D11A2E008FB8FC /* SMSC.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SMSC.cpp; sourceTree = "<group>"; };
@@ -168,6 +172,8 @@
 			children = (
 				AEAD02B511B176980016B8F9 /* SuperIO.h */,
 				AEAD02B611B176980016B8F9 /* SuperIO.cpp */,
+				AE8EEE7311E65C7B00A476CF /* Sensor.h */,
+				AE8EEE7511E65C8500A476CF /* Controller.h */,
 			);
 			name = SuperIO;
 			sourceTree = "<group>";
@@ -211,6 +217,8 @@
 				AEE428DF11D672E00012DECD /* ITEFanController.h in Headers */,
 				AEF4121811D7B06C005D8ABF /* WinbondFanController.h in Headers */,
 				AEF4124711D7B554005D8ABF /* FanController.h in Headers */,
+				AE8EEE7411E65C7B00A476CF /* Sensor.h in Headers */,
+				AE8EEE7611E65C8500A476CF /* Controller.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

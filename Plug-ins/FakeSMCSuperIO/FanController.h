@@ -11,7 +11,8 @@
 #define _FANCONTROLLER_H
 
 #include "FakeSMC.h"
-#include "SuperIO.h"
+#include "Sensor.h"
+#include "Controller.h"
 
 class FanController : public Controller 
 {

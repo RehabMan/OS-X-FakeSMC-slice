@@ -17,9 +17,9 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>2.3.6b1</string>
+	<string>2.3.7b0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.3.6</string>
+	<string>2.3.7</string>
 	<key>IOKitPersonalities</key>
 	<dict>
 		<key>SuperIOMonitorPlugin</key>
@@ -32,7 +32,127 @@
 			<string>IOResources</string>
 			<key>IOResourceMatch</key>
 			<string>IOKit</string>
-			<key>Detection Order</key>
+			<key>Fan Configuration</key>
+			<dict>
+				<key>Software Fan Control</key>
+				<dict>
+					<key>Enabled</key>
+					<false/>
+					<key>Voltage Control</key>
+					<false/>
+				</dict>
+				<key>Fan0</key>
+				<dict>
+					<key>Force Detection</key>
+					<false/>
+					<key>Name</key>
+					<string></string>
+					<key>Software Fan Control</key>
+					<dict>
+						<key>Enabled</key>
+						<false/>
+						<key>Temperature Source</key>
+						<string>Processor</string>
+						<key>Start Temperature, ℃</key>
+						<integer>20</integer>
+						<key>Start Throttle, %</key>
+						<integer>15</integer>
+						<key>High Temperature, ℃</key>
+						<integer>50</integer>
+						<key>High Throttle, %</key>
+						<integer>100</integer>
+					</dict>
+				</dict>
+				<key>Fan1</key>
+				<dict>
+					<key>Force Detection</key>
+					<false/>
+					<key>Name</key>
+					<string></string>
+					<key>Software Fan Control</key>
+					<dict>
+						<key>Enabled</key>
+						<false/>
+						<key>Temperature Source</key>
+						<string>System</string>
+						<key>Start Temperature, ℃</key>
+						<integer>20</integer>
+						<key>Start Throttle, %</key>
+						<integer>15</integer>
+						<key>High Temperature, ℃</key>
+						<integer>50</integer>
+						<key>High Throttle, %</key>
+						<integer>100</integer>
+					</dict>
+				</dict>
+				<key>Fan2</key>
+				<dict>
+					<key>Force Detection</key>
+					<false/>
+					<key>Name</key>
+					<string></string>
+					<key>Software Fan Control</key>
+					<dict>
+						<key>Enabled</key>
+						<false/>
+						<key>Temperature Source</key>
+						<string>System</string>
+						<key>Start Temperature, ℃</key>
+						<integer>20</integer>
+						<key>Start Throttle, %</key>
+						<integer>15</integer>
+						<key>High Temperature, ℃</key>
+						<integer>50</integer>
+						<key>High Throttle, %</key>
+						<integer>100</integer>
+					</dict>
+				</dict>
+				<key>Fan3</key>
+				<dict>
+					<key>Force Detection</key>
+					<false/>
+					<key>Name</key>
+					<string></string>
+					<key>Software Fan Control</key>
+					<dict>
+						<key>Enabled</key>
+						<false/>
+						<key>Temperature Source</key>
+						<string>System</string>
+						<key>Start Temperature, ℃</key>
+						<integer>20</integer>
+						<key>Start Throttle, %</key>
+						<integer>15</integer>
+						<key>High Temperature, ℃</key>
+						<integer>50</integer>
+						<key>High Throttle, %</key>
+						<integer>100</integer>
+					</dict>
+				</dict>
+				<key>Fan4</key>
+				<dict>
+					<key>Force Detection</key>
+					<false/>
+					<key>Name</key>
+					<string></string>
+					<key>Software Fan Control</key>
+					<dict>
+						<key>Enabled</key>
+						<false/>
+						<key>Temperature Source</key>
+						<string>System</string>
+						<key>Start Temperature, ℃</key>
+						<integer>20</integer>
+						<key>Start Throttle, %</key>
+						<integer>15</integer>
+						<key>High Temperature, ℃</key>
+						<integer>50</integer>
+						<key>High Throttle, %</key>
+						<integer>100</integer>
+					</dict>
+				</dict>
+			</dict>
+			<key>Hardware Detection</key>
 			<dict>
 				<key>Fintek</key>
 				<true/>

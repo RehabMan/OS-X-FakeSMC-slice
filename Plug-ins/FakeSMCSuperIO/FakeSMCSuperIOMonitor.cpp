@@ -38,7 +38,7 @@ IOService* FakeSMCSuperIOMonitor::probe(IOService *provider, SInt32 *score)
 	if (super::probe(provider, score) != this) return 0;
 	
 	// Hardware Detection Order
-	OSDictionary* dictionary = OSDynamicCast(OSDictionary, getProperty("Detection Order"));
+	OSDictionary* dictionary = OSDynamicCast(OSDictionary, getProperty("Hardware Detection"));
 	
 	if (dictionary)
 	{

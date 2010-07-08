@@ -11,6 +11,8 @@
  */
 
 #include "SuperIO.h"
+#include "Sensor.h"
+#include "Controller.h"
 
 IOReturn SuperIO::OnKeyRead(const char* key, char* data)
 {
@@ -191,53 +193,74 @@ void SuperIO::LoadConfiguration(IOService* provider)
 {
 	m_Service = provider;
 	
-	OSArray* fanIDs = OSDynamicCast(OSArray, provider->getProperty("Fan Names"));
-	
-	if (fanIDs) 
-		fanIDs = OSArray::withArray(fanIDs);
-	
-    if (fanIDs) 
+	OSDictionary* configuration = OSDynamicCast(OSDictionary, provider->getProperty("Fan Configuration"));
+
+    if (configuration) 
 	{
-		UInt32 count = fanIDs->getCount();
+		// Fan Control
+		OSDictionary* fanControl = OSDynamicCast(OSDictionary, configuration->getObject("Software Fan Control"));
 		
-		if(count > 5) count = 5;
-		
-		for (UInt32 i = 0; i < count; i++)
+		if (fanControl)
 		{
-			OSString* name = OSDynamicCast(OSString, fanIDs->getObject(i)); 
-			m_FanName[i] = name->getCStringNoCopy();
-		}
-		
-		fanIDs->release();
-    }
-	
-	// Fan Control
-	OSDictionary* fanControlConfig = OSDynamicCast(OSDictionary, m_Service->getProperty("Fan Control"));
-	
-	if (fanControlConfig)
-	{
-		OSBoolean* enabled = OSDynamicCast(OSBoolean, fanControlConfig->getObject("Enabled"));
-		
-		if (enabled && enabled->getValue())
-		{
-			m_FanControl = true;
-			
-			InfoLog("Software FAN control enabled");
-			
-			enabled = OSDynamicCast(OSBoolean, fanControlConfig->getObject("Voltage Control"));
+			OSBoolean* enabled = OSDynamicCast(OSBoolean, fanControl->getObject("Enabled"));
 			
 			if (enabled && enabled->getValue())
 			{
-				InfoLog("Fan Control in voltage mode");
+				m_FanControlEnabled = true;
 				
-				m_FanVoltageControlled = true;
-			}
-			else
-			{
-				InfoLog("Fan Control in PWM mode");
+				InfoLog("Software FAN Control driver activated");
+				
+				enabled = OSDynamicCast(OSBoolean, fanControl->getObject("Voltage Control"));
+				
+				if (enabled && enabled->getValue())
+				{
+					InfoLog("Fan Control in voltage mode");
+					
+					m_FanVoltageControlled = true;
+				}
+				else
+				{
+					InfoLog("Fan Control in PWM mode");
+				}
 			}
 		}
-	}
+		
+		// Fan Options
+		for (int i = 0; i < 5; i++)
+		{
+			char key[5];
+			OSDictionary* fan;
+			OSBoolean* forced;
+			OSString* name;
+			
+			snprintf(key, 5, "Fan%d", i);
+			
+			if (fan = OSDynamicCast(OSDictionary, configuration->getObject(key))) 
+			{
+				if (forced = OSDynamicCast(OSBoolean, fan->getObject("Force Detection"))) 
+					m_FanForced[i] = forced->getValue();
+				
+				if (name = OSDynamicCast(OSString, fan->getObject("Name"))) 
+					m_FanName[i] = name->getCStringNoCopy();
+				
+				if (fanControl = OSDynamicCast(OSDictionary, fan->getObject("Software Fan Control")))
+				{
+					OSBoolean* enabled = OSDynamicCast(OSBoolean, fanControl->getObject("Enabled"));
+					
+					if (enabled && enabled->getValue())
+					{
+						InfoLog("FAN Control enabled for Fan #%d", i);
+						
+						m_FanControl[i] = true;
+					}
+				}
+				
+				fan->release();
+			}
+		}
+		
+		configuration->release();
+    }
 	
 	cpuid_update_generic_info();
 }

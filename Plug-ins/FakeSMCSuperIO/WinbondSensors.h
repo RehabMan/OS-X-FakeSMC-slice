@@ -7,6 +7,7 @@
  *
  */
 
+#include "Sensor.h"
 #include "Winbond.h"
 
 class WinbondTemperatureSensor : public Sensor 

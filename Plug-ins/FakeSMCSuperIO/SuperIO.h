@@ -140,11 +140,13 @@ protected:
 	
 	UInt16			m_RawVCore;
 	
-	bool			m_FanControl;
+	bool			m_FanControlEnabled;
 	bool			m_FanVoltageControlled;
 	
 	UInt8			m_FanCount;
+	bool			m_FanForced[5];
 	const char*		m_FanName[5];
+	bool			m_FanControl[5];
 	UInt8			m_FanIndex[5];
 	
 	void			AddSensor(Binding* sensor);
@@ -166,7 +168,7 @@ public:
 	Binding*			GetSensors() { return m_Sensor; };
 	Binding*			GetControllers() { return m_Controller; };
 	UInt16				GetRawVCore() { return m_RawVCore; };
-	bool				FanControlEnabled() { return m_FanControl; };
+	bool				FanControlEnabled() { return m_FanControlEnabled; };
 	bool				FanVoltageControlled() { return m_FanVoltageControlled; };
 	
 	virtual IOReturn	OnKeyRead(const char* key, char* data);
@@ -187,74 +189,5 @@ public:
 	virtual void		Start();
 	virtual void		Stop();
 };
-
-class Sensor : public Binding
-{
-protected:
-	SuperIO*	m_Provider;
-	UInt8		m_Index;
-	char*		m_Key;
-	SInt32		m_Value;
-public:
-	
-	Sensor(SuperIO* provider, UInt8 index, const char* key, const char* type, UInt8 size)
-	{
-		m_Provider = provider;
-		m_Index = index;
-		
-		InfoLog("Binding key %s", key);
-		
-		m_Key = (char*)IOMalloc(5);
-		bcopy(key, m_Key, 5);
-		
-		char* value = (char*)IOMalloc(size);
-		FakeSMCAddKey(key, type, size, value, this);
-		IOFree(value, size);
-	};
-	
-	~Sensor()
-	{
-		if (m_Key)
-		{
-			InfoLog("Removing key %s binding", m_Key);
-			FakeSMCRemoveKeyBinding(m_Key);
-			IOFree(m_Key, 5);
-		}
-	}
-	
-	UInt8			GetIndex() { return m_Index; };
-	const char*		GetKey() { return m_Key; };
-	SInt32			GetValue() { return m_Value; }
-	
-	virtual IOReturn OnKeyRead(__unused const char* key, __unused char* data)
-	{
-		return kIOReturnInvalid;
-	};
-	 
-	virtual IOReturn OnKeyWrite(__unused const char* key, __unused char* data)
-	{
-		return kIOReturnInvalid;
-	};
-};
-
-class Controller : public Binding
-{
-public:
-	virtual void TimerEvent() 
-	{
-		//
-	};
-	
-	virtual IOReturn OnKeyRead(__unused const char* key, __unused char* data)
-	{
-		return kIOReturnInvalid;
-	};
-	 
-	virtual IOReturn OnKeyWrite(__unused const char* key, __unused char* data)
-	{
-		return kIOReturnInvalid;
-	};
-};
-
 
 #endif

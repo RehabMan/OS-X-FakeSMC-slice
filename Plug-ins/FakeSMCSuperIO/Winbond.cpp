@@ -538,33 +538,26 @@ void Winbond::Start()
 	{
 		char* key = (char*)IOMalloc(5);
 		
-		bool fanName = m_FanName[i] && strlen(m_FanName[i]) > 0;
-		
-		if (fanName || m_FanValue[i] > 0)
-		{	
+		if (m_FanForced[i] || ReadTachometer(i, false) > 0)
+		{
 			int offset = GetNextFanIndex();
 			
 			if (offset != -1) 
 			{
-				if (fanName)
+				if (m_FanName[i] && strlen(m_FanName[i]) > 0)
 				{
 					snprintf(key, 5, KEY_FORMAT_FAN_ID, offset); 
 					FakeSMCAddKey(key, TYPE_CH8, strlen(m_FanName[i]), (char*)m_FanName[i]);
-					
-					snprintf(key, 5, KEY_FORMAT_FAN_SPEED, offset); 
-					AddSensor(new WinbondTachometerSensor(this, i, key, TYPE_FPE2, 2));
-					
-					m_FanIndex[m_FanCount++] = i;
 				}
 				
 				snprintf(key, 5, KEY_FORMAT_FAN_SPEED, offset); 
 				AddSensor(new WinbondTachometerSensor(this, i, key, TYPE_FPE2, 2));
 				
 				m_FanIndex[m_FanCount++] = i;
-			}			
+			}
 			
 			// Fan Control Support
-			if (m_FanControl)
+			if (m_FanControlEnabled && m_FanControl[i])
 				AddController(new WinbondFanController(this, i));
 		}
 		

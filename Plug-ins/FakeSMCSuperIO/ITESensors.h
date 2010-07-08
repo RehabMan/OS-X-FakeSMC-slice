@@ -7,6 +7,7 @@
  *
  */
 
+#include "Sensor.h"
 #include "ITE.h"
 
 class ITETemperatureSensor : public Sensor 

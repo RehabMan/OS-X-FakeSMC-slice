@@ -7,6 +7,7 @@
  *
  */
 
+#include "Sensor.h"
 #include "Fintek.h"
 
 class FintekTemperatureSensor : public Sensor 
