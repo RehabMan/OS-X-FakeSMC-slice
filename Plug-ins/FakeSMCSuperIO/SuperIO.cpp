@@ -247,20 +247,12 @@ void SuperIO::LoadConfiguration(IOService* provider)
 				{
 					OSBoolean* enabled = OSDynamicCast(OSBoolean, fanControl->getObject("Enabled"));
 					
-					if (enabled && enabled->getValue())
-					{
-						InfoLog("FAN Control enabled for Fan #%d", i);
-						
+					if (enabled && enabled->getValue()) 
 						m_FanControl[i] = true;
-					}
 				}
-				
-				fan->release();
 			}
 		}
-		
-		configuration->release();
-    }
+	}
 	
 	cpuid_update_generic_info();
 }

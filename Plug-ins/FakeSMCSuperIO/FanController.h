@@ -36,16 +36,15 @@ public:
 		m_Provider = provider;
 		m_Index = index;
 		
-		if (OSDictionary* fanControlConfig = OSDynamicCast(OSDictionary, m_Provider->GetService()->getProperty("Fan Control")))
+		if (OSDictionary* configuration = OSDynamicCast(OSDictionary, m_Provider->GetService()->getProperty("Fan Configuration")))
 		{
 			char key[5];
 		
 			snprintf(key, 5, "Fan%d", m_Index);
 			
-			if (OSDictionary* fanConfig = OSDynamicCast(OSDictionary, fanControlConfig->getObject(key)))
-			{
-				UpdateConfiguration(fanConfig);
-			}
+			if (OSDictionary* fan = OSDynamicCast(OSDictionary, configuration->getObject(key)))
+				if (OSDictionary* control = OSDynamicCast(OSDictionary, fan->getObject("Software Fan Control")))
+					UpdateConfiguration(control);
 		}
 	};
 	
