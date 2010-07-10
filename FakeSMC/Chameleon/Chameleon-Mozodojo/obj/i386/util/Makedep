@@ -1,0 +1,272 @@
+# Dependencies for File:  \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o:
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/Availability.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/AvailabilityInternal.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/_types.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/alloca.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/architecture/byte_order.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/i386/_structs.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/i386/_types.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/i386/eflags.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/i386/endian.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/i386/signal.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/i386/types.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/libkern/OSByteOrder.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/libkern/_OSByteOrder.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/libkern/i386/OSByteOrder.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/libkern/i386/_OSByteOrder.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach-o/loader.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/boolean.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/clock_priv.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/clock_types.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/error.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/exception_types.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/host_info.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/host_notify.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/host_priv.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/host_security.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/host_special_ports.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/i386/_structs.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/i386/boolean.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/i386/exception.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/i386/fp_reg.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/i386/kern_return.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/i386/processor_info.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/i386/rpc.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/i386/thread_state.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/i386/thread_status.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/i386/vm_param.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/i386/vm_types.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/kern_return.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/kmod.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/ledger.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/lock_set.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/mach.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/mach_error.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/mach_host.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/mach_init.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/mach_interface.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/mach_port.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/mach_traps.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/mach_types.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/machine.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/machine/boolean.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/machine/exception.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/machine/kern_return.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/machine/processor_info.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/machine/rpc.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/machine/thread_state.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/machine/thread_status.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/machine/vm_param.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/machine/vm_types.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/memory_object_types.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/message.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/mig.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/mig_errors.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/ndr.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/notify.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/policy.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/port.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/processor.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/processor_info.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/processor_set.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/rpc.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/semaphore.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/std_types.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/sync_policy.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/task.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/task_info.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/task_policy.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/task_special_ports.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/thread_act.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/thread_info.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/thread_policy.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/thread_special_ports.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/thread_status.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/thread_switch.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/time_value.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/vm_attributes.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/vm_behavior.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/vm_inherit.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/vm_map.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/vm_prot.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/vm_purgable.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/vm_region.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/vm_statistics.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/vm_sync.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/vm_types.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/x86_64/task.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach/x86_64/thread_act.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach_debug/hash_info.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach_debug/ipc_info.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach_debug/lockgroup_info.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach_debug/mach_debug_types.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach_debug/page_info.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach_debug/vm_info.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/mach_debug/zone_info.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/machine/_structs.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/machine/_types.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/machine/endian.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/machine/signal.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/machine/types.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/secure/_common.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/secure/_stdio.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/secure/_string.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/stdio.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/stdlib.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/string.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/sys/_endian.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/sys/_select.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/sys/_structs.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/sys/_types.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/sys/appleapiopts.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/sys/cdefs.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/sys/fcntl.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/sys/file.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/sys/queue.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/sys/resource.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/sys/select.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/sys/signal.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/sys/types.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/sys/unistd.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/sys/wait.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/include/unistd.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdbool.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdint.h
+ \
+ /Users/bigowner/Documents/Chameleon-Mozodojo/trunk/obj/i386/util/machOconv.o: machOconv.c
