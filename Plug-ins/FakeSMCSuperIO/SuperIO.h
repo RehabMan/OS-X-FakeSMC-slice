@@ -149,6 +149,8 @@ protected:
 	bool			m_FanControl[5];
 	UInt8			m_FanIndex[5];
 	
+	bool			m_Locked;
+	
 	void			AddSensor(Binding* sensor);
 	void			FlushSensors();
 	
@@ -160,8 +162,11 @@ protected:
 	void			Select(UInt8 logicalDeviceNumber);
 	
 	int				GetNextFanIndex();
-	
+		
 public:
+	bool				Lock() { if (!m_Locked) { m_Locked = true; return true; } return false; };
+	void				Unlock() { m_Locked = false; };
+
 	IOService*			GetService() { return m_Service; };
 	const char*			GetModelName();
 	UInt16				GetAddress() { return m_Address; };

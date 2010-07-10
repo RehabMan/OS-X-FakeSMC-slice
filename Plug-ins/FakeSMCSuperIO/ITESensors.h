@@ -20,10 +20,15 @@ public:
 	
 	virtual IOReturn OnKeyRead(__unused const char* key, char* data)
 	{
-		m_Value = ((ITE*)m_Provider)->ReadTemperature(m_Index);
+		if (!m_Provider->Lock())
+			return kIOReturnSuccess;
 		
+		m_Value = ((ITE*)m_Provider)->ReadTemperature(m_Index);
+				
 		data[0] = m_Value;
 		data[1] = 0;
+		
+		m_Provider->Unlock();
 		
 		return kIOReturnSuccess;
 	};
@@ -39,10 +44,15 @@ public:
 	
 	virtual IOReturn OnKeyRead(__unused const char* key, char* data)
 	{
-		m_Value = fp2e_Encode(((ITE*)m_Provider)->ReadVoltage(m_Index));
+		if (!m_Provider->Lock())
+			return kIOReturnSuccess;
 		
+		m_Value = fp2e_Encode(((ITE*)m_Provider)->ReadVoltage(m_Index));
+				
 		data[0] = (m_Value & 0xff00) >> 8;
 		data[1] = m_Value & 0x00ff;
+		
+		m_Provider->Unlock();
 		
 		return kIOReturnSuccess;
 	};
@@ -58,10 +68,15 @@ public:
 	
 	virtual IOReturn OnKeyRead(__unused const char* key, char* data)
 	{
-		m_Value = ((ITE*)m_Provider)->ReadTachometer(m_Index);
+		if (!m_Provider->Lock())
+			return kIOReturnSuccess;
 		
+		m_Value = ((ITE*)m_Provider)->ReadTachometer(m_Index);
+				
 		data[0] = (m_Value >> 6) & 0xff;
 		data[1] = (m_Value << 2) & 0xff;
+		
+		m_Provider->Unlock();
 		
 		return kIOReturnSuccess;
 	};
