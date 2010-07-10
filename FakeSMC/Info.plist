@@ -20,8 +20,6 @@
 	<string>2.7.2</string>
 	<key>CFBundleShortVersionString</key>
 	<string>2.7.2</string>
-	<key>OSBundleCompatibleVersion</key>
-	<string>2.7.2</string>
 	<key>IOKitPersonalities</key>
 	<dict>
 		<key>FakeSMC</key>
@@ -82,7 +80,9 @@
 		<key>com.apple.kpi.unsupported</key>
 		<string>9.0.0</string>
 	</dict>
+	<key>OSBundleCompatibleVersion</key>
+	<string>2.7.2</string>
 	<key>OSBundleRequired</key>
-	<string>Root</string>
+	<string>Safe Boot</string>
 </dict>
 </plist>
