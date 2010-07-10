@@ -219,6 +219,12 @@ void Fintek::Start()
 				{
 					snprintf(key, 5, KEY_FORMAT_FAN_ID, offset); 
 					FakeSMCAddKey(key, TYPE_CH8, strlen(m_FanName[i]), (char*)m_FanName[i]);
+					
+					InfoLog("%s name is associated with hardware Fan%d", m_FanName[i], i);
+				}
+				else 
+				{
+					InfoLog("Fan %d name is associated with hardware Fan%d", offset, i);
 				}
 				
 				snprintf(key, 5, KEY_FORMAT_FAN_SPEED, offset); 

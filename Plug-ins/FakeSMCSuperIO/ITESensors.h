@@ -34,6 +34,7 @@ class ITEVoltageSensor : public Sensor
 public:
 	ITEVoltageSensor(ITE* provider, UInt8 offset, const char* key, const char* type, UInt8 size) : Sensor(provider, offset, key, type, size)
 	{
+		//
 	};
 	
 	virtual IOReturn OnKeyRead(__unused const char* key, char* data)
@@ -52,6 +53,7 @@ class ITETachometerSensor : public Sensor
 public:
 	ITETachometerSensor(ITE* provider, UInt8 offset, const char* key, const char* type, UInt8 size) : Sensor(provider, offset, key, type, size)
 	{
+		//
 	};
 	
 	virtual IOReturn OnKeyRead(__unused const char* key, char* data)

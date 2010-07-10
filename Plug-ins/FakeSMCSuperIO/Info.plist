@@ -37,7 +37,7 @@
 				<key>Software Fan Control</key>
 				<dict>
 					<key>Enabled</key>
-					<true/>
+					<false/>
 					<key>Voltage Control</key>
 					<true/>
 				</dict>
