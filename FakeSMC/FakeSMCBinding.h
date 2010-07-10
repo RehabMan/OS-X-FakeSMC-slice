@@ -10,6 +10,13 @@
 class FakeSMCBinding 
 {
 public:
-	virtual IOReturn OnKeyRead(const char* key, char* data);
-	virtual IOReturn OnKeyWrite(const char* key, char* data);
+	virtual IOReturn OnKeyRead(const char* key, char* data)
+	{
+		return kIOReturnInvalid;
+	};
+	
+	virtual IOReturn OnKeyWrite(const char* key, char* data)
+	{
+		return kIOReturnInvalid;
+	};
 };
