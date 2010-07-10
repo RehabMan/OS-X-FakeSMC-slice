@@ -83,103 +83,85 @@ UInt64 SetBit(UInt64 target, UInt32 bit, UInt32 value)
 	return value;
 }
 
+void Winbond::UpdateTachometers()
+{
+	UInt64 bits = 0;
+	
+	for (int i = 0; i < 5; i++)
+	{
+		bits = (bits << 8) | ReadByte(0, WINBOND_TACHOMETER_DIVISOR[i]);
+	}
+			
+	UInt64 newBits = bits;
+	
+	for (int i = 0; i < m_FanLimit; i++)
+	{
+		// assemble fan divisor
+		UInt8 offset =	(((bits >> WINBOND_TACHOMETER_DIVISOR2[i]) & 1) << 2) |
+						(((bits >> WINBOND_TACHOMETER_DIVISOR1[i]) & 1) << 1) |
+						((bits >> WINBOND_TACHOMETER_DIVISOR0[i]) & 1);
+		
+		UInt8 divisor = 1 << offset;
+		UInt8 count = ReadByte(WINBOND_TACHOMETER_BANK[i], WINBOND_TACHOMETER[i]);
+		
+		// update fan divisor
+		if (count > 192 && offset < 7)
+		{
+			offset++;
+		}
+		else if (count < 96 && offset > 0)
+		{
+			offset--;
+		}
+		
+		m_FanValue[i] = (count < 0xff) ? 1.35e6f / (float(count * divisor)) : 0;
+		m_FanValueObsolete[i] = false;
+		
+		newBits = SetBit(newBits, WINBOND_TACHOMETER_DIVISOR2[i], (offset >> 2) & 1);
+		newBits = SetBit(newBits, WINBOND_TACHOMETER_DIVISOR1[i], (offset >> 1) & 1);
+		newBits = SetBit(newBits, WINBOND_TACHOMETER_DIVISOR0[i],  offset       & 1);
+	}		
+			
+	// write new fan divisors 
+	for (int i = 4; i >= 0; i--) 
+	{
+		UInt8 oldByte = bits & 0xff;
+		UInt8 newByte = newBits & 0xff;
+
+		if (oldByte != newByte)
+		{
+			WriteByte(0, WINBOND_TACHOMETER_DIVISOR[i], newByte);
+		}
+		
+		bits = bits >> 8;
+		newBits = newBits >> 8;
+	}
+}
+
 SInt16 Winbond::ReadTachometer(UInt8 index, bool force_update)
 {
 	if (m_FanValueObsolete[index] || force_update)
-	{
-		bool newAlgo = false;
-		
-		if (newAlgo) 
-		{
-			for (int i = 0; i < m_FanLimit; i++)
-			{
-				UInt8 reg0 = ReadByte(0, WINBOND_TACHOMETER_DIV0[i]);
-				UInt8 reg1 = ReadByte(0, WINBOND_TACHOMETER_DIV1[i]);
-				UInt8 reg2 = ReadByte(0, WINBOND_TACHOMETER_DIV2[i]);
-				
-				UInt8 offset =	(((reg2 >> WINBOND_TACHOMETER_DIV2_BIT[i]) & 0x01) << 2) |
-				(((reg1 >> WINBOND_TACHOMETER_DIV1_BIT[i]) & 0x01) << 1) |
-				((reg0 >> WINBOND_TACHOMETER_DIV0_BIT[i]) & 0x01);
-				
-				UInt8 divisor = 1 << offset;
-				
-				UInt8 count = ReadByte(WINBOND_TACHOMETER_BANK[i], WINBOND_TACHOMETER[i]);
-				
-				m_FanValue[i] = (count < 0xff) ? 1.35e6f / (float)(count * divisor) : 0;
-				m_FanValueObsolete[i] = false;
-				
-				UInt8 oldOffset = offset;
-				
-				if (count > 192 && offset < 7) 
-					offset++;
-				if (count < 96 && offset > 0)
-					offset--;
-				
-				// Update divisors
-				if (offset != oldOffset)
-				{
-					WriteByte(0, WINBOND_TACHOMETER_DIV0[i], reg0 | (( offset       & 0x01) << WINBOND_TACHOMETER_DIV0_BIT[i]));
-					WriteByte(0, WINBOND_TACHOMETER_DIV1[i], reg1 | (((offset >> 1) & 0x01) << WINBOND_TACHOMETER_DIV1_BIT[i]));
-					WriteByte(0, WINBOND_TACHOMETER_DIV2[i], reg2 | (((offset >> 2) & 0x01) << WINBOND_TACHOMETER_DIV2_BIT[i]));
-				}
-			}
-		}
-		else 
-		{
-			UInt64 bits = 0;
-			
-			for (int i = 0; i < m_FanLimit; i++)
-				bits = (bits << 8) | ReadByte(0, WINBOND_TACHOMETER_DIVISOR[i]);
-			
-			bits = bits << ((5 - m_FanLimit) * 8);
-		
-			UInt64 newBits = bits;
-				
-			for (int i = 0; i < m_FanLimit; i++)
-			{
-				// assemble fan divisor
-				UInt8 divisorBits = (int)(
-										(((bits >> WINBOND_TACHOMETER_DIVISOR2[i]) & 1) << 2) |
-										(((bits >> WINBOND_TACHOMETER_DIVISOR1[i]) & 1) << 1) |
-										 ((bits >> WINBOND_TACHOMETER_DIVISOR0[i]) & 1));
-				
-				UInt8 divisor = 1 << divisorBits;
-				
-				UInt8 count = ReadByte(WINBOND_TACHOMETER_BANK[i], WINBOND_TACHOMETER[i]);
-				
-				m_FanValue[i] = (count < 0xff) ? 1.35e6f / (float(count * divisor)) : 0;
-				m_FanValueObsolete[i] = false;
-				
-				// update fan divisor
-				if (count > 192 && divisorBits < 7) 
-					divisorBits++;
-				if (count < 96 && divisorBits > 0)
-					divisorBits--;
-				
-				newBits = SetBit(newBits, WINBOND_TACHOMETER_DIVISOR2[i], (divisorBits >> 2) & 1);
-				newBits = SetBit(newBits, WINBOND_TACHOMETER_DIVISOR1[i], (divisorBits >> 1) & 1);
-				newBits = SetBit(newBits, WINBOND_TACHOMETER_DIVISOR0[i],  divisorBits       & 1);
-			}		
-			
-			bits = bits >> ((5 - m_FanLimit) * 8);
-			newBits = newBits >> ((5 - m_FanLimit) * 8);
-			
-			// write new fan divisors 
-			for (int i = m_FanLimit - 1; i >= 0; i--) 
-			{
-				UInt8 oldByte = (UInt8)(bits & 0xFF);
-				UInt8 newByte = (UInt8)(newBits & 0xFF);
-				bits = bits >> 8;
-				newBits = newBits >> 8;
-				if (oldByte != newByte) 
-					WriteByte(0, WINBOND_TACHOMETER_DIVISOR[i], newByte);        
-			}
-		}
-	}
+		UpdateTachometers();
 	
 	m_FanValueObsolete[index] = true;
 	
 	return m_FanValue[index];
+}
+
+bool Winbond::ControllersTimerEvent()
+{
+	if (SuperIO::ControllersTimerEvent())
+	{
+		if (Lock())
+		{
+			UpdateTachometers();
+			Unlock();
+		}
+		
+		return true;
+	}
+	
+	return false;
 }
 
 void Winbond::Enter()

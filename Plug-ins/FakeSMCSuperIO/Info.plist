@@ -17,7 +17,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>2.3.8b0</string>
+	<string>2.3.8b2</string>
 	<key>CFBundleShortVersionString</key>
 	<string>2.3.8</string>
 	<key>IOKitPersonalities</key>
@@ -163,47 +163,6 @@
 				<key>SMSC</key>
 				<true/>
 			</dict>
-			<key>Fan Control</key>
-			<dict>
-				<key>Enabled</key>
-				<false/>
-				<key>Voltage Control</key>
-				<true/>
-				<key>Fan0</key>
-				<dict>
-					<key>Temperature Source</key>
-					<string>Processor</string>
-					<key>Start Temperature, ℃</key>
-					<integer>20</integer>
-					<key>Start Throttle, %</key>
-					<integer>15</integer>
-					<key>High Temperature, ℃</key>
-					<integer>50</integer>
-					<key>High Throttle, %</key>
-					<integer>100</integer>
-				</dict>
-				<key>Fan1</key>
-				<dict>
-					<key>Temperature Source</key>
-					<string>System</string>
-					<key>Start Temperature, ℃</key>
-					<integer>20</integer>
-					<key>Start Throttle, %</key>
-					<integer>15</integer>
-					<key>High Temperature, ℃</key>
-					<integer>50</integer>
-					<key>High Throttle, %</key>
-					<integer>100</integer>
-				</dict>
-			</dict>
-			<key>Fan Names</key>
-			<array>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
-				<string></string>
-			</array>
 		</dict>
 	</dict>
 	<key>OSBundleLibraries</key>

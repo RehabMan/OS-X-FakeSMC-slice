@@ -31,12 +31,7 @@ public:
 			Deactivate();
 		}
 	};
-	
-	virtual UInt8 ReadTemperature(UInt8 index)
-	{
-		return ((Winbond*)m_Provider)->ReadTemperature(index);
-	};
-	
+		
 	virtual void ForceFan(UInt8 index, UInt8 value) 
 	{ 
 		if (m_Provider->FanVoltageControlled())
@@ -49,5 +44,5 @@ public:
 		{
 			((Winbond*)m_Provider)->WriteByte(0, WINBOND_FAN_OUTPUT[index], 255.0f * value / 100.0f);
 		}
-	};	
+	};
 };

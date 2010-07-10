@@ -40,12 +40,21 @@ IOReturn SuperIO::OnKeyWrite(const char* key, char* data)
 	return kIOReturnSuccess;
 }
 
-void SuperIO::ControllersTimerEvent()
+bool SuperIO::ControllersTimerEvent()
 {
+	if (!Lock())
+	{
+		return false;
+	}
+	
 	for (Binding* controller = m_Controller; controller; controller = controller->Next)
 	{
 		((Controller*)controller)->TimerEvent();
 	}
+	
+	Unlock();
+	
+	return true;
 }
 
 void SuperIO::AddSensor(Binding* sensor)

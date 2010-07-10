@@ -77,10 +77,7 @@ void FanController::TimerEvent()
 {
 	if (!m_Active) 
 		return;
-	
-	if (!m_Provider->Lock())
-		return;
-	
+			
 	if (m_Input)
 	{
 		SInt32 t = m_Input->GetValue();
@@ -103,11 +100,9 @@ void FanController::TimerEvent()
 		
 		m_LastValue = t;
 	}
-	else if (m_HighThrottle != m_LastValue ) 
+	else if (m_LastValue != m_StartThrottle) 
 	{
 		m_LastValue = m_StartThrottle;
 		ForceFan(m_Index, m_StartThrottle);
 	}
-	
-	m_Provider->Unlock();
 }

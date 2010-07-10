@@ -63,13 +63,17 @@ private:
 	UInt8	m_FanLimit;
 	UInt16	m_FanValue[5];
 	bool	m_FanValueObsolete[5];
+	
 public:
 	void	WriteByte(UInt8 bank, UInt8 reg, UInt8 value);
-	
 	UInt8	ReadByte(UInt8 bank, UInt8 reg);
+	void	UpdateTachometers();
+	
 	SInt16	ReadTemperature(UInt8 index);
 	SInt16	ReadVoltage(UInt8 index);
 	SInt16	ReadTachometer(UInt8 index, bool force_update);
+	
+	virtual bool	ControllersTimerEvent();
 	
 	virtual void	Enter();
 	virtual void	Exit();

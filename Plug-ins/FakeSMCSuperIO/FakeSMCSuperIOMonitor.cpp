@@ -11,13 +11,24 @@ OSDefineMetaClassAndStructors(FakeSMCSuperIOMonitor, IOService)
 
 IOReturn FakeSMCSuperIOMonitor::controllerTimerEvent(void)
 {
-	m_TimerEventSource->setTimeoutMS(3000);
-	
 	if (superio)
 	{
-		superio->ControllersTimerEvent();
+		if (superio->ControllersTimerEvent())
+		{
+			m_TimerEventSource->setTimeoutMS(3000);
+		}
+		else 
+		{
+			m_TimerEventSource->setTimeoutMS(500);
+		}
+		
 		return kIOReturnSuccess;
 	}
+	else 
+	{
+		m_TimerEventSource->cancelTimeout();
+	}
+
 	
 	return kIOReturnInvalid;
 }

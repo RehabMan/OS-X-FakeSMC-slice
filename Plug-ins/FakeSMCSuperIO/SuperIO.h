@@ -188,7 +188,7 @@ public:
 	virtual void		Exit() {};
 	virtual bool		ProbePort() { return false; };
 	
-	virtual void		ControllersTimerEvent();
+	virtual bool		ControllersTimerEvent();
 	
 	virtual bool		Probe();
 	virtual void		Start();

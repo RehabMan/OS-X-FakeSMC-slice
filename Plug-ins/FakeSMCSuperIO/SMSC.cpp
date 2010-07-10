@@ -67,28 +67,32 @@ void SMSC::Enter()
 void SMSC::Exit()
 {
 	outb(m_RegisterPort, 0xAA);
-	//Slice - ????
-//	outb(m_RegisterPort, SUPERIO_CONFIGURATION_CONTROL_REGISTER);
-//	outb(m_ValuePort, 0x02);
+	//Some sort of reset chip to default mode or like this
+	outb(m_RegisterPort, SUPERIO_CONFIGURATION_CONTROL_REGISTER);
+	outb(m_ValuePort, 0x02);
 }
 
-UInt8 SMSC::ReadByte(UInt8 ldn, UInt8 reg) 
+UInt8 SMSC::ReadByte(/*UInt8 ldn,*/ UInt8 reg) 
 {
-	outb(m_RegisterPort, SUPERIO_DEVICE_SELECT_REGISTER);
-	outb(m_ValuePort, ldn);
+	// Not needed cose we already selected FAN device
+	//outb(m_RegisterPort, SUPERIO_DEVICE_SELECT_REGISTER);
+	//outb(m_ValuePort, ldn);
 	outb(m_RegisterPort, reg);
 	return inb(m_ValuePort);
 }
 
-void SMSC::WriteByte(UInt8 ldn, UInt8 reg, UInt8 value)
+void SMSC::WriteByte(/*UInt8 ldn,*/ UInt8 reg, UInt8 value)
 {
-	outb(m_RegisterPort, SUPERIO_DEVICE_SELECT_REGISTER);
-	outb(m_ValuePort, ldn);
+	//outb(m_RegisterPort, SUPERIO_DEVICE_SELECT_REGISTER);
+	//outb(m_ValuePort, ldn);
 	outb(m_RegisterPort, reg);
 	outb(m_ValuePort, value); 
 }
 
-
+SInt16 SMSC::ReadTachometer(UInt8 index)
+{
+	return 0;
+}
 
 bool SMSC::ProbePort()
 {
@@ -98,6 +102,8 @@ bool SMSC::ProbePort()
 		return false;
 	
 	UInt8 logicalDeviceNumber = SMSC_HARDWARE_MONITOR_LDN;
+	
+	m_FanLimit = 2;
 	
 	switch (id >> 8) 
 	{
@@ -150,6 +156,7 @@ bool SMSC::ProbePort()
 	
 	Select(logicalDeviceNumber);
 	
+	// Getting address of FAN or HWMonitor logical device
 	m_Address = ListenPortWord(SUPERIO_BASE_ADDRESS_REGISTER);          
 	
 	IOSleep(1000);

@@ -30,6 +30,9 @@ private:
 protected:
 	SuperIO*	m_Provider;
 	
+	virtual bool UpdateConfiguration(OSDictionary* configuration);
+	virtual void CalculateMultiplier() { m_Multiplier = float(m_HighThrottle - m_StartThrottle) / float(m_HighTemperature - m_StartTemperature); };
+	
 public:
 	FanController(SuperIO* provider, UInt8 index)
 	{
@@ -50,30 +53,30 @@ public:
 	
 	void Activate() 
 	{ 
-		InfoLog("Activating software control on Fan #%d", m_Index);
+		InfoLog("Activating software control on Fan%d", m_Index);
 		m_Active = true; 
 	};
 	
 	void Deactivate() 
 	{
-		InfoLog("Software control on Fan #%d deactivated", m_Index);
+		InfoLog("Software control on Fan%d deactivated", m_Index);
 		m_Active = false; 
 	};
 	
-	virtual void CalculateMultiplier() 
+	void TimerEvent();
+	
+	// Events
+		
+	virtual void ForceFan(__unused UInt8 index, __unused UInt8 value) 
 	{ 
-		m_Multiplier = float(m_HighThrottle - m_StartThrottle) / float(m_HighTemperature - m_StartTemperature); 
+		// 
 	};
-	
-	virtual bool	UpdateConfiguration(OSDictionary* configuration);
-	virtual UInt8	ReadTemperature(__unused UInt8 index) { return 0; };
-	virtual void	ForceFan(__unused UInt8 index, __unused UInt8 value) {};
-	virtual void	TimerEvent();
-	
+		
 	virtual IOReturn OnKeyRead(__unused const char* key, __unused char* data)
 	{
 		return kIOReturnInvalid;
 	};
+	
 	virtual IOReturn OnKeyWrite(__unused const char* key, __unused char* data)
 	{
 		return kIOReturnInvalid;
