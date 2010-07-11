@@ -50,6 +50,7 @@ class PTnVmon : public IOService {
 	OSDeclareDefaultStructors(PTnVmon)
 public:
 	TemperatureSensor* tempSensor[MAX_CARDS];
+	TemperatureSensor* boardSensor[MAX_CARDS];
 	FanSensor* fanSensor[MAX_CARDS];
 	virtual IOService*	probe	(IOService* provider, SInt32* score);
 	virtual bool		start	(IOService* provider);

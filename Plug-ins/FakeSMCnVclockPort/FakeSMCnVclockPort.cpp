@@ -209,7 +209,6 @@ bool		PTnVmon::start	(IOService* provider) {
 		/* Check if the card is supported, if not print a message. */
 		if(nvclock.card[card_number].gpu == UNKNOWN){
 			printf("It seems your card isn't officialy supported in FakeSMCnVclockPort yet.\n");
-			printf("The reason can be that your card is too new.\n");
 			printf("Also please tell the author the pci_id of the card for further investigation.\n");
 			printf("Continuing with it anyway\n");
 		}
@@ -221,7 +220,7 @@ bool		PTnVmon::start	(IOService* provider) {
 		
 			if(nv_card->caps & (BOARD_TEMP_MONITORING)) {
 				snprintf(key, 5, KEY_FORMAT_GPU_BOARD_TEMPERATURE, card_number);
-				tempSensor[card_number]=new TemperatureSensor(key, TYPE_SP78, 2);
+				boardSensor[card_number]=new TemperatureSensor(key, TYPE_SP78, 2);
 			}
 		}
 		
@@ -259,6 +258,8 @@ void		PTnVmon::stop	(IOService* provider) {
 	for (int card_number=0; card_number<max_card; card_number++) {
 		if(tempSensor[card_number])
 			delete tempSensor[card_number];
+		if (boardSensor[card_number])
+			delete boardSensor[card_number];
 		if (fanSensor[card_number]) {
 			delete fanSensor[card_number];
 		}
