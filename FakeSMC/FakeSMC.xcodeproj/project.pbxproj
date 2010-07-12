@@ -208,12 +208,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CURRENT_PROJECT_VERSION = 2.6.3;
+				CURRENT_PROJECT_VERSION = 2.7.2;
 				DEBUG_INFORMATION_FORMAT = "";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = "org.netkas.${PRODUCT_NAME:rfc1034Identifier}";
-				MODULE_VERSION = 2.6.3;
+				MODULE_VERSION = 2.7.2;
 				PRODUCT_NAME = FakeSMC;
 				WRAPPER_EXTENSION = kext;
 			};
