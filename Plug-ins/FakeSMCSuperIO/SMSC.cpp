@@ -37,7 +37,7 @@ A LPC/8051 GPIO (FAN control), PME, Runtime Registers
 B MIDI port (MPU-401), SMBus
 ----------------------------------------------------------------
 Fan Tachometer Register ( 1 =0x59, 2 =0x5A LDN=0x0A)
-Bit]7:0] The 8-bit FAN1 tachometer count. The number of counts of the internal clock per pulse of the fan. The count value is computed from Equation 1. This value is the final (maximum) count of the previous pulse (latched). The value in this register may not be valid for up to 2 pulses following a write to the preload register.
+Bit[7:0] The 8-bit FAN1 tachometer count. The number of counts of the internal clock per pulse of the fan. The count value is computed from Equation 1. This value is the final (maximum) count of the previous pulse (latched). The value in this register may not be valid for up to 2 pulses following a write to the preload register.
 ----------------------------------------------------------------
 Fan Control Register (0x58 LDN=0x0A)
 Bit[0] Fan 1 Clock Source Select
@@ -89,7 +89,7 @@ void SMSC::WriteByte(/*UInt8 ldn,*/ UInt8 reg, UInt8 value)
 	outb(m_ValuePort, value); 
 }
 
-SInt16 SMSC::ReadTachometer(UInt8 index)
+SInt16 SMSC::ReadTachometer(__unused UInt8 index)
 {
 	return 0;
 }
@@ -167,6 +167,14 @@ bool SMSC::ProbePort()
 		return false;
 	
 	WarningLog("SMSC sensors monitoring is not supported now");
+#if 1
+	//Slice - registers dump for development purpose
+	IOLog("SMSC ldn=10 registers dump\n");
+	for (UInt16 i=0x56; i<0x62; i++) {
+		IOLog("%02x:%04x ", i, ListenPortByte(i));
+	}
+	IOLog("\n");
+#endif
 	
 	return true;
 }
