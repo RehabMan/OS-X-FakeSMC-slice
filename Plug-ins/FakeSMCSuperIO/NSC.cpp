@@ -90,6 +90,7 @@ bool NSC::ProbePort()
 				}
 				IOLog("\n");
 			}
+			return true; //Slice - temporarily
 			
 #endif
 			
