@@ -81,6 +81,11 @@ IOService* FakeSMCSuperIOMonitor::probe(IOService *provider, SInt32 *score)
 					superio = new SMSC();
 					InfoLog("Probing SMSC");
 				}
+				else if (symbol->isEqualTo("NSC"))
+				{
+					superio = new NSC();
+					InfoLog("Probing NSC");
+				}
 				
 				if (superio)
 				{
