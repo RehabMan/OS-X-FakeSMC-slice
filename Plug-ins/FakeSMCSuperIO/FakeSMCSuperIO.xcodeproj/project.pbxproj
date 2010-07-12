@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12D8F24B11EB5370006CA1C0 /* NSC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12D8F24711EB5370006CA1C0 /* NSC.cpp */; };
+		12D8F24C11EB5370006CA1C0 /* NSC.h in Headers */ = {isa = PBXBuildFile; fileRef = 12D8F24811EB5370006CA1C0 /* NSC.h */; };
 		32D94FC60562CBF700B6AF17 /* FakeSMCSuperIOMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A224C3EFF42367911CA2CB7 /* FakeSMCSuperIOMonitor.h */; };
 		32D94FC80562CBF700B6AF17 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
 		32D94FCA0562CBF700B6AF17 /* FakeSMCSuperIOMonitor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCSuperIOMonitor.cpp */; settings = {ATTRIBUTES = (); }; };
@@ -35,6 +37,8 @@
 
 /* Begin PBXFileReference section */
 		089C167EFE841241C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		12D8F24711EB5370006CA1C0 /* NSC.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NSC.cpp; sourceTree = "<group>"; };
+		12D8F24811EB5370006CA1C0 /* NSC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSC.h; sourceTree = "<group>"; };
 		1A224C3EFF42367911CA2CB7 /* FakeSMCSuperIOMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeSMCSuperIOMonitor.h; sourceTree = "<group>"; };
 		1A224C3FFF42367911CA2CB7 /* FakeSMCSuperIOMonitor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FakeSMCSuperIOMonitor.cpp; sourceTree = "<group>"; };
 		32D94FCF0562CBF700B6AF17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -94,6 +98,15 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		12D8F24111EB535A006CA1C0 /* NSC */ = {
+			isa = PBXGroup;
+			children = (
+				12D8F24711EB5370006CA1C0 /* NSC.cpp */,
+				12D8F24811EB5370006CA1C0 /* NSC.h */,
+			);
+			name = NSC;
+			sourceTree = "<group>";
+		};
 		19C28FB6FE9D52B211CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +118,7 @@
 		247142CAFF3F8F9811CA285C /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				12D8F24111EB535A006CA1C0 /* NSC */,
 				AEE9D0A211D3FE3200CDFF85 /* Utilities */,
 				AEDC8FE011D3E41A00EC17CB /* SuperIO */,
 				AEB335D911D7E38C00A35176 /* Fan Control */,
@@ -219,6 +233,7 @@
 				AEF4124711D7B554005D8ABF /* FanController.h in Headers */,
 				AE8EEE7411E65C7B00A476CF /* Sensor.h in Headers */,
 				AE8EEE7611E65C8500A476CF /* Controller.h in Headers */,
+				12D8F24C11EB5370006CA1C0 /* NSC.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +313,7 @@
 				AEEC326411B4414E0048ED14 /* Fintek.cpp in Sources */,
 				AEA932C711D11A2E008FB8FC /* SMSC.cpp in Sources */,
 				AEF4124811D7B554005D8ABF /* FanController.cpp in Sources */,
+				12D8F24B11EB5370006CA1C0 /* NSC.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

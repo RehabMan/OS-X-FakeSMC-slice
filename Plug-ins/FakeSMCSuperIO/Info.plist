@@ -162,6 +162,8 @@
 				<true/>
 				<key>SMSC</key>
 				<true/>
+				<key>NSC</key>
+				<true/>
 			</dict>
 		</dict>
 	</dict>
