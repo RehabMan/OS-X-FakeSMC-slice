@@ -24,12 +24,9 @@ IOReturn FakeSMCSuperIOMonitor::controllerTimerEvent(void)
 		
 		return kIOReturnSuccess;
 	}
-	else 
-	{
-		m_TimerEventSource->cancelTimeout();
-	}
-
 	
+	m_TimerEventSource->cancelTimeout();
+
 	return kIOReturnInvalid;
 }
 

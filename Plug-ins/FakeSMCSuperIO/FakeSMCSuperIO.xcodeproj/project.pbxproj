@@ -101,8 +101,8 @@
 		12D8F24111EB535A006CA1C0 /* NSC */ = {
 			isa = PBXGroup;
 			children = (
-				12D8F24711EB5370006CA1C0 /* NSC.cpp */,
 				12D8F24811EB5370006CA1C0 /* NSC.h */,
+				12D8F24711EB5370006CA1C0 /* NSC.cpp */,
 			);
 			name = NSC;
 			sourceTree = "<group>";
@@ -118,7 +118,6 @@
 		247142CAFF3F8F9811CA285C /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				12D8F24111EB535A006CA1C0 /* NSC */,
 				AEE9D0A211D3FE3200CDFF85 /* Utilities */,
 				AEDC8FE011D3E41A00EC17CB /* SuperIO */,
 				AEB335D911D7E38C00A35176 /* Fan Control */,
@@ -126,6 +125,7 @@
 				AE6CFBB211D3CD7B002DC828 /* Winbond */,
 				AE6CFBB311D3CD88002DC828 /* Fintek */,
 				AE6CFBB411D3CD96002DC828 /* SMSC */,
+				12D8F24111EB535A006CA1C0 /* NSC */,
 				AEDC900411D3E87500EC17CB /* Service */,
 			);
 			name = Source;

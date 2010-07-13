@@ -136,9 +136,21 @@ void ITE::Start()
 {
 	// Temperature semi-autodetection
 	
-	int count = 0;
+	int count = 0, start, inc;
+
+	switch (m_Model) 
+	{
+		case IT8720F:
+			start = 0;
+			inc = 1;
+			break;
+		default:
+			start = 2;
+			inc = -1;
+			break;
+	}
 	
-	for (int i = 2; i >= 0; i--) 
+	for (int i = start; i >= 0 && i < 3; i += inc) 
 	{		
 		UInt8 t = ReadTemperature(i);
 		
@@ -168,7 +180,7 @@ void ITE::Start()
 			count++;
 		}			
 	}
-
+	
 	// CPU Vcore
 	AddSensor(new ITEVoltageSensor(this, 0, KEY_CPU_VOLTAGE, TYPE_FP2E, 2));
 		
