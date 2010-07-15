@@ -138,6 +138,37 @@ void *loadACPITable (const char * filename)
 	return NULL;
 }
 
+unsigned char psts_code[] =
+{
+    0x53, 0x53, 0x44, 0x54, 0x63, 0x00, 0x00, 0x00, /* SSDTc... */
+	0x01, 0x2A, 0x50, 0x6D, 0x52, 0x65, 0x66, 0x00, /* .*PmRef. */
+	0x43, 0x70, 0x75, 0x50, 0x6D, 0x00, 0x00, 0x00, /* CpuPm... */ 
+	0x00, 0x30, 0x00, 0x00, 0x49, 0x4E, 0x54, 0x4C, /* .0..INTL */
+	0x31, 0x03, 0x10, 0x20, 0x10, 0x3E, 0x5C, 0x2E, /* 1.. .>\. */
+	0x5F, 0x50, 0x52, 0x5F, 0x43, 0x50, 0x55, 0x30, /* _PR_CPU0 */
+	0x14, 0x32, 0x5F, 0x50, 0x53, 0x53, 0x00, 0xA4, /* .2_PSS.. */
+};
+
+struct acpi_2_ssdt *
+generate_p_states()
+{
+	struct acpi_2_ssdt *psts = NULL;
+	
+	if (Platform.CPU.Vendor != 0x756E6547) {	/* Intel */
+		verbose ("Not an Intel platform: P-States will not exported !!!\n");
+		return NULL;
+	}
+	
+	psts=(struct acpi_2_ssdt *)AllocateKernelMemory(sizeof(struct acpi_2_ssdt));
+	
+	psts->Signature[0] = 'S';
+	psts->Signature[1] = 'S';
+	psts->Signature[2] = 'D';
+	psts->Signature[3] = 'T';
+	
+	return psts;
+}
+
 struct acpi_2_fadt *
 patch_fadt(struct acpi_2_fadt *fadt, void *new_dsdt)
 {
@@ -305,7 +336,7 @@ int setupAcpiNoMod()
 /* Setup ACPI. Replace DSDT if DSDT.aml is found */
 int setupAcpi(void)
 {
-	int fd, version;
+	int version;
 	void *new_dsdt;
 	const char *dsdt_filename;
 	int len;
@@ -317,19 +348,14 @@ int setupAcpi(void)
 		dsdt_filename = "DSDT.aml";
 	}
 
-	/*if ((fd = open_bvdev("bt(0,0)", dsdt_filename, 0)) < 0) {
-		verbose("No DSDT replacement found. Leaving ACPI data as is\n");
-		return setupAcpiNoMod();
-	}*/
-
 	// Load replacement DSDT
 	new_dsdt = loadACPITable(dsdt_filename);
 	
 	drop_ssdt = getBoolForKey(kDropSSDT, &tmp, &bootInfo->bootConfig) && tmp;
 	
 	// Mozodojo: Load additional SSDTs
-	void *new_ssdt[30];
-	int  ssdt_count=0;
+	struct acpi_2_ssdt *new_ssdt[30];
+	int ssdt_count=0;
 	
 	{
 		int i;
@@ -354,9 +380,6 @@ int setupAcpi(void)
 			}
 		}
 	}
-	
-	// Mozodojo: Generate P-States
-	//generate_psts();
 
 	// Apply restart fix?
 	if (Platform.CPU.Vendor == 0x756E6547) {	/* Intel */
@@ -466,7 +489,7 @@ int setupAcpi(void)
 				
 				verbose("Added %d SSDT table(s) into RSDT\n", ssdt_count);
 			}
-
+			
 			DBG("RSDT Original checksum %d\n", rsdt_mod->Checksum);
 
 			rsdt_mod->Checksum=0;
