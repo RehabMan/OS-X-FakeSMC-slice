@@ -163,7 +163,7 @@ int getDDRspeedMhz(const char * spd)
 /** Get DDR3 or DDR2 serial number, 0 most of the times, always return a valid ptr */
 const char *getDDRSerial(const char* spd)
 {
-    static char asciiSerial[16];
+    char* asciiSerial = malloc(16);
     static uint8_t serialnum=0;
     uint32_t ret=0;
 
@@ -183,28 +183,26 @@ const char *getDDRSerial(const char* spd)
 /** Get DDR3 or DDR2 Part Number, always return a valid ptr */
 const char * getDDRPartNum(const char* spd)
 {
+	char* asciiPartNo = malloc(21);
     const char * sPart = NULL;
-    int i;
-    bool bZero = false;
+	int i, index = 0;
 
-    if (spd[SPD_MEMORY_TYPE]==SPD_MEMORY_TYPE_SDRAM_DDR3)
-        sPart =  &spd[128];
-    else if (spd[SPD_MEMORY_TYPE]==SPD_MEMORY_TYPE_SDRAM_DDR2)
-        sPart = &spd[73];
+    if (spd[SPD_MEMORY_TYPE]==SPD_MEMORY_TYPE_SDRAM_DDR3) {
+		sPart = &spd[128];
+	}
+    else if (spd[SPD_MEMORY_TYPE]==SPD_MEMORY_TYPE_SDRAM_DDR2) {
+		sPart = &spd[73];
+	}
+	
     if (sPart) { // Check that the spd part name is zero terminated and that it is ascii:
-        for (i=0; i<32; i++) {
-            if (sPart[i]==0) {
-                bZero = true;
-                break;
-            }
-            else if ( !isascii(sPart[i]) ) {
-                sPart = NULL;
-                break;
-            }
-        }
+		bzero(asciiPartNo, 21);		
+        for (i=0; i<21; i++)
+            if (isalpha(sPart[i]) || isdigit(sPart[i])) // System Profiler likes only letters and digits...
+				asciiPartNo[index++] = sPart[i];
+		
+		return asciiPartNo;
     }
-    return ( sPart==NULL || /*!(*sPart)* ||*/ !bZero ) ? 
-        "N/A" : sPart;
+    return "N/A";
 }
 
 int mapping []= {0,2,1,3,4,6,5,7,8,10,9,11};
