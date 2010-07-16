@@ -19,40 +19,9 @@ NVCard *nv_card = NULL;
 IOMemoryMap * nvio;
 
 
-/*namespace darwin {
-	
-	
-#include "/usr/include/sys/mman.h"
-		
-
-		
-#define MAXPATHLEN 1024
-		
-		
-		
-		int map_mem_card(NVCard* nv_card, void* addr);
-		
-		
-		*/
-		
-		
-		
-		
-		
-		
-		void unmap_mem()
-    {
-    }
-
-    int32_t pciReadLong(unsigned short devbusfn, long offset) {
-      return -1;
-    }
-
-    int map_mem(const char *dev_name)
-    {
-      return 0;
-    }
-/*}*/
+void unmap_mem(){}
+int32_t pciReadLong(unsigned short devbusfn, long offset) {return -1;}
+int map_mem(const char *dev_name){return 0;}
 
 int map_mem_card(NVCard* nv_card, unsigned long addr) {
 	/* Map the registers of the nVidia chip */
@@ -209,8 +178,8 @@ bool		PTnVmon::start	(IOService* provider) {
 		/* Check if the card is supported, if not print a message. */
 		if(nvclock.card[card_number].gpu == UNKNOWN){
 			printf("It seems your card isn't officialy supported in FakeSMCnVclockPort yet.\n");
-			printf("Also please tell the author the pci_id of the card for further investigation.\n");
-			printf("Continuing with it anyway\n");
+			printf("Please tell the author the pci_id of the card for further investigation.\n");
+			printf("Continuing anyway\n");
 		}
 
 	
