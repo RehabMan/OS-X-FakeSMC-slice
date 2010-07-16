@@ -1,0 +1,584 @@
+# Dependencies for File:  \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/prf.o:
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/prf.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/limits.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/prf.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/syslimits.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/prf.o: /usr/include/i386/_limits.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/prf.o: /usr/include/i386/_param.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/prf.o: /usr/include/i386/_structs.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/prf.o: /usr/include/i386/_types.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/prf.o: /usr/include/i386/endian.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/prf.o: /usr/include/i386/limits.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/prf.o: /usr/include/i386/param.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/prf.o: /usr/include/i386/signal.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/prf.o: /usr/include/i386/types.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/prf.o: /usr/include/libkern/_OSByteOrder.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/prf.o: /usr/include/libkern/i386/_OSByteOrder.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/prf.o: /usr/include/limits.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/prf.o: /usr/include/mach/i386/_structs.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/prf.o: /usr/include/machine/_structs.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/prf.o: /usr/include/machine/_types.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/prf.o: /usr/include/machine/endian.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/prf.o: /usr/include/machine/limits.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/prf.o: /usr/include/machine/param.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/prf.o: /usr/include/machine/signal.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/prf.o: /usr/include/machine/types.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/prf.o: /usr/include/sys/_endian.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/prf.o: /usr/include/sys/_structs.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/prf.o: /usr/include/sys/_types.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/prf.o: /usr/include/sys/appleapiopts.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/prf.o: /usr/include/sys/cdefs.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/prf.o: /usr/include/sys/param.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/prf.o: /usr/include/sys/signal.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/prf.o: /usr/include/sys/syslimits.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/prf.o: /usr/include/sys/types.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/prf.o: /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/limits.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/prf.o: /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/syslimits.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/prf.o: prf.c
+# Dependencies for File:  \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/printf.o:
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/printf.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/printf.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdbool.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/printf.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stddef.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/printf.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdint.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/printf.o: /usr/include/architecture/byte_order.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/printf.o: /usr/include/i386/_types.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/printf.o: /usr/include/i386/eflags.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/printf.o: /usr/include/libkern/OSByteOrder.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/printf.o: /usr/include/libkern/_OSByteOrder.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/printf.o: /usr/include/libkern/i386/OSByteOrder.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/printf.o: /usr/include/libkern/i386/_OSByteOrder.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/printf.o: /usr/include/mach-o/loader.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/printf.o: /usr/include/mach/boolean.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/printf.o: /usr/include/mach/i386/_structs.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/printf.o: /usr/include/mach/i386/boolean.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/printf.o: /usr/include/mach/i386/fp_reg.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/printf.o: /usr/include/mach/i386/kern_return.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/printf.o: /usr/include/mach/i386/thread_state.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/printf.o: /usr/include/mach/i386/thread_status.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/printf.o: /usr/include/mach/i386/vm_param.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/printf.o: /usr/include/mach/i386/vm_types.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/printf.o: /usr/include/mach/kern_return.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/printf.o: /usr/include/mach/machine.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/printf.o: /usr/include/mach/machine/boolean.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/printf.o: /usr/include/mach/machine/kern_return.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/printf.o: /usr/include/mach/machine/thread_status.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/printf.o: /usr/include/mach/machine/vm_types.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/printf.o: /usr/include/mach/message.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/printf.o: /usr/include/mach/port.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/printf.o: /usr/include/mach/vm_prot.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/printf.o: /usr/include/machine/_types.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/printf.o: /usr/include/sys/_types.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/printf.o: /usr/include/sys/cdefs.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/printf.o: libsa.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/printf.o: printf.c
+# Dependencies for File:  \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/zalloc.o:
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/zalloc.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/zalloc.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdbool.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/zalloc.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stddef.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/zalloc.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdint.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/zalloc.o: /usr/include/architecture/byte_order.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/zalloc.o: /usr/include/i386/_types.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/zalloc.o: /usr/include/i386/eflags.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/zalloc.o: /usr/include/libkern/OSByteOrder.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/zalloc.o: /usr/include/libkern/_OSByteOrder.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/zalloc.o: /usr/include/libkern/i386/OSByteOrder.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/zalloc.o: /usr/include/libkern/i386/_OSByteOrder.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/zalloc.o: /usr/include/mach-o/loader.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/zalloc.o: /usr/include/mach/boolean.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/zalloc.o: /usr/include/mach/i386/_structs.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/zalloc.o: /usr/include/mach/i386/boolean.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/zalloc.o: /usr/include/mach/i386/fp_reg.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/zalloc.o: /usr/include/mach/i386/kern_return.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/zalloc.o: /usr/include/mach/i386/thread_state.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/zalloc.o: /usr/include/mach/i386/thread_status.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/zalloc.o: /usr/include/mach/i386/vm_param.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/zalloc.o: /usr/include/mach/i386/vm_types.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/zalloc.o: /usr/include/mach/kern_return.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/zalloc.o: /usr/include/mach/machine.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/zalloc.o: /usr/include/mach/machine/boolean.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/zalloc.o: /usr/include/mach/machine/kern_return.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/zalloc.o: /usr/include/mach/machine/thread_status.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/zalloc.o: /usr/include/mach/machine/vm_types.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/zalloc.o: /usr/include/mach/message.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/zalloc.o: /usr/include/mach/port.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/zalloc.o: /usr/include/mach/vm_prot.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/zalloc.o: /usr/include/machine/_types.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/zalloc.o: /usr/include/sys/_types.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/zalloc.o: /usr/include/sys/cdefs.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/zalloc.o: libsa.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/zalloc.o: memory.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/zalloc.o: zalloc.c
+# Dependencies for File:  \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/string.o:
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/string.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/string.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdbool.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/string.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stddef.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/string.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdint.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/string.o: /usr/include/architecture/byte_order.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/string.o: /usr/include/i386/_types.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/string.o: /usr/include/i386/eflags.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/string.o: /usr/include/libkern/OSByteOrder.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/string.o: /usr/include/libkern/_OSByteOrder.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/string.o: /usr/include/libkern/i386/OSByteOrder.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/string.o: /usr/include/libkern/i386/_OSByteOrder.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/string.o: /usr/include/mach-o/loader.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/string.o: /usr/include/mach/boolean.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/string.o: /usr/include/mach/i386/_structs.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/string.o: /usr/include/mach/i386/boolean.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/string.o: /usr/include/mach/i386/fp_reg.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/string.o: /usr/include/mach/i386/kern_return.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/string.o: /usr/include/mach/i386/thread_state.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/string.o: /usr/include/mach/i386/thread_status.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/string.o: /usr/include/mach/i386/vm_param.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/string.o: /usr/include/mach/i386/vm_types.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/string.o: /usr/include/mach/kern_return.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/string.o: /usr/include/mach/machine.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/string.o: /usr/include/mach/machine/boolean.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/string.o: /usr/include/mach/machine/kern_return.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/string.o: /usr/include/mach/machine/thread_status.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/string.o: /usr/include/mach/machine/vm_types.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/string.o: /usr/include/mach/message.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/string.o: /usr/include/mach/port.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/string.o: /usr/include/mach/vm_prot.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/string.o: /usr/include/machine/_types.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/string.o: /usr/include/sys/_types.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/string.o: /usr/include/sys/cdefs.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/string.o: libsa.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/string.o: string.c
+# Dependencies for File:  \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/strtol.o:
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/strtol.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/limits.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/strtol.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/strtol.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdbool.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/strtol.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stddef.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/strtol.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdint.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/strtol.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/syslimits.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/strtol.o: /usr/include/architecture/byte_order.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/strtol.o: /usr/include/i386/_limits.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/strtol.o: /usr/include/i386/_types.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/strtol.o: /usr/include/i386/eflags.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/strtol.o: /usr/include/i386/limits.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/strtol.o: /usr/include/libkern/OSByteOrder.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/strtol.o: /usr/include/libkern/_OSByteOrder.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/strtol.o: /usr/include/libkern/i386/OSByteOrder.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/strtol.o: /usr/include/libkern/i386/_OSByteOrder.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/strtol.o: /usr/include/limits.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/strtol.o: /usr/include/mach-o/loader.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/strtol.o: /usr/include/mach/boolean.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/strtol.o: /usr/include/mach/i386/_structs.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/strtol.o: /usr/include/mach/i386/boolean.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/strtol.o: /usr/include/mach/i386/fp_reg.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/strtol.o: /usr/include/mach/i386/kern_return.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/strtol.o: /usr/include/mach/i386/thread_state.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/strtol.o: /usr/include/mach/i386/thread_status.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/strtol.o: /usr/include/mach/i386/vm_param.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/strtol.o: /usr/include/mach/i386/vm_types.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/strtol.o: /usr/include/mach/kern_return.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/strtol.o: /usr/include/mach/machine.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/strtol.o: /usr/include/mach/machine/boolean.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/strtol.o: /usr/include/mach/machine/kern_return.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/strtol.o: /usr/include/mach/machine/thread_status.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/strtol.o: /usr/include/mach/machine/vm_types.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/strtol.o: /usr/include/mach/message.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/strtol.o: /usr/include/mach/port.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/strtol.o: /usr/include/mach/vm_prot.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/strtol.o: /usr/include/machine/_types.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/strtol.o: /usr/include/machine/limits.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/strtol.o: /usr/include/sys/_types.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/strtol.o: /usr/include/sys/cdefs.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/strtol.o: /usr/include/sys/syslimits.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/strtol.o: /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/limits.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/strtol.o: /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/syslimits.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/strtol.o: libsa.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/strtol.o: strtol.c
+# Dependencies for File:  \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/error.o:
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/error.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/error.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdbool.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/error.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stddef.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/error.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdint.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/error.o: /usr/include/architecture/byte_order.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/error.o: /usr/include/i386/_types.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/error.o: /usr/include/i386/eflags.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/error.o: /usr/include/libkern/OSByteOrder.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/error.o: /usr/include/libkern/_OSByteOrder.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/error.o: /usr/include/libkern/i386/OSByteOrder.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/error.o: /usr/include/libkern/i386/_OSByteOrder.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/error.o: /usr/include/mach-o/loader.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/error.o: /usr/include/mach/boolean.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/error.o: /usr/include/mach/i386/_structs.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/error.o: /usr/include/mach/i386/boolean.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/error.o: /usr/include/mach/i386/fp_reg.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/error.o: /usr/include/mach/i386/kern_return.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/error.o: /usr/include/mach/i386/thread_state.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/error.o: /usr/include/mach/i386/thread_status.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/error.o: /usr/include/mach/i386/vm_param.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/error.o: /usr/include/mach/i386/vm_types.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/error.o: /usr/include/mach/kern_return.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/error.o: /usr/include/mach/machine.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/error.o: /usr/include/mach/machine/boolean.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/error.o: /usr/include/mach/machine/kern_return.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/error.o: /usr/include/mach/machine/thread_status.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/error.o: /usr/include/mach/machine/vm_types.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/error.o: /usr/include/mach/message.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/error.o: /usr/include/mach/port.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/error.o: /usr/include/mach/vm_prot.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/error.o: /usr/include/machine/_types.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/error.o: /usr/include/sys/_types.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/error.o: /usr/include/sys/cdefs.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/error.o: error.c
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/error.o: libsa.h
+# Dependencies for File:  \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/qsort.o:
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/qsort.o: /usr/include/Availability.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/qsort.o: /usr/include/AvailabilityInternal.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/qsort.o: /usr/include/_types.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/qsort.o: /usr/include/alloca.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/qsort.o: /usr/include/i386/_structs.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/qsort.o: /usr/include/i386/_types.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/qsort.o: /usr/include/i386/endian.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/qsort.o: /usr/include/i386/signal.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/qsort.o: /usr/include/i386/types.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/qsort.o: /usr/include/libkern/_OSByteOrder.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/qsort.o: /usr/include/libkern/i386/_OSByteOrder.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/qsort.o: /usr/include/mach/i386/_structs.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/qsort.o: /usr/include/machine/_structs.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/qsort.o: /usr/include/machine/_types.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/qsort.o: /usr/include/machine/endian.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/qsort.o: /usr/include/machine/signal.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/qsort.o: /usr/include/machine/types.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/qsort.o: /usr/include/stdlib.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/qsort.o: /usr/include/sys/_endian.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/qsort.o: /usr/include/sys/_structs.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/qsort.o: /usr/include/sys/_types.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/qsort.o: /usr/include/sys/appleapiopts.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/qsort.o: /usr/include/sys/cdefs.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/qsort.o: /usr/include/sys/resource.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/qsort.o: /usr/include/sys/signal.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/qsort.o: /usr/include/sys/types.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/qsort.o: /usr/include/sys/wait.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/qsort.o: qsort.c
+# Dependencies for File:  \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/efi_tables.o:
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/efi_tables.o: ../libsaio/efi.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/efi_tables.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/efi_tables.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdbool.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/efi_tables.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stddef.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/efi_tables.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdint.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/efi_tables.o: /usr/include/architecture/byte_order.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/efi_tables.o: /usr/include/i386/_types.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/efi_tables.o: /usr/include/i386/eflags.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/efi_tables.o: /usr/include/libkern/OSByteOrder.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/efi_tables.o: /usr/include/libkern/_OSByteOrder.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/efi_tables.o: /usr/include/libkern/i386/OSByteOrder.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/efi_tables.o: /usr/include/libkern/i386/_OSByteOrder.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/efi_tables.o: /usr/include/mach-o/loader.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/efi_tables.o: /usr/include/mach/boolean.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/efi_tables.o: /usr/include/mach/i386/_structs.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/efi_tables.o: /usr/include/mach/i386/boolean.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/efi_tables.o: /usr/include/mach/i386/fp_reg.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/efi_tables.o: /usr/include/mach/i386/kern_return.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/efi_tables.o: /usr/include/mach/i386/thread_state.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/efi_tables.o: /usr/include/mach/i386/thread_status.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/efi_tables.o: /usr/include/mach/i386/vm_param.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/efi_tables.o: /usr/include/mach/i386/vm_types.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/efi_tables.o: /usr/include/mach/kern_return.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/efi_tables.o: /usr/include/mach/machine.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/efi_tables.o: /usr/include/mach/machine/boolean.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/efi_tables.o: /usr/include/mach/machine/kern_return.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/efi_tables.o: /usr/include/mach/machine/thread_status.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/efi_tables.o: /usr/include/mach/machine/vm_types.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/efi_tables.o: /usr/include/mach/message.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/efi_tables.o: /usr/include/mach/port.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/efi_tables.o: /usr/include/mach/vm_prot.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/efi_tables.o: /usr/include/machine/_types.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/efi_tables.o: /usr/include/sys/_types.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/efi_tables.o: /usr/include/sys/cdefs.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/efi_tables.o: efi_tables.c
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/efi_tables.o: efi_tables.h
+ \
+ /Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo/obj/i386/libsa/efi_tables.o: libsa.h
