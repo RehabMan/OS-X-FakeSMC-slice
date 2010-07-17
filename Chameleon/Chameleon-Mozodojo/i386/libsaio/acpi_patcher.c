@@ -184,30 +184,41 @@ void *loadACPITable (const char * filename)
 	return NULL;
 }
 
-struct acpi_2_ssdt *
-patch_ssdt(struct acpi_2_ssdt *ssdt)
+unsigned char pss_ssdt_header[] =
 {
-	struct acpi_2_ssdt *ssdt_mod;
+	0x53, 0x53, 0x44, 0x54, 0x7E, 0x00, 0x00, 0x00, /* SSDT.... */
+	0x01, 0x6A, 0x50, 0x6D, 0x52, 0x65, 0x66, 0x00, /* ..PmRef. */
+	0x43, 0x70, 0x75, 0x50, 0x6D, 0x00, 0x00, 0x00, /* CpuPm... */
+	0x00, 0x30, 0x00, 0x00, 0x49, 0x4E, 0x54, 0x4C, /* .0..INTL */
+	0x31, 0x03, 0x10, 0x20, 0x10, 0x2F, 0x5C, 0x5F, /* 1.. ./\_ */
+	0x50, 0x52, 0x5F, 0x08, 0x50, 0x53, 0x53, 0x5F	/* PR_.PSS_ */
+};
+
+unsigned char pss_ssdt_alias[] = 
+{
+	0x10, 0x14, 0x5C, 0x2E, 0x5F, 0x50, 0x52, 0x5F, /* ..\._PR_ */
+	0x43, 0x50, 0x55, 0x30, 0x06, 0x50, 0x53, 0x53, /* CPU0.PSS */
+	0x5F, 0x5F, 0x50, 0x53, 0x53					/* __PSS	*/
+};
+
+struct acpi_2_ssdt *generate_pss_ssdt()
+{
+	struct acpi_2_ssdt *ssdt = NULL;
 	
-	if (Platform.CPU.Vendor != 0x756E6547) {	/* Intel */
+	if (Platform.CPU.Vendor == 0x756E6547) {	/* Intel */
+		
+		//
+		
+	}
+	else {
 		verbose ("Not an Intel platform: P-States will not generated !!!\n");
-		return ssdt;
 	}
 	
-	if (ssdt == 0 || strcmp(ssdt->OEMID, "PmRef") != 0 || strcmp(ssdt->OEMTableId, "CpuPm") != 0) {
-		return ssdt;
-	}
-	
-	verbose("Found CPU power profile SSDT to patch./n");
-	ssdt_mod = ssdt;
-	
-	return ssdt_mod;
+	return ssdt;
 }
 
-struct acpi_2_fadt *
-patch_fadt(struct acpi_2_fadt *fadt, void *new_dsdt)
+struct acpi_2_fadt *patch_fadt(struct acpi_2_fadt *fadt, void *new_dsdt)
 {
-	
 	extern void setupSystemType(); 
 	
 	struct acpi_2_fadt *fadt_mod;
@@ -332,7 +343,7 @@ int setupAcpi(void)
 	 }*/
 	
 	// Mozodojo: Load additional SSDTs
-	struct acpi_2_ssdt *new_ssdt[30];
+	struct acpi_2_ssdt *new_ssdt[31];
 	int  ssdt_count=0;
 	bool drop_ssdt=false, generate_pstates=false; 
 	
@@ -345,16 +356,12 @@ int setupAcpi(void)
 		for (i=0; i<30; i++)
 		{
 			char *filename[512];
-			void *temp_ssdt;
-			
+
 			sprintf(filename, i>0?"SSDT-%d.aml":"SSDT.aml", i);
 			
-			if(temp_ssdt = loadACPITable(filename)) 
-			{
-				if(generate_pstates)
-					temp_ssdt=patch_ssdt(temp_ssdt);
-				
-				new_ssdt[ssdt_count++] = temp_ssdt;
+			if(new_ssdt[ssdt_count+1] = loadACPITable(filename)) 
+			{				
+				ssdt_count++;
 			}
 			else 
 			{
@@ -362,6 +369,11 @@ int setupAcpi(void)
 			}
 		}
 	}
+	
+	// Generating P-States SSDT
+	if (generate_pstates)
+		if(new_ssdt[ssdt_count+1] = generate_pss_ssdt())
+			ssdt_count++;
 	
 	// Do the same procedure for both versions of ACPI
 	for (version=0; version<2; version++) {
@@ -417,10 +429,7 @@ int setupAcpi(void)
 				rsdt_entries[i-dropoffset]=rsdt_entries[i];
 				if (tableSign(table, "SSDT"))
 				{
-					if (drop_ssdt)
-						dropoffset++;
-					else if(generate_pstates)
-						rsdt_entries[i-dropoffset]=(uint32_t)patch_ssdt((struct acpi_2_ssdt *)rsdt_entries[i]);
+					dropoffset++;
 					continue;
 				}
 
@@ -510,10 +519,7 @@ int setupAcpi(void)
 					xsdt_entries[i-dropoffset]=xsdt_entries[i];
 					if (drop_ssdt && tableSign(table, "SSDT"))
 					{
-						if (drop_ssdt)
-							dropoffset++;
-						else if(generate_pstates)
-							xsdt_entries[i-dropoffset]=(uint32_t)patch_ssdt((struct acpi_2_ssdt *)(uint32_t)xsdt_entries[i]);
+						dropoffset++;
 						continue;
 					}					
 					if (tableSign(table, "DSDT"))
@@ -568,6 +574,7 @@ int setupAcpi(void)
 					
 					verbose("Added %d SSDT table(s) into XSDT\n", ssdt_count);
 				}
+				
 				
 				// Correct the checksum of XSDT
 				xsdt_mod->Checksum=0;

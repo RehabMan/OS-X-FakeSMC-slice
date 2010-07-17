@@ -183,7 +183,7 @@ const char *getDDRSerial(const char* spd)
 /** Get DDR3 or DDR2 Part Number, always return a valid ptr */
 const char * getDDRPartNum(const char* spd)
 {
-	static char asciiPartNo[21];
+	static char asciiPartNo[32];
     const char * sPart = NULL;
 	int i, index = 0;
 
@@ -196,9 +196,12 @@ const char * getDDRPartNum(const char* spd)
 	
     if (sPart) { // Check that the spd part name is zero terminated and that it is ascii:
 		bzero(asciiPartNo, 21);		
-        for (i=0; i<21; i++)
-            if (isalpha(sPart[i]) || isdigit(sPart[i])) // Seems like System Profiler likes only letters and digits...
+        for (i=0; i<32; i++) {
+            if (isalpha(sPart[i]) || isdigit(sPart[i])) // It seems that System Profiler likes only letters and digits...
 				asciiPartNo[index++] = sPart[i];
+			else if (!isspace(sPart[i]))
+				break;
+		}
 		
 		return strdup(asciiPartNo);
     }

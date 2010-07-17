@@ -135,13 +135,13 @@
 		B027B74D11EB89C10065201B /* machOconv.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = machOconv.c; sourceTree = "<group>"; };
 		B04B64DE11EF7812000F6091 /* boot */ = {isa = PBXFileReference; lastKnownFileType = text; path = boot; sourceTree = "<group>"; };
 		B04B64DF11EF7812000F6091 /* boot.sys */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.preload"; path = boot.sys; sourceTree = "<group>"; };
-		B04B64E011EF7812000F6091 /* boot0 */ = {isa = PBXFileReference; lastKnownFileType = file; path = boot0; sourceTree = "<group>"; };
-		B04B64E111EF7812000F6091 /* boot1f32 */ = {isa = PBXFileReference; lastKnownFileType = file; path = boot1f32; sourceTree = "<group>"; };
-		B04B64E211EF7812000F6091 /* boot1h */ = {isa = PBXFileReference; lastKnownFileType = file; path = boot1h; sourceTree = "<group>"; };
-		B04B64E311EF7812000F6091 /* boot1he */ = {isa = PBXFileReference; lastKnownFileType = file; path = boot1he; sourceTree = "<group>"; };
-		B04B64E411EF7812000F6091 /* boot1hp */ = {isa = PBXFileReference; lastKnownFileType = file; path = boot1hp; sourceTree = "<group>"; };
-		B04B64E511EF7812000F6091 /* cdboot */ = {isa = PBXFileReference; lastKnownFileType = file; path = cdboot; sourceTree = "<group>"; };
-		B04B64E611EF7812000F6091 /* chain0 */ = {isa = PBXFileReference; lastKnownFileType = file; path = chain0; sourceTree = "<group>"; };
+		B04B64E011EF7812000F6091 /* boot0 */ = {isa = PBXFileReference; lastKnownFileType = text; path = boot0; sourceTree = "<group>"; };
+		B04B64E111EF7812000F6091 /* boot1f32 */ = {isa = PBXFileReference; lastKnownFileType = text; path = boot1f32; sourceTree = "<group>"; };
+		B04B64E211EF7812000F6091 /* boot1h */ = {isa = PBXFileReference; lastKnownFileType = text; path = boot1h; sourceTree = "<group>"; };
+		B04B64E311EF7812000F6091 /* boot1he */ = {isa = PBXFileReference; lastKnownFileType = text; path = boot1he; sourceTree = "<group>"; };
+		B04B64E411EF7812000F6091 /* boot1hp */ = {isa = PBXFileReference; lastKnownFileType = text; path = boot1hp; sourceTree = "<group>"; };
+		B04B64E511EF7812000F6091 /* cdboot */ = {isa = PBXFileReference; lastKnownFileType = text; path = cdboot; sourceTree = "<group>"; };
+		B04B64E611EF7812000F6091 /* chain0 */ = {isa = PBXFileReference; lastKnownFileType = text; path = chain0; sourceTree = "<group>"; };
 		B04B64E711EF7812000F6091 /* embedded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = embedded.h; sourceTree = "<group>"; };
 		B04B64E811EF7812000F6091 /* libsa.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libsa.a; sourceTree = "<group>"; };
 		B04B64E911EF7812000F6091 /* libsaio.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libsaio.a; sourceTree = "<group>"; };
@@ -260,6 +260,8 @@
 		B027B6FC11EB89C10065201B /* libsaio */ = {
 			isa = PBXGroup;
 			children = (
+				B027B71011EB89C10065201B /* acpi_patcher.c */,
+				B027B71111EB89C10065201B /* acpi_patcher.h */,
 				B027B6FD11EB89C10065201B /* acpi.h */,
 				B027B6FE11EB89C10065201B /* allocate.c */,
 				B027B6FF11EB89C10065201B /* asm.s */,
@@ -279,8 +281,6 @@
 				B027B70D11EB89C10065201B /* device_tree.c */,
 				B027B70E11EB89C10065201B /* device_tree.h */,
 				B027B70F11EB89C10065201B /* disk.c */,
-				B027B71011EB89C10065201B /* acpi_patcher.c */,
-				B027B71111EB89C10065201B /* acpi_patcher.h */,
 				B027B71211EB89C10065201B /* efi.h */,
 				B027B71311EB89C10065201B /* ext2fs.c */,
 				B027B71411EB89C10065201B /* ext2fs.h */,
@@ -396,7 +396,7 @@
 			buildPhases = (
 			);
 			buildToolPath = /usr/bin/make;
-			buildWorkingDirectory = ./;
+			buildWorkingDirectory = "";
 			dependencies = (
 			);
 			name = Chameleon;
