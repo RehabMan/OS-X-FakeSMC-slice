@@ -8,7 +8,7 @@
 #include "acpi.h"
 #include "efi_tables.h"
 #include "fake_efi.h"
-#include "dsdt_patcher.h"
+#include "acpi_patcher.h"
 #include "platform.h"
 
 #ifndef DEBUG_DSDT
@@ -184,6 +184,26 @@ void *loadACPITable (const char * filename)
 	return NULL;
 }
 
+struct acpi_2_ssdt *
+patch_ssdt(struct acpi_2_ssdt *ssdt)
+{
+	struct acpi_2_ssdt *ssdt_mod;
+	
+	if (Platform.CPU.Vendor != 0x756E6547) {	/* Intel */
+		verbose ("Not an Intel platform: P-States will not generated !!!\n");
+		return ssdt;
+	}
+	
+	if (ssdt == 0 || strcmp(ssdt->OEMID, "PmRef") != 0 || strcmp(ssdt->OEMTableId, "CpuPm") != 0) {
+		return ssdt;
+	}
+	
+	verbose("Found CPU power profile SSDT to patch./n");
+	ssdt_mod = ssdt;
+	
+	return ssdt_mod;
+}
+
 struct acpi_2_fadt *
 patch_fadt(struct acpi_2_fadt *fadt, void *new_dsdt)
 {
@@ -303,8 +323,6 @@ int setupAcpi(void)
 	int version;
 	void *new_dsdt;
 	
-	bool drop_ssdt;
-	
 	// Load replacement DSDT
 	new_dsdt=loadACPITable("DSDT.aml");
 	// Mozodojo: going to patch FACP and load SSDT's even if DSDT.aml is not present
@@ -314,14 +332,15 @@ int setupAcpi(void)
 	 }*/
 	
 	// Mozodojo: Load additional SSDTs
-	void *new_ssdt[30];
+	struct acpi_2_ssdt *new_ssdt[30];
 	int  ssdt_count=0;
+	bool drop_ssdt=false, generate_pstates=false; 
+	
+	getBoolForKey(kDropSSDT, &drop_ssdt, &bootInfo->bootConfig);
+	getBoolForKey(kGeneratePStates, &generate_pstates, &bootInfo->bootConfig);
 	
 	{
 		int i;
-		bool tmp;
-	
-		drop_ssdt=getBoolForKey(kDropSSDT, &tmp, &bootInfo->bootConfig)&&tmp;
 		
 		for (i=0; i<30; i++)
 		{
@@ -332,6 +351,9 @@ int setupAcpi(void)
 			
 			if(temp_ssdt = loadACPITable(filename)) 
 			{
+				if(generate_pstates)
+					temp_ssdt=patch_ssdt(temp_ssdt);
+				
 				new_ssdt[ssdt_count++] = temp_ssdt;
 			}
 			else 
@@ -393,11 +415,15 @@ int setupAcpi(void)
 				DBG("TABLE %c%c%c%c,",table[0],table[1],table[2],table[3]);
 				
 				rsdt_entries[i-dropoffset]=rsdt_entries[i];
-				if (drop_ssdt && tableSign(table, "SSDT"))
+				if (tableSign(table, "SSDT"))
 				{
-					dropoffset++;
+					if (drop_ssdt)
+						dropoffset++;
+					else if(generate_pstates)
+						rsdt_entries[i-dropoffset]=(uint32_t)patch_ssdt((struct acpi_2_ssdt *)rsdt_entries[i]);
 					continue;
 				}
+
 				if (tableSign(table, "DSDT"))
 				{
 					DBG("DSDT found\n");
@@ -484,7 +510,10 @@ int setupAcpi(void)
 					xsdt_entries[i-dropoffset]=xsdt_entries[i];
 					if (drop_ssdt && tableSign(table, "SSDT"))
 					{
-						dropoffset++;
+						if (drop_ssdt)
+							dropoffset++;
+						else if(generate_pstates)
+							xsdt_entries[i-dropoffset]=(uint32_t)patch_ssdt((struct acpi_2_ssdt *)(uint32_t)xsdt_entries[i]);
 						continue;
 					}					
 					if (tableSign(table, "DSDT"))

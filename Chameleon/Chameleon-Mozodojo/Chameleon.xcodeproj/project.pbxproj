@@ -76,8 +76,8 @@
 		B027B70D11EB89C10065201B /* device_tree.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = device_tree.c; sourceTree = "<group>"; };
 		B027B70E11EB89C10065201B /* device_tree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = device_tree.h; sourceTree = "<group>"; };
 		B027B70F11EB89C10065201B /* disk.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = disk.c; sourceTree = "<group>"; };
-		B027B71011EB89C10065201B /* dsdt_patcher.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = dsdt_patcher.c; sourceTree = "<group>"; };
-		B027B71111EB89C10065201B /* dsdt_patcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dsdt_patcher.h; sourceTree = "<group>"; };
+		B027B71011EB89C10065201B /* acpi_patcher.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = acpi_patcher.c; sourceTree = "<group>"; };
+		B027B71111EB89C10065201B /* acpi_patcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = acpi_patcher.h; sourceTree = "<group>"; };
 		B027B71211EB89C10065201B /* efi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = efi.h; sourceTree = "<group>"; };
 		B027B71311EB89C10065201B /* ext2fs.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ext2fs.c; sourceTree = "<group>"; };
 		B027B71411EB89C10065201B /* ext2fs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ext2fs.h; sourceTree = "<group>"; };
@@ -279,8 +279,8 @@
 				B027B70D11EB89C10065201B /* device_tree.c */,
 				B027B70E11EB89C10065201B /* device_tree.h */,
 				B027B70F11EB89C10065201B /* disk.c */,
-				B027B71011EB89C10065201B /* dsdt_patcher.c */,
-				B027B71111EB89C10065201B /* dsdt_patcher.h */,
+				B027B71011EB89C10065201B /* acpi_patcher.c */,
+				B027B71111EB89C10065201B /* acpi_patcher.h */,
 				B027B71211EB89C10065201B /* efi.h */,
 				B027B71311EB89C10065201B /* ext2fs.c */,
 				B027B71411EB89C10065201B /* ext2fs.h */,

@@ -163,7 +163,7 @@ int getDDRspeedMhz(const char * spd)
 /** Get DDR3 or DDR2 serial number, 0 most of the times, always return a valid ptr */
 const char *getDDRSerial(const char* spd)
 {
-    char* asciiSerial = malloc(16);
+    static char asciiSerial[16];
     static uint8_t serialnum=0;
     uint32_t ret=0;
 
@@ -177,13 +177,13 @@ const char *getDDRSerial(const char* spd)
     if (!ret) sprintf(asciiSerial, "10000000%d", serialnum++);  
     else      sprintf(asciiSerial, "%d", ret);  
 
-    return asciiSerial;
+	return strdup(asciiSerial);
 }
 
 /** Get DDR3 or DDR2 Part Number, always return a valid ptr */
 const char * getDDRPartNum(const char* spd)
 {
-	char* asciiPartNo = malloc(21);
+	static char asciiPartNo[21];
     const char * sPart = NULL;
 	int i, index = 0;
 
@@ -197,10 +197,10 @@ const char * getDDRPartNum(const char* spd)
     if (sPart) { // Check that the spd part name is zero terminated and that it is ascii:
 		bzero(asciiPartNo, 21);		
         for (i=0; i<21; i++)
-            if (isalpha(sPart[i]) || isdigit(sPart[i])) // System Profiler likes only letters and digits...
+            if (isalpha(sPart[i]) || isdigit(sPart[i])) // Seems like System Profiler likes only letters and digits...
 				asciiPartNo[index++] = sPart[i];
 		
-		return asciiPartNo;
+		return strdup(asciiPartNo);
     }
     return "N/A";
 }

@@ -241,12 +241,12 @@ char *strcat(char *s1, const char *s2)
 	return(strncat(s1, s2, strlen(s2)));
 }
 
-/*char *strdup(const char *s1)
+char *strdup(const char *s1)
 {
 	return strcpy(malloc(strlen(s1) + 1), s1);
-}*/
+}
 
-char * strdup (const char *s)
+/*char * strdup (const char *s)
 {
 	size_t len = strlen (s) + 1;
 	void *new = malloc (len);
@@ -255,7 +255,7 @@ char * strdup (const char *s)
 		return NULL;
 	
 	return (char *) memcpy (new, s, len);
-}
+}*/
 
 #if STRNCASECMP
 int strncasecmp(const char *s1, const char *s2, size_t len)

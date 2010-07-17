@@ -2,8 +2,8 @@
  * Copyright 2008 mackerintel
  */
 
-#ifndef __LIBSAIO_DSDT_PATCHER_H
-#define __LIBSAIO_DSDT_PATCHER_H
+#ifndef __LIBSAIO_ACPI_PATCHER_H
+#define __LIBSAIO_ACPI_PATCHER_H
 
 #include "libsaio.h"
 
@@ -17,4 +17,4 @@ extern EFI_STATUS addConfigurationTable();
 extern EFI_GUID gEfiAcpiTableGuid;
 extern EFI_GUID gEfiAcpi20TableGuid;
 
-#endif /* !__LIBSAIO_DSDT_PATCHER_H */
+#endif /* !__LIBSAIO_ACPI_PATCHER_H */
