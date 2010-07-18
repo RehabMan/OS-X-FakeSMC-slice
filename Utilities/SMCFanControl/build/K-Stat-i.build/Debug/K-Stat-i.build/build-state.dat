@@ -1,0 +1,691 @@
+TK-Stat-i
+v7
+r0
+t301142754.599968
+cCheck dependencies
+cProcessInfoPlistFile /Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/Info.plist Info.plist
+cCpResource build/Debug/smcK-Stat-i.app/Contents/Resources/smc_loginitem.scpt smc_loginitem.scpt
+cCpResource build/Debug/smcK-Stat-i.app/Contents/Resources/smc_loginitem_remove.scpt smc_loginitem_remove.scpt
+cCopyStringsFile /Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
+cCpResource build/Debug/smcK-Stat-i.app/Contents/Resources/smc smc
+cCopyStringsFile /Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/Resources/English.lproj/Localizable.strings English.lproj/Localizable.strings
+cCpResource build/Debug/smcK-Stat-i.app/Contents/Resources/smcfancontrol_v2.icns smcfancontrol_v2.icns
+cStripNIB /Users/Michael/Desktop/SMCFanControl/English.lproj/MainMenu.nib
+cCpResource build/Debug/smcK-Stat-i.app/Contents/Resources/smc.png smc.png
+cCpResource build/Debug/smcK-Stat-i.app/Contents/Resources/smcover.png smcover.png
+cCompileC build/K-Stat-i.build/Debug/K-Stat-i.build/Objects-normal/i386/main.o /Users/Michael/Desktop/SMCFanControl/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/K-Stat-i.build/Debug/K-Stat-i.build/Objects-normal/i386/smc.o /Users/Michael/Desktop/SMCFanControl/smc.c normal i386 c com.apple.compilers.gcc.4_2
+cCompileC build/K-Stat-i.build/Debug/K-Stat-i.build/Objects-normal/i386/FanControl.o /Users/Michael/Desktop/SMCFanControl/FanControl.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/K-Stat-i.build/Debug/K-Stat-i.build/Objects-normal/i386/StatusItemWindow.o /Users/Michael/Desktop/SMCFanControl/StatusItemWindow.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/K-Stat-i.build/Debug/K-Stat-i.build/Objects-normal/i386/smcWrapper.o /Users/Michael/Desktop/SMCFanControl/smcWrapper.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/K-Stat-i.build/Debug/K-Stat-i.build/Objects-normal/i386/Power.o /Users/Michael/Desktop/SMCFanControl/Power.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/K-Stat-i.build/Debug/K-Stat-i.build/Objects-normal/i386/MachineDefaults.o /Users/Michael/Desktop/SMCFanControl/MachineDefaults.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/MacOS/smcK-Stat-i normal i386
+cTouch /Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app
+
+N/Developer/SDKs/MacOSX10.6.sdk
+c000000004BE0165B00000000000000EE
+t1272976987
+s238
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Cocoa.framework/Headers/Cocoa.h
+c0000000040C4AA6800000000000001E5
+t1086630504
+s485
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/IOKit.framework/Headers/IOKitLib.h
+c000000004A4D52090000000000012048
+t1246581257
+s73800
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/IOKit.framework/Headers/IOMessage.h
+c000000004A73D6500000000000000DE0
+t1249105488
+s3552
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/IOKit.framework/Headers/ps/IOPSKeys.h
+c000000004A4D5207000000000000564A
+t1246581255
+s22090
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/IOKit.framework/Headers/ps/IOPowerSources.h
+c000000004A4D52070000000000001A14
+t1246581255
+s6676
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/IOKit.framework/Headers/pwr_mgt/IOPMLib.h
+c000000004A4D52080000000000006CA0
+t1246581256
+s27808
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Security.framework/Headers/Authorization.h
+c000000004A4D51FA00000000000056D5
+t1246581242
+s22229
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Security.framework/Headers/AuthorizationDB.h
+c000000004A4D51FA00000000000018BB
+t1246581242
+s6331
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Security.framework/Headers/AuthorizationTags.h
+c000000004A4D51FA0000000000000EC4
+t1246581242
+s3780
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/mach/mach_init.h
+c000000004A73D45400000000000010A7
+t1249104980
+s4263
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/mach/mach_interface.h
+c000000004A73D454000000000000082B
+t1249104980
+s2091
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/mach/mach_port.h
+c000000004A73D45400000000000077CA
+t1249104980
+s30666
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/openssl/evp.h
+c000000004AB9A91B00000000000096EA
+t1253681435
+s38634
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/stdio.h
+c000000004A5C14A70000000000004174
+t1247548583
+s16756
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/stdlib.h
+c000000004A5C14A70000000000002DF5
+t1247548583
+s11765
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/string.h
+c000000004A5C14A70000000000001731
+t1247548583
+s5937
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/unistd.h
+c000000004A5C14A7000000000000563E
+t1247548583
+s22078
+
+N/System/Library/Frameworks/Cocoa.framework/Cocoa
+c000000004A1F2D63000000000000A5E0
+t1243557219
+s42464
+
+N/System/Library/Frameworks/IOKit.framework/IOKit
+c000000004BBD310E0000000000172A20
+t1270690062
+s1518112
+
+N/System/Library/Frameworks/Security.framework/Security
+c000000004BC7AC160000000000A12F60
+t1271376918
+s10563424
+
+N/System/Library/Frameworks/WebKit.framework/WebKit
+c000000004C0C24EF00000000005BB7C0
+t1275864303
+s6010816
+
+N/Users/Michael/Desktop/SMCFanControl/English.lproj/F.A.Q.rtf
+c000000004C2614530000000000002074
+t1277563987
+s8308
+
+N/Users/Michael/Desktop/SMCFanControl/English.lproj/InfoPlist.strings
+c000000004C26145300000000000000E6
+t1277563987
+s230
+
+N/Users/Michael/Desktop/SMCFanControl/English.lproj/Localizable.strings
+c000000004C2614530000000000000000
+t1277563987
+s0
+
+N/Users/Michael/Desktop/SMCFanControl/English.lproj/MainMenu.nib
+c000000004C3FFF6A00000000000000AA
+t1279262570
+s170
+
+N/Users/Michael/Desktop/SMCFanControl/FanControl.h
+c000000004C2840F80000000000000C47
+t1277706488
+s3143
+i<Cocoa/Cocoa.h>
+i<smc.h>
+i<smcWrapper.h>
+i<MachineDefaults.h>
+i<Power.h>
+i<mach/mach_port.h>
+i<mach/mach_interface.h>
+i<mach/mach_init.h>
+i<IOKit/pwr_mgt/IOPMLib.h>
+i<IOKit/IOMessage.h>
+
+N/Users/Michael/Desktop/SMCFanControl/FanControl.m
+c000000004C3FFFA80000000000006BA6
+t1279262632
+s27558
+i"FanControl.h"
+i"MachineDefaults.h"
+i<Security/Authorization.h>
+i<Security/AuthorizationDB.h>
+i<Security/AuthorizationTags.h>
+
+N/Users/Michael/Desktop/SMCFanControl/German.lproj/Localizable.strings
+c000000004C261451000000000000043E
+t1277563985
+s1086
+
+N/Users/Michael/Desktop/SMCFanControl/German.lproj/MainMenu.nib
+c000000004C274A4400000000000000AA
+t1277643332
+s170
+
+N/Users/Michael/Desktop/SMCFanControl/MachineDefaults.h
+c000000004C261453000000000000047A
+t1277563987
+s1146
+i<Cocoa/Cocoa.h>
+i<smcWrapper.h>
+
+N/Users/Michael/Desktop/SMCFanControl/MachineDefaults.m
+c000000004C3FF6C50000000000001421
+t1279260357
+s5153
+i"MachineDefaults.h"
+
+N/Users/Michael/Desktop/SMCFanControl/Power.h
+c000000004C26145300000000000006FE
+t1277563987
+s1790
+i<Cocoa/Cocoa.h>
+i<IOKit/IOKitLib.h>
+i<IOKit/ps/IOPSKeys.h>
+i<IOKit/ps/IOPowerSources.h>
+i<IOKit/pwr_mgt/IOPMLib.h>
+i<IOKit/IOMessage.h>
+
+N/Users/Michael/Desktop/SMCFanControl/Power.m
+c000000004C3FF92D0000000000001464
+t1279260973
+s5220
+i"Power.h"
+
+N/Users/Michael/Desktop/SMCFanControl/Spanish.lproj/InfoPlist.strings
+c000000004C26145100000000000000E6
+t1277563985
+s230
+
+N/Users/Michael/Desktop/SMCFanControl/Spanish.lproj/Localizable.strings
+c000000004C26145100000000000003D7
+t1277563985
+s983
+
+N/Users/Michael/Desktop/SMCFanControl/StatusItemWindow.h
+c000000004C26145300000000000003BF
+t1277563987
+s959
+i<Cocoa/Cocoa.h>
+
+N/Users/Michael/Desktop/SMCFanControl/StatusItemWindow.m
+c000000004C261453000000000000042F
+t1277563987
+s1071
+i"StatusItemWindow.h"
+
+N/Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app
+t1279449953
+s102
+
+N/Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/Info.plist
+t1279449947
+s1126
+
+N/Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/MacOS/smcK-Stat-i
+t1279449953
+s76136
+
+N/Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/PkgInfo
+t1279449947
+s8
+
+N/Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/Resources/English.lproj/F.A.Q.rtf
+t1279257807
+s8308
+
+N/Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/Resources/English.lproj/InfoPlist.strings
+t1279449947
+s230
+
+N/Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/Resources/English.lproj/Localizable.strings
+t1279449947
+s0
+
+N/Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/Resources/English.lproj/MainMenu.nib
+t1279449947
+s58302
+
+N/Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/Resources/German.lproj/Localizable.strings
+t1279257807
+s2160
+
+N/Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/Resources/German.lproj/MainMenu.nib
+t1279257807
+s64808
+
+N/Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/Resources/Spanish.lproj/InfoPlist.strings
+t1279257807
+s230
+
+N/Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/Resources/Spanish.lproj/Localizable.strings
+t1279257807
+s1954
+
+N/Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/Resources/smc
+t1279449947
+s18292
+
+N/Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/Resources/smc.png
+t1279449947
+s3575
+
+N/Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/Resources/smc_loginitem.scpt
+t1279449947
+s1778
+
+N/Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/Resources/smc_loginitem_remove.scpt
+t1279449947
+s1126
+
+N/Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/Resources/smcfancontrol_v2.icns
+t1279449947
+s55892
+
+N/Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/Resources/smcover.png
+t1279449947
+s3165
+
+N/Users/Michael/Desktop/SMCFanControl/build/K-Stat-i.build/Debug/K-Stat-i.build/Objects-normal/i386/FanControl.o
+t1279449949
+s94268
+
+N/Users/Michael/Desktop/SMCFanControl/build/K-Stat-i.build/Debug/K-Stat-i.build/Objects-normal/i386/MachineDefaults.o
+t1279449952
+s15800
+
+N/Users/Michael/Desktop/SMCFanControl/build/K-Stat-i.build/Debug/K-Stat-i.build/Objects-normal/i386/Power.o
+t1279449952
+s17724
+
+N/Users/Michael/Desktop/SMCFanControl/build/K-Stat-i.build/Debug/K-Stat-i.build/Objects-normal/i386/StatusItemWindow.o
+t1279449950
+s15492
+
+N/Users/Michael/Desktop/SMCFanControl/build/K-Stat-i.build/Debug/K-Stat-i.build/Objects-normal/i386/main.o
+t1279449949
+s4852
+
+N/Users/Michael/Desktop/SMCFanControl/build/K-Stat-i.build/Debug/K-Stat-i.build/Objects-normal/i386/smc.o
+t1279449948
+s23920
+
+N/Users/Michael/Desktop/SMCFanControl/build/K-Stat-i.build/Debug/K-Stat-i.build/Objects-normal/i386/smcK-Stat-i.LinkFileList
+c000000004C42DB5B0000000000000309
+t1279449947
+s777
+
+N/Users/Michael/Desktop/SMCFanControl/build/K-Stat-i.build/Debug/K-Stat-i.build/Objects-normal/i386/smcWrapper.o
+t1279449951
+s16864
+
+N/Users/Michael/Desktop/SMCFanControl/main.m
+c000000004C26145300000000000003CB
+t1277563987
+s971
+i<Cocoa/Cocoa.h>
+i"smc.h"
+
+N/Users/Michael/Desktop/SMCFanControl/smc
+c000000004C2614530000000000004774
+t1277563987
+s18292
+
+N/Users/Michael/Desktop/SMCFanControl/smc.c
+c000000004C2614530000000000003A2D
+t1277563987
+s14893
+i<unistd.h>
+i<stdio.h>
+i<stdlib.h>
+i<string.h>
+i<IOKit/IOKitLib.h>
+i"smc.h"
+
+N/Users/Michael/Desktop/SMCFanControl/smc.h
+c000000004C2614530000000000000B87
+t1277563987
+s2951
+
+N/Users/Michael/Desktop/SMCFanControl/smc.png
+c000000004C2614530000000000000DF7
+t1277563987
+s3575
+
+N/Users/Michael/Desktop/SMCFanControl/smcWrapper.h
+c000000004C2849540000000000000580
+t1277708628
+s1408
+i<openssl/evp.h>
+i<Cocoa/Cocoa.h>
+i<smc.h>
+i<MachineDefaults.h>
+
+N/Users/Michael/Desktop/SMCFanControl/smcWrapper.m
+c000000004C2849540000000000001500
+t1277708628
+s5376
+i"smcWrapper.h"
+
+N/Users/Michael/Desktop/SMCFanControl/smc_loginitem.scpt
+c000000004C26145300000000000006F2
+t1277563987
+s1778
+
+N/Users/Michael/Desktop/SMCFanControl/smc_loginitem_remove.scpt
+c000000004C2614530000000000000466
+t1277563987
+s1126
+
+N/Users/Michael/Desktop/SMCFanControl/smcfancontrol_v2.icns
+c000000004C261453000000000000DA54
+t1277563987
+s55892
+
+N/Users/Michael/Desktop/SMCFanControl/smcover.png
+c000000004C2614530000000000000C5D
+t1277563987
+s3165
+
+N/usr/lib/libcrypto.dylib
+c000000004BF33D1A0000000000430B60
+t1274232090
+s4393824
+
+N/usr/lib/libssl.dylib
+c000000004BF33D1E00000000000E38C0
+t1274232094
+s932032
+
+NInfo.plist
+c000000004C2844DD0000000000000466
+t1277707485
+s1126
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies301142754#301142754#0(0"0(0#1#0"4300911832#0"0#
+
+CCompileC build/K-Stat-i.build/Debug/K-Stat-i.build/Objects-normal/i386/FanControl.o /Users/Michael/Desktop/SMCFanControl/FanControl.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s301142748.123205
+e301142749.931665
+r1
+xCompileC
+xbuild/K-Stat-i.build/Debug/K-Stat-i.build/Objects-normal/i386/FanControl.o
+x/Users/Michael/Desktop/SMCFanControl/FanControl.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/Michael/Desktop/SMCFanControl/FanControl.m: In function '-[FanControl delete_favorite:]':
+o/Users/Michael/Desktop/SMCFanControl/FanControl.m:300: warning: 'NSRunCriticalAlertPanelRelativeToWindow' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSPanel.h:26)
+o/Users/Michael/Desktop/SMCFanControl/FanControl.m: In function '-[FanControl readFanData:]':
+o/Users/Michael/Desktop/SMCFanControl/FanControl.m:321: warning: unused variable 'n'
+o/Users/Michael/Desktop/SMCFanControl/FanControl.m: In function '+[FanControl setRights]':
+o/Users/Michael/Desktop/SMCFanControl/FanControl.m:753: warning: 'fileAttributesAtPath:traverseLink:' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSFileManager.h:162)
+lSLF07#2@57"Compile /Users/Michael/Desktop/SMCFanControl/FanControl.m301142748#301142749#0(828"/Users/Michael/Desktop/SMCFanControl/FanControl.m: In function '-[FanControl delete_favorite:]':/Users/Michael/Desktop/SMCFanControl/FanControl.m:300: warning: 'NSRunCriticalAlertPanelRelativeToWindow' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSPanel.h:26)/Users/Michael/Desktop/SMCFanControl/FanControl.m: In function '-[FanControl readFanData:]':/Users/Michael/Desktop/SMCFanControl/FanControl.m:321: warning: unused variable 'n'/Users/Michael/Desktop/SMCFanControl/FanControl.m: In function '+[FanControl setRights]':/Users/Michael/Desktop/SMCFanControl/FanControl.m:753: warning: 'fileAttributesAtPath:traverseLink:' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSFileManager.h:162)3(22@164"'NSRunCriticalAlertPanelRelativeToWindow' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSPanel.h:26)301142749#97#229#0(6@49"/Users/Michael/Desktop/SMCFanControl/FanControl.m300955432#300#0#300#0#33"'*' is deprecated (declared at *)0(22@19"Unused variable 'n'301142749#419#84#0(6@49"/Users/Michael/Desktop/SMCFanControl/FanControl.m300955432#321#0#321#0#19"unused variable '*'0(22@170"'fileAttributesAtPath:traverseLink:' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSFileManager.h:162)301142749#593#235#0(6@49"/Users/Michael/Desktop/SMCFanControl/FanControl.m300955432#753#0#753#0#33"'*' is deprecated (declared at *)0(0#0#49"/Users/Michael/Desktop/SMCFanControl/FanControl.m4300911832#965"    cd /Users/Michael/Desktop/SMCFanControl    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -I/Users/Michael/Desktop/SMCFanControl/build/K-Stat-i.build/Debug/K-Stat-i.build/smcK-Stat-i.hmap -F/Users/Michael/Desktop/SMCFanControl/build/Debug -F/Users/Michael/Desktop/SMCFanControl -I/Users/Michael/Desktop/SMCFanControl/build/Debug/include -I/Users/Michael/Desktop/SMCFanControl/build/K-Stat-i.build/Debug/K-Stat-i.build/DerivedSources/i386 -I/Users/Michael/Desktop/SMCFanControl/build/K-Stat-i.build/Debug/K-Stat-i.build/DerivedSources -fnested-functions -c /Users/Michael/Desktop/SMCFanControl/FanControl.m -o /Users/Michael/Desktop/SMCFanControl/build/K-Stat-i.build/Debug/K-Stat-i.build/Objects-normal/i386/FanControl.o0#
+
+CCompileC build/K-Stat-i.build/Debug/K-Stat-i.build/Objects-normal/i386/MachineDefaults.o /Users/Michael/Desktop/SMCFanControl/MachineDefaults.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s301142751.317254
+e301142752.793298
+r1
+xCompileC
+xbuild/K-Stat-i.build/Debug/K-Stat-i.build/Objects-normal/i386/MachineDefaults.o
+x/Users/Michael/Desktop/SMCFanControl/MachineDefaults.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@62"Compile /Users/Michael/Desktop/SMCFanControl/MachineDefaults.m301142751#301142752#0(0"0(0#0#54"/Users/Michael/Desktop/SMCFanControl/MachineDefaults.m4300911832#975"    cd /Users/Michael/Desktop/SMCFanControl    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -I/Users/Michael/Desktop/SMCFanControl/build/K-Stat-i.build/Debug/K-Stat-i.build/smcK-Stat-i.hmap -F/Users/Michael/Desktop/SMCFanControl/build/Debug -F/Users/Michael/Desktop/SMCFanControl -I/Users/Michael/Desktop/SMCFanControl/build/Debug/include -I/Users/Michael/Desktop/SMCFanControl/build/K-Stat-i.build/Debug/K-Stat-i.build/DerivedSources/i386 -I/Users/Michael/Desktop/SMCFanControl/build/K-Stat-i.build/Debug/K-Stat-i.build/DerivedSources -fnested-functions -c /Users/Michael/Desktop/SMCFanControl/MachineDefaults.m -o /Users/Michael/Desktop/SMCFanControl/build/K-Stat-i.build/Debug/K-Stat-i.build/Objects-normal/i386/MachineDefaults.o0#
+
+CCompileC build/K-Stat-i.build/Debug/K-Stat-i.build/Objects-normal/i386/Power.o /Users/Michael/Desktop/SMCFanControl/Power.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s301142750.757958
+e301142752.237419
+r1
+xCompileC
+xbuild/K-Stat-i.build/Debug/K-Stat-i.build/Objects-normal/i386/Power.o
+x/Users/Michael/Desktop/SMCFanControl/Power.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@52"Compile /Users/Michael/Desktop/SMCFanControl/Power.m301142750#301142752#0(0"0(0#0#44"/Users/Michael/Desktop/SMCFanControl/Power.m4300911832#955"    cd /Users/Michael/Desktop/SMCFanControl    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -I/Users/Michael/Desktop/SMCFanControl/build/K-Stat-i.build/Debug/K-Stat-i.build/smcK-Stat-i.hmap -F/Users/Michael/Desktop/SMCFanControl/build/Debug -F/Users/Michael/Desktop/SMCFanControl -I/Users/Michael/Desktop/SMCFanControl/build/Debug/include -I/Users/Michael/Desktop/SMCFanControl/build/K-Stat-i.build/Debug/K-Stat-i.build/DerivedSources/i386 -I/Users/Michael/Desktop/SMCFanControl/build/K-Stat-i.build/Debug/K-Stat-i.build/DerivedSources -fnested-functions -c /Users/Michael/Desktop/SMCFanControl/Power.m -o /Users/Michael/Desktop/SMCFanControl/build/K-Stat-i.build/Debug/K-Stat-i.build/Objects-normal/i386/Power.o0#
+
+CCompileC build/K-Stat-i.build/Debug/K-Stat-i.build/Objects-normal/i386/StatusItemWindow.o /Users/Michael/Desktop/SMCFanControl/StatusItemWindow.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s301142749.322072
+e301142750.757830
+r1
+xCompileC
+xbuild/K-Stat-i.build/Debug/K-Stat-i.build/Objects-normal/i386/StatusItemWindow.o
+x/Users/Michael/Desktop/SMCFanControl/StatusItemWindow.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@63"Compile /Users/Michael/Desktop/SMCFanControl/StatusItemWindow.m301142749#301142750#0(0"0(0#0#55"/Users/Michael/Desktop/SMCFanControl/StatusItemWindow.m4300911832#977"    cd /Users/Michael/Desktop/SMCFanControl    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -I/Users/Michael/Desktop/SMCFanControl/build/K-Stat-i.build/Debug/K-Stat-i.build/smcK-Stat-i.hmap -F/Users/Michael/Desktop/SMCFanControl/build/Debug -F/Users/Michael/Desktop/SMCFanControl -I/Users/Michael/Desktop/SMCFanControl/build/Debug/include -I/Users/Michael/Desktop/SMCFanControl/build/K-Stat-i.build/Debug/K-Stat-i.build/DerivedSources/i386 -I/Users/Michael/Desktop/SMCFanControl/build/K-Stat-i.build/Debug/K-Stat-i.build/DerivedSources -fnested-functions -c /Users/Michael/Desktop/SMCFanControl/StatusItemWindow.m -o /Users/Michael/Desktop/SMCFanControl/build/K-Stat-i.build/Debug/K-Stat-i.build/Objects-normal/i386/StatusItemWindow.o0#
+
+CCompileC build/K-Stat-i.build/Debug/K-Stat-i.build/Objects-normal/i386/main.o /Users/Michael/Desktop/SMCFanControl/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s301142747.816716
+e301142749.321761
+r1
+xCompileC
+xbuild/K-Stat-i.build/Debug/K-Stat-i.build/Objects-normal/i386/main.o
+x/Users/Michael/Desktop/SMCFanControl/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@51"Compile /Users/Michael/Desktop/SMCFanControl/main.m301142747#301142749#0(0"0(0#0#43"/Users/Michael/Desktop/SMCFanControl/main.m4300911832#953"    cd /Users/Michael/Desktop/SMCFanControl    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -I/Users/Michael/Desktop/SMCFanControl/build/K-Stat-i.build/Debug/K-Stat-i.build/smcK-Stat-i.hmap -F/Users/Michael/Desktop/SMCFanControl/build/Debug -F/Users/Michael/Desktop/SMCFanControl -I/Users/Michael/Desktop/SMCFanControl/build/Debug/include -I/Users/Michael/Desktop/SMCFanControl/build/K-Stat-i.build/Debug/K-Stat-i.build/DerivedSources/i386 -I/Users/Michael/Desktop/SMCFanControl/build/K-Stat-i.build/Debug/K-Stat-i.build/DerivedSources -fnested-functions -c /Users/Michael/Desktop/SMCFanControl/main.m -o /Users/Michael/Desktop/SMCFanControl/build/K-Stat-i.build/Debug/K-Stat-i.build/Objects-normal/i386/main.o0#
+
+CCompileC build/K-Stat-i.build/Debug/K-Stat-i.build/Objects-normal/i386/smc.o /Users/Michael/Desktop/SMCFanControl/smc.c normal i386 c com.apple.compilers.gcc.4_2
+s301142747.819147
+e301142748.122980
+r1
+xCompileC
+xbuild/K-Stat-i.build/Debug/K-Stat-i.build/Objects-normal/i386/smc.o
+x/Users/Michael/Desktop/SMCFanControl/smc.c
+xnormal
+xi386
+xc
+xcom.apple.compilers.gcc.4_2
+o/Users/Michael/Desktop/SMCFanControl/smc.c: In function 'SMCCall':
+o/Users/Michael/Desktop/SMCFanControl/smc.c:170: warning: 'IOConnectMethodStructureIStructureO' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/IOKit.framework/Headers/IOKitLib.h:1402)
+o/Users/Michael/Desktop/SMCFanControl/smc.c: In function 'SMCCall2':
+o/Users/Michael/Desktop/SMCFanControl/smc.c:187: warning: 'IOConnectMethodStructureIStructureO' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/IOKit.framework/Headers/IOKitLib.h:1402)
+lSLF07#2@50"Compile /Users/Michael/Desktop/SMCFanControl/smc.c301142747#301142748#0(575"/Users/Michael/Desktop/SMCFanControl/smc.c: In function 'SMCCall':/Users/Michael/Desktop/SMCFanControl/smc.c:170: warning: 'IOConnectMethodStructureIStructureO' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/IOKit.framework/Headers/IOKitLib.h:1402)/Users/Michael/Desktop/SMCFanControl/smc.c: In function 'SMCCall2':/Users/Michael/Desktop/SMCFanControl/smc.c:187: warning: 'IOConnectMethodStructureIStructureO' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/IOKit.framework/Headers/IOKitLib.h:1402)2(22@162"'IOConnectMethodStructureIStructureO' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/IOKit.framework/Headers/IOKitLib.h:1402)301142748#67#220#0(6@42"/Users/Michael/Desktop/SMCFanControl/smc.c299256787#170#0#170#0#33"'*' is deprecated (declared at *)0(22@162"'IOConnectMethodStructureIStructureO' is deprecated (declared at /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/IOKit.framework/Headers/IOKitLib.h:1402)301142748#355#220#0(6@42"/Users/Michael/Desktop/SMCFanControl/smc.c299256787#187#0#187#0#33"'*' is deprecated (declared at *)0(0#0#42"/Users/Michael/Desktop/SMCFanControl/smc.c4300911832#941"    cd /Users/Michael/Desktop/SMCFanControl    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -I/Users/Michael/Desktop/SMCFanControl/build/K-Stat-i.build/Debug/K-Stat-i.build/smcK-Stat-i.hmap -F/Users/Michael/Desktop/SMCFanControl/build/Debug -F/Users/Michael/Desktop/SMCFanControl -I/Users/Michael/Desktop/SMCFanControl/build/Debug/include -I/Users/Michael/Desktop/SMCFanControl/build/K-Stat-i.build/Debug/K-Stat-i.build/DerivedSources/i386 -I/Users/Michael/Desktop/SMCFanControl/build/K-Stat-i.build/Debug/K-Stat-i.build/DerivedSources -fnested-functions -c /Users/Michael/Desktop/SMCFanControl/smc.c -o /Users/Michael/Desktop/SMCFanControl/build/K-Stat-i.build/Debug/K-Stat-i.build/Objects-normal/i386/smc.o0#
+
+CCompileC build/K-Stat-i.build/Debug/K-Stat-i.build/Objects-normal/i386/smcWrapper.o /Users/Michael/Desktop/SMCFanControl/smcWrapper.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s301142749.931813
+e301142751.317032
+r1
+xCompileC
+xbuild/K-Stat-i.build/Debug/K-Stat-i.build/Objects-normal/i386/smcWrapper.o
+x/Users/Michael/Desktop/SMCFanControl/smcWrapper.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/Michael/Desktop/SMCFanControl/smcWrapper.m: In function '+[smcWrapper init]':
+o/Users/Michael/Desktop/SMCFanControl/smcWrapper.m:30: warning: conflicting types for '+(void)init'
+o/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSObject.h:72: warning: previous declaration of '+(id)init'
+lSLF07#2@57"Compile /Users/Michael/Desktop/SMCFanControl/smcWrapper.m301142749#301142751#0(330"/Users/Michael/Desktop/SMCFanControl/smcWrapper.m: In function '+[smcWrapper init]':/Users/Michael/Desktop/SMCFanControl/smcWrapper.m:30: warning: conflicting types for '+(void)init'/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSObject.h:72: warning: previous declaration of '+(id)init'2(22@35"Conflicting types for '+(void)init'301142751#85#99#0(6@49"/Users/Michael/Desktop/SMCFanControl/smcWrapper.m299401428#30#0#30#0#25"conflicting types for '*'0(22@35"Previous declaration of '+(id)init'301142751#184#146#0(6@96"/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSObject.h275374505#72#0#72#0#0"0(0#0#49"/Users/Michael/Desktop/SMCFanControl/smcWrapper.m4300911832#965"    cd /Users/Michael/Desktop/SMCFanControl    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -I/Users/Michael/Desktop/SMCFanControl/build/K-Stat-i.build/Debug/K-Stat-i.build/smcK-Stat-i.hmap -F/Users/Michael/Desktop/SMCFanControl/build/Debug -F/Users/Michael/Desktop/SMCFanControl -I/Users/Michael/Desktop/SMCFanControl/build/Debug/include -I/Users/Michael/Desktop/SMCFanControl/build/K-Stat-i.build/Debug/K-Stat-i.build/DerivedSources/i386 -I/Users/Michael/Desktop/SMCFanControl/build/K-Stat-i.build/Debug/K-Stat-i.build/DerivedSources -fnested-functions -c /Users/Michael/Desktop/SMCFanControl/smcWrapper.m -o /Users/Michael/Desktop/SMCFanControl/build/K-Stat-i.build/Debug/K-Stat-i.build/Objects-normal/i386/smcWrapper.o0#
+
+CCopyStringsFile /Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
+s301142747.440886
+e301142747.672213
+r1
+xCopyStringsFile
+x/Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/Resources/English.lproj/InfoPlist.strings
+xEnglish.lproj/InfoPlist.strings
+lSLF07#2@36"Copy English.lproj/InfoPlist.strings301142747#301142747#0(0"0(0#0#68"/Users/Michael/Desktop/SMCFanControl/English.lproj/InfoPlist.strings4300911832#366"    cd /Users/Michael/Desktop/SMCFanControl    setenv ICONV /usr/bin/iconv    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings --validate --inputencoding utf-16 --outputencoding UTF-16 English.lproj/InfoPlist.strings --outdir /Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/Resources/English.lproj0#
+
+CCopyStringsFile /Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/Resources/English.lproj/Localizable.strings English.lproj/Localizable.strings
+s301142747.539851
+e301142747.669743
+r1
+xCopyStringsFile
+x/Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/Resources/English.lproj/Localizable.strings
+xEnglish.lproj/Localizable.strings
+oEnglish.lproj/Localizable.strings: Cannot parse a NULL or zero-length data
+lSLF07#2@38"Copy English.lproj/Localizable.strings301142747#301142747#0(75"English.lproj/Localizable.strings: Cannot parse a NULL or zero-length data0(0#0#70"/Users/Michael/Desktop/SMCFanControl/English.lproj/Localizable.strings4300911832#368"    cd /Users/Michael/Desktop/SMCFanControl    setenv ICONV /usr/bin/iconv    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings --validate --inputencoding utf-16 --outputencoding UTF-16 English.lproj/Localizable.strings --outdir /Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/Resources/English.lproj0#
+
+CCopyStringsFile /Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/Resources/German.lproj/Localizable.strings German.lproj/Localizable.strings
+s300950607.101548
+e300950607.202381
+r1
+xCopyStringsFile
+x/Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/Resources/German.lproj/Localizable.strings
+xGerman.lproj/Localizable.strings
+lSLF07#2@37"Copy German.lproj/Localizable.strings300950607#300950607#0(0"0(0#0#69"/Users/Michael/Desktop/SMCFanControl/German.lproj/Localizable.strings4300911832#365"    cd /Users/Michael/Desktop/SMCFanControl    setenv ICONV /usr/bin/iconv    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings --validate --inputencoding utf-8 --outputencoding UTF-16 German.lproj/Localizable.strings --outdir /Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/Resources/German.lproj0#
+
+CCopyStringsFile /Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/Resources/Spanish.lproj/InfoPlist.strings Spanish.lproj/InfoPlist.strings
+s300950606.945526
+e300950607.093185
+r1
+xCopyStringsFile
+x/Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/Resources/Spanish.lproj/InfoPlist.strings
+xSpanish.lproj/InfoPlist.strings
+oSpanish.lproj/InfoPlist.strings: warning: the specified encoding is utf-8, but file contents appear to be UTF-16; treating as UTF-16
+lSLF07#2@36"Copy Spanish.lproj/InfoPlist.strings300950606#300950607#0(133"Spanish.lproj/InfoPlist.strings: warning: the specified encoding is utf-8, but file contents appear to be UTF-16; treating as UTF-160(0#0#68"/Users/Michael/Desktop/SMCFanControl/Spanish.lproj/InfoPlist.strings4300911832#365"    cd /Users/Michael/Desktop/SMCFanControl    setenv ICONV /usr/bin/iconv    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings --validate --inputencoding utf-8 --outputencoding UTF-16 Spanish.lproj/InfoPlist.strings --outdir /Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/Resources/Spanish.lproj0#
+
+CCopyStringsFile /Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/Resources/Spanish.lproj/Localizable.strings Spanish.lproj/Localizable.strings
+s300950607.139341
+e300950607.202679
+r1
+xCopyStringsFile
+x/Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/Resources/Spanish.lproj/Localizable.strings
+xSpanish.lproj/Localizable.strings
+lSLF07#2@38"Copy Spanish.lproj/Localizable.strings300950607#300950607#0(0"0(0#0#70"/Users/Michael/Desktop/SMCFanControl/Spanish.lproj/Localizable.strings4300911832#367"    cd /Users/Michael/Desktop/SMCFanControl    setenv ICONV /usr/bin/iconv    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings --validate --inputencoding utf-8 --outputencoding UTF-16 Spanish.lproj/Localizable.strings --outdir /Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/Resources/Spanish.lproj0#
+
+CCpResource build/Debug/smcK-Stat-i.app/Contents/Resources/English.lproj/F.A.Q.rtf English.lproj/F.A.Q.rtf
+s300950607.372249
+e300950607.393290
+r1
+xCpResource
+xbuild/Debug/smcK-Stat-i.app/Contents/Resources/English.lproj/F.A.Q.rtf
+xEnglish.lproj/F.A.Q.rtf
+lSLF07#2@28"Copy English.lproj/F.A.Q.rtf300950607#300950607#0(0"0(0#0#60"/Users/Michael/Desktop/SMCFanControl/English.lproj/F.A.Q.rtf4300911832#351"    cd /Users/Michael/Desktop/SMCFanControl    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/Michael/Desktop/SMCFanControl/English.lproj/F.A.Q.rtf /Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/Resources/English.lproj0#
+
+CCpResource build/Debug/smcK-Stat-i.app/Contents/Resources/smc smc
+s301142747.537664
+e301142747.550734
+r1
+xCpResource
+xbuild/Debug/smcK-Stat-i.app/Contents/Resources/smc
+xsmc
+lSLF07#2@8"Copy smc301142747#301142747#0(0"0(0#0#40"/Users/Michael/Desktop/SMCFanControl/smc32651513917866068#317"    cd /Users/Michael/Desktop/SMCFanControl    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/Michael/Desktop/SMCFanControl/smc /Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/Resources0#
+
+CCpResource build/Debug/smcK-Stat-i.app/Contents/Resources/smc.png smc.png
+s301142747.679353
+e301142747.700667
+r1
+xCpResource
+xbuild/Debug/smcK-Stat-i.app/Contents/Resources/smc.png
+xsmc.png
+lSLF07#2@12"Copy smc.png301142747#301142747#0(0"0(0#0#44"/Users/Michael/Desktop/SMCFanControl/smc.png4300911832#321"    cd /Users/Michael/Desktop/SMCFanControl    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/Michael/Desktop/SMCFanControl/smc.png /Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/Resources0#
+
+CCpResource build/Debug/smcK-Stat-i.app/Contents/Resources/smc_loginitem.scpt smc_loginitem.scpt
+s301142747.438289
+e301142747.528553
+r1
+xCpResource
+xbuild/Debug/smcK-Stat-i.app/Contents/Resources/smc_loginitem.scpt
+xsmc_loginitem.scpt
+lSLF07#2@23"Copy smc_loginitem.scpt301142747#301142747#0(0"0(0#0#55"/Users/Michael/Desktop/SMCFanControl/smc_loginitem.scpt4300911832#332"    cd /Users/Michael/Desktop/SMCFanControl    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/Michael/Desktop/SMCFanControl/smc_loginitem.scpt /Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/Resources0#
+
+CCpResource build/Debug/smcK-Stat-i.app/Contents/Resources/smc_loginitem_remove.scpt smc_loginitem_remove.scpt
+s301142747.439481
+e301142747.537542
+r1
+xCpResource
+xbuild/Debug/smcK-Stat-i.app/Contents/Resources/smc_loginitem_remove.scpt
+xsmc_loginitem_remove.scpt
+lSLF07#2@30"Copy smc_loginitem_remove.scpt301142747#301142747#0(0"0(0#0#62"/Users/Michael/Desktop/SMCFanControl/smc_loginitem_remove.scpt4300911832#339"    cd /Users/Michael/Desktop/SMCFanControl    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/Michael/Desktop/SMCFanControl/smc_loginitem_remove.scpt /Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/Resources0#
+
+CCpResource build/Debug/smcK-Stat-i.app/Contents/Resources/smcfancontrol_v2.icns smcfancontrol_v2.icns
+s301142747.669925
+e301142747.679061
+r1
+xCpResource
+xbuild/Debug/smcK-Stat-i.app/Contents/Resources/smcfancontrol_v2.icns
+xsmcfancontrol_v2.icns
+lSLF07#2@26"Copy smcfancontrol_v2.icns301142747#301142747#0(0"0(0#0#58"/Users/Michael/Desktop/SMCFanControl/smcfancontrol_v2.icns4300911832#335"    cd /Users/Michael/Desktop/SMCFanControl    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/Michael/Desktop/SMCFanControl/smcfancontrol_v2.icns /Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/Resources0#
+
+CCpResource build/Debug/smcK-Stat-i.app/Contents/Resources/smcover.png smcover.png
+s301142747.680503
+e301142747.695950
+r1
+xCpResource
+xbuild/Debug/smcK-Stat-i.app/Contents/Resources/smcover.png
+xsmcover.png
+lSLF07#2@16"Copy smcover.png301142747#301142747#0(0"0(0#0#48"/Users/Michael/Desktop/SMCFanControl/smcover.png4300911832#325"    cd /Users/Michael/Desktop/SMCFanControl    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/Michael/Desktop/SMCFanControl/smcover.png /Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/Resources0#
+
+CLd /Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/MacOS/smcK-Stat-i normal i386
+s301142752.793504
+e301142753.226836
+r1
+xLd
+x/Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/MacOS/smcK-Stat-i
+xnormal
+xi386
+lSLF07#2@96"Link /Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/MacOS/smcK-Stat-i301142752#301142753#0(0"0(0#0#0"4300911832#651"    cd /Users/Michael/Desktop/SMCFanControl    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/Michael/Desktop/SMCFanControl/build/Debug -F/Users/Michael/Desktop/SMCFanControl/build/Debug -F/Users/Michael/Desktop/SMCFanControl -filelist /Users/Michael/Desktop/SMCFanControl/build/K-Stat-i.build/Debug/K-Stat-i.build/Objects-normal/i386/smcK-Stat-i.LinkFileList -mmacosx-version-min=10.6 -framework Cocoa -framework IOKit -framework Security -framework WebKit -lcrypto -lssl -o /Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/MacOS/smcK-Stat-i0#
+
+CProcessInfoPlistFile /Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/Info.plist Info.plist
+s301142747.432904
+e301142747.438143
+r1
+xProcessInfoPlistFile
+x/Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/Info.plist
+xInfo.plist
+lSLF07#2@18"Process Info.plist301142747#301142747#0(0"0(0#0#47"/Users/Michael/Desktop/SMCFanControl/Info.plist30681266385780840#304"    cd /Users/Michael/Desktop/SMCFanControl    builtin-infoPlistUtility Info.plist -genpkginfo /Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/PkgInfo -expandbuildsettings -platform macosx -o /Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/Info.plist0#
+
+CStripNIB /Users/Michael/Desktop/SMCFanControl/English.lproj/MainMenu.nib
+s301142747.670974
+e301142747.816434
+r1
+xStripNIB
+x/Users/Michael/Desktop/SMCFanControl/English.lproj/MainMenu.nib
+lSLF07#2@35"StripNIB English.lproj/MainMenu.nib301142747#301142747#0(0"0(0#0#63"/Users/Michael/Desktop/SMCFanControl/English.lproj/MainMenu.nib4300911832#293"    cd /Users/Michael/Desktop/SMCFanControl    /Developer/usr/bin/ibtool --strip /Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/Resources/English.lproj/MainMenu.nib --output-format human-readable-text /Users/Michael/Desktop/SMCFanControl/English.lproj/MainMenu.nib0#
+
+CStripNIB /Users/Michael/Desktop/SMCFanControl/German.lproj/MainMenu.nib
+s300950607.211379
+e300950607.382827
+r1
+xStripNIB
+x/Users/Michael/Desktop/SMCFanControl/German.lproj/MainMenu.nib
+lSLF07#2@34"StripNIB German.lproj/MainMenu.nib300950607#300950607#0(0"0(0#0#62"/Users/Michael/Desktop/SMCFanControl/German.lproj/MainMenu.nib4300911832#291"    cd /Users/Michael/Desktop/SMCFanControl    /Developer/usr/bin/ibtool --strip /Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app/Contents/Resources/German.lproj/MainMenu.nib --output-format human-readable-text /Users/Michael/Desktop/SMCFanControl/German.lproj/MainMenu.nib0#
+
+CTouch /Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app
+s301142753.227110
+e301142753.231519
+r1
+xTouch
+x/Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app
+lSLF07#2@70"Touch /Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app301142753#301142753#0(0"0(0#0#0"4300911832#131"    cd /Users/Michael/Desktop/SMCFanControl    /usr/bin/touch -c /Users/Michael/Desktop/SMCFanControl/build/Debug/smcK-Stat-i.app0#
+

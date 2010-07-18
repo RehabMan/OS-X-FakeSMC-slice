@@ -1,0 +1,6 @@
+/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Utilities/SMCFanControl/smcWrapper.m: In function '+[smcWrapper init]':
+/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Utilities/SMCFanControl/smcWrapper.m:30: warning: conflicting types for '+(void)init'
+/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSObject.h:72: warning: previous declaration of '+(id)init'
+/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Utilities/SMCFanControl/smcWrapper.m: At top level:
+/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Utilities/SMCFanControl/smcWrapper.m:156: warning: incomplete implementation of class 'smcWrapper'
+/Users/Michael/Desktop/Kernel Extension Programming/FakeSMC/Utilities/SMCFanControl/smcWrapper.m:156: warning: method definition for '+get_mptemp' not found
