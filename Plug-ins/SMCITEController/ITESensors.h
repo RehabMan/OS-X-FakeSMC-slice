@@ -22,8 +22,8 @@ public:
 		m_Offset = offset;
 	};
 	
-	virtual void	OnKeyRead(__unused const char* key, __unused char* data) {};
-	virtual void	OnKeyWrite(__unused const char* key, __unused char* data) {};
+	virtual IOReturn	OnKeyRead(__unused const char* key, __unused char* data) {return kIOReturnInvalid;};
+	virtual IOReturn	OnKeyWrite(__unused const char* key, __unused char* data) {return kIOReturnInvalid;};
 };
 
 class ITETemperatureSensor : public ITESensor 
@@ -34,8 +34,8 @@ public:
 		//
 	};
 	
-	virtual void	OnKeyRead(const char* key, char* data);
-	virtual void	OnKeyWrite(const char* key, char* data);
+	virtual IOReturn	OnKeyRead(const char* key, char* data);
+	virtual IOReturn	OnKeyWrite(const char* key, char* data);
 };
 
 class ITEVoltageSensor : public ITESensor 
@@ -46,8 +46,8 @@ public:
 		//
 	};
 	
-	virtual void	OnKeyRead(const char* key, char* data);
-	virtual void	OnKeyWrite(const char* key, char* data);
+	virtual IOReturn	OnKeyRead(const char* key, char* data);
+	virtual IOReturn	OnKeyWrite(const char* key, char* data);
 };
 
 class ITETachometerSensor : public ITESensor 
@@ -58,6 +58,6 @@ public:
 		//
 	};
 	
-	virtual void	OnKeyRead(const char* key, char* data);
-	virtual void	OnKeyWrite(const char* key, char* data);
+	virtual IOReturn	OnKeyRead(const char* key, char* data);
+	virtual IOReturn	OnKeyWrite(const char* key, char* data);
 };

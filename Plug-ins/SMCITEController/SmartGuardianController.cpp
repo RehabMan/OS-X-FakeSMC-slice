@@ -80,7 +80,7 @@ void SmartGuardianController::Initialize() {
 		
 		
 		
-		if (m_Maximum > initial + 100) {
+		if (m_Maximum > m_Minimum + 100) {
 			value[0] = (m_Minimum << 2) >> 8;
 			value[1] = (m_Minimum << 2) & 0xff;
 					
@@ -106,9 +106,9 @@ void SmartGuardianController::Initialize() {
 	}	
 }
 
-void SmartGuardianController::OnKeyRead(__unused const char* key, __unused char* data){}
+IOReturn SmartGuardianController::OnKeyRead(__unused const char* key, __unused char* data){return kIOReturnSuccess;}
 
-void SmartGuardianController::OnKeyWrite(const char* key, char* data) {
+IOReturn SmartGuardianController::OnKeyWrite(const char* key, char* data) {
 	UInt8 slope;
 	if (m_Maximum>m_Minimum){
 		UInt16 rpm = (UInt16(data[0] << 8) | (data[1] & 0xff)) >> 2;
@@ -131,4 +131,5 @@ void SmartGuardianController::OnKeyWrite(const char* key, char* data) {
 			if (forcekey[1]&(1<<GetIndex(key, 1)))
 				ForcePWM(slope);
 	}
+	return kIOReturnSuccess;
 }

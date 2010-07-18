@@ -42,8 +42,8 @@ public:
 	
 	const char* GetKey() {return m_Key;};
 	
-	virtual void OnKeyRead(__unused const char* key, __unused char* data){};
-	virtual void OnKeyWrite(__unused const char* key, __unused char* data){};
+	virtual IOReturn OnKeyRead(__unused const char* key, __unused char* data){return kIOReturnInvalid;};
+	virtual IOReturn OnKeyWrite(__unused const char* key, __unused char* data){return kIOReturnInvalid;};
 };
 
 #endif

@@ -38,8 +38,8 @@ public:
 	
 	void			Initialize();
 	
-	virtual void	OnKeyRead(const char* key, char* data);
-	virtual void	OnKeyWrite(const char* key, char* data);
+	virtual IOReturn	OnKeyRead(const char* key, char* data);
+	virtual IOReturn	OnKeyWrite(const char* key, char* data);
 };
 
 #endif
