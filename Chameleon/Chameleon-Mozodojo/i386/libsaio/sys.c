@@ -403,7 +403,7 @@ static struct iob * iob_from_fdesc(int fdesc)
         return io;
 }
 
-#if UNUSED
+//#if UNUSED
 //==========================================================================
 // openmem()
 
@@ -425,7 +425,7 @@ int openmem(char * buf, int len)
 
     return fdesc;
 }
-#endif
+//#endif
 
 //==========================================================================
 // open() - Open the file specified by 'path' for reading.
@@ -599,6 +599,62 @@ int read(int fdesc, char * buf, int count)
     io->i_offset += count;
 
     return count;
+}
+
+//==========================================================================
+// write() - Write up to 'count' bytes of data to the file descriptor
+//          from the buffer pointed to by buf.
+
+int write(int fdesc, const char * buf, int count)
+{
+    struct iob * io;
+    
+    if ((io = iob_from_fdesc(fdesc)) == NULL)
+        return (-1);
+	
+    if ((io->i_offset + count) > (unsigned int)io->i_filesize)
+        count = io->i_filesize - io->i_offset;
+	
+    if (count <= 0)
+        return 0;  // end of file
+	
+    bcopy(buf, io->i_buf + io->i_offset, count);
+	
+    io->i_offset += count;
+	
+    return count;
+}
+
+int writebyte(int fdesc, char value)
+{
+    struct iob * io;
+    
+    if ((io = iob_from_fdesc(fdesc)) == NULL)
+        return (-1);
+	
+    if ((io->i_offset + 1) > (unsigned int)io->i_filesize)
+        return 0;  // end of file
+	
+    io->i_buf[io->i_offset++] = value;
+	
+    return 1;
+}
+
+int writeint(int fdesc, int value)
+{
+    struct iob * io;
+    
+    if ((io = iob_from_fdesc(fdesc)) == NULL)
+        return (-1);
+	
+    if ((io->i_offset + 4) > (unsigned int)io->i_filesize)
+        return 0;  // end of file
+	
+    bcopy(&value, io->i_buf + io->i_offset, 4);
+	
+    io->i_offset += 4;
+	
+    return 4;
 }
 
 //==========================================================================
