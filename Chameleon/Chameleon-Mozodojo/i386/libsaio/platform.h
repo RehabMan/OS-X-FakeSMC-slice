@@ -33,6 +33,7 @@ extern void dumpPhysAddr(const char * title, void * a, int len);
 #define CPU_FEATURE_EM64T		0x00000040		// 64Bit Support
 #define CPU_FEATURE_HTT			0x00000080		// HyperThreading
 #define CPU_FEATURE_MOBILE		0x00000100		// Mobile CPU
+#define CPU_FEATURE_MSR			0x00000200		// MSR Support
 
 /* SMBIOS Memory Types */ 
 #define SMB_MEM_TYPE_UNDEFINED		0

@@ -89,6 +89,7 @@
 #define kUseMemDetect		"UseMemDetect"	    /* platform.c */
 #define kRestartFix			"RestartFix"        /* acpi_patcher.c */
 #define kGeneratePStates	"GeneratePStates"	/* acpi_patcher.c */
+#define kGenerateCStates	"GenerateCStates"	/* acpi_patcher.c */
 
 /*
  * Flags to the booter or kernel

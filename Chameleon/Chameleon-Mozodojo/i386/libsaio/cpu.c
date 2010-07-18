@@ -151,6 +151,9 @@ void scan_cpu(PlatformInfo_t *p)
 	if ((bit(29) & p->CPU.CPUID[CPUID_81][3]) != 0) {
 		p->CPU.Features |= CPU_FEATURE_EM64T;
 	}
+	if ((bit(5) & p->CPU.CPUID[CPUID_1][3]) != 0) {
+		p->CPU.Features |= CPU_FEATURE_MSR;
+	}
 	//if ((bit(28) & p->CPU.CPUID[CPUID_1][3]) != 0) {
 	if (p->CPU.NoThreads > p->CPU.NoCores) {
 		p->CPU.Features |= CPU_FEATURE_HTT;
