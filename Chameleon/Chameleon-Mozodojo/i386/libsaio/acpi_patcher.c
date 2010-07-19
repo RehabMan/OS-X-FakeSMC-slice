@@ -190,7 +190,7 @@ int find_next_cpu_pblk(unsigned char* buffer, int length, int start, uint8_t cpu
 	int i;
 	
 	for (i=start; i<length-5; i++) {
-		if (buffer[i] == 'C' && buffer[i+1] == 'P' && buffer[i+2] == 'U' && buffer[i+3] == 0x30+cpun && buffer[i+4] == cpun) {
+		if (buffer[i] == 'C' && buffer[i+1] == 'P' && buffer[i+2] == 'U' && buffer[i+3] == (cpun < 9 ? (0x30+cpun) : (0x31+cpun)) && buffer[i+4] == cpun) {
 			return i+5;
 		}
 	}
@@ -205,22 +205,46 @@ uint32_t read_cpu_pblk(unsigned char* buffer, int offset)
 
 struct acpi_2_ssdt *generate_cst_ssdt(struct acpi_2_fadt* fadt)
 {
-	char ssdt_header[36] =
+	char ssdt_header[] =
 	{
 		0x53, 0x53, 0x44, 0x54, 0xE7, 0x00, 0x00, 0x00, /* SSDT.... */
 		0x01, 0x17, 0x50, 0x6D, 0x52, 0x65, 0x66, 0x41, /* ..PmRefA */
-		0x43, 0x70, 0x75, 0x30, 0x43, 0x73, 0x74, 0x00, /* Cpu0Cst. */
+		0x43, 0x70, 0x75, 0x43, 0x73, 0x74, 0x00, 0x00, /* CpuCst.. */
 		0x00, 0x10, 0x00, 0x00, 0x49, 0x4E, 0x54, 0x4C, /* ....INTL */
 		0x31, 0x03, 0x10, 0x20 							/* 1.._		*/
 	};
 	
-	char chunk_name_body[10] =
+	char chunk_name_body[] =
 	{
 		0x5C, 0x5F, 0x50, 0x52, 0x5F, 0x08, 0x43, 0x53, /* \_PR_.CS */
 		0x54, 0x5F										/* T_		*/
 	};
 	
-	char chunk_alias[21] = 
+	char chunk_c1[] =
+	{
+		0x12, 0x1C, 0x04, 0x11, 0x14, 0x0A, 0x11, 0x82,
+		0x0C, 0x00, 0x7F, 0x01, 0x02, 0x01, 0x00, 0x00,
+		0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x79, 0x00,
+		0x01, 0x01, 0x0B, 0xE8, 0x03 					
+	};
+	
+	char chunk_c2[] =
+	{
+		0x12, 0x1E, 0x04, 0x11, 0x14, 0x0A, 0x11, 0x82,
+		0x0C, 0x00, 0x7F, 0x01, 0x02, 0x01, 0x10, 0x00,
+		0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x79, 0x00,
+		0x0A, 0x02, 0x0A, 0x40, 0x0B, 0xF4, 0x01 					
+	};
+	
+	char chunk_c3[] =
+	{
+		0x12, 0x1F, 0x04, 0x11, 0x14, 0x0A, 0x11, 0x82,
+		0x0C, 0x00, 0x7F, 0x01, 0x02, 0x01, 0x20, 0x00,
+		0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x79, 0x00,
+		0x0A, 0x03, 0x0B, 0x60, 0x03, 0x0B, 0x5E, 0x01
+	};
+		
+	char chunk_alias[] = 
 	{
 		0x10, 0x14, 0x5C, 0x2E, 0x5F, 0x50, 0x52, 0x5F, /* ..\._PR_ */
 		0x43, 0x50, 0x55, 0x30, 0x06, 0x43, 0x53, 0x54, /* CPU0.CST */
@@ -238,26 +262,123 @@ struct acpi_2_ssdt *generate_cst_ssdt(struct acpi_2_fadt* fadt)
 		verbose ("DSDT not found: C-States will not be generated !!!\n");
 		return NULL;
 	}
-
-	int i, offset = 0;
+	
+	int i, offset = 0, cpu_count = 0;
 	
 	for (i = 0; i < 32; i++) {
 		offset = find_next_cpu_pblk((void*)dsdt, dsdt->Length, offset, i);
 		if (offset != -1)
-		{
-			uint32_t cpu_pblk = read_cpu_pblk((void*)dsdt, offset);
-			
-			DBG("Found CPU%X P_BLK: 0x%x\n", i, cpu_pblk);
-			
-			// Generating SSDT
-			
-			// here
+		{			
+			DBG("Found CPU%X (from DSDT)\n", i);
+			cpu_count = i + 1;
 		}
 		else {
 			break;
 		}
 	}
+	
+	if (cpu_count > 0) {
+		bool c2_enabled = fadt->C2_Latency < 100, c3_enabled = fadt->C3_Latency < 1000;
 		
+		// Setup C2 Latency
+		if (c2_enabled)
+			chunk_c2[27] = fadt->C2_Latency & 0xff;
+		
+		// Setup C3 Latency
+		if (c3_enabled) {
+			chunk_c3[27] = fadt->C3_Latency & 0xff;
+			chunk_c3[28] = (fadt->C3_Latency >> 8) & 0xff;
+		}
+		
+		// Generating SSDT
+		uint32_t package_length = 
+			4 +
+			sizeof(chunk_c1) + 
+			c2_enabled * sizeof(chunk_c2) +
+			c3_enabled * sizeof(chunk_c3);
+		
+		if (package_length > 0x3f) 
+			package_length++;
+		
+		uint32_t name_length = 
+			1 +
+			sizeof(chunk_name_body) + 
+			1 + package_length;
+		
+		if (name_length > 0x3f) 
+			name_length++;
+		
+		uint32_t ssdt_size = 
+			sizeof(ssdt_header) + 
+			1 + name_length +
+			cpu_count * sizeof(chunk_alias);
+		
+		struct acpi_2_ssdt *ssdt = (void*)AllocateKernelMemory(ssdt_size);
+		int fd = openmem((char*)ssdt, ssdt_size);
+
+		// Header
+		write(fd, ssdt_header, sizeof(ssdt_header));
+		
+		// Scope (\_PR) { Name (CST
+		writebyte(fd, 0x10); // id
+		if (name_length > 0x3f) 
+		{
+			writebyte(fd, 0x40 | (name_length & 0xf)); // lo half-byte
+			writebyte(fd, name_length >> 4); // hi byte
+		}
+		else 
+		{
+			writebyte(fd, name_length); // length
+		}
+		write(fd, chunk_name_body, sizeof(chunk_name_body));
+		
+		//Package (0x04) { 0x03,
+		writebyte(fd, 0x12); // id
+		if (package_length > 0x3f) 
+		{
+			writebyte(fd, 0x40 | (package_length & 0xf)); // lo half-byte
+			writebyte(fd, package_length >> 4); // hi byte
+		}
+		else 
+		{
+			writebyte(fd, package_length); // length
+		}
+		uint8_t cstates_count = 1 + c2_enabled + c3_enabled;
+		writebyte(fd, cstates_count + 1);
+		writebyte(fd, 0x0A); // first entry - number of c-states
+		writebyte(fd, cstates_count);
+		
+		// C1
+		write(fd, chunk_c1, sizeof(chunk_c1));
+		
+		// C2
+		if (c2_enabled) 
+			write(fd, chunk_c2, sizeof(chunk_c2));
+		
+		// C3
+		if (c3_enabled) 
+			write(fd, chunk_c3, sizeof(chunk_c3));
+		
+		// Write aliases
+		for (i = 0; i < cpu_count; i++) {
+			chunk_alias[11] = (i < 10 ? (0x30 + i) : (0x31 + i));
+			write(fd, chunk_alias, sizeof(chunk_alias));
+		}
+		
+		close(fd);
+		
+		ssdt->Length = ssdt_size;
+		ssdt->Checksum = 0;
+		ssdt->Checksum = 256 - checksum8(ssdt, ssdt->Length);
+		
+		dumpPhysAddr("C-States SSDT content: ", ssdt, ssdt_size);
+		
+		return ssdt;
+	}
+	else {
+		verbose ("DSDT CPUs not found: C-States will not be generated !!!\n");
+	}
+
 	return NULL;
 }
 
@@ -741,6 +862,10 @@ int setupAcpi(void)
 					fadt_mod = patch_fadt(fadt, new_dsdt);
 					rsdt_entries[i-dropoffset]=(uint32_t)fadt_mod;
 					
+					// Generate _CST SSDT
+					if (generate_cstates && (new_ssdt[ssdt_count] = generate_cst_ssdt(fadt_mod))) 
+						ssdt_count++;
+					
 					continue;
 				}
 			}
@@ -838,6 +963,10 @@ int setupAcpi(void)
 						xsdt_entries[i-dropoffset]=(uint32_t)fadt_mod;
 						
 						DBG("TABLE %c%c%c%c@%x,",table[0],table[1],table[2],table[3],xsdt_entries[i]);
+						
+						// Generate _CST SSDT
+						if (generate_cstates && (new_ssdt[ssdt_count] = generate_cst_ssdt(fadt_mod))) 
+							ssdt_count++;
 						
 						continue;
 					}
