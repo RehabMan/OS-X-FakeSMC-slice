@@ -13,7 +13,7 @@
 #include "cpu.h"
 
 #ifndef DEBUG_ACPI
-#define DEBUG_ACPI 1
+#define DEBUG_ACPI 0
 #endif
 
 #if DEBUG_ACPI==2
@@ -371,7 +371,7 @@ struct acpi_2_ssdt *generate_cst_ssdt(struct acpi_2_fadt* fadt)
 		ssdt->Checksum = 0;
 		ssdt->Checksum = 256 - checksum8(ssdt, ssdt->Length);
 		
-		dumpPhysAddr("C-States SSDT content: ", ssdt, ssdt_size);
+		//dumpPhysAddr("C-States SSDT content: ", ssdt, ssdt_size);
 		
 		return ssdt;
 	}
