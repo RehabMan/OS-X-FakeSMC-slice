@@ -199,8 +199,8 @@ const char * getDDRPartNum(const char* spd)
         for (i=0; i<32; i++) {
             if (isalpha(sPart[i]) || isdigit(sPart[i])) // It seems that System Profiler likes only letters and digits...
 				asciiPartNo[index++] = sPart[i];
-			//else if (!isspace(sPart[i]))
-			//	break;
+			else if (!isascii(sPart[i]))
+				break;
 		}
 		
 		return strdup(asciiPartNo);
