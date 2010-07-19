@@ -818,9 +818,9 @@ void scanDisks(int biosdev, int *count)
 
 BVRef selectBootVolume( BVRef chain )
 {
-  bool filteredChain = false;
+	bool filteredChain = false;
 	bool foundPrimary = false;
-  BVRef bvr, bvr1 = 0, bvr2 = 0;
+	BVRef bvr, bvr1 = 0, bvr2 = 0;
 	
 	if (chain->filtered) filteredChain = true;
 	
@@ -830,54 +830,58 @@ BVRef selectBootVolume( BVRef chain )
 				return bvr;
 	
 	/*
-	 * Checking "Default Partition" key in system configuration - use format: hd(x,y) -
+	 * Checking "Default Partition" key in system configuration - use format: hd(x,y) or the volume UUID -
 	 * to override the default selection.
 	 * We accept only kBVFlagSystemVolume or kBVFlagForeignBoot volumes.
 	 */
-  const char * val;
-  char testStr[64];
-  int cnt;
-
-  if (getValueForKey(kDefaultPartition, &val, &cnt, &bootInfo->bootConfig) && cnt >= 7 && filteredChain)
-  {
-    for ( bvr = chain; bvr; bvr = bvr->next )
-    {
-      *testStr = '\0';
-      if ( bvr->biosdev >= 0x80 && bvr->biosdev < 0x100
-            && ( bvr->flags & ( kBVFlagSystemVolume|kBVFlagForeignBoot ) ) )
-      {
-        sprintf(testStr, "hd(%d,%d)", bvr->biosdev - 0x80, bvr->part_no);
-        if (strcmp(testStr, val) == 0)
-          return bvr;
-      }
-    }
-  }
-
+	const char * val;
+	char testStr[64];
+	int cnt;
+	
+	if (getValueForKey(kDefaultPartition, &val, &cnt, &bootInfo->bootConfig) && cnt >= 7 && filteredChain)
+	{
+		for ( bvr = chain; bvr; bvr = bvr->next )
+		{
+			if ( bvr->biosdev >= 0x80 && bvr->biosdev < 0x100
+				&& ( bvr->flags & ( kBVFlagSystemVolume|kBVFlagForeignBoot ) ) )
+			{
+				// Trying to match hd(x,y) format.
+				sprintf(testStr, "hd(%d,%d)", bvr->biosdev - 0x80, bvr->part_no);
+				if (strcmp(testStr, val) == 0)
+					return bvr;
+				
+				// Trying to match volume UUID.
+				if (bvr->fs_getuuid && bvr->fs_getuuid(bvr, testStr) == 0 && strcmp(testStr, val) == 0)
+					return bvr;
+			}
+		}
+	}
+	
 	/*
 	 * Scannig the volume chain backwards and trying to find 
 	 * a HFS+ volume with valid boot record signature.
 	 * If not found any active partition then we will
 	 * select this volume as the boot volume.
 	 */
-  for ( bvr = chain; bvr; bvr = bvr->next )
-  {
-    if ( bvr->flags & kBVFlagPrimary && bvr->biosdev == gBIOSDev ) foundPrimary = true;
-    // zhell -- Undo a regression that was introduced from r491 to 492.
-    // if gBIOSBootVolume is set already, no change is required
-    if ( bvr->flags & (kBVFlagBootable|kBVFlagSystemVolume)
-         && gBIOSBootVolume
-         && (!filteredChain || (filteredChain && bvr->visible))
-         && bvr->biosdev == gBIOSDev )
-      bvr2 = bvr;
-    // zhell -- if gBIOSBootVolume is NOT set, we use the "if" statement
-    // from r491,
-    if ( bvr->flags & kBVFlagBootable
-         && ! gBIOSBootVolume
-         && bvr->biosdev == gBIOSDev )
-      bvr2 = bvr;
-  }  
-
-  
+	for ( bvr = chain; bvr; bvr = bvr->next )
+	{
+		if ( bvr->flags & kBVFlagPrimary && bvr->biosdev == gBIOSDev ) foundPrimary = true;
+		// zhell -- Undo a regression that was introduced from r491 to 492.
+		// if gBIOSBootVolume is set already, no change is required
+		if ( bvr->flags & (kBVFlagBootable|kBVFlagSystemVolume)
+			&& gBIOSBootVolume
+			&& (!filteredChain || (filteredChain && bvr->visible))
+			&& bvr->biosdev == gBIOSDev )
+			bvr2 = bvr;
+		// zhell -- if gBIOSBootVolume is NOT set, we use the "if" statement
+		// from r491,
+		if ( bvr->flags & kBVFlagBootable
+			&& ! gBIOSBootVolume
+			&& bvr->biosdev == gBIOSDev )
+			bvr2 = bvr;
+	}  
+	
+	
 	/*
 	 * Use the standrad method for selecting the boot volume.
 	 */
@@ -888,12 +892,12 @@ BVRef selectBootVolume( BVRef chain )
 			if ( bvr->flags & kBVFlagNativeBoot && bvr->biosdev == gBIOSDev ) bvr1 = bvr;
 			if ( bvr->flags & kBVFlagPrimary && bvr->biosdev == gBIOSDev )    bvr2 = bvr;
 		}
-  }
-
-  bvr = bvr2 ? bvr2 :
-        bvr1 ? bvr1 : chain;
-
-  return bvr;
+	}
+	
+	bvr = bvr2 ? bvr2 :
+	bvr1 ? bvr1 : chain;
+	
+	return bvr;
 }
 
 //==========================================================================
