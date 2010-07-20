@@ -885,7 +885,7 @@
 			buildPhases = (
 			);
 			buildToolPath = /usr/bin/make;
-			buildWorkingDirectory = "/Users/mozodojo/Documents/Chameleon/Chameleon-Mozodojo";
+			buildWorkingDirectory = "";
 			dependencies = (
 			);
 			name = Chameleon;
