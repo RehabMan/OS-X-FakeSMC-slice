@@ -293,6 +293,8 @@
 		B0056E1811F3868000754B65 /* screen_format.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screen_format.png; sourceTree = "<group>"; };
 		B0056E1911F3868000754B65 /* xnulogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xnulogo.png; sourceTree = "<group>"; };
 		B0056E1A11F3868000754B65 /* Users_Guide0.5.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Users_Guide0.5.pdf; sourceTree = "<group>"; };
+		B00F494911F6089500B1D7C5 /* aml_generator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aml_generator.h; sourceTree = "<group>"; };
+		B00F494A11F6089500B1D7C5 /* aml_generator.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aml_generator.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -468,6 +470,8 @@
 				B0056D2611F3868000754B65 /* acpi_patcher.c */,
 				B0056D2711F3868000754B65 /* acpi_patcher.h */,
 				B0056D2811F3868000754B65 /* allocate.c */,
+				B00F494911F6089500B1D7C5 /* aml_generator.h */,
+				B00F494A11F6089500B1D7C5 /* aml_generator.c */,
 				B0056D2911F3868000754B65 /* asm.s */,
 				B0056D2A11F3868000754B65 /* ati.c */,
 				B0056D2B11F3868000754B65 /* ati.h */,

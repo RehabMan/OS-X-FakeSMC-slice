@@ -11,9 +11,10 @@
 #include "acpi_patcher.h"
 #include "platform.h"
 #include "cpu.h"
+#include "aml_generator.h"
 
 #ifndef DEBUG_ACPI
-#define DEBUG_ACPI 0
+#define DEBUG_ACPI 1
 #endif
 
 #if DEBUG_ACPI==2
@@ -185,22 +186,25 @@ void *loadACPITable (const char * filename)
 	return NULL;
 }
 
-int find_next_cpu_pblk(unsigned char* buffer, int length, int start, uint8_t cpun)
+int find_next_cpu_name(unsigned char* buffer, int length, int start, uint8_t cpun)
 {
 	int i;
 	
-	for (i=start; i<length-5; i++) {
-		if (buffer[i] == 'C' && buffer[i+1] == 'P' && buffer[i+2] == 'U' && buffer[i+3] == (cpun < 9 ? (0x30+cpun) : (0x31+cpun)) && buffer[i+4] == cpun) {
-			return i+5;
+	for (i=start; i<length-7; i++) {
+		if (buffer[i] == 0x83 && buffer[i+1] == 0x0B && buffer[i+6] == cpun) {
+			return i+2;
 		}
 	}
 	
 	return -1;
 }
 
-uint32_t read_cpu_pblk(unsigned char* buffer, int offset)
+void read_cpu_name(char* dst, const char* src, int offset)
 {
-	return (buffer[offset] << 24) | (buffer[offset+1] << 16) | (buffer[offset+2] << 8) | buffer[offset];
+	int i;
+	
+	for (i = 0; i < 4; i++) 
+		dst[i] = src[offset+i];
 }
 
 struct acpi_2_ssdt *generate_cst_ssdt(struct acpi_2_fadt* fadt)
@@ -252,27 +256,34 @@ struct acpi_2_ssdt *generate_cst_ssdt(struct acpi_2_fadt* fadt)
 	};
 	
 	if (fadt == NULL) {
-		verbose ("FACP not exists: C-States will not be generated !!!\n");
+		verbose ("FACP not exists: C-States not generated !!!\n");
 		return NULL;
 	}
 	
 	struct acpi_2_dsdt* dsdt = (void*)fadt->DSDT;
 	
 	if (dsdt == NULL) {
-		verbose ("DSDT not found: C-States will not be generated !!!\n");
+		verbose ("DSDT not found: C-States not generated !!!\n");
 		return NULL;
 	}
 	
 	int i, offset = 0, cpu_count = 0;
+	char* cpu_name[0xf];
 	
-	for (i = 0; i < 32; i++) {
-		offset = find_next_cpu_pblk((void*)dsdt, dsdt->Length, offset, i);
+	for (i = 0; i < 0xf; i++) 
+	{
+		offset = find_next_cpu_name((void*)dsdt, dsdt->Length, offset, i);
 		if (offset != -1)
 		{			
-			DBG("Found CPU%X (from DSDT)\n", i);
-			cpu_count = i + 1;
+			cpu_name[cpu_count] = malloc(4);
+			read_cpu_name(cpu_name[cpu_count], (void*)dsdt, offset);
+			
+			DBG("Found %c%c%c%c (from DSDT)\n", cpu_name[cpu_count][0], cpu_name[cpu_count][1], cpu_name[cpu_count][2], cpu_name[cpu_count][3]);
+						  
+			cpu_count++;
 		}
-		else {
+		else
+		{
 			break;
 		}
 	}
@@ -361,8 +372,11 @@ struct acpi_2_ssdt *generate_cst_ssdt(struct acpi_2_fadt* fadt)
 		
 		// Write aliases
 		for (i = 0; i < cpu_count; i++) {
-			chunk_alias[11] = (i < 10 ? (0x30 + i) : (0x31 + i));
+			int j;
+			for (j = 0; j < 4; j++)
+				chunk_alias[8+j] = cpu_name[i][j];
 			write(fd, chunk_alias, sizeof(chunk_alias));
+			free(cpu_name[i]);
 		}
 		
 		close(fd);
@@ -376,15 +390,15 @@ struct acpi_2_ssdt *generate_cst_ssdt(struct acpi_2_fadt* fadt)
 		return ssdt;
 	}
 	else {
-		verbose ("DSDT CPUs not found: C-States will not be generated !!!\n");
+		verbose ("DSDT CPUs not found: C-States not generated !!!\n");
 	}
 
 	return NULL;
 }
 
-struct acpi_2_ssdt *generate_pss_ssdt()
+struct acpi_2_ssdt *generate_pss_ssdt(struct acpi_2_dsdt* dsdt)
 {	
-	char ssdt_header[36] =
+	char ssdt_header[] =
 	{
 		0x53, 0x53, 0x44, 0x54, 0x7E, 0x00, 0x00, 0x00, /* SSDT.... */
 		0x01, 0x6A, 0x50, 0x6D, 0x52, 0x65, 0x66, 0x00, /* ..PmRef. */
@@ -393,20 +407,18 @@ struct acpi_2_ssdt *generate_pss_ssdt()
 		0x31, 0x03, 0x10, 0x20,							/* 1.._		*/
 	};
 	
-	char chunk_name_body[10] =
+	char chunk_name_body[] =
 	{
 		0x5C, 0x5F, 0x50, 0x52, 0x5F, 0x08, 0x50, 0x53, /* \_PR_.PS */
 		0x53, 0x5F										/* S_		*/
 	};
 	
-	char chunk_alias[21] = 
+	char chunk_alias[] = 
 	{
 		0x10, 0x14, 0x5C, 0x2E, 0x5F, 0x50, 0x52, 0x5F, /* ..\._PR_ */
 		0x43, 0x50, 0x55, 0x30, 0x06, 0x50, 0x53, 0x53, /* CPU0.PSS */
 		0x5F, 0x5F, 0x50, 0x53, 0x53					/* __PSS	*/
 	};
-	
-	struct acpi_2_ssdt *ssdt = NULL;
 	
 	if (Platform.CPU.Vendor != 0x756E6547) {
 		verbose ("Not an Intel platform: P-States will not be generated !!!\n");
@@ -418,207 +430,242 @@ struct acpi_2_ssdt *generate_pss_ssdt()
 		return NULL;
 	}
 	
-	bool cpu_dynamic_fsb = false, cpu_noninteger_bus_ratio = (rdmsr64(MSR_IA32_PERF_STATUS) & (1ULL << 46));
-	struct p_state initial, maximum, minimum, p_states[32];
-	uint8_t p_states_count;		
+	int i, offset = 0, cpu_count = 0;
+	char* cpu_name[0xf];
 	
-	// Retrieving P-States, ported from code by superhai (c)
-	
-
-	
-	switch (Platform.CPU.Family) {
-		case 0x06: 
+	for (i = 0; i < 0xf; i++) 
+	{
+		offset = find_next_cpu_name((void*)dsdt, dsdt->Length, offset, i);
+		if (offset != -1)
+		{			
+			cpu_name[cpu_count] = malloc(4);
+			read_cpu_name(cpu_name[cpu_count], (void*)dsdt, offset);
+			
+			DBG("Found %c%c%c%c (from DSDT)\n", cpu_name[cpu_count][0], cpu_name[cpu_count][1], cpu_name[cpu_count][2], cpu_name[cpu_count][3]);
+			
+			cpu_count++;
+		}
+		else
 		{
-			switch (Platform.CPU.Model) 
+			break;
+		}
+	}
+	
+	if (cpu_count > 0) 
+	{	
+		bool cpu_dynamic_fsb = false, cpu_noninteger_bus_ratio = (rdmsr64(MSR_IA32_PERF_STATUS) & (1ULL << 46));
+		struct p_state initial, maximum, minimum, p_states[32];
+		uint8_t p_states_count;		
+		
+		// Retrieving P-States, ported from code by superhai (c)
+		
+
+		
+		switch (Platform.CPU.Family) {
+			case 0x06: 
 			{
-				case 0x0F: // Intel Core (65nm)
-				case 0x17: // Intel Core (45nm)
-				case 0x1C: // Intel Atom (45nm)
-				case 0x1A: // Intel Core i7 LGA1366 (45nm)
-				case 0x1E: // Intel Core i5, i7 LGA1156 (45nm)
-				case 0x25: // Intel Core i3, i5, i7 LGA1156 (32nm)
-				case 0x2C: // Intel Core i7 LGA1366 (32nm) 6 Core
-					if (rdmsr64(MSR_IA32_EXT_CONFIG) & (1 << 27)) 
-					{
-						wrmsr64(MSR_IA32_EXT_CONFIG, (rdmsr64(MSR_IA32_EXT_CONFIG) | (1 << 28))); 
-						sleep(1);
-						cpu_dynamic_fsb = rdmsr64(MSR_IA32_EXT_CONFIG) & (1 << 28);
-					}
-					break;
+				switch (Platform.CPU.Model) 
+				{
+					case 0x0F: // Intel Core (65nm)
+					case 0x17: // Intel Core (45nm)
+					case 0x1C: // Intel Atom (45nm)
+					case 0x1A: // Intel Core i7 LGA1366 (45nm)
+					case 0x1E: // Intel Core i5, i7 LGA1156 (45nm)
+					case 0x25: // Intel Core i3, i5, i7 LGA1156 (32nm)
+					case 0x2C: // Intel Core i7 LGA1366 (32nm) 6 Core
+						if (rdmsr64(MSR_IA32_EXT_CONFIG) & (1 << 27)) 
+						{
+							wrmsr64(MSR_IA32_EXT_CONFIG, (rdmsr64(MSR_IA32_EXT_CONFIG) | (1 << 28))); 
+							delay(1);
+							cpu_dynamic_fsb = rdmsr64(MSR_IA32_EXT_CONFIG) & (1 << 28);
+						}
+						break;
+				}
 			}
 		}
-	}
-	
-	initial.Control = rdmsr64(MSR_IA32_PERF_STATUS);
-	
-	maximum.Control = ((rdmsr64(MSR_IA32_PERF_STATUS) >> 32) & 0x1F3F) | (0x4000 * cpu_noninteger_bus_ratio);
-	maximum.CID = ((maximum.FID & 0x1F) << 1) | cpu_noninteger_bus_ratio;
-	
-	minimum.FID = ((rdmsr64(MSR_IA32_PERF_STATUS) >> 24) & 0x1F) | (0x80 * cpu_dynamic_fsb);
-	minimum.VID = ((rdmsr64(MSR_IA32_PERF_STATUS) >> 48) & 0x3F);
-	
-	if (minimum.FID == 0) 
-	{
-		uint8_t i;
-		// Probe for lowest fid
-		for (i = maximum.FID; i >= 0x6; i--) 
+		
+		initial.Control = rdmsr64(MSR_IA32_PERF_STATUS);
+		
+		maximum.Control = ((rdmsr64(MSR_IA32_PERF_STATUS) >> 32) & 0x1F3F) | (0x4000 * cpu_noninteger_bus_ratio);
+		maximum.CID = ((maximum.FID & 0x1F) << 1) | cpu_noninteger_bus_ratio;
+		
+		minimum.FID = ((rdmsr64(MSR_IA32_PERF_STATUS) >> 24) & 0x1F) | (0x80 * cpu_dynamic_fsb);
+		minimum.VID = ((rdmsr64(MSR_IA32_PERF_STATUS) >> 48) & 0x3F);
+		
+		if (minimum.FID == 0) 
 		{
-			wrmsr64(MSR_IA32_PERF_CONTROL, (rdmsr64(MSR_IA32_PERF_CONTROL) & 0xFFFFFFFFFFFF0000ULL) | (i << 8) | minimum.VID);
-			intel_waitforsts();
-			minimum.FID = (rdmsr64(MSR_IA32_PERF_STATUS) >> 8) & 0x1F; 
-			sleep(1);
-		}
-		
-		wrmsr64(MSR_IA32_PERF_CONTROL, (rdmsr64(MSR_IA32_PERF_CONTROL) & 0xFFFFFFFFFFFF0000ULL) | (maximum.FID << 8) | maximum.VID);
-		intel_waitforsts();
-	}
-	
-	if (minimum.VID == maximum.VID) 
-	{	
-		uint8_t i;
-		// Probe for lowest vid
-		for (i = maximum.VID; i > 0xA; i--) 
-		{
-			wrmsr64(MSR_IA32_PERF_CONTROL, (rdmsr64(MSR_IA32_PERF_CONTROL) & 0xFFFFFFFFFFFF0000ULL) | (minimum.FID << 8) | i);
-			intel_waitforsts();
-			minimum.VID = rdmsr64(MSR_IA32_PERF_STATUS) & 0x3F; 
-			sleep(1);
-		}
-		
-		wrmsr64(MSR_IA32_PERF_CONTROL, (rdmsr64(MSR_IA32_PERF_CONTROL) & 0xFFFFFFFFFFFF0000ULL) | (maximum.FID << 8) | maximum.VID);
-		intel_waitforsts();
-	}
-	
-	minimum.CID = ((minimum.FID & 0x1F) << 1) >> cpu_dynamic_fsb;
-	
-	// Sanity check
-	if (maximum.CID < minimum.CID) 
-	{
-		DBG("Insane FID values!");
-		p_states_count = 1;
-	}
-	else
-	{
-		// Finalize P-States
-		// Find how many P-States machine supports
-		p_states_count = maximum.CID - minimum.CID + 1;
-		
-		if (p_states_count > 32) 
-			p_states_count = 32;
-		
-		uint8_t vidstep;
-		uint8_t i = 0, u, invalid = 0;
-		
-		vidstep = ((maximum.VID << 2) - (minimum.VID << 2)) / (p_states_count - 1);
-		
-		for (u = 0; u < p_states_count; u++) 
-		{
-			i = u - invalid;
-			
-			p_states[i].CID = maximum.CID - u;
-			p_states[i].FID = (p_states[i].CID >> 1);
-			
-			if (p_states[i].FID < 0x6) 
+			uint8_t i;
+			// Probe for lowest fid
+			for (i = maximum.FID; i >= 0x6; i--) 
 			{
-				if (cpu_dynamic_fsb) 
-					p_states[i].FID = (p_states[i].FID << 1) | 0x80;
-			} 
-			else if (cpu_noninteger_bus_ratio) 
-			{
-				p_states[i].FID = p_states[i].FID | (0x40 * (p_states[i].CID & 0x1));
+				wrmsr64(MSR_IA32_PERF_CONTROL, (rdmsr64(MSR_IA32_PERF_CONTROL) & 0xFFFFFFFFFFFF0000ULL) | (i << 8) | minimum.VID);
+				intel_waitforsts();
+				minimum.FID = (rdmsr64(MSR_IA32_PERF_STATUS) >> 8) & 0x1F; 
+				delay(1);
 			}
 			
-			if (i && p_states[i].FID == p_states[i-1].FID)
-				invalid++;
-			
-			p_states[i].VID = ((maximum.VID << 2) - (vidstep * u)) >> 2;
-			
-			uint32_t multiplier = p_states[i].FID & 0x1f;		// = 0x08
-			bool half = p_states[i].FID & 0x40;					// = 0x01
-			bool dfsb = p_states[i].FID & 0x80;					// = 0x00
-			uint32_t fsb = Platform.CPU.FSBFrequency / 1000000; // = 400
-			uint32_t halffsb = (fsb + 1) >> 1;					// = 200
-			uint32_t frequency = (multiplier * fsb);			// = 3200
-			
-			p_states[i].Frequency = (frequency + (half * halffsb)) >> dfsb;	// = 3200 + 200 = 3400
+			wrmsr64(MSR_IA32_PERF_CONTROL, (rdmsr64(MSR_IA32_PERF_CONTROL) & 0xFFFFFFFFFFFF0000ULL) | (maximum.FID << 8) | maximum.VID);
+			intel_waitforsts();
 		}
 		
-		p_states_count -= invalid;
+		if (minimum.VID == maximum.VID) 
+		{	
+			uint8_t i;
+			// Probe for lowest vid
+			for (i = maximum.VID; i > 0xA; i--) 
+			{
+				wrmsr64(MSR_IA32_PERF_CONTROL, (rdmsr64(MSR_IA32_PERF_CONTROL) & 0xFFFFFFFFFFFF0000ULL) | (minimum.FID << 8) | i);
+				intel_waitforsts();
+				minimum.VID = rdmsr64(MSR_IA32_PERF_STATUS) & 0x3F; 
+				delay(1);
+			}
+			
+			wrmsr64(MSR_IA32_PERF_CONTROL, (rdmsr64(MSR_IA32_PERF_CONTROL) & 0xFFFFFFFFFFFF0000ULL) | (maximum.FID << 8) | maximum.VID);
+			intel_waitforsts();
+		}
+		
+		minimum.CID = ((minimum.FID & 0x1F) << 1) >> cpu_dynamic_fsb;
+		
+		// Sanity check
+		if (maximum.CID < minimum.CID) 
+		{
+			DBG("Insane FID values!");
+			p_states_count = 1;
+		}
+		else
+		{
+			// Finalize P-States
+			// Find how many P-States machine supports
+			p_states_count = maximum.CID - minimum.CID + 1;
+			
+			if (p_states_count > 32) 
+				p_states_count = 32;
+			
+			uint8_t vidstep;
+			uint8_t i = 0, u, invalid = 0;
+			
+			vidstep = ((maximum.VID << 2) - (minimum.VID << 2)) / (p_states_count - 1);
+			
+			for (u = 0; u < p_states_count; u++) 
+			{
+				i = u - invalid;
+				
+				p_states[i].CID = maximum.CID - u;
+				p_states[i].FID = (p_states[i].CID >> 1);
+				
+				if (p_states[i].FID < 0x6) 
+				{
+					if (cpu_dynamic_fsb) 
+						p_states[i].FID = (p_states[i].FID << 1) | 0x80;
+				} 
+				else if (cpu_noninteger_bus_ratio) 
+				{
+					p_states[i].FID = p_states[i].FID | (0x40 * (p_states[i].CID & 0x1));
+				}
+				
+				if (i && p_states[i].FID == p_states[i-1].FID)
+					invalid++;
+				
+				p_states[i].VID = ((maximum.VID << 2) - (vidstep * u)) >> 2;
+				
+				uint32_t multiplier = p_states[i].FID & 0x1f;		// = 0x08
+				bool half = p_states[i].FID & 0x40;					// = 0x01
+				bool dfsb = p_states[i].FID & 0x80;					// = 0x00
+				uint32_t fsb = Platform.CPU.FSBFrequency / 1000000; // = 400
+				uint32_t halffsb = (fsb + 1) >> 1;					// = 200
+				uint32_t frequency = (multiplier * fsb);			// = 3200
+				
+				p_states[i].Frequency = (frequency + (half * halffsb)) >> dfsb;	// = 3200 + 200 = 3400
+			}
+			
+			p_states_count -= invalid;
+		}
+		
+		// Generating SSDT
+		
+		if (p_states_count > 0) 
+		{	
+			uint32_t i, pss_entries_size = 33 * p_states_count, pss_package_length = pss_entries_size + 2;
+			
+			if (pss_package_length > 0x3f) pss_package_length++; // for chunks > 0x3f bytes length have 2 bytes encoding
+			
+			uint32_t pss_name_length = (1 /* id=0x12 */ + pss_package_length) + (1 + 10);
+			
+			if (pss_name_length > 0x3f) pss_name_length++;
+			
+			uint32_t ssdt_size = 36 + (1 /* id=0x10 */ + pss_name_length) + cpu_count * sizeof(chunk_alias);
+			
+			struct acpi_2_ssdt *ssdt = (void*)AllocateKernelMemory(ssdt_size);
+			int fd = openmem((char*)ssdt, ssdt_size);
+			
+			// write header
+			write(fd, ssdt_header, sizeof(ssdt_header));
+			
+			// write Scope (\_PR) {	Name (PSS, ...
+			writebyte(fd, 0x10); // id
+			if (pss_name_length > 0x3f) 
+			{
+				writebyte(fd, 0x40 | (pss_name_length & 0xf)); // lo half-byte
+				writebyte(fd, pss_name_length >> 4); // hi byte
+			}
+			else 
+			{
+				writebyte(fd, pss_name_length); // length
+			}
+			write(fd, chunk_name_body, sizeof(chunk_name_body));
+			
+			// write Package(p_states_count) { ...
+			writebyte(fd, 0x12); // id
+			if (pss_package_length > 0x3f) 
+			{
+				writebyte(fd, 0x40 | (pss_package_length & 0xf)); // lo half-byte
+				writebyte(fd, pss_package_length >> 4); // hi byte
+			}
+			else 
+			{
+				writebyte(fd, pss_package_length); // length
+			}
+			writebyte(fd, p_states_count); // entries
+			
+			for (i = 0; i < p_states_count; i++) 
+			{
+				DBG("P-State: Frequency %d MHz, FID 0x%x, VID 0x%x\n", p_states[i].Frequency, p_states[i].FID, p_states[i].VID);
+				
+				writebyte(fd, 0x12); // chunk id
+				writebyte(fd, 32); // chunk length without id 
+				writebyte(fd, 6); // entries
+				
+				writebyte(fd, 0x0C); /* id */ writeint(fd, p_states[i].Frequency); // value
+				writebyte(fd, 0x0C); /* id */ writeint(fd, 0x00000000); // value
+				writebyte(fd, 0x0C); /* id */ writeint(fd, 0x0000000A); // value
+				writebyte(fd, 0x0C); /* id */ writeint(fd, 0x0000000A); // value
+				writebyte(fd, 0x0C); /* id */ writeint(fd, p_states[i].Control); // value
+				writebyte(fd, 0x0C); /* id */ writeint(fd, i + 1); // value
+			}
+			
+			// Write aliases
+			for (i = 0; i < cpu_count; i++) {
+				int j;
+				for (j = 0; j < 4; j++)
+					chunk_alias[8+j] = cpu_name[i][j];
+				write(fd, chunk_alias, sizeof(chunk_alias));
+				free(cpu_name[i]);
+			}
+			
+			ssdt->Length = ssdt_size;
+			ssdt->Checksum = 0;
+			ssdt->Checksum = 256 - checksum8(ssdt, ssdt->Length);
+			
+			//dumpPhysAddr("P-States SSDT content: ", ssdt, ssdt_size);
+			
+			return ssdt;
+		}
+	}
+	else {
+		verbose ("DSDT CPUs not found: P-States not generated !!!\n");
 	}
 	
-	// Generating SSDT
-	
-	if (p_states_count > 0) 
-	{	
-		uint32_t i, pss_entries_size = 33 * p_states_count, pss_package_length = pss_entries_size + 2;
-		
-		if (pss_package_length > 0x3f) pss_package_length++; // for chunks > 0x3f bytes length have 2 bytes encoding
-		
-		uint32_t pss_name_length = (1 /* id=0x12 */ + pss_package_length) + (1 + 10);
-		
-		if (pss_name_length > 0x3f) pss_name_length++;
-		
-		uint32_t ssdt_size = 36 + (1 /* id=0x10 */ + pss_name_length) + 21 /* CPU0 alias */;
-		
-		ssdt = (void*)AllocateKernelMemory(ssdt_size);
-		int fd = openmem((char*)ssdt, ssdt_size);
-		
-		// write header
-		write(fd, ssdt_header, sizeof(ssdt_header));
-		
-		// write Scope (\_PR) {	Name (PSS, ...
-		writebyte(fd, 0x10); // id
-		if (pss_name_length > 0x3f) 
-		{
-			writebyte(fd, 0x40 | (pss_name_length & 0xf)); // lo half-byte
-			writebyte(fd, pss_name_length >> 4); // hi byte
-		}
-		else 
-		{
-			writebyte(fd, pss_name_length); // length
-		}
-		write(fd, chunk_name_body, sizeof(chunk_name_body));
-		
-		// write Package(p_states_count) { ...
-		writebyte(fd, 0x12); // id
-		if (pss_package_length > 0x3f) 
-		{
-			writebyte(fd, 0x40 | (pss_package_length & 0xf)); // lo half-byte
-			writebyte(fd, pss_package_length >> 4); // hi byte
-		}
-		else 
-		{
-			writebyte(fd, pss_package_length); // length
-		}
-		writebyte(fd, p_states_count); // entries
-		
-		for (i = 0; i < p_states_count; i++) 
-		{
-			DBG("P-State: Frequency %d MHz, FID 0x%x, VID 0x%x\n", p_states[i].Frequency, p_states[i].FID, p_states[i].VID);
-			
-			writebyte(fd, 0x12); // chunk id
-			writebyte(fd, 32); // chunk length without id 
-			writebyte(fd, 6); // entries
-			
-			writebyte(fd, 0x0C); /* id */ writeint(fd, p_states[i].Frequency); // value
-			writebyte(fd, 0x0C); /* id */ writeint(fd, 0x00000000); // value
-			writebyte(fd, 0x0C); /* id */ writeint(fd, 0x0000000A); // value
-			writebyte(fd, 0x0C); /* id */ writeint(fd, 0x0000000A); // value
-			writebyte(fd, 0x0C); /* id */ writeint(fd, p_states[i].Control); // value
-			writebyte(fd, 0x0C); /* id */ writeint(fd, i + 1); // value
-		}
-		
-		// write Scope (\_PR.CPU0) { Alias (PSS, _PSS) }
-		write(fd, chunk_alias, sizeof(chunk_alias));
-		
-		ssdt->Length = ssdt_size;
-		ssdt->Checksum = 0;
-		ssdt->Checksum = 256 - checksum8(ssdt, ssdt->Length);
-		
-		//dumpPhysAddr("P-States SSDT content: ", ssdt, ssdt_size);
-	}
-
-	return ssdt;
+	return NULL;
 }
 
 struct acpi_2_fadt *patch_fadt(struct acpi_2_fadt *fadt, struct acpi_2_dsdt *new_dsdt)
@@ -775,12 +822,7 @@ int setupAcpi(void)
 			}
 		}
 	}
-	
-	// Generating P-States SSDT
-	if (generate_pstates)
-		if(new_ssdt[ssdt_count] = generate_pss_ssdt())
-			ssdt_count++;
-	
+		
 	// Do the same procedure for both versions of ACPI
 	for (version=0; version<2; version++) {
 		struct acpi_2_rsdp *rsdp, *rsdp_mod;
@@ -842,8 +884,10 @@ int setupAcpi(void)
 				if (tableSign(table, "DSDT"))
 				{
 					DBG("DSDT found\n");
+					
 					if(new_dsdt)
 						rsdt_entries[i-dropoffset]=(uint32_t)new_dsdt;
+										
 					continue;
 				}
 				if (tableSign(table, "FACP"))
@@ -864,6 +908,10 @@ int setupAcpi(void)
 					
 					// Generate _CST SSDT
 					if (generate_cstates && (new_ssdt[ssdt_count] = generate_cst_ssdt(fadt_mod))) 
+						ssdt_count++;
+					
+					// Generating _PSS SSDT
+					if (generate_pstates && (new_ssdt[ssdt_count] = generate_pss_ssdt((void*)fadt_mod->DSDT)))
 						ssdt_count++;
 					
 					continue;
@@ -939,7 +987,8 @@ int setupAcpi(void)
 					{
 						DBG("DSDT found\n");
 						
-						xsdt_entries[i-dropoffset]=(uint32_t)new_dsdt;
+						if (new_dsdt) 
+							xsdt_entries[i-dropoffset]=(uint32_t)new_dsdt;
 						
 						DBG("TABLE %c%c%c%c@%x,",table[0],table[1],table[2],table[3],xsdt_entries[i]);
 						
@@ -966,6 +1015,10 @@ int setupAcpi(void)
 						
 						// Generate _CST SSDT
 						if (generate_cstates && (new_ssdt[ssdt_count] = generate_cst_ssdt(fadt_mod))) 
+							ssdt_count++;
+						
+						// Generating _PSS SSDT
+						if (generate_pstates && (new_ssdt[ssdt_count] = generate_pss_ssdt((void*)fadt_mod->DSDT)))
 							ssdt_count++;
 						
 						continue;
