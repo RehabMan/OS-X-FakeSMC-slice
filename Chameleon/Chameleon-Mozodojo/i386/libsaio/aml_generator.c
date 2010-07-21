@@ -171,7 +171,6 @@ int aml_fill_simple_string(char* buffer, const char* name)
 int aml_get_names_count(const char* name)
 {
 	int i, len = strlen(name), count = 0;
-	char* buffer = NULL;
 	
 	for (i = 0; i < len; i++)
 	{
