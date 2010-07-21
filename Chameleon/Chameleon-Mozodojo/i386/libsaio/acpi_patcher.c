@@ -197,6 +197,8 @@ void find_acpi_cpu_names(unsigned char* dsdt, int length)
 	{
 		if (dsdt[i] == 0x83 && dsdt[i+1] == 0x0B && dsdt[i+6] < 32) 
 		{
+			acpi_cpu_name[acpi_cpu_count] = malloc(5);
+			
 			int j;
 			for (j=0; j<4; j++) 
 			{
@@ -207,11 +209,13 @@ void find_acpi_cpu_names(unsigned char* dsdt, int length)
 				else 
 				{
 					verbose("Invalid characters found in ProcessorOP!");
+					free(acpi_cpu_name[acpi_cpu_count]);
+					continue;
 				}
 			}
-			acpi_cpu_name[acpi_cpu_count] = malloc(5);
-			memcpy(acpi_cpu_name[acpi_cpu_count], dsdt+(i+2), 4);
+			
 			verbose("Found %c%c%c%c (from DSDT)\n", acpi_cpu_name[acpi_cpu_count][0], acpi_cpu_name[acpi_cpu_count][1], acpi_cpu_name[acpi_cpu_count][2], acpi_cpu_name[acpi_cpu_count][3]);
+			
 			acpi_cpu_count++;
 		}
 	}

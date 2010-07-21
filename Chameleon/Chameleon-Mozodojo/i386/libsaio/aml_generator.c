@@ -199,19 +199,20 @@ void aml_fill_name(struct aml_chunk* node, const char* name)
 	}
 	else if (count == 2) 
 	{
-		node->Length = 1 + 8;
+		node->Length = 2 + 8;
 		node->Buffer = malloc(node->Length);
-		node->Buffer[0] = 0x2e; // Double string
+		node->Buffer[0] = '\\'; // Root
+		node->Buffer[1] = 0x2e; // Double string
 	}
 	
-	int i, last = 0, j = last;
+	int i, last = 0, j = last, len = strlen(name);
 	
 	for (i = 0; i < count; i++) 
 	{
-		while (name[j] != '.') 
+		while (name[j] != '.' && j < len) 
 			j++;
 		
-		// TODO: finish
+		//aml_fill_simple_string(node->Buffer[, const char *name)
 	}
 }
 
