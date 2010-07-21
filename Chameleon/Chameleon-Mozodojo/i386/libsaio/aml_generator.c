@@ -144,7 +144,7 @@ int aml_add_qword(struct aml_chunk* parent, unsigned long long value)
 	return -1;
 }
 
-int aml_fill_simple_string(char* buffer, const char* name)
+int aml_fill_simple_name(char* buffer, const char* name)
 {
 	int i, len = strlen(name), count = 0;
 	
@@ -186,34 +186,88 @@ int aml_get_names_count(const char* name)
 	return count;
 }
 
-void aml_fill_name(struct aml_chunk* node, const char* name)
+int aml_fill_name(struct aml_chunk* node, const char* name)
 {
-	int count = aml_get_names_count(name);
+	int i, len = strlen(name), count = 0;
+	
+	for (i = 0; i < len; i++)
+	{
+		if (name[i] == '.') 
+		{
+			count++;
+		}
+		else if (!aml_isvalidchar(name[i]))
+		{
+			len = i;
+			break;
+		}
+	}
+	
+	if (count == 0 && len > 0) 
+		count++;
+	
+	int offset = 0;
 	
 	if (count == 1) 
 	{
 		node->Length = 4;
 		node->Buffer = malloc(node->Length);
 		aml_fill_simple_string(node->Buffer, name);
-		return;
+		return node->Length;
 	}
-	else if (count == 2) 
+	
+	if (count == 2) 
 	{
 		node->Length = 2 + 8;
 		node->Buffer = malloc(node->Length);
-		node->Buffer[0] = '\\'; // Root
-		node->Buffer[1] = 0x2e; // Double string
+		node->Buffer[offset++] = '\\'; // Root
+		node->Buffer[offset++] = 0x2e; // Double name
 	}
-	
-	int i, last = 0, j = last, len = strlen(name);
+	else 
+	{
+		node->Length = 3 + count*4;
+		node->Buffer[offset++] = '\\'; // Root
+		node->Buffer[offset++] = 0x2f; // Multi name
+		node->Buffer[offset++] = count; // Names count
+	}
+
+	int j = 0;
 	
 	for (i = 0; i < count; i++) 
 	{
-		while (name[j] != '.' && j < len) 
-			j++;
-		
-		//aml_fill_simple_string(node->Buffer[, const char *name)
+		while (name[j] != '.') 
+		{
+			if (j < len)
+			{
+				j++;
+			}
+			else 
+			{
+				verbose("aml_fill_name: unexpected end of names path!");
+				return;
+			}
+		}
+
+		offset += aml_fill_simple_name(node->Buffer + offset, name + j);
 	}
+	
+	return offset;
+}
+
+int aml_add_name(struct aml_chunk* parent, const char* name, int count, ...)
+{
+	struct aml_chunk* node = aml_create_node(parent);
+	
+	if (node)
+	{
+		node->Type = AML_CHUNK_NAME;
+			
+		aml_fill_name(node, name);
+			
+		return node->Length;
+	}
+	
+	return -1;
 }
 
 int aml_add_scope(struct aml_chunk* parent, const char* name)
@@ -224,31 +278,9 @@ int aml_add_scope(struct aml_chunk* parent, const char* name)
 	{
 		node->Type = AML_CHUNK_SCOPE;
 		
+		aml_fill_name(node, name);
 		
-			
 		return node->Length;
-	}
-	
-	return -1;
-}
-
-int aml_add_name(struct aml_chunk* parent, const char* name, int count, ...)
-{
-	struct aml_chunk* node = aml_create_node(parent);
-	
-	if (node)
-	{
-		unsigned int length = strlen(name);
-		
-		if (length == 4) 
-		{
-			node->Type = AML_CHUNK_NAME;
-			node->Length = 4;
-			node->Buffer = malloc(node->Length);
-			memcpy(node->Buffer + 1, name, length);
-			
-			return node->Length;
-		}
 	}
 	
 	return -1;

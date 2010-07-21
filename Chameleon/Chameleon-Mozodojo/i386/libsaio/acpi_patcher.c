@@ -903,24 +903,35 @@ int setupAcpi(void)
 			if(ssdt_count>0)
 			{
 				uint32_t j = rsdt_mod->Length;
+				bool add_new_ssdt = TRUE;
+				
 				rsdt_mod->Length+=4*ssdt_count-4*dropoffset;
 				
 				if (rsdt_mod->Length > j)
 				{
-					struct acpi_2_rsdt *rsdt_copy = (struct acpi_2_rsdt *)AllocateKernelMemory(rsdt_mod->Length); 
-					memcpy (rsdt_copy, rsdt_mod, rsdt_mod->Length);
-					free(rsdt_mod); rsdt_mod = rsdt_copy;
-					rsdp_mod->RsdtAddress=(uint32_t)rsdt_mod;
-					rsdt_entries_num=(rsdt_mod->Length-sizeof(struct acpi_2_rsdt))/4;
-					rsdt_entries=(uint32_t *)(rsdt_mod+1);
+					struct acpi_2_rsdt *rsdt_copy = (struct acpi_2_rsdt *)AllocateKernelMemory(rsdt_mod->Length);
+					if (rsdt_copy) 
+					{
+						memcpy (rsdt_copy, rsdt_mod, rsdt_mod->Length);
+						free(rsdt_mod); rsdt_mod = rsdt_copy;
+						rsdp_mod->RsdtAddress=(uint32_t)rsdt_mod;
+						rsdt_entries_num=(rsdt_mod->Length-sizeof(struct acpi_2_rsdt))/4;
+						rsdt_entries=(uint32_t *)(rsdt_mod+1);
+					}
+					else 
+					{
+						verbose("RSDT: Couldn't allocate memory for additional SSDT tables!\n");
+						add_new_ssdt = FALSE;
+					}
 				}
 				
-				for (j=0; j<ssdt_count; j++)
+				if (add_new_ssdt) 
 				{
-					rsdt_entries[i-dropoffset+j]=(uint32_t)new_ssdt[j];
+					for (j=0; j<ssdt_count; j++)
+						rsdt_entries[i-dropoffset+j]=(uint32_t)new_ssdt[j];
+					
+					verbose("RSDT: Added %d SSDT table(s)\n", ssdt_count);
 				}
-				
-				verbose("Added %d SSDT table(s) into RSDT\n", ssdt_count);
 			}
 			else 
 			{
@@ -1023,25 +1034,36 @@ int setupAcpi(void)
 				if(ssdt_count>0)
 				{
 					int j = xsdt_mod->Length;
+					bool add_new_ssdt = TRUE;
 					
 					xsdt_mod->Length+=8*ssdt_count-8*dropoffset;
 					
 					if (xsdt_mod->Length > j) 
 					{
 						struct acpi_2_xsdt *xsdt_copy = (struct acpi_2_xsdt *)AllocateKernelMemory(xsdt_mod->Length);
-						memcpy(xsdt_copy, xsdt_mod, xsdt_mod->Length);
-						free(xsdt_mod); xsdt_mod = xsdt_copy;
-						rsdp_mod->XsdtAddress=(uint32_t)xsdt_mod;
-						xsdt_entries_num=(xsdt_mod->Length-sizeof(struct acpi_2_xsdt))/8;
-						xsdt_entries=(uint64_t *)(xsdt_mod+1);
+						
+						if (xsdt_copy) 
+						{
+							memcpy(xsdt_copy, xsdt_mod, xsdt_mod->Length);
+							free(xsdt_mod); xsdt_mod = xsdt_copy;
+							rsdp_mod->XsdtAddress=(uint32_t)xsdt_mod;
+							xsdt_entries_num=(xsdt_mod->Length-sizeof(struct acpi_2_xsdt))/8;
+							xsdt_entries=(uint64_t *)(xsdt_mod+1);
+						}
+						else
+						{
+							verbose("RSDT: Couldn't allocate memory for additional SSDT tables!\n");
+							add_new_ssdt = FALSE;	
+						}
 					}
 					
-					for (j=0; j<ssdt_count; j++)
+					if (add_new_ssdt) 
 					{
-						xsdt_entries[i-dropoffset+j]=(uint32_t)new_ssdt[j];
+						for (j=0; j<ssdt_count; j++)
+							xsdt_entries[i-dropoffset+j]=(uint32_t)new_ssdt[j];
+						
+						verbose("Added %d SSDT table(s) into XSDT\n", ssdt_count);
 					}
-					
-					verbose("Added %d SSDT table(s) into XSDT\n", ssdt_count);
 				}
 				else 
 				{
