@@ -27,7 +27,7 @@ void aml_add_to_parent(struct aml_chunk* parent, struct aml_chunk* node)
 			parent->First = node;
 		
 		if (parent->Last)
-			parent->Next = node;
+			parent->Last->Next = node;
 		
 		parent->Last = node;
 	}
@@ -142,11 +142,6 @@ int aml_add_qword(struct aml_chunk* parent, unsigned long long value)
 	}
 	
 	return -1;
-}
-
-static inline bool aml_isvalidchar(char c)
-{
-	return isupper(c) || isdigit(c) || c == '_';
 }
 
 int aml_fill_simple_string(char* buffer, const char* name)

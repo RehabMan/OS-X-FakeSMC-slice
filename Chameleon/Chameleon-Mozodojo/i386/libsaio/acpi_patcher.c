@@ -186,25 +186,35 @@ void *loadACPITable (const char * filename)
 	return NULL;
 }
 
-int find_next_cpu_name(unsigned char* buffer, int length, int start, uint8_t cpun)
+uint8_t	acpi_cpu_count = 0;
+char* acpi_cpu_name[32];
+
+void find_acpi_cpu_names(unsigned char* dsdt, int length)
 {
 	int i;
 	
-	for (i=start; i<length-7; i++) {
-		if (buffer[i] == 0x83 && buffer[i+1] == 0x0B && buffer[i+6] == cpun) {
-			return i+2;
+	for (i=0; i<length-7; i++) 
+	{
+		if (dsdt[i] == 0x83 && dsdt[i+1] == 0x0B && dsdt[i+6] < 32) 
+		{
+			int j;
+			for (j=0; j<4; j++) 
+			{
+				if (aml_isvalidchar(dsdt[i+2+j])) 
+				{
+					acpi_cpu_name[acpi_cpu_count][j] = dsdt[i+2+j];
+				}
+				else 
+				{
+					verbose("Invalid characters found in ProcessorOP!");
+				}
+			}
+			acpi_cpu_name[acpi_cpu_count] = malloc(5);
+			memcpy(acpi_cpu_name[acpi_cpu_count], dsdt+(i+2), 4);
+			verbose("Found %c%c%c%c (from DSDT)\n", acpi_cpu_name[acpi_cpu_count][0], acpi_cpu_name[acpi_cpu_count][1], acpi_cpu_name[acpi_cpu_count][2], acpi_cpu_name[acpi_cpu_count][3]);
+			acpi_cpu_count++;
 		}
 	}
-	
-	return -1;
-}
-
-void read_cpu_name(char* dst, const char* src, int offset)
-{
-	int i;
-	
-	for (i = 0; i < 4; i++) 
-		dst[i] = src[offset+i];
 }
 
 struct acpi_2_ssdt *generate_cst_ssdt(struct acpi_2_fadt* fadt)
@@ -267,28 +277,10 @@ struct acpi_2_ssdt *generate_cst_ssdt(struct acpi_2_fadt* fadt)
 		return NULL;
 	}
 	
-	int i, offset = 0, cpu_count = 0;
-	char* cpu_name[0xf];
+	if (acpi_cpu_count == 0) 
+		find_acpi_cpu_names((void*)dsdt, dsdt->Length);
 	
-	for (i = 0; i < 0xf; i++) 
-	{
-		offset = find_next_cpu_name((void*)dsdt, dsdt->Length, offset, i);
-		if (offset != -1)
-		{			
-			cpu_name[cpu_count] = malloc(4);
-			read_cpu_name(cpu_name[cpu_count], (void*)dsdt, offset);
-			
-			DBG("Found %c%c%c%c (from DSDT)\n", cpu_name[cpu_count][0], cpu_name[cpu_count][1], cpu_name[cpu_count][2], cpu_name[cpu_count][3]);
-						  
-			cpu_count++;
-		}
-		else
-		{
-			break;
-		}
-	}
-	
-	if (cpu_count > 0) {
+	if (acpi_cpu_count > 0) {
 		bool c2_enabled = fadt->C2_Latency < 100, c3_enabled = fadt->C3_Latency < 1000;
 		
 		// Setup C2 Latency
@@ -322,7 +314,7 @@ struct acpi_2_ssdt *generate_cst_ssdt(struct acpi_2_fadt* fadt)
 		uint32_t ssdt_size = 
 			sizeof(ssdt_header) + 
 			1 + name_length +
-			cpu_count * sizeof(chunk_alias);
+			acpi_cpu_count * sizeof(chunk_alias);
 		
 		struct acpi_2_ssdt *ssdt = (void*)AllocateKernelMemory(ssdt_size);
 		int fd = openmem((char*)ssdt, ssdt_size);
@@ -371,12 +363,12 @@ struct acpi_2_ssdt *generate_cst_ssdt(struct acpi_2_fadt* fadt)
 			write(fd, chunk_c3, sizeof(chunk_c3));
 		
 		// Write aliases
-		for (i = 0; i < cpu_count; i++) {
+		int i;
+		for (i = 0; i < acpi_cpu_count; i++) {
 			int j;
 			for (j = 0; j < 4; j++)
-				chunk_alias[8+j] = cpu_name[i][j];
+				chunk_alias[8+j] = acpi_cpu_name[i][j];
 			write(fd, chunk_alias, sizeof(chunk_alias));
-			free(cpu_name[i]);
 		}
 		
 		close(fd);
@@ -386,6 +378,8 @@ struct acpi_2_ssdt *generate_cst_ssdt(struct acpi_2_fadt* fadt)
 		ssdt->Checksum = 256 - checksum8(ssdt, ssdt->Length);
 		
 		//dumpPhysAddr("C-States SSDT content: ", ssdt, ssdt_size);
+		
+		verbose ("SSDT with CPU C-States generated successfully\n");
 		
 		return ssdt;
 	}
@@ -430,28 +424,10 @@ struct acpi_2_ssdt *generate_pss_ssdt(struct acpi_2_dsdt* dsdt)
 		return NULL;
 	}
 	
-	int i, offset = 0, cpu_count = 0;
-	char* cpu_name[0xf];
+	if (acpi_cpu_count == 0) 
+		find_acpi_cpu_names((void*)dsdt, dsdt->Length);
 	
-	for (i = 0; i < 0xf; i++) 
-	{
-		offset = find_next_cpu_name((void*)dsdt, dsdt->Length, offset, i);
-		if (offset != -1)
-		{			
-			cpu_name[cpu_count] = malloc(4);
-			read_cpu_name(cpu_name[cpu_count], (void*)dsdt, offset);
-			
-			DBG("Found %c%c%c%c (from DSDT)\n", cpu_name[cpu_count][0], cpu_name[cpu_count][1], cpu_name[cpu_count][2], cpu_name[cpu_count][3]);
-			
-			cpu_count++;
-		}
-		else
-		{
-			break;
-		}
-	}
-	
-	if (cpu_count > 0) 
+	if (acpi_cpu_count > 0) 
 	{	
 		bool cpu_dynamic_fsb = false, cpu_noninteger_bus_ratio = (rdmsr64(MSR_IA32_PERF_STATUS) & (1ULL << 46));
 		struct p_state initial, maximum, minimum, p_states[32];
@@ -593,7 +569,7 @@ struct acpi_2_ssdt *generate_pss_ssdt(struct acpi_2_dsdt* dsdt)
 			
 			if (pss_name_length > 0x3f) pss_name_length++;
 			
-			uint32_t ssdt_size = 36 + (1 /* id=0x10 */ + pss_name_length) + cpu_count * sizeof(chunk_alias);
+			uint32_t ssdt_size = 36 + (1 /* id=0x10 */ + pss_name_length) + acpi_cpu_count * sizeof(chunk_alias);
 			
 			struct acpi_2_ssdt *ssdt = (void*)AllocateKernelMemory(ssdt_size);
 			int fd = openmem((char*)ssdt, ssdt_size);
@@ -644,12 +620,11 @@ struct acpi_2_ssdt *generate_pss_ssdt(struct acpi_2_dsdt* dsdt)
 			}
 			
 			// Write aliases
-			for (i = 0; i < cpu_count; i++) {
+			for (i = 0; i < acpi_cpu_count; i++) {
 				int j;
 				for (j = 0; j < 4; j++)
-					chunk_alias[8+j] = cpu_name[i][j];
+					chunk_alias[8+j] = acpi_cpu_name[i][j];
 				write(fd, chunk_alias, sizeof(chunk_alias));
-				free(cpu_name[i]);
 			}
 			
 			ssdt->Length = ssdt_size;
@@ -657,6 +632,7 @@ struct acpi_2_ssdt *generate_pss_ssdt(struct acpi_2_dsdt* dsdt)
 			ssdt->Checksum = 256 - checksum8(ssdt, ssdt->Length);
 			
 			//dumpPhysAddr("P-States SSDT content: ", ssdt, ssdt_size);
+			verbose ("SSDT with CPU P-States generated successfully\n");
 			
 			return ssdt;
 		}
@@ -919,15 +895,21 @@ int setupAcpi(void)
 			}
 			DBG("\n");
 			
-			// Correct the checksum of RSDT
-			rsdt_mod->Length-=4*dropoffset;
-			
 			// Mozodojo: Insert additional SSDTs into RSDT
 			if(ssdt_count>0)
 			{
-				int j;
+				uint32_t j = rsdt_mod->Length;
+				rsdt_mod->Length+=4*ssdt_count-4*dropoffset;
 				
-				rsdt_mod->Length+=4*ssdt_count;
+				if (rsdt_mod->Length > j)
+				{
+					struct acpi_2_rsdt *rsdt_copy = (struct acpi_2_rsdt *)AllocateKernelMemory(rsdt_mod->Length); 
+					memcpy (rsdt_copy, rsdt_mod, rsdt_mod->Length);
+					free(rsdt_mod); rsdt_mod = rsdt_copy;
+					rsdp_mod->RsdtAddress=(uint32_t)rsdt_mod;
+					rsdt_entries_num=(rsdt_mod->Length-sizeof(struct acpi_2_rsdt))/4;
+					rsdt_entries=(uint32_t *)(rsdt_mod+1);
+				}
 				
 				for (j=0; j<ssdt_count; j++)
 				{
@@ -936,7 +918,12 @@ int setupAcpi(void)
 				
 				verbose("Added %d SSDT table(s) into RSDT\n", ssdt_count);
 			}
-			
+			else 
+			{
+				rsdt_mod->Length-=4*dropoffset;
+			}
+
+			// Correct the checksum of RSDT
 			DBG("RSDT: Original checksum %d, ", rsdt_mod->Checksum);
 			
 			rsdt_mod->Checksum=0;
@@ -1028,14 +1015,22 @@ int setupAcpi(void)
 					
 				}
 				
-				xsdt_mod->Length-=8*dropoffset;
-				
 				// Mozodojo: Insert additional SSDTs into XSDT
 				if(ssdt_count>0)
 				{
-					int j;
+					int j = xsdt_mod->Length;
 					
-					xsdt_mod->Length+=8*ssdt_count;
+					xsdt_mod->Length+=8*ssdt_count-8*dropoffset;
+					
+					if (xsdt_mod->Length > j) 
+					{
+						struct acpi_2_xsdt *xsdt_copy = (struct acpi_2_xsdt *)AllocateKernelMemory(xsdt_mod->Length);
+						memcpy(xsdt_copy, xsdt_mod, xsdt_mod->Length);
+						free(xsdt_mod); xsdt_mod = xsdt_copy;
+						rsdp_mod->XsdtAddress=(uint32_t)xsdt_mod;
+						xsdt_entries_num=(xsdt_mod->Length-sizeof(struct acpi_2_xsdt))/8;
+						xsdt_entries=(uint64_t *)(xsdt_mod+1);
+					}
 					
 					for (j=0; j<ssdt_count; j++)
 					{
@@ -1044,8 +1039,11 @@ int setupAcpi(void)
 					
 					verbose("Added %d SSDT table(s) into XSDT\n", ssdt_count);
 				}
-				
-				
+				else 
+				{
+					xsdt_mod->Length-=8*dropoffset;
+				}
+
 				// Correct the checksum of XSDT
 				xsdt_mod->Checksum=0;
 				xsdt_mod->Checksum=256-checksum8(xsdt_mod,xsdt_mod->Length);

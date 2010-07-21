@@ -38,4 +38,9 @@ struct aml_chunk
 	struct aml_chunk*	Last;
 };
 
+static inline bool aml_isvalidchar(char c)
+{
+	return isupper(c) || isdigit(c) || c == '_';
+};
+
 #endif /* !__LIBSAIO_AML_GENERATOR_H */
