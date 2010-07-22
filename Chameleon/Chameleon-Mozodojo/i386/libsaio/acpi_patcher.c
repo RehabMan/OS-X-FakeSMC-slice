@@ -767,16 +767,11 @@ int setupAcpi(void)
 	
 	// Load replacement DSDT
 	new_dsdt=loadACPITable("DSDT.aml");
-	// Mozodojo: going to patch FACP and load SSDT's even if DSDT.aml is not present
-	/*if (!new_dsdt)
-	 {
-	 return setupAcpiNoMod();
-	 }*/
 	
 	// Mozodojo: Load additional SSDTs
 	struct acpi_2_ssdt *new_ssdt[32]; // 30 + 2 additional tables for pss & cst
-	struct acpi_2_fadt *fadt; // will be used in CST generator
 	int  ssdt_count=0;
+	
 	bool drop_ssdt=false, generate_pstates=false, generate_cstates=false; 
 	
 	getBoolForKey(kDropSSDT, &drop_ssdt, &bootInfo->bootConfig);
@@ -788,7 +783,7 @@ int setupAcpi(void)
 		
 		for (i=0; i<30; i++)
 		{
-			char *filename[512];
+			char filename[512];
 
 			sprintf(filename, i>0?"SSDT-%d.aml":"SSDT.aml", i);
 			
@@ -872,7 +867,7 @@ int setupAcpi(void)
 				}
 				if (tableSign(table, "FACP"))
 				{
-					struct acpi_2_fadt *fadt_mod;
+					struct acpi_2_fadt *fadt, *fadt_mod;
 					fadt=(struct acpi_2_fadt *)rsdt_entries[i];
 					
 					DBG("FADT found @%x, Length %d\n",fadt, fadt->Length);
@@ -998,7 +993,7 @@ int setupAcpi(void)
 					}
 					if (tableSign(table, "FACP"))
 					{
-						struct acpi_2_fadt *fadt_mod;
+						struct acpi_2_fadt *fadt, *fadt_mod;
 						fadt=(struct acpi_2_fadt *)(uint32_t)xsdt_entries[i];
 						
 						DBG("FADT found @%x,%x, Length %d\n",(uint32_t)(xsdt_entries[i]>>32),fadt, 

@@ -188,6 +188,9 @@ int aml_get_names_count(const char* name)
 
 int aml_fill_name(struct aml_chunk* node, const char* name)
 {
+	if (!node) 
+		return -1;
+	
 	int i, len = strlen(name), count = 0;
 	
 	for (i = 0; i < len; i++)
@@ -212,7 +215,7 @@ int aml_fill_name(struct aml_chunk* node, const char* name)
 	{
 		node->Length = 4;
 		node->Buffer = malloc(node->Length);
-		aml_fill_simple_string(node->Buffer, name);
+		aml_fill_simple_name(node->Buffer, name);
 		return node->Length;
 	}
 	
@@ -244,7 +247,7 @@ int aml_fill_name(struct aml_chunk* node, const char* name)
 			else 
 			{
 				verbose("aml_fill_name: unexpected end of names path!");
-				return;
+				return -1;
 			}
 		}
 
