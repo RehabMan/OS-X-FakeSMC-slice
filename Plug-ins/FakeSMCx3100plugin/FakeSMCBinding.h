@@ -24,8 +24,8 @@
 class FakeSMCBinding 
 {
 public:
-	virtual void OnKeyRead(const char* key, char* data);
-	virtual void OnKeyWrite(const char* key, char* data);
+	virtual IOReturn OnKeyRead(const char* key, char* data);
+	virtual IOReturn OnKeyWrite(const char* key, char* data);
 };
 
 void FakeSMCAddKey (const char*, uint8_t, char*);

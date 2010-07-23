@@ -29,9 +29,9 @@
 			<key>CFBundleIdentifier</key>
 			<string>org.slice.driver.${PRODUCT_NAME:rfc1034Identifier}</string>
 			<key>IOClass</key>
-			<string>x3100plugin</string>
+			<string>RadeonPlugin</string>
 			<key>IOMatchCategory</key>
-			<string>x3100plugin</string>
+			<string>RadeonPlugin</string>
 			<key>IOPCIMatch</key>
 			<string>0x2a008086</string>
 			<key>IOProbeScore</key>
