@@ -1,0 +1,260 @@
+// !$*UTF8*$!
+{
+	089C1669FE841209C02AAC07 /* Project object */ = {
+		activeArchitecturePreference = i386;
+		activeBuildConfigurationName = "Release Leopard";
+		activeTarget = 32D94FC30562CBF700B6AF17 /* FakeSMCRadeon */;
+		addToTargets = (
+			32D94FC30562CBF700B6AF17 /* FakeSMCRadeon */,
+		);
+		codeSenseManager = 126A965911B00A1300D0E4A9 /* Code sense */;
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					546,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.XCSCMDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					20,
+					522,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_SCM_ColumnID,
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 301579967;
+			PBXWorkspaceStateSaveDate = 301579967;
+		};
+		perUserProjectItems = {
+			12B1C66911B02E3700D7CCF5 /* PBXTextBookmark */ = 12B1C66911B02E3700D7CCF5 /* PBXTextBookmark */;
+			12B1C66A11B02E3700D7CCF5 /* PBXTextBookmark */ = 12B1C66A11B02E3700D7CCF5 /* PBXTextBookmark */;
+			12B6F2F911F9FFEF00D05C47 /* PBXTextBookmark */ = 12B6F2F911F9FFEF00D05C47 /* PBXTextBookmark */;
+			12B6F2FA11F9FFEF00D05C47 /* PBXTextBookmark */ = 12B6F2FA11F9FFEF00D05C47 /* PBXTextBookmark */;
+			12B6F2FB11F9FFEF00D05C47 /* PlistBookmark */ = 12B6F2FB11F9FFEF00D05C47 /* PlistBookmark */;
+			12B6F2FC11F9FFEF00D05C47 /* PBXTextBookmark */ = 12B6F2FC11F9FFEF00D05C47 /* PBXTextBookmark */;
+			12B6F2FD11F9FFEF00D05C47 /* PBXTextBookmark */ = 12B6F2FD11F9FFEF00D05C47 /* PBXTextBookmark */;
+			12B6F2FE11F9FFEF00D05C47 /* PBXTextBookmark */ = 12B6F2FE11F9FFEF00D05C47 /* PBXTextBookmark */;
+			12B6F30311FA00AE00D05C47 /* PBXTextBookmark */ = 12B6F30311FA00AE00D05C47 /* PBXTextBookmark */;
+			12B6F30411FA00AE00D05C47 /* PBXTextBookmark */ = 12B6F30411FA00AE00D05C47 /* PBXTextBookmark */;
+		};
+		sourceControlManager = 126A965811B00A1300D0E4A9 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	126A965811B00A1300D0E4A9 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = fakesmc;
+			};
+		};
+	};
+	126A965911B00A1300D0E4A9 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	12B1C65D11B02D6400D7CCF5 /* IOPCIDevice.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = IOPCIDevice.h;
+		path = /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Versions/A/Headers/IOKit/pci/IOPCIDevice.h;
+		sourceTree = "<absolute>";
+	};
+	12B1C66911B02E3700D7CCF5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12B1C65D11B02D6400D7CCF5 /* IOPCIDevice.h */;
+		name = "IOPCIDevice.h: 511";
+		rLen = 66;
+		rLoc = 22369;
+		rType = 0;
+		vrLen = 2091;
+		vrLoc = 21585;
+	};
+	12B1C66A11B02E3700D7CCF5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12B1C66B11B02E3700D7CCF5 /* AppleSamplePCI.cpp */;
+		name = "AppleSamplePCI.cpp: 83";
+		rLen = 1;
+		rLoc = 2719;
+		rType = 0;
+		vrLen = 1425;
+		vrLoc = 1786;
+	};
+	12B1C66B11B02E3700D7CCF5 /* AppleSamplePCI.cpp */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.cpp.cpp;
+		name = AppleSamplePCI.cpp;
+		path = "/Volumes/LeoHD/Projects/Apple/1056/IOPCIFamily-106sl1/AppleSamplePCI/AppleSamplePCI.cpp";
+		sourceTree = "<absolute>";
+	};
+	12B6F21D11F9BFA100D05C47 /* FakeSMCRadeonMon.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {724, 1196}}";
+			sepNavSelRange = "{2217, 6}";
+			sepNavVisRange = "{62, 1170}";
+		};
+	};
+	12B6F21F11F9C0C600D05C47 /* FakeSMCBinding.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {724, 2210}}";
+			sepNavSelRange = "{2980, 10}";
+			sepNavVisRange = "{2704, 534}";
+			sepNavWindowFrame = "{{585, 69}, {820, 809}}";
+		};
+	};
+	12B6F25211F9DA3900D05C47 /* radeon_chipinfo_gen.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {724, 3718}}";
+			sepNavSelRange = "{280, 1}";
+			sepNavVisRange = "{0, 1399}";
+		};
+	};
+	12B6F25311F9DA3900D05C47 /* radeon_chipsets.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {724, 1859}}";
+			sepNavSelRange = "{1025, 0}";
+			sepNavVisRange = "{300, 1073}";
+		};
+	};
+	12B6F2D211F9FC0800D05C47 /* atombios.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {894, 79339}}";
+			sepNavSelRange = "{1698, 0}";
+			sepNavVisRange = "{1423, 615}";
+		};
+	};
+	12B6F2F911F9FFEF00D05C47 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12B6F25311F9DA3900D05C47 /* radeon_chipsets.h */;
+		name = "radeon_chipsets.h: 27";
+		rLen = 0;
+		rLoc = 1025;
+		rType = 0;
+		vrLen = 1073;
+		vrLoc = 300;
+	};
+	12B6F2FA11F9FFEF00D05C47 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12B6F25211F9DA3900D05C47 /* radeon_chipinfo_gen.h */;
+		name = "radeon_chipinfo_gen.h: 7";
+		rLen = 1;
+		rLoc = 280;
+		rType = 0;
+		vrLen = 1399;
+		vrLoc = 0;
+	};
+	12B6F2FB11F9FFEF00D05C47 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 32D94FCF0562CBF700B6AF17 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			OSBundleLibraries,
+			org.netkas.FakeSMC,
+		);
+		name = "/Users/slice/FakeSMC_mozo/rev352/fakesmc/Plug-ins/FakeSMCRadeon/Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	12B6F2FC11F9FFEF00D05C47 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12B6F2D211F9FC0800D05C47 /* atombios.h */;
+		name = "atombios.h: 37";
+		rLen = 0;
+		rLoc = 1633;
+		rType = 0;
+		vrLen = 1136;
+		vrLoc = 647;
+	};
+	12B6F2FD11F9FFEF00D05C47 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12B6F21D11F9BFA100D05C47 /* FakeSMCRadeonMon.h */;
+		name = "FakeSMCRadeonMon.h: 69";
+		rLen = 6;
+		rLoc = 2217;
+		rType = 0;
+		vrLen = 1170;
+		vrLoc = 62;
+	};
+	12B6F2FE11F9FFEF00D05C47 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCRadeon.cpp */;
+		name = "FakeSMCRadeon.cpp: 18";
+		rLen = 5;
+		rLoc = 406;
+		rType = 0;
+		vrLen = 898;
+		vrLoc = 250;
+	};
+	12B6F30311FA00AE00D05C47 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12B6F21F11F9C0C600D05C47 /* FakeSMCBinding.h */;
+		name = "FakeSMCBinding.h: 142";
+		rLen = 10;
+		rLoc = 2980;
+		rType = 0;
+		vrLen = 534;
+		vrLoc = 2704;
+	};
+	12B6F30411FA00AE00D05C47 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCRadeon.cpp */;
+		name = "FakeSMCRadeon.cpp: 18";
+		rLen = 5;
+		rLoc = 406;
+		rType = 0;
+		vrLen = 898;
+		vrLoc = 250;
+	};
+	1A224C3FFF42367911CA2CB7 /* FakeSMCRadeon.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {894, 3315}}";
+			sepNavSelRange = "{3515, 10}";
+			sepNavVisRange = "{2352, 696}";
+			sepNavWindowFrame = "{{75, 23}, {820, 809}}";
+		};
+	};
+	32D94FC30562CBF700B6AF17 /* FakeSMCRadeon */ = {
+		activeExec = 0;
+	};
+	32D94FCF0562CBF700B6AF17 /* Info.plist */ = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{15, 82}, {802, 791}}";
+		};
+	};
+}
