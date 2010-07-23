@@ -1,0 +1,186 @@
+// !$*UTF8*$!
+{
+	089C1669FE841209C02AAC07 /* Project object */ = {
+		activeArchitecturePreference = i386;
+		activeBuildConfigurationName = "Release Leopard";
+		activeTarget = 32D94FC30562CBF700B6AF17 /* FakeSMCRadeon */;
+		addToTargets = (
+			32D94FC30562CBF700B6AF17 /* FakeSMCRadeon */,
+		);
+		codeSenseManager = 126A965911B00A1300D0E4A9 /* Code sense */;
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					546,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.XCSCMDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					20,
+					522,
+					20,
+					48.16259765625,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_SCM_ColumnID,
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 301577893;
+			PBXWorkspaceStateSaveDate = 301577893;
+		};
+		perUserProjectItems = {
+			124984CB11B155360027F54E = 124984CB11B155360027F54E /* PlistBookmark */;
+			12B1C66911B02E3700D7CCF5 = 12B1C66911B02E3700D7CCF5 /* PBXTextBookmark */;
+			12B1C66A11B02E3700D7CCF5 = 12B1C66A11B02E3700D7CCF5 /* PBXTextBookmark */;
+			12B6F1A211F9B29F00D05C47 = 12B6F1A211F9B29F00D05C47 /* PBXTextBookmark */;
+			12B6F1B811F9B3DC00D05C47 = 12B6F1B811F9B3DC00D05C47 /* PBXTextBookmark */;
+			12F2A91311F8C2160020CB7A = 12F2A91311F8C2160020CB7A /* PBXTextBookmark */;
+		};
+		sourceControlManager = 126A965811B00A1300D0E4A9 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	124984CB11B155360027F54E /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 32D94FCF0562CBF700B6AF17 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundleShortVersionString,
+		);
+		name = "/Users/slice/FakeSMC_mozo/Plug-ins/FakeSMCx3100plugin/Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775808;
+	};
+	126A965811B00A1300D0E4A9 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = fakesmc;
+			};
+		};
+	};
+	126A965911B00A1300D0E4A9 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	12B1C65D11B02D6400D7CCF5 /* IOPCIDevice.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = IOPCIDevice.h;
+		path = /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Versions/A/Headers/IOKit/pci/IOPCIDevice.h;
+		sourceTree = "<absolute>";
+	};
+	12B1C66911B02E3700D7CCF5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12B1C65D11B02D6400D7CCF5 /* IOPCIDevice.h */;
+		name = "IOPCIDevice.h: 511";
+		rLen = 66;
+		rLoc = 22369;
+		rType = 0;
+		vrLen = 2091;
+		vrLoc = 21585;
+	};
+	12B1C66A11B02E3700D7CCF5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12B1C66B11B02E3700D7CCF5 /* AppleSamplePCI.cpp */;
+		name = "AppleSamplePCI.cpp: 83";
+		rLen = 1;
+		rLoc = 2719;
+		rType = 0;
+		vrLen = 1425;
+		vrLoc = 1786;
+	};
+	12B1C66B11B02E3700D7CCF5 /* AppleSamplePCI.cpp */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.cpp.cpp;
+		name = AppleSamplePCI.cpp;
+		path = "/Volumes/LeoHD/Projects/Apple/1056/IOPCIFamily-106sl1/AppleSamplePCI/AppleSamplePCI.cpp";
+		sourceTree = "<absolute>";
+	};
+	12B6F1A211F9B29F00D05C47 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCRadeon.cpp */;
+		name = "FakeSMCRadeon.cpp: 33";
+		rLen = 0;
+		rLoc = 812;
+		rType = 0;
+		vrLen = 586;
+		vrLoc = 527;
+	};
+	12B6F1B811F9B3DC00D05C47 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCRadeon.cpp */;
+		name = "FakeSMCRadeon.cpp: 33";
+		rLen = 0;
+		rLoc = 812;
+		rType = 0;
+		vrLen = 515;
+		vrLoc = 598;
+	};
+	12F2A91311F8C2160020CB7A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3EFF42367911CA2CB7 /* FakeSMCRadeon.h */;
+		name = "FakeSMCRadeon.h: 37";
+		rLen = 0;
+		rLoc = 904;
+		rType = 0;
+		vrLen = 693;
+		vrLoc = 0;
+	};
+	1A224C3EFF42367911CA2CB7 /* FakeSMCRadeon.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {724, 650}}";
+			sepNavSelRange = "{904, 0}";
+			sepNavVisRange = "{0, 693}";
+		};
+	};
+	1A224C3FFF42367911CA2CB7 /* FakeSMCRadeon.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {724, 2028}}";
+			sepNavSelRange = "{812, 0}";
+			sepNavVisRange = "{598, 515}";
+			sepNavWindowFrame = "{{15, 64}, {820, 809}}";
+		};
+	};
+	32D94FC30562CBF700B6AF17 /* FakeSMCRadeon */ = {
+		activeExec = 0;
+	};
+	32D94FCF0562CBF700B6AF17 /* Info.plist */ = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{15, 82}, {802, 791}}";
+		};
+	};
+}
