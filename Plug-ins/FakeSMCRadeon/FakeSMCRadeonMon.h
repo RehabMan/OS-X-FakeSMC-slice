@@ -65,7 +65,7 @@ class RadeonPlugin : public IOService {
 	OSDeclareDefaultStructors(RadeonPlugin)
 private:
 	volatile		UInt8* mmio_base;
-	RADEONCardInfo	rinfo;
+	RADEONCardInfo*	rinfo;
 	UInt32			chipID;
 	IOPCIDevice *	VCard;
 	IOMemoryMap *	mmio;

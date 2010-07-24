@@ -95,7 +95,7 @@ enum radeon_family {
 	CHIP_FAMILY_JUNIPER,
 	CHIP_FAMILY_CYPRESS,
 	CHIP_FAMILY_HEMLOCK,
-	
+	CHIP_FAMILY_Evergreen,
     CHIP_FAMILY_LAST
 };
 
