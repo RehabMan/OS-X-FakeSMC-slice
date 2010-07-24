@@ -88,7 +88,7 @@ RadeonPlugin::start( IOService * provider ) {
 	
 	//getRadeonBIOS(); -  anahuya?
 	getRadeonInfo();
-	switch (rinfo.ChipFamily) {
+	switch (rinfo->ChipFamily) {
 		case CHIP_FAMILY_R600:
 		case CHIP_FAMILY_RV610:
 		case CHIP_FAMILY_RV630:
@@ -97,6 +97,9 @@ RadeonPlugin::start( IOService * provider ) {
 			break;
 		case CHIP_FAMILY_RV770:
 			setup_R7xx(card_number);
+			break;
+		case CHIP_FAMILY_Evergreen:
+			setup_Evergreen(card_number);
 			break;
 	
 		default:
@@ -168,6 +171,16 @@ static UInt32 rv6xx_get_temp()
 	return actual_temp * 1000;
 }
 
+void RadeonPlugin::getRadeonInfo()
+{
+	UInt16 devID = chipID >> 16;
+	for (int i=0; radeon_device_list[i].device_id; i++) {
+		if (devID == radeon_device_list[i].device_id) {
+			rinfo = &radeon_device_list[i];
+			break;
+		}
+	}
+}
 
 void RadeonPlugin::setup_R6xx(int card_number)
 {
