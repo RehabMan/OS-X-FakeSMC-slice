@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		126A965B11B00A2300D0E4A9 /* fakesmc.h in Headers */ = {isa = PBXBuildFile; fileRef = 126A965A11B00A2300D0E4A9 /* fakesmc.h */; };
+		122290AD11FBA68A00DA074F /* FakeSMCBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = 122290AC11FBA68A00DA074F /* FakeSMCBinding.h */; };
 		32D94FC60562CBF700B6AF17 /* FakeSMCx3100plugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A224C3EFF42367911CA2CB7 /* FakeSMCx3100plugin.h */; };
 		32D94FC80562CBF700B6AF17 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
 		32D94FCA0562CBF700B6AF17 /* FakeSMCx3100plugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCx3100plugin.cpp */; settings = {ATTRIBUTES = (); }; };
@@ -15,7 +15,7 @@
 
 /* Begin PBXFileReference section */
 		089C167EFE841241C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		126A965A11B00A2300D0E4A9 /* fakesmc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fakesmc.h; sourceTree = "<group>"; };
+		122290AC11FBA68A00DA074F /* FakeSMCBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeSMCBinding.h; sourceTree = "<group>"; };
 		1A224C3EFF42367911CA2CB7 /* FakeSMCx3100plugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeSMCx3100plugin.h; sourceTree = "<group>"; };
 		1A224C3FFF42367911CA2CB7 /* FakeSMCx3100plugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FakeSMCx3100plugin.cpp; sourceTree = "<group>"; };
 		32D94FCF0562CBF700B6AF17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -65,7 +65,7 @@
 		247142CAFF3F8F9811CA285C /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				126A965A11B00A2300D0E4A9 /* fakesmc.h */,
+				122290AC11FBA68A00DA074F /* FakeSMCBinding.h */,
 				1A224C3EFF42367911CA2CB7 /* FakeSMCx3100plugin.h */,
 				1A224C3FFF42367911CA2CB7 /* FakeSMCx3100plugin.cpp */,
 			);
@@ -80,7 +80,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32D94FC60562CBF700B6AF17 /* FakeSMCx3100plugin.h in Headers */,
-				126A965B11B00A2300D0E4A9 /* fakesmc.h in Headers */,
+				122290AD11FBA68A00DA074F /* FakeSMCBinding.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
