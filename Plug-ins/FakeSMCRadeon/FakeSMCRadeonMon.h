@@ -47,20 +47,6 @@ public:
 };
 
 
-class TemperatureSensor : public Binding {
-public:
-	TemperatureSensor(const char* key, const char* type, UInt8 size) : Binding(key, type, size) {};
-	virtual IOReturn OnKeyRead(const char* key, char* data);
-};
-
-class FanSensor : public Binding {
-public:
-	FanSensor(const char* key, const char* type, UInt8 size) : Binding(key, type, size) {};
-	virtual IOReturn OnKeyRead(const char* key, char* data);
-};
-
-
-
 class RadeonPlugin : public IOService {
 	OSDeclareDefaultStructors(RadeonPlugin)
 private:
