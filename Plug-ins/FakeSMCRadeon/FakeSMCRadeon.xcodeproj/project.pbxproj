@@ -7,22 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1222907011FB9D4800DA074F /* Sensors.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1222906F11FB9D4800DA074F /* Sensors.cpp */; };
 		12B6F21E11F9BFA100D05C47 /* FakeSMCRadeonMon.h in Headers */ = {isa = PBXBuildFile; fileRef = 12B6F21D11F9BFA100D05C47 /* FakeSMCRadeonMon.h */; };
 		12B6F22011F9C0C600D05C47 /* FakeSMCBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = 12B6F21F11F9C0C600D05C47 /* FakeSMCBinding.h */; };
 		12B6F25411F9DA3900D05C47 /* radeon_chipinfo_gen.h in Headers */ = {isa = PBXBuildFile; fileRef = 12B6F25211F9DA3900D05C47 /* radeon_chipinfo_gen.h */; };
 		12B6F25511F9DA3900D05C47 /* radeon_chipsets.h in Headers */ = {isa = PBXBuildFile; fileRef = 12B6F25311F9DA3900D05C47 /* radeon_chipsets.h */; };
 		12B6F2D311F9FC0800D05C47 /* atombios.h in Headers */ = {isa = PBXBuildFile; fileRef = 12B6F2D211F9FC0800D05C47 /* atombios.h */; };
+		12C0D4D011FAFB7E00044338 /* Sensor.h in Headers */ = {isa = PBXBuildFile; fileRef = 12C0D4CF11FAFB7E00044338 /* Sensor.h */; };
+		12C0D4DF11FAFEC900044338 /* ATICard.h in Headers */ = {isa = PBXBuildFile; fileRef = 12C0D4DD11FAFEC900044338 /* ATICard.h */; };
+		12C0D4E011FAFEC900044338 /* ATICard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12C0D4DE11FAFEC900044338 /* ATICard.cpp */; };
 		32D94FC80562CBF700B6AF17 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
 		32D94FCA0562CBF700B6AF17 /* FakeSMCRadeon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCRadeon.cpp */; settings = {ATTRIBUTES = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		089C167EFE841241C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1222906F11FB9D4800DA074F /* Sensors.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sensors.cpp; sourceTree = "<group>"; };
 		12B6F21D11F9BFA100D05C47 /* FakeSMCRadeonMon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeSMCRadeonMon.h; sourceTree = "<group>"; };
 		12B6F21F11F9C0C600D05C47 /* FakeSMCBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeSMCBinding.h; sourceTree = "<group>"; };
 		12B6F25211F9DA3900D05C47 /* radeon_chipinfo_gen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = radeon_chipinfo_gen.h; sourceTree = "<group>"; };
 		12B6F25311F9DA3900D05C47 /* radeon_chipsets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = radeon_chipsets.h; sourceTree = "<group>"; };
 		12B6F2D211F9FC0800D05C47 /* atombios.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = atombios.h; sourceTree = "<group>"; };
+		12C0D4CF11FAFB7E00044338 /* Sensor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sensor.h; sourceTree = "<group>"; };
+		12C0D4DD11FAFEC900044338 /* ATICard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATICard.h; sourceTree = "<group>"; };
+		12C0D4DE11FAFEC900044338 /* ATICard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ATICard.cpp; sourceTree = "<group>"; };
 		1A224C3FFF42367911CA2CB7 /* FakeSMCRadeon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FakeSMCRadeon.cpp; sourceTree = "<group>"; };
 		32D94FCF0562CBF700B6AF17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32D94FD00562CBF700B6AF17 /* FakeSMCRadeon.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FakeSMCRadeon.kext; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,12 +79,16 @@
 		247142CAFF3F8F9811CA285C /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				1222906F11FB9D4800DA074F /* Sensors.cpp */,
+				12C0D4CF11FAFB7E00044338 /* Sensor.h */,
 				12B6F2D211F9FC0800D05C47 /* atombios.h */,
 				12B6F25211F9DA3900D05C47 /* radeon_chipinfo_gen.h */,
 				12B6F25311F9DA3900D05C47 /* radeon_chipsets.h */,
 				12B6F21F11F9C0C600D05C47 /* FakeSMCBinding.h */,
 				12B6F21D11F9BFA100D05C47 /* FakeSMCRadeonMon.h */,
 				1A224C3FFF42367911CA2CB7 /* FakeSMCRadeon.cpp */,
+				12C0D4DD11FAFEC900044338 /* ATICard.h */,
+				12C0D4DE11FAFEC900044338 /* ATICard.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -93,6 +105,8 @@
 				12B6F25411F9DA3900D05C47 /* radeon_chipinfo_gen.h in Headers */,
 				12B6F25511F9DA3900D05C47 /* radeon_chipsets.h in Headers */,
 				12B6F2D311F9FC0800D05C47 /* atombios.h in Headers */,
+				12C0D4D011FAFB7E00044338 /* Sensor.h in Headers */,
+				12C0D4DF11FAFEC900044338 /* ATICard.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +177,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				32D94FCA0562CBF700B6AF17 /* FakeSMCRadeon.cpp in Sources */,
+				12C0D4E011FAFEC900044338 /* ATICard.cpp in Sources */,
+				1222907011FB9D4800DA074F /* Sensors.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

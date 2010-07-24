@@ -5,6 +5,7 @@
  *  Created by mozo on 08/07/10.
  *  Copyright 2010 mozodojo. All rights reserved.
  *
+ *  Slice - add ATI sensors
  */
 
 #ifndef _SENSOR_H 
@@ -27,7 +28,7 @@ public:
 		m_Provider = provider;
 		m_Index = index;
 		
-		InfoLog("Binding key %s", key);
+		IOLog("Binding key %s", key);
 		
 		m_Key = (char*)IOMalloc(5);
 		bcopy(key, m_Key, 5);
@@ -41,7 +42,7 @@ public:
 	{
 		if (m_Key)
 		{
-			InfoLog("Removing key %s binding", m_Key);
+			IOLog("Removing key %s binding", m_Key);
 			FakeSMCRemoveKeyBinding(m_Key);
 			IOFree(m_Key, 5);
 		}
@@ -65,35 +66,50 @@ public:
 
 class R5xxTemperatureSensor : public Sensor {
 public:
-	R5xxTemperatureSensor(const char* key, const char* type, UInt8 size) : Binding(key, type, size) {};
+	R5xxTemperatureSensor(ATICard* provider, UInt8 offset, const char* key, const char* type, UInt8 size) : Sensor(provider, offset, key, type, size)
+	{
+		//
+	};
+	
 	virtual IOReturn OnKeyRead(const char* key, char* data);
 };
 
 class R6xxTemperatureSensor : public Sensor {
 public:
-	R6xxTemperatureSensor(const char* key, const char* type, UInt8 size) : Binding(key, type, size) {};
+	R6xxTemperatureSensor(ATICard* provider, UInt8 offset, const char* key, const char* type, UInt8 size) : Sensor(provider, offset, key, type, size)
+	{
+		//
+	};
+	
 	virtual IOReturn OnKeyRead(const char* key, char* data);
 };
 
 class R7xxTemperatureSensor : public Sensor {
 public:
-	R7xxTemperatureSensor(const char* key, const char* type, UInt8 size) : Binding(key, type, size) {};
+	R7xxTemperatureSensor(ATICard* provider, UInt8 offset, const char* key, const char* type, UInt8 size) : Sensor(provider, offset, key, type, size)
+	{
+		//
+	};
+	
 	virtual IOReturn OnKeyRead(const char* key, char* data);
 };
 
 class EverTemperatureSensor : public Sensor {
 public:
-	EverTemperatureSensor(const char* key, const char* type, UInt8 size) : Binding(key, type, size) {};
+	EverTemperatureSensor(ATICard* provider, UInt8 offset, const char* key, const char* type, UInt8 size) : Sensor(provider, offset, key, type, size)
+	{
+		//
+	};
+	
 	virtual IOReturn OnKeyRead(const char* key, char* data);
 };
 
 class FanSensor : public Sensor {
 public:
-	FanSensor(const char* key, const char* type, UInt8 size) : Binding(key, type, size) {};
+	FanSensor(ATICard* provider, UInt8 offset, const char* key, const char* type, UInt8 size) : Sensor(provider, offset, key, type, size)
+ {};
 	virtual IOReturn OnKeyRead(const char* key, char* data);
 };
-
-
 
 
 #endif

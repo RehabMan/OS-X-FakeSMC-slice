@@ -55,24 +55,685 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 301579967;
-			PBXWorkspaceStateSaveDate = 301579967;
+			PBXPerProjectTemplateStateSaveDate = 301688069;
+			PBXWorkspaceStateSaveDate = 301688069;
 		};
 		perUserProjectItems = {
-			12B1C66911B02E3700D7CCF5 /* PBXTextBookmark */ = 12B1C66911B02E3700D7CCF5 /* PBXTextBookmark */;
-			12B1C66A11B02E3700D7CCF5 /* PBXTextBookmark */ = 12B1C66A11B02E3700D7CCF5 /* PBXTextBookmark */;
-			12B6F2F911F9FFEF00D05C47 /* PBXTextBookmark */ = 12B6F2F911F9FFEF00D05C47 /* PBXTextBookmark */;
-			12B6F2FA11F9FFEF00D05C47 /* PBXTextBookmark */ = 12B6F2FA11F9FFEF00D05C47 /* PBXTextBookmark */;
-			12B6F2FB11F9FFEF00D05C47 /* PlistBookmark */ = 12B6F2FB11F9FFEF00D05C47 /* PlistBookmark */;
-			12B6F2FC11F9FFEF00D05C47 /* PBXTextBookmark */ = 12B6F2FC11F9FFEF00D05C47 /* PBXTextBookmark */;
-			12B6F2FD11F9FFEF00D05C47 /* PBXTextBookmark */ = 12B6F2FD11F9FFEF00D05C47 /* PBXTextBookmark */;
-			12B6F2FE11F9FFEF00D05C47 /* PBXTextBookmark */ = 12B6F2FE11F9FFEF00D05C47 /* PBXTextBookmark */;
-			12B6F30311FA00AE00D05C47 /* PBXTextBookmark */ = 12B6F30311FA00AE00D05C47 /* PBXTextBookmark */;
-			12B6F30411FA00AE00D05C47 /* PBXTextBookmark */ = 12B6F30411FA00AE00D05C47 /* PBXTextBookmark */;
+			1222900811FB651000DA074F /* PBXTextBookmark */ = 1222900811FB651000DA074F /* PBXTextBookmark */;
+			1222905611FB9BCD00DA074F /* PBXTextBookmark */ = 1222905611FB9BCD00DA074F /* PBXTextBookmark */;
+			1222905711FB9BCD00DA074F /* PBXTextBookmark */ = 1222905711FB9BCD00DA074F /* PBXTextBookmark */;
+			1222905811FB9BCD00DA074F /* PBXTextBookmark */ = 1222905811FB9BCD00DA074F /* PBXTextBookmark */;
+			122290CD11FBAC2B00DA074F /* PBXTextBookmark */ = 122290CD11FBAC2B00DA074F /* PBXTextBookmark */;
+			122290CE11FBAC2B00DA074F /* PBXTextBookmark */ = 122290CE11FBAC2B00DA074F /* PBXTextBookmark */;
+			122290CF11FBAC2B00DA074F /* XCBuildMessageTextBookmark */ = 122290CF11FBAC2B00DA074F /* XCBuildMessageTextBookmark */;
+			122290D011FBAC2B00DA074F /* PBXTextBookmark */ = 122290D011FBAC2B00DA074F /* PBXTextBookmark */;
+			122290D111FBAC2B00DA074F /* PBXTextBookmark */ = 122290D111FBAC2B00DA074F /* PBXTextBookmark */;
+			122290D411FBADB300DA074F /* PBXTextBookmark */ = 122290D411FBADB300DA074F /* PBXTextBookmark */;
+			122290D511FBADB300DA074F /* XCBuildMessageTextBookmark */ = 122290D511FBADB300DA074F /* XCBuildMessageTextBookmark */;
+			122290D611FBADB300DA074F /* PBXTextBookmark */ = 122290D611FBADB300DA074F /* PBXTextBookmark */;
+			122290D711FBADB300DA074F /* PBXTextBookmark */ = 122290D711FBADB300DA074F /* PBXTextBookmark */;
+			122290DC11FBAF5300DA074F /* PBXTextBookmark */ = 122290DC11FBAF5300DA074F /* PBXTextBookmark */;
+			122290DD11FBAF5300DA074F /* PBXTextBookmark */ = 122290DD11FBAF5300DA074F /* PBXTextBookmark */;
+			122290DE11FBAF5300DA074F /* PBXTextBookmark */ = 122290DE11FBAF5300DA074F /* PBXTextBookmark */;
+			122290DF11FBAF5300DA074F /* PBXTextBookmark */ = 122290DF11FBAF5300DA074F /* PBXTextBookmark */;
+			122290E011FBAF5300DA074F /* XCBuildMessageTextBookmark */ = 122290E011FBAF5300DA074F /* XCBuildMessageTextBookmark */;
+			122290E111FBAF5300DA074F /* PBXTextBookmark */ = 122290E111FBAF5300DA074F /* PBXTextBookmark */;
+			122290E211FBAF5300DA074F /* PBXTextBookmark */ = 122290E211FBAF5300DA074F /* PBXTextBookmark */;
+			122290EC11FBAFE700DA074F /* PBXTextBookmark */ = 122290EC11FBAFE700DA074F /* PBXTextBookmark */;
+			122290ED11FBAFE700DA074F /* PBXTextBookmark */ = 122290ED11FBAFE700DA074F /* PBXTextBookmark */;
+			122290EE11FBAFE700DA074F /* PBXTextBookmark */ = 122290EE11FBAFE700DA074F /* PBXTextBookmark */;
+			122290EF11FBAFE700DA074F /* XCBuildMessageTextBookmark */ = 122290EF11FBAFE700DA074F /* XCBuildMessageTextBookmark */;
+			122290F011FBAFE700DA074F /* PBXTextBookmark */ = 122290F011FBAFE700DA074F /* PBXTextBookmark */;
+			122290F111FBAFE700DA074F /* PBXTextBookmark */ = 122290F111FBAFE700DA074F /* PBXTextBookmark */;
+			122290F611FBB29100DA074F /* PBXTextBookmark */ = 122290F611FBB29100DA074F /* PBXTextBookmark */;
+			122290F711FBB29100DA074F /* XCBuildMessageTextBookmark */ = 122290F711FBB29100DA074F /* XCBuildMessageTextBookmark */;
+			122290F811FBB29100DA074F /* PBXTextBookmark */ = 122290F811FBB29100DA074F /* PBXTextBookmark */;
+			122290F911FBB29100DA074F /* PBXTextBookmark */ = 122290F911FBB29100DA074F /* PBXTextBookmark */;
+			1222910011FBB3D800DA074F /* PBXTextBookmark */ = 1222910011FBB3D800DA074F /* PBXTextBookmark */;
+			1222910111FBB3D800DA074F /* XCBuildMessageTextBookmark */ = 1222910111FBB3D800DA074F /* XCBuildMessageTextBookmark */;
+			1222910211FBB3D800DA074F /* PBXTextBookmark */ = 1222910211FBB3D800DA074F /* PBXTextBookmark */;
+			1222910311FBB3D800DA074F /* PBXTextBookmark */ = 1222910311FBB3D800DA074F /* PBXTextBookmark */;
+			1222910611FBB46600DA074F /* PBXTextBookmark */ = 1222910611FBB46600DA074F /* PBXTextBookmark */;
+			1222910711FBB46600DA074F /* PBXTextBookmark */ = 1222910711FBB46600DA074F /* PBXTextBookmark */;
+			1222910811FBB46600DA074F /* PBXTextBookmark */ = 1222910811FBB46600DA074F /* PBXTextBookmark */;
+			1222910911FBB46600DA074F /* XCBuildMessageTextBookmark */ = 1222910911FBB46600DA074F /* XCBuildMessageTextBookmark */;
+			1222910A11FBB46600DA074F /* PBXTextBookmark */ = 1222910A11FBB46600DA074F /* PBXTextBookmark */;
+			1222910B11FBB46600DA074F /* PBXTextBookmark */ = 1222910B11FBB46600DA074F /* PBXTextBookmark */;
+			1222911011FBB51B00DA074F /* PBXTextBookmark */ = 1222911011FBB51B00DA074F /* PBXTextBookmark */;
+			1222911111FBB51B00DA074F /* XCBuildMessageTextBookmark */ = 1222911111FBB51B00DA074F /* XCBuildMessageTextBookmark */;
+			1222911211FBB51B00DA074F /* PBXTextBookmark */ = 1222911211FBB51B00DA074F /* PBXTextBookmark */;
+			1222911311FBB51B00DA074F /* PBXTextBookmark */ = 1222911311FBB51B00DA074F /* PBXTextBookmark */;
+			1222911611FBB55900DA074F /* PBXTextBookmark */ = 1222911611FBB55900DA074F /* PBXTextBookmark */;
+			1222911711FBB55900DA074F /* PBXTextBookmark */ = 1222911711FBB55900DA074F /* PBXTextBookmark */;
+			1222911811FBB55900DA074F /* PBXTextBookmark */ = 1222911811FBB55900DA074F /* PBXTextBookmark */;
+			1222911911FBB55900DA074F /* XCBuildMessageTextBookmark */ = 1222911911FBB55900DA074F /* XCBuildMessageTextBookmark */;
+			1222911A11FBB55900DA074F /* PBXTextBookmark */ = 1222911A11FBB55900DA074F /* PBXTextBookmark */;
+			1222911B11FBB55900DA074F /* PBXTextBookmark */ = 1222911B11FBB55900DA074F /* PBXTextBookmark */;
+			1222912211FBB56900DA074F /* PBXTextBookmark */ = 1222912211FBB56900DA074F /* PBXTextBookmark */;
+			1222912311FBB56900DA074F /* PBXTextBookmark */ = 1222912311FBB56900DA074F /* PBXTextBookmark */;
+			1222912411FBB56900DA074F /* PBXTextBookmark */ = 1222912411FBB56900DA074F /* PBXTextBookmark */;
+			1222912511FBB56900DA074F /* PBXTextBookmark */ = 1222912511FBB56900DA074F /* PBXTextBookmark */;
+			1222912611FBB56900DA074F /* PBXTextBookmark */ = 1222912611FBB56900DA074F /* PBXTextBookmark */;
+			1222912711FBB56900DA074F /* PBXTextBookmark */ = 1222912711FBB56900DA074F /* PBXTextBookmark */;
+			1222912811FBB56900DA074F /* PBXTextBookmark */ = 1222912811FBB56900DA074F /* PBXTextBookmark */;
+			1222912911FBB56900DA074F /* PBXTextBookmark */ = 1222912911FBB56900DA074F /* PBXTextBookmark */;
+			1222912A11FBB56900DA074F /* PBXTextBookmark */ = 1222912A11FBB56900DA074F /* PBXTextBookmark */;
+			1222912B11FBB56900DA074F /* PBXTextBookmark */ = 1222912B11FBB56900DA074F /* PBXTextBookmark */;
+			12B1C66911B02E3700D7CCF5 = 12B1C66911B02E3700D7CCF5 /* PBXTextBookmark */;
+			12B1C66A11B02E3700D7CCF5 = 12B1C66A11B02E3700D7CCF5 /* PBXTextBookmark */;
+			12B6F2FB11F9FFEF00D05C47 = 12B6F2FB11F9FFEF00D05C47 /* PlistBookmark */;
+			12B6F2FC11F9FFEF00D05C47 = 12B6F2FC11F9FFEF00D05C47 /* PBXTextBookmark */;
+			12C0D4E511FB015800044338 = 12C0D4E511FB015800044338 /* PBXTextBookmark */;
+			12C0D4E611FB015800044338 = 12C0D4E611FB015800044338 /* PBXTextBookmark */;
+			12C0D4E711FB015800044338 = 12C0D4E711FB015800044338 /* PBXTextBookmark */;
+			12C0D4E911FB015800044338 = 12C0D4E911FB015800044338 /* PBXTextBookmark */;
+			12C0D4EA11FB015800044338 = 12C0D4EA11FB015800044338 /* PBXTextBookmark */;
+			12C0D4EB11FB015800044338 = 12C0D4EB11FB015800044338 /* PBXTextBookmark */;
+			12C0D4ED11FB015800044338 = 12C0D4ED11FB015800044338 /* PBXTextBookmark */;
+			12C0D4EE11FB015800044338 = 12C0D4EE11FB015800044338 /* PBXTextBookmark */;
+			12C0D4EF11FB015800044338 = 12C0D4EF11FB015800044338 /* PBXTextBookmark */;
+			12C0D4F011FB015800044338 = 12C0D4F011FB015800044338 /* PBXBookmark */;
+			12C0D4F111FB015800044338 = 12C0D4F111FB015800044338 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 126A965811B00A1300D0E4A9 /* Source Control */;
 		userBuildSettings = {
 		};
+	};
+	1222900811FB651000DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12C0D4DE11FAFEC900044338 /* ATICard.cpp */;
+		name = "ATICard.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 153;
+		vrLoc = 0;
+	};
+	1222905611FB9BCD00DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12B6F21F11F9C0C600D05C47 /* FakeSMCBinding.h */;
+		name = "FakeSMCBinding.h: 112";
+		rLen = 16;
+		rLoc = 2552;
+		rType = 0;
+		vrLen = 393;
+		vrLoc = 2785;
+	};
+	1222905711FB9BCD00DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCRadeon.cpp */;
+		rLen = 0;
+		rLoc = 1247;
+		rType = 0;
+	};
+	1222905811FB9BCD00DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCRadeon.cpp */;
+		name = "FakeSMCRadeon.cpp: 69";
+		rLen = 0;
+		rLoc = 1247;
+		rType = 0;
+		vrLen = 772;
+		vrLoc = 1538;
+	};
+	1222906F11FB9D4800DA074F /* Sensors.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {761, 962}}";
+			sepNavSelRange = "{1304, 0}";
+			sepNavVisRange = "{0, 1192}";
+			sepNavWindowFrame = "{{14, 50}, {820, 809}}";
+		};
+	};
+	122290CD11FBAC2B00DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCRadeon.cpp */;
+		name = "FakeSMCRadeon.cpp: 74";
+		rLen = 0;
+		rLoc = 1507;
+		rType = 0;
+		vrLen = 457;
+		vrLoc = 1011;
+	};
+	122290CE11FBAC2B00DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12B6F25211F9DA3900D05C47 /* radeon_chipinfo_gen.h */;
+		name = "radeon_chipinfo_gen.h: 5";
+		rLen = 0;
+		rLoc = 107;
+		rType = 0;
+		vrLen = 1312;
+		vrLoc = 0;
+	};
+	122290CF11FBAC2B00DA074F /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Type 'Binding' is not a direct base of 'FanSensor'";
+		fRef = 12C0D4CF11FAFB7E00044338 /* Sensor.h */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 109;
+		rType = 1;
+	};
+	122290D011FBAC2B00DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12C0D4CF11FAFB7E00044338 /* Sensor.h */;
+		name = "Sensor.h: 109";
+		rLen = 0;
+		rLoc = 2491;
+		rType = 0;
+		vrLen = 543;
+		vrLoc = 3;
+	};
+	122290D111FBAC2B00DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCRadeon.cpp */;
+		name = "FakeSMCRadeon.cpp: 56";
+		rLen = 0;
+		rLoc = 1247;
+		rType = 0;
+		vrLen = 433;
+		vrLoc = 1035;
+	};
+	122290D411FBADB300DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12C0D4CF11FAFB7E00044338 /* Sensor.h */;
+		name = "Sensor.h: 109";
+		rLen = 0;
+		rLoc = 2491;
+		rType = 0;
+		vrLen = 541;
+		vrLoc = 3;
+	};
+	122290D511FBADB300DA074F /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "ISO C++ forbids declaration of 'Sensor' with no type";
+		fRef = 12C0D4DD11FAFEC900044338 /* ATICard.h */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 63;
+		rType = 1;
+	};
+	122290D611FBADB300DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12C0D4DD11FAFEC900044338 /* ATICard.h */;
+		name = "ATICard.h: 65";
+		rLen = 0;
+		rLoc = 1790;
+		rType = 0;
+		vrLen = 989;
+		vrLoc = 646;
+	};
+	122290D711FBADB300DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCRadeon.cpp */;
+		name = "FakeSMCRadeon.cpp: 56";
+		rLen = 0;
+		rLoc = 1247;
+		rType = 0;
+		vrLen = 433;
+		vrLoc = 1035;
+	};
+	122290DC11FBAF5300DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12C0D4DD11FAFEC900044338 /* ATICard.h */;
+		name = "ATICard.h: 65";
+		rLen = 0;
+		rLoc = 1790;
+		rType = 0;
+		vrLen = 989;
+		vrLoc = 646;
+	};
+	122290DD11FBAF5300DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12B6F21D11F9BFA100D05C47 /* FakeSMCRadeonMon.h */;
+		name = "FakeSMCRadeonMon.h: 23";
+		rLen = 0;
+		rLoc = 590;
+		rType = 0;
+		vrLen = 574;
+		vrLoc = 0;
+	};
+	122290DE11FBAF5300DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCRadeon.cpp */;
+		name = "FakeSMCRadeon.cpp: 31";
+		rLen = 6;
+		rLoc = 604;
+		rType = 0;
+		vrLen = 719;
+		vrLoc = 292;
+	};
+	122290DF11FBAF5300DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12C0D4CF11FAFB7E00044338 /* Sensor.h */;
+		name = "Sensor.h: 8";
+		rLen = 0;
+		rLoc = 151;
+		rType = 0;
+		vrLen = 552;
+		vrLoc = 708;
+	};
+	122290E011FBAF5300DA074F /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Cannot convert 'ATICard*' to 'OSObject*' in return";
+		fRef = 12C0D4DE11FAFEC900044338 /* ATICard.cpp */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 13;
+		rType = 1;
+	};
+	122290E111FBAF5300DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12C0D4DE11FAFEC900044338 /* ATICard.cpp */;
+		name = "ATICard.cpp: 12";
+		rLen = 0;
+		rLoc = 189;
+		rType = 0;
+		vrLen = 673;
+		vrLoc = 0;
+	};
+	122290E211FBAF5300DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCRadeon.cpp */;
+		name = "FakeSMCRadeon.cpp: 56";
+		rLen = 0;
+		rLoc = 1247;
+		rType = 0;
+		vrLen = 455;
+		vrLoc = 1035;
+	};
+	122290EC11FBAFE700DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12C0D4DE11FAFEC900044338 /* ATICard.cpp */;
+		name = "ATICard.cpp: 12";
+		rLen = 0;
+		rLoc = 189;
+		rType = 0;
+		vrLen = 673;
+		vrLoc = 0;
+	};
+	122290ED11FBAFE700DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12B6F21D11F9BFA100D05C47 /* FakeSMCRadeonMon.h */;
+		name = "FakeSMCRadeonMon.h: 19";
+		rLen = 0;
+		rLoc = 590;
+		rType = 0;
+		vrLen = 526;
+		vrLoc = 0;
+	};
+	122290EE11FBAFE700DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12C0D4DD11FAFEC900044338 /* ATICard.h */;
+		name = "ATICard.h: 44";
+		rLen = 0;
+		rLoc = 1393;
+		rType = 0;
+		vrLen = 900;
+		vrLoc = 735;
+	};
+	122290EF11FBAFE700DA074F /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Within this context";
+		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCRadeon.cpp */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 50;
+		rType = 1;
+	};
+	122290F011FBAFE700DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCRadeon.cpp */;
+		name = "FakeSMCRadeon.cpp: 51";
+		rLen = 0;
+		rLoc = 1150;
+		rType = 0;
+		vrLen = 485;
+		vrLoc = 1005;
+	};
+	122290F111FBAFE700DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCRadeon.cpp */;
+		name = "FakeSMCRadeon.cpp: 56";
+		rLen = 0;
+		rLoc = 1247;
+		rType = 0;
+		vrLen = 455;
+		vrLoc = 1035;
+	};
+	122290F611FBB29100DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCRadeon.cpp */;
+		name = "FakeSMCRadeon.cpp: 7";
+		rLen = 30;
+		rLoc = 135;
+		rType = 0;
+		vrLen = 481;
+		vrLoc = 1023;
+	};
+	122290F711FBB29100DA074F /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Multiple types in one declaration in /Users/slice/FakeSMC_mozo/rev361/fakesmc/Plug-ins/FakeSMCRadeon/FakeSMCRadeonMon.h";
+		fRef = 12B6F21D11F9BFA100D05C47 /* FakeSMCRadeonMon.h */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 23;
+		rType = 1;
+	};
+	122290F811FBB29100DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12B6F21D11F9BFA100D05C47 /* FakeSMCRadeonMon.h */;
+		name = "FakeSMCRadeonMon.h: 5";
+		rLen = 113;
+		rLoc = 58;
+		rType = 0;
+		vrLen = 604;
+		vrLoc = 0;
+	};
+	122290F911FBB29100DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCRadeon.cpp */;
+		name = "FakeSMCRadeon.cpp: 56";
+		rLen = 0;
+		rLoc = 1247;
+		rType = 0;
+		vrLen = 446;
+		vrLoc = 1058;
+	};
+	1222910011FBB3D800DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12B6F21D11F9BFA100D05C47 /* FakeSMCRadeonMon.h */;
+		name = "FakeSMCRadeonMon.h: 23";
+		rLen = 0;
+		rLoc = 590;
+		rType = 0;
+		vrLen = 604;
+		vrLoc = 0;
+	};
+	1222910111FBB3D800DA074F /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "New types may not be defined in a return type";
+		fRef = 12C0D4DE11FAFEC900044338 /* ATICard.cpp */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 15;
+		rType = 1;
+	};
+	1222910211FBB3D800DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12C0D4DE11FAFEC900044338 /* ATICard.cpp */;
+		name = "ATICard.cpp: 85";
+		rLen = 0;
+		rLoc = 1768;
+		rType = 0;
+		vrLen = 742;
+		vrLoc = 0;
+	};
+	1222910311FBB3D800DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCRadeon.cpp */;
+		name = "FakeSMCRadeon.cpp: 56";
+		rLen = 0;
+		rLoc = 1247;
+		rType = 0;
+		vrLen = 446;
+		vrLoc = 1058;
+	};
+	1222910611FBB46600DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12C0D4DE11FAFEC900044338 /* ATICard.cpp */;
+		name = "ATICard.cpp: 85";
+		rLen = 0;
+		rLoc = 1768;
+		rType = 0;
+		vrLen = 742;
+		vrLoc = 0;
+	};
+	1222910711FBB46600DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12B6F21D11F9BFA100D05C47 /* FakeSMCRadeonMon.h */;
+		name = "FakeSMCRadeonMon.h: 23";
+		rLen = 0;
+		rLoc = 590;
+		rType = 0;
+		vrLen = 604;
+		vrLoc = 0;
+	};
+	1222910811FBB46600DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCRadeon.cpp */;
+		name = "FakeSMCRadeon.cpp: 50";
+		rLen = 0;
+		rLoc = 1149;
+		rType = 0;
+		vrLen = 523;
+		vrLoc = 937;
+	};
+	1222910911FBB46600DA074F /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "'radeon_device_list' defined but not used";
+		fRef = 12B6F25211F9DA3900D05C47 /* radeon_chipinfo_gen.h */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 4;
+		rType = 1;
+	};
+	1222910A11FBB46600DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12B6F25211F9DA3900D05C47 /* radeon_chipinfo_gen.h */;
+		name = "radeon_chipinfo_gen.h: 5";
+		rLen = 18;
+		rLoc = 122;
+		rType = 0;
+		vrLen = 1266;
+		vrLoc = 0;
+	};
+	1222910B11FBB46600DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCRadeon.cpp */;
+		name = "FakeSMCRadeon.cpp: 56";
+		rLen = 0;
+		rLoc = 1247;
+		rType = 0;
+		vrLen = 491;
+		vrLoc = 1018;
+	};
+	1222911011FBB51B00DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12B6F25211F9DA3900D05C47 /* radeon_chipinfo_gen.h */;
+		name = "radeon_chipinfo_gen.h: 5";
+		rLen = 18;
+		rLoc = 122;
+		rType = 0;
+		vrLen = 1266;
+		vrLoc = 0;
+	};
+	1222911111FBB51B00DA074F /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "ISO C++ forbids declaration of 'RADEONCardInfo' with no type";
+		fRef = 12C0D4DD11FAFEC900044338 /* ATICard.h */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 45;
+		rType = 1;
+	};
+	1222911211FBB51B00DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12C0D4DD11FAFEC900044338 /* ATICard.h */;
+		name = "ATICard.h: 16";
+		rLen = 0;
+		rLoc = 294;
+		rType = 0;
+		vrLen = 1181;
+		vrLoc = 38;
+	};
+	1222911311FBB51B00DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCRadeon.cpp */;
+		name = "FakeSMCRadeon.cpp: 56";
+		rLen = 0;
+		rLoc = 1247;
+		rType = 0;
+		vrLen = 475;
+		vrLoc = 1035;
+	};
+	1222911611FBB55900DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12C0D4DD11FAFEC900044338 /* ATICard.h */;
+		name = "ATICard.h: 16";
+		rLen = 0;
+		rLoc = 294;
+		rType = 0;
+		vrLen = 1181;
+		vrLoc = 38;
+	};
+	1222911711FBB55900DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12C0D4CF11FAFB7E00044338 /* Sensor.h */;
+		name = "Sensor.h: 64";
+		rLen = 0;
+		rLoc = 1201;
+		rType = 0;
+		vrLen = 504;
+		vrLoc = 0;
+	};
+	1222911811FBB55900DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12B6F25211F9DA3900D05C47 /* radeon_chipinfo_gen.h */;
+		name = "radeon_chipinfo_gen.h: 5";
+		rLen = 0;
+		rLoc = 107;
+		rType = 0;
+		vrLen = 1266;
+		vrLoc = 0;
+	};
+	1222911911FBB55900DA074F /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Multiple types in one declaration";
+		fRef = 12B6F21D11F9BFA100D05C47 /* FakeSMCRadeonMon.h */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 22;
+		rType = 1;
+	};
+	1222911A11FBB55900DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12B6F21D11F9BFA100D05C47 /* FakeSMCRadeonMon.h */;
+		name = "FakeSMCRadeonMon.h: 23";
+		rLen = 0;
+		rLoc = 590;
+		rType = 0;
+		vrLen = 604;
+		vrLoc = 0;
+	};
+	1222911B11FBB55900DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCRadeon.cpp */;
+		name = "FakeSMCRadeon.cpp: 56";
+		rLen = 0;
+		rLoc = 1247;
+		rType = 0;
+		vrLen = 475;
+		vrLoc = 1035;
+	};
+	1222912211FBB56900DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1222906F11FB9D4800DA074F /* Sensors.cpp */;
+		name = "Sensors.cpp: 4";
+		rLen = 1;
+		rLoc = 39;
+		rType = 0;
+		vrLen = 137;
+		vrLoc = 0;
+	};
+	1222912311FBB56900DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12C0D4CF11FAFB7E00044338 /* Sensor.h */;
+		name = "Sensor.h: 14";
+		rLen = 0;
+		rLoc = 243;
+		rType = 0;
+		vrLen = 603;
+		vrLoc = 1936;
+	};
+	1222912411FBB56900DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12B6F21D11F9BFA100D05C47 /* FakeSMCRadeonMon.h */;
+		name = "FakeSMCRadeonMon.h: 19";
+		rLen = 0;
+		rLoc = 590;
+		rType = 0;
+		vrLen = 538;
+		vrLoc = 0;
+	};
+	1222912511FBB56900DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCRadeon.cpp */;
+		name = "FakeSMCRadeon.cpp: 50";
+		rLen = 0;
+		rLoc = 1147;
+		rType = 0;
+		vrLen = 518;
+		vrLoc = 937;
+	};
+	1222912611FBB56900DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12B6F21F11F9C0C600D05C47 /* FakeSMCBinding.h */;
+		name = "FakeSMCBinding.h: 21";
+		rLen = 0;
+		rLoc = 535;
+		rType = 0;
+		vrLen = 804;
+		vrLoc = 1474;
+	};
+	1222912711FBB56900DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12C0D4DD11FAFEC900044338 /* ATICard.h */;
+		name = "ATICard.h: 16";
+		rLen = 0;
+		rLoc = 295;
+		rType = 0;
+		vrLen = 1103;
+		vrLoc = 129;
+	};
+	1222912811FBB56900DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12B6F25311F9DA3900D05C47 /* radeon_chipsets.h */;
+		name = "radeon_chipsets.h: 92";
+		rLen = 0;
+		rLoc = 2950;
+		rType = 0;
+		vrLen = 1051;
+		vrLoc = 300;
+	};
+	1222912911FBB56900DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12B6F25211F9DA3900D05C47 /* radeon_chipinfo_gen.h */;
+		name = "radeon_chipinfo_gen.h: 2";
+		rLen = 28;
+		rLoc = 70;
+		rType = 0;
+		vrLen = 1266;
+		vrLoc = 0;
+	};
+	1222912A11FBB56900DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12C0D4DE11FAFEC900044338 /* ATICard.cpp */;
+		name = "ATICard.cpp: 12";
+		rLen = 0;
+		rLoc = 185;
+		rType = 0;
+		vrLen = 589;
+		vrLoc = 0;
+	};
+	1222912B11FBB56900DA074F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12C0D4DE11FAFEC900044338 /* ATICard.cpp */;
+		name = "ATICard.cpp: 12";
+		rLen = 0;
+		rLoc = 185;
+		rType = 0;
+		vrLen = 589;
+		vrLoc = 0;
 	};
 	126A965811B00A1300D0E4A9 /* Source Control */ = {
 		isa = PBXSourceControlManager;
@@ -124,31 +785,32 @@
 	};
 	12B6F21D11F9BFA100D05C47 /* FakeSMCRadeonMon.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {724, 1196}}";
-			sepNavSelRange = "{2217, 6}";
-			sepNavVisRange = "{62, 1170}";
+			sepNavIntBoundsRect = "{{0, 0}, {861, 377}}";
+			sepNavSelRange = "{590, 0}";
+			sepNavVisRange = "{0, 604}";
+			sepNavWindowFrame = "{{15, 64}, {820, 809}}";
 		};
 	};
 	12B6F21F11F9C0C600D05C47 /* FakeSMCBinding.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {724, 2210}}";
-			sepNavSelRange = "{2980, 10}";
-			sepNavVisRange = "{2704, 534}";
-			sepNavWindowFrame = "{{585, 69}, {820, 809}}";
+			sepNavIntBoundsRect = "{{0, 0}, {724, 1937}}";
+			sepNavSelRange = "{535, 0}";
+			sepNavVisRange = "{1474, 804}";
+			sepNavWindowFrame = "{{47, 69}, {820, 809}}";
 		};
 	};
 	12B6F25211F9DA3900D05C47 /* radeon_chipinfo_gen.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {724, 3718}}";
-			sepNavSelRange = "{280, 1}";
-			sepNavVisRange = "{0, 1399}";
+			sepNavIntBoundsRect = "{{0, 0}, {861, 4173}}";
+			sepNavSelRange = "{107, 0}";
+			sepNavVisRange = "{0, 1266}";
 		};
 	};
 	12B6F25311F9DA3900D05C47 /* radeon_chipsets.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {724, 1859}}";
-			sepNavSelRange = "{1025, 0}";
-			sepNavVisRange = "{300, 1073}";
+			sepNavIntBoundsRect = "{{0, 0}, {724, 1976}}";
+			sepNavSelRange = "{2950, 0}";
+			sepNavVisRange = "{300, 1051}";
 		};
 	};
 	12B6F2D211F9FC0800D05C47 /* atombios.h */ = {
@@ -157,26 +819,6 @@
 			sepNavSelRange = "{1698, 0}";
 			sepNavVisRange = "{1423, 615}";
 		};
-	};
-	12B6F2F911F9FFEF00D05C47 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 12B6F25311F9DA3900D05C47 /* radeon_chipsets.h */;
-		name = "radeon_chipsets.h: 27";
-		rLen = 0;
-		rLoc = 1025;
-		rType = 0;
-		vrLen = 1073;
-		vrLoc = 300;
-	};
-	12B6F2FA11F9FFEF00D05C47 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 12B6F25211F9DA3900D05C47 /* radeon_chipinfo_gen.h */;
-		name = "radeon_chipinfo_gen.h: 7";
-		rLen = 1;
-		rLoc = 280;
-		rType = 0;
-		vrLen = 1399;
-		vrLoc = 0;
 	};
 	12B6F2FB11F9FFEF00D05C47 /* PlistBookmark */ = {
 		isa = PlistBookmark;
@@ -189,7 +831,7 @@
 		);
 		name = "/Users/slice/FakeSMC_mozo/rev352/fakesmc/Plug-ins/FakeSMCRadeon/Info.plist";
 		rLen = 0;
-		rLoc = 9223372036854775807;
+		rLoc = 9223372036854775808;
 	};
 	12B6F2FC11F9FFEF00D05C47 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -201,51 +843,152 @@
 		vrLen = 1136;
 		vrLoc = 647;
 	};
-	12B6F2FD11F9FFEF00D05C47 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 12B6F21D11F9BFA100D05C47 /* FakeSMCRadeonMon.h */;
-		name = "FakeSMCRadeonMon.h: 69";
-		rLen = 6;
-		rLoc = 2217;
-		rType = 0;
-		vrLen = 1170;
-		vrLoc = 62;
+	12C0D4CF11FAFB7E00044338 /* Sensor.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {861, 1586}}";
+			sepNavSelRange = "{1201, 0}";
+			sepNavVisRange = "{0, 504}";
+		};
 	};
-	12B6F2FE11F9FFEF00D05C47 /* PBXTextBookmark */ = {
+	12C0D4DD11FAFEC900044338 /* ATICard.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {861, 793}}";
+			sepNavSelRange = "{294, 0}";
+			sepNavVisRange = "{38, 1181}";
+			sepNavWindowFrame = "{{15, 64}, {820, 809}}";
+		};
+	};
+	12C0D4DE11FAFEC900044338 /* ATICard.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {724, 1729}}";
+			sepNavSelRange = "{185, 0}";
+			sepNavVisRange = "{0, 589}";
+			sepNavWindowFrame = "{{15, 64}, {820, 809}}";
+		};
+	};
+	12C0D4E511FB015800044338 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCRadeon.cpp */;
 		name = "FakeSMCRadeon.cpp: 18";
-		rLen = 5;
-		rLoc = 406;
+		rLen = 0;
+		rLoc = 303;
 		rType = 0;
-		vrLen = 898;
-		vrLoc = 250;
+		vrLen = 858;
+		vrLoc = 290;
 	};
-	12B6F30311FA00AE00D05C47 /* PBXTextBookmark */ = {
+	12C0D4E611FB015800044338 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12B6F25211F9DA3900D05C47 /* radeon_chipinfo_gen.h */;
+		name = "radeon_chipinfo_gen.h: 8";
+		rLen = 1;
+		rLoc = 280;
+		rType = 0;
+		vrLen = 1312;
+		vrLoc = 0;
+	};
+	12C0D4E711FB015800044338 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12C0D4E811FB015800044338 /* ATI_Device_ID_List_Jun_2010.txt */;
+		name = "ATI_Device_ID_List_Jun_2010.txt: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1159;
+		vrLoc = 0;
+	};
+	12C0D4E811FB015800044338 /* ATI_Device_ID_List_Jun_2010.txt */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = text;
+		name = ATI_Device_ID_List_Jun_2010.txt;
+		path = "/Users/slice/FakeSMC_mozo/rev361/fakesmc/Plug-ins/FakeSMCRadeon/ATI_Device_ID_List_Jun_2010.txt";
+		sourceTree = "<absolute>";
+	};
+	12C0D4E911FB015800044338 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12B6F25311F9DA3900D05C47 /* radeon_chipsets.h */;
+		name = "radeon_chipsets.h: 27";
+		rLen = 0;
+		rLoc = 1025;
+		rType = 0;
+		vrLen = 1051;
+		vrLoc = 300;
+	};
+	12C0D4EA11FB015800044338 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 12B6F21F11F9C0C600D05C47 /* FakeSMCBinding.h */;
 		name = "FakeSMCBinding.h: 142";
 		rLen = 10;
-		rLoc = 2980;
+		rLoc = 3162;
 		rType = 0;
-		vrLen = 534;
-		vrLoc = 2704;
+		vrLen = 879;
+		vrLoc = 329;
 	};
-	12B6F30411FA00AE00D05C47 /* PBXTextBookmark */ = {
+	12C0D4EB11FB015800044338 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCRadeon.cpp */;
-		name = "FakeSMCRadeon.cpp: 18";
-		rLen = 5;
-		rLoc = 406;
+		fRef = 12C0D4EC11FB015800044338 /* SuperIO.h */;
+		name = "SuperIO.h: 1";
+		rLen = 0;
+		rLoc = 0;
 		rType = 0;
-		vrLen = 898;
-		vrLoc = 250;
+		vrLen = 1000;
+		vrLoc = 3568;
+	};
+	12C0D4EC11FB015800044338 /* SuperIO.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = SuperIO.h;
+		path = "/Users/slice/FakeSMC_mozo/rev352/fakesmc/Plug-ins/FakeSMCSuperIO/SuperIO.h";
+		sourceTree = "<absolute>";
+	};
+	12C0D4ED11FB015800044338 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12B6F21D11F9BFA100D05C47 /* FakeSMCRadeonMon.h */;
+		name = "FakeSMCRadeonMon.h: 49";
+		rLen = 0;
+		rLoc = 171;
+		rType = 0;
+		vrLen = 922;
+		vrLoc = 1426;
+	};
+	12C0D4EE11FB015800044338 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12C0D4CF11FAFB7E00044338 /* Sensor.h */;
+		name = "Sensor.h: 86";
+		rLen = 0;
+		rLoc = 2096;
+		rType = 0;
+		vrLen = 847;
+		vrLoc = 1399;
+	};
+	12C0D4EF11FB015800044338 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12C0D4DD11FAFEC900044338 /* ATICard.h */;
+		name = "ATICard.h: 26";
+		rLen = 0;
+		rLoc = 1869;
+		rType = 0;
+		vrLen = 425;
+		vrLoc = 0;
+	};
+	12C0D4F011FB015800044338 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 12C0D4DE11FAFEC900044338 /* ATICard.cpp */;
+	};
+	12C0D4F111FB015800044338 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12C0D4DE11FAFEC900044338 /* ATICard.cpp */;
+		name = "ATICard.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 153;
+		vrLoc = 0;
 	};
 	1A224C3FFF42367911CA2CB7 /* FakeSMCRadeon.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {894, 3315}}";
-			sepNavSelRange = "{3515, 10}";
-			sepNavVisRange = "{2352, 696}";
+			sepNavIntBoundsRect = "{{0, 0}, {894, 988}}";
+			sepNavSelRange = "{1247, 0}";
+			sepNavVisRange = "{1035, 475}";
 			sepNavWindowFrame = "{{75, 23}, {820, 809}}";
 		};
 	};
