@@ -102,7 +102,10 @@ enum ChipModel
 	SCH5127 = 0x86, // 0x0a
 	SCH5307_NS = 0x81, // 0x0a
 	SCH5317_1 = 0x85, // 0x08
-	SCH5317_2 = 0x8c // 0x08
+	SCH5317_2 = 0x8c, // 0x08
+	
+	//NSC
+	PC8739x = 0xfc66
 };
 
 class Binding : public FakeSMCBinding
