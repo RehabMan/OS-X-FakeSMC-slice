@@ -203,7 +203,7 @@ bool		PTnVmon::start	(IOService* provider) {
 				char name[6]; 
 				snprintf (name, 6, "GPU %d", card_number);
 				snprintf(key, 5, KEY_FORMAT_FAN_ID, no);
-				FakeSMCAddKey(key, TYPE_FPE2, 4, name);			
+				FakeSMCAddKey(key, TYPE_CH8, 4, name);			
 				snprintf(key, 5, KEY_FORMAT_FAN_SPEED, no);
 				fanSensor[card_number]=new FanSensor(key, TYPE_FPE2, 2);
 				UpdateFNum();
