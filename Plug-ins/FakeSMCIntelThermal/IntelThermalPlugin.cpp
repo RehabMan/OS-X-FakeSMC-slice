@@ -124,6 +124,8 @@ bool IntelThermalPlugin::Probe()
 				case 0x1E: // Intel Core i5, i7 LGA1156 (45nm)
 				case 0x25: // Intel Core i3, i5, i7 LGA1156 (32nm)
 				case 0x2C: // Intel Core i7 LGA1366 (32nm) 6 Core
+				case 0x1F:
+				case 0x2F:
 					m_CpuCoreiX = true;
 					
 					for (int i = 0; i < m_CpuCount; i++)
@@ -133,6 +135,12 @@ bool IntelThermalPlugin::Probe()
             }
 		} 
 			break;
+		case 0x0F: 
+		{
+			InfoLog("Not sure if it works for Pentium 4/D!");
+			m_TjMax = 100; break;
+		}
+
 	}
 	
 	if (m_CpuCoreiX) 
