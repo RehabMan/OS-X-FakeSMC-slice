@@ -69,7 +69,7 @@ bool ATICard::initialize()
 			break;
 			
 		default:
-			InfoLog("sorry, but your card %04lx is not supported!\n", chipID>>16);
+			InfoLog("sorry, but your card %04lx is not supported!\n", (long unsigned int)chipID>>16);
 			return false;
 	}
 	return true;
