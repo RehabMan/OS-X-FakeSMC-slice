@@ -61,15 +61,16 @@ bool RadeonPlugin::init(OSDictionary *properties)
 
 void RadeonPlugin::stop (IOService* provider)
 {
-	if (Card) {
-		delete Card;
-	}
 	UpdateFNum();
 	super::stop(provider);
 }
 
 void RadeonPlugin::free ()
 {
+	if (Card) {
+		delete Card;
+	}
+	
 	super::free ();
 }
 

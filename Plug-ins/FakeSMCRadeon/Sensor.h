@@ -11,8 +11,9 @@
 #ifndef _SENSOR_H 
 #define _SENSOR_H
 
-#include "FakeSMCBinding.h"
+//#include "FakeSMCBinding.h"
 #include "ATICard.h"
+
 
 class Sensor : public Binding
 {
@@ -46,11 +47,11 @@ public:
 			FakeSMCRemoveKeyBinding(m_Key);
 			IOFree(m_Key, 5);
 		}
-	}
+	};
 	
 	UInt8			GetIndex() { return m_Index; };
 	const char*		GetKey() { return m_Key; };
-	SInt32			GetValue() { return m_Value; }
+	SInt32			GetValue() { return m_Value; };
 	
 	virtual IOReturn OnKeyRead(__unused const char* key, __unused char* data)
 	{

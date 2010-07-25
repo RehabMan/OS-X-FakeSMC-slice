@@ -3,12 +3,13 @@
  *  FakeSMCRadeon
  *
  *  Created by Slice on 24.07.10.
- *  Copyright 2010 Paritet. All rights reserved.
+ *  Copyright 2010 Applelife.ru. All rights reserved.
  *
  */
 
 #include "ATICard.h"
 #include "radeon_chipinfo_gen.h"
+#include "Sensor.h"
 
 
 //OSDefineMetaClassAndStructors(ATICard, OSObject)
@@ -96,7 +97,7 @@ void ATICard::setup_R6xx()
 		return;
 	}
 	card_number = id;
-	tempSensor = new R6xxTemperatureSensor(key, TYPE_SP78, 2);
+	tempSensor = new R6xxTemperatureSensor(this, id, key, TYPE_SP78, 2);
 	Caps = GPU_TEMP_MONITORING;	
 }
 
@@ -109,11 +110,11 @@ void ATICard::setup_R7xx()
 		return;
 	}
 	card_number = id;
-	tempSensor = new R7xxTemperatureSensor(key, TYPE_SP78, 2);
+	tempSensor = new R7xxTemperatureSensor(this, id, key, TYPE_SP78, 2);
 	Caps = GPU_TEMP_MONITORING;
 }
 
-void ATICard::setup_Evergreen(int card_number)
+void ATICard::setup_Evergreen()
 {
 	char key[5];
 	int id = GetNextUnusedKey(KEY_FORMAT_GPU_DIODE_TEMPERATURE, key);
@@ -122,7 +123,7 @@ void ATICard::setup_Evergreen(int card_number)
 		return;
 	}
 	card_number = id;
-	tempSensor = new EverTemperatureSensor(key, TYPE_SP78, 2);
+	tempSensor = new EverTemperatureSensor(this, id, key, TYPE_SP78, 2);
 	Caps = GPU_TEMP_MONITORING;
 }
 

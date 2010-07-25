@@ -33,7 +33,6 @@
 #define INVID(offset) OSReadLittleInt32((mmio_base), offset)
 #define OUTVID(offset,val) OSWriteLittleInt32((mmio_base), offset, val)
 
-
 class ATICard : public FakeSMCBinding
 {
 public:
@@ -59,7 +58,7 @@ private:
 	void			setup_Evergreen	();
 		
 protected:
-	IOService*		m_Service;  //???
+//	IOService*		m_Service;  //???
 public:
 	Binding* tempSensor;
 	Binding* boardSensor;
@@ -67,7 +66,7 @@ public:
 	UInt32			read32			(UInt32 reg);
 	bool			initialize		(void);
 	
-}
+};
 
 
-#endif _ATICARD_H
+#endif

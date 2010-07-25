@@ -39,6 +39,7 @@ public:
 	virtual IOReturn OnKeyWrite(const char* key, char* data);
 };
 
+
 class Binding : public FakeSMCBinding
 {
 public:
