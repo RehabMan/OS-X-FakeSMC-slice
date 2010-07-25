@@ -13,7 +13,8 @@ class RadeonPlugin : public IOService {
 	friend class ATICard;
 private:
 	int				max_card;
-	UInt32			chipID;	
+	UInt32			vendorID;	
+	UInt32			deviceID;	
 protected:	
 	ATICard*		Card; 
 public:

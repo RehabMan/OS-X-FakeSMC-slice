@@ -28,14 +28,20 @@ RadeonPlugin::probe(IOService *provider, SInt32 *score)
 	prop = OSDynamicCast( OSData , provider->getProperty(fVendor)); // safe way to get vendor
 	if(prop)
 	{
-		chipID = *(UInt32*) prop->getBytesNoCopy();
-		IOLog("FakeSMC_Radeon: found %lx chip\n", (long unsigned int)chipID);
-		if( (chipID & 0xffff) != 0x1002) //check if vendorID is really ATI, if not don't bother
+		UInt32 vendorID = *(UInt32*) prop->getBytesNoCopy();
+		if( (vendorID & 0xffff) != 0x1002) //check if vendorID is really ATI, if not don't bother
 		{
 			//IOLog("FakeSMC_Radeon: Can't Find ATI Chip!\n");
 			return( 0 );
 		}		
 	}
+	prop = OSDynamicCast( OSData , provider->getProperty(fDevice)); // safe way to get device
+	if(prop)
+	{
+		deviceID = *(UInt32*) prop->getBytesNoCopy();
+		IOLog("FakeSMC_Radeon: found %04lx chip\n", (long unsigned int)deviceID & 0xffff);
+	}
+	
 	
     if( !super::probe( provider, score ))
 		return( 0 );
@@ -49,7 +55,7 @@ RadeonPlugin::start( IOService * provider ) {
 		return false;
 	Card = new ATICard();
 	Card->VCard = (IOPCIDevice*)provider;
-	Card->chipID = chipID;	
+	Card->chipID = deviceID;	
 	return Card->initialize();	
 	
 }
