@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		122C52E811FC7800008089A2 /* NSCsensor.h in Headers */ = {isa = PBXBuildFile; fileRef = 122C52E611FC7800008089A2 /* NSCsensor.h */; };
 		12D8F24B11EB5370006CA1C0 /* NSC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12D8F24711EB5370006CA1C0 /* NSC.cpp */; };
 		12D8F24C11EB5370006CA1C0 /* NSC.h in Headers */ = {isa = PBXBuildFile; fileRef = 12D8F24811EB5370006CA1C0 /* NSC.h */; };
 		32D94FC60562CBF700B6AF17 /* FakeSMCSuperIOMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A224C3EFF42367911CA2CB7 /* FakeSMCSuperIOMonitor.h */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		089C167EFE841241C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		122C52E611FC7800008089A2 /* NSCsensor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSCsensor.h; sourceTree = "<group>"; };
 		12D8F24711EB5370006CA1C0 /* NSC.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NSC.cpp; sourceTree = "<group>"; };
 		12D8F24811EB5370006CA1C0 /* NSC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSC.h; sourceTree = "<group>"; };
 		1A224C3EFF42367911CA2CB7 /* FakeSMCSuperIOMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeSMCSuperIOMonitor.h; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 		12D8F24111EB535A006CA1C0 /* NSC */ = {
 			isa = PBXGroup;
 			children = (
+				122C52E611FC7800008089A2 /* NSCsensor.h */,
 				12D8F24811EB5370006CA1C0 /* NSC.h */,
 				12D8F24711EB5370006CA1C0 /* NSC.cpp */,
 			);
@@ -234,6 +237,7 @@
 				AE8EEE7411E65C7B00A476CF /* Sensor.h in Headers */,
 				AE8EEE7611E65C8500A476CF /* Controller.h in Headers */,
 				12D8F24C11EB5370006CA1C0 /* NSC.h in Headers */,
+				122C52E811FC7800008089A2 /* NSCsensor.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,7 +338,11 @@
 		12C40D6C11B0945C007B34BA /* Release Leo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = i386;
+				ARCHS = (
+					i386,
+					x86_64,
+				);
+				GCC_AUTO_VECTORIZATION = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = "";
 				GCC_WARN_UNUSED_FUNCTION = YES;
@@ -427,7 +435,10 @@
 		1DEB91DF08733DB10010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ARCHS = (
+					i386,
+					x86_64,
+				);
 				GCC_AUTO_VECTORIZATION = YES;
 				GCC_ENABLE_PASCAL_STRINGS = NO;
 				GCC_FAST_OBJC_DISPATCH = NO;
