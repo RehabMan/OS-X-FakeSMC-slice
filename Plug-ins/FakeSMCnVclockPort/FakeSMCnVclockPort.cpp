@@ -17,6 +17,10 @@ bool isxdigit(char c) {
 NVClock nvclock;
 NVCard *nv_card = NULL;
 IOMemoryMap * nvio;
+/*static unsigned int locate(char *rom, char *str, int offset);
+struct nvbios *read_bios(const char *file);
+static struct nvbios *parse_bios(char *rom);
+int load_bios_prom(char *data);*/
 
 
 void unmap_mem(){}
@@ -61,6 +65,7 @@ int PTnVmon::probe_devices()
 	vm_address_t addr;
 	//vm_size_t size;
 #endif
+	nvclock.num_cards=0;
 	if (iopci) {
 		OSIterator * iterator = getMatchingServices(iopci);
 		if (iterator) {
@@ -88,17 +93,23 @@ int PTnVmon::probe_devices()
 					nvclock.card[i].reg_address = addr;
 					map_mem_card( &nvclock.card[i], addr );
 					
+					
+					
+					
 					i++;
+					
 				}
 			}
 		}
 	}
+	
+	nvclock.num_cards = i;
+	
 	if (!i) {
 		IOLog("PTKawainVi: No nVidia graphics adapters found\n");
 	}	
 	
-	nvclock.num_cards = i;
-	return i;
+	return nvclock.num_cards;
 }
 
 
@@ -175,6 +186,9 @@ bool		PTnVmon::start	(IOService* provider) {
 			return 0;
 		}
 	
+		nvbios* bios=read_bios("");
+		nvclock.card[card_number].bios=bios;
+		
 		/* Check if the card is supported, if not print a message. */
 		if(nvclock.card[card_number].gpu == UNKNOWN){
 			printf("It seems your card isn't officialy supported in FakeSMCnVclockPort yet.\n");
@@ -209,6 +223,8 @@ bool		PTnVmon::start	(IOService* provider) {
 				UpdateFNum();
 			}
 		}
+		snprintf(key, 5, "FGC%d", card_number);
+		gpuFreqSensor[card_number]=new FrequencySensor(key, "freq", 2);
 	}
 	IOFree(key, 5);
 	return result;
@@ -229,9 +245,14 @@ void		PTnVmon::stop	(IOService* provider) {
 			delete tempSensor[card_number];
 		if (boardSensor[card_number])
 			delete boardSensor[card_number];
-		if (fanSensor[card_number]) {
+		if (fanSensor[card_number])
 			delete fanSensor[card_number];
-		}
+		if (gpuFreqSensor[card_number])
+			delete gpuFreqSensor[card_number];
+		if (memFreqSensor[card_number])
+			delete memFreqSensor[card_number];
+		if (shaFreqSensor[card_number])
+			delete shaFreqSensor[card_number];
 	}
 	UpdateFNum();
 	IOService::stop(provider);
@@ -282,5 +303,23 @@ IOReturn FanSensor::OnKeyRead(const char* key, char* data) {
 		data[0]=(rpm<<2)>>8;
 		data[1]=(rpm<<2)&0xff;
 	}
+	return  kIOReturnSuccess;
+}
+
+IOReturn FrequencySensor::OnKeyRead(const char* key, char* data) {
+	if(!set_card(key[3]-'0'))
+	{
+		char buf[80];
+		printf("Error: %s\n", get_error(buf, 80));
+		return kIOReturnSuccess;
+	}
+	UInt16 speed;
+	switch (key[2]) {
+		case 'C':
+			speed=nv_card->get_gpu_speed();
+			break;
+	}
+	data[0]=speed>>8;
+	data[1]=speed&0xff;
 	return  kIOReturnSuccess;
 }

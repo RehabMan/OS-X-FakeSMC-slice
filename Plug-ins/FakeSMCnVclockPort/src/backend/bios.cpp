@@ -48,6 +48,7 @@ TODO:
 static unsigned int locate(char *rom, char *str, int offset);
 struct nvbios *read_bios(const char *file);
 static struct nvbios *parse_bios(char *rom);
+int load_bios_prom(char *data);
 
 typedef struct
 {
@@ -70,7 +71,7 @@ typedef struct
 /* Read a string from a given offset */
 static char* nv_read(char *rom, unsigned short offset)
 {
-	/*char *res = (char*)strdup(&rom[offset]);
+	/*char *res = STRDUP(&rom[offset], NV_PROM_SIZE-offset);
 	short len=0;
 	short i;
 	len = strlen(res);
@@ -83,7 +84,7 @@ static char* nv_read(char *rom, unsigned short offset)
 		if(res[i] == '\n' || res[i] == '\r')
 			res[i] = '\0';
 
-	 return res;*/return NULL;
+	 return res;*/return STRDUP("", sizeof(""));
 }
 
 
@@ -91,7 +92,7 @@ static char *bios_version_to_str(int version)
 {
 	char res[12];
 	snprintf(res,12, "%02x.%02x.%02x.%02x%c", (version>>24) & 0xff, (version>>16) & 0xff, (version>>8) & 0xff, version&0xff, '\0');
-	return /*(char*)strdup(res);*/NULL;
+	return (char*)STRDUP(res,12);
 }
 
 
@@ -147,12 +148,12 @@ static void parse_nv30_performance_table(struct nvbios *bios, char *rom, int off
 */
 static char *nv40_bios_version_to_str(char *rom, short offset)
 {
-	/*char res[16];
+	char res[16];
 	int version = READ_INT(rom, offset);
 	unsigned char extra = rom[offset+4];
 
-	sprintf(res, "%02X.%02x.%02x.%02x.%02x%c", (version>>24) & 0xff, (version>>16) & 0xff, (version>>8) & 0xff, version&0xff, extra, '\0');
-	 return (char*)strdup(res);*/return NULL;
+	snprintf(res, 16,"%02X.%02x.%02x.%02x.%02x%c", (version>>24) & 0xff, (version>>16) & 0xff, (version>>8) & 0xff, version&0xff, extra, '\0');
+	 return (char*)STRDUP(res,16);
 }
 
 
@@ -791,6 +792,7 @@ static void nv30_parse(struct nvbios *bios, char *rom, unsigned short nv_offset)
 
 static void parse_bit_structure(struct nvbios *bios, char *rom, unsigned int bit_offset)
 {
+	//IOLog("Parsing BIT structure\n");
 	unsigned short init_offset=0;
 	unsigned short perf_offset=0;
 	unsigned short pll_offset=0;
@@ -823,21 +825,26 @@ static void parse_bit_structure(struct nvbios *bios, char *rom, unsigned int bit
 		entry = (struct bit_entry *)&rom[offset];
 		if ((entry->id[0] == 0) && (entry->id[1] == 0))
 			break;
-
+		//IOLog("Got new entry: ");
+		
 		switch (entry->id[0])
 		{
 			case 'B': /* BIOS related data */
+				//IOLog("BIOS");
 				bios->version = nv40_bios_version_to_str(rom, entry->offset);
 				break;
 			case 'C': /* Configuration table; it contains at least PLL parameters */
+				//IOLog("Configuration");
 				pll_offset = READ_SHORT(rom, entry->offset + 8);
 				parse_bit_pll_table(bios, rom, pll_offset);
 				break;
 			case 'I': /* Init table */
+				//IOLog("Init");
 				init_offset = READ_SHORT(rom, entry->offset);
 				parse_bit_init_script_table(bios, rom, init_offset, entry->len);
 				break;
 			case 'P': /* Performance related data */
+				//IOLog("Performance");
 				perf_offset = READ_SHORT(rom, entry->offset);
 				parse_bit_performance_table(bios, rom, perf_offset);
 
@@ -849,17 +856,22 @@ static void parse_bit_structure(struct nvbios *bios, char *rom, unsigned int bit
 				parse_voltage_table(bios, rom, volt_offset);
 				break;
 			case 'S':
+				//IOLog("String table");
 				/* table with string references of signon-message,
 				BIOS version, BIOS copyright, OEM string, VESA vendor,
 				VESA Product Name, and VESA Product Rev.
 				table consists of offset, max-string-length pairs
 				for all strings */
+				//IOLog("Or panic was here?");
 				signon_offset = READ_SHORT(rom, entry->offset);
 				bios->signon_msg = nv_read(rom, signon_offset);
 				break;
 		}
+		//IOLog("\n");
+
 		offset += sizeof(struct bit_entry);
 	}
+	//IOLog("It has been parsed!!!\n");
 }
 
 
@@ -870,7 +882,7 @@ static unsigned int locate(char *rom, const char *str, int offset)
 	char* data;
 
 	/* We shouldn't assume this is allways 64kB */
-	for(i=offset; i<0xffff; i++)
+	for(i=offset; i<NV_PROM_SIZE; i++)
 	{
 		data = (char*)&rom[i];
 		if(strncmp(data, str, size) == 0)
@@ -987,25 +999,27 @@ int load_bios_prom(char *data)
 struct nvbios *read_bios(const char *file)
 {
 	struct nvbios *res;
-	char *rom = new char[NV_PROM_SIZE];
-
-	if(!rom)
+	char *rom = (char*)IOMalloc(NV_PROM_SIZE);
+	if(!rom) {
+		IOLog("Memory allocation error\n");
 		return NULL;
-
-	if(!load_bios_pramin(rom))
-	{
-		if(!false)
-		{
-			delete rom;
-			return NULL;
-		}
 	}
+	if(!load_bios_prom(rom))
+	{
+		IOLog("Error reading BIOS\n");
+		IOFree(rom, NV_PROM_SIZE);
+		return NULL;
+	}
+	else {
+		IOLog("BIOS successfully read\n");
+	}
+
 
 	/* Do the actual bios parsing */
 	res = parse_bios(rom);
-
+	//IOLog("Parsing BIOS complete\n");
 	/* Cleanup the mess */
-	delete rom;
+	IOFree(rom, NV_PROM_SIZE);
 
 	return res;
 }
@@ -1013,6 +1027,7 @@ struct nvbios *read_bios(const char *file)
 
 struct nvbios *parse_bios(char *rom)
 {
+	//IOLog("Parsing BIOS...\n");
 	unsigned short bit_offset = 0;
 	unsigned short nv_offset = 0;
 	unsigned short pcir_offset = 0;
@@ -1020,14 +1035,17 @@ struct nvbios *parse_bios(char *rom)
 	struct nvbios *bios;
 	//int i=0;
 
+	//IOLog("Checking BIOS\n");
 	/* All bioses start with this '0x55 0xAA' signature */
 	if((rom[0] != 0x55) || (rom[1] != (char)0xAA))
 		return NULL;
 
+	//IOLog("Checking PCIR\n");
 	/* Fail when the PCIR header can't be found; it is present on all PCI bioses */
 	if(!(pcir_offset = locate(rom, "PCIR", 0)))
 		return NULL;
 
+	//IOLog("Checking vendor\n");
 	/* Fail if the bios is not from an Nvidia card */
 	if(READ_SHORT(rom, pcir_offset + 4) != 0x10de)
 		return NULL;
@@ -1035,13 +1053,16 @@ struct nvbios *parse_bios(char *rom)
 	device_id = READ_SHORT(rom, pcir_offset + 6);
 	if(get_gpu_arch(device_id) & (NV4X | NV5X))
 	{
+		//IOLog("It's new card\n");
 	/* For NV40 card the BIT structure is used instead of the BMP structure (last one doesn't exist anymore on 6600/6800le cards). */
+		//IOLog("Checking BIT\n");
 		if(!(bit_offset = locate(rom, "BIT", 0)))
 			return NULL;
-
-		bios = new struct nvbios;
+		//IOLog("Allocating memory for BIOS structure\n");
+		bios = (nvbios*)IOMalloc(sizeof(nvbios));
 		bios->device_id = device_id;
 		parse_bit_structure(bios, rom, bit_offset);
+		//IOLog("BIT structure parsed\n");
 	}
 	/* We are dealing with a card that only contains the BMP structure */
 	else
@@ -1056,7 +1077,7 @@ struct nvbios *parse_bios(char *rom)
 		if(rom[nv_offset + 5] < 5)
 			return NULL;
 
-		bios = new struct nvbios;
+		bios = (nvbios*)IOMalloc(sizeof(nvbios));
 		bios->device_id = device_id;
 
 		bios->major = (char)rom[nv_offset + 5];
@@ -1076,19 +1097,7 @@ struct nvbios *parse_bios(char *rom)
 			nv5_parse(bios, rom, nv_offset);
 	}
 
-#if DEBUG
-	printf("signon_msg: %s\n", bios->signon_msg);
-	printf("bios: %s\n", bios->version);
-	printf("BMP version: %x.%x\n", bios->major, bios->minor);
-	for(i=0; i< bios->volt_entries; i++)
-		printf("volt: %.2fV\n", bios->volt_lst[i].voltage);
-
-	for(i=0; i< bios->perf_entries; i++)
-	{
-		printf("gpu freq: %dMHz @ %.2fV\n", bios->perf_lst[i].nvclk, bios->perf_lst[i].voltage);
-		printf("mem freq: %dMHz\n", bios->perf_lst[i].memclk);
-	}
-
+#if 0
 	if(bios)
 	{
 		int i;
@@ -1124,5 +1133,6 @@ struct nvbios *parse_bios(char *rom)
 		printf("\n");
 	}
 #endif
+	//IOLog("Returning BIOS structure\n");
 	return bios;
 }

@@ -44,14 +44,22 @@ public:
 	virtual IOReturn OnKeyRead(const char* key, char* data);
 };
 
+class FrequencySensor : public Binding {
+public:
+	FrequencySensor(const char* key, const char* type, UInt8 size) : Binding(key, type, size) {};
+	virtual IOReturn OnKeyRead(const char* key, char* data);
+};
 
 
 class PTnVmon : public IOService {
 	OSDeclareDefaultStructors(PTnVmon)
 public:
-	TemperatureSensor* tempSensor[MAX_CARDS];
-	TemperatureSensor* boardSensor[MAX_CARDS];
-	FanSensor* fanSensor[MAX_CARDS];
+	TemperatureSensor*	tempSensor		[MAX_CARDS];
+	TemperatureSensor*	boardSensor		[MAX_CARDS];
+	FanSensor*			fanSensor		[MAX_CARDS];
+	FrequencySensor*	gpuFreqSensor	[MAX_CARDS];
+	FrequencySensor*	memFreqSensor	[MAX_CARDS];
+	FrequencySensor*	shaFreqSensor	[MAX_CARDS];
 	virtual IOService*	probe	(IOService* provider, SInt32* score);
 	virtual bool		start	(IOService* provider);
 	virtual bool		init	(OSDictionary* properties=NULL);
