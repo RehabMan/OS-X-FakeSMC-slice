@@ -1,0 +1,8 @@
+00000000000b8a950000000000004458 0aef58608cd182ba60f54c4d11222761 ffffffffffffffffffffffffffffffff 177592 /Users/Michael/Desktop/K-CPU-i/build/CPUi.build/Release/CPUi.build/Objects-normal/i386/CPUi.o
+00000000000000000000000000000000 5b3f77b5629fbc6434780098fec36d54 ffffffffffffffffffffffffffffffff 102 /Users/Michael/Desktop/K-CPU-i/build/Release/CPUi.kext.dSYM
+ee602c33fa00926003d64d4264aa7e71 9a761dd0b53e8f1480da23e4e297b976 ffffffffffffffffffffffffffffffff 102 /Users/Michael/Desktop/K-CPU-i/build/Release/CPUi.kext
+15a0e9a84a1f955303c0947912df1c27 7242e4554eb41316f767e072ae34dfd9 ffffffffffffffffffffffffffffffff 40964 /Users/Michael/Desktop/K-CPU-i/build/Release/CPUi.kext/Contents/MacOS/CPUi
+000000004c46cc2000000000000001a5 1f4fb1c8c16347076335d83403fd7e55 ffffffffffffffffffffffffffffffff 3732 /Users/Michael/Desktop/K-CPU-i/build/CPUi.build/Release/CPUi.build/Objects-normal/i386/CPUi_info.o
+0000000049e022aa000000000000005c 48803c8403f0534d29533808a21ea9bb ffffffffffffffffffffffffffffffff 92 /Users/Michael/Desktop/K-CPU-i/build/Release/CPUi.kext/Contents/Resources/English.lproj/InfoPlist.strings
+00000000000000000000000000000000 c1021d4ab4bb65c2de2201417a5f1468 ffffffffffffffffffffffffffffffff 1564 /Users/Michael/Desktop/K-CPU-i/build/Release/CPUi.kext/Contents/Info.plist
+00000000000000000000000000000000 0f37cb7c363493f9a87dc238f52a28d2 ffffffffffffffffffffffffffffffff 1679 /Users/Michael/Desktop/K-CPU-i/build/CPUi.build/Release/CPUi.build/Preprocessed-Info.plist

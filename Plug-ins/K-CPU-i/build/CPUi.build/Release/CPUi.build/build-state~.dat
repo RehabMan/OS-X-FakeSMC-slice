@@ -1,0 +1,229 @@
+TCPUi
+v7
+r0
+t301400992.654392
+cCheck dependencies
+cPreprocess /Users/Michael/Desktop/K-CPU-i/build/CPUi.build/Release/CPUi.build/Preprocessed-Info.plist Info.plist
+cProcessInfoPlistFile /Users/Michael/Desktop/K-CPU-i/build/Release/CPUi.kext/Contents/Info.plist /Users/Michael/Desktop/K-CPU-i/build/CPUi.build/Release/CPUi.build/Preprocessed-Info.plist
+cCopyStringsFile /Users/Michael/Desktop/K-CPU-i/build/Release/CPUi.kext/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
+cCompileC build/CPUi.build/Release/CPUi.build/Objects-normal/i386/CPUi.o /Users/Michael/Desktop/K-CPU-i/CPUi.cpp normal i386 c++ com.apple.compilers.gcc.4_2
+cCompileC build/CPUi.build/Release/CPUi.build/Objects-normal/i386/CPUi_info.o /Users/Michael/Desktop/K-CPU-i/build/CPUi.build/Release/CPUi.build/DerivedSources/CPUi_info.c normal i386 c com.apple.compilers.gcc.4_2
+
+N/Developer/SDKs/MacOSX10.6.sdk
+c000000004BE0165B00000000000000EE
+t1272976987
+s238
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/IODeviceTreeSupport.h
+c000000004A73D6510000000000000FA6
+t1249105489
+s4006
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/IOInterruptController.h
+c000000004A73D6510000000000001698
+t1249105489
+s5784
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/IOLib.h
+c000000004A73D6520000000000004DDF
+t1249105490
+s19935
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/IOService.h
+c000000004A73D653000000000001F49D
+t1249105491
+s128157
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/IOTimerEventSource.h
+c000000004A73D6540000000000002B1D
+t1249105492
+s11037
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/architecture/i386/pio.h
+c000000004A73D66C0000000000000DC6
+t1249105516
+s3526
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/i386/cpuid.h
+c000000004A73D66C0000000000002676
+t1249105516
+s9846
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/i386/proc_reg.h
+c000000004A73D66C00000000000039BC
+t1249105516
+s14780
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/OSTypes.h
+c000000004A73D6500000000000000E42
+t1249105488
+s3650
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/machine/machine_routines.h
+c000000004A73D64B0000000000000698
+t1249105483
+s1688
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/pexpert/pexpert.h
+c000000004A73D64E0000000000001CBE
+t1249105486
+s7358
+
+N/Users/Michael/Desktop/K-CPU-i/CPUi.cpp
+c000000004A053221000000000000352D
+t1241854497
+s13613
+i<CPUi.h>
+i<IOKit/IODeviceTreeSupport.h>
+
+N/Users/Michael/Desktop/K-CPU-i/CPUi.h
+c000000004C46CC160000000000001C3B
+t1279708182
+s7227
+i<IOKit/IOService.h>
+i<IOKit/IOTimerEventSource.h>
+i<i386/cpuid.h>
+i<i386/proc_reg.h>
+i"FakeSMCBinding.h"
+i<IOCPU.h>
+
+N/Users/Michael/Desktop/K-CPU-i/English.lproj/InfoPlist.strings
+c0000000049E022AA000000000000005C
+t1239425706
+s92
+
+N/Users/Michael/Desktop/K-CPU-i/FakeSMCBinding.h
+c000000004C4482A70000000000000B28
+t1279558311
+s2856
+i<architecture/i386/pio.h>
+i<libkern/OSTypes.h>
+i<IOKit/IOLib.h>
+
+N/Users/Michael/Desktop/K-CPU-i/IOCPU.h
+c0000000049FDD72D000000000000150D
+t1241372461
+s5389
+i<machine/machine_routines.h>
+i<pexpert/pexpert.h>
+i<IOKit/IOService.h>
+i<IOKit/IOInterruptController.h>
+
+N/Users/Michael/Desktop/K-CPU-i/build/CPUi.build/Release/CPUi.build/DerivedSources/CPUi_info.c
+c000000004C46CC2000000000000001A5
+t1279708192
+s421
+
+N/Users/Michael/Desktop/K-CPU-i/build/CPUi.build/Release/CPUi.build/Objects-normal/i386/CPUi.LinkFileList
+c000000004C46CC20000000000000005E
+t1279708192
+s94
+
+N/Users/Michael/Desktop/K-CPU-i/build/CPUi.build/Release/CPUi.build/Objects-normal/i386/CPUi.o
+t2
+s0
+
+N/Users/Michael/Desktop/K-CPU-i/build/CPUi.build/Release/CPUi.build/Objects-normal/i386/CPUi_info.o
+t1279708192
+s3732
+
+N/Users/Michael/Desktop/K-CPU-i/build/CPUi.build/Release/CPUi.build/Preprocessed-Info.plist
+t1279708192
+s1617
+
+N/Users/Michael/Desktop/K-CPU-i/build/Release/CPUi.kext
+t2
+s0
+
+N/Users/Michael/Desktop/K-CPU-i/build/Release/CPUi.kext.dSYM
+t2
+s0
+
+N/Users/Michael/Desktop/K-CPU-i/build/Release/CPUi.kext/Contents/Info.plist
+t1279708192
+s1502
+
+N/Users/Michael/Desktop/K-CPU-i/build/Release/CPUi.kext/Contents/MacOS/CPUi
+t2
+s0
+
+N/Users/Michael/Desktop/K-CPU-i/build/Release/CPUi.kext/Contents/Resources/English.lproj/InfoPlist.strings
+t1279708192
+s92
+
+NInfo.plist
+c000000004A05329D000000000000064F
+t1241854621
+s1615
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies301400992#301400992#0(0"0(0#1#0"4324459736#0"0#
+
+CCompileC build/CPUi.build/Release/CPUi.build/Objects-normal/i386/CPUi.o /Users/Michael/Desktop/K-CPU-i/CPUi.cpp normal i386 c++ com.apple.compilers.gcc.4_2
+s301400992.203899
+e301400992.654287
+r0
+xCompileC
+xbuild/CPUi.build/Release/CPUi.build/Objects-normal/i386/CPUi.o
+x/Users/Michael/Desktop/K-CPU-i/CPUi.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.gcc.4_2
+oIn file included from /Users/Michael/Desktop/K-CPU-i/CPUi.h:7,
+o                 from /Users/Michael/Desktop/K-CPU-i/CPUi.cpp:1:
+o/Users/Michael/Desktop/K-CPU-i/IOCPU.h:70: error: 'ipi_handler_t' does not name a type
+o/Users/Michael/Desktop/K-CPU-i/CPUi.cpp: In member function 'virtual IOService* CPUi::probe(IOService*, SInt32*)':
+o/Users/Michael/Desktop/K-CPU-i/CPUi.cpp:224: warning: format '%d' expects type 'int', but argument 3 has type 'UInt32'
+lSLF07#2@47"Compile /Users/Michael/Desktop/K-CPU-i/CPUi.cpp301400992#301400992#0(449"In file included from /Users/Michael/Desktop/K-CPU-i/CPUi.h:7,                 from /Users/Michael/Desktop/K-CPU-i/CPUi.cpp:1:/Users/Michael/Desktop/K-CPU-i/IOCPU.h:70: error: 'ipi_handler_t' does not name a type/Users/Michael/Desktop/K-CPU-i/CPUi.cpp: In member function 'virtual IOService* CPUi::probe(IOService*, SInt32*)':/Users/Michael/Desktop/K-CPU-i/CPUi.cpp:224: warning: format '%d' expects type 'int', but argument 3 has type 'UInt32'2(4@36"'ipi_handler_t' does not name a type301400992#128#87#3(7@61"In file included from /Users/Michael/Desktop/K-CPU-i/CPUi.cpp301400992#18446744073709551615#0#0(6@39"/Users/Michael/Desktop/K-CPU-i/CPUi.cpp263547297#1#0#1#0#0"0(7@59"In file included from /Users/Michael/Desktop/K-CPU-i/CPUi.h301400992#18446744073709551615#0#0(6@37"/Users/Michael/Desktop/K-CPU-i/CPUi.h301400982#7#0#7#0#0"0(13@78"'ipi_handler_t' does not name a type in /Users/Michael/Desktop/K-CPU-i/IOCPU.h301400992#18446744073709551615#0#0(6@38"/Users/Michael/Desktop/K-CPU-i/IOCPU.h263065261#70#0#70#0#0"0(6@38"/Users/Michael/Desktop/K-CPU-i/IOCPU.h263065261#70#0#70#0#24"'*' does not name a type0(22@64"Format '%d' expects type 'int', but argument 3 has type 'UInt32'301400992#330#119#0(6@39"/Users/Michael/Desktop/K-CPU-i/CPUi.cpp263547297#224#0#224#0#56"format '*' expects type '*', but argument * has type '*'0(0#0#39"/Users/Michael/Desktop/K-CPU-i/CPUi.cpp4324459736#1466"    cd /Users/Michael/Desktop/K-CPU-i    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/Michael/Desktop/K-CPU-i/build/CPUi.build/Release/CPUi.build/CPUi-generated-files.hmap -I/Users/Michael/Desktop/K-CPU-i/build/CPUi.build/Release/CPUi.build/CPUi-own-target-headers.hmap -I/Users/Michael/Desktop/K-CPU-i/build/CPUi.build/Release/CPUi.build/CPUi-all-target-headers.hmap -iquote /Users/Michael/Desktop/K-CPU-i/build/CPUi.build/Release/CPUi.build/CPUi-project-headers.hmap -F/Users/Michael/Desktop/K-CPU-i/build/Release -I/Users/Michael/Desktop/K-CPU-i/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/Michael/Desktop/K-CPU-i/build/CPUi.build/Release/CPUi.build/DerivedSources/i386 -I/Users/Michael/Desktop/K-CPU-i/build/CPUi.build/Release/CPUi.build/DerivedSources -c /Users/Michael/Desktop/K-CPU-i/CPUi.cpp -o /Users/Michael/Desktop/K-CPU-i/build/CPUi.build/Release/CPUi.build/Objects-normal/i386/CPUi.o1#
+
+CCompileC build/CPUi.build/Release/CPUi.build/Objects-normal/i386/CPUi_info.o /Users/Michael/Desktop/K-CPU-i/build/CPUi.build/Release/CPUi.build/DerivedSources/CPUi_info.c normal i386 c com.apple.compilers.gcc.4_2
+s301400992.205186
+e301400992.324317
+r1
+xCompileC
+xbuild/CPUi.build/Release/CPUi.build/Objects-normal/i386/CPUi_info.o
+x/Users/Michael/Desktop/K-CPU-i/build/CPUi.build/Release/CPUi.build/DerivedSources/CPUi_info.c
+xnormal
+xi386
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@101"Compile /Users/Michael/Desktop/K-CPU-i/build/CPUi.build/Release/CPUi.build/DerivedSources/CPUi_info.c301400992#301400992#0(0"0(0#0#93"/Users/Michael/Desktop/K-CPU-i/build/CPUi.build/Release/CPUi.build/DerivedSources/CPUi_info.c4324459736#1481"    cd /Users/Michael/Desktop/K-CPU-i    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch i386 -fmessage-length=0 -pipe -nostdinc -std=c99 -fno-builtin -Wno-trigraphs -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-variable -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/Michael/Desktop/K-CPU-i/build/CPUi.build/Release/CPUi.build/CPUi-generated-files.hmap -I/Users/Michael/Desktop/K-CPU-i/build/CPUi.build/Release/CPUi.build/CPUi-own-target-headers.hmap -I/Users/Michael/Desktop/K-CPU-i/build/CPUi.build/Release/CPUi.build/CPUi-all-target-headers.hmap -iquote /Users/Michael/Desktop/K-CPU-i/build/CPUi.build/Release/CPUi.build/CPUi-project-headers.hmap -F/Users/Michael/Desktop/K-CPU-i/build/Release -I/Users/Michael/Desktop/K-CPU-i/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/Michael/Desktop/K-CPU-i/build/CPUi.build/Release/CPUi.build/DerivedSources/i386 -I/Users/Michael/Desktop/K-CPU-i/build/CPUi.build/Release/CPUi.build/DerivedSources -c /Users/Michael/Desktop/K-CPU-i/build/CPUi.build/Release/CPUi.build/DerivedSources/CPUi_info.c -o /Users/Michael/Desktop/K-CPU-i/build/CPUi.build/Release/CPUi.build/Objects-normal/i386/CPUi_info.o0#
+
+CCopyStringsFile /Users/Michael/Desktop/K-CPU-i/build/Release/CPUi.kext/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
+s301400992.151834
+e301400992.203759
+r1
+xCopyStringsFile
+x/Users/Michael/Desktop/K-CPU-i/build/Release/CPUi.kext/Contents/Resources/English.lproj/InfoPlist.strings
+xEnglish.lproj/InfoPlist.strings
+lSLF07#2@36"Copy English.lproj/InfoPlist.strings301400992#301400992#0(0"0(0#0#62"/Users/Michael/Desktop/K-CPU-i/English.lproj/InfoPlist.strings4324459736#350"    cd /Users/Michael/Desktop/K-CPU-i    setenv ICONV /usr/bin/iconv    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings --validate --inputencoding utf-16 --outputencoding UTF-16 English.lproj/InfoPlist.strings --outdir /Users/Michael/Desktop/K-CPU-i/build/Release/CPUi.kext/Contents/Resources/English.lproj0#
+
+CGenerateDSYMFile /Users/Michael/Desktop/K-CPU-i/build/Release/CPUi.kext.dSYM /Users/Michael/Desktop/K-CPU-i/build/Release/CPUi.kext/Contents/MacOS/CPUi
+r0
+
+CLd /Users/Michael/Desktop/K-CPU-i/build/Release/CPUi.kext/Contents/MacOS/CPUi normal i386
+r0
+
+CPreprocess /Users/Michael/Desktop/K-CPU-i/build/CPUi.build/Release/CPUi.build/Preprocessed-Info.plist Info.plist
+s301400992.125046
+e301400992.147641
+r1
+xPreprocess
+x/Users/Michael/Desktop/K-CPU-i/build/CPUi.build/Release/CPUi.build/Preprocessed-Info.plist
+xInfo.plist
+lSLF07#2@81"Preprocess build/CPUi.build/Release/CPUi.build/Preprocessed-Info.plist Info.plist301400992#301400992#0(0"0(0#0#41"/Users/Michael/Desktop/K-CPU-i/Info.plist4324459736#243"    cd /Users/Michael/Desktop/K-CPU-i    /Developer/usr/bin/gcc -E -P -x c -Wno-trigraphs Info.plist -F/Users/Michael/Desktop/K-CPU-i/build/Release -o /Users/Michael/Desktop/K-CPU-i/build/CPUi.build/Release/CPUi.build/Preprocessed-Info.plist0#
+
+CProcessInfoPlistFile /Users/Michael/Desktop/K-CPU-i/build/Release/CPUi.kext/Contents/Info.plist /Users/Michael/Desktop/K-CPU-i/build/CPUi.build/Release/CPUi.build/Preprocessed-Info.plist
+s301400992.147789
+e301400992.151711
+r1
+xProcessInfoPlistFile
+x/Users/Michael/Desktop/K-CPU-i/build/Release/CPUi.kext/Contents/Info.plist
+x/Users/Michael/Desktop/K-CPU-i/build/CPUi.build/Release/CPUi.build/Preprocessed-Info.plist
+lSLF07#2@98"Process /Users/Michael/Desktop/K-CPU-i/build/CPUi.build/Release/CPUi.build/Preprocessed-Info.plist301400992#301400992#0(0"0(0#0#90"/Users/Michael/Desktop/K-CPU-i/build/CPUi.build/Release/CPUi.build/Preprocessed-Info.plist4324459736#274"    cd /Users/Michael/Desktop/K-CPU-i    builtin-infoPlistUtility /Users/Michael/Desktop/K-CPU-i/build/CPUi.build/Release/CPUi.build/Preprocessed-Info.plist -expandbuildsettings -platform macosx -o /Users/Michael/Desktop/K-CPU-i/build/Release/CPUi.kext/Contents/Info.plist0#
+
+CTouch /Users/Michael/Desktop/K-CPU-i/build/Release/CPUi.kext
+r0
+
