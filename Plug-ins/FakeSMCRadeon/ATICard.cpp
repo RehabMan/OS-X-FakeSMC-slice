@@ -77,7 +77,7 @@ bool ATICard::initialize()
 
 void ATICard::getRadeonInfo()
 {
-	UInt16 devID = chipID >> 16;
+	UInt16 devID = chipID && 0xffff;
 	rinfo = NULL;
 	for (int i=0; radeon_device_list[i].device_id; i++) {
 		if (devID == radeon_device_list[i].device_id) {
@@ -85,7 +85,9 @@ void ATICard::getRadeonInfo()
 			break;
 		}
 	}
-	InfoLog("your DeviceID is unknown!\n");
+	if (!rinfo) {
+		InfoLog("your DeviceID is unknown!\n");
+	}
 }
 
 void ATICard::setup_R6xx()
