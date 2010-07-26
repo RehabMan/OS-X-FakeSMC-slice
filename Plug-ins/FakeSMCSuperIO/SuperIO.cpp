@@ -193,6 +193,8 @@ const char* SuperIO::GetModelName()
 		case SCH5307_NS: return "SMSC SCH5307-NS";
 		case SCH5317_1:
 		case SCH5317_2: return "SMSC SCH5317";
+		case PC8739x: 	return "NSC PC8739x";
+
     };
 	
 	return "Unknown";

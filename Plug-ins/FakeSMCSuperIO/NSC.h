@@ -18,7 +18,7 @@
 const UInt8 NSC_PORTS_COUNT = 2;
 const UInt16 NSC_PORT[2] = { 0x2e, 0x4e};
 const UInt16 NSC_HARDWARE_MONITOR_REGS[5] = {0x61, 0x62, 0x63, 0x64, 0x68};
-const UInt16 NSC_FAN_SPEED[5] = {0xff, 0xa3, 0x81, 0x6f, 0};
+//const UInt16 NSC_FAN_SPEED[5] = {0xff, 0xa3, 0x82, 0x81, 0x6f, 0};  //bred
 
 // ITE Environment Controller
 const UInt8 NSC_ADDRESS_REGISTER_OFFSET = 0x00;
@@ -26,7 +26,7 @@ const UInt8 NSC_DATA_REGISTER_OFFSET	= 0x01;
 const UInt8 NSC_BANK_SELECT_REGISTER	= 0x07;
 const UInt8 NSC_CHIP_ID_REGISTER		= 0x20;
 const UInt8 NSC_CHIP_REVISION_REGISTER	= 0x27;
-
+const UInt8 NSC_LDN_PRESENT				= 0x30;
 
 
 const UInt8 NSC_HARDWARE_MONITOR_LDN	= 0x0F;

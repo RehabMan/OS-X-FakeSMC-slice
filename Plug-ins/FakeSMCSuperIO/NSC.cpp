@@ -55,10 +55,13 @@ bool NSC::ProbePort()
 	UInt8 revision = ListenPortByte(NSC_CHIP_REVISION_REGISTER);
 	if (id == 0 || id == 0xff || revision == 0 || revision == 0xff)
 		return false;
-	if ((id == 0xfc) && (revision == 0x66)) {
+	if ((id == 0xfc) /* && (revision == 0x66)*/) {
 		Select(NSC_HARDWARE_MONITOR_LDN);
 		
-		m_Address = ListenPortWord(SUPERIO_BASE_ADDRESS_REGISTER);          
+		m_Address = ListenPortWord(SUPERIO_BASE_ADDRESS_REGISTER); 
+		if (!ListenPortByte(NSC_LDN_PRESENT)) {
+			return false;
+		}
 		
 		InfoLog("found supported NSC chip ID=0x%x REVISION=0x%x on ADDRESS=0x%x", id, revision, m_Address);
 		m_Model = PC8739x;
@@ -89,8 +92,8 @@ bool NSC::ProbePort()
 void NSC::Start()
 {
 	IOMemoryDescriptor *		theDescriptor;
-	UInt32 adr = (ListenPortByte(NSC_MEM))+(ListenPortByte(NSC_MEM+1)<<8)+
-		(ListenPortByte(NSC_MEM+2)<<16)+(ListenPortByte(NSC_MEM+3)<<24);
+	UInt32 adr = (ListenPortByte(NSC_MEM)&0xff)+((ListenPortByte(NSC_MEM+1)<<8)&0xff00)+
+		((ListenPortByte(NSC_MEM+2)&0xff)<<16)+((ListenPortByte(NSC_MEM+3)&0xff)<<24);
 	
 	IOPhysicalAddress bar = (IOPhysicalAddress)(adr & ~0xf);
 	//		IOLog("Fx3100: register space=%08lx\n", (long unsigned int)bar);
@@ -102,12 +105,13 @@ void NSC::Start()
 		{
 			//		UInt32 addr = map->getPhysicalAddress();
 			mmio_base = (volatile UInt8 *)mmio->getVirtualAddress();
-#if 1				
-			InfoLog(" Memory mapped!\n");
+#if 0				
+			UInt32 base_phys = (UInt32)mmio->getPhysicalAddress();
+			InfoLog(" Memory mapped at address %08lx\n", (long unsigned int)base_phys);
 			for (int i=0; i<0x2f; i +=16) {
-				IOLog("%04lx: ", (long unsigned int)i+0x1000);
+				IOLog("%04lx: ", (long unsigned int)i);
 				for (int j=0; j<16; j += 1) {
-					IOLog("%02lx ", (long unsigned int)mmio_base[i+j+0x1000]);
+					IOLog("%02lx ", (long unsigned int)mmio_base[i+j]);
 				}
 				IOLog("\n");
 			}
@@ -136,10 +140,11 @@ void NSC::Start()
 	int ac=GetNextUnusedKey(KEY_FORMAT_FAN_SPEED, key);
 	if (id!=-1 || ac!=-1) {
 		int no=id>ac ? id : ac;
-		char name[10]; 
-		snprintf (name, 10, "System Fan");
+		char name[] = "System Fan"; 
+		int lname = sizeof(name);
+//		snprintf (name, 10, "System Fan");
 		snprintf(key, 5, KEY_FORMAT_FAN_ID, no);
-		FakeSMCAddKey(key, TYPE_CH8, 4, name);			
+		FakeSMCAddKey(key, TYPE_CH8, lname, name);			
 		snprintf(key, 5, KEY_FORMAT_FAN_SPEED, no);
 		AddSensor(new NSCTachometerSensor(this, 3, key, TYPE_FP2E, 2));
 		UpdateFNum();
@@ -163,13 +168,8 @@ SInt16	NSC::ReadTemperature(UInt8 index)
 
 SInt16	NSC::ReadTachometer(UInt8 index)
 {
-	int speed = 0;
 	int offset = NSC_HARDWARE_MONITOR_REGS[index];
-	for (int i=0; i<4; i++) {
-		if (offset == NSC_FAN_SPEED[i]) {
-			speed = 800 * i;
-		}
-	}
-	return speed;
+	UInt8 speed = ~mmio_base[offset];
+	return speed*10;
 }
 		
