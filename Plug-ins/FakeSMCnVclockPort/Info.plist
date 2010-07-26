@@ -6,20 +6,20 @@
 	<string>English</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
-	<key>CFBundleName</key>
-	<string>${PRODUCT_NAME}</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.PaztalomTechnologiez.nVmon</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>${PRODUCT_NAME}</string>
 	<key>CFBundlePackageType</key>
 	<string>KEXT</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0.2</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.0.1</string>
-	<key>CFBundleShortVersionString</key>
-	<string>1.0.1</string>
+	<string>1.0.2</string>
 	<key>IOKitPersonalities</key>
 	<dict>
 		<key>PTnVmon</key>
@@ -38,20 +38,20 @@
 	</dict>
 	<key>OSBundleLibraries</key>
 	<dict>
-		<key>org.netkas.FakeSMC</key>
-		<string>2.7.2</string>
+		<key>com.apple.NVDAResman</key>
+		<string>1.2.0</string>
+		<key>com.apple.driver.AppleSMC</key>
+		<string>1.0.1</string>
+		<key>com.apple.iokit.IOPCIFamily</key>
+		<string>2.6</string>
 		<key>com.apple.kpi.iokit</key>
 		<string>9.0</string>
 		<key>com.apple.kpi.libkern</key>
 		<string>9.0</string>
-		<key>com.apple.iokit.IOPCIFamily</key>
-		<string>2.6</string>
 		<key>com.apple.kpi.unsupported</key>
 		<string>9.0</string>
-		<key>com.apple.NVDAResman</key>
-		<string>1.2.0</string>
-		<key>com.apple.driver.AppleSMC</key>
-		<string>1.0.1d1</string>
+		<key>org.netkas.FakeSMC</key>
+		<string>2.7.2</string>
 	</dict>
 </dict>
 </plist>
