@@ -37,6 +37,7 @@ class ATICard : public FakeSMCBinding
 {
 public:
 	UInt32			chipID;
+	UInt16			family;
 	IOPCIDevice *	VCard;
 	
 private:

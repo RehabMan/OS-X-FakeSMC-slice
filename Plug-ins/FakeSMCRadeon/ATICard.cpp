@@ -46,10 +46,10 @@ bool ATICard::initialize()
 	
 	//getRadeonBIOS(); -  anahuya?
 	getRadeonInfo();
-	if (!rinfo) {
+/*	if (!rinfo) {
 		return false;
-	}
-	switch (rinfo->ChipFamily) {
+	}*/
+	switch (family) {
 		case CHIP_FAMILY_R600:
 		case CHIP_FAMILY_RV610:
 		case CHIP_FAMILY_RV630:
@@ -82,7 +82,8 @@ void ATICard::getRadeonInfo()
 	for (int i=0; radeon_device_list[i].device_id; i++) {
 		if (devID == radeon_device_list[i].device_id) {
 			rinfo = &radeon_device_list[i];
-			break;
+			family = radeon_device_list[i].ChipFamily;
+			return;
 		}
 	}
 	if (!rinfo) {
