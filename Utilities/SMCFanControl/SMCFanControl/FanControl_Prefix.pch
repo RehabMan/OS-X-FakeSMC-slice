@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'FanControl' target in the 'FanControl' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
