@@ -39,11 +39,11 @@ public:
 	UInt32			chipID;
 	UInt16			family;
 	IOPCIDevice *	VCard;
+	RADEONCardInfo*	rinfo;
 	
 private:
 	volatile UInt8* mmio_base;
 	IOMemoryMap *	mmio;
-	RADEONCardInfo*	rinfo;
 	UInt32			Caps;
 	UInt32			tReg;
 	int				card_number;
@@ -52,7 +52,7 @@ private:
 //	Binding*			m_Controller;  //todo
 	
 //	void			FlushList(Binding* start);	
-	void			getRadeonInfo	();
+	bool			getRadeonInfo	();
 //	void			setup_R5xx		();  //todo
 	void			setup_R6xx		();
 	void			setup_R7xx		();

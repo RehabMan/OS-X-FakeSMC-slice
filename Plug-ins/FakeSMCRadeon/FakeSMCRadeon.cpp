@@ -32,6 +32,7 @@ RadeonPlugin::probe(IOService *provider, SInt32 *score)
 		if( (vendorID & 0xffff) != 0x1002) //check if vendorID is really ATI, if not don't bother
 		{
 			//IOLog("FakeSMC_Radeon: Can't Find ATI Chip!\n");
+			//IOLog("FakeSMC_Radeon: Test by Intel!\n");  //Debug
 			return( 0 );
 		}		
 	}
@@ -73,6 +74,9 @@ void RadeonPlugin::stop (IOService* provider)
 
 void RadeonPlugin::free ()
 {
+	if (Card->rinfo) {
+		IOFree(Card->rinfo, sizeof(RADEONCardInfo));
+	}
 	if (Card) {
 		delete Card;
 	}

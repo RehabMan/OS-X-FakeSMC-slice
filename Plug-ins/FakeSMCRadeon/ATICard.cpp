@@ -16,6 +16,7 @@
 
 bool ATICard::initialize()
 {
+	rinfo = (RADEONCardInfo*)IOMalloc(sizeof(RADEONCardInfo));
 	VCard->setMemoryEnable(true);
 	/*	
 	 // PCI dump
@@ -45,11 +46,12 @@ bool ATICard::initialize()
 	}
 	
 	//getRadeonBIOS(); -  anahuya?
-	getRadeonInfo();
+	if(!getRadeonInfo())
+		return false;
 /*	if (!rinfo) {
 		return false;
 	}*/
-	switch (family) {
+	switch (rinfo->ChipFamily) {
 		case CHIP_FAMILY_R600:
 		case CHIP_FAMILY_RV610:
 		case CHIP_FAMILY_RV630:
@@ -69,16 +71,33 @@ bool ATICard::initialize()
 			break;
 			
 		default:
-			InfoLog("sorry, but your card %04lx is not supported!\n", (long unsigned int)chipID>>16);
+			InfoLog("sorry, but your card %04lx is not supported!\n", (long unsigned int)(rinfo->device_id));
 			return false;
 	}
 	return true;
 }
 
-void ATICard::getRadeonInfo()
+bool ATICard::getRadeonInfo()
 {
-	UInt16 devID = chipID && 0xffff;
-	rinfo = NULL;
+	UInt16 devID = chipID & 0xffff;
+	RADEONCardInfo *devices = radeon_device_list;
+	rinfo = new RADEONCardInfo;
+	while (devices->device_id != NULL) {
+		//IOLog("check %d/n", devices->device_id ); //Debug
+		if ((devices->device_id & 0xffff) == devID ) {
+			//			rinfo->device_id = devID;
+			rinfo->device_id = devices->device_id;
+			rinfo->ChipFamily = devices->ChipFamily;
+			family = devices->ChipFamily;
+			rinfo->igp = devices->igp;
+			rinfo->is_mobility = devices->is_mobility;
+			IOLog(" Found ATI Radeon %04lx\n", (long unsigned int)devID);
+			return true;
+		}
+		devices++;
+	}
+	
+/*	
 	for (int i=0; radeon_device_list[i].device_id; i++) {
 		if (devID == radeon_device_list[i].device_id) {
 			rinfo = &radeon_device_list[i];
@@ -89,6 +108,9 @@ void ATICard::getRadeonInfo()
 	if (!rinfo) {
 		InfoLog("your DeviceID is unknown!\n");
 	}
+ */
+	InfoLog("Unknown DeviceID!\n");
+	return false;
 }
 
 void ATICard::setup_R6xx()

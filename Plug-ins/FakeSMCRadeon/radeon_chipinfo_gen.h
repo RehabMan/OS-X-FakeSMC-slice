@@ -1,7 +1,7 @@
 // dong remove radeon_device_list all elsewhere to avoid redefinition
 #include "radeon_chipsets.h"
-;
-//static
+
+static
 RADEONCardInfo radeon_device_list[] = {
  { 0x3150, CHIP_FAMILY_RV380, 1, 0, 0, 0, 0 },
  { 0x3152, CHIP_FAMILY_RV380, 1, 0, 0, 0, 0 },
@@ -10,6 +10,7 @@ RADEONCardInfo radeon_device_list[] = {
  { 0x3E54, CHIP_FAMILY_RV380, 0, 0, 0, 0, 0 },
  { 0x4136, CHIP_FAMILY_RS100, 0, 1, 0, 0, 1 },
  { 0x4137, CHIP_FAMILY_RS200, 0, 1, 0, 0, 1 },
+//	{0x2a02, CHIP_FAMILY_RV770, 1, 1, 0, 0, 0 },  //Debug
  { 0x4144, CHIP_FAMILY_R300, 0, 0, 0, 0, 0 },
  { 0x4145, CHIP_FAMILY_R300, 0, 0, 0, 0, 0 },
  { 0x4146, CHIP_FAMILY_R300, 0, 0, 0, 0, 0 },

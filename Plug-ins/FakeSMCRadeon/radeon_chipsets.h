@@ -98,7 +98,7 @@ enum radeon_family {
 	CHIP_FAMILY_JUNIPER,
 	CHIP_FAMILY_CYPRESS,
 	CHIP_FAMILY_HEMLOCK,
-    CHIP_FAMILY_LAST
+    CHIP_FAMILY_LAST,
 };
 
 #define IS_RV100_VARIAN (((rinfo)->ChipFamily == CHIP_FAMILY_RV100)	|| \
