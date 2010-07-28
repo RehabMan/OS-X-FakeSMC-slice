@@ -20,7 +20,7 @@ IOReturn TemperatureSensor::OnKeyRead(const char* key, char* data)
 	UInt32 magic = 0;		
 	mp_rendezvous_no_intrs(IntelThermal, &magic);
 	
-	data[0]=GlobalThermal[i];
+	data[0]=CpuTjmax-GlobalThermal[i];
 	data[1]=0;
 	return kIOReturnSuccess;
 }

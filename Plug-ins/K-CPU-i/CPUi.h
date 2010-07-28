@@ -109,11 +109,13 @@ struct PState
 	UInt8	CID;		// Compare ID
 };
 
-#define MaxCpuCount		128
+#define MaxCpuCount		16
 #define MaxPStateCount	32
 
 
 UInt32					Frequency[MaxCpuCount];
+UInt8					CpuTjmax;
+
 //IOSimpleLock *			SimpleLock;
 
 class CPUi : public IOService {
@@ -129,7 +131,6 @@ private:
 	bool					CpuMobile;
 	bool					CpuNonIntegerBusRatio;
 	bool					CpuDynamicFSB;
-	UInt8					CpuTjmax;
 	UInt8					CpuCoreTech;
 	UInt32					CpuSignature;
 	UInt32					CpuClock;
