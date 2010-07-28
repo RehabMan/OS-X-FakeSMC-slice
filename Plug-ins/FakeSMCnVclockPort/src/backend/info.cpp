@@ -525,10 +525,10 @@ static const struct pci_ids ids[] =
 	{ 0x0871, "C79 [GeForce 9200]", DESKTOP },
 	{ 0x0872, "C79 [GeForce G102M]", MOBILE },
 	{ 0x0873, "C79 [GeForce G102M]", MOBILE },
-	{ 0x0874, "C79 [?]", DESKTOP },
+	{ 0x0874, "C79 [ION 9300M]", DESKTOP },
 	{ 0x0876, "C79 [GeForce 9400M]", MOBILE },
 	{ 0x087a, "C79 [GeForce 9400]", DESKTOP },
-	{ 0x087d, "C79 [?]", DESKTOP },
+	{ 0x087d, "C79 [ION 9400M]", DESKTOP },
 	{ 0x087e, "C79 [?]", DESKTOP },
 	{ 0x087f, "C79 [?]", DESKTOP },
 	{ 0x0a20, "GT216 [GeForce GT 220]", DESKTOP },
@@ -688,11 +688,13 @@ int get_gpu_arch(int device_id)
 		case 0xa30:
 		case 0xa70:
 		case 0xca0:
+		case 0xcb0:
 			arch = GT200;
 			break;
 		case 0x6e0: /* G98 */
 		case 0x6f0: /* G98 */
 		case 0x860: /* C79 */
+		case 0x870: /* C79 */
 			arch = G86;
 			break;
 		case 0x600: /* G92 */
