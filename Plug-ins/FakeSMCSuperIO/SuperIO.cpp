@@ -136,6 +136,7 @@ const char* SuperIO::GetModelName()
         case F71882: return "Fintek F71882";
         case F71889ED: return "Fintek F71889ED";
         case F71889F: return "Fintek F71889F";
+		case F71808:  return "Fintek F71808";	
         case IT8512F: return "ITE IT8512F";
         case IT8712F: return "ITE IT8712F";
         case IT8716F: return "ITE IT8716F";
@@ -143,14 +144,14 @@ const char* SuperIO::GetModelName()
         case IT8720F: return "ITE IT8720F";
         case IT8726F: return "ITE IT8726F";
         case IT8752F: return "ITE IT8752F";
-        case W83627DHG: return "Winbond W83627DHG";
+        case W83627DHG:  return "Winbond W83627DHG";
         case W83627DHGP: return "Winbond W83627DHG-P";
-        case W83627EHF: return "Winbond W83627EHF";
-        case W83627HF: return "Winbond W83627HF";
-        case W83627THF: return "Winbond W83627THF";
-        case W83667HG: return "Winbond W83667HG";
-        case W83667HGB: return "Winbond W83667HG-B";
-        case W83687THF: return "Winbond W83687THF";
+        case W83627EHF:  return "Winbond W83627EHF";
+        case W83627HF:   return "Winbond W83627HF";
+        case W83627THF:  return "Winbond W83627THF";
+        case W83667HG:   return "Winbond W83667HG";
+        case W83667HGB:  return "Winbond W83667HG-B";
+        case W83687THF:  return "Winbond W83687THF";
 			//Slice
         //case W83977CTF: return "Winbond W83977CTF";
         //case W83977EF: return "Winbond W83977EF";

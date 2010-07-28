@@ -127,11 +127,11 @@ void NSC::Start()
 	
 	
 	// Heatsink
-	AddSensor(new NSCTemperatureSensor(this, 0, KEY_CPU_HEATSINK_TEMPERATURE, TYPE_SP78, 2));
+	AddSensor(new NSCTemperatureSensor(this, 1, KEY_CPU_HEATSINK_TEMPERATURE, TYPE_SP78, 2));
 	// Northbridge
-	AddSensor(new NSCTemperatureSensor(this, 1, KEY_NORTHBRIDGE_TEMPERATURE, TYPE_SP78, 2));
+	AddSensor(new NSCTemperatureSensor(this, 2, KEY_NORTHBRIDGE_TEMPERATURE, TYPE_SP78, 2));
 	// Heatsink
-	AddSensor(new NSCTemperatureSensor(this, 2, KEY_DIMM_TEMPERATURE, TYPE_SP78, 2));
+	AddSensor(new NSCTemperatureSensor(this, 0, KEY_DIMM_TEMPERATURE, TYPE_SP78, 2));
 	// Northbridge
 	AddSensor(new NSCTemperatureSensor(this, 3, KEY_AUX_TEMPERATURE, TYPE_SP78, 2));
 
@@ -146,7 +146,7 @@ void NSC::Start()
 		snprintf(key, 5, KEY_FORMAT_FAN_ID, no);
 		FakeSMCAddKey(key, TYPE_CH8, lname, name);			
 		snprintf(key, 5, KEY_FORMAT_FAN_SPEED, no);
-		AddSensor(new NSCTachometerSensor(this, 3, key, TYPE_FP2E, 2));
+		AddSensor(new NSCTachometerSensor(this, 4, key, TYPE_FP2E, 2));
 		UpdateFNum();
 		FanCount = 1;
 	}	
@@ -169,7 +169,8 @@ SInt16	NSC::ReadTemperature(UInt8 index)
 SInt16	NSC::ReadTachometer(UInt8 index)
 {
 	int offset = NSC_HARDWARE_MONITOR_REGS[index];
-	UInt8 speed = ~mmio_base[offset];
-	return speed*10;
+	UInt8 speed = mmio_base[offset] & 0xff;
+	UInt16 sp2 = (0xff - speed) * 10;
+	return sp2;
 }
 		

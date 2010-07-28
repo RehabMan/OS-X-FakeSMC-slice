@@ -77,6 +77,7 @@ enum ChipModel
     F71882 = 0x0541,
     F71889ED = 0x0909,
     F71889F = 0x0723,
+	F71808  = 0x0901,
 	
 	// SMSC
 	LPC47B27x = 0x51, // 0x0a
