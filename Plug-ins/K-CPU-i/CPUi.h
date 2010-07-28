@@ -114,7 +114,7 @@ struct PState
 
 
 UInt32					Frequency[MaxCpuCount];
-IOSimpleLock *			SimpleLock;
+//IOSimpleLock *			SimpleLock;
 
 class CPUi : public IOService {
 	OSDeclareDefaultStructors(CPUi)	
@@ -156,14 +156,6 @@ private:
 	
 	void	Activate(void);
 	void	Deactivate(void);
-	
-	bool	setNumber(const char * symbol, UInt32 value, OSDictionary * dictionary);
-	bool	setString(const char * symbol, char * value, OSDictionary * dictionary);
-	bool	setString(const char * symbol, const char * value, OSDictionary * dictionary);
-	bool	setString(const char * symbol, const OSSymbol * value, OSDictionary * dictionary);
-	bool	setBoolean(const char * symbol, bool value, OSDictionary * dictionary);
-	bool	setArray(const char * symbol, OSArray * value, OSDictionary * dictionary);
-	bool	setDictionary(const char * symbol, OSDictionary * value, OSDictionary * dictionary);
 public:
 	virtual IOReturn	loopTimerEvent(void);
 	
@@ -187,8 +179,8 @@ inline UInt32 IntelGetVoltage(UInt8 vid) {
 	return 700 + ((vid & 0x3F) << 4);
 }
 
-UInt32	GlobalThrottle[MaxCpuCount];
 UInt8	GlobalThermal[MaxCpuCount];
+bool	GlobalThermalValueIsObsolete[MaxCpuCount];
 PState 	GlobalState[MaxCpuCount];
 
 inline void IntelWaitForSts(void) {
@@ -196,42 +188,6 @@ inline void IntelWaitForSts(void) {
 	while (rdmsr64(MSR_IA32_PERF_STS) & (1 << 21)) { if (!inline_timeout--) break; }
 }
 
-inline void IntelWrite(void * magic)
-{
-	UInt32 i = cpu_number();
-	
-	bool throttle = rdmsr64(MSR_IA32_CLOCK_MODULATION) & 0x10;
-	
-	if (GlobalThrottle[i]) 
-	{
-		wrmsr64(MSR_IA32_CLOCK_MODULATION, 0x10 | (GlobalThrottle[i] << 1));
-	}
-	else if(throttle)
-	{
-		wrmsr64(MSR_IA32_CLOCK_MODULATION, 0x8);
-	}
-	
-	/*UInt64 msr = rdmsr64(MSR_IA32_PERF_CTL) & 0xFFFFFFFFFFFF0000ULL;
-	
-	if (GlobalThrottle[i]) 
-	{
-		DebugLog("Writing control: %d", GlobalThrottle[i]);
-		
-		wrmsr64(MSR_IA32_PERF_CTL, msr | GlobalThrottle[i]);
-		IntelWaitForSts();
-	}*/
-	
-	/*bool throttle = rdmsr64(MSR_IA32_CLOCK_MODULATION) & 0x10;
-	if (GlobalThrottle[i]) {
-		UInt8 local = (~GlobalThrottle[i]) & 0x7;
-		if (local == 0) local = 1;
-		wrmsr64(MSR_IA32_CLOCK_MODULATION, 0x10 | (local << 1));
-	} else {
-		if (throttle) {
-			wrmsr64(MSR_IA32_CLOCK_MODULATION, 0x8);
-		}
-	}*/
-}
 
 inline void IntelState(void * magic)
 {
@@ -243,7 +199,10 @@ inline void IntelThermal(void * magic)
 {
 	UInt32 i = cpu_number();
 	UInt64 msr = rdmsr64(MSR_IA32_THERM_STATUS);
-	if (msr & 0x80000000) GlobalThermal[i] = (msr >> 16) & 0x7F;
+	if (msr & 0x80000000) {
+		GlobalThermal[i] = (msr >> 16) & 0x7F;
+		GlobalThermalValueIsObsolete[i]=false;
+	}
 }
 
 // GetPlistValue

@@ -13,12 +13,13 @@ IOReturn FrequencySensor::OnKeyRead(const char* key, char* data)
 
 IOReturn TemperatureSensor::OnKeyRead(const char* key, char* data)
 {
-	/*UInt32 magic=0;
-	// Thermal Readout
-	IOSimpleLockLock(SimpleLock);
+	int i=key[2]-'0';
+	if (i > MaxCpuCount)
+		return kIOReturnNoDevice;
+	
+	UInt32 magic = 0;		
 	mp_rendezvous_no_intrs(IntelThermal, &magic);
-	IOSimpleLockUnlock(SimpleLock);*/
-	int i=key[3]-'0';
+	
 	data[0]=GlobalThermal[i];
 	data[1]=0;
 	return kIOReturnSuccess;
@@ -30,51 +31,9 @@ void CPUi::Activate(void)
 	if(Active)
 		return;
 	
+	
+	
 	Active = true;
-	
-	OSDictionary * dictionary = OSDictionary::withCapacity(0);
-	
-	if(dictionary = OSDictionary::withCapacity(0))
-	{
-		setNumber(keyBusClock, BusClock, dictionary);
-		setNumber(keyFsbClock, FSBClock, dictionary);
-		setNumber(keyCpuClock, CpuClock, dictionary);
-		setString(keyCpuVendor, cpuid_info()->cpuid_vendor, dictionary);
-		setString(keyCpuBrand, cpuid_info()->cpuid_brand_string, dictionary);
-		setString(keyCpuModel, cpuid_info()->cpuid_model_string, dictionary);
-		setNumber(keyCpuFeatures, cpuid_info()->cpuid_features, dictionary);
-		setNumber(keyCpuExtFeatures, cpuid_info()->cpuid_extfeatures, dictionary);
-		setNumber(keyCpuCasheSize, cpuid_info()->cpuid_cache_size, dictionary);
-		setNumber(keyCpuCacheL2, cpuid_info()->cpuid_cache_L2_associativity, dictionary);
-		setNumber(keyCpuCount, CpuCount, dictionary);
-		setNumber(keyCpuCoreTech, CpuCoreTech, dictionary);
-		setBoolean(keyCpuMobile, CpuMobile, dictionary);
-		setNumber(keyCpuTjmax, CpuTjmax, dictionary);
-		
-		OSArray * array = OSArray::withCapacity(PStatesCount);
-		
-		if(array)
-		{
-			for (UInt8 i = 0; i < PStatesCount; i++) 
-			{
-				OSDictionary * pdictionary = OSDictionary::withCapacity(4);
-				
-				if (pdictionary)
-				{
-					setNumber(keyFrequency, IntelGetFrequency(PStates[i].FID, BusClock), pdictionary);
-					setNumber(keyVoltage, IntelGetVoltage(PStates[i].VID), pdictionary);
-					setNumber(keyControl, PStates[i].Control, pdictionary);
-					setNumber(keyCID, PStates[i].CID, pdictionary);
-					array->setObject(i, pdictionary);
-					pdictionary->release();
-				}
-			}
-			
-			setArray(keyPStates, array, dictionary);
-		}
-		setProperty(keyInfo, dictionary);
-		dictionary->release();
-	}
 	
 	loopTimerEvent();
 	
@@ -96,14 +55,9 @@ void CPUi::Deactivate(void)
 
 IOReturn CPUi::loopTimerEvent(void)
 {
-	//PLEASE, don't remove this timer! If frequency is read in OnKeyRead function, then the CPU is loaded by smcK-Stat-i and
+	//Please, don't remove this timer! If frequency is read in OnKeyRead function, then the CPU is loaded by smcK-Stat-i and
 	//goes to a higher P-State in this moment, displays high frequency and switches back to low frequency.
-	/*if(!Active)
-	{
-		Deactivate();
-	}
-	*/
-	UInt32 magic = 0;
+	UInt32 magic = 0;	
 	
 	TimerEventSource->setTimeoutMS(1000);
 	
@@ -113,99 +67,19 @@ IOReturn CPUi::loopTimerEvent(void)
 	LoopLock = true;
 	
 	// State Readout
-	IOSimpleLockLock(SimpleLock);
 	mp_rendezvous_no_intrs(IntelState, &magic);
-	IOSimpleLockUnlock(SimpleLock);
 	
-	// Thermal Readout
-	IOSimpleLockLock(SimpleLock);
-	mp_rendezvous_no_intrs(IntelThermal, &magic);
-	IOSimpleLockUnlock(SimpleLock);
-	
-	/*//Write Control
-	IOSimpleLockLock(SimpleLock);
-	mp_rendezvous_no_intrs(IntelWrite, &magic);
-	IOSimpleLockUnlock(SimpleLock);*/
-		
+			
 	for (UInt32 i = 0; i < CpuCount; i++) 
 	{
 		Frequency[i] = IntelGetFrequency(GlobalState[i].FID, BusClock);
-		//Voltage[i] = IntelGetVoltage(GlobalState[i].VID);
+		Voltage[i] = IntelGetVoltage(GlobalState[i].VID);
 	}
-	
-	/*OSDictionary * dictionary = OSDictionary::withCapacity(1);
-	
-	if(dictionary != NULL)
-	{
-		OSArray * array = OSArray::withCapacity(CpuCount);
-		
-		if (array != NULL) 
-		{
-			for (UInt32 i = 0; i < CpuCount; i++) 
-			{
-				OSDictionary * cdictionary = OSDictionary::withCapacity(5);
-				
-				if (cdictionary != NULL) 
-				{
-					setString(keyName, CpuArray[i]->getCPUName(), cdictionary);
-					setNumber(keyControl, GlobalState[i].Control, cdictionary);
-					setNumber(keyFrequency, Frequency[i], cdictionary);
-					setNumber(keyVoltage, Voltage[i], cdictionary);
-					setNumber(keyThermal, GlobalThermal[i], cdictionary);
-					
-					array->setObject(i, cdictionary);
-					cdictionary->release();
-				}
-			}
-			setArray(keyPerCpuStatus, array, dictionary);
-			array->release();
-		}
-		setProperty(keyStatus, dictionary);
-		dictionary->release();
-	}*/
-	
 	LoopLock = false;
 	
 	return kIOReturnSuccess;
 }
 
-IOReturn CPUi::setProperties(OSObject * properties)
-{
-	OSDictionary *dictionary = OSDynamicCast(OSDictionary, properties);
-	
-	if(dictionary)
-	{
-		const OSNumber *number;
-		
-		if((number = OSDynamicCast(OSNumber, dictionary->getObject(keyActive))) != NULL)
-		{
-			if(number->unsigned32BitValue() == 1)
-			{
-				Activate();
-			}
-			else
-			{
-				Deactivate();
-			}
-			
-			return kIOReturnSuccess;
-		}
-		
-		if((number = OSDynamicCast(OSNumber, dictionary->getObject(keyThrottle))) != NULL)
-		{
-			UInt32 throttle = number->unsigned32BitValue();
-			
-			for (int i=0; i<CpuCount; i++) 
-			{
-				GlobalThrottle[i] = throttle;
-			}
-			
-			return kIOReturnSuccess;
-		}
-	}
-	
-	return kIOReturnUnsupported;
-}
 
 IOService * CPUi::probe(IOService * provider, SInt32 * score)
 {
@@ -213,13 +87,15 @@ IOService * CPUi::probe(IOService * provider, SInt32 * score)
 	
 	if (IOService::probe(provider, score) != this) return 0;
 	
-	if (strcmp(cpuid_info()->cpuid_vendor, CPUID_VID_INTEL) != 0)
+	
+	i386_cpu_info_t* cpuinfo=cpuid_info();
+	if (strcmp(cpuinfo->cpuid_vendor, CPUID_VID_INTEL) != 0)
 	{
 		WarningLog("No Intel processor found, kext will not load");
 		return NULL;
 	}
 	
-	uint64_t features = cpuid_info()->cpuid_features;
+	uint64_t features = cpuinfo->cpuid_features;
 	
 	if(!(features & CPUID_FEATURE_MSR))
 	{
@@ -227,7 +103,7 @@ IOService * CPUi::probe(IOService * provider, SInt32 * score)
 		return 0;
 	}
 	
-	if(!(cpuid_info()->cpuid_features & CPUID_FEATURE_EST))
+	if(!(cpuinfo->cpuid_features & CPUID_FEATURE_EST))
 	{
 		WarningLog("Processor does not support Enhanced SpeedStep, kext will not load");
 		return NULL;
@@ -282,7 +158,7 @@ IOService * CPUi::probe(IOService * provider, SInt32 * score)
 	BusClock = BusClock / 1000000;
 	FSBClock = gPEClockFrequencyInfo.bus_frequency_max_hz / 1000000;
 	
-	CpuSignature = cpuid_info()->cpuid_signature;
+	CpuSignature = cpuinfo->cpuid_signature;
 	CpuCoreTech = Unknown;
 	CpuNonIntegerBusRatio = (rdmsr64(MSR_IA32_PERF_STS) & (1ULL << 46));
 	
@@ -476,15 +352,11 @@ IOService * CPUi::probe(IOService * provider, SInt32 * score)
 			PStates[i].FID = (PStates[i].CID >> 1);
 			
 			if (PStates[i].FID < 0x6) 
-			{
 				if (CpuDynamicFSB) 
 					PStates[i].FID = (PStates[i].FID << 1) | 0x80;
-			} 
 			else if (CpuNonIntegerBusRatio) 
-			{
 				PStates[i].FID = PStates[i].FID | (0x40 * (PStates[i].CID & 0x1));
-			}
-			
+						
 			if (i && PStates[i].FID == PStates[i-1].FID)
 				invalid++;
 			
@@ -509,8 +381,6 @@ bool CPUi::start(IOService * provider)
 	InfoLog("(C) 2009 Code based on Superhai's VoodooPower and Mercurysquad's IntelEnhancedSpeedStep, All Rights Reserved");
 	
 	// Setup loop event timer
-	if (!(SimpleLock = IOSimpleLockAlloc())) 
-		return false;
 	
 	if (!(WorkLoop = getWorkLoop())) 
 		return false;
@@ -530,8 +400,8 @@ bool CPUi::start(IOService * provider)
 		char key[5];
 		snprintf(key, 5, "FRC%d", (int)i);
 		FreqBinding[i]=new FrequencySensor(key, "freq", 2);
-		/*snprintf(key, 5, "TC%dD", (int)i);
-		TempBinding[i]=new TemperatureSensor(key, "sp78", 2);*/
+		snprintf(key, 5, "TC%dD", (int)i);
+		TempBinding[i]=new TemperatureSensor(key, "sp78", 2);
 	}
 	
 	return true;
@@ -542,9 +412,6 @@ void CPUi::stop(IOService * provider)
 	DebugLog("stopping...");
 	
 	Deactivate();
-	
-	if (SimpleLock)
-		IOSimpleLockFree(SimpleLock);
 	
 	for (int i=0; i<CpuCount; i++) {
 		if (FreqBinding[i])
@@ -563,72 +430,3 @@ void CPUi::free(void)
 	IOService::free();
 }
 
-bool CPUi::setNumber(const char * symbol, UInt32 value, OSDictionary * dictionary)
-{
-	OSNumber * number = OSNumber::withNumber(value, 32);
-	
-	if (number)
-	{
-		dictionary->setObject(symbol, number);
-		return true;
-	}
-	
-	return false;
-}
-
-bool CPUi::setString(const char * symbol, char * value, OSDictionary * dictionary)
-{
-	OSString * string = OSString::withCString(value);
-	
-	if (string)
-	{
-		dictionary->setObject(symbol, string);
-		return true;
-	}
-	
-	return false;
-}
-
-bool CPUi::setString(const char * symbol, const char * value, OSDictionary * dictionary)
-{
-	OSString * string = OSString::withCString(value);
-	
-	if (string)
-	{
-		dictionary->setObject(symbol, string);
-		return true;
-	}
-	
-	return false;
-}
-
-bool CPUi::setString(const char * symbol, const OSSymbol * value, OSDictionary * dictionary)
-{
-	dictionary->setObject(symbol, value);
-	return true;
-}
-
-bool CPUi::setBoolean(const char * symbol, bool value, OSDictionary * dictionary)
-{
-	OSBoolean * boolean = value ? kOSBooleanTrue : kOSBooleanFalse;
-	
-	if (boolean)
-	{
-		dictionary->setObject(symbol, boolean);
-		return true;
-	}
-	
-	return false;
-}
-
-bool CPUi::setArray(const char * symbol, OSArray * value, OSDictionary * dictionary)
-{
-	dictionary->setObject(symbol, value);
-	return true;
-}
-
-bool CPUi::setDictionary(const char * symbol, OSDictionary * value, OSDictionary * dictionary)
-{
-	dictionary->setObject(symbol, value);
-	return true;
-}
