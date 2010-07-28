@@ -159,6 +159,10 @@ bool Fintek::ProbePort()
 		{
 			switch (revision)
 			{
+                case 0x01:                                                      /*Add F71808 */
+                    m_Model = F71808;                                         /*Add F71808 */
+                    logicalDeviceNumber = FINTEK_HARDWARE_MONITOR_LDN;         /*Add F71808 */
+                    break;                                                    /*Add F71808 */
 				case 0x09:
 					m_Model = F71889ED;
 					logicalDeviceNumber = FINTEK_HARDWARE_MONITOR_LDN;
