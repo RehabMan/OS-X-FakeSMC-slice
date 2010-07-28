@@ -136,9 +136,9 @@ void ITE::Start()
 {
 	// Temperature semi-autodetection
 	
-	int count = 0, start, inc;
+	int count = 0, start = 2, inc = -1;
 
-	switch (m_Model) 
+/*	switch (m_Model) 
 	{
 		case IT8720F:
 			start = 0;
@@ -149,7 +149,7 @@ void ITE::Start()
 			inc = -1;
 			break;
 	}
-	
+*/	
 	for (int i = start; i >= 0 && i < 3; i += inc) 
 	{		
 		UInt8 t = ReadTemperature(i);
