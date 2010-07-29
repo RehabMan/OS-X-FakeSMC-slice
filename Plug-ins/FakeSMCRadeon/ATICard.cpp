@@ -32,7 +32,7 @@ bool ATICard::initialize()
 	{
 		long unsigned int mmio_base_phys = mmio->getPhysicalAddress();
 		// Make sure we  select MMIO registers
-		if (((mmio->getLength()) == 0x00010000) && (mmio_base_phys != 0))
+		if (((mmio->getLength()) <= 0x00020000) && (mmio_base_phys != 0))
 			break;
 	}
 	if (mmio)
