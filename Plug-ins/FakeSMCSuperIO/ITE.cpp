@@ -134,53 +134,36 @@ bool ITE::ProbePort()
 
 void ITE::Start()
 {
-	// Temperature semi-autodetection
-	
-	int count = 0, start = 2, inc = -1;
-
-/*	switch (m_Model) 
+	// Temperature Sensors
+	if (OSDictionary* config = OSDynamicCast(OSDictionary, m_Service->getProperty("Sensor Configuration")))
 	{
-		case IT8720F:
-			start = 0;
-			inc = 1;
-			break;
-		default:
-			start = 2;
-			inc = -1;
-			break;
-	}
-*/	
-	for (int i = start; i >= 0 && i < 3; i += inc) 
-	{		
-		UInt8 t = ReadTemperature(i);
-		
-		// Second chance
-		if (t == 0 || t > 128 )
-		{
-			IOSleep(1000);
-			t = ReadTemperature(i);
-		}
-		
-		if (t > 0 && t < 128)
-		{
-			switch (count) 
-			{
-				case 0:
+		if (OSDictionary* container = OSDynamicCast(OSDictionary, config->getObject("ITE")))
+		{			
+			for (int i = 0; i < 4; i++) 
+			{	
+				char key[8];
+				
+				snprintf(key, 8, "TEMPIN%X", i);
+				
+				if (OSString* name = OSDynamicCast(OSString, container->getObject(key)))
 				{
-					// Heatsink
-					AddSensor(new ITETemperatureSensor(this, i, KEY_CPU_HEATSINK_TEMPERATURE, TYPE_SP78, 2));
-				} break;
-				case 1:
-				{
-					// Northbridge
-					AddSensor(new ITETemperatureSensor(this, i, KEY_NORTHBRIDGE_TEMPERATURE, TYPE_SP78, 2));
-				} break;
+					InfoLog("found name node %s", name->getCStringNoCopy());
+					
+					if (name->isEqualTo("Processor"))
+					{
+						// Heatsink
+						AddSensor(new ITETemperatureSensor(this, i, KEY_CPU_HEATSINK_TEMPERATURE, TYPE_SP78, 2));
+					}
+					else if (name->isEqualTo("System"))
+					{
+						// Northbridge
+						AddSensor(new ITETemperatureSensor(this, i, KEY_NORTHBRIDGE_TEMPERATURE, TYPE_SP78, 2));
+					}
+				}
 			}
-			
-			count++;
-		}			
+		}
 	}
-	
+
 	// CPU Vcore
 	AddSensor(new ITEVoltageSensor(this, 0, KEY_CPU_VOLTAGE, TYPE_FP2E, 2));
 		

@@ -17,9 +17,9 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>2.3.9</string>
+	<string>2.3.10</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.3.9</string>
+	<string>2.3.10</string>
 	<key>IOKitPersonalities</key>
 	<dict>
 		<key>SuperIOMonitorPlugin</key>
@@ -32,6 +32,18 @@
 			<string>IOResources</string>
 			<key>IOResourceMatch</key>
 			<string>IOKit</string>
+			<key>Sensor Configuration</key>
+			<dict>
+				<key>ITE</key>
+				<dict>
+					<key>TEMPIN0</key>
+					<string>System</string>
+					<key>TEMPIN1</key>
+					<string></string>
+					<key>TEMPIN2</key>
+					<string>Processor</string>
+				</dict>
+			</dict>
 			<key>Fan Configuration</key>
 			<dict>
 				<key>Software Fan Control</key>
