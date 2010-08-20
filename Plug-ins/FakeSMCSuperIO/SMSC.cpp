@@ -148,7 +148,7 @@ bool SMSC::ProbePort()
 					break;
 					
 				default:
-					InfoLog("Found unsupported SMSC chip ID=0x%x", id);
+					InfoLog("SMSC: Found unsupported chip ID=0x%x", id);
 					return false;
 			}
 		} break;

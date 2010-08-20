@@ -100,7 +100,7 @@ bool ITE::ProbePort()
 			m_Model = id; 
 			break; 
 		default:
-			InfoLog("Found unsupported ITE chip ID=0x%x", id);
+			InfoLog("ITE: Found unsupported chip ID=0x%x", id);
 			return false;
 	}
 	
@@ -146,9 +146,7 @@ void ITE::Start()
 				snprintf(key, 8, "TEMPIN%X", i);
 				
 				if (OSString* name = OSDynamicCast(OSString, container->getObject(key)))
-				{
-					InfoLog("found name node %s", name->getCStringNoCopy());
-					
+				{					
 					if (name->isEqualTo("Processor"))
 					{
 						// Heatsink
@@ -193,11 +191,11 @@ void ITE::Start()
 					snprintf(key, 5, KEY_FORMAT_FAN_ID, offset); 
 					FakeSMCAddKey(key, TYPE_CH8, strlen(m_FanName[i]), (char*)m_FanName[i]);
 					
-					InfoLog("%s name is associated with hardware Fan%d", m_FanName[i], i);
+					InfoLog("%s name associated with hardware Fan%d", m_FanName[i], i);
 				}
 				else 
 				{
-					InfoLog("Fan %d name is associated with hardware Fan%d", offset, i);
+					InfoLog("Fan %d name associated with hardware Fan%d", offset, i);
 				}
 
 				snprintf(key, 5, KEY_FORMAT_FAN_SPEED, offset); 

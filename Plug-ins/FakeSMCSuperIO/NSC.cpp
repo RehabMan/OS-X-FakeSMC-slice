@@ -63,7 +63,7 @@ bool NSC::ProbePort()
 			return false;
 		}
 		
-		InfoLog("found supported NSC chip ID=0x%x REVISION=0x%x on ADDRESS=0x%x", id, revision, m_Address);
+		InfoLog("NSC: Found supported chip ID=0x%x REVISION=0x%x on ADDRESS=0x%x", id, revision, m_Address);
 		m_Model = PC8739x;
 		return true;
 
