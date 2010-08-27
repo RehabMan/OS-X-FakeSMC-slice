@@ -129,9 +129,9 @@ void NSC::Start()
 	// Heatsink
 	AddSensor(new NSCTemperatureSensor(this, 2, KEY_CPU_HEATSINK_TEMPERATURE, TYPE_SP78, 2));
 	// Northbridge
-	AddSensor(new NSCTemperatureSensor(this, 1, KEY_NORTHBRIDGE_TEMPERATURE, TYPE_SP78, 2));
+	AddSensor(new NSCTemperatureSensor(this, 0, KEY_NORTHBRIDGE_TEMPERATURE, TYPE_SP78, 2));
 	// Heatsink
-	AddSensor(new NSCTemperatureSensor(this, 0, KEY_DIMM_TEMPERATURE, TYPE_SP78, 2));
+	AddSensor(new NSCTemperatureSensor(this, 1, KEY_DIMM_TEMPERATURE, TYPE_SP78, 2));
 	// Northbridge
 	AddSensor(new NSCTemperatureSensor(this, 3, KEY_AUX_TEMPERATURE, TYPE_SP78, 2));
 
