@@ -92,11 +92,13 @@ bool ITE::ProbePort()
 	
 	switch (id)
 	{
+		case IT8512F:
 		case IT8712F:
 		case IT8716F:
 		case IT8718F:
 		case IT8720F: 
-		case IT8726F: 
+		case IT8726F:
+		case IT8752F:
 			m_Model = id; 
 			break; 
 		default:

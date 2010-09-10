@@ -69,7 +69,7 @@ SInt16 Fintek::ReadVoltage(UInt8 index)
 	
 	if (index == 0) m_RawVCore = raw;
 	
-	float V = (index == 1 ? 0.5f : 1.0f) * 0.001f * (raw << 4);
+	float V = (index == 1 ? 0.5f : 1.0f) * (raw << 4); // * 0.001f Exclude by trauma
 	
 	return V;
 }
