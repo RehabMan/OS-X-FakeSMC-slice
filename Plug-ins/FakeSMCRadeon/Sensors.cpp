@@ -21,7 +21,7 @@ IOReturn R6xxTemperatureSensor::OnKeyRead(const char* key, char* data)
 		if ((temp >> 7) & 1)
 			actual_temp = 0;
 		else {
-			actual_temp = (temp >> 1) & 0xff;
+			actual_temp = temp & 0xff; //(temp >> 1)
 			break;
 		}
 		IOSleep(10);
