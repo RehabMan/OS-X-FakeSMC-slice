@@ -27,7 +27,7 @@ void ACPImonitor::Update(const char* key, char* data)
 		snprintf(knm, 5, "SMC%d", num - FanOffset);
 		if (kIOReturnSuccess == TZDevice->evaluateInteger(knm, &tmp)){	
 			t2 = tmp;
-			value = (int)(~t2) * 10;
+			value = (int)((~t2) & 0xff) * 10;
 		
 		//value = SMCx[num] * 10; // * 40; //iStat fix=4 ACPI_units=10? // mozo: need to check now with fpe2 type, like it should
 		
