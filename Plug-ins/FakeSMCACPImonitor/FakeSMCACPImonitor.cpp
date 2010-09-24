@@ -11,7 +11,11 @@
 void ACPImonitor::Update(const char* key, char* data)
 {	
 	short value;
+#if __LP64__
+	UInt64 tmp;
+#else
 	UInt32 tmp;
+#endif	
 	SInt8 t2;
 	char knm[5];
 		if (!TZDevice) {
@@ -97,7 +101,11 @@ bool ACPImonitor::start(IOService * provider)
 	char key[5];
 	char value[2];
 	FCount = 0;
+#if __LP64__
+	UInt64 tmp;
+#else
 	UInt32 tmp;
+#endif	
 	
 	m_Binding = new Binding(this);
 	FanOffset = GetFNum();
