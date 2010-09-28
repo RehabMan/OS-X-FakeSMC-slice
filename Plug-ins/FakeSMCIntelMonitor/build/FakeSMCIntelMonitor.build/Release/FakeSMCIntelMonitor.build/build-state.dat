@@ -1,0 +1,364 @@
+TFakeSMCIntelMonitor
+v7
+r0
+t307375514.150175
+cCheck dependencies
+cProcessInfoPlistFile /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/Release/FakeSMCIntelMonitor.kext/Contents/Info.plist Info.plist
+cCopyStringsFile /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/Release/FakeSMCIntelMonitor.kext/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
+cCompileC build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/i386/FakeSMCIntelMonitor.o /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp normal i386 c++ com.apple.compilers.gcc.4_2
+cCompileC build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/i386/FakeSMCIntelMonitor_vers.o /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/DerivedSources/FakeSMCIntelMonitor_vers.c normal i386 c com.apple.compilers.gcc.4_2
+cCompileC build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/i386/FakeSMCIntelMonitor_info.o /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/DerivedSources/FakeSMCIntelMonitor_info.c normal i386 c com.apple.compilers.gcc.4_2
+cLd /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/i386/FakeSMCIntelMonitor normal i386
+cCompileC build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/x86_64/FakeSMCIntelMonitor.o /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+cCompileC build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/x86_64/FakeSMCIntelMonitor_vers.o /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/DerivedSources/FakeSMCIntelMonitor_vers.c normal x86_64 c com.apple.compilers.gcc.4_2
+cCompileC build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/x86_64/FakeSMCIntelMonitor_info.o /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/DerivedSources/FakeSMCIntelMonitor_info.c normal x86_64 c com.apple.compilers.gcc.4_2
+cLd /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/x86_64/FakeSMCIntelMonitor normal x86_64
+cCreateUniversalBinary /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/Release/FakeSMCIntelMonitor.kext/Contents/MacOS/FakeSMCIntelMonitor normal "i386 x86_64"
+cTouch /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/Release/FakeSMCIntelMonitor.kext
+
+N/Developer/SDKs/MacOSX10.6.sdk
+c000000004A769DAB00000000000000EE
+t1249287595
+s238
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/IODeviceTreeSupport.h
+c000000004A73D6510000000000000FA6
+t1249105489
+s4006
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/IOLib.h
+c000000004A73D6520000000000004DDF
+t1249105490
+s19935
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/IOService.h
+c000000004A73D653000000000001F49D
+t1249105491
+s128157
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/IOTimerEventSource.h
+c000000004A73D6540000000000002B1D
+t1249105492
+s11037
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/architecture/i386/pio.h
+c000000004A73D66C0000000000000DC6
+t1249105516
+s3526
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/i386/proc_reg.h
+c000000004A73D66C00000000000039BC
+t1249105516
+s14780
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/kern/kern_types.h
+c000000004A73D64C00000000000009EA
+t1249105484
+s2538
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/libkern/OSTypes.h
+c000000004A73D6500000000000000E42
+t1249105488
+s3650
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/mach/mach_types.h
+c000000004A73D6590000000000001FBA
+t1249105497
+s8122
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/mach/machine.h
+c000000004A73D6590000000000002F69
+t1249105497
+s12137
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/machine/machine_routines.h
+c000000004A73D64B0000000000000698
+t1249105483
+s1688
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/pexpert/pexpert.h
+c000000004A73D64E0000000000001CBE
+t1249105486
+s7358
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/stdint.h
+c000000004A73D64E0000000000001A10
+t1249105486
+s6672
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/string.h
+c000000004A73D6470000000000000C73
+t1249105479
+s3187
+
+N/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/English.lproj/InfoPlist.strings
+c000000004C4ABF980000000000000032
+t1279967128
+s50
+
+N/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCBinding.h
+c000000004C9FD2380000000000000895
+t1285542456
+s2197
+i<architecture/i386/pio.h>
+i<libkern/OSTypes.h>
+i<IOKit/IOLib.h>
+
+N/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp
+c000000004CA1F6190000000000002C97
+t1285682713
+s11415
+i"Sensor.h"
+
+N/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.h
+c000000004CA1F5E90000000000001291
+t1285682665
+s4753
+i<IOKit/IOService.h>
+i<IOKit/IOTimerEventSource.h>
+i<IOKit/IOLib.h>
+i<libkern/OSTypes.h>
+i<i386/proc_reg.h>
+i<IOKit/IODeviceTreeSupport.h>
+i"cpuid.h"
+i"FakeSMCBinding.h"
+
+N/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/IntelThermalPlugin.h
+c000000004C9F9E780000000000000C64
+t1285529208
+s3172
+i<IOKit/IOLib.h>
+i<libkern/OSTypes.h>
+i<i386/proc_reg.h>
+i"cpuid.h"
+i"FakeSMCBinding.h"
+
+N/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/Sensor.h
+c000000004CA1DD570000000000000A55
+t1285676375
+s2645
+i"FakeSMCIntelMonitor.h"
+
+N/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/DerivedSources/FakeSMCIntelMonitor_info.c
+c000000004C9FC3E500000000000001BD
+t1285538789
+s445
+
+N/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/DerivedSources/FakeSMCIntelMonitor_vers.c
+c000000004C9FC3E500000000000000F2
+t1285538789
+s242
+
+N/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/i386/FakeSMCIntelMonitor
+t1285682713
+s36568
+
+N/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/i386/FakeSMCIntelMonitor.LinkFileList
+c000000004C9FC3E50000000000000169
+t1285538789
+s361
+
+N/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/i386/FakeSMCIntelMonitor.o
+t1285682713
+s34004
+
+N/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/i386/FakeSMCIntelMonitor_info.o
+t1285538790
+s580
+
+N/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/i386/FakeSMCIntelMonitor_vers.o
+t1285538790
+s488
+
+N/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/x86_64/FakeSMCIntelMonitor
+t1285682714
+s36104
+
+N/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/x86_64/FakeSMCIntelMonitor.LinkFileList
+c000000004C9FC3E5000000000000016D
+t1285538789
+s365
+
+N/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/x86_64/FakeSMCIntelMonitor.o
+t1285682714
+s35108
+
+N/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/x86_64/FakeSMCIntelMonitor_info.o
+t1285538790
+s768
+
+N/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/x86_64/FakeSMCIntelMonitor_vers.o
+t1285538790
+s632
+
+N/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/Release/FakeSMCIntelMonitor.kext
+t1285682714
+s102
+
+N/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/Release/FakeSMCIntelMonitor.kext/Contents/Info.plist
+t1285538789
+s1506
+
+N/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/Release/FakeSMCIntelMonitor.kext/Contents/MacOS/FakeSMCIntelMonitor
+t1285682714
+s77064
+
+N/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/Release/FakeSMCIntelMonitor.kext/Contents/Resources/English.lproj/InfoPlist.strings
+t1285538790
+s96
+
+N/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/cpuid.h
+c000000004C4ABF980000000000003B1D
+t1279967128
+s15133
+i<machine/machine_routines.h>
+i<pexpert/pexpert.h>
+i<string.h>
+i<stdint.h>
+i<mach/mach_types.h>
+i<kern/kern_types.h>
+i<mach/machine.h>
+
+NInfo.plist
+c000000004C9FC3E500000000000005D5
+t1285538789
+s1493
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies307375513#307375513#0(0"0(0#1#0"8615165216#0"0#
+
+CCompileC build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/i386/FakeSMCIntelMonitor.o /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp normal i386 c++ com.apple.compilers.gcc.4_2
+s307375513.204248
+e307375513.655715
+r1
+xCompileC
+xbuild/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/i386/FakeSMCIntelMonitor.o
+x/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@101"Compile /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp307375513#307375513#0(0"0(0#0#93"/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp8616297344#2254"    cd /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-function -Wunused-parameter -Wunused-variable -Wunused-value -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -ftree-vectorize -mmacosx-version-min=10.6 -iquote /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/FakeSMCIntelMonitor-generated-files.hmap -I/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/FakeSMCIntelMonitor-own-target-headers.hmap -I/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/FakeSMCIntelMonitor-all-target-headers.hmap -iquote /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/FakeSMCIntelMonitor-project-headers.hmap -F/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/Release -I/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/DerivedSources/i386 -I/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/DerivedSources -c /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp -o /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/i386/FakeSMCIntelMonitor.o0#
+
+CCompileC build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/i386/FakeSMCIntelMonitor_info.o /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/DerivedSources/FakeSMCIntelMonitor_info.c normal i386 c com.apple.compilers.gcc.4_2
+s307231590.500168
+e307231590.804157
+r1
+xCompileC
+xbuild/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/i386/FakeSMCIntelMonitor_info.o
+x/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/DerivedSources/FakeSMCIntelMonitor_info.c
+xnormal
+xi386
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@185"Compile /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/DerivedSources/FakeSMCIntelMonitor_info.c307231590#307231590#0(0"0(0#0#177"/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/DerivedSources/FakeSMCIntelMonitor_info.c7310293708390618112#2301"    cd /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch i386 -fmessage-length=0 -pipe -nostdinc -std=gnu99 -fno-builtin -Wno-trigraphs -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-function -Wunused-parameter -Wunused-variable -Wunused-value -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -ftree-vectorize -mmacosx-version-min=10.6 -iquote /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/FakeSMCIntelMonitor-generated-files.hmap -I/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/FakeSMCIntelMonitor-own-target-headers.hmap -I/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/FakeSMCIntelMonitor-all-target-headers.hmap -iquote /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/FakeSMCIntelMonitor-project-headers.hmap -F/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/Release -I/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/DerivedSources/i386 -I/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/DerivedSources -c /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/DerivedSources/FakeSMCIntelMonitor_info.c -o /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/i386/FakeSMCIntelMonitor_info.o0#
+
+CCompileC build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/i386/FakeSMCIntelMonitor_vers.o /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/DerivedSources/FakeSMCIntelMonitor_vers.c normal i386 c com.apple.compilers.gcc.4_2
+s307231590.212644
+e307231590.804323
+r1
+xCompileC
+xbuild/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/i386/FakeSMCIntelMonitor_vers.o
+x/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/DerivedSources/FakeSMCIntelMonitor_vers.c
+xnormal
+xi386
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@185"Compile /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/DerivedSources/FakeSMCIntelMonitor_vers.c307231590#307231590#0(0"0(0#0#177"/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/DerivedSources/FakeSMCIntelMonitor_vers.c8615273952#2301"    cd /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch i386 -fmessage-length=0 -pipe -nostdinc -std=gnu99 -fno-builtin -Wno-trigraphs -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-function -Wunused-parameter -Wunused-variable -Wunused-value -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -ftree-vectorize -mmacosx-version-min=10.6 -iquote /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/FakeSMCIntelMonitor-generated-files.hmap -I/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/FakeSMCIntelMonitor-own-target-headers.hmap -I/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/FakeSMCIntelMonitor-all-target-headers.hmap -iquote /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/FakeSMCIntelMonitor-project-headers.hmap -F/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/Release -I/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/DerivedSources/i386 -I/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/DerivedSources -c /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/DerivedSources/FakeSMCIntelMonitor_vers.c -o /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/i386/FakeSMCIntelMonitor_vers.o0#
+
+CCompileC build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/x86_64/FakeSMCIntelMonitor.o /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+s307375513.656777
+e307375514.128889
+r1
+xCompileC
+xbuild/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/x86_64/FakeSMCIntelMonitor.o
+x/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@101"Compile /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp307375513#307375514#0(0"0(0#0#93"/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp8615213344#2260"    cd /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -nostdinc -fno-builtin -Wno-trigraphs -fno-exceptions -fno-rtti -fcheck-new -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-function -Wunused-parameter -Wunused-variable -Wunused-value -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -fapple-kext -ftree-vectorize -mmacosx-version-min=10.6 -iquote /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/FakeSMCIntelMonitor-generated-files.hmap -I/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/FakeSMCIntelMonitor-own-target-headers.hmap -I/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/FakeSMCIntelMonitor-all-target-headers.hmap -iquote /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/FakeSMCIntelMonitor-project-headers.hmap -F/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/Release -I/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/DerivedSources/x86_64 -I/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/DerivedSources -c /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp -o /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/x86_64/FakeSMCIntelMonitor.o0#
+
+CCompileC build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/x86_64/FakeSMCIntelMonitor_info.o /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/DerivedSources/FakeSMCIntelMonitor_info.c normal x86_64 c com.apple.compilers.gcc.4_2
+s307231590.907365
+e307231590.973011
+r1
+xCompileC
+xbuild/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/x86_64/FakeSMCIntelMonitor_info.o
+x/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/DerivedSources/FakeSMCIntelMonitor_info.c
+xnormal
+xx86_64
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@185"Compile /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/DerivedSources/FakeSMCIntelMonitor_info.c307231590#307231591#0(0"0(0#0#177"/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/DerivedSources/FakeSMCIntelMonitor_info.c8622737632#2307"    cd /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -nostdinc -std=gnu99 -fno-builtin -Wno-trigraphs -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-function -Wunused-parameter -Wunused-variable -Wunused-value -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -ftree-vectorize -mmacosx-version-min=10.6 -iquote /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/FakeSMCIntelMonitor-generated-files.hmap -I/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/FakeSMCIntelMonitor-own-target-headers.hmap -I/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/FakeSMCIntelMonitor-all-target-headers.hmap -iquote /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/FakeSMCIntelMonitor-project-headers.hmap -F/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/Release -I/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/DerivedSources/x86_64 -I/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/DerivedSources -c /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/DerivedSources/FakeSMCIntelMonitor_info.c -o /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/x86_64/FakeSMCIntelMonitor_info.o0#
+
+CCompileC build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/x86_64/FakeSMCIntelMonitor_vers.o /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/DerivedSources/FakeSMCIntelMonitor_vers.c normal x86_64 c com.apple.compilers.gcc.4_2
+s307231590.805468
+e307231590.907168
+r1
+xCompileC
+xbuild/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/x86_64/FakeSMCIntelMonitor_vers.o
+x/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/DerivedSources/FakeSMCIntelMonitor_vers.c
+xnormal
+xx86_64
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@185"Compile /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/DerivedSources/FakeSMCIntelMonitor_vers.c307231590#307231590#0(0"0(0#0#177"/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/DerivedSources/FakeSMCIntelMonitor_vers.c8621205728#2307"    cd /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c -arch x86_64 -fmessage-length=0 -pipe -nostdinc -std=gnu99 -fno-builtin -Wno-trigraphs -fasm-blocks -force_cpusubtype_ALL -msoft-float -Os -fno-common -mkernel -finline -fno-keep-inline-functions -Wreturn-type -Wunused-function -Wunused-parameter -Wunused-variable -Wunused-value -DKERNEL -DKERNEL_PRIVATE -DDRIVER_PRIVATE -DAPPLE -DNeXT -isysroot /Developer/SDKs/MacOSX10.6.sdk -ftree-vectorize -mmacosx-version-min=10.6 -iquote /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/FakeSMCIntelMonitor-generated-files.hmap -I/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/FakeSMCIntelMonitor-own-target-headers.hmap -I/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/FakeSMCIntelMonitor-all-target-headers.hmap -iquote /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/FakeSMCIntelMonitor-project-headers.hmap -F/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/Release -I/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/Release/include -I/System/Library/Frameworks/Kernel.framework/PrivateHeaders -I/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers -I/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/DerivedSources/x86_64 -I/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/DerivedSources -c /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/DerivedSources/FakeSMCIntelMonitor_vers.c -o /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/x86_64/FakeSMCIntelMonitor_vers.o0#
+
+CCopyStringsFile /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/Release/FakeSMCIntelMonitor.kext/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
+s307231589.445954
+e307231590.211426
+r1
+xCopyStringsFile
+x/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/Release/FakeSMCIntelMonitor.kext/Contents/Resources/English.lproj/InfoPlist.strings
+xEnglish.lproj/InfoPlist.strings
+lSLF07#2@36"Copy English.lproj/InfoPlist.strings307231589#307231590#0(0"0(0#0#101"/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/English.lproj/InfoPlist.strings8622829440#442"    cd /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor    setenv ICONV /usr/bin/iconv    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings --validate --inputencoding utf-8 --outputencoding UTF-16 English.lproj/InfoPlist.strings --outdir /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/Release/FakeSMCIntelMonitor.kext/Contents/Resources/English.lproj0#
+
+CCreateUniversalBinary /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/Release/FakeSMCIntelMonitor.kext/Contents/MacOS/FakeSMCIntelMonitor normal "i386 x86_64"
+s307375514.142619
+e307375514.147353
+r1
+xCreateUniversalBinary
+x/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/Release/FakeSMCIntelMonitor.kext/Contents/MacOS/FakeSMCIntelMonitor
+xnormal
+xi386 x86_64
+lSLF07#2@116"CreateUniversalBinary build/Release/FakeSMCIntelMonitor.kext/Contents/MacOS/FakeSMCIntelMonitor normal "i386 x86_64"307375514#307375514#0(0"0(0#0#81"/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/i386 x86_648608925376#609"    cd /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor    /usr/bin/lipo -create /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/i386/FakeSMCIntelMonitor /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/x86_64/FakeSMCIntelMonitor -output /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/Release/FakeSMCIntelMonitor.kext/Contents/MacOS/FakeSMCIntelMonitor0#
+
+CLd /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/i386/FakeSMCIntelMonitor normal i386
+s307375513.656003
+e307375513.704765
+r1
+xLd
+x/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/i386/FakeSMCIntelMonitor
+xnormal
+xi386
+lSLF07#2@180"Link /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/i386/FakeSMCIntelMonitor307375513#307375513#0(0"0(0#0#0"8615315712#1023"    cd /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/g++-4.2 -arch i386 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/Release -F/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/Release -filelist /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/i386/FakeSMCIntelMonitor.LinkFileList -mmacosx-version-min=10.6 -lcpp_kext -Xlinker -kext -nostdlib -lkmodc++ /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/i386/FakeSMCIntelMonitor_info.o -lkmod -lcc_kext -o /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/i386/FakeSMCIntelMonitor0#
+
+CLd /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/x86_64/FakeSMCIntelMonitor normal x86_64
+s307375514.128985
+e307375514.142522
+r1
+xLd
+x/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/x86_64/FakeSMCIntelMonitor
+xnormal
+xx86_64
+lSLF07#2@182"Link /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/x86_64/FakeSMCIntelMonitor307375514#307375514#0(0"0(0#0#0"8609185472#1031"    cd /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/g++-4.2 -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/Release -F/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/Release -filelist /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/x86_64/FakeSMCIntelMonitor.LinkFileList -mmacosx-version-min=10.6 -lcpp_kext -Xlinker -kext -nostdlib -lkmodc++ /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/x86_64/FakeSMCIntelMonitor_info.o -lkmod -lcc_kext -o /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/FakeSMCIntelMonitor.build/Release/FakeSMCIntelMonitor.build/Objects-normal/x86_64/FakeSMCIntelMonitor0#
+
+CProcessInfoPlistFile /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/Release/FakeSMCIntelMonitor.kext/Contents/Info.plist Info.plist
+s307231589.372494
+e307231589.445853
+r1
+xProcessInfoPlistFile
+x/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/Release/FakeSMCIntelMonitor.kext/Contents/Info.plist
+xInfo.plist
+lSLF07#2@18"Process Info.plist307231589#307231589#0(0"0(0#0#80"/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/Info.plist30118239124455472#287"    cd /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor    builtin-infoPlistUtility Info.plist -expandbuildsettings -platform macosx -o /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/Release/FakeSMCIntelMonitor.kext/Contents/Info.plist0#
+
+CTouch /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/Release/FakeSMCIntelMonitor.kext
+s307375514.147439
+e307375514.150130
+r1
+xTouch
+x/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/Release/FakeSMCIntelMonitor.kext
+lSLF07#2@114"Touch /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/Release/FakeSMCIntelMonitor.kext307375514#307375514#0(0"0(0#0#0"8615085312#208"    cd /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor    /usr/bin/touch -c /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/build/Release/FakeSMCIntelMonitor.kext0#
+

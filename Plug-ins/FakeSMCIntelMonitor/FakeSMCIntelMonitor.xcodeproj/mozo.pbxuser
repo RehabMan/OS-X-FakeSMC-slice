@@ -1,0 +1,323 @@
+// !$*UTF8*$!
+{
+	089C1669FE841209C02AAC07 /* Project object */ = {
+		activeBuildConfigurationName = "Release Snow";
+		activeTarget = 32D94FC30562CBF700B6AF17 /* FakeSMCIntelThermal */;
+		addToTargets = (
+			32D94FC30562CBF700B6AF17 /* FakeSMCIntelThermal */,
+		);
+		codeSenseManager = AE95EDE811A3BBB100AE9201 /* Code sense */;
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					508,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.XCSCMDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					20,
+					484,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_SCM_ColumnID,
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 297945954;
+			PBXWorkspaceStateSaveDate = 297945954;
+		};
+		perUserProjectItems = {
+			AE49642D11BC122200416F07 = AE49642D11BC122200416F07 /* PBXTextBookmark */;
+			AEB8450011C2412800ED0754 = AEB8450011C2412800ED0754 /* PBXTextBookmark */;
+			AED9D0C611C2437800E47460 = AED9D0C611C2437800E47460 /* PBXTextBookmark */;
+			AED9D10F11C244BE00E47460 = AED9D10F11C244BE00E47460 /* PBXTextBookmark */;
+			AED9D11011C244BE00E47460 = AED9D11011C244BE00E47460 /* PBXTextBookmark */;
+			AED9D11111C244BE00E47460 = AED9D11111C244BE00E47460 /* PBXTextBookmark */;
+			AED9D11211C244BE00E47460 = AED9D11211C244BE00E47460 /* PBXTextBookmark */;
+			AED9D11311C244BE00E47460 = AED9D11311C244BE00E47460 /* PBXTextBookmark */;
+			AEDA56C111C24AF2004AF999 = AEDA56C111C24AF2004AF999 /* PBXTextBookmark */;
+			AEDA56C211C24AF2004AF999 = AEDA56C211C24AF2004AF999 /* PlistBookmark */;
+			AEDA56C311C24AF2004AF999 = AEDA56C311C24AF2004AF999 /* PlistBookmark */;
+			AEDC0F5411C24C7C00A44427 /* PBXTextBookmark */ = AEDC0F5411C24C7C00A44427 /* PBXTextBookmark */;
+			AEDC0F5511C24C7C00A44427 /* PlistBookmark */ = AEDC0F5511C24C7C00A44427 /* PlistBookmark */;
+			AEDC0F5611C24C7C00A44427 /* PBXTextBookmark */ = AEDC0F5611C24C7C00A44427 /* PBXTextBookmark */;
+			AEDC0F5711C24C7C00A44427 /* PBXTextBookmark */ = AEDC0F5711C24C7C00A44427 /* PBXTextBookmark */;
+		};
+		sourceControlManager = AE95EDE711A3BBB100AE9201 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	089C167EFE841241C02AAC07 /* English */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {686, 548}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 47}";
+		};
+	};
+	1A224C3EFF42367911CA2CB7 /* FakeSMCIntelThermal.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {686, 548}}";
+			sepNavSelRange = "{179, 0}";
+			sepNavVisRange = "{0, 591}";
+		};
+	};
+	1A224C3FFF42367911CA2CB7 /* FakeSMCIntelThermal.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {686, 854}}";
+			sepNavSelRange = "{273, 0}";
+			sepNavVisRange = "{0, 841}";
+		};
+	};
+	32D94FC30562CBF700B6AF17 /* FakeSMCIntelThermal */ = {
+		activeExec = 0;
+	};
+	AE49642D11BC122200416F07 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AEE2B6B411B6F8670073084B /* project.pbxproj */;
+		name = "project.pbxproj: 302";
+		rLen = 0;
+		rLoc = 11059;
+		rType = 0;
+		vrLen = 2509;
+		vrLoc = 0;
+	};
+	AE95EDE711A3BBB100AE9201 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = fakesmc;
+			};
+		};
+	};
+	AE95EDE811A3BBB100AE9201 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	AEA9A4D211B4994300449262 /* cpuid.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {712, 5852}}";
+			sepNavSelRange = "{8475, 0}";
+			sepNavVisRange = "{8204, 873}";
+		};
+	};
+	AEB840A811C2388600ED0754 /* FakeSMCPlugin.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {754, 560}}";
+			sepNavSelRange = "{127, 0}";
+			sepNavVisRange = "{0, 742}";
+		};
+	};
+	AEB840B311C238E500ED0754 /* IntelThermalPlugin.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {845, 854}}";
+			sepNavSelRange = "{958, 0}";
+			sepNavVisRange = "{561, 971}";
+		};
+	};
+	AEB840B411C238E500ED0754 /* IntelThermalPlugin.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {950, 2338}}";
+			sepNavSelRange = "{1018, 0}";
+			sepNavVisRange = "{2534, 638}";
+		};
+	};
+	AEB8450011C2412800ED0754 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AEB8450111C2412800ED0754 /* IOLib.h */;
+		name = "IOLib.h: 295";
+		rLen = 36;
+		rLoc = 16914;
+		rType = 0;
+		vrLen = 2022;
+		vrLoc = 16002;
+	};
+	AEB8450111C2412800ED0754 /* IOLib.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = IOLib.h;
+		path = /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Versions/A/Headers/IOKit/IOLib.h;
+		sourceTree = "<absolute>";
+	};
+	AED9D0C611C2437800E47460 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AEA9A4D211B4994300449262 /* cpuid.h */;
+		name = "cpuid.h: 241";
+		rLen = 0;
+		rLoc = 8475;
+		rType = 0;
+		vrLen = 873;
+		vrLoc = 8204;
+	};
+	AED9D10F11C244BE00E47460 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AEB840A811C2388600ED0754 /* FakeSMCPlugin.h */;
+		name = "FakeSMCPlugin.h: 7";
+		rLen = 0;
+		rLoc = 127;
+		rType = 0;
+		vrLen = 959;
+		vrLoc = 0;
+	};
+	AED9D11011C244BE00E47460 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AEB840B311C238E500ED0754 /* IntelThermalPlugin.h */;
+		name = "IntelThermalPlugin.h: 34";
+		rLen = 0;
+		rLoc = 958;
+		rType = 0;
+		vrLen = 971;
+		vrLoc = 561;
+	};
+	AED9D11111C244BE00E47460 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AEB840B411C238E500ED0754 /* IntelThermalPlugin.cpp */;
+		name = "IntelThermalPlugin.cpp: 42";
+		rLen = 0;
+		rLoc = 1018;
+		rType = 0;
+		vrLen = 638;
+		vrLoc = 2534;
+	};
+	AED9D11211C244BE00E47460 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3EFF42367911CA2CB7 /* FakeSMCIntelThermal.h */;
+		name = "FakeSMCIntelThermal.h: 10";
+		rLen = 0;
+		rLoc = 179;
+		rType = 0;
+		vrLen = 591;
+		vrLoc = 0;
+	};
+	AED9D11311C244BE00E47460 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCIntelThermal.cpp */;
+		name = "FakeSMCIntelThermal.cpp: 10";
+		rLen = 0;
+		rLoc = 273;
+		rType = 0;
+		vrLen = 841;
+		vrLoc = 0;
+	};
+	AEDA56C111C24AF2004AF999 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 089C167EFE841241C02AAC07 /* English */;
+		name = "InfoPlist.strings: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 47;
+		vrLoc = 0;
+	};
+	AEDA56C211C24AF2004AF999 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 32D94FCF0562CBF700B6AF17 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			IOKitPersonalities,
+			IntelThermalMonitor,
+			CFBundleIdentifier,
+		);
+		name = "/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCIntelThermal/Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775808;
+	};
+	AEDA56C311C24AF2004AF999 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 32D94FCF0562CBF700B6AF17 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			IOKitPersonalities,
+			IntelThermalMonitor,
+			CFBundleIdentifier,
+		);
+		name = "/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCIntelThermal/Info.plist";
+		rLen = 28;
+		rLoc = 0;
+	};
+	AEDC0F5411C24C7C00A44427 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 089C167EFE841241C02AAC07 /* English */;
+		name = "InfoPlist.strings: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 47;
+		vrLoc = 0;
+	};
+	AEDC0F5511C24C7C00A44427 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 32D94FCF0562CBF700B6AF17 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			IOKitPersonalities,
+			IntelThermalMonitor,
+			CFBundleIdentifier,
+		);
+		name = "/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCIntelThermal/Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	AEDC0F5611C24C7C00A44427 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AEB840A811C2388600ED0754 /* FakeSMCPlugin.h */;
+		name = "FakeSMCPlugin.h: 7";
+		rLen = 0;
+		rLoc = 127;
+		rType = 0;
+		vrLen = 742;
+		vrLoc = 0;
+	};
+	AEDC0F5711C24C7C00A44427 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AEB840A811C2388600ED0754 /* FakeSMCPlugin.h */;
+		name = "FakeSMCPlugin.h: 7";
+		rLen = 0;
+		rLoc = 127;
+		rType = 0;
+		vrLen = 742;
+		vrLoc = 0;
+	};
+	AEE2B6B411B6F8670073084B /* project.pbxproj */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = text.pbxproject;
+		name = project.pbxproj;
+		path = "/Users/mozo/Documents/FakeSMC/Plug-ins/FakeSMCIntelThermal/FakeSMCIntelThermal.xcodeproj/project.pbxproj";
+		sourceTree = "<absolute>";
+	};
+}

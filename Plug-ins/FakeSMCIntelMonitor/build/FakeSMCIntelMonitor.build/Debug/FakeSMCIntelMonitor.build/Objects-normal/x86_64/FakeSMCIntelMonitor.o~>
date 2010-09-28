@@ -1,0 +1,104 @@
+In file included from /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.h:11,
+                 from /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:12:
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/IntelThermalPlugin.h:34:1: warning: "MSR_IA32_PERF_STS" redefined
+In file included from /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/IntelThermalPlugin.h:12,
+                 from /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.h:11,
+                 from /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:12:
+/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/i386/proc_reg.h:401:1: warning: this is the location of the previous definition
+In file included from /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.h:11,
+                 from /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:12:
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/IntelThermalPlugin.h: In function 'void IntelState(void*)':
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/IntelThermalPlugin.h:95: error: 'GlobalState' was not declared in this scope
+In file included from /Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:12:
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.h: At global scope:
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.h:23: error: 'PState' does not name a type
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.h:24: error: 'PState' does not name a type
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.h:25: error: 'PState' does not name a type
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.h:28: error: 'PState' does not name a type
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp: In member function 'virtual IOReturn FrequencySensor::OnKeyRead(const char*, char*)':
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:20: error: 'Frequency' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp: In member function 'virtual IOReturn TemperatureSensor::OnKeyRead(const char*, char*)':
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:34: error: 'CpuTjmax' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:34: error: 'GlobalThermal' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp: In member function 'virtual IOReturn VoltageSensor::OnKeyRead(const char*, char*)':
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:43: error: 'm_Value' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:43: error: 'Voltage' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp: In member function 'virtual bool FakeSMCIntelMonitor::init(OSDictionary*)':
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:56: error: 'CpuTjmax' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp: In member function 'virtual IOService* FakeSMCIntelMonitor::probe(IOService*, SInt32*)':
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:83: error: 'CpuCount' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:97: error: 'BusClock' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:99: error: 'gIODTPlane' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:118: error: 'FSBClock' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:120: error: 'CpuSignature' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:121: error: 'CpuCoreTech' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:121: error: 'Unknown' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:122: error: 'CpuNonIntegerBusRatio' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:129: error: 'IntelNetburstOld' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:134: error: 'IntelNetburstNew' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:143: error: 'IntelPentiumM' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:147: error: 'IntelCore' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:155: error: 'IntelCore' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:159: error: 'IntelCore45' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:162: error: 'IntelAtom' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:165: error: 'IntelCoreI7' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:173: error: 'CpuDynamicFSB' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:178: error: 'IntelPentiumM' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:179: error: 'CpuMobile' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:181: error: 'IntelNetburstOld' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:184: error: 'IntelNetburstNew' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:187: error: 'IntelCoreI7' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:188: error: 'IntelCore' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:189: error: 'IntelCore45' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:190: error: 'IntelAtom' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:206: error: 'CpuTjmax' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:214: error: 'IntelCore45' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:216: error: 'CpuMobile' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:226: error: 'IntelAtom' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:228: error: 'CpuMobile' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:233: error: 'IntelCore' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:235: error: 'CpuMobile' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:240: error: 'IntelCoreI7' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:247: error: 'CpuMobile' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:251: error: 'PStateInitial' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:253: error: 'PStateMaximum' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:256: error: 'PStateMinimum' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:293: error: 'CpuClock' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:302: error: 'MaxPStateCount' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:314: error: 'PStates' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:331: error: 'CpuClock' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:331: error: 'PStates' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp: In member function 'virtual bool FakeSMCIntelMonitor::start(IOService*)':
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:345: error: incomplete type 'IOTimerEventSource' used in nested name specifier
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:345: error: incomplete type 'IOTimerEventSource' used in nested name specifier
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:348: error: invalid use of incomplete type 'struct IOWorkLoop'
+/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/IOServicePM.h:37: error: forward declaration of 'struct IOWorkLoop'
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:353: error: 'Activate' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:354: error: 'CpuCount' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp: In member function 'virtual void FakeSMCIntelMonitor::stop(IOService*)':
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:373: error: 'Deactivate' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:375: error: 'CpuCount' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp: At global scope:
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:393: error: no 'IOReturn FakeSMCIntelMonitor::loopTimerEvent()' member function declared in class 'FakeSMCIntelMonitor'
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp: In member function 'IOReturn FakeSMCIntelMonitor::loopTimerEvent()':
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:399: error: 'LoopLock' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:401: error: 'LoopLock' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:406: error: 'CpuCount' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:408: error: 'Frequency' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:408: error: 'GlobalState' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:408: error: 'BusClock' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:409: error: 'Voltage' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:412: error: invalid use of incomplete type 'struct IOTimerEventSource'
+/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/IOServicePM.h:39: error: forward declaration of 'struct IOTimerEventSource'
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp: At global scope:
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:416: error: no 'void FakeSMCIntelMonitor::Activate()' member function declared in class 'FakeSMCIntelMonitor'
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp: In member function 'void FakeSMCIntelMonitor::Activate()':
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:418: error: 'Active' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:421: error: 'Active' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp: At global scope:
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:428: error: no 'void FakeSMCIntelMonitor::Deactivate()' member function declared in class 'FakeSMCIntelMonitor'
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp: In member function 'void FakeSMCIntelMonitor::Deactivate()':
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:430: error: 'Active' was not declared in this scope
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:434: error: invalid use of incomplete type 'struct IOTimerEventSource'
+/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Kernel.framework/Headers/IOKit/IOServicePM.h:39: error: forward declaration of 'struct IOTimerEventSource'
+/Users/slice/FakeSMC_mozo/rev404/fakesmc/Plug-ins/FakeSMCIntelMonitor/FakeSMCIntelMonitor.cpp:436: error: 'Active' was not declared in this scope

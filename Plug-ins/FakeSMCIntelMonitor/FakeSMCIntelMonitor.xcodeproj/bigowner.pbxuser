@@ -1,0 +1,216 @@
+// !$*UTF8*$!
+{
+	089C1669FE841209C02AAC07 /* Project object */ = {
+		activeBuildConfigurationName = Release;
+		activeTarget = 32D94FC30562CBF700B6AF17 /* FakeSMCIntelThermal */;
+		addToTargets = (
+			32D94FC30562CBF700B6AF17 /* FakeSMCIntelThermal */,
+		);
+		codeSenseManager = ED00ED1111A04B6000DDEB55 /* Code sense */;
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					571,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					475,
+					60,
+					20,
+					48.16259765625,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 295937233;
+			PBXWorkspaceStateSaveDate = 295937233;
+		};
+		perUserProjectItems = {
+			ED6A550111A3A58B0078BF12 /* PBXTextBookmark */ = ED6A550111A3A58B0078BF12 /* PBXTextBookmark */;
+			ED6A550211A3A58B0078BF12 /* PBXTextBookmark */ = ED6A550211A3A58B0078BF12 /* PBXTextBookmark */;
+			ED6A550311A3A58B0078BF12 /* PBXTextBookmark */ = ED6A550311A3A58B0078BF12 /* PBXTextBookmark */;
+			ED6A550411A3A58B0078BF12 /* PBXTextBookmark */ = ED6A550411A3A58B0078BF12 /* PBXTextBookmark */;
+			ED6A550511A3A58B0078BF12 /* PBXTextBookmark */ = ED6A550511A3A58B0078BF12 /* PBXTextBookmark */;
+			EDFFC2DE11A35477007EB82F /* PlistBookmark */ = EDFFC2DE11A35477007EB82F /* PlistBookmark */;
+			EDFFC2E011A35477007EB82F /* PlistBookmark */ = EDFFC2E011A35477007EB82F /* PlistBookmark */;
+			EDFFC2E111A35477007EB82F /* PBXTextBookmark */ = EDFFC2E111A35477007EB82F /* PBXTextBookmark */;
+		};
+		sourceControlManager = ED00ED1011A04B6000DDEB55 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	1A224C3EFF42367911CA2CB7 /* FakeSMCIntelThermal.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {845, 1118}}";
+			sepNavSelRange = "{83, 0}";
+			sepNavVisRange = "{0, 1112}";
+		};
+	};
+	1A224C3FFF42367911CA2CB7 /* FakeSMCIntelThermal.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {749, 3016}}";
+			sepNavSelRange = "{85, 0}";
+			sepNavVisRange = "{0, 836}";
+			sepNavWindowFrame = "{{15, 252}, {1085, 745}}";
+		};
+	};
+	32D94FC30562CBF700B6AF17 /* FakeSMCIntelThermal */ = {
+		activeExec = 0;
+	};
+	ED00ED1011A04B6000DDEB55 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	ED00ED1111A04B6000DDEB55 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	ED19393111A31AF4001793BC /* fakesmc.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {749, 468}}";
+			sepNavSelRange = "{67, 0}";
+			sepNavVisRange = "{0, 426}";
+		};
+	};
+	ED5A8F3611A34DF800DB8193 /* cpuid.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {749, 2106}}";
+			sepNavSelRange = "{12, 0}";
+			sepNavVisRange = "{0, 921}";
+		};
+	};
+	ED6A550111A3A58B0078BF12 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3FFF42367911CA2CB7 /* FakeSMCIntelThermal.cpp */;
+		name = "FakeSMCIntelThermal.cpp: 5";
+		rLen = 0;
+		rLoc = 85;
+		rType = 0;
+		vrLen = 836;
+		vrLoc = 0;
+	};
+	ED6A550211A3A58B0078BF12 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1A224C3EFF42367911CA2CB7 /* FakeSMCIntelThermal.h */;
+		name = "FakeSMCIntelThermal.h: 5";
+		rLen = 0;
+		rLoc = 83;
+		rType = 0;
+		vrLen = 1112;
+		vrLoc = 0;
+	};
+	ED6A550311A3A58B0078BF12 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ED5A8F3611A34DF800DB8193 /* cpuid.h */;
+		name = "cpuid.h: 2";
+		rLen = 0;
+		rLoc = 12;
+		rType = 0;
+		vrLen = 921;
+		vrLoc = 0;
+	};
+	ED6A550411A3A58B0078BF12 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ED19393111A31AF4001793BC /* fakesmc.h */;
+		name = "fakesmc.h: 5";
+		rLen = 0;
+		rLoc = 67;
+		rType = 0;
+		vrLen = 426;
+		vrLoc = 0;
+	};
+	ED6A550511A3A58B0078BF12 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = ED19393111A31AF4001793BC /* fakesmc.h */;
+		name = "fakesmc.h: 5";
+		rLen = 0;
+		rLoc = 67;
+		rType = 0;
+		vrLen = 426;
+		vrLoc = 0;
+	};
+	EDFFC2DE11A35477007EB82F /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = EDFFC2DF11A35477007EB82F /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/bigowner/Documents/fakesmc plug-ins/FakeSMCIntelThermal/build/Release/FakeSMCIntelThermal.kext/Contents/Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775808;
+	};
+	EDFFC2DF11A35477007EB82F /* Info.plist */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = text.plist.xml;
+		name = Info.plist;
+		path = "/Users/bigowner/Documents/fakesmc plug-ins/FakeSMCIntelThermal/build/Release/FakeSMCIntelThermal.kext/Contents/Info.plist";
+		sourceTree = "<absolute>";
+	};
+	EDFFC2E011A35477007EB82F /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 32D94FCF0562CBF700B6AF17 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			OSBundleLibraries,
+			org.netkas.fakesmc,
+		);
+		name = "/Users/bigowner/Documents/fakesmc plug-ins/FakeSMCIntelThermal/Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775808;
+	};
+	EDFFC2E111A35477007EB82F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = EDFFC2E211A35477007EB82F /* InfoPlist.strings */;
+		name = "InfoPlist.strings: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 47;
+		vrLoc = 0;
+	};
+	EDFFC2E211A35477007EB82F /* InfoPlist.strings */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = text.plist.strings;
+		name = InfoPlist.strings;
+		path = "/Users/bigowner/Documents/fakesmc plug-ins/FakeSMCIntelThermal/build/Release/FakeSMCIntelThermal.kext/Contents/Resources/English.lproj/InfoPlist.strings";
+		sourceTree = "<absolute>";
+	};
+}

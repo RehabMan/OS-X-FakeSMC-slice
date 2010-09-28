@@ -1,0 +1,1 @@
+ const unsigned char FakeSMCIntelMonitorVersionString[] __attribute__ ((used)) = "@(#)PROGRAM:FakeSMCIntelMonitor  PROJECT:FakeSMCIntelMonitor-1.0.0d1" "\n"; const double FakeSMCIntelMonitorVersionNumber __attribute__ ((used)) = (double)1.0;
