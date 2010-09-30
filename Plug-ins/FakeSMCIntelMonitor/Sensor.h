@@ -98,7 +98,7 @@ public:
 		UInt32 magic = 0;		
 		mp_rendezvous_no_intrs(IntelThermal, &magic);
 		
-		data[0]=GlobalThermal[m_Index];
+		data[0]=((FakeSMCIntelMonitor*)m_Provider)->CpuTjmax-GlobalThermal[m_Index];
 		data[1]=0;
 		
 		return kIOReturnSuccess;
