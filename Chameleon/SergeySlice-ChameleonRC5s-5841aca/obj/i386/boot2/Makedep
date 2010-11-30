@@ -1,0 +1,2542 @@
+# Dependencies for File:  \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o:
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: ../libsa/libsa.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: ../libsa/memory.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: ../libsaio/bios.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: ../libsaio/bootstruct.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: ../libsaio/device_tree.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: ../libsaio/fake_efi.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: ../libsaio/io_inline.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: ../libsaio/libsaio.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: ../libsaio/nbp_cmd.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: ../libsaio/pci.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: ../libsaio/platform.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: ../libsaio/saio_internal.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: ../libsaio/saio_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: ../libsaio/sl.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/limits.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdbool.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stddef.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdint.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/syslimits.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /System/Library/Frameworks/IOKit.framework/Headers/IOReturn.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /System/Library/Frameworks/IOKit.framework/Headers/IOTypes.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/architecture/byte_order.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/device/device_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/i386/_limits.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/i386/_param.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/i386/_structs.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/i386/_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/i386/eflags.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/i386/endian.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/i386/limits.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/i386/param.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/i386/signal.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/i386/types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/libkern/OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/libkern/OSTypes.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/libkern/_OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/libkern/i386/OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/libkern/i386/_OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/limits.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach-o/loader.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/boolean.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/clock_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/error.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/exception_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/host_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/host_notify.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/host_special_ports.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/i386/_structs.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/i386/boolean.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/i386/exception.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/i386/fp_reg.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/i386/kern_return.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/i386/processor_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/i386/thread_state.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/i386/thread_status.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/i386/vm_param.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/i386/vm_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/kern_return.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/kmod.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/mach_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/machine.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/machine/boolean.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/machine/exception.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/machine/kern_return.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/machine/processor_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/machine/thread_state.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/machine/thread_status.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/machine/vm_param.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/machine/vm_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/memory_object_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/message.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/policy.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/port.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/processor_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/std_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/task_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/task_policy.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/task_special_ports.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/thread_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/thread_policy.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/thread_special_ports.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/thread_status.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/time_value.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/vm_attributes.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/vm_behavior.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/vm_inherit.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/vm_prot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/vm_purgable.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/vm_region.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/vm_statistics.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/vm_sync.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/mach/vm_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/machine/_structs.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/machine/_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/machine/endian.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/machine/limits.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/machine/param.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/machine/signal.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/machine/types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/pexpert/i386/boot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/sys/_endian.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/sys/_structs.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/sys/_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/sys/appleapiopts.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/sys/cdefs.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/sys/param.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/sys/reboot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/sys/signal.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/sys/syslimits.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/sys/types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/include/sys/vnode.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/limits.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/syslimits.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: boot.c
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: boot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: graphic_utils.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: graphics.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: gui.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: picopng.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/boot.o: ramdisk.h
+# Dependencies for File:  \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o:
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: ../libsa/libsa.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: ../libsa/memory.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: ../libsaio/bios.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: ../libsaio/bootstruct.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: ../libsaio/device_tree.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: ../libsaio/io_inline.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: ../libsaio/libsaio.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: ../libsaio/nbp_cmd.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: ../libsaio/saio_internal.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: ../libsaio/saio_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: ../libsaio/vbe.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdbool.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stddef.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdint.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /System/Library/Frameworks/IOKit.framework/Headers/IOReturn.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /System/Library/Frameworks/IOKit.framework/Headers/IOTypes.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/architecture/byte_order.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/device/device_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/i386/_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/i386/eflags.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/i386/endian.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/i386/types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/libkern/OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/libkern/OSTypes.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/libkern/_OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/libkern/i386/OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/libkern/i386/_OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach-o/loader.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/boolean.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/clock_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/error.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/exception_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/host_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/host_notify.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/host_special_ports.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/i386/_structs.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/i386/boolean.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/i386/exception.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/i386/fp_reg.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/i386/kern_return.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/i386/processor_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/i386/thread_state.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/i386/thread_status.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/i386/vm_param.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/i386/vm_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/kern_return.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/kmod.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/mach_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/machine.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/machine/boolean.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/machine/exception.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/machine/kern_return.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/machine/processor_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/machine/thread_state.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/machine/thread_status.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/machine/vm_param.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/machine/vm_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/memory_object_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/message.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/policy.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/port.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/processor_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/std_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/task_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/task_policy.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/task_special_ports.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/thread_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/thread_policy.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/thread_special_ports.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/thread_status.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/time_value.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/vm_attributes.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/vm_behavior.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/vm_inherit.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/vm_prot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/vm_purgable.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/vm_region.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/vm_statistics.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/vm_sync.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/mach/vm_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/machine/_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/machine/endian.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/machine/types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/pexpert/i386/boot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/sys/_endian.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/sys/_structs.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/sys/_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/sys/appleapiopts.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/sys/cdefs.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/sys/reboot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: /usr/include/sys/types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: IOHibernatePrivate.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: appleClut8.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: boot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: graphic_utils.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: graphics.c
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: graphics.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: gui.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphics.o: picopng.h
+# Dependencies for File:  \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o:
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: ../libsa/libsa.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: ../libsa/memory.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: ../libsaio/bios.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: ../libsaio/bootstruct.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: ../libsaio/device_tree.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: ../libsaio/io_inline.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: ../libsaio/libsaio.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: ../libsaio/nbp_cmd.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: ../libsaio/saio_internal.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: ../libsaio/saio_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: ../libsaio/sl.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: ../libsaio/xml.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/limits.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdbool.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stddef.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdint.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/syslimits.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /System/Library/Frameworks/IOKit.framework/Headers/IOReturn.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /System/Library/Frameworks/IOKit.framework/Headers/IOTypes.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/architecture/byte_order.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/device/device_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/i386/_limits.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/i386/_param.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/i386/_structs.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/i386/_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/i386/eflags.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/i386/endian.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/i386/limits.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/i386/param.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/i386/signal.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/i386/types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/libkern/OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/libkern/OSTypes.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/libkern/_OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/libkern/i386/OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/libkern/i386/_OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/limits.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach-o/fat.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach-o/loader.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/boolean.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/clock_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/error.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/exception_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/host_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/host_notify.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/host_special_ports.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/i386/_structs.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/i386/boolean.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/i386/exception.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/i386/fp_reg.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/i386/kern_return.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/i386/processor_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/i386/thread_state.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/i386/thread_status.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/i386/vm_param.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/i386/vm_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/kern_return.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/kmod.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/mach_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/machine.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/machine/boolean.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/machine/exception.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/machine/kern_return.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/machine/processor_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/machine/thread_state.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/machine/thread_status.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/machine/vm_param.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/machine/vm_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/memory_object_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/message.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/policy.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/port.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/processor_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/std_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/task_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/task_policy.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/task_special_ports.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/thread_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/thread_policy.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/thread_special_ports.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/thread_status.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/time_value.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/vm_attributes.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/vm_behavior.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/vm_inherit.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/vm_prot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/vm_purgable.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/vm_region.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/vm_statistics.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/vm_sync.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/mach/vm_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/machine/_structs.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/machine/_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/machine/endian.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/machine/limits.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/machine/param.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/machine/signal.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/machine/types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/pexpert/i386/boot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/sys/_endian.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/sys/_structs.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/sys/_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/sys/appleapiopts.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/sys/cdefs.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/sys/param.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/sys/reboot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/sys/signal.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/sys/syslimits.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/sys/types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/include/sys/vnode.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/limits.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/syslimits.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: boot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: drivers.c
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/drivers.o: ramdisk.h
+# Dependencies for File:  \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/prompt.o:
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/prompt.o: /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/sym/i386/vers.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/prompt.o: prompt.c
+# Dependencies for File:  \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o:
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: ../libsa/libsa.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: ../libsa/memory.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: ../libsaio/bios.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: ../libsaio/bootstruct.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: ../libsaio/device_tree.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: ../libsaio/fdisk.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: ../libsaio/io_inline.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: ../libsaio/libsaio.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: ../libsaio/nbp_cmd.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: ../libsaio/pci.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: ../libsaio/saio_internal.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: ../libsaio/saio_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdbool.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stddef.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdint.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /System/Library/Frameworks/IOKit.framework/Headers/IOReturn.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /System/Library/Frameworks/IOKit.framework/Headers/IOTypes.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/sym/i386/embedded.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/architecture/byte_order.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/device/device_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/i386/_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/i386/eflags.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/i386/endian.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/i386/types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/libkern/OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/libkern/OSTypes.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/libkern/_OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/libkern/i386/OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/libkern/i386/_OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach-o/loader.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/boolean.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/clock_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/error.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/exception_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/host_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/host_notify.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/host_special_ports.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/i386/_structs.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/i386/boolean.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/i386/exception.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/i386/fp_reg.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/i386/kern_return.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/i386/processor_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/i386/thread_state.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/i386/thread_status.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/i386/vm_param.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/i386/vm_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/kern_return.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/kmod.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/mach_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/machine.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/machine/boolean.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/machine/exception.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/machine/kern_return.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/machine/processor_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/machine/thread_state.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/machine/thread_status.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/machine/vm_param.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/machine/vm_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/memory_object_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/message.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/policy.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/port.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/processor_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/std_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/task_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/task_policy.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/task_special_ports.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/thread_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/thread_policy.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/thread_special_ports.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/thread_status.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/time_value.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/vm_attributes.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/vm_behavior.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/vm_inherit.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/vm_prot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/vm_purgable.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/vm_region.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/vm_statistics.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/vm_sync.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/mach/vm_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/machine/_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/machine/endian.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/machine/types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/pexpert/i386/boot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/sys/_endian.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/sys/_structs.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/sys/_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/sys/appleapiopts.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/sys/cdefs.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/sys/reboot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: /usr/include/sys/types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: boot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: graphic_utils.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: graphics.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: gui.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: options.c
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: picopng.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/options.o: ramdisk.h
+# Dependencies for File:  \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o:
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: ../libsa/libsa.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: ../libsa/memory.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: ../libsaio/bios.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: ../libsaio/io_inline.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: ../libsaio/libsaio.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: ../libsaio/nbp_cmd.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: ../libsaio/saio_internal.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: ../libsaio/saio_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: ../libsaio/sl.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/limits.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdbool.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stddef.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdint.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/syslimits.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /System/Library/Frameworks/IOKit.framework/Headers/IOReturn.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /System/Library/Frameworks/IOKit.framework/Headers/IOTypes.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/architecture/byte_order.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/device/device_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/i386/_limits.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/i386/_param.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/i386/_structs.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/i386/_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/i386/eflags.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/i386/endian.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/i386/limits.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/i386/param.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/i386/signal.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/i386/types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/libkern/OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/libkern/OSTypes.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/libkern/_OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/libkern/i386/OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/libkern/i386/_OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/limits.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach-o/loader.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/boolean.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/clock_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/error.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/exception_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/host_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/host_notify.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/host_special_ports.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/i386/_structs.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/i386/boolean.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/i386/exception.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/i386/fp_reg.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/i386/kern_return.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/i386/processor_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/i386/thread_state.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/i386/thread_status.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/i386/vm_param.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/i386/vm_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/kern_return.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/kmod.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/mach_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/machine.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/machine/boolean.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/machine/exception.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/machine/kern_return.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/machine/processor_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/machine/thread_state.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/machine/thread_status.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/machine/vm_param.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/machine/vm_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/memory_object_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/message.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/policy.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/port.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/processor_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/std_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/task_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/task_policy.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/task_special_ports.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/thread_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/thread_policy.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/thread_special_ports.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/thread_status.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/time_value.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/vm_attributes.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/vm_behavior.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/vm_inherit.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/vm_prot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/vm_purgable.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/vm_region.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/vm_statistics.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/vm_sync.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/mach/vm_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/machine/_structs.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/machine/_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/machine/endian.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/machine/limits.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/machine/param.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/machine/signal.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/machine/types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/pexpert/i386/boot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/sys/_endian.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/sys/_structs.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/sys/_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/sys/appleapiopts.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/sys/cdefs.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/sys/param.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/sys/reboot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/sys/signal.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/sys/syslimits.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/sys/types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/include/sys/vnode.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/limits.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: /usr/lib/gcc/i686-apple-darwin10/4.2.1/include/syslimits.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/lzss.o: lzss.c
+# Dependencies for File:  \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o:
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: ../libsa/libsa.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: ../libsa/memory.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: ../libsaio/bios.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: ../libsaio/bootstruct.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: ../libsaio/device_tree.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: ../libsaio/io_inline.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: ../libsaio/libsaio.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: ../libsaio/nbp_cmd.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: ../libsaio/saio_internal.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: ../libsaio/saio_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdbool.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stddef.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdint.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /System/Library/Frameworks/IOKit.framework/Headers/IOReturn.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /System/Library/Frameworks/IOKit.framework/Headers/IOTypes.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/architecture/byte_order.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/device/device_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/i386/_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/i386/eflags.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/i386/endian.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/i386/types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/libkern/OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/libkern/OSTypes.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/libkern/_OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/libkern/i386/OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/libkern/i386/_OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach-o/loader.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/boolean.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/clock_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/error.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/exception_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/host_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/host_notify.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/host_special_ports.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/i386/_structs.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/i386/boolean.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/i386/exception.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/i386/fp_reg.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/i386/kern_return.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/i386/processor_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/i386/thread_state.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/i386/thread_status.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/i386/vm_param.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/i386/vm_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/kern_return.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/kmod.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/mach_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/machine.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/machine/boolean.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/machine/exception.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/machine/kern_return.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/machine/processor_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/machine/thread_state.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/machine/thread_status.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/machine/vm_param.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/machine/vm_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/memory_object_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/message.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/policy.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/port.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/processor_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/std_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/task_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/task_policy.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/task_special_ports.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/thread_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/thread_policy.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/thread_special_ports.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/thread_status.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/time_value.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/vm_attributes.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/vm_behavior.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/vm_inherit.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/vm_prot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/vm_purgable.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/vm_region.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/vm_statistics.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/vm_sync.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/mach/vm_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/machine/_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/machine/endian.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/machine/types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/pexpert/i386/boot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/sys/_endian.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/sys/_structs.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/sys/_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/sys/appleapiopts.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/sys/cdefs.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/sys/reboot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: /usr/include/sys/types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: boot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: mboot.c
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: mboot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/mboot.o: multiboot.h
+# Dependencies for File:  \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o:
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: ../libsa/libsa.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: ../libsa/memory.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: ../libsaio/bios.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: ../libsaio/bootstruct.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: ../libsaio/device_tree.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: ../libsaio/io_inline.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: ../libsaio/libsaio.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: ../libsaio/nbp_cmd.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: ../libsaio/saio_internal.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: ../libsaio/saio_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdbool.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stddef.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdint.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /System/Library/Frameworks/IOKit.framework/Headers/IOReturn.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /System/Library/Frameworks/IOKit.framework/Headers/IOTypes.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/architecture/byte_order.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/device/device_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/i386/_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/i386/eflags.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/i386/endian.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/i386/types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/libkern/OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/libkern/OSTypes.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/libkern/_OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/libkern/i386/OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/libkern/i386/_OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach-o/loader.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/boolean.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/clock_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/error.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/exception_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/host_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/host_notify.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/host_special_ports.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/i386/_structs.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/i386/boolean.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/i386/exception.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/i386/fp_reg.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/i386/kern_return.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/i386/processor_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/i386/thread_state.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/i386/thread_status.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/i386/vm_param.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/i386/vm_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/kern_return.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/kmod.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/mach_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/machine.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/machine/boolean.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/machine/exception.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/machine/kern_return.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/machine/processor_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/machine/thread_state.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/machine/thread_status.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/machine/vm_param.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/machine/vm_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/memory_object_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/message.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/policy.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/port.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/processor_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/std_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/task_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/task_policy.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/task_special_ports.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/thread_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/thread_policy.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/thread_special_ports.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/thread_status.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/time_value.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/vm_attributes.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/vm_behavior.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/vm_inherit.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/vm_prot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/vm_purgable.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/vm_region.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/vm_statistics.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/vm_sync.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/mach/vm_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/machine/_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/machine/endian.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/machine/types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/pexpert/i386/boot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/sys/_endian.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/sys/_structs.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/sys/_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/sys/appleapiopts.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/sys/cdefs.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/sys/reboot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: /usr/include/sys/types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: boot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: multiboot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: ramdisk.c
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/ramdisk.o: ramdisk.h
+# Dependencies for File:  \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/picopng.o:
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/picopng.o: ../libsa/libsa.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/picopng.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/picopng.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdbool.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/picopng.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stddef.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/picopng.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdint.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/picopng.o: /usr/include/architecture/byte_order.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/picopng.o: /usr/include/i386/_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/picopng.o: /usr/include/i386/eflags.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/picopng.o: /usr/include/libkern/OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/picopng.o: /usr/include/libkern/_OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/picopng.o: /usr/include/libkern/i386/OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/picopng.o: /usr/include/libkern/i386/_OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/picopng.o: /usr/include/mach-o/loader.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/picopng.o: /usr/include/mach/boolean.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/picopng.o: /usr/include/mach/i386/_structs.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/picopng.o: /usr/include/mach/i386/boolean.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/picopng.o: /usr/include/mach/i386/fp_reg.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/picopng.o: /usr/include/mach/i386/kern_return.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/picopng.o: /usr/include/mach/i386/thread_state.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/picopng.o: /usr/include/mach/i386/thread_status.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/picopng.o: /usr/include/mach/i386/vm_param.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/picopng.o: /usr/include/mach/i386/vm_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/picopng.o: /usr/include/mach/kern_return.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/picopng.o: /usr/include/mach/machine.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/picopng.o: /usr/include/mach/machine/boolean.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/picopng.o: /usr/include/mach/machine/kern_return.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/picopng.o: /usr/include/mach/machine/thread_status.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/picopng.o: /usr/include/mach/machine/vm_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/picopng.o: /usr/include/mach/message.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/picopng.o: /usr/include/mach/port.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/picopng.o: /usr/include/mach/vm_prot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/picopng.o: /usr/include/machine/_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/picopng.o: /usr/include/sys/_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/picopng.o: /usr/include/sys/cdefs.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/picopng.o: picopng.c
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/picopng.o: picopng.h
+# Dependencies for File:  \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o:
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: ../libsa/libsa.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: ../libsa/memory.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: ../libsaio/bios.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: ../libsaio/bootstruct.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: ../libsaio/device_tree.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: ../libsaio/io_inline.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: ../libsaio/libsaio.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: ../libsaio/nbp_cmd.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: ../libsaio/pci.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: ../libsaio/saio_internal.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: ../libsaio/saio_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdbool.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stddef.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdint.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /System/Library/Frameworks/IOKit.framework/Headers/IOReturn.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /System/Library/Frameworks/IOKit.framework/Headers/IOTypes.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/architecture/byte_order.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/device/device_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/i386/_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/i386/eflags.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/i386/endian.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/i386/types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/libkern/OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/libkern/OSTypes.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/libkern/_OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/libkern/i386/OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/libkern/i386/_OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach-o/loader.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/boolean.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/clock_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/error.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/exception_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/host_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/host_notify.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/host_special_ports.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/i386/_structs.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/i386/boolean.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/i386/exception.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/i386/fp_reg.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/i386/kern_return.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/i386/processor_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/i386/thread_state.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/i386/thread_status.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/i386/vm_param.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/i386/vm_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/kern_return.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/kmod.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/mach_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/machine.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/machine/boolean.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/machine/exception.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/machine/kern_return.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/machine/processor_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/machine/thread_state.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/machine/thread_status.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/machine/vm_param.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/machine/vm_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/memory_object_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/message.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/policy.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/port.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/processor_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/std_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/task_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/task_policy.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/task_special_ports.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/thread_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/thread_policy.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/thread_special_ports.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/thread_status.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/time_value.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/vm_attributes.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/vm_behavior.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/vm_inherit.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/vm_prot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/vm_purgable.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/vm_region.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/vm_statistics.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/vm_sync.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/mach/vm_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/machine/_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/machine/endian.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/machine/types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/pexpert/i386/boot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/sys/_endian.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/sys/_structs.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/sys/_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/sys/appleapiopts.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/sys/cdefs.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/sys/reboot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: /usr/include/sys/types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: IOHibernatePrivate.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: boot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/resume.o: resume.c
+# Dependencies for File:  \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o:
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: ../libsa/libsa.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: ../libsa/memory.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: ../libsaio/bios.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: ../libsaio/io_inline.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: ../libsaio/libsaio.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: ../libsaio/nbp_cmd.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: ../libsaio/saio_internal.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: ../libsaio/saio_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdbool.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stddef.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdint.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /System/Library/Frameworks/IOKit.framework/Headers/IOReturn.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /System/Library/Frameworks/IOKit.framework/Headers/IOTypes.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/architecture/byte_order.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/device/device_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/i386/_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/i386/eflags.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/i386/endian.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/i386/types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/libkern/OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/libkern/OSTypes.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/libkern/_OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/libkern/i386/OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/libkern/i386/_OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach-o/loader.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/boolean.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/clock_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/error.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/exception_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/host_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/host_notify.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/host_special_ports.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/i386/_structs.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/i386/boolean.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/i386/exception.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/i386/fp_reg.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/i386/kern_return.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/i386/processor_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/i386/thread_state.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/i386/thread_status.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/i386/vm_param.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/i386/vm_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/kern_return.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/kmod.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/mach_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/machine.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/machine/boolean.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/machine/exception.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/machine/kern_return.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/machine/processor_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/machine/thread_state.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/machine/thread_status.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/machine/vm_param.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/machine/vm_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/memory_object_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/message.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/policy.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/port.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/processor_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/std_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/task_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/task_policy.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/task_special_ports.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/thread_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/thread_policy.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/thread_special_ports.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/thread_status.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/time_value.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/vm_attributes.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/vm_behavior.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/vm_inherit.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/vm_prot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/vm_purgable.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/vm_region.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/vm_statistics.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/vm_sync.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/mach/vm_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/machine/_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/machine/endian.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/machine/types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/pexpert/i386/boot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/sys/_endian.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/sys/_structs.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/sys/_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/sys/appleapiopts.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/sys/cdefs.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/sys/reboot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: /usr/include/sys/types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: bmdecompress.c
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/bmdecompress.o: boot.h
+# Dependencies for File:  \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o:
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: ../libsa/libsa.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: ../libsa/memory.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: ../libsaio/bios.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: ../libsaio/bootstruct.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: ../libsaio/device_tree.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: ../libsaio/io_inline.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: ../libsaio/libsaio.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: ../libsaio/nbp_cmd.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: ../libsaio/saio_internal.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: ../libsaio/saio_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdbool.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stddef.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdint.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /System/Library/Frameworks/IOKit.framework/Headers/IOReturn.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /System/Library/Frameworks/IOKit.framework/Headers/IOTypes.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/architecture/byte_order.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/device/device_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/i386/_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/i386/eflags.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/i386/endian.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/i386/types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/libkern/OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/libkern/OSTypes.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/libkern/_OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/libkern/i386/OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/libkern/i386/_OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach-o/loader.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/boolean.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/clock_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/error.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/exception_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/host_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/host_notify.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/host_special_ports.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/i386/_structs.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/i386/boolean.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/i386/exception.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/i386/fp_reg.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/i386/kern_return.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/i386/processor_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/i386/thread_state.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/i386/thread_status.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/i386/vm_param.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/i386/vm_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/kern_return.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/kmod.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/mach_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/machine.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/machine/boolean.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/machine/exception.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/machine/kern_return.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/machine/processor_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/machine/thread_state.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/machine/thread_status.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/machine/vm_param.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/machine/vm_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/memory_object_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/message.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/policy.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/port.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/processor_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/std_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/task_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/task_policy.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/task_special_ports.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/thread_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/thread_policy.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/thread_special_ports.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/thread_status.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/time_value.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/vm_attributes.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/vm_behavior.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/vm_inherit.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/vm_prot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/vm_purgable.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/vm_region.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/vm_statistics.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/vm_sync.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/mach/vm_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/machine/_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/machine/endian.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/machine/types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/pexpert/i386/boot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/sys/_endian.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/sys/_structs.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/sys/_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/sys/appleapiopts.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/sys/cdefs.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/sys/reboot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: /usr/include/sys/types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: boot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: graphic_utils.c
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: graphic_utils.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: graphics.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: gui.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/graphic_utils.o: picopng.h
+# Dependencies for File:  \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o:
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: ../libsa/libsa.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: ../libsa/memory.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: ../libsaio/bios.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: ../libsaio/bootstruct.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: ../libsaio/device_tree.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: ../libsaio/io_inline.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: ../libsaio/libsaio.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: ../libsaio/nbp_cmd.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: ../libsaio/saio_internal.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: ../libsaio/saio_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdbool.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stddef.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdint.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /System/Library/Frameworks/IOKit.framework/Headers/IOReturn.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /System/Library/Frameworks/IOKit.framework/Headers/IOTypes.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/sym/i386/vers.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/architecture/byte_order.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/device/device_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/i386/_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/i386/eflags.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/i386/endian.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/i386/types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/libkern/OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/libkern/OSTypes.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/libkern/_OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/libkern/i386/OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/libkern/i386/_OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach-o/loader.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/boolean.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/clock_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/error.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/exception_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/host_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/host_notify.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/host_special_ports.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/i386/_structs.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/i386/boolean.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/i386/exception.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/i386/fp_reg.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/i386/kern_return.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/i386/processor_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/i386/thread_state.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/i386/thread_status.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/i386/vm_param.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/i386/vm_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/kern_return.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/kmod.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/mach_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/machine.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/machine/boolean.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/machine/exception.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/machine/kern_return.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/machine/processor_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/machine/thread_state.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/machine/thread_status.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/machine/vm_param.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/machine/vm_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/memory_object_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/message.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/policy.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/port.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/processor_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/std_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/task_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/task_policy.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/task_special_ports.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/thread_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/thread_policy.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/thread_special_ports.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/thread_status.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/time_value.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/vm_attributes.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/vm_behavior.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/vm_inherit.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/vm_prot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/vm_purgable.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/vm_region.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/vm_statistics.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/vm_sync.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/vm_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/machine/_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/machine/endian.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/machine/types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/pexpert/i386/boot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/sys/_endian.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/sys/_structs.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/sys/_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/sys/appleapiopts.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/sys/cdefs.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/sys/reboot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/sys/types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: appleboot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: boot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: graphic_utils.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: graphics.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: gui.c
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: gui.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: picopng.h
+# Dependencies for File:  \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o:
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: ../libsa/libsa.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: ../libsa/memory.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: ../libsaio/bios.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: ../libsaio/bootstruct.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: ../libsaio/device_tree.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: ../libsaio/io_inline.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: ../libsaio/libsaio.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: ../libsaio/nbp_cmd.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: ../libsaio/saio_internal.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: ../libsaio/saio_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdbool.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stddef.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /Developer/usr/bin/../lib/gcc/i686-apple-darwin10/4.2.1/include/stdint.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /System/Library/Frameworks/IOKit.framework/Headers/IOReturn.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /System/Library/Frameworks/IOKit.framework/Headers/IOTypes.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/sym/i386/vers.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/architecture/byte_order.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/device/device_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/i386/_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/i386/eflags.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/i386/endian.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/i386/types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/libkern/OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/libkern/OSTypes.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/libkern/_OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/libkern/i386/OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/libkern/i386/_OSByteOrder.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach-o/loader.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/boolean.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/clock_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/error.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/exception_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/host_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/host_notify.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/host_special_ports.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/i386/_structs.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/i386/boolean.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/i386/exception.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/i386/fp_reg.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/i386/kern_return.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/i386/processor_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/i386/thread_state.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/i386/thread_status.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/i386/vm_param.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/i386/vm_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/kern_return.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/kmod.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/mach_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/machine.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/machine/boolean.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/machine/exception.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/machine/kern_return.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/machine/processor_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/machine/thread_state.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/machine/thread_status.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/machine/vm_param.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/machine/vm_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/memory_object_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/message.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/policy.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/port.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/processor_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/std_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/task_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/task_policy.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/task_special_ports.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/thread_info.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/thread_policy.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/thread_special_ports.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/thread_status.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/time_value.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/vm_attributes.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/vm_behavior.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/vm_inherit.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/vm_prot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/vm_purgable.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/vm_region.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/vm_statistics.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/vm_sync.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/mach/vm_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/machine/_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/machine/endian.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/machine/types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/pexpert/i386/boot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/sys/_endian.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/sys/_structs.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/sys/_types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/sys/appleapiopts.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/sys/cdefs.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/sys/reboot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: /usr/include/sys/types.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: appleboot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: boot.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: graphic_utils.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: graphics.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: gui.c
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: gui.h
+ \
+ /Users/slice/Projects/Chameleons/SergeySlice-ChameleonRC5s-5841aca/obj/i386/boot2/gui.o: picopng.h
