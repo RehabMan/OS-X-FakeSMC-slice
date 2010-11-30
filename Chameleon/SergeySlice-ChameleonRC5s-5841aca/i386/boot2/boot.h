@@ -100,7 +100,7 @@ extern int     bvCount;
 #define kMD0Image			"md0"				/* ramdisk.h */
 #define kUseCPUDMI			"CPUover"			/* fake_efi.c */
 #define kRecoveryFolder		"RecoveryFolder"	/* drivers.h */
-
+/*
 enum {
 	kBackspaceKey		= 0x08,
 	kTabKey			= 0x09,
@@ -112,7 +112,7 @@ enum {
 	kF5Key			= 0x3f00,
 	kF10Key			= 0x4400
 };
-
+*/
 
 /*
  * Flags to the booter or kernel

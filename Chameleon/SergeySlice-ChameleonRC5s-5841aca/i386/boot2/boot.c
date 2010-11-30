@@ -654,8 +654,7 @@ static bool getOSVersion(char *str)
 	{
 		valid = true;
 	}
-	else if (!loadConfigFile("/
-	System/Library/CoreServices/ServerVersion.plist", &systemVersion))
+	else if (!loadConfigFile("/System/Library/CoreServices/ServerVersion.plist", &systemVersion))
 	{
 		valid = true;
 	}

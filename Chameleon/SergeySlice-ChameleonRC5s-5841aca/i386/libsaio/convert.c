@@ -23,31 +23,31 @@ const char * getStringFromUUID(const EFI_CHAR8* eUUID)
 }
 
 /** Parse an UUID string into an (EFI_CHAR8*) buffer */
-EFI_UUID*  getUUIDFromString(const char *source)
+EFI_GUID*  getUUIDFromString(const char *source)
 {
 	if (!source) return 0;
-	static EFI_UUID uuid;
+	static EFI_GUID uuid;
 	char	*p = (char *)source;
-	uuid.time_low = strtoul(p, p+8, 16);
+	uuid.time_low = strtoul(p, NULL, 16);
 	p += 8;
-	if (*p == '-' || *p=' ') p++;
-	uuid.time_mid = strtoul(p, p+4, 16);
+	if (*p == '-' || *p==' ') p++;
+	uuid.time_mid = strtoul(p, NULL, 16);
 	p += 4;
-	if (*p == '-' || *p=' ') p++;
-	uuid.time_hi_and_version = strtoul(p, p+4, 16);
+	if (*p == '-' || *p==' ') p++;
+	uuid.time_hi_and_version = strtoul(p, NULL, 16);
 	p += 4;
-	if (*p == '-' || *p=' ') p++;
-	uuid.clock_seq_hi_and_reserved = strtoul(p, p+2, 16);
+	if (*p == '-' || *p==' ') p++;
+	uuid.clock_seq_hi_and_reserved = strtoul(p, NULL, 16);
 	p += 2;
-	uuid.clock_seq_low = strtoul(p, p+2, 16);
+	uuid.clock_seq_low = strtoul(p, NULL, 16);
 	p += 2;	
-	if (*p == '-' || *p=' ') p++;
+	if (*p == '-' || *p==' ') p++;
 	int i;
 	for (i=0; i<6; i++) {
-		uuid.node[i] = strtoul(p, p+2, 16);
+		uuid.node[i] = strtoul(p, NULL, 16);
 		p += 2;
 	}
-	return uuid;
+	return &uuid;
 }
 #if OLD_METHOD
 {

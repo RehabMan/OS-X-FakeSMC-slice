@@ -150,7 +150,7 @@ static uint8_t const VOIDRET_INSTRUCTIONS[] = {0xc3};
 /* movl $0x80000003,%eax; ret */
 static uint8_t const UNSUPPORTEDRET_INSTRUCTIONS[] = {0xb8, 0x03, 0x00, 0x00, 0x80, 0xc3};
 //#define SYSTEM_ID_DEFAULT {0x41, 0x73, 0x65, 0x72, 0x65, 0x42, 0x4c, 0x4e, 0x66, 0x75, 0x63, 0x6b, 0x45, 0x46, 0x49, 0x58}
-EFI_GUID const SYSTEM_ID_DEFAULT = {0x72657341, 0x4265, 0x4e4C, 0x66, 0x75, {0x63, 0x6b, 0x45, 0x46, 0x49, 0x58}}
+EFI_GUID const SYSTEM_ID_DEFAULT = {0x72657341, 0x4265, 0x4e4C, 0x66, 0x75, {0x63, 0x6b, 0x45, 0x46, 0x49, 0x58}};
 EFI_SYSTEM_TABLE_32 *gST32 = NULL;
 EFI_SYSTEM_TABLE_64 *gST64 = NULL;
 Node *gEfiConfigurationTableNode = NULL;
@@ -522,20 +522,20 @@ static	EFI_CHAR8* getSmbiosUUID()
  * or from the bios if not, or from a fixed value if no bios value is found 
  */
 
-static EFI_UUID* getSystemID()
+static EFI_GUID* getSystemID()
 {
-	EFI_UUID*	ret = NULL;
+	EFI_GUID*	ret = NULL;
 	// unable to determine UUID for host. Error: 35 fix
 	// Rek: new SMsystemid option conforming to smbios notation standards, this option should
 	// belong to smbios config only ...
 	const char *sysId = getStringForKey(kSystemID, &bootInfo->bootConfig);
 	if (sysId) {
-		ret = (EFI_UUID*)getUUIDFromString(sysId);
+		ret = (EFI_GUID*)getUUIDFromString(sysId);
 	}
 	
 	if (!ret) // try bios dmi info UUID extraction
 	{
-		ret = (EFI_UUID*)getSmbiosUUID();
+		ret = (EFI_GUID*)getSmbiosUUID();
 		sysId = 0;
 	}
 	
@@ -545,18 +545,19 @@ static EFI_UUID* getSystemID()
 		ret = &SYSTEM_ID_DEFAULT;
 	}
 	
-	verbose("Customizing SystemID with : %s\n", getStringFromUUID(ret)); // apply a nice formatting to the displayed output
+	verbose("Customizing SystemID with : %s\n", getStringFromUUID((EFI_CHAR8*)ret)); // apply a nice formatting to the displayed output
 	
 	return ret;
 }
 
 void setupEfiDeviceTree(void)
 {
-	EFI_CHAR8*	ret = 0;
+	EFI_GUID*	ret = 0;
 	EFI_CHAR16*	ret16 = 0;
 	size_t		len = 0;
 	Node*		node;
 //Slice
+#if NOTYET	
 	char		bootName[128];
 	
 	char*		ffName;
@@ -564,8 +565,9 @@ void setupEfiDeviceTree(void)
 	char*		ffmName;
 	char*		boName;
 	char*		bnName;
-	
+
 	uint16_t	bootOptionNumber = 0;
+#endif	
 //
 	node = DT__FindNode("/", false);
 	

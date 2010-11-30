@@ -360,7 +360,7 @@ struct DMIFirmwareVolume {
     SMBDWord          FirmwareFeatures;
     SMBDWord          FirmwareFeaturesMask;
     SMBByte           RegionType[ NUM_FLASHMAP_ENTRIES ];
-    FW_REGION_INFO    FlashMap[   NUM_FLASHMAP_ENTRIES ];
+    struct FW_REGION_INFO    FlashMap[   NUM_FLASHMAP_ENTRIES ];
 } __attribute__((packed));
 
 //
