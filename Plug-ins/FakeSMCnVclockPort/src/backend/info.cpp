@@ -494,8 +494,12 @@ static const struct pci_ids ids[] =
 	{ 0x06a0, "GT214 [?]", DESKTOP },
 	{ 0x06b0, "GT214 [?]", DESKTOP },
 	{ 0x06c0, "GF100 [GeForce GTX 480]", DESKTOP },
+    { 0x06c4, "GF104 [GeForce GTX 465]", DESKTOP },
+    { 0x06ca, "GF100 [GeForce GTX 480M]", MOBILE },
 	{ 0x06cd, "GF100 [GeForce GTX 470]", DESKTOP },
 	{ 0x06d1, "GF100 [Tesla C2050]", DESKTOP },
+    { 0x06dd, "GF100 [Quadro 4000]", DESKTOP },
+	
 	{ 0x07e0, "C73 [GeForce 7150 / nForce 630i]", DESKTOP },
 	{ 0x07e1, "C73 [GeForce 7100 / nForce 630i]", DESKTOP },
 	{ 0x07e2, "C73 [GeForce 7050 / nForce 630i]", DESKTOP },
@@ -575,6 +579,10 @@ static const struct pci_ids ids[] =
 	{ 0x0cb0, "GT215 [GeForce GTS 350M]", MOBILE },
 	{ 0x0cb1, "GT215 [GeForce GTS 360M]", MOBILE },
 	{ 0x0cbc, "GT215 [Quadro FX 1800M]", MOBILE },
+    { 0x0dc4, "GF106 [GeForce GTS 450]", DESKTOP},
+    { 0x0de1, "GF108 [GeForce GT 430]", DESKTOP },
+    { 0x0e22, "GF104 [GeForce GTX 460]", DESKTOP },
+    { 0x0e24, "GF104 [GeForce GTX 460]", DESKTOP },
 	
 	
 	{ 0, NULL, UNKNOWN }
@@ -707,8 +715,14 @@ int get_gpu_arch(int device_id)
 		case 0x640: /* 9500GT */
 			arch = G96;
 			break;
-		case 0x6c0:
+        case 0x6c0:
+        case 0x6d0:
+        case 0xe20:
+        case 0xdc0:
+        case 0xde0:
+        case 0x80:
 			arch = GF100;
+			break;
 		case 0x240:
 		case 0x3d0: /* not sure if this is a C51 too */
 		case 0x530: /* not sure if the 70xx is C51 too */
