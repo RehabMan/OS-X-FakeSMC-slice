@@ -129,19 +129,21 @@ WITHOUT WARRANTIES OR REPRESENTATIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED.
 //
 #define EFI_SPECIFICATION_MAJOR_REVISION  1
 #define EFI_SPECIFICATION_MINOR_REVISION  10
-
+//rfc4122
 typedef struct {
-  EFI_UINT32  Data1;
-  EFI_UINT16  Data2;
-  EFI_UINT16  Data3;
-  EFI_UINT8   Data4[8];
+	EFI_UINT32  time_low;
+	EFI_UINT16  time_mid;
+	EFI_UINT16  time_hi_and_version;
+	EFI_UINT8	clock_seq_hi_and_reserved;
+	EFI_UINT8	clock_seq_low;
+	EFI_UINT8   node[6];
 } EFI_GUID;
 
 #define APPLE_VENDOR_GUID \
-    {0xAC39C713, 0x7E50, 0x423D, {0x88, 0x9D, 0x27,0x8F, 0xCC, 0x34, 0x22, 0xB6} }
+    {0xAC39C713, 0x7E50, 0x423D, 0x88, 0x9D, {0x27,0x8F, 0xCC, 0x34, 0x22, 0xB6} }
 
 #define EFI_GLOBAL_VARIABLE_GUID \
-    {0x8BE4DF61, 0x93CA, 0x11d2, {0xAA, 0x0D, 0x00, 0xE0, 0x98, 0x03, 0x2B, 0x8C} }
+    {0x8BE4DF61, 0x93CA, 0x11d2, 0xAA, 0x0D, {0x00, 0xE0, 0x98, 0x03, 0x2B, 0x8C} }
 
 typedef union {
   EFI_GUID  Guid;

@@ -6,7 +6,7 @@
  */
 
 #include "convert.h"
-
+//Slice - LE byte order!
 /** Transform a 16 bytes hexadecimal value UUID to a string */
 const char * getStringFromUUID(const EFI_CHAR8* eUUID)
 {
@@ -14,15 +14,42 @@ const char * getStringFromUUID(const EFI_CHAR8* eUUID)
   if (!eUUID) return "";
   const unsigned char * uuid = (unsigned char*) eUUID;
   sprintf(msg, "%02x%02x%02x%02x-%02x%02x-%02x%02x-%02x%02x-%02x%02x%02x%02x%02x%02x",
-		    uuid[0], uuid[1], uuid[2], uuid[3], 
-		    uuid[4], uuid[5], uuid[6], uuid[7],
+//Slice
+		  uuid[3], uuid[2], uuid[1], uuid[0], 
+		    uuid[5], uuid[4], uuid[7], uuid[6],
 		    uuid[8], uuid[9], uuid[10],uuid[11],
 		    uuid[12],uuid[13],uuid[14],uuid[15]);
   return msg ;
 }
 
 /** Parse an UUID string into an (EFI_CHAR8*) buffer */
-EFI_CHAR8*  getUUIDFromString(const char *source)
+EFI_UUID*  getUUIDFromString(const char *source)
+{
+	if (!source) return 0;
+	static EFI_UUID uuid;
+	char	*p = (char *)source;
+	uuid.time_low = strtoul(p, p+8, 16);
+	p += 8;
+	if (*p == '-' || *p=' ') p++;
+	uuid.time_mid = strtoul(p, p+4, 16);
+	p += 4;
+	if (*p == '-' || *p=' ') p++;
+	uuid.time_hi_and_version = strtoul(p, p+4, 16);
+	p += 4;
+	if (*p == '-' || *p=' ') p++;
+	uuid.clock_seq_hi_and_reserved = strtoul(p, p+2, 16);
+	p += 2;
+	uuid.clock_seq_low = strtoul(p, p+2, 16);
+	p += 2;	
+	if (*p == '-' || *p=' ') p++;
+	int i;
+	for (i=0; i<6; i++) {
+		uuid.node[i] = strtoul(p, p+2, 16);
+		p += 2;
+	}
+	return uuid;
+}
+#if OLD_METHOD
 {
         if (!source) return 0;
 
@@ -52,6 +79,7 @@ EFI_CHAR8*  getUUIDFromString(const char *source)
 	}
 	return uuid;
 }
+#endif
 
 /** XXX AsereBLN replace by strtoul */
 uint32_t ascii_hex_to_int(char *buff) 

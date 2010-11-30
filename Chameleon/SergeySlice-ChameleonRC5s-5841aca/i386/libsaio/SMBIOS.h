@@ -38,6 +38,29 @@ typedef uint16_t	SMBWord;
 typedef uint32_t	SMBDWord;
 typedef uint64_t	SMBQWord;
 
+// Apple known types
+ enum {
+ kSMBTypeBIOSInformation             =  0,
+ kSMBTypeSystemInformation           =  1,
+ kSMBTypeBaseBoard					 =  2,
+ kSMBTypeSystemEnclosure             =  3,
+ kSMBTypeProcessorInformation        =  4,
+ kSMBTypeMemoryModule                =  6,
+ kSMBTypeCacheInformation            =  7,
+ kSMBTypeSystemSlot                  =  9,
+ kSMBTypePhysicalMemoryArray         = 16,
+ kSMBTypeMemoryDevice                = 17,
+ kSMBType32BitMemoryErrorInfo        = 18,
+ kSMBType64BitMemoryErrorInfo        = 33,
+ 
+ // Apple Specific Structures 
+ kSMBTypeFirmwareVolume              = 128,
+ kSMBTypeMemorySPD                   = 130,
+ kSMBTypeOemProcessorType            = 131,
+ kSMBTypeOemProcessorBusSpeed        = 132
+ };
+ 
+
 struct DMIHeader {
 	SMBByte			type;
 	SMBByte			length;
@@ -68,7 +91,7 @@ struct SMBEntryPoint {
 } __attribute__((packed));
 
 //
-// BIOS Information (Type 0)
+// BIOS Information (Type 0)  //min len 18+num_of_extChars. Max=18h=24
 //
 struct SMBBIOSInformation {
     struct DMIHeader	dmiHeader;               // Type 0

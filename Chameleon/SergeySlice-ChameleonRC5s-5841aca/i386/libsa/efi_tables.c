@@ -118,23 +118,24 @@ uint32_t crc32(uint32_t crc, const void *buf, size_t size)
 void efi_guid_unparse_upper(EFI_GUID const *pGuid, char *out)
 {
     sprintf(out, "%08X-%04X-%04X-%02X%02X-%02X%02X%02X%02X%02X%02X",
-        pGuid->Data1, /* - */
-        pGuid->Data2, /* - */
-        pGuid->Data3, /* - */
-        pGuid->Data4[0], pGuid->Data4[1], /* - */
-        pGuid->Data4[2], pGuid->Data4[3],
-        pGuid->Data4[4], pGuid->Data4[5],
-        pGuid->Data4[6], pGuid->Data4[7]);
+        pGuid->time_low, /* - */
+        pGuid->time_mid, /* - */
+        pGuid->time_hi_and_version, /* - */
+        pGuid->clock_seq_hi_and_reserved, pGuid->clock_seq_low, /* - */
+        pGuid->node[0], pGuid->node[1],
+        pGuid->node[2], pGuid->node[3],
+        pGuid->node[4], pGuid->node[5]);
 }
 
 bool efi_guid_is_null(EFI_GUID const *pGuid)
 {
-    if(pGuid->Data1 == 0 && pGuid->Data2 == 0 && pGuid->Data3 == 0)
+    if(pGuid->time_low == 0 && pGuid->time_mid == 0 && pGuid->time_hi_and_version == 0
+	   && pGuid->clock_seq_hi_and_reserved == 0 && pGuid->clock_seq_low == 0)
     {
         int i;
-        for(i=0; i<8; ++i)
+        for(i=0; i<6; ++i)
         {
-            if(pGuid->Data4[i] != 0)
+            if(pGuid->node[i] != 0)
                 return false;
         }
         return true;
@@ -150,13 +151,15 @@ bool efi_guid_is_null(EFI_GUID const *pGuid)
 
 int efi_guid_compare(EFI_GUID const *pG1, EFI_GUID const *pG2)
 {
-    COMPARE_MEMBER_AND_RETURN_IF_NE(pG1, pG2, Data1);
-    COMPARE_MEMBER_AND_RETURN_IF_NE(pG1, pG2, Data2);
-    COMPARE_MEMBER_AND_RETURN_IF_NE(pG1, pG2, Data3);
+    COMPARE_MEMBER_AND_RETURN_IF_NE(pG1, pG2, time_low);
+    COMPARE_MEMBER_AND_RETURN_IF_NE(pG1, pG2, time_mid);
+    COMPARE_MEMBER_AND_RETURN_IF_NE(pG1, pG2, time_hi_and_version);
+	COMPARE_MEMBER_AND_RETURN_IF_NE(pG1, pG2, clock_seq_hi_and_reserved);
+	COMPARE_MEMBER_AND_RETURN_IF_NE(pG1, pG2, clock_seq_low);	
     int i;
-    for(i=0; i<8; ++i)
+    for(i=0; i<6; ++i)
     {
-        COMPARE_MEMBER_AND_RETURN_IF_NE(pG1, pG2, Data4[i]);
+        COMPARE_MEMBER_AND_RETURN_IF_NE(pG1, pG2, node[i]);
     }
     return 0;
 }

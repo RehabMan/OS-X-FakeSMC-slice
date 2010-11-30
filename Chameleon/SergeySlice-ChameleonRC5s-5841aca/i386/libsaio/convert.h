@@ -11,8 +11,10 @@
 
 #define UUID_LEN	16
 
-const char * getStringFromUUID(const EFI_CHAR8* uuid);
-EFI_CHAR8*  getUUIDFromString(const char *source);
+//const char * getStringFromUUID(const EFI_CHAR8* uuid);
+const char * getStringFromUUID(const EFI_UUID* uuid);
+EFI_UUID*  getUUIDFromString(const char *source);
+
 void *convertHexStr2Binary(const char *hexStr, int *outLength);
 uint32_t ascii_hex_to_int(char *buff);
 

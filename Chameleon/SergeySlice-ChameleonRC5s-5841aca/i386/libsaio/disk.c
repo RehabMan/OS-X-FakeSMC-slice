@@ -631,16 +631,16 @@ BVRef newAPMBVRef( int biosdev, int partno, unsigned int blkoff,
 }
 
 //==========================================================================
-
+//Slice - this is wrong UUID???
 // HFS+ GUID in LE form
-EFI_GUID const GPT_HFS_GUID	= { 0x48465300, 0x0000, 0x11AA, { 0xAA, 0x11, 0x00, 0x30, 0x65, 0x43, 0xEC, 0xAC } };
+EFI_GUID const GPT_HFS_GUID	= { 0x48465300, 0x0000, 0x11AA, 0xAA, 0x11, {0x00, 0x30, 0x65, 0x43, 0xEC, 0xAC } };
 // turbo - also our booter partition
-EFI_GUID const GPT_BOOT_GUID	= { 0x426F6F74, 0x0000, 0x11AA, { 0xAA, 0x11, 0x00, 0x30, 0x65, 0x43, 0xEC, 0xAC } };
+EFI_GUID const GPT_BOOT_GUID	= { 0x426F6F74, 0x0000, 0x11AA, 0xAA, 0x11, {0x00, 0x30, 0x65, 0x43, 0xEC, 0xAC } };
 // turbo - or an efi system partition
-EFI_GUID const GPT_EFISYS_GUID	= { 0xC12A7328, 0xF81F, 0x11D2, { 0xBA, 0x4B, 0x00, 0xA0, 0xC9, 0x3E, 0xC9, 0x3B } };
+EFI_GUID const GPT_EFISYS_GUID	= { 0xC12A7328, 0xF81F, 0x11D2, 0xBA, 0x4B, {0x00, 0xA0, 0xC9, 0x3E, 0xC9, 0x3B } };
 // zef - basic data partition EBD0A0A2-B9E5-4433-87C0-68B6B72699C7 for foreign OS support
-EFI_GUID const GPT_BASICDATA_GUID = { 0xEBD0A0A2, 0xB9E5, 0x4433, { 0x87, 0xC0, 0x68, 0xB6, 0xB7, 0x26, 0x99, 0xC7 } };
-EFI_GUID const GPT_BASICDATA2_GUID = { 0xE3C9E316, 0x0B5C, 0x4DB8, { 0x81, 0x7D, 0xF9, 0x2D, 0xF0, 0x02, 0x15, 0xAE } };
+EFI_GUID const GPT_BASICDATA_GUID = { 0xEBD0A0A2, 0xB9E5, 0x4433, 0x87, 0xC0, {0x68, 0xB6, 0xB7, 0x26, 0x99, 0xC7 } };
+EFI_GUID const GPT_BASICDATA2_GUID = { 0xE3C9E316, 0x0B5C, 0x4DB8, 0x81, 0x7D, {0xF9, 0x2D, 0xF0, 0x02, 0x15, 0xAE } };
 
 
 BVRef newGPTBVRef( int biosdev, int partno, unsigned int blkoff,
@@ -1290,23 +1290,23 @@ static BVRef diskScanGPTBootVolumes( int biosdev, int * countPtr )
             if ( (efi_guid_compare(&GPT_BASICDATA_GUID, (EFI_GUID const*)gptMap->ent_type) == 0) ||
                  (efi_guid_compare(&GPT_BASICDATA2_GUID, (EFI_GUID const*)gptMap->ent_type) == 0) )
             {
-							switch (fsType)
-              {
-							  case FDISK_NTFS:
-							    bvr = newGPTBVRef(biosdev, gptID, gptMap->ent_lba_start, gptMap,
-                	  								0, 0, 0, 0, 0, 0, NTFSGetDescription,
-                		  							(BVFree)free, 0, kBIOSDevTypeHardDrive, 0);
-								break;
-
-                default:
-                  bvr = newGPTBVRef(biosdev, gptID, gptMap->ent_lba_start, gptMap,
-                                    0, 0, 0, 0, 0, 0, 0,
-                                    (BVFree)free, 0, kBIOSDevTypeHardDrive, 0);
-                break;
-              }
-							  
+				switch (fsType)
+				{
+					case FDISK_NTFS:
+						bvr = newGPTBVRef(biosdev, gptID, gptMap->ent_lba_start, gptMap,
+										  0, 0, 0, 0, 0, 0, NTFSGetDescription,
+										  (BVFree)free, 0, kBIOSDevTypeHardDrive, 0);
+						break;
+						
+					default:
+						bvr = newGPTBVRef(biosdev, gptID, gptMap->ent_lba_start, gptMap,
+										  0, 0, 0, 0, 0, 0, 0,
+										  (BVFree)free, 0, kBIOSDevTypeHardDrive, 0);
+						break;
+				}
+				
             }
-
+			
             // turbo - save our booter partition
             // zef - only on original boot device
             if ( (efi_guid_compare(&GPT_EFISYS_GUID, (EFI_GUID const*)gptMap->ent_type) == 0) )

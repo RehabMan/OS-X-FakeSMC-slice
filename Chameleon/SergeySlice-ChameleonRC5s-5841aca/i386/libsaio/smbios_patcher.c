@@ -464,7 +464,7 @@ struct smbios_property smbios_properties[]=
 	{.name="SMproductname",		.table_type= 1,	.value_type=SMSTRING,	.offset=0x05,	.auto_str=sm_get_defstr	},
 	{.name="SMsystemversion",	.table_type= 1,	.value_type=SMSTRING,	.offset=0x06,	.auto_str=sm_get_defstr	},
 	{.name="SMserial",			.table_type= 1,	.value_type=SMSTRING,	.offset=0x07,	.auto_str=sm_get_defstr	},
-	{.name="SMUUID",			.table_type= 1, .value_type=SMOWORD,	.offset=0x08,	.auto_oword=0},
+	{.name="SMUUID",			.table_type= 1, .value_type=SMOWORD,	.offset=0x08,	.auto_oword=sm_get_defstr},
 	{.name="SMfamily",			.table_type= 1,	.value_type=SMSTRING,	.offset=0x1a,	.auto_str=sm_get_defstr	},
 	{.name="SMboardmanufacter",	.table_type= 2, .value_type=SMSTRING,	.offset=0x04,	.auto_str=sm_get_defstr	},
 	{.name="SMboardproduct",	.table_type= 2, .value_type=SMSTRING,	.offset=0x05,	.auto_str=sm_get_defstr	},
@@ -483,19 +483,25 @@ struct smbios_property smbios_properties[]=
 
 struct smbios_table_description smbios_table_descriptions[]=
 {
-	{.type=0,	.len=0x18,	.numfunc=sm_one},
-	{.type=1,	.len=0x1b,	.numfunc=sm_one},
-	{.type=2,	.len=0x0f,	.numfunc=sm_one},
-	{.type=4,	.len=0x2a,	.numfunc=sm_one},
-	{.type=17,	.len=0x1c,	.numfunc=0},
-	{.type=131,	.len=0x06,	.numfunc=sm_one},
-	{.type=132,	.len=0x06,	.numfunc=sm_one}
+	{.type=kSMBTypeBIOSInformation,			.len=0x18,	.numfunc=sm_one},
+	{.type=kSMBTypeSystemInformation,		.len=0x1b,	.numfunc=sm_one},
+	{.type=kSMBTypeBaseBoard,				.len=0x0f,	.numfunc=sm_one}, //except kSMBBaseBoardProcessorMemoryModule
+	{.type=kSMBTypeProcessorInformation,	.len=0x2a,	.numfunc=sm_one},
+//kSMBTypeMemoryModule  len=12 obsolete but Used by AppleSMBIOS	
+//kSMBTypeSystemSlot	 len=13 Used by AppleSMBIOS
+//kSMBTypePhysicalMemoryArray len=15 Used by AppleSMBIOS	
+	{.type=kSMBTypeMemoryDevice,			.len=0x24,	.numfunc=0},
+//Slice - we are not ready to fill the data	
+//	{.type=kSMBTypeFirmwareVolume,			.len=0x56,	.numfunc=0},
+//	{.type=kSMBTypeMemorySPD,				.len=0x0c,	.numfunc=0},
+	{.type=kSMBTypeOemProcessorType,		.len=0x06,	.numfunc=sm_one},
+	{.type=kSMBTypeOemProcessorBusSpeed,	.len=0x06,	.numfunc=sm_one}
 };
 /* Apple known types
  enum {
  kSMBTypeBIOSInformation             =  0,
  kSMBTypeSystemInformation           =  1,
- kSMBTypeBaseBoard					=  2,
+ kSMBTypeBaseBoard					 =  2,
  kSMBTypeSystemEnclosure             =  3,
  kSMBTypeProcessorInformation        =  4,
  kSMBTypeMemoryModule                =  6,
