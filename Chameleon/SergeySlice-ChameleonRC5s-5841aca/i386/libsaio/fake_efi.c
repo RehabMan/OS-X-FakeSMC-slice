@@ -759,6 +759,7 @@ static void setupSmbiosConfigFile(const char *filename)
 	
 	if (useDMIinfoCPU && ((p->currentClock) && 
 	//	(p->currentClock > p->maximumClock) &&
+		(p->maximumClock != 3800) && (p->maximumClock != 4000) &&				  
 		(p->currentClock < 10000)))
 	{
 		verbose("Overclocked CPU from %dMHz to %dMHz\n", p->maximumClock, p->currentClock);

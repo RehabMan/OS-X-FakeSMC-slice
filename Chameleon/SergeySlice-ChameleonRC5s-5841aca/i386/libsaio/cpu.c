@@ -195,6 +195,8 @@ void scan_cpu(PlatformInfo_t *p)
 	tscFrequency = measure_tsc_frequency();
 	DBG("measure_tsc_frequency = %dMHz\n", tscFrequency / MEGA);
 //Slice - it is not FSB frequency. It is System Bus Speed: FSB = SBS * 4;	
+//crash with i7?
+#if NOTI7	
 	msr = rdmsr64(MSR_FSB_FREQ);
 	switch (msr & 7) {
 		case 0:
@@ -223,7 +225,7 @@ void scan_cpu(PlatformInfo_t *p)
 			break;
 	}
 	DBG("msr(0x%04x): MSR_FSB_FREQ %dMHz\n", MSR_FSB_FREQ, fsbFrequency/MEGA);
-	
+#endif	
 	fsbFrequency = 0;
 	cpuFrequency = 0;
 
@@ -290,16 +292,23 @@ void scan_cpu(PlatformInfo_t *p)
 		}
 		/* Mobile CPU ? */
 //Slice 
+		msr = rdmsr64(MSR_IA32_PLATFORM_ID);
+		DBG("msr(0x%04x): MSR_IA32_PLATFORM_ID 0x%08x\n", MSR_IA32_PLATFORM_ID, msr & 0xffffffff); //__LINE__ - source line number :)
+
 		p->CPU.Mobile = FALSE;
 		switch (p->CPU.Model) {
 			case 0x0D:
 				p->CPU.Mobile = TRUE; // CPU_FEATURE_MOBILE;
+				break;
+			case 0x0F:
+				p->CPU.Mobile = FALSE; // CPU_FEATURE_MOBILE;
 				break;
 			case 0x02:
 			case 0x03:
 			case 0x04:
 			case 0x06:	
 				p->CPU.Mobile = (rdmsr64(MSR_P4_EBC_FREQUENCY_ID) && (1 << 21));
+				break;
 			default:
 				p->CPU.Mobile = (rdmsr64(MSR_IA32_PLATFORM_ID) && (1<<28));
 				break;
