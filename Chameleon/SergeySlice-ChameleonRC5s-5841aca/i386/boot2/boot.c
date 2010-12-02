@@ -279,7 +279,7 @@ void common_boot(int biosdev)
 #endif
 
     // Record the device that the booter was loaded from.
-    gBIOSDev = biosdev & kBIOSDevMask;
+    gBIOSDev = biosdev & kBIOSDevMask;  // 0xff
 
     // Initialize boot info structure.
     initKernBootStruct();
@@ -351,7 +351,7 @@ void common_boot(int biosdev)
 
     gBootVolume = selectBootVolume(bvChain);
 
-#if DEBUG
+#if 1 //DEBUG
     verbose(" Default: %d, ->biosdev: %d, ->part_no: %d ->flags: %d\n", gBootVolume, gBootVolume->biosdev, gBootVolume->part_no, gBootVolume->flags);
     verbose(" bt(0,0): %d, ->biosdev: %d, ->part_no: %d ->flags: %d\n", gBIOSBootVolume, gBIOSBootVolume->biosdev, gBIOSBootVolume->part_no, gBIOSBootVolume->flags);
    // getc();
@@ -414,6 +414,13 @@ void common_boot(int biosdev)
             setBootGlobals(bvChain);
             setupDeviceList(&bootInfo->themeConfig);
           }
+#if 1 //DEBUG
+			verbose("After rescan\n");
+			verbose(" System: %d, ->biosdev: %d, ->part_no: %d ->flags: %d\n", gBootVolume, gBootVolume->biosdev, gBootVolume->part_no, gBootVolume->flags);
+			verbose(" Booter: %d, ->biosdev: %d, ->part_no: %d ->flags: %d\n", gBIOSBootVolume, gBIOSBootVolume->biosdev, gBIOSBootVolume->part_no, gBIOSBootVolume->flags);
+			// getc();
+#endif
+			
           continue;
         }
 		

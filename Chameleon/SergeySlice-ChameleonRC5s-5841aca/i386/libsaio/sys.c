@@ -96,6 +96,7 @@ static struct devsw devsw[] =
 {
     { "sd", 0x80,  kBIOSDevTypeHardDrive },  /* DEV_SD */
     { "hd", 0x80,  kBIOSDevTypeHardDrive }, /* DEV_HD */
+    { "fd", 0x00, kBIOSDevTypeFloppy    },  /* DEV_FD */
     { "en", 0xE0,  kBIOSDevTypeNetwork   }, /* DEV_EN */
     { "rd", 0x100, kBIOSDevTypeHardDrive },
     { "bt", 0x101, kBIOSDevTypeHardDrive }, // turbo - type for booter partition

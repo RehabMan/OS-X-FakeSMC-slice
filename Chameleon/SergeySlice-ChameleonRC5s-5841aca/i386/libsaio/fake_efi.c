@@ -485,9 +485,9 @@ static EFI_CHAR16* getSmbiosChar16(const char * key, size_t* len)
  * Get the SystemID from the bios dmi info
  */
 
-static	EFI_CHAR8* getSmbiosUUID()
+static	EFI_GUID * getSmbiosUUID()
 {
-	static EFI_CHAR8		 uuid[UUID_LEN];
+	static EFI_GUID		 uuid;
 	int						 i, isZero, isOnes;
 	struct SMBEntryPoint	*smbios;
 	SMBByte					*p;
@@ -513,8 +513,8 @@ static	EFI_CHAR8* getSmbiosUUID()
 		return 0;
 	}
 	
-	memcpy(uuid, p, UUID_LEN);
-	return uuid;
+	memcpy((void*)&uuid, p, UUID_LEN);
+	return &uuid;
 }
 
 /*
@@ -535,17 +535,17 @@ static EFI_GUID* getSystemID()
 	
 	if (!ret) // try bios dmi info UUID extraction
 	{
-		ret = (EFI_GUID*)getSmbiosUUID();
+		ret = getSmbiosUUID();
 		sysId = 0;
 	}
 	
 	if (!ret) {		
 // no bios dmi UUID available, set a fixed value for system-id
 //		ret=getUUIDFromString((sysId = (const char*) SYSTEM_ID));
-		ret = &SYSTEM_ID_DEFAULT;
+		ret = (EFI_GUID*)&SYSTEM_ID_DEFAULT;
 	}
 	
-	verbose("Customizing SystemID with : %s\n", getStringFromUUID((EFI_CHAR8*)ret)); // apply a nice formatting to the displayed output
+	verbose("Customizing SystemID with : %s\n", getStringFromUUID(ret)); // apply a nice formatting to the displayed output
 	
 	return ret;
 }

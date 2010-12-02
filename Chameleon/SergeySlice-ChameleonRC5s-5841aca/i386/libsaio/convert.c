@@ -8,7 +8,7 @@
 #include "convert.h"
 //Slice - LE byte order!
 /** Transform a 16 bytes hexadecimal value UUID to a string */
-const char * getStringFromUUID(const EFI_CHAR8* eUUID)
+const char * getStringFromUUID(EFI_GUID* eUUID)
 {
   static char msg[UUID_LEN*2 + 8] = "";
   if (!eUUID) return "";
