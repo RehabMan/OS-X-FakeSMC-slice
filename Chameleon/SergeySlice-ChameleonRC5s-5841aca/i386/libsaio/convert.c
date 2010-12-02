@@ -37,15 +37,21 @@ EFI_GUID*  getUUIDFromString(const char *source)
 	uuid.time_hi_and_version = strtoul(p, NULL, 16);
 	p += 4;
 	if (*p == '-' || *p==' ') p++;
-	uuid.clock_seq_hi_and_reserved = strtoul(p, NULL, 16);
+	UInt16 clock = strtoul(p, NULL, 16);
+	uuid.clock_seq_hi_and_reserved = (clock & 0xff00) >> 8;
+	uuid.clock_seq_low = clock & 0xff;
 	p += 2;
-	uuid.clock_seq_low = strtoul(p, NULL, 16);
-	p += 2;	
 	if (*p == '-' || *p==' ') p++;
+	char buf[13];
 	int i;
-	for (i=0; i<6; i++) {
-		uuid.node[i] = strtoul(p, NULL, 16);
-		p += 2;
+	for (i=0; i<12; i++) {
+		buf[i]=*p++;
+	}
+	buf[12] = '\0';
+	unsigned long long nodeID = strtoul(buf, NULL, 16);
+	for (i=6; i>=0; i--) {
+		uuid.node[i] = nodeID && 0xff;
+		nodeID >>= 8;
 	}
 	return &uuid;
 }

@@ -557,7 +557,7 @@ void setupEfiDeviceTree(void)
 	size_t		len = 0;
 	Node*		node;
 //Slice
-#if NOTYET	
+#if 1 //NOTYET	
 	char		bootName[128];
 	
 	char*		ffName;
@@ -574,15 +574,15 @@ void setupEfiDeviceTree(void)
 	if (node == 0) stop("Couldn't get root node");
 	
 //Slice create /options node
-#if NOTYET
+
 	Node* optionsNode = DT__FindNode("/options", true);
 	// this information can be obtained from DMI Type 0
 	SMBByte* p = (SMBByte*)FindFirstDmiTableOfType(0, 0x18);
 	FirmwareFeatures = malloc(sizeof(SMBByte));
 	//TODO - the bufferFF must be composed from bits p[0x12] and [0x13]. Datasheet needed
 	*FirmwareFeatures = ((p[19] >> 1) & 1)  //USB Legacy is supported
-					  | ((p[18] >> 15) & 2) //Selectable Boot is supported
-					  | 0x14; //default for bless
+					  | ((p[18] >> 14) & 2) //Boot from CD is supported
+					  | 0x14; //default for bless (GUID partition)
 
 	sprintf(bootName, "%s:FirmwareFeatures", kBL_APPLE_VENDOR_NVRAM_GUID);
 	ffName = malloc(sizeof(bootName)+1);
@@ -609,7 +609,7 @@ void setupEfiDeviceTree(void)
 	
 	//can we add here boot-properties?
 //	optionsNode = DT__FindNode("chosen", true);
-
+#if NOTYET
     int lbC = 0;
     while(((char*)&bootInfo->bootConfig)[lbC++]);
     if (lbC > sizeof(bootInfo->bootConfig)) lbC = sizeof(bootInfo->bootConfig);

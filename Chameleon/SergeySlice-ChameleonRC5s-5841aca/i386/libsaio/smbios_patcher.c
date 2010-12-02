@@ -6,6 +6,7 @@
 #include "boot.h"
 #include "bootstruct.h"
 #include "acpi.h"
+#include "convert.h"
 #include "efi_tables.h"
 #include "fake_efi.h"
 #include "platform.h"
@@ -799,10 +800,13 @@ static void smbios_real_run(struct SMBEntryPoint * origsmbios, struct SMBEntryPo
 						if (getValueForKey(altname, &str, &size, &bootInfo->smbiosConfig) ||
 						    getValueForKey(smbios_properties[j].name, &str, &size, &bootInfo->smbiosConfig))
 						{
-							int		k=0, t=0, kk=0;
-							const char	*ptr = str;
+							//int		k=0, t=0, kk=0;
+							//const char	*ptr = str;
 							verbose("Set SMUUID to %s\n", str);
-							memset(((char*)newcur) + smbios_properties[j].offset, 0, 16);
+							//memset(((char*)newcur) + smbios_properties[j].offset, 0, 16);
+							EFI_GUID* p = getUUIDFromString(str);
+							memcpy(((char*)newcur) + smbios_properties[j].offset, p, 16);
+							/*
 							while (ptr-str<size && *ptr && (*ptr==' ' || *ptr=='\t' || *ptr=='\n')) {
 								ptr++;
 							}
@@ -829,6 +833,7 @@ static void smbios_real_run(struct SMBEntryPoint * origsmbios, struct SMBEntryPo
 									t = 0;
 								}
 							}
+							 */
 						}
 						break;
 
@@ -920,6 +925,9 @@ static void smbios_real_run(struct SMBEntryPoint * origsmbios, struct SMBEntryPo
 						if (getValueForKey(altname, &str, &size, &bootInfo->smbiosConfig) ||
 						    getValueForKey(smbios_properties[j].name, &str, &size, &bootInfo->smbiosConfig))
 						{
+							EFI_GUID* p = getUUIDFromString(str);
+							memcpy(((char*)newcur) + smbios_properties[j].offset, p, 16);
+/*
 							int		k=0, t=0, kk=0;
 							const char	*ptr = str;
 							verbose("Set SMUUID to %s\n", str);
@@ -951,6 +959,7 @@ static void smbios_real_run(struct SMBEntryPoint * origsmbios, struct SMBEntryPo
 									t = 0;
 								}
 							}
+ */
 						}
 						break;
 						

@@ -772,7 +772,7 @@ int readdir_ext(struct dirstuff * dirp, const char ** name, long * flags,
 const char * systemConfigDir()
 {
     if (gBootFileType == kNetworkDeviceType)
-	return "";
+		return "";
     return "/Library/Preferences/SystemConfiguration";
 }
 
@@ -882,7 +882,7 @@ BVRef selectBootVolume( BVRef chain )
 	
 	
 	/*
-	 * Use the standrad method for selecting the boot volume.
+	 * Use the standard method for selecting the boot volume.
 	 */
 	if (foundPrimary)
 	{
