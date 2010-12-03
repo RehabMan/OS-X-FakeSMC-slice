@@ -815,15 +815,17 @@ void scanDisks(int biosdev, int *count)
 		scanBootVolumes(0x80 + hd, &bvCount);
 		hd++;
 	}
-
+	msglog("Rescan found %d HDD and bvCount=%d\n", hd, bvCount);
   // Also scanning CD/DVD drive.
 	if (biosDevIsCDROM(gBIOSDev))
 	{
 		bvCount = 0;
 		scanBootVolumes(gBIOSDev, &bvCount);
+		msglog("biosDevIsCDROM and bvCount=%d\n", bvCount);
 	}
 	
 	*count = bvCount; //Slice - !
+	
 }
 
 //==========================================================================

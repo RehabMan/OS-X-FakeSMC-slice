@@ -587,12 +587,12 @@ void setupEfiDeviceTree(void)
 	sprintf(bootName, "%s:FirmwareFeatures", kBL_APPLE_VENDOR_NVRAM_GUID);
 	ffName = malloc(sizeof(bootName)+1);
 	strcpy(ffName, bootName);
-	DT__AddProperty(optionsNode, ffName, sizeof(uint32_t), (char *)FirmwareFeatures); //legacy support
+//	DT__AddProperty(optionsNode, ffName, sizeof(uint32_t), (char *)FirmwareFeatures); //legacy support
 	
 	sprintf(bootName, "%s:FirmwareFeaturesMask", kBL_APPLE_VENDOR_NVRAM_GUID);
 	ffmName = malloc(sizeof(bootName)+1);
 	strcpy(ffmName, bootName);	
-	DT__AddProperty(optionsNode, ffmName, sizeof(uint32_t), (EFI_UINT32*)&FIRMWARE_FEATURE_MASK); 	
+//	DT__AddProperty(optionsNode, ffmName, sizeof(uint32_t), (EFI_UINT32*)&FIRMWARE_FEATURE_MASK); 	
 
 	//TODO - check, validate and fill by bvr structure.
 	//here I am not sure what is BootOrder: node or property?
@@ -600,12 +600,12 @@ void setupEfiDeviceTree(void)
 	sprintf(bootName, "%s:BootOrder", kBL_GLOBAL_NVRAM_GUID);
 	boName = malloc(sizeof(bootName)+1);
 	strcpy(boName, bootName);		
-	DT__AddProperty(optionsNode, boName, sizeof(uint32_t), (EFI_UINT32*)&STATIC_ZERO);	
+//	DT__AddProperty(optionsNode, boName, sizeof(uint32_t), (EFI_UINT32*)&STATIC_ZERO);	
 
 	sprintf(bootName, "%s:Boot%04hx", kBL_GLOBAL_NVRAM_GUID, bootOptionNumber);
 	bnName = malloc(sizeof(bootName)+1);
 	strcpy(bnName, bootName);			
-	DT__AddProperty(optionsNode, bnName, sizeof(uint32_t), (EFI_UINT32*)&STATIC_ZERO); 
+//	DT__AddProperty(optionsNode, bnName, sizeof(uint32_t), (EFI_UINT32*)&STATIC_ZERO); 
 	
 	//can we add here boot-properties?
 //	optionsNode = DT__FindNode("chosen", true);
@@ -697,7 +697,7 @@ void setupEfiDeviceTree(void)
 		DT__AddProperty(efiPlatformNode, MODEL_PROP, len, ret16);
 	
 	// Fill /efi/device-properties node.
-//	setupDeviceProperties(node);
+	setupDeviceProperties(node);
 }
 
 /*

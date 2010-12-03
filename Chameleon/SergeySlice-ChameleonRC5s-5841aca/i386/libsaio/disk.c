@@ -1631,13 +1631,13 @@ BVRef newFilteredBVChain(int minBIOSDev, int maxBIOSDev, unsigned int allowFlags
     }
   }
 
-#if DEBUG
+#if 1 // DEBUG
   for (bvr = chain; bvr; bvr = bvr->next)
   {
-    printf(" bvr: %d, dev: %d, part: %d, flags: %d, vis: %d\n", bvr, bvr->biosdev, bvr->part_no, bvr->flags, bvr->visible);
+    msglog(" bvr: %x, dev: %x, part: %d, flags: %x, vis: %d\n", bvr, bvr->biosdev, bvr->part_no, bvr->flags, bvr->visible);
   }
-  printf("count: %d\n", bvCount);
-  getc();
+  msglog("count: %d\n", bvCount);
+ // getc();
 #endif
 
   *count = bvCount;

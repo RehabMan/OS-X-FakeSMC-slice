@@ -15,7 +15,7 @@
 extern struct DevPropString *string;
 extern uint8_t *stringdata;
 extern uint32_t stringlength;
-#if USEEFISTRINGS
+#if 1 //USEEFISTRINGS
 extern void setupDeviceProperties(Node *node);
 #endif
 struct ACPIDevPath {

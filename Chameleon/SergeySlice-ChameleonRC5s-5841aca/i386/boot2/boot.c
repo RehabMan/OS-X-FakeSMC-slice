@@ -352,8 +352,8 @@ void common_boot(int biosdev)
     gBootVolume = selectBootVolume(bvChain);
 
 #if 1 //DEBUG
-    verbose(" Default: %d, ->biosdev: %d, ->part_no: %d ->flags: %d\n", gBootVolume, gBootVolume->biosdev, gBootVolume->part_no, gBootVolume->flags);
-    verbose(" bt(0,0): %d, ->biosdev: %d, ->part_no: %d ->flags: %d\n", gBIOSBootVolume, gBIOSBootVolume->biosdev, gBIOSBootVolume->part_no, gBIOSBootVolume->flags);
+    verbose(" Default: %x, ->biosdev: %x, ->part_no: %d ->flags: %x\n", gBootVolume, gBootVolume->biosdev, gBootVolume->part_no, gBootVolume->flags);
+    verbose(" bt(0,0): %x, ->biosdev: %x, ->part_no: %d ->flags: %x\n", gBIOSBootVolume, gBIOSBootVolume->biosdev, gBIOSBootVolume->part_no, gBIOSBootVolume->flags);
    // getc();
 #endif
 
@@ -416,8 +416,8 @@ void common_boot(int biosdev)
           }
 #if 1 //DEBUG
 			verbose("After rescan\n");
-			verbose(" System: %d, ->biosdev: %d, ->part_no: %d ->flags: %d\n", gBootVolume, gBootVolume->biosdev, gBootVolume->part_no, gBootVolume->flags);
-			verbose(" Booter: %d, ->biosdev: %d, ->part_no: %d ->flags: %d\n", gBIOSBootVolume, gBIOSBootVolume->biosdev, gBIOSBootVolume->part_no, gBIOSBootVolume->flags);
+			verbose(" System: %x, ->biosdev: %x, ->part_no: %d ->flags: %x\n", gBootVolume, gBootVolume->biosdev, gBootVolume->part_no, gBootVolume->flags);
+			verbose(" Booter: %x, ->biosdev: %x, ->part_no: %d ->flags: %x\n", gBIOSBootVolume, gBIOSBootVolume->biosdev, gBIOSBootVolume->part_no, gBIOSBootVolume->flags);
 			// getc();
 #endif
 			

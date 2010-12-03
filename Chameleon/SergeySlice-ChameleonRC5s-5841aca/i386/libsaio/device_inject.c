@@ -28,7 +28,7 @@ uint32_t builtin_set = 0;
 struct DevPropString *string = 0;
 uint8_t *stringdata = 0;
 uint32_t stringlength = 0;
-#if USEEFISTRINGS
+#if 1 //USEEFISTRINGS
 char *efi_inject_get_devprop_string(uint32_t *len)
 {
 	if(string)
@@ -36,7 +36,7 @@ char *efi_inject_get_devprop_string(uint32_t *len)
 		*len = string->length;
 		return devprop_generate_string(string);
 	}
-	verbose("efi_inject_get_devprop_string NULL trying stringdata\n");
+	//verbose("efi_inject_get_devprop_string NULL trying stringdata\n");
 	return NULL;
 }
 
@@ -50,7 +50,7 @@ void setupDeviceProperties(Node *node)
 
   /* Generate devprop string.
    */
-  uint32_t strlength;
+  uint32_t strlength = 0;
   char *string = efi_inject_get_devprop_string(&strlength);
 
   /* Use the static "device-properties" boot config key contents if available,
