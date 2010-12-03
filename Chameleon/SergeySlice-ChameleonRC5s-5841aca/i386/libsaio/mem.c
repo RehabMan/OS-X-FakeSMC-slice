@@ -188,7 +188,7 @@ bool scanDMI(void)
 	for (dmihdr = FindFirstDmiTableOfType(3, 13); dmihdr; dmihdr = FindNextDmiTableOfType(3, 13)) 
 	{
 		encInfo = (struct DMISystemEnclosure*)dmihdr;
-		msglog("DMI Chassis Info:\n Type=%x\n Boot-up State=%x\n Power Supply=%x Thermal State\n", encInfo->type, encInfo->bootupState, encInfo->powerSupplyState, encInfo->thermalState);
+		msglog("DMI Chassis Info:\n Type=%x\n Boot-up State=%x\n Power Supply=%x Thermal State=%x\n", encInfo->type, encInfo->bootupState, encInfo->powerSupplyState, encInfo->thermalState);
 		switch (encInfo->type) {
 			case 1:
 			case 2:

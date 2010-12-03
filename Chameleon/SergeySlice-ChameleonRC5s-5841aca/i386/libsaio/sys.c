@@ -96,7 +96,7 @@ static struct devsw devsw[] =
 {
     { "sd", 0x80,  kBIOSDevTypeHardDrive },  /* DEV_SD */
     { "hd", 0x80,  kBIOSDevTypeHardDrive }, /* DEV_HD */
-    { "fd", 0x00, kBIOSDevTypeFloppy    },  /* DEV_FD */
+//    { "fd", 0x00, kBIOSDevTypeFloppy    },  /* DEV_FD */
     { "en", 0xE0,  kBIOSDevTypeNetwork   }, /* DEV_EN */
     { "rd", 0x100, kBIOSDevTypeHardDrive },
     { "bt", 0x101, kBIOSDevTypeHardDrive }, // turbo - type for booter partition
@@ -870,8 +870,8 @@ BVRef selectBootVolume( BVRef chain )
 	 */
 	for ( bvr = chain; bvr; bvr = bvr->next )
 	{
-		msglog("scanning chain: biosdev=%d type=0x%x flags=0x%x part_no=%d\n",
-			   bvr->biosdev, bvr->type, bvr->flags, bvr->part_no);
+//		msglog("scanning chain: biosdev=%d type=0x%x flags=0x%x part_no=%d\n",
+//			   bvr->biosdev, bvr->type, bvr->flags, bvr->part_no);
 		if ( bvr->flags & kBVFlagPrimary && bvr->biosdev == gBIOSDev ) foundPrimary = true;
 		// zhell -- Undo a regression that was introduced from r491 to 492.
 		// if gBIOSBootVolume is set already, no change is required
