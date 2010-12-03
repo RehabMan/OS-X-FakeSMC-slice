@@ -4,7 +4,7 @@
  */
 
 #include "libsaio.h"
-#include "platform.h"
+#include "mem.h"
 #include "cpu.h"
 
 #ifndef DEBUG_CPU
@@ -294,29 +294,31 @@ void scan_cpu(PlatformInfo_t *p)
 //Slice 
 		msr = rdmsr64(MSR_IA32_PLATFORM_ID);
 		DBG("msr(0x%04x): MSR_IA32_PLATFORM_ID 0x%08x\n", MSR_IA32_PLATFORM_ID, msr & 0xffffffff); //__LINE__ - source line number :)
-
-		p->CPU.Mobile = FALSE;
-		switch (p->CPU.Model) {
-			case 0x0D:
-				p->CPU.Mobile = TRUE; // CPU_FEATURE_MOBILE;
-				break;
-			case 0x0F:
-				p->CPU.Mobile = FALSE; // CPU_FEATURE_MOBILE;
-				break;
-			case 0x02:
-			case 0x03:
-			case 0x04:
-			case 0x06:	
-				p->CPU.Mobile = (rdmsr64(MSR_P4_EBC_FREQUENCY_ID) && (1 << 21));
-				break;
-			default:
-				p->CPU.Mobile = (rdmsr64(MSR_IA32_PLATFORM_ID) && (1<<28));
-				break;
-		}
-		if (p->CPU.Mobile) {
-			p->CPU.Features |= CPU_FEATURE_MOBILE;
+		if (!scanDMI() && msr) {
+			p->CPU.Mobile = FALSE;
+			switch (p->CPU.Model) {
+				case 0x0D:
+					p->CPU.Mobile = TRUE; // CPU_FEATURE_MOBILE;
+					break;
+				case 0x0F:
+					p->CPU.Mobile = FALSE; // CPU_FEATURE_MOBILE;
+					break;
+				case 0x02:
+				case 0x03:
+				case 0x04:
+				case 0x06:	
+					p->CPU.Mobile = (rdmsr64(MSR_P4_EBC_FREQUENCY_ID) && (1 << 21));
+					break;
+				default:
+					p->CPU.Mobile = (rdmsr64(MSR_IA32_PLATFORM_ID) && (1<<28));
+					break;
+			}
+			if (p->CPU.Mobile) {
+				p->CPU.Features |= CPU_FEATURE_MOBILE;
+			}
 		}
 		DBG("CPU is %s\n", p->CPU.Mobile?"Mobile":"Desktop");
+			
 	}
 #if 0
 	else if((p->CPU.Vendor == 0x68747541 /* AMD */) && (p->CPU.Family == 0x0f)) {

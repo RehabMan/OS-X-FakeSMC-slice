@@ -192,7 +192,7 @@ enum {
 //
 
 struct DMISystemEnclosure {
-    struct DMIHeader	dmiHeader;             // Type 3
+    struct DMIHeader	dmiHeader;             // Type 3 len=13
     SMBString  manufacturer;
     SMBByte    type;
     SMBString  version;
@@ -232,6 +232,10 @@ struct DMIProcessorInformation {
     SMBString  serialNumber;
     SMBString  assetTag;
     SMBString  partNumber;
+	// 2.5+ spec  (38 bytes)
+	SMBByte		coreCount;
+	SMBByte		coreEnabled;
+	SMBByte		Threads;
 } __attribute__((packed));
 
 #define kSMBProcessorInformationMinSize     26

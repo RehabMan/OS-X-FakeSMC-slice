@@ -168,8 +168,49 @@ void scan_cpu_DMI(void) //PlatformInfo_t *p)
 		}
 #endif
 		msglog("DMI CPU Info:\n FSB=%d\n MaxSpeed=%d\n CurrentSpeed=%d\n", cpuInfo->externalClock, cpuInfo->maximumClock, cpuInfo->currentClock);
+		msglog("DMI CPU Info:\n Family=%x\n Socket=%x\n Cores=%d Enabled=%d Threads=%d\n", cpuInfo->processorFamily, cpuInfo->processorUpgrade, cpuInfo->coreCount, cpuInfo->coreEnabled, cpuInfo->Threads);
+#if NOTYET
+		Platform.CPU.NoCores = cpuInfo->coreCount;
+		Platform.CPU.NoThreads = cpuInfo->Threads;
+#endif
+		
 		return;
 	}
 
 	return;
+}
+//Slice - check other DMI info
+bool scanDMI(void)
+{
+	struct DMIHeader * dmihdr = NULL;    
+    struct DMISystemEnclosure* encInfo; // Type 3
+
+	for (dmihdr = FindFirstDmiTableOfType(3, 13); dmihdr; dmihdr = FindNextDmiTableOfType(3, 13)) 
+	{
+		encInfo = (struct DMISystemEnclosure*)dmihdr;
+		msglog("DMI Chassis Info:\n Type=%x\n Boot-up State=%x\n Power Supply=%x Thermal State\n", encInfo->type, encInfo->bootupState, encInfo->powerSupplyState, encInfo->thermalState);
+		switch (encInfo->type) {
+			case 1:
+			case 2:
+				return FALSE;
+			case 3:
+			case 4:
+			case 6:
+			case 7:
+				Platform.CPU.Mobile = FALSE;
+				break;
+			case 8:
+			case 9:
+			case 0x0A:
+			case 0x0B:				
+			case 0x0E:
+				Platform.CPU.Mobile = TRUE;
+				break;
+				
+			default:
+				break;
+		}
+		return TRUE;
+	}
+	return FALSE;	
 }

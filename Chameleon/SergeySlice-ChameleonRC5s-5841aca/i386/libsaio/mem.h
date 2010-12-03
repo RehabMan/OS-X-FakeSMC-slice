@@ -11,6 +11,7 @@
 
 extern void scan_memory(void); //PlatformInfo_t *);
 extern void scan_cpu_DMI(void); //PlatformInfo_t *); //Slice
+extern bool scanDMI(void);
 
 
 #endif	/* __LIBSAIO_MEM_H */
