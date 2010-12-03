@@ -321,7 +321,7 @@ void common_boot(int biosdev)
     loadPrebootRAMDisk();
 
     // Disable rescan option by default
-    gEnableCDROMRescan = true; //Slice - change to true
+    gEnableCDROMRescan = false; //Slice - change to true
 
     // Enable it with Rescan=y in system config
     if (getBoolForKey(kRescanKey, &gEnableCDROMRescan, &bootInfo->bootConfig) && gEnableCDROMRescan) {

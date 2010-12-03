@@ -489,11 +489,11 @@ static	EFI_GUID * getSmbiosUUID()
 {
 	static EFI_GUID		 uuid;
 	int						 i, isZero, isOnes;
-	struct SMBEntryPoint	*smbios;
+//	struct SMBEntryPoint	*smbios;
 	SMBByte					*p;
 	
-	smbios = getSmbios(SMBIOS_PATCHED); // checks for _SM_ anchor and table header checksum
-	if (smbios==NULL) return 0; // getSmbios() return a non null value if smbios is found
+//	smbios = getSmbios(SMBIOS_PATCHED); // checks for _SM_ anchor and table header checksum
+//	if (smbios==NULL) return 0; // getSmbios() return a non null value if smbios is found
 	
 	p = (SMBByte*) FindFirstDmiTableOfType(1, 0x19); // Type 1: (3.3.2) System Information
 	if (p==NULL) return NULL;
@@ -587,12 +587,12 @@ void setupEfiDeviceTree(void)
 	sprintf(bootName, "%s:FirmwareFeatures", kBL_APPLE_VENDOR_NVRAM_GUID);
 	ffName = malloc(sizeof(bootName)+1);
 	strcpy(ffName, bootName);
-//	DT__AddProperty(optionsNode, ffName, sizeof(uint32_t), (char *)FirmwareFeatures); //legacy support
+	DT__AddProperty(optionsNode, ffName, sizeof(uint32_t), (char *)FirmwareFeatures); //legacy support
 	
 	sprintf(bootName, "%s:FirmwareFeaturesMask", kBL_APPLE_VENDOR_NVRAM_GUID);
 	ffmName = malloc(sizeof(bootName)+1);
 	strcpy(ffmName, bootName);	
-//	DT__AddProperty(optionsNode, ffmName, sizeof(uint32_t), (EFI_UINT32*)&FIRMWARE_FEATURE_MASK); 	
+	DT__AddProperty(optionsNode, ffmName, sizeof(uint32_t), (EFI_UINT32*)&FIRMWARE_FEATURE_MASK); 	
 
 	//TODO - check, validate and fill by bvr structure.
 	//here I am not sure what is BootOrder: node or property?
@@ -600,12 +600,12 @@ void setupEfiDeviceTree(void)
 	sprintf(bootName, "%s:BootOrder", kBL_GLOBAL_NVRAM_GUID);
 	boName = malloc(sizeof(bootName)+1);
 	strcpy(boName, bootName);		
-//	DT__AddProperty(optionsNode, boName, sizeof(uint32_t), (EFI_UINT32*)&STATIC_ZERO);	
+	DT__AddProperty(optionsNode, boName, sizeof(uint32_t), (EFI_UINT32*)&STATIC_ZERO);	
 
 	sprintf(bootName, "%s:Boot%04hx", kBL_GLOBAL_NVRAM_GUID, bootOptionNumber);
 	bnName = malloc(sizeof(bootName)+1);
 	strcpy(bnName, bootName);			
-//	DT__AddProperty(optionsNode, bnName, sizeof(uint32_t), (EFI_UINT32*)&STATIC_ZERO); 
+	DT__AddProperty(optionsNode, bnName, sizeof(uint32_t), (EFI_UINT32*)&STATIC_ZERO); 
 	
 	//can we add here boot-properties?
 //	optionsNode = DT__FindNode("chosen", true);
@@ -748,7 +748,8 @@ static void setupSmbiosConfigFile(const char *filename)
 		scan_cpu_DMI(); //&Platform);
 	}
 	// PM_Model
-	if ((Platform.CPU.Features & CPU_FEATURE_MOBILE)) {
+//	if ((Platform.CPU.Features & CPU_FEATURE_MOBILE)) {
+	if ((Platform.CPU.Mobile)) {
 		Platform.Type = 2;
 	} else {
 		Platform.Type = 1;
@@ -759,7 +760,7 @@ static void setupSmbiosConfigFile(const char *filename)
 	
 	if (useDMIinfoCPU && ((p->currentClock) && 
 	//	(p->currentClock > p->maximumClock) &&
-		(p->maximumClock != 3800) && (p->maximumClock != 4000) &&				  
+	//	(p->maximumClock != 3800) && (p->maximumClock != 4000) &&				  
 		(p->currentClock < 10000)))
 	{
 		verbose("Overclocked CPU from %dMHz to %dMHz\n", p->maximumClock, p->currentClock);
@@ -773,7 +774,7 @@ static void setupSmbiosConfigFile(const char *filename)
 
 static void setupEfiConfigurationTable()
 {
-	smbios_p = (EFI_PTR32)getSmbios(SMBIOS_PATCHED);
+//	smbios_p = (EFI_PTR32)getSmbios(SMBIOS_PATCHED);
 	addConfigurationTable(&gEfiSmbiosTableGuid, &smbios_p, NULL);
 	
 	// Setup ACPI with DSDT overrides (mackerintel's patch)

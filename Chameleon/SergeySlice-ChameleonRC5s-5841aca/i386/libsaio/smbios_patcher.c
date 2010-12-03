@@ -52,7 +52,7 @@ static const SMStrEntryPair const sm_macbook_defaults[]={
 	{"SMfamily",		"MacBook"						},
 	{"SMboardmanufacter","Apple Inc."					},
 	{"SMboardproduct",	"Mac-F42D89C8"					},
-	{"SMUUID"	, "C3D73A74-809A-4804-A747-DDB934A737D0"},
+	{"SMUUID"	, "19422392-C343-106B-80A3-001F0A6C3E52"},
 	{ "",""	}
 };
 
@@ -68,7 +68,7 @@ static const SMStrEntryPair const sm_macbookpro_defaults[]={
 	{"SMfamily",		"MacBookPro"					},
 	{"SMboardmanufacter","Apple Inc."					},
 	{"SMboardproduct",	"Mac-F42D89C8"					},
-	{"SMUUID"	, "862F78AF-9B36-50AF-B67A-ABBA8C14A528"},
+	{"SMUUID"	, "862F78AF-9B36-106B-807A-00BA8C14A528"},
 	{ "",""	}
 };
 
@@ -84,7 +84,7 @@ static const SMStrEntryPair const sm_macmini_defaults[]={
 	{"SMfamily",		"Napa Mac"						},
 	{"SMboardmanufacter","Apple Inc."					},
 	{"SMboardproduct",	"Mac-F4208EAA"					},
-	{"SMUUID"	, "862F78AF-9B36-50AF-B67A-ABBA8C14A528"},
+	{"SMUUID"	, "862F78AF-9B36-40AF-B67A-ABBA8C14A528"},
 	{ "",""	}
 };
 
@@ -100,7 +100,7 @@ static const SMStrEntryPair const sm_imac_defaults[]={
 	{"SMfamily",		"Mac"							},
 	{"SMboardmanufacter",	"Apple Inc."				},
 	{"SMboardproduct",	"Mac-F227BEC8"					},
-	{"SMUUID"	, "862F78AF-9B36-50AF-B67A-ABBA8C14A528"},
+	{"SMUUID"	, "862F78AF-9B36-40AF-B67A-ABBA8C14A528"},
 	{ "",""	}
 };
 
@@ -116,7 +116,7 @@ static const SMStrEntryPair const sm_macpro_defaults[]={
 	{"SMfamily",			"MacPro"						},
 	{"SMboardmanufacter",	"Apple Computer, Inc."			},
 	{"SMboardproduct",		"Mac-F4208DC8"					},
-	{"SMUUID"	, "862F78AF-9B36-50AF-B67A-ABBA8C14A528"},
+	{"SMUUID"	, "862F78AF-9B36-40AF-B67A-ABBA8C14A528"},
 	{ "",""	}
 };
 
@@ -132,7 +132,7 @@ static const SMStrEntryPair const sm_imac_core_defaults[]={
 	{"SMfamily",			"iMac"							},
 	{"SMboardmanufacter",	"Apple Computer, Inc."			},
 	{"SMboardproduct",		"Mac-F2268DAE"					},
-	{"SMUUID"	, "862F78AF-9B36-50AF-B67A-ABBA8C14A528"},
+	{"SMUUID"	, "862F78AF-9B36-40AF-B67A-ABBA8C14A528"},
 	{ "",""	}
 };
 #if NEVER_USE_MACPRO41
@@ -148,7 +148,7 @@ static const SMStrEntryPair const sm_macpro_core_defaults[]={
 	{"SMfamily",			"MacPro"						},
 	{"SMboardmanufacter",	"Apple Computer, Inc."			},
 	{"SMboardproduct",		"Mac-F4208DC8"					},
-	{"SMUUID"	, "862F78AF-9B36-50AF-B67A-ABBA8C14A528"},
+	{"SMUUID"	, "862F78AF-9B36-40AF-B67A-ABBA8C14A528"},
 	{ "",""	}
 };
 #endif
@@ -184,8 +184,8 @@ static const char* sm_get_defstr(const char * key, int table_num)
 							case CPU_MODEL_DALES: // Intel Core i5, i7 LGA1156 (45nm) ???
 							case CPU_MODEL_DALES_32NM: // Intel Core i3, i5, i7 LGA1156 (32nm) (Clarkdale, Arrandale)
 							case 0x19: // Intel Core i5 650 @3.20 Ghz 
-								sm_defaults=sm_imac_defaults; 
-								break;
+						//		sm_defaults=sm_imac_defaults; 
+						//		break;
 							case CPU_MODEL_NEHALEM: 
 							case CPU_MODEL_NEHALEM_EX:
 							case CPU_MODEL_WESTMERE: 

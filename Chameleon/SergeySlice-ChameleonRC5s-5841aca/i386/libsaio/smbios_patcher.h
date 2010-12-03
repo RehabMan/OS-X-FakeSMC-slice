@@ -13,6 +13,7 @@
 
 extern char MacModel[8];
 extern unsigned int ModelRev;
+extern uint64_t smbios_p;
 
 
 /* From Foundation/Efi/Guid/Smbios/SmBios.h */

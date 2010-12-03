@@ -985,9 +985,9 @@ int getBootOptions(bool firstRun)
 			// New behavior:
 			// Clear gBootVolume to restart the loop
 			// if the user enabled rescanning the optical drive.
-			// Otherwise boot the default boot volume.
+			// Otherwise boot the default boot volume.				
 			if (gEnableCDROMRescan) {
-				gBootVolume = NULL;
+				gBootVolume = NULL;//Slice -????
 				clearBootArgs();
 			}
 			break;

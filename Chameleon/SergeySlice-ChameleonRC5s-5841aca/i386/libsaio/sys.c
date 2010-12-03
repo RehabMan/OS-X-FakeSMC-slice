@@ -839,9 +839,12 @@ BVRef selectBootVolume( BVRef chain )
 	if (chain->filtered) filteredChain = true;
 	
 	if (multiboot_partition_set)
-		for ( bvr = chain; bvr; bvr = bvr->next )
-			if ( bvr->part_no == multiboot_partition && bvr->biosdev == gBIOSDev ) 
+		for ( bvr = chain; bvr; bvr = bvr->next ){
+			msglog("Check muiltiboot: biosdev=%d type=0x%x flags=0x%x part_no=%d\n",
+				   bvr->biosdev, bvr->type, bvr->flags, bvr->part_no);
+			if ( bvr->part_no == multiboot_partition && bvr->biosdev == gBIOSDev ) 				
 				return bvr;
+			}
 	
 	/*
 	 * Checking "Default Partition" key in system configuration - use format: hd(x,y), the volume UUID or label -
@@ -867,6 +870,8 @@ BVRef selectBootVolume( BVRef chain )
 	 */
 	for ( bvr = chain; bvr; bvr = bvr->next )
 	{
+		msglog("scanning chain: biosdev=%d type=0x%x flags=0x%x part_no=%d\n",
+			   bvr->biosdev, bvr->type, bvr->flags, bvr->part_no);
 		if ( bvr->flags & kBVFlagPrimary && bvr->biosdev == gBIOSDev ) foundPrimary = true;
 		// zhell -- Undo a regression that was introduced from r491 to 492.
 		// if gBIOSBootVolume is set already, no change is required
@@ -894,6 +899,7 @@ BVRef selectBootVolume( BVRef chain )
 			if ( bvr->flags & kBVFlagNativeBoot && bvr->biosdev == gBIOSDev ) bvr1 = bvr;
 			if ( bvr->flags & kBVFlagPrimary && bvr->biosdev == gBIOSDev )    bvr2 = bvr;
 		}
+		msglog("foundPrimary and flags bvr1=%x bvr2=%x\n", bvr1->flags, bvr2->flags);
 	}
 	
 	bvr = bvr2 ? bvr2 :
