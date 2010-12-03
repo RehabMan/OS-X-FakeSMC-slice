@@ -42,16 +42,20 @@ EFI_GUID*  getUUIDFromString(const char *source)
 	uuid.clock_seq_low = clock & 0xff;
 	p += 2;
 	if (*p == '-' || *p==' ') p++;
-	char buf[13];
+	char	buf[3];
 	int i;
-	for (i=0; i<12; i++) {
-		buf[i]=*p++;
-	}
-	buf[12] = '\0';
-	unsigned long long nodeID = strtoul(buf, NULL, 16);
-	for (i=6; i>=0; i--) {
-		uuid.node[i] = nodeID && 0xff;
-		nodeID >>= 8;
+	buf[2] = '\0';
+	for (i=0; i<6; i++) {
+		if (p[0] == '\0' || p[1] == '\0' || !isxdigit(p[0]) || !isxdigit(p[1])) {
+			verbose("[ERROR] UUID='%s' syntax error\n", source);
+			return 0;
+		}
+		buf[0] = *p++;
+		buf[1] = *p++;
+		uuid.node[i] = (unsigned char) strtoul(buf, NULL, 16);
+		if (*p == '-' && (i % 2) == 1 && i < 6) {
+			p++;
+		}
 	}
 	return &uuid;
 }
