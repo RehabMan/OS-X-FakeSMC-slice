@@ -40,7 +40,7 @@ EFI_GUID*  getUUIDFromString(const char *source)
 	UInt16 clock = strtoul(p, NULL, 16);
 	uuid.clock_seq_hi_and_reserved = (clock & 0xff00) >> 8;
 	uuid.clock_seq_low = clock & 0xff;
-	p += 2;
+	p += 4;
 	if (*p == '-' || *p==' ') p++;
 	char	buf[3];
 	int i;
