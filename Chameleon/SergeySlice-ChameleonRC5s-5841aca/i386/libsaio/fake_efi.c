@@ -58,6 +58,7 @@ extern void setup_pci_devs(pci_dt_t *pci_dt);
  static const char const FIRMWARE_VENDOR_PROP[] = "firmware-vendor";
  static const char const FIRMWARE_ABI_32_PROP_VALUE[] = "EFI32";
  static const char const FIRMWARE_ABI_64_PROP_VALUE[] = "EFI64";
+ static const char const PLATFORM_UUID[] = "platform-uuid"; 
  static const char const SYSTEM_ID_PROP[] = "system-id";
  static const char const SYSTEM_SERIAL_PROP[] = "SystemSerialNumber";
  static const char const SYSTEM_TYPE_PROP[] = "system-type";
@@ -587,12 +588,12 @@ void setupEfiDeviceTree(void)
 	sprintf(bootName, "%s:FirmwareFeatures", kBL_APPLE_VENDOR_NVRAM_GUID);
 	ffName = malloc(sizeof(bootName)+1);
 	strcpy(ffName, bootName);
-	DT__AddProperty(optionsNode, ffName, sizeof(uint32_t), (char *)FirmwareFeatures); //legacy support
+//	DT__AddProperty(optionsNode, ffName, sizeof(uint32_t), (char *)FirmwareFeatures); //legacy support
 	
 	sprintf(bootName, "%s:FirmwareFeaturesMask", kBL_APPLE_VENDOR_NVRAM_GUID);
 	ffmName = malloc(sizeof(bootName)+1);
 	strcpy(ffmName, bootName);	
-	DT__AddProperty(optionsNode, ffmName, sizeof(uint32_t), (EFI_UINT32*)&FIRMWARE_FEATURE_MASK); 	
+//	DT__AddProperty(optionsNode, ffmName, sizeof(uint32_t), (EFI_UINT32*)&FIRMWARE_FEATURE_MASK); 	
 
 	//TODO - check, validate and fill by bvr structure.
 	//here I am not sure what is BootOrder: node or property?
@@ -600,12 +601,12 @@ void setupEfiDeviceTree(void)
 	sprintf(bootName, "%s:BootOrder", kBL_GLOBAL_NVRAM_GUID);
 	boName = malloc(sizeof(bootName)+1);
 	strcpy(boName, bootName);		
-	DT__AddProperty(optionsNode, boName, sizeof(uint32_t), (EFI_UINT32*)&STATIC_ZERO);	
+//	DT__AddProperty(optionsNode, boName, sizeof(uint32_t), (EFI_UINT32*)&STATIC_ZERO);	
 
 	sprintf(bootName, "%s:Boot%04hx", kBL_GLOBAL_NVRAM_GUID, bootOptionNumber);
 	bnName = malloc(sizeof(bootName)+1);
 	strcpy(bnName, bootName);			
-	DT__AddProperty(optionsNode, bnName, sizeof(uint32_t), (EFI_UINT32*)&STATIC_ZERO); 
+//	DT__AddProperty(optionsNode, bnName, sizeof(uint32_t), (EFI_UINT32*)&STATIC_ZERO); 
 	
 	//can we add here boot-properties?
 //	optionsNode = DT__FindNode("chosen", true);
@@ -685,8 +686,10 @@ void setupEfiDeviceTree(void)
 		DT__AddProperty(efiPlatformNode, CPU_Frequency_prop, sizeof(uint64_t), &Platform.CPU.CPUFrequency);
 	
 	// Export system-id. Can be disabled with SystemId=No in com.apple.Boot.plist //Slice - nonsense
-	if ((ret=getSystemID()))
+	if ((ret=getSystemID())){
 		DT__AddProperty(efiPlatformNode, SYSTEM_ID_PROP, UUID_LEN, (EFI_UINT32*) ret);
+		DT__AddProperty(optionsNode, PLATFORM_UUID, UUID_LEN, (EFI_UINT32*) ret);		
+	}
 
 	 // Export SystemSerialNumber if present
 	if ((ret16=getSmbiosChar16("SMserial", &len)))

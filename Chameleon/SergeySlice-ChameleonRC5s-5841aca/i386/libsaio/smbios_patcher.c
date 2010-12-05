@@ -157,8 +157,10 @@ static const char* sm_get_defstr(const char * key, int table_num)
 	int	i;
 	const SMStrEntryPair*	sm_defaults;
 
-	if (platformCPUFeature(CPU_FEATURE_MOBILE)) {
+//	if (platformCPUFeature(CPU_FEATURE_MOBILE)) {
+	if (Platform.CPU.Mobile) {
 		if (Platform.CPU.NoCores > 1) {
+			//TODO if NVidia - MBP else MB
 			sm_defaults=sm_macbookpro_defaults;
 		} else {
 			sm_defaults=sm_macbook_defaults;
