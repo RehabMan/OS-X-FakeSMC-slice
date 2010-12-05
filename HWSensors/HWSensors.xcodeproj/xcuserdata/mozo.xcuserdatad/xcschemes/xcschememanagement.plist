@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>ACPIMonitor.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>FakeSMC.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+		<key>IntelThermal.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>NVClockX.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>SuperIOFamily.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>ACPIMonitor.kext</key>
+		<true/>
+		<key>F718x.kext</key>
+		<true/>
+		<key>FakeSMC.kext</key>
+		<true/>
+		<key>IT87x.kext</key>
+		<true/>
+		<key>IntelThermal.kext</key>
+		<true/>
+		<key>NVClockX.kext</key>
+		<true/>
+		<key>PC8739x.kext</key>
+		<true/>
+		<key>SuperIOFamily.kext</key>
+		<true/>
+		<key>W836x.kext</key>
+		<true/>
+	</dict>
+</dict>
+</plist>
