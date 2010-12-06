@@ -496,7 +496,7 @@ void setupDeviceList(config_file_t *theme)
 	case HorizontalLayout:
 	default:
 		gui.devicelist.width = ((images[iSelection].image->width + gui.devicelist.iconspacing) * MIN(gui.maxdevices, gDeviceCount) + (images[iDeviceScrollPrev].image->width + images[iDeviceScrollNext].image->width) + gui.devicelist.iconspacing);
-		gui.devicelist.height = (images[iSelection].image->height + font_console.chars[0]->height + gui.devicelist.iconspacing);
+			gui.devicelist.height = (images[iSelection].image->height + font_console.chars[0]->height + gui.devicelist.iconspacing); //112+14+45=171
 
 		if(getDimensionForKey("devices_pos_x", &pixel, theme, gui.screen.width , gui.devicelist.width ) )
 			gui.devicelist.pos.x = pixel;
@@ -506,7 +506,7 @@ void setupDeviceList(config_file_t *theme)
 		if(getDimensionForKey("devices_pos_y", &pixel, theme, gui.screen.height , images[iSelection].image->height ) )
 			gui.devicelist.pos.y = pixel;
 		else
-			gui.devicelist.pos.y = ( gui.screen.height - gui.devicelist.height ) / 2;
+			gui.devicelist.pos.y = ( gui.screen.height - gui.devicelist.height ) / 2; //(768-171)/2=298
 		break;
 	}
 
@@ -578,7 +578,7 @@ void loadThemeValues(config_file_t *theme)
 		gui.countdown.pos.x = pixel;
 
 	if(getDimensionForKey("countdown_pos_y", &pixel, theme, screen_height , 0 ) )
-		gui.countdown.pos.y = pixel;
+		gui.countdown.pos.y = pixel;  //screen_height -20%
 
     /*
 	 * Parse devicelist parameters
@@ -797,9 +797,9 @@ void drawDeviceIcon(BVRef device, pixmap_t *buffer, position_t p, bool isSelecte
 */
 	// draw icon
 	blend( images[devicetype].image, buffer, centeredAt( images[devicetype].image, p ));
-//TODO calculate good offset	
-	p.y += (images[iSelection].image->height / 2) + font_small.chars[0]->height;
 	
+//	p.y += (images[iSelection].image->height / 2) + font_console.chars[0]->height + 20; //112/2+14=70
+	p.y += (gui.devicelist.height / 2) + font_console.chars[0]->height;
 	// draw volume label 
 	drawStrCenteredAt( device->label, &font_small, buffer, p);	
 
@@ -833,7 +833,7 @@ void drawDeviceList (int start, int end, int selection)
 
 		case HorizontalLayout:
 			p.x = (gui.devicelist.width - ( gui.devicelist.width / gui.maxdevices ) * gui.maxdevices ) / 2 + ( images[iSelection].image->width / 2) + images[iDeviceScrollPrev].image->width + gui.devicelist.iconspacing;
-			p.y = ((gui.devicelist.height - font_small.chars[0]->height ) - images[iSelection].image->height) / 2 + ( images[iSelection].image->height / 2 );
+			p.y = ((gui.devicelist.height - font_console.chars[0]->height ) - images[iSelection].image->height) / 2 + ( images[iSelection].image->height / 2 ); //Slice - +/-1
 
 			// place scroll indicators at left & right edges
 			p_prev = pos ( images[iDeviceScrollPrev].image->width / 2  + gui.devicelist.iconspacing / 2, gui.devicelist.height / 2 );
@@ -842,7 +842,10 @@ void drawDeviceList (int start, int end, int selection)
 			break;
 			
 	}
-	
+	//msglog("GUI debug\n");
+	//msglog("\t gui.devicelist.height=%d font_small.chars[0]->height=%d font_console.chars[0]->height=%d\n",
+	//	   gui.devicelist.height, font_small.chars[0]->height, font_console.chars[0]->height);
+	//msglog("\t images[iSelection].image->height=%d p.y=%d\n", images[iSelection].image->height, p.y);
 	// draw visible device icons
 	for (i = 0; i < gui.maxdevices; i++)
 	{
@@ -871,8 +874,8 @@ void drawDeviceList (int start, int end, int selection)
             gui.debug.cursor = pos( 10, 100);
             dprintf( &gui.screen, "label     %s\n",   param->label );
             dprintf( &gui.screen, "biosdev   0x%x\n", param->biosdev );
-            dprintf(&gui.screen,  "width     %d\n",  gui.screen.width);
-            dprintf(&gui.screen,  "height    %d\n",  gui.screen.height);
+            dprintf( &gui.screen, "width     %d\n",   gui.screen.width);
+            dprintf( &gui.screen, "height    %d\n",   gui.screen.height);
             dprintf( &gui.screen, "type      0x%x\n", param->type );
             dprintf( &gui.screen, "flags     0x%x\n", param->flags );
             dprintf( &gui.screen, "part_no   %d\n",   param->part_no );
@@ -886,7 +889,7 @@ void drawDeviceList (int start, int end, int selection)
 		}
 		
 		drawDeviceIcon( param, gui.devicelist.pixmap, p, isSelected);
-		
+		//msglog("drawDeviceIcon at x=%d y=%d\n", p.x, p.y);
 		if (gui.layout == HorizontalLayout)
 		{
 			p.x += images[iSelection].image->width + gui.devicelist.iconspacing; 

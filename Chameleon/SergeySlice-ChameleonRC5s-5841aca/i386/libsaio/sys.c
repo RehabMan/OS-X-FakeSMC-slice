@@ -815,7 +815,7 @@ void scanDisks(int biosdev, int *count)
 		scanBootVolumes(0x80 + hd, &bvCount);
 		hd++;
 	}
-	msglog("Rescan found %d HDD and bvCount=%d\n", hd, bvCount);
+	//msglog("Rescan found %d HDD and bvCount=%d\n", hd, bvCount); //Rescan found 1 HDD and bvCount=4
   // Also scanning CD/DVD drive.
 	if (biosDevIsCDROM(gBIOSDev))
 	{
@@ -899,7 +899,7 @@ BVRef selectBootVolume( BVRef chain )
 			if ( bvr->flags & kBVFlagNativeBoot && bvr->biosdev == gBIOSDev ) bvr1 = bvr;
 			if ( bvr->flags & kBVFlagPrimary && bvr->biosdev == gBIOSDev )    bvr2 = bvr;
 		}
-		msglog("foundPrimary and flags bvr1=%x bvr2=%x\n", bvr1->flags, bvr2->flags);
+		//msglog("foundPrimary and flags bvr1=%x bvr2=%x\n", bvr1->flags, bvr2->flags);//foundPrimary and flags bvr1=a bvr2=4b
 	}
 	
 	bvr = bvr2 ? bvr2 :

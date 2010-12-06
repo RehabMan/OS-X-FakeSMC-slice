@@ -351,10 +351,23 @@ void common_boot(int biosdev)
 
     gBootVolume = selectBootVolume(bvChain);
 
-#if 1 //DEBUG
+#if DEBUG
     verbose(" Default: %x, ->biosdev: %x, ->part_no: %d ->flags: %x\n", gBootVolume, gBootVolume->biosdev, gBootVolume->part_no, gBootVolume->flags);
     verbose(" bt(0,0): %x, ->biosdev: %x, ->part_no: %d ->flags: %x\n", gBIOSBootVolume, gBIOSBootVolume->biosdev, gBIOSBootVolume->part_no, gBIOSBootVolume->flags);
    // getc();
+	/* Results
+	 Rescan found 1 HDD and bvCount=4
+	 bvr: 836bc10, dev: 80, part: 4, flags: 4a, vis: 1
+	 bvr: 836bce0, dev: 80, part: 3, flags: 4b, vis: 1
+	 bvr: 836be90, dev: 80, part: 2, flags: 4, vis: 1
+	 bvr: 836bf60, dev: 80, part: 1, flags: a, vis: 0
+	 count: 3
+	 
+	 foundPrimary and flags bvr1=a bvr2=4b
+	 Default: 836bce0, ->biosdev: 80, ->part_no: 3 ->flags: 4b //booted partition
+	 bt(0,0): 8262030, ->biosdev: 80, ->part_no: 3 ->flags: 4b //unknown pointer
+	 
+	 */
 #endif
 
 	useGUI = true;

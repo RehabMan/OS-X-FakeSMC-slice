@@ -109,12 +109,15 @@ static int countdown( const char * msg, int row, int timeout )
 	} else {
 
 		position_t p = pos( gui.screen.width / 2 + 1 , ( gui.devicelist.pos.y + 3 ) + ( ( gui.devicelist.height - gui.devicelist.iconspacing ) / 2 ) );
-	
+	// p.y=(298+3) + ((171-45)/2))=364
 		char dummy[80];
 		getBootVolumeDescription( gBootVolume, dummy, sizeof(dummy) - 1, true );
 		drawDeviceIcon( gBootVolume, gui.screen.pixmap, p, true );
-		drawStrCenteredAt( (char *) msg, &font_small, gui.screen.pixmap, gui.countdown.pos );
-		
+		//msglog("Options: drawDeviceIcon at x=%d y=%d\n", p.x, p.y); //x=513 y=394
+
+		drawStrCenteredAt( (char *) msg, &font_small, gui.screen.pixmap, gui.countdown.pos ); //y=614
+		//msglog("Options: drawStrCenteredAt at x=%d y=%d\n", gui.countdown.pos.x, gui.countdown.pos.y); //x=512 y=615
+
 		// make this screen the new background
 		memcpy( gui.backbuffer->pixels, gui.screen.pixmap->pixels, gui.backbuffer->width * gui.backbuffer->height * 4 );
 		
