@@ -719,7 +719,7 @@ struct acpi_2_fadt *patch_fadt(struct acpi_2_fadt *fadt, struct acpi_2_dsdt *new
 		fadt_mod->Reset_AccessWidth	= 0x01;   // Byte access
 		fadt_mod->Reset_Address		= 0x0cf9; // Address of the register
 		fadt_mod->Reset_Value		= 0x06;   // Value to write to reset the system
-		DBG("FADT: Restart Fix applied!\n");
+		msglog("FADT: Restart Fix applied!\n");
 	}
 	
 	// Patch DSDT Address if we have loaded DSDT.aml

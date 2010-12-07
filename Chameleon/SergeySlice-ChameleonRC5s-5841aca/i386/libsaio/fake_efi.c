@@ -576,7 +576,7 @@ void setupEfiDeviceTree(void)
 	
 //Slice create /options node
 
-	Node* optionsNode = DT__FindNode("/options", true);
+//	Node* optionsNode = DT__FindNode("/options", true);
 	// this information can be obtained from DMI Type 0
 	SMBByte* p = (SMBByte*)FindFirstDmiTableOfType(0, 0x18);
 	FirmwareFeatures = malloc(sizeof(SMBByte));
@@ -688,7 +688,7 @@ void setupEfiDeviceTree(void)
 	// Export system-id. Can be disabled with SystemId=No in com.apple.Boot.plist //Slice - nonsense
 	if ((ret=getSystemID())){
 		DT__AddProperty(efiPlatformNode, SYSTEM_ID_PROP, UUID_LEN, (EFI_UINT32*) ret);
-		DT__AddProperty(optionsNode, PLATFORM_UUID, UUID_LEN, (EFI_UINT32*) ret);		
+//		DT__AddProperty(optionsNode, PLATFORM_UUID, UUID_LEN, (EFI_UINT32*) ret);		
 	}
 
 	 // Export SystemSerialNumber if present

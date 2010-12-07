@@ -909,8 +909,8 @@ bool setup_nvidia_devprop(pci_dt_t *nvda_dev)
 		}
 	}
 
- #if DEBUG_NVCAP
-        printf("NVCAP: %02x%02x%02x%02x-%02x%02x%02x%02x-%02x%02x%02x%02x-%02x%02x%02x%02x-%02x%02x%02x%02x\n",
+ #if 1 //DEBUG_NVCAP
+        verbose("NVCAP: %02x%02x%02x%02x-%02x%02x%02x%02x-%02x%02x%02x%02x-%02x%02x%02x%02x-%02x%02x%02x%02x\n",
 		default_NVCAP[0], default_NVCAP[1], default_NVCAP[2], default_NVCAP[3],
 		default_NVCAP[4], default_NVCAP[5], default_NVCAP[6], default_NVCAP[7],
 		default_NVCAP[8], default_NVCAP[9], default_NVCAP[10], default_NVCAP[11],

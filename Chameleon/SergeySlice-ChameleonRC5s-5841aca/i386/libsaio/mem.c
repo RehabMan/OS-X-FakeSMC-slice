@@ -168,10 +168,17 @@ void scan_cpu_DMI(void) //PlatformInfo_t *p)
 		}
 #endif
 		msglog("DMI CPU Info:\n FSB=%d\n MaxSpeed=%d\n CurrentSpeed=%d\n", cpuInfo->externalClock, cpuInfo->maximumClock, cpuInfo->currentClock);
-		msglog("DMI CPU Info:\n Family=%x\n Socket=%x\n Cores=%d Enabled=%d Threads=%d\n", cpuInfo->processorFamily, cpuInfo->processorUpgrade, cpuInfo->coreCount, cpuInfo->coreEnabled, cpuInfo->Threads);
-#if NOTYET
-		Platform.CPU.NoCores = cpuInfo->coreCount;
-		Platform.CPU.NoThreads = cpuInfo->Threads;
+		msglog("DMI CPU Info 2:\n Family=%x\n Socket=%x\n Cores=%d Enabled=%d Threads=%d\n", cpuInfo->processorFamily, cpuInfo->processorUpgrade, cpuInfo->coreCount, cpuInfo->coreEnabled, cpuInfo->Threads);
+#if 1 //NOTYET
+		if ((cpuInfo->coreCount) && (cpuInfo->coreCount<Platform.CPU.NoCores)) {
+			if (cpuInfo->coreEnabled < cpuInfo->coreCount) {
+				cpuInfo->coreCount = cpuInfo->coreEnabled;
+			}
+			Platform.CPU.NoCores = cpuInfo->coreCount;
+		}
+		if ((cpuInfo->Threads) && (cpuInfo->Threads<Platform.CPU.NoThreads)) {		
+			Platform.CPU.NoThreads = cpuInfo->Threads;
+		}
 #endif
 		
 		return;
