@@ -823,5 +823,19 @@ void setupFakeEfi(void)
 	
 	// Add configuration table entries to both the services table and the device tree
 	setupEfiConfigurationTable();
+	struct DMIProcessorInformation* cpuInfo;
+	//Slice - Debug SMBIOS
+	for (dmihdr = FindFirstDmiTableOfType(4, 30); dmihdr; dmihdr = FindNextDmiTableOfType(4, 30)) 
+	{
+		cpuInfo = (struct DMIProcessorInformation*)dmihdr;
+		if (cpuInfo->processorType != 3) { // CPU
+			continue;
+		}
+		//TODO validate
+		msglog("Patched platform CPU Info:\n FSB=%d\n MaxSpeed=%d\n CurrentSpeed=%d\n", Platform.CPU.FSBFrequency/MEGA, Platform.CPU.TSCFrequency/MEGA, Platform.CPU.CPUFrequency/MEGA);
+		
+		msglog("Patched SMBIOS CPU Info:\n FSB=%d\n MaxSpeed=%d\n CurrentSpeed=%d\n", cpuInfo->externalClock, cpuInfo->maximumClock, cpuInfo->currentClock);
+		msglog("\t: Family=%x\n Socket=%x\n Cores=%d Enabled=%d Threads=%d\n", cpuInfo->processorFamily, cpuInfo->processorUpgrade, cpuInfo->coreCount, cpuInfo->coreEnabled, cpuInfo->Threads);
+	}		
 }
 
