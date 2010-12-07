@@ -15,20 +15,12 @@ class ACPIMonitor : public IOService
 {
     OSDeclareDefaultStructors(ACPIMonitor)    
 private:
-	int						TCount;
-	int						FCount;
-	int						SMCx[30];
-	UInt8					FanOffset;
-	IOACPIPlatformDevice *	TZDevice;
+	IOService*				fakeSMC;
+	IOACPIPlatformDevice *	acpiDevice;
+	OSDictionary*			sensors;
 	
-	IOService*			fakeSMC;
-	OSArray*			sensors;
-	
-	bool				addSensor(const char* key, const char* type, unsigned char size);
-	int					addTachometer(const char* key, const char* caption);
-	
-protected:
-	const char*			FanName[5];
+	bool				addSensor(const char* method, const char* key, const char* type, unsigned char size);
+	bool				addTachometer(const char* method, const char* caption);
 	
 public:
 	virtual IOService*	probe(IOService *provider, SInt32 *score);

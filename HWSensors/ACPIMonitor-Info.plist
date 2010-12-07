@@ -29,7 +29,7 @@
 			<key>IOMatchCategory</key>
 			<string>${PRODUCT_NAME}</string>
 			<key>IONameMatch</key>
-			<string>monitor</string>
+			<string>FSMC,monitor</string>
 			<key>IOProviderClass</key>
 			<string>IOACPIPlatformDevice</string>
 			<key>Fan Names</key>

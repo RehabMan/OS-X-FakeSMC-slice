@@ -12,7 +12,7 @@
 
 #define Debug FALSE
 
-#define LogPrefix "IntelThermal: "
+#define LogPrefix "ACPIMonitor: "
 #define DebugLog(string, args...)	do { if (Debug) { IOLog (LogPrefix "[Debug] " string "\n", ## args); } } while(0)
 #define WarningLog(string, args...) do { IOLog (LogPrefix "[Warning] " string "\n", ## args); } while(0)
 #define InfoLog(string, args...)	do { IOLog (LogPrefix string "\n", ## args); } while(0)
@@ -20,15 +20,15 @@
 #define super IOService
 OSDefineMetaClassAndStructors(ACPIMonitor, IOService)
 
-bool ACPIMonitor::addSensor(const char* key, const char* type, unsigned char size)
+bool ACPIMonitor::addSensor(const char* method, const char* key, const char* type, unsigned char size)
 {
 	if (kIOReturnSuccess == fakeSMC->callPlatformFunction(kFakeSMCAddKeyHandler, false, (void *)key, (void *)type, (void *)size, (void *)this))
-		return sensors->setObject(OSString::withCString(key));
+		return sensors->setObject(OSString::withCString(key), OSString::withCString(method));
 	
 	return 0;
 }
 
-int ACPIMonitor::addTachometer(const char* caption)
+bool ACPIMonitor::addTachometer(const char* method, const char* caption)
 {
 	for (int i = 0; i < 0x10; i++) {
 		
@@ -36,7 +36,7 @@ int ACPIMonitor::addTachometer(const char* caption)
 		
 		snprintf(name, 5, KEY_FORMAT_FAN_SPEED, i); 
 		
-		if (addSensor(name, TYPE_FPE2, 2)) {
+		if (addSensor(method, name, TYPE_FPE2, 2)) {
 			if (caption) {
 				snprintf(name, 5, KEY_FORMAT_FAN_ID, i); 
 				
@@ -67,11 +67,11 @@ int ACPIMonitor::addTachometer(const char* caption)
 			}
 			else WarningLog("error reading FNum value");
 			
-			return i;
+			return true;
 		}
 	}
 	
-	return -1;
+	return false;
 }
 
 IOService* ACPIMonitor::probe(IOService *provider, SInt32 *score)
@@ -90,127 +90,99 @@ bool ACPIMonitor::start(IOService * provider)
 		return false;
 	}
 	
-	TZDevice = (IOACPIPlatformDevice *) provider;
+	acpiDevice = (IOACPIPlatformDevice *)provider;
 	
 	char key[5];
-	char value[2];
-#if __LP64__
-	UInt64 tmp;
-#else
-	UInt32 tmp;
-#endif
 	
 	//Here is Fan in ACPI	
+	OSArray* fanNames = OSDynamicCast(OSArray, getProperty("Fan Names"));
+	
 	for (int i=0; i<10; i++) 
 	{
-		snprintf(key, 5, "SMC%d", i);
+		snprintf(key, 5, "FSN%X", i);
 		
-		if (kIOReturnSuccess == TZDevice->evaluateInteger(key, &tmp)){		
-
-			if (addTachometer(FanName[i]) > -1) {
+		if (kIOReturnSuccess == acpiDevice->validateObject(key)){
+			OSString* name = NULL;
+			
+			if (fanNames )
+				name = OSDynamicCast(OSString, fanNames->getObject(i));
+			
+			if (addTachometer(key, name ? name->getCStringNoCopy() : 0)) {
 				WarningLog("Can't add tachometer sensor, kext will not load");
 				return false;
 			}
-		} else break;
+		} 
+		else {
+			break;
+		}
 	}
 
-	
 	//Next step - temperature keys
-	if (kIOReturnSuccess == TZDevice->evaluateInteger("SMCA", &tmp)){		
-		addSensor("TC0H", "sp78", 2, <#int index#>)
-		value[0] = tmp;
-		value[1] = 0x0;
-		FakeSMCAddKey(, , 2, value, m_Binding);
-		IOLog("FakeSMC_ACPI: %s registered\n", "TC0H");
+	if (kIOReturnSuccess == acpiDevice->validateObject("TSN0")){		
+		addSensor("TSN0", "TC0H", TYPE_SP78, 2);
+		InfoLog("%s registered", "TC0H");
 	}
-	if (kIOReturnSuccess == TZDevice->evaluateInteger("SMCB", &tmp)){		
-		value[0] = tmp;
-		value[1] = 0x0;
-		FakeSMCAddKey("TN0H", "sp78", 2, value, m_Binding);
-		IOLog("FakeSMC_ACPI: %s registered\n", "TN0H");
+	if (kIOReturnSuccess == acpiDevice->validateObject("TSN1")){		
+		addSensor("TSN1", "TN0H", TYPE_SP78, 2);
+		InfoLog("%s registered", "TN0H");
 	}
-	if (kIOReturnSuccess == TZDevice->evaluateInteger("SMCC", &tmp)){		
-		value[0] = tmp;
-		value[1] = 0x0;
-		FakeSMCAddKey("TW0P", "sp78", 2, value, m_Binding);
-		IOLog("FakeSMC_ACPI: %s registered\n", "TW0P");
+	if (kIOReturnSuccess == acpiDevice->validateObject("TSN2")){		
+		addSensor("TSN2", "TW0P", TYPE_SP78, 2);
+		InfoLog("%s registered", "TW0P");
 	}
-	if (kIOReturnSuccess == TZDevice->evaluateInteger("SMCD", &tmp)){		
-		value[0] = tmp;
-		value[1] = 0x0;
-		FakeSMCAddKey("Th0H", "sp78", 2, value, m_Binding);
-		IOLog("FakeSMC_ACPI: %s registered\n", "Th0H");
+	if (kIOReturnSuccess == acpiDevice->validateObject("TSN3")){		
+		addSensor("TSN3", "Th1H", TYPE_SP78, 2);
+		InfoLog("%s registered", KEY_CPU_HEATSINK_TEMPERATURE);
 	}
-	if (kIOReturnSuccess == TZDevice->evaluateInteger("SMCE", &tmp)){		
-		value[0] = tmp;
-		value[1] = 0x0;
-		FakeSMCAddKey("Th1H", "sp78", 2, value, m_Binding);
-		IOLog("FakeSMC_ACPI: %s registered\n", "Th1H");
+	if (kIOReturnSuccess == acpiDevice->validateObject("TSN4")){		
+		addSensor("TSN4", "Th1H", TYPE_SP78, 2);
+		InfoLog("%s registered", "Th1H");
 	}
 	
 	//Voltage
-	if (kIOReturnSuccess == TZDevice->evaluateInteger("SMCK", &tmp)){		
-		value[0] = tmp;
-		value[1] = 0x0;
-		FakeSMCAddKey("VCAC", 2, value, m_Binding);
-		IOLog("FakeSMC_ACPI: %s registered\n", "VCAC");
+	if (kIOReturnSuccess == acpiDevice->validateObject("VSN0")){		
+		addSensor("VSN0", "VCAC", TYPE_FP2E, 2);
+		InfoLog("%s registered", "VCAC");
 	}
-	if (kIOReturnSuccess == TZDevice->evaluateInteger("SMCL", &tmp)){		
-		value[0] = tmp;
-		value[1] = 0x0;
-		FakeSMCAddKey("Vp0C", 2, value, m_Binding);
-		IOLog("FakeSMC_ACPI: %s registered\n", "Vp0C");
+	if (kIOReturnSuccess == acpiDevice->validateObject("VSN1")){		
+		addSensor("VSN1", "Vp0C", TYPE_FP2E, 2);
+		InfoLog("%s registered", "Vp0C");
 	}
-	if (kIOReturnSuccess == TZDevice->evaluateInteger("SMCM", &tmp)){		
-		value[0] = tmp;
-		value[1] = 0x0;
-		FakeSMCAddKey("Vp1C", 2, value, m_Binding);
-		IOLog("FakeSMC_ACPI: %s registered\n", "Vp1C");
+	if (kIOReturnSuccess == acpiDevice->validateObject("VSN2")){		
+		addSensor("VSN2", "Vp1C", TYPE_FP2E, 2);
+		InfoLog("%s registered", "Vp1C");
 	}
-	if (kIOReturnSuccess == TZDevice->evaluateInteger("SMCN", &tmp)){		
-		value[0] = tmp;
-		value[1] = 0x0;
-		FakeSMCAddKey("Vp2C", 2, value, m_Binding);
-		IOLog("FakeSMC_ACPI: %s registered\n", "Vp2C");
+	if (kIOReturnSuccess == acpiDevice->validateObject("VSN3")){		
+		addSensor("VSN3", "Vp2C", TYPE_FP2E, 2);
+		InfoLog("%s registered", "Vp2C");
 	}
+	
 	//Amperage
-	if (kIOReturnSuccess == TZDevice->evaluateInteger("SMCO", &tmp)){		
-		value[0] = tmp;
-		value[1] = 0x0;
-		FakeSMCAddKey("ICAC", 2, value, m_Binding);
-		IOLog("FakeSMC_ACPI: %s registered\n", "ICAC");
+	if (kIOReturnSuccess == acpiDevice->validateObject("ISN0")){		
+		addSensor("ISN0", "ICAC", TYPE_UI16, 2);
+		InfoLog("%s registered", "ICAC");
 	}
-	if (kIOReturnSuccess == TZDevice->evaluateInteger("SMCP", &tmp)){		
-		value[0] = tmp;
-		value[1] = 0x0;
-		FakeSMCAddKey("Ip0C", 2, value, m_Binding);
-		IOLog("FakeSMC_ACPI: %s registered\n", "Ip0C");
+	if (kIOReturnSuccess == acpiDevice->validateObject("ISN1")){		
+		addSensor("ISN1", "Ip0C", TYPE_UI16, 2);
+		InfoLog("%s registered", "Ip0C");
 	}
-	if (kIOReturnSuccess == TZDevice->evaluateInteger("SMCQ", &tmp)){		
-		value[0] = tmp;
-		value[1] = 0x0;
-		FakeSMCAddKey("Ip1C", 2, value, m_Binding);
-		IOLog("FakeSMC_ACPI: %s registered\n", "Ip1C");
+	if (kIOReturnSuccess == acpiDevice->validateObject("ISN2")){		
+		addSensor("ISN2", "Ip1C", TYPE_UI16, 2);
+		InfoLog("%s registered", "Ip1C");
 	}
-	if (kIOReturnSuccess == TZDevice->evaluateInteger("SMCR", &tmp)){		
-		value[0] = tmp;
-		value[1] = 0x0;
-		FakeSMCAddKey("Ip2C", 2, value, m_Binding);
-		IOLog("FakeSMC_ACPI: %s registered\n", "Ip2C");
+	if (kIOReturnSuccess == acpiDevice->validateObject("ISN3")){		
+		addSensor("ISN3", "Ip2C", TYPE_UI16, 2);
+		InfoLog("%s registered", "Ip2C");
 	}
 	
 	//Power
-	if (kIOReturnSuccess == TZDevice->evaluateInteger("SMCS", &tmp)){		
-		value[0] = tmp;
-		value[1] = 0x0;
-		FakeSMCAddKey("PC0C", 2, value, m_Binding);
-		IOLog("FakeSMC_ACPI: %s registered\n", "PC0C");
+	if (kIOReturnSuccess == acpiDevice->validateObject("PSN0")){		
+		addSensor("PSN0", "PC0C", TYPE_UI16, 2);
+		InfoLog("%s registered", "PC0C");
 	}
-	if (kIOReturnSuccess == TZDevice->evaluateInteger("SMCT", &tmp)){		
-		value[0] = tmp;
-		value[1] = 0x0;
-		FakeSMCAddKey("PC1C", 2, value, m_Binding);
-		IOLog("FakeSMC_ACPI: %s registered\n", "PC1C");
+	if (kIOReturnSuccess == acpiDevice->validateObject("PSN1")){		
+		addSensor("PSN1", "PC1C", TYPE_UI16, 2);
+		InfoLog("%s registered", "PC1C");
 	}	
 	
 	registerService(0);
@@ -226,16 +198,6 @@ bool ACPIMonitor::init(OSDictionary *properties)
 	
 	if (!(sensors = OSDictionary::withCapacity(0)))
 		return false;
-
-    if (OSArray* fanIDs = OSDynamicCast(OSArray, getProperty("Fan Names"))) {
-		for (UInt32 i = 0; i < 10; i++)	{
-			OSString* name = OSDynamicCast(OSString, fanIDs->getObject(i)); 
-			FanName[i] = name->getCStringNoCopy();
-		}
-    }
-	else { 
-		WarningLog("Can't load Fan names...");
-	}
 	
 	return true;
 }
@@ -243,28 +205,6 @@ bool ACPIMonitor::init(OSDictionary *properties)
 void ACPIMonitor::stop (IOService* provider)
 {
 	sensors->flushCollection();
-	
-	/*char key[5];
-	for (int i=0; i<FCount; i++) 
-	{
-		snprintf(key, 5, "F%dAc", i+FanOffset);
-		FakeSMCRemoveKeyBinding(key);
-	}
-	FakeSMCRemoveKeyBinding("TC0H");
-	FakeSMCRemoveKeyBinding("TN0H");
-	FakeSMCRemoveKeyBinding("TW0P");
-	FakeSMCRemoveKeyBinding("Th0H");
-	FakeSMCRemoveKeyBinding("Th1H");
-	FakeSMCRemoveKeyBinding("VCAC");
-	FakeSMCRemoveKeyBinding("Vp0C");
-	FakeSMCRemoveKeyBinding("Vp1C");
-	FakeSMCRemoveKeyBinding("Vp2C");
-	FakeSMCRemoveKeyBinding("ICAC");
-	FakeSMCRemoveKeyBinding("Ip0C");
-	FakeSMCRemoveKeyBinding("Ip1C");
-	FakeSMCRemoveKeyBinding("Ip2C");
-	FakeSMCRemoveKeyBinding("PC0C");
-	FakeSMCRemoveKeyBinding("PC1C");*/
 	
 	super::stop(provider);
 }
@@ -274,4 +214,65 @@ void ACPIMonitor::free ()
 	sensors->release();
 	
 	super::free();
+}
+
+inline UInt16 swap_value(UInt16 value)
+{
+	return ((value & 0xff00) >> 8) | ((value & 0xff) << 8);
+}
+
+inline UInt16 encode_fp2e(UInt16 value)
+{
+	UInt16 dec = (float)value / 1000.0f;
+	UInt16 frc = value - (dec * 1000);
+	
+	return swap_value((dec << 14) | (frc << 4) /*| 0x3*/);
+}
+
+inline UInt16 encode_fpe2(UInt16 value)
+{
+	return swap_value(value << 2);
+}
+
+IOReturn ACPIMonitor::callPlatformFunction(const OSSymbol *functionName, bool waitForFunction, void *param1, void *param2, void *param3, void *param4 )
+{
+	if (functionName->isEqualTo(kFakeSMCGetValueCallback)) {
+		const char* name = (const char*)param1;
+		void* data = param2;
+		
+		if (name && data) {
+			if (OSString* key = OSDynamicCast(OSString, sensors->getObject(name))) {
+#if __LP64__
+				UInt64 value;
+#else
+				UInt32 value;
+#endif
+				
+				if (kIOReturnSuccess == acpiDevice->evaluateInteger(key->getCStringNoCopy(), &value)) {
+				
+					UInt16 val = 0;
+					
+					if (key->getChar(0) == 'V') {
+						val = encode_fp2e(value);
+					}
+					else if (key->getChar(0) == 'F') {
+						val = encode_fpe2(value);
+					}
+					else val = value;
+					
+					bcopy(&val, data, 2);
+					
+					return kIOReturnSuccess;
+				}
+			}
+			
+			return kIOReturnBadArgument;
+		}
+		
+		//DebugLog("bad argument key name or data");
+		
+		return kIOReturnBadArgument;
+	}
+	
+	return super::callPlatformFunction(functionName, waitForFunction, param1, param2, param3, param4);
 }
