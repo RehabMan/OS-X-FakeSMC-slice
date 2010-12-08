@@ -17,6 +17,7 @@
 #include "convert.h"
 #include "pci.h"
 #include "sl.h"
+#include "mem.h"
 //#include "SMBIOS.h"  //Slice -?
 
 extern struct SMBEntryPoint * getSmbios(int which); // now cached
@@ -574,59 +575,6 @@ void setupEfiDeviceTree(void)
 	
 	if (node == 0) stop("Couldn't get root node");
 	
-//Slice create /options node
-
-//	Node* optionsNode = DT__FindNode("/options", true);
-	// this information can be obtained from DMI Type 0
-	SMBByte* p = (SMBByte*)FindFirstDmiTableOfType(0, 0x18);
-	FirmwareFeatures = malloc(sizeof(SMBByte));
-	//TODO - the bufferFF must be composed from bits p[0x12] and [0x13]. Datasheet needed
-	*FirmwareFeatures = ((p[19] >> 1) & 1)  //USB Legacy is supported
-					  | ((p[18] >> 14) & 2) //Boot from CD is supported
-					  | 0x14; //default for bless (GUID partition)
-
-	sprintf(bootName, "%s:FirmwareFeatures", kBL_APPLE_VENDOR_NVRAM_GUID);
-	ffName = malloc(sizeof(bootName)+1);
-	strcpy(ffName, bootName);
-//	DT__AddProperty(optionsNode, ffName, sizeof(uint32_t), (char *)FirmwareFeatures); //legacy support
-	
-	sprintf(bootName, "%s:FirmwareFeaturesMask", kBL_APPLE_VENDOR_NVRAM_GUID);
-	ffmName = malloc(sizeof(bootName)+1);
-	strcpy(ffmName, bootName);	
-//	DT__AddProperty(optionsNode, ffmName, sizeof(uint32_t), (EFI_UINT32*)&FIRMWARE_FEATURE_MASK); 	
-
-	//TODO - check, validate and fill by bvr structure.
-	//here I am not sure what is BootOrder: node or property?
-	//Node* bootNode = DT__AddChild(optionsNode, kBL_GLOBAL_NVRAM_GUID ":BootOrder");
-	sprintf(bootName, "%s:BootOrder", kBL_GLOBAL_NVRAM_GUID);
-	boName = malloc(sizeof(bootName)+1);
-	strcpy(boName, bootName);		
-//	DT__AddProperty(optionsNode, boName, sizeof(uint32_t), (EFI_UINT32*)&STATIC_ZERO);	
-
-	sprintf(bootName, "%s:Boot%04hx", kBL_GLOBAL_NVRAM_GUID, bootOptionNumber);
-	bnName = malloc(sizeof(bootName)+1);
-	strcpy(bnName, bootName);			
-//	DT__AddProperty(optionsNode, bnName, sizeof(uint32_t), (EFI_UINT32*)&STATIC_ZERO); 
-	
-	//can we add here boot-properties?
-//	optionsNode = DT__FindNode("chosen", true);
-#if NOTYET
-    int lbC = 0;
-    while(((char*)&bootInfo->bootConfig)[lbC++]);
-    if (lbC > sizeof(bootInfo->bootConfig)) lbC = sizeof(bootInfo->bootConfig);
-	DT__AddProperty(optionsNode, "boot-args", lbC, (char*)&bootInfo->bootConfig);	
-#endif
-	//TODO - BootCamp emulation?
-/*
- romNode = DT__FindNode("/rom", true);
- DT__AddProperty(romNode, "fv-main-address"...  //provided by AppleSMBIOS
- DT__AddProperty(romNode, "fv-main-size"...
- "IOEFIDevicePathType" -> "MediaFirmwareVolumeFilePath"
- "Guid" -> "2B0585EB-D8B8-49A9-8B8C-E21B01AEF2B7"
- 
- */
-//end Slice
-
 	// We could also just do DT__FindNode("/efi/platform", true)
 	// But I think eventually we want to fill stuff in the efi node
 	// too so we might as well create it so we have a pointer for it too.
@@ -688,7 +636,6 @@ void setupEfiDeviceTree(void)
 	// Export system-id. Can be disabled with SystemId=No in com.apple.Boot.plist //Slice - nonsense
 	if ((ret=getSystemID())){
 		DT__AddProperty(efiPlatformNode, SYSTEM_ID_PROP, UUID_LEN, (EFI_UINT32*) ret);
-//		DT__AddProperty(optionsNode, PLATFORM_UUID, UUID_LEN, (EFI_UINT32*) ret);		
 	}
 
 	 // Export SystemSerialNumber if present
@@ -698,6 +645,71 @@ void setupEfiDeviceTree(void)
 	// Export Model if present
 	if ((ret16=getSmbiosChar16("SMproductname", &len)))
 		DT__AddProperty(efiPlatformNode, MODEL_PROP, len, ret16);
+	
+	//Slice create /options node
+	bool UseNVRAM = FALSE;
+	bool ClearNVRAM = FALSE;
+	char buff[20];
+	int cnt;
+	ClearNVRAM = getValueForKey(kClearNVRAM, &buff, &cnt, &bootInfo->bootConfig);
+
+    getBoolForKey(kUseNVRAM, &UseNVRAM, &bootInfo->bootConfig);
+	if (UseNVRAM) {
+		
+		Node* optionsNode = DT__FindNode("/options", true);
+		DT__AddProperty(optionsNode, PLATFORM_UUID, UUID_LEN, (EFI_UINT32*) ret);		
+		
+		// this information can be obtained from DMI Type 0
+		SMBByte* p = (SMBByte*)FindFirstDmiTableOfType(0, 0x18);
+		FirmwareFeatures = malloc(sizeof(SMBByte));
+		//TODO - the bufferFF must be composed from bits p[0x12] and [0x13]. Datasheet needed
+		*FirmwareFeatures = ((p[19] >> 1) & 1)  //USB Legacy is supported
+		| ((p[18] >> 14) & 2) //Boot from CD is supported
+		| 0x14; //default for bless (GUID partition)
+		
+		sprintf(bootName, "%s:FirmwareFeatures", kBL_APPLE_VENDOR_NVRAM_GUID);
+		ffName = malloc(sizeof(bootName)+1);
+		strcpy(ffName, bootName);
+		DT__AddProperty(optionsNode, ffName, sizeof(uint32_t), (char *)FirmwareFeatures); //legacy support
+		
+		sprintf(bootName, "%s:FirmwareFeaturesMask", kBL_APPLE_VENDOR_NVRAM_GUID);
+		ffmName = malloc(sizeof(bootName)+1);
+		strcpy(ffmName, bootName);	
+		DT__AddProperty(optionsNode, ffmName, sizeof(uint32_t), (EFI_UINT32*)&FIRMWARE_FEATURE_MASK); 	
+		
+		//TODO - check, validate and fill by bvr structure.
+		//here I am not sure what is BootOrder: node or property?
+		//Node* bootNode = DT__AddChild(optionsNode, kBL_GLOBAL_NVRAM_GUID ":BootOrder");
+		sprintf(bootName, "%s:BootOrder", kBL_GLOBAL_NVRAM_GUID);
+		boName = malloc(sizeof(bootName)+1);
+		strcpy(boName, bootName);		
+		DT__AddProperty(optionsNode, boName, sizeof(uint32_t), (EFI_UINT32*)&STATIC_ZERO);	
+		
+		sprintf(bootName, "%s:Boot%04hx", kBL_GLOBAL_NVRAM_GUID, bootOptionNumber);
+		bnName = malloc(sizeof(bootName)+1);
+		strcpy(bnName, bootName);			
+		DT__AddProperty(optionsNode, bnName, sizeof(uint32_t), (EFI_UINT32*)&STATIC_ZERO); 
+		
+		
+		//can we add here boot-properties?
+		//	optionsNode = DT__FindNode("chosen", true);
+#if NOTYET
+		int lbC = 0;
+		while(((char*)&bootInfo->bootConfig)[lbC++]);
+		if (lbC > sizeof(bootInfo->bootConfig)) lbC = sizeof(bootInfo->bootConfig);
+		DT__AddProperty(optionsNode, "boot-args", lbC, (char*)&bootInfo->bootConfig);	
+#endif
+		//TODO - BootCamp emulation?
+		/*
+		 romNode = DT__FindNode("/rom", true);
+		 DT__AddProperty(romNode, "fv-main-address"...  //provided by AppleSMBIOS
+		 DT__AddProperty(romNode, "fv-main-size"...
+		 "IOEFIDevicePathType" -> "MediaFirmwareVolumeFilePath"
+		 "Guid" -> "2B0585EB-D8B8-49A9-8B8C-E21B01AEF2B7"
+		 
+		 */
+		//end Slice
+	}	
 	
 	// Fill /efi/device-properties node.
 	setupDeviceProperties(node);
@@ -824,6 +836,7 @@ void setupFakeEfi(void)
 	// Add configuration table entries to both the services table and the device tree
 	setupEfiConfigurationTable();
 	struct DMIProcessorInformation* cpuInfo;
+	struct DMIHeader * dmihdr;
 	//Slice - Debug SMBIOS
 	for (dmihdr = FindFirstDmiTableOfType(4, 30); dmihdr; dmihdr = FindNextDmiTableOfType(4, 30)) 
 	{
@@ -835,7 +848,7 @@ void setupFakeEfi(void)
 		msglog("Patched platform CPU Info:\n FSB=%d\n MaxSpeed=%d\n CurrentSpeed=%d\n", Platform.CPU.FSBFrequency/MEGA, Platform.CPU.TSCFrequency/MEGA, Platform.CPU.CPUFrequency/MEGA);
 		
 		msglog("Patched SMBIOS CPU Info:\n FSB=%d\n MaxSpeed=%d\n CurrentSpeed=%d\n", cpuInfo->externalClock, cpuInfo->maximumClock, cpuInfo->currentClock);
-		msglog("\t: Family=%x\n Socket=%x\n Cores=%d Enabled=%d Threads=%d\n", cpuInfo->processorFamily, cpuInfo->processorUpgrade, cpuInfo->coreCount, cpuInfo->coreEnabled, cpuInfo->Threads);
+		msglog("\n Family=%x\n Socket=%x\n Cores=%d Enabled=%d Threads=%d\n", cpuInfo->processorFamily, cpuInfo->processorUpgrade, cpuInfo->coreCount, cpuInfo->coreEnabled, cpuInfo->Threads);
 	}		
 }
 

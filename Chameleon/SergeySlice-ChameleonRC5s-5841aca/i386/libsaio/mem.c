@@ -140,7 +140,7 @@ void scan_memory(void) //PlatformInfo_t *p)
 #endif
 }
 //Slice
-#define MEGA 1000000LL
+//#define MEGA 1000000LL  - now in mem.h
 void scan_cpu_DMI(void) //PlatformInfo_t *p)
 {
 //    int i=0;

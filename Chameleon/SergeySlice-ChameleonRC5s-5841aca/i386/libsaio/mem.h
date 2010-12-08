@@ -8,6 +8,7 @@
 #define __LIBSAIO_MEM_H
 
 #include "platform.h"
+#define MEGA 1000000LL
 
 extern void scan_memory(void); //PlatformInfo_t *);
 extern void scan_cpu_DMI(void); //PlatformInfo_t *); //Slice

@@ -99,6 +99,7 @@ extern int     bvCount;
 #define kDefaultPartition	"Default Partition"	/* sys.c */
 #define kMD0Image			"md0"				/* ramdisk.h */
 #define kUseCPUDMI			"CPUover"			/* fake_efi.c */
+#define kUseNVRAM			"UseNVRAM"			/* fake_efi.c */
 #define kRecoveryFolder		"RecoveryFolder"	/* drivers.h */
 /*
 enum {
@@ -122,6 +123,7 @@ enum {
 #define kIgnoreCachesFlag	"-f"
 #define kIgnoreBootFileFlag	"-F"
 #define kSingleUserModeFlag	"-s"
+#define kClearNVRAM			"-c"
 
 /*
  * Booter behavior control
