@@ -132,8 +132,11 @@ bool ACPIMonitor::start(IOService * provider)
 		addSensor("TAMB", KEY_AMBIENT_TEMPERATURE, TYPE_SP78, 2);
 	
 	//Voltage
-	if (kIOReturnSuccess == acpiDevice->validateObject("VSN0"))
-		addSensor("VSN0", "VCAC", TYPE_FP2E, 2);
+	if (kIOReturnSuccess == acpiDevice->validateObject("VCPU"))
+		addSensor("VSN0", KEY_CPU_VOLTAGE, TYPE_FP2E, 2);
+	
+	if (kIOReturnSuccess == acpiDevice->validateObject("VMEM"))
+		addSensor("VSN0", KEY_MEMORY_VOLTAGE, TYPE_FP2E, 2);
 
 	if (kIOReturnSuccess == acpiDevice->validateObject("VSN1"))
 		addSensor("VSN1", "Vp0C", TYPE_FP2E, 2);

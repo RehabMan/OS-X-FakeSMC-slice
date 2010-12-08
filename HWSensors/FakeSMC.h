@@ -14,7 +14,7 @@
 #define KEY_AMBIENT_TEMPERATURE				"TA0P"
 #define KEY_CPU_VOLTAGE						"VC0C"
 #define KEY_CPU_VOLTAGE_RAW					"VC0c"
-#define KEY_MEMORY_VOLTAGE					"VMAS"
+#define KEY_MEMORY_VOLTAGE					"VM0R"
 #define KEY_FAN_NUMBER						"FNum"
 
 #define	KEY_FORMAT_FAN_ID					"F%XID"
