@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12CBB1AE12BDEC1000157341 /* X3100.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12CBB1AD12BDEC1000157341 /* X3100.cpp */; };
 		AE00C79D126A1FED0068E69A /* F718x.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE00C79C126A1FED0068E69A /* F718x.cpp */; };
 		AE00C7E6126A253A0068E69A /* PC8739x.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE00C7E5126A253A0068E69A /* PC8739x.cpp */; };
 		AE212C7912678DC700145048 /* W836x.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE212C7812678DC700145048 /* W836x.cpp */; };
@@ -96,6 +97,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		12CBB17E12BDEA9F00157341 /* X3100.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = X3100.kext; sourceTree = BUILT_PRODUCTS_DIR; };
+		12CBB17F12BDEA9F00157341 /* X3100-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "X3100-Info.plist"; sourceTree = "<group>"; };
+		12CBB1AC12BDEC1000157341 /* X3100.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = X3100.h; sourceTree = "<group>"; };
+		12CBB1AD12BDEC1000157341 /* X3100.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = X3100.cpp; sourceTree = "<group>"; };
 		AE00C785126A1F440068E69A /* F718x.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = F718x.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE00C786126A1F440068E69A /* F718x-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "F718x-Info.plist"; sourceTree = "<group>"; };
 		AE00C799126A1FD00068E69A /* F718x-pre106-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "F718x-pre106-Info.plist"; sourceTree = "<group>"; };
@@ -173,6 +178,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		12CBB17C12BDEA9F00157341 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AE00C783126A1F440068E69A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -239,6 +251,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12CBB19A12BDEB6800157341 /* X3100 */ = {
+			isa = PBXGroup;
+			children = (
+				12CBB17F12BDEA9F00157341 /* X3100-Info.plist */,
+				12CBB1AC12BDEC1000157341 /* X3100.h */,
+				12CBB1AD12BDEC1000157341 /* X3100.cpp */,
+			);
+			name = X3100;
+			sourceTree = "<group>";
+		};
 		AE00C780126A1F170068E69A /* Fintek F718x  */ = {
 			isa = PBXGroup;
 			children = (
@@ -346,6 +368,7 @@
 				AE00C785126A1F440068E69A /* F718x.kext */,
 				AE00C7BD126A24960068E69A /* PC8739x.kext */,
 				AE840E53128D8544006532CB /* ACPIMonitor.kext */,
+				12CBB17E12BDEA9F00157341 /* X3100.kext */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -385,6 +408,7 @@
 		AED15A5C126CBD1C00455FE0 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
+				12CBB19A12BDEB6800157341 /* X3100 */,
 				AEABE82A125F8F6000F08235 /* Intel Thermal Monitor */,
 				AE5BA55F1268D89100EA6AB9 /* NVClockX */,
 				AEE2925C125FBBB10034E471 /* SuperIO Family */,
@@ -459,6 +483,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		12CBB17D12BDEA9F00157341 /* X3100 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 12CBB19712BDEAA000157341 /* Build configuration list for PBXNativeTarget "X3100" */;
+			buildPhases = (
+				12CBB17A12BDEA9F00157341 /* Sources */,
+				12CBB17B12BDEA9F00157341 /* Resources */,
+				12CBB17C12BDEA9F00157341 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = X3100;
+			productName = X3100;
+			productReference = 12CBB17E12BDEA9F00157341 /* X3100.kext */;
+			productType = "com.apple.product-type.kernel-extension.iokit";
+		};
 		AE00C784126A1F440068E69A /* F718x */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AE00C78B126A1F440068E69A /* Build configuration list for PBXNativeTarget "F718x" */;
@@ -642,11 +683,19 @@
 				AE212C6912678D3500145048 /* W836x */,
 				AE00C784126A1F440068E69A /* F718x */,
 				AE00C7BC126A24960068E69A /* PC8739x */,
+				12CBB17D12BDEA9F00157341 /* X3100 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		12CBB17B12BDEA9F00157341 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AE840E50128D8544006532CB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -658,6 +707,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		12CBB17A12BDEA9F00157341 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12CBB1AE12BDEC1000157341 /* X3100.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AE00C781126A1F440068E69A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -774,6 +831,80 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		12CBB19312BDEAA000157341 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INFOPLIST_FILE = "X3100-Info.plist";
+				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
+				MODULE_NAME = com.yourcompany.driver.X3100;
+				MODULE_VERSION = 1.0.0d1;
+				PREBINDING = NO;
+				PRODUCT_NAME = X3100;
+				WRAPPER_EXTENSION = kext;
+			};
+			name = Debug;
+		};
+		12CBB19412BDEAA000157341 /* Release 10.6 */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					i386,
+					x86_64,
+				);
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				INFOPLIST_FILE = "X3100-Info.plist";
+				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
+				MODULE_NAME = org.slice.sensor.X3100;
+				MODULE_VERSION = 1.0.0d1;
+				PREBINDING = NO;
+				PRODUCT_NAME = X3100;
+				WRAPPER_EXTENSION = kext;
+			};
+			name = "Release 10.6";
+		};
+		12CBB19512BDEAA000157341 /* Release 10.5 */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				INFOPLIST_FILE = "X3100-Info.plist";
+				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
+				MODULE_NAME = com.yourcompany.driver.X3100;
+				MODULE_VERSION = 1.0.0d1;
+				PREBINDING = NO;
+				PRODUCT_NAME = X3100;
+				WRAPPER_EXTENSION = kext;
+			};
+			name = "Release 10.5";
+		};
+		12CBB19612BDEAA000157341 /* Release 10.4 */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				INFOPLIST_FILE = "X3100-Info.plist";
+				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
+				MODULE_NAME = com.yourcompany.driver.X3100;
+				MODULE_VERSION = 1.0.0d1;
+				PREBINDING = NO;
+				PRODUCT_NAME = X3100;
+				WRAPPER_EXTENSION = kext;
+			};
+			name = "Release 10.4";
+		};
 		AE00C787126A1F440068E69A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1385,7 +1516,7 @@
 				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.4;
-				SDKROOT = macosx10.4;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 				VALID_ARCHS = i386;
 			};
 			name = "Release 10.4";
@@ -1444,6 +1575,17 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		12CBB19712BDEAA000157341 /* Build configuration list for PBXNativeTarget "X3100" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12CBB19312BDEAA000157341 /* Debug */,
+				12CBB19412BDEAA000157341 /* Release 10.6 */,
+				12CBB19512BDEAA000157341 /* Release 10.5 */,
+				12CBB19612BDEAA000157341 /* Release 10.4 */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release 10.6";
+		};
 		AE00C78B126A1F440068E69A /* Build configuration list for PBXNativeTarget "F718x" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
