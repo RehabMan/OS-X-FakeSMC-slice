@@ -41,12 +41,12 @@ void PC8739x::writeByte(UInt8 bank, UInt8 reg, UInt8 value)
 
 long PC8739x::readTemperature(unsigned long index)
 {
-	return mmioBase[NSC_HARDWARE_MONITOR_REGS[index]];
+	return mmioBase[NSC_HARDWARE_MONITOR_REGS[0][index]];
 }
 
 long PC8739x::readTachometer(unsigned long index)
 {
-	return (0xff - (mmioBase[NSC_HARDWARE_MONITOR_REGS[index]] & 0xff)) * 10;
+	return (0xff - (mmioBase[NSC_HARDWARE_MONITOR_REGS[1][index]] & 0xff)) * 20;
 }
 
 bool PC8739x::probePort()
@@ -154,7 +154,7 @@ bool PC8739x::start(IOService * provider)
 		WarningLog("error adding AUX temperature sensor");
 	
 	// Tachometers
-	for (int i = (model == PC8739xx ? 4 : 0); i < 5; i++) {
+	for (int i = 0; i < 5; i++) {
 		OSString* name = 0;
 		
 		if (configuration) {

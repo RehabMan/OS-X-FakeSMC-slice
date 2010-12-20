@@ -6,40 +6,28 @@
 	<string>English</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
-	<key>CFBundleName</key>
-	<string>${PRODUCT_NAME}</string>
 	<key>CFBundleIdentifier</key>
 	<string>org.netkas.${PRODUCT_NAME}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>${PRODUCT_NAME}</string>
 	<key>CFBundlePackageType</key>
 	<string>KEXT</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.0</string>
+	<string>3.0.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.0.0d1</string>
+	<string>3.0.0d1</string>
 	<key>IOKitPersonalities</key>
 	<dict>
 		<key>SMC Device Emulator</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
 			<string>org.netkas.${PRODUCT_NAME}</string>
-			<key>IOClass</key>
-			<string>${PRODUCT_NAME}</string>
-			<key>IOMatchCategory</key>
-			<string>IOACPIPlatformDevice</string>
-			<key>IOProviderClass</key>
-			<string>AppleACPIPlatformExpert</string>
-			<key>IOResourceMatch</key>
-			<string>ACPI</string>
 			<key>Configuration</key>
 			<dict>
-				<key>smc-compatible</key>
-				<string>smc-napa</string>
-				<key>debug</key>
-				<false/>
 				<key>Keys</key>
 				<dict>
 					<key>ACID</key>
@@ -47,15 +35,20 @@
 						<string>ch8*</string>
 						<data>ur48RcADEEM=</data>
 					</array>
+					<key>CLKH</key>
+					<array>
+						<string>{clh</string>
+						<data>AABwgAABGUA=</data>
+					</array>
 					<key>CLKT</key>
 					<array>
 						<string>ui32</string>
 						<data>AAByGw==</data>
 					</array>
-					<key>CLKH</key>
+					<key>EPCI</key>
 					<array>
-						<string>{clh</string>
-						<data>AABwgAABGUA=</data>
+						<string>flag</string>
+						<data>AQ==</data>
 					</array>
 					<key>FNum</key>
 					<array>
@@ -77,15 +70,15 @@
 						<string>ui16</string>
 						<data>gAM=</data>
 					</array>
-					<key>MSSD</key>
-					<array>
-						<string>si8</string>
-						<data>Aw==</data>
-					</array>
 					<key>MSPS</key>
 					<array>
 						<string>{msp</string>
 						<data>AA==</data>
+					</array>
+					<key>MSSD</key>
+					<array>
+						<string>si8</string>
+						<data>Aw==</data>
 					</array>
 					<key>NATJ</key>
 					<array>
@@ -122,10 +115,29 @@
 						<string>{rev</string>
 						<data>ATAPAAAD</data>
 					</array>
+					<key>RPlt</key>
+					<array>
+						<string>ch8*</string>
+						<string>m82</string>
+					</array>
 				</dict>
+				<key>debug</key>
+				<false/>
+				<key>smc-compatible</key>
+				<string>smc-napa</string>
 			</dict>
+			<key>IOClass</key>
+			<string>${PRODUCT_NAME}</string>
+			<key>IOMatchCategory</key>
+			<string>IOACPIPlatformDevice</string>
+			<key>IOProviderClass</key>
+			<string>AppleACPIPlatformExpert</string>
+			<key>IOResourceMatch</key>
+			<string>ACPI</string>
 		</dict>
 	</dict>
+	<key>OSBundleCompatibleVersion</key>
+	<string>3.0.0d1</string>
 	<key>OSBundleLibraries</key>
 	<dict>
 		<key>com.apple.iokit.IOACPIFamily</key>
@@ -139,8 +151,6 @@
 		<key>com.apple.kpi.unsupported</key>
 		<string>10.0.0</string>
 	</dict>
-	<key>OSBundleCompatibleVersion</key>
-	<string>1.0.0d1</string>
 	<key>OSBundleRequired</key>
 	<string>Root</string>
 </dict>
