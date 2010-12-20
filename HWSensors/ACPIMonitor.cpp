@@ -104,7 +104,7 @@ bool ACPIMonitor::start(IOService * provider)
 	
 	for (int i=0; i<10; i++) 
 	{
-		snprintf(key, 5, "FSN%X", i);
+		snprintf(key, 5, "FAN%X", i);
 		
 		if (kIOReturnSuccess == acpiDevice->validateObject(key)){
 			OSString* name = NULL;
@@ -119,8 +119,8 @@ bool ACPIMonitor::start(IOService * provider)
 	}
 
 	//Next step - temperature keys
-	if (kIOReturnSuccess == acpiDevice->validateObject("TCPH"))
-		addSensor("TCPH", KEY_CPU_HEATSINK_TEMPERATURE, TYPE_SP78, 2);
+	if (kIOReturnSuccess == acpiDevice->validateObject("TCPU"))
+		addSensor("TCPU", KEY_CPU_HEATSINK_TEMPERATURE, TYPE_SP78, 2);
 
 	if (kIOReturnSuccess == acpiDevice->validateObject("TSYS"))
 		addSensor("TSYS", KEY_NORTHBRIDGE_TEMPERATURE, TYPE_SP78, 2);
