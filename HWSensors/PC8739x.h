@@ -9,9 +9,8 @@
 
 #include <IOKit/IOService.h>
 #include "SuperIOFamily.h"
-
-const UInt16 NSC_HARDWARE_MONITOR_REGS[5]	= {0x61, 0x62, 0x63, 0x64, 0x68};
-//const UInt16 NSC_FAN_SPEED[5]				= {0xff, 0xa3, 0x82, 0x81, 0x6f, 0};  //bred
+//temp and fans
+const UInt16 NSC_HARDWARE_MONITOR_REGS[2][4]	= {{0x61, 0x62, 0x63, 0x64}, {0x68, 0x68, 0x68, 0x68}};
 
 // ITE Environment Controller
 const UInt8 NSC_ADDRESS_REGISTER_OFFSET		= 0x00;
