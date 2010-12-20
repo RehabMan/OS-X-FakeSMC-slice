@@ -54,25 +54,29 @@ bool PC8739x::probePort()
 
 	UInt8 id = listenPortByte(SUPERIO_CHIP_ID_REGISTER);	
 	revision = listenPortByte(NSC_CHIP_REVISION_REGISTER);
-	
+	DebugLog("testing NSC id=%04x rev=%04x", id, revision);
 	if (id == 0 || id == 0xff || revision == 0 || revision == 0xff)
 		return false;
 		
 	if (id == 0xfc) {
 		selectLogicalDevice(NSC_HARDWARE_MONITOR_LDN);
 		
-		if (!getLogicalDeviceAddress())
+		if (!getLogicalDeviceAddress(SUPERIO_BASE_ADDRESS_REGISTER)){
+			DebugLog("NSC no getLogicalDeviceAddress");
+			//return false;
+		}
+//		m_Address = ListenPortWord(SUPERIO_BASE_ADDRESS_REGISTER);
+		if (!listenPortByte(NSC_LDN_PRESENT)){
+			DebugLog(" no NSC_LDN_PRESENT");
 			return false;
-		
-		if (!listenPortByte(NSC_LDN_PRESENT))
-			return false;
+		}
 		
 		switch (revision) {
 			default:
 				model = PC8739xx;
 				break;
 		}
-		
+		InfoLog("NSC: Found supported chip ID=0x%x REVISION=0x%x ", id, revision);
 		return true;
 	}
 	

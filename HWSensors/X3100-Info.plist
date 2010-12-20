@@ -26,6 +26,8 @@
 			<string>org.slice.sensor.X3100</string>
 			<key>IOClass</key>
 			<string>X3100monitor</string>
+			<key>IOProbeScore</key>
+			<string>500</string>
 			<key>IOMatchCategory</key>
 			<string>X3100monitor</string>
 			<key>IOProviderClass</key>
