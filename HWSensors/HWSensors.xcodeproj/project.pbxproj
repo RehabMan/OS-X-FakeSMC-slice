@@ -8,6 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		12CBB1AE12BDEC1000157341 /* X3100.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12CBB1AD12BDEC1000157341 /* X3100.cpp */; };
+		12D78B0B12BFDB58002C61EA /* TigerAdditionals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12D78B0912BFDB58002C61EA /* TigerAdditionals.cpp */; };
+		12D78B0C12BFDB58002C61EA /* TigerAdditionals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12D78B0912BFDB58002C61EA /* TigerAdditionals.cpp */; };
+		12D78B0D12BFDB58002C61EA /* TigerAdditionals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12D78B0912BFDB58002C61EA /* TigerAdditionals.cpp */; };
+		12D78B0E12BFDB58002C61EA /* TigerAdditionals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12D78B0912BFDB58002C61EA /* TigerAdditionals.cpp */; };
+		12D78B0F12BFDB58002C61EA /* TigerAdditionals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12D78B0912BFDB58002C61EA /* TigerAdditionals.cpp */; };
+		12D78B1012BFDB58002C61EA /* TigerAdditionals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12D78B0912BFDB58002C61EA /* TigerAdditionals.cpp */; };
+		12D78B1112BFDB58002C61EA /* TigerAdditionals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12D78B0912BFDB58002C61EA /* TigerAdditionals.cpp */; };
+		12D78B1212BFDB58002C61EA /* TigerAdditionals.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 12D78B0A12BFDB58002C61EA /* TigerAdditionals.h */; };
+		12D78B1312BFDB58002C61EA /* TigerAdditionals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12D78B0912BFDB58002C61EA /* TigerAdditionals.cpp */; };
+		12D78B1412BFDB58002C61EA /* TigerAdditionals.h in Headers */ = {isa = PBXBuildFile; fileRef = 12D78B0A12BFDB58002C61EA /* TigerAdditionals.h */; };
+		12D78B1512BFDB58002C61EA /* TigerAdditionals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12D78B0912BFDB58002C61EA /* TigerAdditionals.cpp */; };
+		12D78B1612BFDB58002C61EA /* TigerAdditionals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12D78B0912BFDB58002C61EA /* TigerAdditionals.cpp */; };
 		AE00C79D126A1FED0068E69A /* F718x.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE00C79C126A1FED0068E69A /* F718x.cpp */; };
 		AE00C7E6126A253A0068E69A /* PC8739x.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE00C7E5126A253A0068E69A /* PC8739x.cpp */; };
 		AE212C7912678DC700145048 /* W836x.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE212C7812678DC700145048 /* W836x.cpp */; };
@@ -91,6 +103,7 @@
 				AEE2D5A712720A8300128864 /* W836x.kext in CopyFiles */,
 				AEE2D5B912720A8700128864 /* F718x.kext in CopyFiles */,
 				AEE2D5CB12720A8900128864 /* PC8739x.kext in CopyFiles */,
+				12D78B1212BFDB58002C61EA /* TigerAdditionals.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,33 +111,35 @@
 
 /* Begin PBXFileReference section */
 		12CBB17E12BDEA9F00157341 /* X3100.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = X3100.kext; sourceTree = BUILT_PRODUCTS_DIR; };
-		12CBB17F12BDEA9F00157341 /* X3100-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "X3100-Info.plist"; sourceTree = "<group>"; };
+		12CBB17F12BDEA9F00157341 /* X3100-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "X3100-Info.plist"; sourceTree = "<group>"; };
 		12CBB1AC12BDEC1000157341 /* X3100.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = X3100.h; sourceTree = "<group>"; };
 		12CBB1AD12BDEC1000157341 /* X3100.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = X3100.cpp; sourceTree = "<group>"; };
+		12D78B0912BFDB58002C61EA /* TigerAdditionals.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483641"; lastKnownFileType = sourcecode.cpp.cpp; path = TigerAdditionals.cpp; sourceTree = "<group>"; };
+		12D78B0A12BFDB58002C61EA /* TigerAdditionals.h */ = {isa = PBXFileReference; fileEncoding = "-2147483641"; lastKnownFileType = sourcecode.c.h; path = TigerAdditionals.h; sourceTree = "<group>"; };
 		AE00C785126A1F440068E69A /* F718x.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = F718x.kext; sourceTree = BUILT_PRODUCTS_DIR; };
-		AE00C786126A1F440068E69A /* F718x-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "F718x-Info.plist"; sourceTree = "<group>"; };
-		AE00C799126A1FD00068E69A /* F718x-pre106-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "F718x-pre106-Info.plist"; sourceTree = "<group>"; };
+		AE00C786126A1F440068E69A /* F718x-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "F718x-Info.plist"; sourceTree = "<group>"; };
+		AE00C799126A1FD00068E69A /* F718x-pre106-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "F718x-pre106-Info.plist"; sourceTree = "<group>"; };
 		AE00C79B126A1FED0068E69A /* F718x.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F718x.h; sourceTree = "<group>"; };
 		AE00C79C126A1FED0068E69A /* F718x.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = F718x.cpp; sourceTree = "<group>"; };
 		AE00C7BD126A24960068E69A /* PC8739x.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PC8739x.kext; sourceTree = BUILT_PRODUCTS_DIR; };
-		AE00C7BE126A24960068E69A /* PC8739x-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PC8739x-Info.plist"; sourceTree = "<group>"; };
-		AE00C7E2126A252E0068E69A /* PC8739x-pre106-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "PC8739x-pre106-Info.plist"; sourceTree = "<group>"; };
+		AE00C7BE126A24960068E69A /* PC8739x-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "PC8739x-Info.plist"; sourceTree = "<group>"; };
+		AE00C7E2126A252E0068E69A /* PC8739x-pre106-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "PC8739x-pre106-Info.plist"; sourceTree = "<group>"; };
 		AE00C7E4126A253A0068E69A /* PC8739x.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PC8739x.h; sourceTree = "<group>"; };
 		AE00C7E5126A253A0068E69A /* PC8739x.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PC8739x.cpp; sourceTree = "<group>"; };
 		AE212C6A12678D3500145048 /* W836x.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = W836x.kext; sourceTree = BUILT_PRODUCTS_DIR; };
-		AE212C6B12678D3500145048 /* W836x-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "W836x-Info.plist"; sourceTree = "<group>"; };
+		AE212C6B12678D3500145048 /* W836x-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "W836x-Info.plist"; sourceTree = "<group>"; };
 		AE212C7712678DC700145048 /* W836x.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = W836x.h; sourceTree = "<group>"; };
 		AE212C7812678DC700145048 /* W836x.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = W836x.cpp; sourceTree = "<group>"; };
-		AE3124F71268189A003930CB /* IntelThermal-pre106-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "IntelThermal-pre106-Info.plist"; sourceTree = "<group>"; };
-		AE3124F812681934003930CB /* IT87x-pre106-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "IT87x-pre106-Info.plist"; sourceTree = "<group>"; };
-		AE3124F912681966003930CB /* W836x-pre106-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "W836x-pre106-Info.plist"; sourceTree = "<group>"; };
+		AE3124F71268189A003930CB /* IntelThermal-pre106-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "IntelThermal-pre106-Info.plist"; sourceTree = "<group>"; };
+		AE3124F812681934003930CB /* IT87x-pre106-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "IT87x-pre106-Info.plist"; sourceTree = "<group>"; };
+		AE3124F912681966003930CB /* W836x-pre106-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W836x-pre106-Info.plist"; sourceTree = "<group>"; };
 		AE36CBD3125FA7F900E1EBA5 /* IntelThermal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntelThermal.h; sourceTree = "<group>"; };
 		AE36CBD5125FA80800E1EBA5 /* IntelThermal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IntelThermal.cpp; sourceTree = "<group>"; };
 		AE5BA5781268D94A00EA6AB9 /* NVClockX.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NVClockX.kext; sourceTree = BUILT_PRODUCTS_DIR; };
-		AE5BA5791268D94A00EA6AB9 /* NVClockX-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NVClockX-Info.plist"; sourceTree = "<group>"; };
+		AE5BA5791268D94A00EA6AB9 /* NVClockX-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "NVClockX-Info.plist"; sourceTree = "<group>"; };
 		AE5BA5B51268D99C00EA6AB9 /* NVClockX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NVClockX.h; sourceTree = "<group>"; };
 		AE5BA5B61268D99C00EA6AB9 /* NVClockX.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NVClockX.cpp; sourceTree = "<group>"; };
-		AE5BA5B81268D9C300EA6AB9 /* NVClockX-pre106-info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "NVClockX-pre106-info.plist"; sourceTree = "<group>"; };
+		AE5BA5B81268D9C300EA6AB9 /* NVClockX-pre106-info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "NVClockX-pre106-info.plist"; sourceTree = "<group>"; };
 		AE5BA6361268DCDE00EA6AB9 /* adt7473.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = adt7473.cpp; sourceTree = "<group>"; };
 		AE5BA6371268DCDE00EA6AB9 /* backend.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = backend.cpp; sourceTree = "<group>"; };
 		AE5BA6381268DCDE00EA6AB9 /* backend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = backend.h; sourceTree = "<group>"; };
@@ -149,19 +164,19 @@
 		AE5BA64D1268DCDE00EA6AB9 /* xf86i2c.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xf86i2c.h; sourceTree = "<group>"; };
 		AE5BA64E1268DCDE00EA6AB9 /* xfree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xfree.h; sourceTree = "<group>"; };
 		AE840E53128D8544006532CB /* ACPIMonitor.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ACPIMonitor.kext; sourceTree = BUILT_PRODUCTS_DIR; };
-		AE840E54128D8544006532CB /* ACPIMonitor-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ACPIMonitor-Info.plist"; sourceTree = "<group>"; };
-		AE840E6C128D865F006532CB /* ACPIMonitor-pre106-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ACPIMonitor-pre106-Info.plist"; sourceTree = "<group>"; };
+		AE840E54128D8544006532CB /* ACPIMonitor-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "ACPIMonitor-Info.plist"; sourceTree = "<group>"; };
+		AE840E6C128D865F006532CB /* ACPIMonitor-pre106-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "ACPIMonitor-pre106-Info.plist"; sourceTree = "<group>"; };
 		AE840E77128D869D006532CB /* ACPIMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACPIMonitor.h; sourceTree = "<group>"; };
 		AE840E78128D869D006532CB /* ACPIMonitor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ACPIMonitor.cpp; sourceTree = "<group>"; };
 		AEABE460125F8E9300F08235 /* IntelThermal.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IntelThermal.kext; sourceTree = BUILT_PRODUCTS_DIR; };
-		AEABE462125F8E9300F08235 /* IntelThermal-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IntelThermal-Info.plist"; sourceTree = "<group>"; };
+		AEABE462125F8E9300F08235 /* IntelThermal-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "IntelThermal-Info.plist"; sourceTree = "<group>"; };
 		AEABE46A125F8F1F00F08235 /* Kernel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kernel.framework; path = /System/Library/Frameworks/Kernel.framework; sourceTree = "<absolute>"; };
 		AEABE82B125F8F6E00F08235 /* cpuid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpuid.h; sourceTree = "<group>"; };
 		AED15A21126CBA9600455FE0 /* SuperIOFamily.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperIOFamily.kext; sourceTree = BUILT_PRODUCTS_DIR; };
-		AED15A22126CBA9600455FE0 /* SuperIOFamily-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SuperIOFamily-Info.plist"; sourceTree = "<group>"; };
-		AED15A5A126CBCEF00455FE0 /* SuperIOFamily-pre106-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SuperIOFamily-pre106-Info.plist"; sourceTree = "<group>"; };
+		AED15A22126CBA9600455FE0 /* SuperIOFamily-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "SuperIOFamily-Info.plist"; sourceTree = "<group>"; };
+		AED15A5A126CBCEF00455FE0 /* SuperIOFamily-pre106-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "SuperIOFamily-pre106-Info.plist"; sourceTree = "<group>"; };
 		AED9E18E125FBEF400736A5A /* IT87x.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IT87x.kext; sourceTree = BUILT_PRODUCTS_DIR; };
-		AED9E18F125FBEF400736A5A /* IT87x-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IT87x-Info.plist"; sourceTree = "<group>"; };
+		AED9E18F125FBEF400736A5A /* IT87x-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "IT87x-Info.plist"; sourceTree = "<group>"; };
 		AED9E1BF125FC02F00736A5A /* IT87x.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IT87x.h; sourceTree = "<group>"; };
 		AED9E1C0125FC02F00736A5A /* IT87x.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IT87x.cpp; sourceTree = "<group>"; };
 		AED9E581125FC23900736A5A /* SuperIOFamily.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperIOFamily.h; sourceTree = "<group>"; };
@@ -171,8 +186,8 @@
 		AEF4C80F12602F2600297B2B /* FakeSMCDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeSMCDevice.h; sourceTree = "<group>"; };
 		AEF4C81012602F2600297B2B /* FakeSMCKey.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FakeSMCKey.cpp; sourceTree = "<group>"; };
 		AEF4C81112602F2600297B2B /* FakeSMCKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeSMCKey.h; sourceTree = "<group>"; };
-		AEF4C81212602F2600297B2B /* FakeSMC-pre106-info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "FakeSMC-pre106-info.plist"; sourceTree = "<group>"; };
-		AEF4C81312602F2600297B2B /* FakeSMC-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "FakeSMC-Info.plist"; sourceTree = "<group>"; };
+		AEF4C81212602F2600297B2B /* FakeSMC-pre106-info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "FakeSMC-pre106-info.plist"; sourceTree = "<group>"; };
+		AEF4C81312602F2600297B2B /* FakeSMC-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "FakeSMC-Info.plist"; sourceTree = "<group>"; };
 		AEF4C81512602F2600297B2B /* FakeSMC.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FakeSMC.cpp; sourceTree = "<group>"; };
 		AEF4C81612602F2600297B2B /* FakeSMC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeSMC.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -458,6 +473,8 @@
 		AEFF6178126786E60002217E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				12D78B0912BFDB58002C61EA /* TigerAdditionals.cpp */,
+				12D78B0A12BFDB58002C61EA /* TigerAdditionals.h */,
 				AEABE82B125F8F6E00F08235 /* cpuid.h */,
 			);
 			name = Utils;
@@ -477,6 +494,7 @@
 				AED49C8D126CC71E00840536 /* nvreg.h in Headers */,
 				AED49C8E126CC71E00840536 /* xf86i2c.h in Headers */,
 				AED49C8F126CC71E00840536 /* xfree.h in Headers */,
+				12D78B1412BFDB58002C61EA /* TigerAdditionals.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -661,7 +679,6 @@
 			};
 			buildConfigurationList = AEABE456125F8E7400F08235 /* Build configuration list for PBXProject "HWSensors" */;
 			compatibilityVersion = "Xcode 2.4";
-			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				English,
@@ -712,6 +729,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				12CBB1AE12BDEC1000157341 /* X3100.cpp in Sources */,
+				12D78B0B12BFDB58002C61EA /* TigerAdditionals.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -720,6 +738,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE00C79D126A1FED0068E69A /* F718x.cpp in Sources */,
+				12D78B0D12BFDB58002C61EA /* TigerAdditionals.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -728,6 +747,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE00C7E6126A253A0068E69A /* PC8739x.cpp in Sources */,
+				12D78B0C12BFDB58002C61EA /* TigerAdditionals.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -736,6 +756,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE212C7912678DC700145048 /* W836x.cpp in Sources */,
+				12D78B0E12BFDB58002C61EA /* TigerAdditionals.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -760,6 +781,7 @@
 				AE5BA6631268DCDE00EA6AB9 /* w83781d.cpp in Sources */,
 				AE5BA6641268DCDE00EA6AB9 /* w83l785r.cpp in Sources */,
 				AE5BA6651268DCDE00EA6AB9 /* xf86i2c.cpp in Sources */,
+				12D78B1312BFDB58002C61EA /* TigerAdditionals.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -768,6 +790,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE840E79128D869D006532CB /* ACPIMonitor.cpp in Sources */,
+				12D78B1012BFDB58002C61EA /* TigerAdditionals.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -776,6 +799,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE36CBD6125FA80800E1EBA5 /* IntelThermal.cpp in Sources */,
+				12D78B1512BFDB58002C61EA /* TigerAdditionals.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -784,6 +808,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AED15E45126CC21A00455FE0 /* SuperIOFamily.cpp in Sources */,
+				12D78B1112BFDB58002C61EA /* TigerAdditionals.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -792,6 +817,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AED9E1C2125FC02F00736A5A /* IT87x.cpp in Sources */,
+				12D78B0F12BFDB58002C61EA /* TigerAdditionals.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -802,6 +828,7 @@
 				AEF4C81812602F2600297B2B /* FakeSMCKey.cpp in Sources */,
 				AEF4C81712602F2600297B2B /* FakeSMCDevice.cpp in Sources */,
 				AEF4C81C12602F2600297B2B /* FakeSMC.cpp in Sources */,
+				12D78B1612BFDB58002C61EA /* TigerAdditionals.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1253,6 +1280,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 			};
 			name = Debug;
 		};
@@ -1272,7 +1300,7 @@
 				GCC_WARN_UNUSED_PARAMETER = NO;
 				GCC_WARN_UNUSED_VALUE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 				VALID_ARCHS = "i386 x86_64";
 			};
 			name = "Release 10.6";
@@ -1458,7 +1486,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
 				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
-				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 				VALID_ARCHS = i386;
 			};
 			name = "Release 10.5";
@@ -1515,10 +1543,14 @@
 		AEF4C83C1260304900297B2B /* Release 10.4 */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS = i386;
 				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
+				GCC_AUTO_VECTORIZATION = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				OTHER_CFLAGS = "-DTIGER";
 				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 				VALID_ARCHS = i386;
 			};
