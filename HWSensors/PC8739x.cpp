@@ -158,9 +158,9 @@ bool PC8739x::start(IOService * provider)
 		WarningLog("error adding AUX temperature sensor");
 	
 	// Tachometers
-	for (int i = 0; i < 5; i++) {
+//	for (int i = 0; i < 5; i++) {  //only one
 		OSString* name = 0;
-		
+	int i=0;
 		if (configuration) {
 			char key[7];
 			
@@ -174,7 +174,7 @@ bool PC8739x::start(IOService * provider)
 		if (readTachometer(i) > 10 || nameLength > 0)
 			if (!addTachometer(i, (nameLength > 0 ? name->getCStringNoCopy() : 0)))
 				WarningLog("error adding tachometer sensor %d", i);
-	}	
+//	}	
 	
 	return true;
 }
