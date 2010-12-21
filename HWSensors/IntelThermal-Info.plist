@@ -27,7 +27,7 @@
 			<key>IOClass</key>
 			<string>IntelThermal</string>
 			<key>IOMatchCategory</key>
-			<string>${PRODUCT_NAME}</string>
+			<string>IntelThermal</string>
 			<key>IOProviderClass</key>
 			<string>IOResources</string>
 			<key>IOResourceMatch</key>
