@@ -107,6 +107,7 @@ private:
 	UInt8					count;
 	UInt8					tjmax[MaxCpuCount];
 	char*					key[MaxCpuCount];
+	char					Platform[4];
 	bool					nehalemArch;
 	IOService*				fakeSMC;
 	IOWorkLoop *			WorkLoop;

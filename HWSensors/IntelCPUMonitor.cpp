@@ -68,6 +68,7 @@ IOService* IntelCPUMonitor::probe(IOService *provider, SInt32 *score)
 		
 		for (int i = 1; i < count; i++)
 			tjmax[i] = tjmax[0];
+		snprintf(Platform, 4, "n");
 	}
 	else { 
 		// Calculating Tjmax
@@ -81,7 +82,9 @@ IOService* IntelCPUMonitor::probe(IOService *provider, SInt32 *score)
 						switch (CpuStepping) 
 					{
 						case 0x02: // G0
-							tjmax[0] = 95; break;
+							tjmax[0] = 95; 
+							snprintf(Platform, 4, "M70");
+							break;
 						case 0x06: // B2
 							switch (count) 
 						{
@@ -99,28 +102,35 @@ IOService* IntelCPUMonitor::probe(IOService *provider, SInt32 *score)
 							tjmax[0] = 85; break;
 						default:
 							tjmax[0] = 85; break;
-					} break;
+					} 
+						snprintf(Platform, 4, "M75");
+						break;
 						
 					case CPU_MODEL_PENRYN: // Intel Core (45nm)
 						// Mobile CPU ?
 						if (rdmsr64(0x17) & (1<<28)) {
 							CpuMobile = true;
-							tjmax[0] = 105; break;
+							tjmax[0] = 105; 
+							snprintf(Platform, 4, "M82");
 						}
 						else {
-							tjmax[0] = 100; break;
+							tjmax[0] = 100;
+							snprintf(Platform, 4, "K36");
 						}
+						break;
 						
 					case CPU_MODEL_ATOM: // Intel Atom (45nm)
 						switch (CpuStepping)
-					{
-						case 0x02: // C0
-							tjmax[0] = 90; break;
-						case 0x0A: // A0, B0
-							tjmax[0] = 100; break;
-						default:
-							tjmax[0] = 90; break;
-					} break;
+						{
+							case 0x02: // C0
+								tjmax[0] = 90; break;
+							case 0x0A: // A0, B0
+								tjmax[0] = 100; break;
+							default:
+								tjmax[0] = 90; break;
+						} 
+						snprintf(Platform, 4, "T9");
+						break;
 						
 					case CPU_MODEL_NEHALEM:
 					case CPU_MODEL_FIELDS:
@@ -136,7 +146,9 @@ IOService* IntelCPUMonitor::probe(IOService *provider, SInt32 *score)
 							tjmax[i] = (rdmsr64(MSR_IA32_TEMPERATURE_TARGET) >> 16) & 0xFF;
 						}
 						
-					} break;
+					} 
+						snprintf(Platform, 4, "T9");
+						break;
 						
 					default:
 						WarningLog("Unsupported Intel processor found, kext will not load");
@@ -157,7 +169,7 @@ IOService* IntelCPUMonitor::probe(IOService *provider, SInt32 *score)
 		key[i] = (char*)IOMalloc(5);
 		snprintf(key[i], 5, "TC%XD", i);
 	}
-	
+//	InfoLog("Platform string %s", Platform);
 	return this;
 }
 
@@ -180,6 +192,7 @@ bool IntelCPUMonitor::start(IOService * provider)
 	BusClock = BusClock / Mega;
 	FSBClock = gPEClockFrequencyInfo.bus_frequency_max_hz  / Mega;
 	InfoLog("BusClock=%dMHz FSB=%dMHz", (int)(BusClock), (int)(FSBClock));
+	InfoLog("Platform string %s", Platform);
 	
 	if (!(WorkLoop = getWorkLoop())) 
 		return false;
@@ -217,6 +230,12 @@ bool IntelCPUMonitor::start(IOService * provider)
 			}
 		}	
 	}
+	if (Platform[0] != 'n') {
+		if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCAddKeyHandler, false, (void *)"RPlt", (void *)"ch8*", (void *)6, this)) {
+			WarningLog("Can't add Platform key to fake SMC device");
+		}			
+	}
+	
 	return true;
 }
 
@@ -270,7 +289,7 @@ IOReturn IntelCPUMonitor::callPlatformFunction(const OSSymbol *functionName, boo
 		int index;
 		//InfoLog("key %s is called", name);
 		if (name && data) {
-			index = name[2] >= 'A' ? name[2] - 55 : name[2] - 48;
+			
 			switch (name[0]) {
 				case 'T':
 					index = name[2] >= 'A' ? name[2] - 55 : name[2] - 48;
@@ -284,7 +303,7 @@ IOReturn IntelCPUMonitor::callPlatformFunction(const OSSymbol *functionName, boo
 					}
 					break;
 				case 'F':
-					if (name[1] != 'R') {
+					if ((name[1] != 'R') || (name[2] != 'C')) {
 						return kIOReturnBadArgument;
 					}
 					index = name[3] >= 'A' ? name[3] - 55 : name[3] - 48;
@@ -297,6 +316,12 @@ IOReturn IntelCPUMonitor::callPlatformFunction(const OSSymbol *functionName, boo
 				case 'V':
 					value = encode_fp2e(Voltage);
 					break;
+				case 'R':
+					if ((name[1] != 'P') || (name[2] != 'l') || (name[3] != 't')) {
+						return kIOReturnBadArgument;
+					}
+					bcopy(Platform, data, 4);
+					return kIOReturnSuccess;
 
 				default:
 					return kIOReturnBadArgument;
