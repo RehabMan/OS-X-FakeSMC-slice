@@ -16,11 +16,13 @@
 #define KEY_CPU_VOLTAGE_RAW					"VC0c"
 #define KEY_MEMORY_VOLTAGE					"VM0R"
 #define KEY_FAN_NUMBER						"FNum"
+#define KEY_CPU_PROXIMITY_TEMPERATURE       "TC0P"
 
 #define	KEY_FORMAT_FAN_ID					"F%XID"
 #define	KEY_FORMAT_FAN_SPEED				"F%XAc"
 #define	KEY_FORMAT_GPU_DIODE_TEMPERATURE	"TG%XD"
 #define	KEY_FORMAT_GPU_BOARD_TEMPERATURE	"TG%XH"
+#define KEY_FORMAT_GPU_PROXIMITY_TEMPERATURE  "TG%XP"
 
 #define TYPE_FPE2							"fpe2"
 #define TYPE_FP2E							"fp2e"
@@ -28,6 +30,8 @@
 #define TYPE_SP78							"sp78"
 #define TYPE_UI8							"ui8"
 #define TYPE_UI16							"ui16"
+#define TYPE_SI16                           "si16"
+#define TYPE_FLAG                           "flag"
 
 #define kFakeSMCService						"FakeSMC"
 
