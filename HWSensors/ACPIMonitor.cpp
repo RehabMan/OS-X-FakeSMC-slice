@@ -115,7 +115,20 @@ bool ACPIMonitor::start(IOService * provider)
 			if (!addTachometer(key, name ? name->getCStringNoCopy() : 0))
 				WarningLog("Can't add tachometer sensor, key %s", key);
 		} 
-		else break;
+		else {
+			snprintf(key, 5, "FTN%X", i);
+			if (kIOReturnSuccess == acpiDevice->validateObject(key)){
+				OSString* name = NULL;
+				
+				if (fanNames )
+					name = OSDynamicCast(OSString, fanNames->getObject(i));
+				
+				if (!addTachometer(key, name ? name->getCStringNoCopy() : 0))
+					WarningLog("Can't add tachometer sensor, key %s", key);
+			} 
+			else
+			break;
+		}
 	}
 
 	//Next step - temperature keys
@@ -215,7 +228,7 @@ inline UInt16 encode_fpe2(UInt16 value)
 {
 	return swap_value(value << 2);
 }
-
+#define MEGA10 10000000ull
 IOReturn ACPIMonitor::callPlatformFunction(const OSSymbol *functionName, bool waitForFunction, void *param1, void *param2, void *param3, void *param4 )
 {
 	if (functionName->isEqualTo(kFakeSMCGetValueCallback)) {
@@ -238,6 +251,12 @@ IOReturn ACPIMonitor::callPlatformFunction(const OSSymbol *functionName, bool wa
 						val = encode_fp2e(value);
 					}
 					else if (key->getChar(0) == 'F') {
+						if (key->getChar(1) == 'A') {
+							val = encode_fpe2(value);
+						} else 
+							if (key->getChar(1) == 'T') {
+								val = encode_fpe2(MEGA10 / value);
+							}
 						val = encode_fpe2(value);
 					}
 					else val = value;

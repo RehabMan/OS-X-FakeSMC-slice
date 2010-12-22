@@ -78,12 +78,22 @@ IOService* IntelCPUMonitor::probe(IOService *provider, SInt32 *score)
 			{
 				switch (CpuModel) 
 				{
+					case CPU_MODEL_PENTIUM_M:
+						tjmax[0] = 100; 
+						snprintf(Platform, 4, "M70");
+						break;
+						
+					case CPU_MODEL_YONAH:
+						tjmax[0] = 85; 
+						snprintf(Platform, 4, "K22");
+						break;					
+							
 					case CPU_MODEL_MEROM: // Intel Core (65nm)
 						switch (CpuStepping) 
 					{
 						case 0x02: // G0
 							tjmax[0] = 95; 
-							snprintf(Platform, 4, "M70");
+							snprintf(Platform, 4, "M71");
 							break;
 						case 0x06: // B2
 							switch (count) 
