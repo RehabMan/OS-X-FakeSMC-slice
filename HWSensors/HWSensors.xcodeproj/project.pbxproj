@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12A8DAF812C0A6B600A49048 /* ATICard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12A8DAF612C0A6B600A49048 /* ATICard.cpp */; };
 		12CB0F5B12C0899B00068B06 /* IntelCPUMonitor-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 12CB0F5812C0899B00068B06 /* IntelCPUMonitor-Info.plist */; };
 		12CB0F5C12C0899B00068B06 /* IntelCPUMonitor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12CB0F5912C0899B00068B06 /* IntelCPUMonitor.cpp */; };
 		12CBB1AE12BDEC1000157341 /* X3100.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12CBB1AD12BDEC1000157341 /* X3100.cpp */; };
@@ -113,6 +114,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		12A8DAF612C0A6B600A49048 /* ATICard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ATICard.cpp; sourceTree = "<group>"; };
+		12A8DAF712C0A6B600A49048 /* ATICard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATICard.h; sourceTree = "<group>"; };
+		12A8DAF912C0A6C200A49048 /* radeon_chipinfo_gen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = radeon_chipinfo_gen.h; path = "../Plug-ins/FakeSMCRadeon/radeon_chipinfo_gen.h"; sourceTree = SOURCE_ROOT; };
+		12A8DAFA12C0A6C200A49048 /* radeon_chipsets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = radeon_chipsets.h; path = "../Plug-ins/FakeSMCRadeon/radeon_chipsets.h"; sourceTree = SOURCE_ROOT; };
+		12A8DAFB12C0A6D500A49048 /* atombios.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = atombios.h; path = "../Plug-ins/FakeSMCRadeon/atombios.h"; sourceTree = SOURCE_ROOT; };
 		12CB0F3A12C087D400068B06 /* IntelCPUMonitor.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IntelCPUMonitor.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		12CB0F4612C0888E00068B06 /* IntelCPUMonitor.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IntelCPUMonitor.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		12CB0F5812C0899B00068B06 /* IntelCPUMonitor-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "IntelCPUMonitor-Info.plist"; sourceTree = "<group>"; };
@@ -315,6 +321,11 @@
 		12D78B1912BFDCBB002C61EA /* Radeon */ = {
 			isa = PBXGroup;
 			children = (
+				12A8DAFB12C0A6D500A49048 /* atombios.h */,
+				12A8DAF912C0A6C200A49048 /* radeon_chipinfo_gen.h */,
+				12A8DAFA12C0A6C200A49048 /* radeon_chipsets.h */,
+				12A8DAF612C0A6B600A49048 /* ATICard.cpp */,
+				12A8DAF712C0A6B600A49048 /* ATICard.h */,
 				12D78B1F12BFDCFD002C61EA /* RadeonMonitor-Info.plist */,
 				12D78B2F12BFDDAC002C61EA /* Radeon.h */,
 				12D78B3012BFDDAC002C61EA /* Radeon.cpp */,
@@ -849,6 +860,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				12D78B3112BFDDAC002C61EA /* Radeon.cpp in Sources */,
+				12A8DAF812C0A6B600A49048 /* ATICard.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1146,10 +1158,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_MODEL_TUNING = G5;
+				GCC_MODEL_TUNING = "";
 				INFOPLIST_FILE = "RadeonMonitor-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
-				MODULE_NAME = com.yourcompany.driver.RadeonMonitor;
+				MODULE_NAME = org.slice.RadeonMonitor;
 				MODULE_VERSION = 1.0.0d1;
 				PREBINDING = NO;
 				PRODUCT_NAME = RadeonMonitor;

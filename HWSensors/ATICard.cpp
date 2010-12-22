@@ -8,11 +8,9 @@
  */
 
 #include "ATICard.h"
-#include "radeon_chipinfo_gen.h"
-#include "Sensor.h"
-
-
-//OSDefineMetaClassAndStructors(ATICard, OSObject)
+//#include "radeon_chipinfo_gen.h"
+//#include "Sensor.h"
+OSDefineMetaClassAndStructors(ATICard, OSObject)
 
 bool ATICard::initialize()
 {
@@ -45,18 +43,16 @@ bool ATICard::initialize()
 		return false;
 	}
 	
-	//getRadeonBIOS(); -  anahuya?
 	if(!getRadeonInfo())
 		return false;
-/*	if (!rinfo) {
-		return false;
-	}*/
+
 	switch (rinfo->ChipFamily) {
 		case CHIP_FAMILY_R600:
 		case CHIP_FAMILY_RV610:
 		case CHIP_FAMILY_RV630:
 		case CHIP_FAMILY_RV670:
-			setup_R6xx();
+			//setup_R6xx();
+			tempFamily = R6xx;
 			break;
 		case CHIP_FAMILY_R700:
 		case CHIP_FAMILY_R710:
@@ -64,16 +60,19 @@ bool ATICard::initialize()
 		case CHIP_FAMILY_RV740:
 		case CHIP_FAMILY_RV770:
 		case CHIP_FAMILY_RV790:
-			setup_R7xx();
+			//setup_R7xx();
+			tempFamily = R7xx;
 			break;
 		case CHIP_FAMILY_Evergreen:
-			setup_Evergreen();
+			//setup_Evergreen();
+			tempFamily = R8xx;
 			break;
 			
 		default:
 			InfoLog("sorry, but your card %04lx is not supported!\n", (long unsigned int)(rinfo->device_id));
 			return false;
 	}
+	
 	return true;
 }
 
@@ -96,23 +95,11 @@ bool ATICard::getRadeonInfo()
 		}
 		devices++;
 	}
-	
-/*	
-	for (int i=0; radeon_device_list[i].device_id; i++) {
-		if (devID == radeon_device_list[i].device_id) {
-			rinfo = &radeon_device_list[i];
-			family = radeon_device_list[i].ChipFamily;
-			return;
-		}
-	}
-	if (!rinfo) {
-		InfoLog("your DeviceID is unknown!\n");
-	}
- */
+
 	InfoLog("Unknown DeviceID!\n");
 	return false;
 }
-
+/*
 void ATICard::setup_R6xx()
 {
 	char key[5];
@@ -151,8 +138,67 @@ void ATICard::setup_Evergreen()
 	tempSensor = new EverTemperatureSensor(this, id, key, TYPE_SP78, 2);
 	Caps = GPU_TEMP_MONITORING;
 }
-
+*/
 UInt32 ATICard::read32(UInt32 reg)
 {
 	return INVID(reg);
+}
+
+IOReturn ATICard::R6xxTemperatureSensor(UInt16* data)
+{
+	UInt32 temp, actual_temp = 0;
+	for (int i=0; i<1000; i++) {  //attempts to ready
+		temp = (read32(CG_THERMAL_STATUS) & ASIC_T_MASK) >> ASIC_T_SHIFT;	
+		if ((temp >> 7) & 1)
+			actual_temp = 0;
+		else {
+			actual_temp = temp & 0xff; //(temp >> 1)
+			break;
+		}
+		IOSleep(10);
+	}
+	*data = (UInt16)(actual_temp & 0xfff);
+	//data[1] = 0;
+	return kIOReturnSuccess; 
+	
+}
+
+IOReturn ATICard::R7xxTemperatureSensor(UInt16* data)
+{
+	UInt32 temp, actual_temp = 0;
+	for (int i=0; i<1000; i++) {  //attempts to ready
+		temp = (read32(CG_MULT_THERMAL_STATUS) & ASIC_TM_MASK) >> ASIC_TM_SHIFT;	
+		if ((temp >> 9) & 1)
+			actual_temp = 0;
+		else {
+			actual_temp = (temp >> 1) & 0xff;
+			break;
+		}
+		IOSleep(10);
+	}
+	
+	*data = (UInt16)(actual_temp & 0xfff);
+	//data[1] = 0;
+	return kIOReturnSuccess;
+}
+
+IOReturn ATICard::EverTemperatureSensor(UInt16* data)
+{
+	UInt32 temp, actual_temp = 0;
+	for (int i=0; i<1000; i++) {  //attempts to ready
+		temp = (read32(CG_MULT_THERMAL_STATUS) & ASIC_TM_MASK) >> ASIC_TM_SHIFT;	
+		if ((temp >> 10) & 1)
+			actual_temp = 0;
+		else if ((temp >> 9) & 1)
+			actual_temp = 255;
+		else {
+			actual_temp = (temp >> 1) & 0xff;
+			break;
+		}
+		IOSleep(10);
+	}
+	
+	*data = (UInt16)(actual_temp & 0xfff);
+	//data[1] = 0;
+	return kIOReturnSuccess;
 }

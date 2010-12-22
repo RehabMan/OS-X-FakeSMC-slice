@@ -8,25 +8,19 @@
  */
 
 #include "Radeon.h"
-#include "FakeSMC.h"
+
 
 #define kGenericPCIDevice "IOPCIDevice"
 #define kTimeoutMSecs 1000
 #define fVendor "vendor-id"
 #define fDevice "device-id"
+#define fClass	"class-code"
 #define kIOPCIConfigBaseAddress0 0x10
 
-#define INVID8(offset) (mmio_base[offset])
-#define INVID16(offset) OSReadLittleInt16((mmio_base), offset)
-#define INVID(offset) OSReadLittleInt32((mmio_base), offset)
-#define OUTVID(offset,val) OSWriteLittleInt32((mmio_base), offset, val)
-
-#define Debug FALSE
-
-#define LogPrefix "RadeonMonitor: "
-#define DebugLog(string, args...)	do { if (Debug) { IOLog (LogPrefix "[Debug] " string "\n", ## args); } } while(0)
-#define WarningLog(string, args...) do { IOLog (LogPrefix "[Warning] " string "\n", ## args); } while(0)
-#define InfoLog(string, args...)	do { IOLog (LogPrefix string "\n", ## args); } while(0)
+#define INVID8(offset)		(mmio_base[offset])
+#define INVID16(offset)		OSReadLittleInt16((mmio_base), offset)
+#define INVID(offset)		OSReadLittleInt32((mmio_base), offset)
+#define OUTVID(offset,val)	OSWriteLittleInt32((mmio_base), offset, val)
 
 #define super IOService
 OSDefineMetaClassAndStructors(RadeonMonitor, IOService)
@@ -41,7 +35,7 @@ bool RadeonMonitor::addSensor(const char* key, const char* type, unsigned char s
 IOService* RadeonMonitor::probe(IOService *provider, SInt32 *score)
 {
 	if (super::probe(provider, score) != this) return 0;
-	UInt32 vendor_id, device_id, class;
+	UInt32 vendor_id, device_id, class_id;
 	bool ret = 0;
 	if (OSDictionary * dictionary = serviceMatching(kGenericPCIDevice)) {
 		if (OSIterator * iterator = getMatchingServices(dictionary)) {
@@ -49,19 +43,19 @@ IOService* RadeonMonitor::probe(IOService *provider, SInt32 *score)
 			IOPCIDevice* device = 0;
 			
 			while (device = OSDynamicCast(IOPCIDevice, iterator->getNextObject())) {
-				OSData *data = OSDynamicCast(OSData, device->getProperty("vendor-id"));
+				OSData *data = OSDynamicCast(OSData, device->getProperty(fVendor));
 				if (data)
 					vendor_id = *(UInt32*)data->getBytesNoCopy();
 				
-				data = OSDynamicCast(OSData, device->getProperty("device-id"));				
+				data = OSDynamicCast(OSData, device->getProperty(fDevice));				
 				if (data)
 					device_id = *(UInt32*)data->getBytesNoCopy();
 				
-				data = OSDynamicCast(OSData, device->getProperty("class"));				
+				data = OSDynamicCast(OSData, device->getProperty(fClass));				
 				if (data)
-					class = *(UInt32*)data->getBytesNoCopy();
+					class_id = *(UInt32*)data->getBytesNoCopy();
 				
-				if ((vendor_id==0x1002) && (class = 0x03000000)) {
+				if ((vendor_id==0x1002) && (class_id = 0x03000000)) {
 					InfoLog("found %lx Radeon chip", (long unsigned int)device_id);
 					VCard = device;
 					ret = 1; //TODO - count a number of cards
@@ -85,61 +79,41 @@ bool RadeonMonitor::start(IOService * provider)
 		WarningLog("Can't locate fake SMC device, kext will not load");
 		return false;
 	}
-	
-	IOMemoryDescriptor *		theDescriptor;
-	IOPhysicalAddress bar = (IOPhysicalAddress)((VCard->configRead32(kMCHBAR)) & ~0xf);
-	DebugLog("Fx3100: register space=%08lx\n", (long unsigned int)bar);
-	theDescriptor = IOMemoryDescriptor::withPhysicalAddress (bar, 0x2000, kIODirectionOutIn); // | kIOMapInhibitCache);
-	if(theDescriptor != NULL)
+	Card = new ATICard();
+	Card->VCard = VCard;
+	//Card->chipID = deviceID;	
+	if(Card->initialize())	
 	{
-		mmio = theDescriptor->map();
-		if(mmio != NULL)
-		{
-			mmio_base = (volatile UInt8 *)mmio->getVirtualAddress();
-#if DEBUG				
-			DebugLog(" MCHBAR mapped\n");
-			for (int i=0; i<0x2f; i +=16) {
-				DebugLog("%04lx: ", (long unsigned int)i+0x1000);
-				for (int j=0; j<16; j += 1) {
-					DebugLog("%02lx ", (long unsigned int)INVID8(i+j+0x1000));
-				}
-				DebugLog("\n");
+		char name[5];
+		//try to find empty key
+		for (int i = 0; i < 0x10; i++) {
+			
+			snprintf(name, 5, KEY_FORMAT_GPU_DIODE_TEMPERATURE, i); 
+			
+			UInt8 length = 0;
+			void * data = 0;
+			
+			IOReturn result = fakeSMC->callPlatformFunction(kFakeSMCGetKeyValue, true, (void *)name, (void *)&length, (void *)&data, 0);
+			
+			if (kIOReturnSuccess == result) {
+				continue;
 			}
-#endif				
+			if (addSensor(name, TYPE_SP78, 2, i)) {
+				numCard = i;
+				break;
+			}
 		}
-		else
-		{
-			InfoLog(" MCHBAR failed to map\n");
-			return -1;
-		}			
-	}	
-	
-	char name[5];
-	//try to find empty key
-	for (int i = 0; i < 0x10; i++) {
 		
-		snprintf(name, 5, KEY_FORMAT_GPU_DIODE_TEMPERATURE, i); 
-		
-		UInt8 length = 0;
-		void * data = 0;
-		
-		IOReturn result = fakeSMC->callPlatformFunction(kFakeSMCGetKeyValue, true, (void *)name, (void *)&length, (void *)&data, 0);
-		
-		if (kIOReturnSuccess == result) {
-			continue;
+		if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCAddKeyHandler, false, (void *)name, (void *)TYPE_SP78, (void *)2, this)) {
+			WarningLog("Can't add key to fake SMC device, kext will not load");
+			return false;
 		}
-		if (addSensor(name, TYPE_SP78, 2, i)) {
-			numCard = i;
-			break;
-		}
+		
+		return true;	
 	}
-	
-	if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCAddKeyHandler, false, (void *)name, (void *)TYPE_SP78, (void *)2, this)) {
-		WarningLog("Can't add key to fake SMC device, kext will not load");
+	else {
 		return false;
 	}
-	
-	return true;	
 }
 
 
@@ -179,24 +153,25 @@ IOReturn RadeonMonitor::callPlatformFunction(const OSSymbol *functionName, bool 
 		if (name && data) {
 			if (OSNumber *number = OSDynamicCast(OSNumber, sensors->getObject(name))) {				
 				UInt32 index = number->unsigned16BitValue();
-				if (index != numCard) {
+				if (index != numCard) {  //TODO - multiple card support
 					return kIOReturnBadArgument;
 				}
 			}
-			short value;
-			if (mmio_base) {
-				OUTVID(TIC1, 3);
-				//		if ((INVID16(TSC1) & (1<<15)) && !(INVID16(TSC1) & (1<<8)))//enabled and ready
-				for (int i=0; i<1000; i++) {  //attempts to ready
-					
-					if (INVID16(TSS1) & (1<<10))   //valid?
-						break;
-					IOSleep(10);
-				}				
-				value = INVID8(TR1);
-			}				
 			
-			t = 140 - value;
+			switch (Card->tempFamily) {
+				case R6xx:
+					Card->R6xxTemperatureSensor(&t);
+					break;
+				case R7xx:
+					Card->R7xxTemperatureSensor(&t);
+					break;
+				case R8xx:
+					Card->EverTemperatureSensor(&t);
+					break;
+				default:
+					break;
+			}
+			//t = Card->tempSensor->readTemp(index);
 			bcopy(&t, data, 2);
 			
 			return kIOReturnSuccess;
