@@ -59,6 +59,7 @@ IOService* RadeonMonitor::probe(IOService *provider, SInt32 *score)
 					InfoLog("found %lx Radeon chip", (long unsigned int)device_id);
 					VCard = device;
 					ret = 1; //TODO - count a number of cards
+					break;
 				}
 				else {
 					InfoLog("ATI Radeon not found!");
