@@ -144,6 +144,12 @@ bool ACPIMonitor::start(IOService * provider)
 	if (kIOReturnSuccess == acpiDevice->validateObject("TAMB"))
 		addSensor("TAMB", KEY_AMBIENT_TEMPERATURE, TYPE_SP78, 2);
 	
+    if (kIOReturnSuccess == acpiDevice->validateObject("TCPP"))
+        addSensor("TCPP", KEY_CPU_PROXIMITY_TEMPERATURE, TYPE_SP78, 2);
+	// We should add also GPU reading stuff for those who has no supported plug in but have the value on EC registers
+	
+	
+	
 	//Voltage
 	if (kIOReturnSuccess == acpiDevice->validateObject("VCPU"))
 		addSensor("VSN0", KEY_CPU_VOLTAGE, TYPE_FP2E, 2);
@@ -179,6 +185,25 @@ bool ACPIMonitor::start(IOService * provider)
 
 	if (kIOReturnSuccess == acpiDevice->validateObject("PSN1"))
 		addSensor("PSN1", "PC1C", TYPE_UI16, 2);
+	
+	// AC Power/Battery
+    if (kIOReturnSuccess == acpiDevice->validateObject("ACDC")) // Power Source Read AC/Battery
+	{ 
+		addSensor("ACDC", "ACEN", TYPE_UI8, 1);
+		addSensor("ACDC", "ACFP", TYPE_FLAG, 1);
+		addSensor("ACDC", "ACIN", TYPE_FLAG, 1);
+	}
+	// TODO real SMC returns ACID only when AC is plugged, if not is zeroed, so hardcoding it in plist is not OK IMHO
+	// Same goes for ACIC, but no idea how we can get the AC current value..
+	
+	// Here if ACDC returns 0 we need to set the on battery BATP flag
+	
+	// Battery stuff, need to implement rest of the keys once i figure those
+    if (kIOReturnSuccess == acpiDevice->validateObject("BAK0")) // Battery 0 Current
+        addSensor("BAK0", "B0AC", TYPE_SI16, 2);
+	
+    if (kIOReturnSuccess == acpiDevice->validateObject("BAK1")) // Battery 0 Voltage
+        addSensor("BAK1", "B0AV", TYPE_UI16, 2);
 	
 	registerService(0);
 
