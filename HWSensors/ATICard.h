@@ -12,8 +12,8 @@
 
 #include <IOKit/IOService.h>
 #include <IOKit/pci/IOPCIDevice.h>
-#include "FakeSMCBinding.h"
-#include "radeon_chipsets.h"
+#include "radeon_chipinfo_gen.h"
+#include "FakeSMC.h"
 
 #define GPU_OVERCLOCKING (1<<0)
 #define MEM_OVERCLOCKING (1<<1)
@@ -33,13 +33,29 @@
 #define INVID(offset) OSReadLittleInt32((mmio_base), offset)
 #define OUTVID(offset,val) OSWriteLittleInt32((mmio_base), offset, val)
 
-class ATICard : public FakeSMCBinding
-{
+#define Debug FALSE
+
+#define LogPrefix "RadeonMonitor: "
+#define DebugLog(string, args...)	do { if (Debug) { IOLog (LogPrefix "[Debug] " string "\n", ## args); } } while(0)
+#define WarningLog(string, args...) do { IOLog (LogPrefix "[Warning] " string "\n", ## args); } while(0)
+#define InfoLog(string, args...)	do { IOLog (LogPrefix string "\n", ## args); } while(0)
+
+enum TempFamilies {
+	R5xx,
+	R6xx,
+	R7xx,
+	R8xx
+};
+
+class ATICard : public OSObject {
+	OSDeclareDefaultStructors(ATICard)
+
 public:
 	UInt32			chipID;
 	UInt16			family;
 	IOPCIDevice *	VCard;
 	RADEONCardInfo*	rinfo;
+	int				tempFamily;
 	
 private:
 	volatile UInt8* mmio_base;
@@ -48,25 +64,24 @@ private:
 	UInt32			tReg;
 	int				card_number;
 	
-//	Binding*			m_Sensor;
-//	Binding*			m_Controller;  //todo
 	
-//	void			FlushList(Binding* start);	
 	bool			getRadeonInfo	();
 //	void			setup_R5xx		();  //todo
-	void			setup_R6xx		();
-	void			setup_R7xx		();
-	void			setup_Evergreen	();
+//	void			setup_R6xx		();
+//	void			setup_R7xx		();
+//	void			setup_Evergreen	();
 		
 protected:
 //	IOService*		m_Service;  //???
 public:
-	Binding* tempSensor;
-	Binding* boardSensor;
-	Binding* fanSensor;  
+//	Binding* tempSensor;
+//	Binding* boardSensor;
+//	Binding* fanSensor;  
 	UInt32			read32			(UInt32 reg);
 	bool			initialize		(void);
-	
+	IOReturn		R6xxTemperatureSensor(UInt16* data);
+	IOReturn		R7xxTemperatureSensor(UInt16* data);
+	IOReturn		EverTemperatureSensor(UInt16* data);
 };
 
 

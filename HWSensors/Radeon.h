@@ -10,6 +10,7 @@
 #include <IOKit/IOService.h>
 #include <IOKit/IOTimerEventSource.h>
 #include <IOKit/pci/IOPCIDevice.h>
+#include "ATICard.h"
 
 class RadeonMonitor : public IOService
 {
@@ -23,6 +24,8 @@ private:
 	IOMemoryMap *		mmio;
 	
 	bool				addSensor(const char* key, const char* type, unsigned char size, int index);
+protected:	
+	ATICard*			Card; 
 	
 public:
 	virtual IOService*	probe(IOService *provider, SInt32 *score);
