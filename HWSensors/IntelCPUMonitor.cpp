@@ -51,6 +51,9 @@ IOService* IntelCPUMonitor::probe(IOService *provider, SInt32 *score)
 	}
 	
 	count = cpuid_info()->core_count;//cpuid_count_cores();
+	uint64_t msr = rdmsr64(MSR_CORE_THREAD_COUNT); 
+	uint64_t m2 = msr >> 32;
+	InfoLog("MSR_CORE_THREAD_COUNT = %08x_%08lx", m2, msr);
 	
 	if(count == 0)	{
 		WarningLog("CPUs not found, kext will not load");
@@ -133,7 +136,7 @@ IOService* IntelCPUMonitor::probe(IOService *provider, SInt32 *score)
 						switch (CpuStepping)
 						{
 							case 0x02: // C0
-								tjmax[0] = 90; break;
+								tjmax[0] = 100; break;
 							case 0x0A: // A0, B0
 								tjmax[0] = 100; break;
 							default:
