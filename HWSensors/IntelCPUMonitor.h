@@ -75,6 +75,27 @@ void IntelThermal(__unused void * magic)
 	}
 }
 
+void IntelState2(__unused void * magic)
+{
+	UInt32 i = cpu_number() >> 1;
+	if(i < MaxCpuCount) {
+		UInt64 msr = rdmsr64(MSR_IA32_PERF_STS);
+		GlobalState[i].Control = msr & 0xFFFF;
+	}
+}
+
+void IntelThermal2(__unused void * magic)
+{
+	UInt32 i = cpu_number() >> 1;
+	if(i < MaxCpuCount) {
+		UInt64 msr = rdmsr64(MSR_IA32_THERM_STATUS);
+		if (msr & 0x80000000) {
+			GlobalThermalValue[i] = (msr >> 16) & 0x7F;
+			GlobalThermalValueIsObsolete[i]=false;
+		}
+	}
+}
+
 inline UInt16 swap_value(UInt16 value)
 {
 	return ((value & 0xff00) >> 8) | ((value & 0xff) << 8);
@@ -105,6 +126,7 @@ private:
 	UInt32					CpuStepping;
 	bool					CpuMobile;
 	UInt8					count;
+	UInt8					threads;
 	UInt8					tjmax[MaxCpuCount];
 	char*					key[MaxCpuCount];
 	char					Platform[4];

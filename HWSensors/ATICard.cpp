@@ -8,7 +8,7 @@
  */
 
 #include "ATICard.h"
-//#include "radeon_chipinfo_gen.h"
+#include "radeon_chipinfo_gen.h"
 //#include "Sensor.h"
 OSDefineMetaClassAndStructors(ATICard, OSObject)
 
@@ -80,7 +80,7 @@ bool ATICard::getRadeonInfo()
 {
 	UInt16 devID = chipID & 0xffff;
 	RADEONCardInfo *devices = radeon_device_list;
-	rinfo = new RADEONCardInfo;
+	//rinfo = new RADEONCardInfo;
 	while (devices->device_id != NULL) {
 		//IOLog("check %d/n", devices->device_id ); //Debug
 		if ((devices->device_id & 0xffff) == devID ) {

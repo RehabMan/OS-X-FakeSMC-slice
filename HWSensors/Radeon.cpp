@@ -35,7 +35,6 @@ bool RadeonMonitor::addSensor(const char* key, const char* type, unsigned char s
 IOService* RadeonMonitor::probe(IOService *provider, SInt32 *score)
 {
 	if (super::probe(provider, score) != this) return 0;
-	UInt32 vendor_id, device_id, class_id;
 	bool ret = 0;
 	if (OSDictionary * dictionary = serviceMatching(kGenericPCIDevice)) {
 		if (OSIterator * iterator = getMatchingServices(dictionary)) {
@@ -82,7 +81,7 @@ bool RadeonMonitor::start(IOService * provider)
 	}
 	Card = new ATICard();
 	Card->VCard = VCard;
-	//Card->chipID = deviceID;	
+	Card->chipID = device_id;	
 	if(Card->initialize())	
 	{
 		char name[5];

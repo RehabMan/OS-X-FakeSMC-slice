@@ -79,6 +79,7 @@ bool IT87x::probePort()
 		case IT8716F:
 		case IT8718F:
 		case IT8720F: 
+		case IT8721F: 
 		case IT8726F:
 		case IT8752F:
 			model = id; 
@@ -140,6 +141,7 @@ const char *IT87x::getModelName()
         case IT8716F: return "IT8716F";
         case IT8718F: return "IT8718F";
         case IT8720F: return "IT8720F";
+        case IT8721F: return "IT8721F";
         case IT8726F: return "IT8726F";
         case IT8752F: return "IT8752F";
 	}
