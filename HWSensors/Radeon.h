@@ -15,6 +15,7 @@
 class RadeonMonitor : public IOService
 {
     OSDeclareDefaultStructors(RadeonMonitor)    
+	
 private:
 	IOService*			fakeSMC;
 	OSDictionary*		sensors;
@@ -22,6 +23,9 @@ private:
 	int					numCard;  //numCard=0 if only one Video, but may be any other value
 	IOPCIDevice *		VCard;
 	IOMemoryMap *		mmio;
+	UInt32				vendor_id;
+	UInt32				device_id;
+	UInt32				class_id;
 	
 	bool				addSensor(const char* key, const char* type, unsigned char size, int index);
 protected:	

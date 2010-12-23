@@ -12,8 +12,8 @@
 
 #include <IOKit/IOService.h>
 #include <IOKit/pci/IOPCIDevice.h>
-#include "radeon_chipinfo_gen.h"
 #include "FakeSMC.h"
+#include "radeon_chipsets.h"
 
 #define GPU_OVERCLOCKING (1<<0)
 #define MEM_OVERCLOCKING (1<<1)

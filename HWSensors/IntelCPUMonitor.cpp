@@ -51,9 +51,9 @@ IOService* IntelCPUMonitor::probe(IOService *provider, SInt32 *score)
 	}
 	
 	count = cpuid_info()->core_count;//cpuid_count_cores();
-	uint64_t msr = rdmsr64(MSR_CORE_THREAD_COUNT); 
-	uint64_t m2 = msr >> 32;
-	InfoLog("MSR_CORE_THREAD_COUNT = %08x_%08lx", m2, msr);
+	threads = cpuid_info()->thread_count;
+	//uint64_t msr = rdmsr64(MSR_CORE_THREAD_COUNT); 
+	//uint64_t m2 = msr >> 32;
 	
 	if(count == 0)	{
 		WarningLog("CPUs not found, kext will not load");
@@ -207,6 +207,7 @@ bool IntelCPUMonitor::start(IOService * provider)
 	InfoLog("BusClock=%dMHz FSB=%dMHz", (int)(BusClock), (int)(FSBClock));
 	InfoLog("Platform string %s", Platform);
 	
+	
 	if (!(WorkLoop = getWorkLoop())) 
 		return false;
 	
@@ -307,7 +308,10 @@ IOReturn IntelCPUMonitor::callPlatformFunction(const OSSymbol *functionName, boo
 				case 'T':
 					index = name[2] >= 'A' ? name[2] - 55 : name[2] - 48;
 					if (index >= 0 && index < count) {
-						mp_rendezvous_no_intrs(IntelThermal, &magic);
+						if (threads > count) {
+							mp_rendezvous_no_intrs(IntelThermal2, &magic);
+						} else
+							mp_rendezvous_no_intrs(IntelThermal, &magic);
 						value = tjmax[index] - GlobalThermalValue[index];
 					}
 					else {
@@ -363,7 +367,12 @@ IOReturn IntelCPUMonitor::loopTimerEvent(void)
 	LoopLock = true;
 	
 	// State Readout
-	mp_rendezvous_no_intrs(IntelState, &magic);
+	if (threads > count) {
+		mp_rendezvous_no_intrs(IntelState2, &magic);
+	} else {
+		mp_rendezvous_no_intrs(IntelState, &magic);
+	}
+
 	for (UInt32 i = 0; i < count; i++) 
 	{
 		if (!nehalemArch) {
@@ -393,7 +402,10 @@ UInt32 IntelCPUMonitor::IntelGetFrequency(UInt8 fid) {
 	}
 	else {
 		multiplier = fid & 0x1f;
-		frequency = (multiplier * BusClock);			
+//		frequency = (multiplier * BusClock);
+		int half = gPEClockFrequencyInfo.bus_to_cpu_rate_num;
+		half = half?half:1;
+		frequency = (multiplier * BusClock) * gPEClockFrequencyInfo.bus_to_cpu_rate_den / half;
 		return (frequency);	
 	}
 }
