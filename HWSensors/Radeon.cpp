@@ -13,6 +13,7 @@
 #define kGenericPCIDevice "IOPCIDevice"
 #define kTimeoutMSecs 1000
 #define fVendor "vendor-id"
+#define fATYVendor "ATY,VendorID"
 #define fDevice "device-id"
 #define fClass	"class-code"
 #define kIOPCIConfigBaseAddress0 0x10
@@ -45,6 +46,11 @@ IOService* RadeonMonitor::probe(IOService *provider, SInt32 *score)
 				OSData *data = OSDynamicCast(OSData, device->getProperty(fVendor));
 				if (data)
 					vendor_id = *(UInt32*)data->getBytesNoCopy();
+				else {
+					data = OSDynamicCast(OSData, device->getProperty(fATYVendor));
+					if (data)
+						vendor_id = *(UInt32*)data->getBytesNoCopy();
+				}
 				
 				data = OSDynamicCast(OSData, device->getProperty(fDevice));				
 				if (data)
@@ -61,7 +67,7 @@ IOService* RadeonMonitor::probe(IOService *provider, SInt32 *score)
 					break;
 				}
 				else {
-					InfoLog("ATI Radeon not found!");
+					WarningLog("ATI Radeon not found!");
 				}
 			}
 		}
