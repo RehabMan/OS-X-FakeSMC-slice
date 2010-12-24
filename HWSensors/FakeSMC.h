@@ -40,6 +40,7 @@
 #define kFakeSMCSetKeyValue					"FakeSMC_SetKeyValue"
 #define kFakeSMCGetKeyValue					"FakeSMC_GetKeyValue"
 #define kFakeSMCGetValueCallback			"FakeSMC_GetValueCallback"
+#define kFakeSMCSetValueCallback			"FakeSMC_SetValueCallback"
 
 class FakeSMC : public IOService
 {

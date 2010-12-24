@@ -133,7 +133,7 @@ const void *FakeSMCKey::getValue()
 		IOReturn result = handler->callPlatformFunction(kFakeSMCGetValueCallback, false, (void *)name, (void *)value, (void *)size, 0);
 		
 		if (kIOReturnSuccess != result)
-			WarningLog("value update callback error for key %s, return 0x%x", name, result);
+			WarningLog("value update request callback error for key %s, return 0x%x", name, result);
 	}
 
 	return value; 
@@ -155,6 +155,13 @@ bool FakeSMCKey::setValueFromBuffer(const void *aBuffer, unsigned char aSize)
 	}
 	
 	bcopy(aBuffer, value, size);
+	
+	if (handler) {
+		IOReturn result = handler->callPlatformFunction(kFakeSMCSetValueCallback, false, (void *)name, (void *)value, (void *)size, 0);
+		
+		if (kIOReturnSuccess != result)
+			WarningLog("value changed event callback error for key %s, return 0x%x", name, result);
+	}
 	
 	return true;
 }
