@@ -52,6 +52,13 @@ long IT87x::readTemperature(unsigned long index)
 long IT87x::readVoltage(unsigned long index)
 {
 	bool* valid;
+	//Zorglub
+	if (model == IT8721F) {
+        int gain = 12;
+        if ((index == 3) || (index == 7) || (index == 8))
+			gain = 24;
+        return readByte(ITE_VOLTAGE_BASE_REG + index, valid) * gain;
+    }
 	return readByte(ITE_VOLTAGE_BASE_REG + index, valid) << 4;
 }
 
@@ -217,7 +224,7 @@ bool IT87x::start(IOService * provider)
 	
 	// Voltage
 	if (configuration) {
-		for (int i = 0; i < 8; i++) 
+		for (int i = 0; i < 9; i++) //Zorglub
 		{				
 			char key[5];
 			
