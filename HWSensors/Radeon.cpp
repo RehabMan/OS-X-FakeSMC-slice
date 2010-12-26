@@ -60,15 +60,15 @@ IOService* RadeonMonitor::probe(IOService *provider, SInt32 *score)
 				if (data)
 					class_id = *(UInt32*)data->getBytesNoCopy();
 				
-				if ((vendor_id==0x1002) && (class_id = 0x03000000)) {
+				if ((vendor_id==0x1002) && (class_id == 0x03000000)) {
 					InfoLog("found %lx Radeon chip", (long unsigned int)device_id);
 					VCard = device;
 					ret = 1; //TODO - count a number of cards
 					break;
 				}
-				else {
+				/*else {
 					WarningLog("ATI Radeon not found!");
-				}
+				}*/
 			}
 		}
 	}
