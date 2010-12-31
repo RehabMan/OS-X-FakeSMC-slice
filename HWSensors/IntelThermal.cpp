@@ -36,8 +36,6 @@ IOService* IntelThermal::probe(IOService *provider, SInt32 *score)
 	
 	if (super::probe(provider, score) != this) return 0;
 	
-	InfoLog("Based on code by mercurysquad, superhai (C)2008");
-
 	cpuid_update_generic_info();
 	
 	if (strcmp(cpuid_info()->cpuid_vendor, CPUID_VID_INTEL) != 0)	{
@@ -170,13 +168,13 @@ bool IntelThermal::start(IOService * provider)
 		return false;
 	}
 	
-	InfoLog("CPU family 0x%x, model 0x%x, stepping 0x%x, cores %d, threads %d", cpuid_info()->cpuid_family, cpuid_info()->cpuid_model, cpuid_info()->cpuid_stepping, count, cpuid_info()->thread_count);
-	
-	if (!nehalemArch)
-		InfoLog("CPU Tjmax %d", tjmax[0]);
-	else
-		for (int i = 0; i < count; i++)
-			InfoLog("CPU%X Tjmax %d", i, tjmax[i]);
+	InfoLog("Based on code by mercurysquad, superhai (C)2008");
+	InfoLog("CPU family 0x%x, model 0x%x, stepping 0x%x, cores %d, threads %d, Tjmax %d", 
+			cpuid_info()->cpuid_family, 
+			cpuid_info()->cpuid_model, 
+			cpuid_info()->cpuid_stepping, 
+			count, 
+			cpuid_info()->thread_count, tjmax[0]);
 	
 	for (int i = 0; i < count; i++) {
 		if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCAddKeyHandler, false, (void *)key[i], (void *)"sp78", (void *)2, this)) {
