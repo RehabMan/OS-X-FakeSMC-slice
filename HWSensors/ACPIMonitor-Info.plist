@@ -47,6 +47,11 @@
 				<string>Fan 9</string>
 				<string>Fan 10</string>
 			</array>
+			<key>keysToAdd</key>
+			<dict>
+				<key>TCRK</key>
+				<string>TW0P</string>
+			</dict>
 		</dict>
 	</dict>
 	<key>OSBundleLibraries</key>
@@ -62,7 +67,7 @@
 		<key>com.apple.iokit.IOACPIFamily</key>
 		<string>1.2.0</string>
 		<key>org.netkas.FakeSMC</key>
-		<string>3.0.0d1</string>
+		<string>3.1.0</string>
 	</dict>
 	<key>OSBundleRequired</key>
 	<string>Root</string>

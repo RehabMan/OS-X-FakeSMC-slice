@@ -827,6 +827,7 @@ static int set_gpu_pci_id(short id)
 }
 
 /* Function to read a single byte from pci configuration space */
+#if NOTUSED
 static void read_byte(int offset, unsigned char *data)
 {
 	/* The original plan was to read the PCI configuration directly from registers 0x1800 and upwards
@@ -837,10 +838,12 @@ static void read_byte(int offset, unsigned char *data)
 	*/
 	*data = pciReadLong(nv_card->devbusfn,offset) & 0xff;
 }
+#endif
 
 /* Check the videocard for a certain PCI capability like AGP/PCI-Express/PowerManagement.
 /  If a certain capability is supported return the position of the cap pointer. 
 */
+/*
 static int pci_find_capability(unsigned char cap)
 {
 	unsigned char pos, id;
@@ -854,13 +857,13 @@ static int pci_find_capability(unsigned char cap)
 		if(id == 0xff)
 			break;
 		if(id == cap)
-			return pos; /* Return the position of the cap pointer */
+			return pos; // Return the position of the cap pointer 
 
 		read_byte(pos + PCI_CAP_LIST_NEXT, &pos);
 	}
 	return 0;
 }
-
+*/
 /* Check the videocard for a certain PCI capability like AGP/PCI-Express/PowerManagement.
 /  If a certain capability is supported return the position of the cap pointer. 
 */

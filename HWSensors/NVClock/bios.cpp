@@ -45,7 +45,7 @@ TODO:
 #define READ_INT(rom, offset) ((rom[offset+3]&0xff) << 24 | (rom[offset+2]&0xff) << 16 | (rom[offset+1]&0xff) << 8 | (rom[offset]&0xff))
 #define READ_LONG(rom, offset) (READ_INT(rom, offset+4)<<32 | READ_INT(rom, offset))
 
-static unsigned int locate(char *rom, char *str, int offset);
+//static unsigned int locate(char *rom, char *str, int offset);
 struct nvbios *read_bios(const char *file);
 static struct nvbios *parse_bios(char *rom);
 int load_bios_prom(char *data);

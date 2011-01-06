@@ -116,6 +116,9 @@
 		12A8DAF912C0A6C200A49048 /* radeon_chipinfo_gen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = radeon_chipinfo_gen.h; path = "../Plug-ins/FakeSMCRadeon/radeon_chipinfo_gen.h"; sourceTree = SOURCE_ROOT; };
 		12A8DAFA12C0A6C200A49048 /* radeon_chipsets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = radeon_chipsets.h; path = "../Plug-ins/FakeSMCRadeon/radeon_chipsets.h"; sourceTree = SOURCE_ROOT; };
 		12A8DAFB12C0A6D500A49048 /* atombios.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = atombios.h; path = "../Plug-ins/FakeSMCRadeon/atombios.h"; sourceTree = SOURCE_ROOT; };
+		12B6907112D5F2E3007D1C5C /* IntelCPUMonitor-pre106-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "IntelCPUMonitor-pre106-Info.plist"; sourceTree = "<group>"; };
+		12B6907212D5F52A007D1C5C /* X3100-pre106-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "X3100-pre106-Info.plist"; sourceTree = "<group>"; };
+		12B6907312D5F538007D1C5C /* RadeonMonitor-pre106-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "RadeonMonitor-pre106-Info.plist"; sourceTree = "<group>"; };
 		12CB0F3A12C087D400068B06 /* IntelCPUMonitor.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IntelCPUMonitor.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		12CB0F4612C0888E00068B06 /* IntelCPUMonitor.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IntelCPUMonitor.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		12CB0F5812C0899B00068B06 /* IntelCPUMonitor-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "IntelCPUMonitor-Info.plist"; sourceTree = "<group>"; };
@@ -299,6 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				12CB0F5812C0899B00068B06 /* IntelCPUMonitor-Info.plist */,
+				12B6907112D5F2E3007D1C5C /* IntelCPUMonitor-pre106-Info.plist */,
 				12CB0F5912C0899B00068B06 /* IntelCPUMonitor.cpp */,
 				12CB0F5A12C0899B00068B06 /* IntelCPUMonitor.h */,
 			);
@@ -308,6 +312,7 @@
 		12CBB19A12BDEB6800157341 /* X3100 */ = {
 			isa = PBXGroup;
 			children = (
+				12B6907212D5F52A007D1C5C /* X3100-pre106-Info.plist */,
 				12CBB17F12BDEA9F00157341 /* X3100-Info.plist */,
 				12CBB1AC12BDEC1000157341 /* X3100.h */,
 				12CBB1AD12BDEC1000157341 /* X3100.cpp */,
@@ -318,6 +323,7 @@
 		12D78B1912BFDCBB002C61EA /* Radeon */ = {
 			isa = PBXGroup;
 			children = (
+				12B6907312D5F538007D1C5C /* RadeonMonitor-pre106-Info.plist */,
 				12A8DAFB12C0A6D500A49048 /* atombios.h */,
 				12A8DAF912C0A6C200A49048 /* radeon_chipinfo_gen.h */,
 				12A8DAFA12C0A6C200A49048 /* radeon_chipsets.h */,
@@ -1003,14 +1009,17 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_AUTO_VECTORIZATION = YES;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_MODEL_TUNING = G5;
-				INFOPLIST_FILE = "IntelCPUMonitor-Info.plist";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = "";
+				INFOPLIST_FILE = "IntelCPUMonitor-pre106-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = com.yourcompany.driver.IntelCPUMonitor;
 				MODULE_VERSION = 1.0.0d1;
 				PREBINDING = NO;
 				PRODUCT_NAME = IntelCPUMonitor;
+				SDKROOT = macosx10.5;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = "Release 10.5";
@@ -1077,14 +1086,17 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_AUTO_VECTORIZATION = YES;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_MODEL_TUNING = G5;
-				INFOPLIST_FILE = "X3100-Info.plist";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = "";
+				INFOPLIST_FILE = "X3100-pre106-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
-				MODULE_NAME = com.yourcompany.driver.X3100;
+				MODULE_NAME = org.slice.sensor.X3100;
 				MODULE_VERSION = 1.0.0d1;
 				PREBINDING = NO;
 				PRODUCT_NAME = X3100;
+				SDKROOT = macosx10.5;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = "Release 10.5";
@@ -1145,14 +1157,17 @@
 		12D78B2312BFDCFF002C61EA /* Release 10.5 */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_AUTO_VECTORIZATION = YES;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_MODEL_TUNING = G5;
-				INFOPLIST_FILE = "RadeonMonitor-Info.plist";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = "";
+				INFOPLIST_FILE = "RadeonMonitor-pre106-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
-				MODULE_NAME = com.yourcompany.driver.RadeonMonitor;
+				MODULE_NAME = org.slice.RadeonMonitor;
 				MODULE_VERSION = 1.0.0d1;
 				PREBINDING = NO;
 				PRODUCT_NAME = RadeonMonitor;
+				SDKROOT = macosx10.5;
 				WRAPPER_EXTENSION = kext;
 				ZERO_LINK = YES;
 			};
@@ -1213,14 +1228,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				GCC_AUTO_VECTORIZATION = YES;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_MODEL_TUNING = G5;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = "";
 				INFOPLIST_FILE = "F718x-pre106-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.mozodojo.F718x;
 				MODULE_VERSION = 1.0.0d1;
 				PREBINDING = NO;
 				PRODUCT_NAME = F718x;
+				SDKROOT = macosx10.5;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = "Release 10.5";
@@ -1349,14 +1367,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				GCC_AUTO_VECTORIZATION = YES;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_MODEL_TUNING = G5;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = "";
 				INFOPLIST_FILE = "W836x-pre106-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.mozodojo.W836x;
 				MODULE_VERSION = 1.0.0d1;
 				PREBINDING = NO;
 				PRODUCT_NAME = W836x;
+				SDKROOT = macosx10.5;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = "Release 10.5";
@@ -1418,14 +1439,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				GCC_AUTO_VECTORIZATION = YES;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_MODEL_TUNING = G5;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = "";
 				INFOPLIST_FILE = "NVClockX-pre106-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.usrsse2.NVClockX;
 				MODULE_VERSION = 1.0.0d1;
 				PREBINDING = NO;
 				PRODUCT_NAME = NVClockX;
+				SDKROOT = macosx10.5;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = "Release 10.5";
@@ -1488,14 +1512,17 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_AUTO_VECTORIZATION = YES;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_MODEL_TUNING = G5;
-				INFOPLIST_FILE = "ACPIMonitor-Info.plist";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = "";
+				INFOPLIST_FILE = "ACPIMonitor-pre106-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.slice.ACPIMonitor;
 				MODULE_VERSION = 1.0.0d1;
 				PREBINDING = NO;
 				PRODUCT_NAME = ACPIMonitor;
+				SDKROOT = macosx10.5;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = "Release 10.5";
@@ -1620,14 +1647,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				GCC_AUTO_VECTORIZATION = YES;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_MODEL_TUNING = G5;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = "";
 				INFOPLIST_FILE = "SuperIOFamily-pre106-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.mozodojo.SuperIOFamily;
 				MODULE_VERSION = 1.0.0d1;
 				PREBINDING = NO;
 				PRODUCT_NAME = SuperIOFamily;
+				SDKROOT = macosx10.5;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = "Release 10.5";
@@ -1713,7 +1743,7 @@
 				INFOPLIST_FILE = "FakeSMC-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.netkas.FakeSMC;
-				MODULE_VERSION = 3.0.0d1;
+				MODULE_VERSION = 3.1.0d1;
 				PREBINDING = NO;
 				PRODUCT_NAME = FakeSMC;
 				ZERO_LINK = NO;
@@ -1725,7 +1755,10 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = YES;
-				SDKROOT = macosx;
+				GCC_AUTO_VECTORIZATION = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = "";
+				SDKROOT = macosx10.5;
 				VALID_ARCHS = i386;
 			};
 			name = "Release 10.5";
@@ -1750,14 +1783,17 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
+				GCC_AUTO_VECTORIZATION = YES;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_MODEL_TUNING = G5;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = "";
 				INFOPLIST_FILE = "IT87x-pre106-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.mozodojo.IT87x;
 				MODULE_VERSION = 1.0.0d1;
 				PREBINDING = NO;
 				PRODUCT_NAME = IT87x;
+				SDKROOT = macosx10.5;
 				WRAPPER_EXTENSION = kext;
 				ZERO_LINK = NO;
 			};
@@ -1767,14 +1803,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
+				GCC_AUTO_VECTORIZATION = YES;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_MODEL_TUNING = G5;
-				INFOPLIST_FILE = "FakeSMC-Info.plist";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = "";
+				INFOPLIST_FILE = "FakeSMC-pre106-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.netkas.FakeSMC;
-				MODULE_VERSION = 1.0.0d1;
+				MODULE_VERSION = 3.1.0d1;
 				PREBINDING = NO;
 				PRODUCT_NAME = FakeSMC;
+				SDKROOT = macosx10.5;
 				ZERO_LINK = NO;
 			};
 			name = "Release 10.5";
