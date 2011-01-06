@@ -224,22 +224,35 @@ bool ACPIMonitor::start(IOService * provider)
 		if (iter) {
 			while ((dictKey = (const OSSymbol *)iter->getNextObject())) {
 				tmpObj = 0;
-				snprintf(acpiName, 5, "%s", dictKey->getCStringNoCopy());			
+				snprintf(acpiName, 5, "%s", dictKey->getCStringNoCopy());	
+				WarningLog(" Found key %s", acpiName);
 				tmpString = OSDynamicCast(OSString, keysToAdd->getObject(dictKey));
 				if (tmpString) {
 					snprintf(aKey, 5, "%s", tmpString->getCStringNoCopy());
 					InfoLog("Custom name=%s key=%s", acpiName, aKey);
-					if (aKey[0] == 'F') {
-						if (!addTachometer(aKey, acpiName))
-							WarningLog("Can't add tachometer sensor, key %s", aKey);
+					if (kIOReturnSuccess == acpiDevice->validateObject(acpiName)) {
+						if (aKey[0] == 'F') {
+							if (!addTachometer(aKey, acpiName))
+								WarningLog("Can't add tachometer sensor, key %s", aKey);
 
-					} else {
-						addSensor(acpiName, aKey, TYPE_UI16, 2);
-					}					
+						} else {
+							addSensor(acpiName, aKey, TYPE_UI16, 2);
+						}	
+					}
+				} 
+				else {
+					WarningLog(" no value for key %s", acpiName);
 				}
+
 			}
+		} else {
+			WarningLog(" can't interate keysToAdd");
 		}
+
+	} else {
+		WarningLog(" keysToAdd not found");
 	}
+
 	
 	registerService(0);
 
