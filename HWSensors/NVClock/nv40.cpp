@@ -302,7 +302,7 @@ static void nv40_set_fanspeed(float speed)
 	int pwm_divider = nv_card->PMC[0x10f0/4] & 0x7fff;
 
 	/* For safety reasons we should never disable the fan by not putting it below 10%; further negative values don't exist ;)  */
-	if(speed < 10 || speed > 100)
+	if(speed < 0 || speed > 100)
 		return;
 
 	value = 0x80000000 + ((((int)(100 - speed) * pwm_divider/100) & 0x7fff)<<16) + pwm_divider;
@@ -328,7 +328,7 @@ static void nv43_set_fanspeed(float speed)
 	int pwm_divider = nv_card->PMC[0x15f8/4] & 0x3fff;
 
 	/* For safety reasons we should never disable the fan by not putting it below 10%; further negative values don't exist ;) */
-	if(speed < 10 || speed > 100)
+	if(speed < 0 || speed > 100)
 		return;
 
 	value = 0x80000000 + (int)((100 - speed) * pwm_divider/100);

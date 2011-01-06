@@ -163,7 +163,7 @@ static void g84_set_fanspeed(float speed)
 	int pwm_divider = nv_card->PMC[0xe11c/4] & 0x7fff;
 
 	/* For safety reasons we should never disable the fan by not putting it below 10%; further negative values don't exist ;)  */
-	if(speed < 10 || speed > 100)
+	if(speed < 0 || speed > 100)
 		return;
 
 	/* Bit31 must be set else the hardware doesn't seem to do anything with the changes

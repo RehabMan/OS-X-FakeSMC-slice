@@ -25,7 +25,7 @@ bool FakeSMC::start(IOService *provider)
 	if (!super::start(provider)) return false;
 	
 	InfoLog("Opensource SMC device emulator by netkas (C) 2009");
-	InfoLog("Modified for plugins support by mozodojo (C) 2010");
+	InfoLog("Modified for plugins support by mozodojo (C) 2010 v3.0");
 	InfoLog("Idea of FakeSMC plugins and code sample by usr-sse2");
 	InfoLog("Thanks to slice for help with hardware support code and plugins");
 		
