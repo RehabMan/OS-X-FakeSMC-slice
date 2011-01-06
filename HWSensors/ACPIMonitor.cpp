@@ -205,6 +205,42 @@ bool ACPIMonitor::start(IOService * provider)
     if (kIOReturnSuccess == acpiDevice->validateObject("BAK1")) // Battery 0 Voltage
         addSensor("BAK1", "B0AV", TYPE_UI16, 2);
 	
+	//Keys from info.plist
+	OSString *tmpString = 0;
+	OSData   *tmpObj = 0;
+	
+//	UInt32 tmpUI32;
+//	char tmpCString[7];
+	char acpiName[5];
+	char aKey[5];
+	
+	OSIterator *iter = 0;
+	const OSSymbol *dictKey = 0;
+	OSDictionary *keysToAdd = 0;
+	
+	keysToAdd = OSDynamicCast(OSDictionary, getProperty("keysToAdd"));
+	if (keysToAdd) {	
+		iter = OSCollectionIterator::withCollection(keysToAdd);
+		if (iter) {
+			while ((dictKey = (const OSSymbol *)iter->getNextObject())) {
+				tmpObj = 0;
+				snprintf(acpiName, 5, "%s", dictKey->getCStringNoCopy());			
+				tmpString = OSDynamicCast(OSString, keysToAdd->getObject(dictKey));
+				if (tmpString) {
+					snprintf(aKey, 5, "%s", tmpString->getCStringNoCopy());
+					InfoLog("Custom name=%s key=%s", acpiName, aKey);
+					if (aKey[0] == 'F') {
+						if (!addTachometer(aKey, acpiName))
+							WarningLog("Can't add tachometer sensor, key %s", aKey);
+
+					} else {
+						addSensor(acpiName, aKey, TYPE_UI16, 2);
+					}					
+				}
+			}
+		}
+	}
+	
 	registerService(0);
 
 	return true;	
@@ -253,24 +289,60 @@ inline UInt16 encode_fpe2(UInt16 value)
 {
 	return swap_value(value << 2);
 }
+
+inline UInt16 decode_fpe2(UInt16 value)
+{
+	return (swap_value(value) >> 2);
+}
+
 #define MEGA10 10000000ull
 IOReturn ACPIMonitor::callPlatformFunction(const OSSymbol *functionName, bool waitForFunction, void *param1, void *param2, void *param3, void *param4 )
 {
+	const char* name = (const char*)param1;
+	void * data = param2;
+//	UInt64 size = (UInt64)param3;
+	OSString* key;
+#if __LP64__
+	UInt64 value;
+#else
+	UInt32 value;
+#endif
+	UInt16 val;
+	
+	if (functionName->isEqualTo(kFakeSMCSetValueCallback)) {
+		if (name && data) {
+			if (key = OSDynamicCast(OSString, sensors->getObject(name))) {
+				OSObject * params[1];
+				if (key->getChar(0) == 'F') {
+					val = decode_fpe2(*(UInt16*)data);
+				} else {
+					val = *(UInt16*)data;
+				}
+				params[0] = OSDynamicCast(OSObject, OSNumber::withNumber((unsigned long long)val, 32));
+				return acpiDevice->evaluateInteger(key->getCStringNoCopy(), &value, params, 1);
+				
+		/*
+		 virtual IOReturn evaluateInteger( const OSSymbol * objectName,
+		 UInt32 *         resultInt32,
+		 OSObject *       params[]   = 0,
+		 IOItemCount      paramCount = 0,
+		 IOOptionBits     options    = 0 );
+		 flags_num = OSNumber::withNumber((unsigned long long)flags, 32);
+		 */
+				
+			}
+			return kIOReturnBadArgument;
+		}
+		return kIOReturnBadArgument;
+		
+	}
 	if (functionName->isEqualTo(kFakeSMCGetValueCallback)) {
-		const char* name = (const char*)param1;
-		void* data = param2;
 		
 		if (name && data) {
-			if (OSString* key = OSDynamicCast(OSString, sensors->getObject(name))) {
-#if __LP64__
-				UInt64 value;
-#else
-				UInt32 value;
-#endif
-				
+			if (key = OSDynamicCast(OSString, sensors->getObject(name))) {
 				if (kIOReturnSuccess == acpiDevice->evaluateInteger(key->getCStringNoCopy(), &value)) {
 				
-					UInt16 val = 0;
+					val = 0;
 					
 					if (key->getChar(0) == 'V') {
 						val = encode_fp2e(value);
@@ -282,12 +354,13 @@ IOReturn ACPIMonitor::callPlatformFunction(const OSSymbol *functionName, bool wa
 							if (key->getChar(1) == 'T') {
 								val = encode_fpe2(MEGA10 / value);
 							}
-						val = encode_fpe2(value);
+						else {
+							val = value;
+						}
 					}
 					else val = value;
 					
-					bcopy(&val, data, 2);
-					
+					bcopy(&val, data, 2);					
 					return kIOReturnSuccess;
 				}
 			}
