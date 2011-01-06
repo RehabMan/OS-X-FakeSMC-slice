@@ -37,9 +37,9 @@
 				<key>TEMPIN0</key>
 				<string>System</string>
 				<key>TEMPIN1</key>
-				<string>Auxiliary</string>
-				<key>TEMPIN2</key>
 				<string>Processor</string>
+				<key>TEMPIN2</key>
+				<string>Auxilliary</string>
 				<key>VIN0</key>
 				<string>Processor</string>
 				<key>VIN1</key>

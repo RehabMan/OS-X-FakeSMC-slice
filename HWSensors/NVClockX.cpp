@@ -253,6 +253,24 @@ bool NVClockX::start(IOService * provider)
 			}
 		}
 		
+		snprintf(key, 5, KEY_FORMAT_NON_APPLE_GPU_FREQUENCY, index);
+		addSensor(key, TYPE_FREQ, 2, index);
+		
+		
+		OSNumber* fanKey = OSDynamicCast(OSNumber, getProperty("FanSpeedPercentage"));
+		if((fanKey!=NULL)&(nv_card->set_fanspeed!=NULL)) 
+			nv_card->set_fanspeed(fanKey->unsigned8BitValue());
+		
+		InfoLog("Speed: %d\n", (UInt16)nv_card->get_gpu_speed());
+		OSNumber* speedKey=OSDynamicCast(OSNumber, getProperty("GPUSpeed"));
+		if ((speedKey!=NULL)&(nv_card->caps&GPU_OVERCLOCKING))  {
+			InfoLog("%d\n",speedKey->unsigned16BitValue());
+			nv_card->set_gpu_speed(speedKey->unsigned16BitValue());
+			InfoLog("Speed:%d\n", (UInt16)nv_card->get_gpu_speed());
+		}
+		
+		
+		
 		//snprintf(key, 5, "FGC%d", index);
 		//gpuFreqSensor[index] = new FrequencySensor(key, "freq", 2);
 	}
@@ -282,7 +300,7 @@ IOReturn NVClockX::callPlatformFunction(const OSSymbol *functionName, bool waitF
 {
 	if (functionName->isEqualTo(kFakeSMCGetValueCallback)) {
 		const char* key = (const char*)param1;
-		void * data = param2;
+		char * data = (char*)param2;
 		//UInt32 size = (UInt64)param3;
 		
 		if (key && data) {
@@ -300,7 +318,8 @@ IOReturn NVClockX::callPlatformFunction(const OSSymbol *functionName, bool waitF
 					
 					UInt16 value = 0;
 					
-					if (key[0] == 'T') {
+					switch (key[0]) {
+						case 'T':
 						switch (key[3]) {
 							case 'D':
 								if (nv_card->caps & GPU_TEMP_MONITORING)
@@ -311,15 +330,27 @@ IOReturn NVClockX::callPlatformFunction(const OSSymbol *functionName, bool waitF
 									value = nv_card->get_board_temp(nv_card->sensor);
 								break;
 						}
-					}
-					else if (key[0] == 'F') {
+							bcopy(&value, data, 2);
+							break;
+						case 'F':
+							switch (key[2]) {
+								case 'A':
 						if (nv_card->caps & I2C_FANSPEED_MONITORING)
 							value = nv_card->get_i2c_fanspeed_rpm(nv_card->sensor) << 2;
 						else if(nv_card->caps & GPU_FANSPEED_MONITORING)
 							value = (UInt16)nv_card->get_fanspeed() << 2;
+									bcopy(&value, data, 2);
+									break;
+								case 'C':
+									value=(UInt16)nv_card->get_gpu_speed();
+									data[0]=value>>8;
+									data[1]=value&0xff;
+									break;
+					}
 					}
 					
-					bcopy(&value, data, 2);
+										
+					
 					
 					return kIOReturnSuccess;					
 				}

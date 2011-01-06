@@ -23,6 +23,7 @@
 #define	KEY_FORMAT_GPU_DIODE_TEMPERATURE	"TG%XD"
 #define	KEY_FORMAT_GPU_BOARD_TEMPERATURE	"TG%XH"
 #define KEY_FORMAT_GPU_PROXIMITY_TEMPERATURE  "TG%XP"
+#define KEY_FORMAT_NON_APPLE_GPU_FREQUENCY		"FGC%X"
 
 #define TYPE_FPE2							"fpe2"
 #define TYPE_FP2E							"fp2e"
@@ -32,6 +33,7 @@
 #define TYPE_UI16							"ui16"
 #define TYPE_SI16                           "si16"
 #define TYPE_FLAG                           "flag"
+#define TYPE_FREQ							"freq"
 
 #define kFakeSMCService						"FakeSMC"
 
