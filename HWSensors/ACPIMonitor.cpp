@@ -225,7 +225,7 @@ bool ACPIMonitor::start(IOService * provider)
 			while ((dictKey = (const OSSymbol *)iter->getNextObject())) {
 				tmpObj = 0;
 				snprintf(acpiName, 5, "%s", dictKey->getCStringNoCopy());	
-				WarningLog(" Found key %s", acpiName);
+				//WarningLog(" Found key %s", acpiName);
 				tmpString = OSDynamicCast(OSString, keysToAdd->getObject(dictKey));
 				if (tmpString) {
 					snprintf(aKey, 5, "%s", tmpString->getCStringNoCopy());
