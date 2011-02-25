@@ -30,6 +30,8 @@
 			<string>IntelCPUMonitor</string>
 			<key>IOProviderClass</key>
 			<string>IOResources</string>
+			<key>TjMax</key>
+			<integer>0</integer>
 			<key>IOResourceMatch</key>
 			<string>IOKit</string>
 		</dict>
@@ -47,5 +49,7 @@
 		<key>org.netkas.FakeSMC</key>
 		<string>3.1.0</string>
 	</dict>
+	<key>OSBundleRequired</key>
+	<string>Root</string>
 </dict>
 </plist>

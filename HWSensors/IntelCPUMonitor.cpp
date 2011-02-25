@@ -64,7 +64,7 @@ IOService* IntelCPUMonitor::probe(IOService *provider, SInt32 *score)
 	CpuModel = cpuid_info()->cpuid_model;
 	CpuStepping =  cpuid_info()->cpuid_stepping;
 	CpuMobile = false;
-	
+	tjmax[0] = 0;
 	if (OSNumber* number = OSDynamicCast(OSNumber, getProperty("TjMax"))) {
 		// User defined Tjmax
 		tjmax[0] = number->unsigned32BitValue();
@@ -73,7 +73,8 @@ IOService* IntelCPUMonitor::probe(IOService *provider, SInt32 *score)
 			tjmax[i] = tjmax[0];
 		snprintf(Platform, 4, "n");
 	}
-	else { 
+	if (tjmax[0] == 0) 
+	{ 
 		// Calculating Tjmax
 		switch (CpuFamily)
 		{
