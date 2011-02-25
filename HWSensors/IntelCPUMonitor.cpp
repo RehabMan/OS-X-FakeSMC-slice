@@ -83,11 +83,15 @@ IOService* IntelCPUMonitor::probe(IOService *provider, SInt32 *score)
 				{
 					case CPU_MODEL_PENTIUM_M:
 						tjmax[0] = 100; 
+						CpuMobile = true;
 						snprintf(Platform, 4, "M70");
 						break;
 						
 					case CPU_MODEL_YONAH:
 						tjmax[0] = 85; 
+						if (rdmsr64(0x17) & (1<<28)) {
+							CpuMobile = true;
+						}
 						snprintf(Platform, 4, "K22");
 						break;					
 							
@@ -116,6 +120,9 @@ IOService* IntelCPUMonitor::probe(IOService *provider, SInt32 *score)
 						default:
 							tjmax[0] = 85; break;
 					} 
+						if (rdmsr64(0x17) & (1<<28)) {
+							CpuMobile = true;
+						}
 						snprintf(Platform, 4, "M75");
 						break;
 						
@@ -380,7 +387,7 @@ IOReturn IntelCPUMonitor::loopTimerEvent(void)
 			Voltage = IntelGetVoltage(GlobalState[i].VID);
 		} else {
 			Frequency[i] = IntelGetFrequency(GlobalState[i].VID);
-			Voltage = 1;
+			Voltage = 1000;
 		}
 	}
 	

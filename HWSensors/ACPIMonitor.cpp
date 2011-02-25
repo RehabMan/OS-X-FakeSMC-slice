@@ -325,6 +325,7 @@ IOReturn ACPIMonitor::callPlatformFunction(const OSSymbol *functionName, bool wa
 	if (functionName->isEqualTo(kFakeSMCSetValueCallback)) {
 		if (name && data) {
 			if (key = OSDynamicCast(OSString, sensors->getObject(name))) {
+				InfoLog("Writing key=%s by method=%s value=%x", name, key->getCStringNoCopy(), *(UInt16*)data);
 				OSObject * params[1];
 				if (key->getChar(0) == 'F') {
 					val = decode_fpe2(*(UInt16*)data);
