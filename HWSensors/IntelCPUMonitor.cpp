@@ -64,17 +64,12 @@ IOService* IntelCPUMonitor::probe(IOService *provider, SInt32 *score)
 	CpuModel = cpuid_info()->cpuid_model;
 	CpuStepping =  cpuid_info()->cpuid_stepping;
 	CpuMobile = false;
-	tjmax[0] = 0;
+	userTjmax = 0;
 	if (OSNumber* number = OSDynamicCast(OSNumber, getProperty("TjMax"))) {
 		// User defined Tjmax
-		tjmax[0] = number->unsigned32BitValue();
-		
-		for (int i = 1; i < count; i++)
-			tjmax[i] = tjmax[0];
+		userTjmax = number->unsigned32BitValue();
 		snprintf(Platform, 4, "n");
 	}
-	if (tjmax[0] == 0) 
-	{ 
 		// Calculating Tjmax
 		switch (CpuFamily)
 		{
@@ -181,12 +176,19 @@ IOService* IntelCPUMonitor::probe(IOService *provider, SInt32 *score)
 				WarningLog("Unknown Intel family processor found, kext will not load");
 				return 0;
 		}
+	if (userTjmax != 0) {
+		for (int i = 1; i < count; i++)
+			tjmax[i] = userTjmax;
+		
+	} else {
+		for (int i = 0; i < count; i++) {
+			if (!nehalemArch)
+				tjmax[i] = tjmax[0];
+		}	
 	}
+
 	
 	for (int i = 0; i < count; i++) {
-		if (!nehalemArch)
-			tjmax[i] = tjmax[0];
-		
 		key[i] = (char*)IOMalloc(5);
 		snprintf(key[i], 5, "TC%XD", i);
 	}

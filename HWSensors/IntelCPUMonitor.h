@@ -128,6 +128,7 @@ private:
 	UInt8					count;
 	UInt8					threads;
 	UInt8					tjmax[MaxCpuCount];
+	UInt32					userTjmax;
 	char*					key[MaxCpuCount];
 	char					Platform[4];
 	bool					nehalemArch;
