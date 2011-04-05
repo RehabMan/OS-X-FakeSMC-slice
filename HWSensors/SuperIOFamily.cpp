@@ -280,6 +280,13 @@ SuperIOSensor *SuperIOMonitor::addTachometer(unsigned long index, const char* id
 		
 		snprintf(name, 5, KEY_FORMAT_FAN_SPEED, i); 
 		
+		UInt8 length = 0;
+		void * data = 0;
+		
+		if (kIOReturnSuccess == fakeSMC->callPlatformFunction(kFakeSMCGetKeyValue, true, (void *)name, (void *)&length, (void *)&data, 0))
+			continue;
+		
+		
 		if (SuperIOSensor *sensor = addSensor(name, TYPE_FPE2, 2, kSuperIOTachometerSensor, index)) {
 			if (id) {
 				snprintf(name, 5, KEY_FORMAT_FAN_ID, i); 
@@ -288,8 +295,6 @@ SuperIOSensor *SuperIOMonitor::addTachometer(unsigned long index, const char* id
 					WarningLog("error adding tachometer id value");
 			}
 			
-			UInt8 length = 0;
-			void * data = 0;
 			
 			IOReturn result = fakeSMC->callPlatformFunction(kFakeSMCGetKeyValue, false, (void *)KEY_FAN_NUMBER, (void *)&length, (void *)&data, 0);
 			

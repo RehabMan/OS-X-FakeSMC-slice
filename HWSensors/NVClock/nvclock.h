@@ -54,7 +54,7 @@
 #define G94 (1<<21)
 #define G96 (1<<22)
 #define GT200 (1<<23)
-#define GF100 GT200
+#define GF100 (1<<24)
 #define NV5X (NV50 | G84 | G86 | G92 | G94 | G96 | GT200 | GF100)
 
 #define NV_ERR_NO_DEVICES_FOUND 1

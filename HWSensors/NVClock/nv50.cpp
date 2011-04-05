@@ -82,6 +82,7 @@ static int nv50_get_default_mask(char *smask, char *rmask)
 			mask = 0x0f000f;
 			break;
 		case GT200:
+		case GF100:
 			mask = 0xff03ff;
 			break;
 	}
@@ -115,8 +116,16 @@ static int nv50_get_stream_units(char *mask, char *default_mask)
 
 	*mask = stream_units_cfg;
 
-	if(nv_card->arch == GT200)
-		return (stream_units * 24); /* GT200 stores stream units in blocks of 24 */
+	if(nv_card->arch == GT200) {
+ 		return (stream_units * 24); /* GT200 stores stream units in blocks of 24 */
+	}
+	else if(nv_card->arch == GF100) {
+		if((nv_card->device_id & 0xffe0) == 0x06C0 ||
+		   (nv_card->device_id & 0xffe0) == 0x1080) {
+			return (stream_units * 32); // blocks of 32 on GF100 and GF110
+		}
+		else return (stream_units * 48); // blocks of 48 on all others
+	}
 
 	return (stream_units << 4); /* stream units are stored in blocks of 16 */
 }

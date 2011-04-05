@@ -22,6 +22,7 @@
 		12D78B1512BFDB58002C61EA /* TigerAdditionals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12D78B0912BFDB58002C61EA /* TigerAdditionals.cpp */; };
 		12D78B1612BFDB58002C61EA /* TigerAdditionals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12D78B0912BFDB58002C61EA /* TigerAdditionals.cpp */; };
 		12D78B3112BFDDAC002C61EA /* Radeon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12D78B3012BFDDAC002C61EA /* Radeon.cpp */; };
+		1D30B1E2134B90E0004F0967 /* utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D30B1E0134B90E0004F0967 /* utils.h */; };
 		AE00C79D126A1FED0068E69A /* F718x.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE00C79C126A1FED0068E69A /* F718x.cpp */; };
 		AE00C7E6126A253A0068E69A /* PC8739x.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE00C7E5126A253A0068E69A /* PC8739x.cpp */; };
 		AE212C7912678DC700145048 /* W836x.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE212C7812678DC700145048 /* W836x.cpp */; };
@@ -134,6 +135,7 @@
 		12D78B1F12BFDCFD002C61EA /* RadeonMonitor-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RadeonMonitor-Info.plist"; sourceTree = "<group>"; };
 		12D78B2F12BFDDAC002C61EA /* Radeon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Radeon.h; sourceTree = "<group>"; };
 		12D78B3012BFDDAC002C61EA /* Radeon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Radeon.cpp; sourceTree = "<group>"; };
+		1D30B1E0134B90E0004F0967 /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
 		AE00C785126A1F440068E69A /* F718x.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = F718x.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE00C786126A1F440068E69A /* F718x-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "F718x-Info.plist"; sourceTree = "<group>"; };
 		AE00C799126A1FD00068E69A /* F718x-pre106-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "F718x-pre106-Info.plist"; sourceTree = "<group>"; };
@@ -541,6 +543,7 @@
 				12D78B0912BFDB58002C61EA /* TigerAdditionals.cpp */,
 				12D78B0A12BFDB58002C61EA /* TigerAdditionals.h */,
 				AEABE82B125F8F6E00F08235 /* cpuid.h */,
+				1D30B1E0134B90E0004F0967 /* utils.h */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -560,6 +563,7 @@
 				AED49C8E126CC71E00840536 /* xf86i2c.h in Headers */,
 				AED49C8F126CC71E00840536 /* xfree.h in Headers */,
 				12D78B1412BFDB58002C61EA /* TigerAdditionals.h in Headers */,
+				1D30B1E2134B90E0004F0967 /* utils.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -775,7 +779,6 @@
 			};
 			buildConfigurationList = AEABE456125F8E7400F08235 /* Build configuration list for PBXProject "HWSensors" */;
 			compatibilityVersion = "Xcode 3.1";
-			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				English,
@@ -999,7 +1002,7 @@
 				MODULE_VERSION = 1.0.0d1;
 				PREBINDING = NO;
 				PRODUCT_NAME = IntelCPUMonitor;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.6;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = "Release 10.6";
@@ -1037,6 +1040,7 @@
 				MODULE_VERSION = 1.0.0d1;
 				PREBINDING = NO;
 				PRODUCT_NAME = IntelCPUMonitor;
+				SDKROOT = macosx10.4;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = "Release 10.4";
@@ -1065,10 +1069,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					i386,
-					x86_64,
-				);
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				INFOPLIST_FILE = "X3100-Info.plist";
@@ -1077,6 +1077,7 @@
 				MODULE_VERSION = 1.0.0d1;
 				PREBINDING = NO;
 				PRODUCT_NAME = X3100;
+				SDKROOT = macosx10.6;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = "Release 10.6";
@@ -1114,6 +1115,7 @@
 				MODULE_VERSION = 1.0.0d1;
 				PREBINDING = NO;
 				PRODUCT_NAME = X3100;
+				SDKROOT = macosx10.4;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = "Release 10.4";
@@ -1149,6 +1151,7 @@
 				MODULE_VERSION = 1.0.0d1;
 				PREBINDING = NO;
 				PRODUCT_NAME = RadeonMonitor;
+				SDKROOT = macosx10.6;
 				WRAPPER_EXTENSION = kext;
 				ZERO_LINK = YES;
 			};
@@ -1183,6 +1186,7 @@
 				MODULE_VERSION = 1.0.0d1;
 				PREBINDING = NO;
 				PRODUCT_NAME = RadeonMonitor;
+				SDKROOT = macosx10.4;
 				WRAPPER_EXTENSION = kext;
 				ZERO_LINK = YES;
 			};
@@ -1220,6 +1224,7 @@
 				MODULE_VERSION = 1.0.0d1;
 				PREBINDING = NO;
 				PRODUCT_NAME = F718x;
+				SDKROOT = macosx10.6;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = "Release 10.6";
@@ -1255,6 +1260,7 @@
 				MODULE_VERSION = 1.0.0d1;
 				PREBINDING = NO;
 				PRODUCT_NAME = F718x;
+				SDKROOT = macosx10.4;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = "Release 10.4";
@@ -1291,6 +1297,7 @@
 				MODULE_VERSION = 1.0.0d1;
 				PREBINDING = NO;
 				PRODUCT_NAME = PC8739x;
+				SDKROOT = macosx10.6;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = "Release 10.6";
@@ -1323,6 +1330,7 @@
 				MODULE_VERSION = 1.0.0d1;
 				PREBINDING = NO;
 				PRODUCT_NAME = PC8739x;
+				SDKROOT = macosx10.4;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = "Release 10.4";
@@ -1359,6 +1367,7 @@
 				MODULE_VERSION = 1.0.0d1;
 				PREBINDING = NO;
 				PRODUCT_NAME = W836x;
+				SDKROOT = macosx10.6;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = "Release 10.6";
@@ -1395,6 +1404,7 @@
 				MODULE_VERSION = 1.0.0d1;
 				PREBINDING = NO;
 				PRODUCT_NAME = W836x;
+				SDKROOT = macosx10.4;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = "Release 10.4";
@@ -1431,6 +1441,7 @@
 				MODULE_VERSION = 1.0.0d1;
 				PREBINDING = NO;
 				PRODUCT_NAME = NVClockX;
+				SDKROOT = macosx10.6;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = "Release 10.6";
@@ -1467,6 +1478,7 @@
 				MODULE_VERSION = 1.0.0d1;
 				PREBINDING = NO;
 				PRODUCT_NAME = NVClockX;
+				SDKROOT = macosx10.4;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = "Release 10.4";
@@ -1503,6 +1515,7 @@
 				MODULE_VERSION = 1.0.0d1;
 				PREBINDING = NO;
 				PRODUCT_NAME = ACPIMonitor;
+				SDKROOT = macosx10.6;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = "Release 10.6";
@@ -1540,6 +1553,7 @@
 				MODULE_VERSION = 1.0.0d1;
 				PREBINDING = NO;
 				PRODUCT_NAME = ACPIMonitor;
+				SDKROOT = macosx10.4;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = "Release 10.4";
@@ -1602,6 +1616,7 @@
 				MODULE_VERSION = 1.0.0d1;
 				PREBINDING = NO;
 				PRODUCT_NAME = IntelThermal;
+				SDKROOT = macosx10.6;
 				WRAPPER_EXTENSION = kext;
 				ZERO_LINK = NO;
 			};
@@ -1639,6 +1654,7 @@
 				MODULE_VERSION = 1.0.0d1;
 				PREBINDING = NO;
 				PRODUCT_NAME = SuperIOFamily;
+				SDKROOT = macosx10.6;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = "Release 10.6";
@@ -1674,6 +1690,7 @@
 				MODULE_VERSION = 1.0.0d1;
 				PREBINDING = NO;
 				PRODUCT_NAME = SuperIOFamily;
+				SDKROOT = macosx10.4;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = "Release 10.4";
@@ -1711,6 +1728,7 @@
 				MODULE_VERSION = 1.0.0d1;
 				PREBINDING = NO;
 				PRODUCT_NAME = IT87x;
+				SDKROOT = macosx10.6;
 				WRAPPER_EXTENSION = kext;
 				ZERO_LINK = NO;
 			};
@@ -1746,6 +1764,7 @@
 				MODULE_VERSION = 3.1.0d1;
 				PREBINDING = NO;
 				PRODUCT_NAME = FakeSMC;
+				SDKROOT = macosx10.6;
 				ZERO_LINK = NO;
 			};
 			name = "Release 10.6";
@@ -1864,6 +1883,7 @@
 				MODULE_VERSION = 1.0.0d1;
 				PREBINDING = NO;
 				PRODUCT_NAME = IT87x;
+				SDKROOT = macosx10.4;
 				WRAPPER_EXTENSION = kext;
 				ZERO_LINK = NO;
 			};
@@ -1881,6 +1901,7 @@
 				MODULE_VERSION = 1.0.0d1;
 				PREBINDING = NO;
 				PRODUCT_NAME = FakeSMC;
+				SDKROOT = macosx10.4;
 				ZERO_LINK = NO;
 			};
 			name = "Release 10.4";

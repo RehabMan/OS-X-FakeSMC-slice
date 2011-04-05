@@ -493,9 +493,6 @@ static const struct pci_ids ids[] =
 	{ 0x065f, "G96 [GeForce GT 210]", DESKTOP },
 	{ 0x06a0, "GT214 [?]", DESKTOP },
 	{ 0x06b0, "GT214 [?]", DESKTOP },
-	{ 0x06c0, "GF100 [GeForce GTX 480]", DESKTOP },
-	{ 0x06cd, "GF100 [GeForce GTX 470]", DESKTOP },
-	{ 0x06d1, "GF100 [Tesla C2050]", DESKTOP },
 	{ 0x07e0, "C73 [GeForce 7150 / nForce 630i]", DESKTOP },
 	{ 0x07e1, "C73 [GeForce 7100 / nForce 630i]", DESKTOP },
 	{ 0x07e2, "C73 [GeForce 7050 / nForce 630i]", DESKTOP },
@@ -576,6 +573,104 @@ static const struct pci_ids ids[] =
 	{ 0x0cb1, "GT215 [GeForce GTS 360M]", MOBILE },
 	{ 0x0cbc, "GT215 [Quadro FX 1800M]", MOBILE },
 	
+	/*************** GF1xx *************/
+	// 06C0 - 06DF
+	{ 0x06C0, "GF100 [GeForce GTX 480]", DESKTOP },
+	{ 0x06C3, "GF100 [GeForce GTX D12U]", DESKTOP },
+	{ 0x06C4, "GF100 [GeForce GTX 465]", DESKTOP },
+	{ 0x06CA, "GF100 [GeForce GTX 480M]", DESKTOP },
+	{ 0x06CD, "GF100 [GeForce GTX 470]", DESKTOP },
+	{ 0x06D1, "GF100 [Tesla C2050]", DESKTOP },
+	{ 0x06D1, "GF100 [Tesla C2070]", DESKTOP },
+	{ 0x06D2, "GF100 [Tesla M2070]", DESKTOP },
+	{ 0x06D8, "GF100 [Quadro 6000]", DESKTOP },
+	{ 0x06D9, "GF100 [Quadro 5000]", DESKTOP },
+	{ 0x06DA, "GF100 [Quadro 5000M]", MOBILE },
+	{ 0x06DC, "GF100 [Quadro 6000]", DESKTOP },
+	{ 0x06DD, "GF100 [Quadro 4000]", DESKTOP },
+	{ 0x06DE, "GF100 [Tesla M2050]", DESKTOP },
+	{ 0x06DE, "GF100 [Tesla M2070]", DESKTOP },
+	{ 0x06DF, "GF100 [Tesla M2070-Q]", DESKTOP },
+	
+	// 0DC0 - 0DFF
+	{ 0x0DC0, "GF100 [GeForce GT 440]", DESKTOP },
+	{ 0x0DC1, "GF100 [D12-P1-35]", DESKTOP },
+	{ 0x0DC2, "GF100 [D12-P1-35]", DESKTOP },
+	{ 0x0DC4, "GF100 [GeForce GTS 450]", DESKTOP },
+	{ 0x0DC5, "GF100 [GeForce GTS 450]", DESKTOP },
+	{ 0x0DC6, "GF100 [GeForce GTS 450]", DESKTOP },
+	{ 0x0DCA, "GF100 [GF10x]", DESKTOP },
+	{ 0x0DCD, "GF100 [GeForce GT 555M]", MOBILE },
+	{ 0x0DCE, "GF100 [GeForce GT 555M]", MOBILE },
+	{ 0x0DD1, "GF100 [GeForce GTX 460M]", MOBILE },
+	{ 0x0DD2, "GF100 [GeForce GT 445M]", MOBILE },
+	{ 0x0DD3, "GF100 [GeForce GT 435M]", MOBILE },
+	{ 0x0DD6, "GF100 [GeForce GT 550M]", MOBILE },
+	{ 0x0DD8, "GF100 [Quadro 2000]", DESKTOP },
+	{ 0x0DDA, "GF100 [Quadro 2000M]", MOBILE },
+	{ 0x0DDE, "GF100 [GF106-ES]", DESKTOP },
+	{ 0x0DDF, "GF100 [GF106-INT]", DESKTOP },
+	{ 0x0DE0, "GF100 [GeForce GT 440]", DESKTOP },
+	{ 0x0DE1, "GF100 [GeForce GT 430]", DESKTOP },
+	{ 0x0DE2, "GF100 [GeForce GT 420]", DESKTOP },
+	{ 0x0DE5, "GF100 [GeForce GT 530]", DESKTOP },
+	{ 0x0DEB, "GF100 [GeForce GT 555M]", MOBILE },
+	{ 0x0DEC, "GF100 [GeForce GT 525M]", MOBILE },
+	{ 0x0DED, "GF100 [GeForce GT 520M]", MOBILE },
+	{ 0x0DEE, "GF100 [GeForce GT 415M]", MOBILE },
+	{ 0x0DF0, "GF100 [GeForce GT 425M]", MOBILE },
+	{ 0x0DF1, "GF100 [GeForce GT 420M]", MOBILE },
+	{ 0x0DF2, "GF100 [GeForce GT 435M]", MOBILE },
+	{ 0x0DF3, "GF100 [GeForce GT 420M]", MOBILE },
+	{ 0x0DF4, "GF100 [GeForce GT 540M]", MOBILE },
+	{ 0x0DF5, "GF100 [GeForce GT 525M]", MOBILE },
+	{ 0x0DF6, "GF100 [GeForce GT 550M]", MOBILE },
+	{ 0x0DF7, "GF100 [GeForce GT 520M]", MOBILE },
+	{ 0x0DF8, "GF100 [Quadro 600]", DESKTOP },
+	{ 0x0DFA, "GF100 [Quadro 1000M]", MOBILE },
+	{ 0x0DFE, "GF100 [GF108 ES]", DESKTOP },
+	{ 0x0DFF, "GF100 [GF108 INT]", DESKTOP },
+	
+	// 0E20 - 0E3F
+	{ 0x0E21, "GF100 [D12U-25]", DESKTOP },
+	{ 0x0E22, "GF100 [GeForce GTX 460]", DESKTOP },
+	{ 0x0E23, "GF100 [GeForce GTX 460 SE]", DESKTOP },
+	{ 0x0E24, "GF100 [GeForce GTX 460]", DESKTOP },
+	{ 0x0E25, "GF100 [D12U-50]", DESKTOP },
+	{ 0x0E30, "GF100 [GeForce GTX 470M]", MOBILE },
+	{ 0x0E31, "GF100 [GeForce GTX 485M]", MOBILE },
+	{ 0x0E38, "GF100 [GF104GL]", DESKTOP },
+	{ 0x0E3A, "GF100 [Quadro 3000M]", MOBILE },
+	{ 0x0E3B, "GF100 [Quadro 4000M]", MOBILE },
+	{ 0x0E3E, "GF100 [GF104-ES]", DESKTOP },
+	{ 0x0E3F, "GF100 [GF104-INT]", DESKTOP },
+	
+	// 0EE0 - 0EFF: none yet
+	// 0F00 - 0F3F: none yet
+	
+	// 1040 - 107F
+	{ 0x1050, "GF100 [GeForce GT 520M]", MOBILE },
+	{ 0x1054, "GF100 [GeForce GT 410M]", MOBILE },
+	{ 0x1056, "GF100 [NVS 4200M]", MOBILE },
+	{ 0x1057, "GF100 [NVS 4200M]", MOBILE },
+	{ 0x107F, "GF100 [NVIDIA GF119-ES]", DESKTOP },
+	
+	// 1080 - 109F
+	{ 0x1080, "GF100 [GeForce GTX 580]", DESKTOP },
+	{ 0x1081, "GF100 [GeForce GTX 570]", DESKTOP },
+	{ 0x1082, "GF100 [GeForce GTX 560 Ti]", DESKTOP },
+	{ 0x1083, "GF100 [GeForce GTX 590]", DESKTOP },
+	{ 0x1086, "GF100 [GeForce GTX 570]", DESKTOP },
+	{ 0x1088, "GF100 [GeForce GTX 590]", DESKTOP },
+	{ 0x1098, "GF100 [D13U]", DESKTOP },
+	{ 0x109A, "GF100 [Quadro 5010M]", MOBILE },
+	
+	// 1200 - 127F
+	{ 0x1200, "GF100 [GeForce GTX 560 Ti]", DESKTOP },
+	{ 0x1244, "GF100 [GeForce GTX 550 Ti]", DESKTOP },
+	{ 0x1245, "GF100 [GeForce GTS 450]", DESKTOP },
+	{ 0x1251, "GF100 [N12E-GS-A1]", DESKTOP },
+	
 	
 	{ 0, NULL, UNKNOWN }
 };
@@ -608,7 +703,8 @@ const char *get_card_name(int device_id, gpu_type *gpu)
 int get_gpu_arch(int device_id)
 {
 	int arch;
-	switch(device_id & 0xff0)
+	
+	switch(device_id & 0xfff0)
 	{
 		case 0x20:
 			arch = NV5;
@@ -707,12 +803,20 @@ int get_gpu_arch(int device_id)
 		case 0x640: /* 9500GT */
 			arch = G96;
 			break;
-		case 0x6c0:
-			arch = GF100;
 		case 0x240:
 		case 0x3d0: /* not sure if this is a C51 too */
 		case 0x530: /* not sure if the 70xx is C51 too */
 			arch = C51;
+			break;
+		case 0x06C0 ... 0x06DF:
+		case 0x0DC0 ... 0x0DFF:
+		case 0x0E20 ... 0x0E3F:
+		case 0x0EE0 ... 0x0EFF:
+		case 0x0F00 ... 0x0F3F:
+		case 0x1040 ... 0x107F:
+		case 0x1080 ... 0x109F:
+		case 0x1200 ... 0x127F:
+			arch = GF100;
 			break;
 		case 0x2e0:
 		case 0xf0:
@@ -1113,6 +1217,10 @@ static short get_memory_width()
 		char rmask, rmask_default;
 		switch(nv_card->get_rop_units(&rmask, &rmask_default))
 		{
+			case 48: /* Geforce GTX 480 */
+				return 384;
+			case 40: /* Geforce GTX 470 */
+				return 320;
 			case 32: /* Geforce GTX280 */
 				return 512;
 			case 28: /* Geforce GTX260 */
@@ -1130,6 +1238,11 @@ static short get_memory_width()
 				return 128;
 			case 2: /* 8300GS */
 				return 64;
+			default:
+				if(nv_card->arch == GF100) {
+					return nv_card->get_rop_units(&rmask, &rmask_default) * 8;
+				}
+				break;
 		}
 	}
 	/* Generic algorithm for cards up to the Geforce4 */

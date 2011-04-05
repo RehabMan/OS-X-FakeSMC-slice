@@ -170,13 +170,13 @@ bool IntelThermal::start(IOService * provider)
 		return false;
 	}
 	
-	InfoLog("CPU family 0x%x, model 0x%x, stepping 0x%x, cores %d, threads %d", cpuid_info()->cpuid_family, cpuid_info()->cpuid_model, cpuid_info()->cpuid_stepping, count, cpuid_info()->thread_count);
+	InfoLog("CPU family 0x%x, model 0x%x, stepping 0x%x, cores %d, threads %d, TJmax %d", cpuid_info()->cpuid_family, cpuid_info()->cpuid_model, cpuid_info()->cpuid_stepping, count, cpuid_info()->thread_count, tjmax[0]);
 	
-	if (!nehalemArch)
+	/*if (!nehalemArch)
 		InfoLog("CPU Tjmax %d", tjmax[0]);
 	else
 		for (int i = 0; i < count; i++)
-			InfoLog("CPU%X Tjmax %d", i, tjmax[i]);
+			InfoLog("CPU%X Tjmax %d", i, tjmax[i]);*/
 	
 	for (int i = 0; i < count; i++) {
 		if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCAddKeyHandler, false, (void *)key[i], (void *)"sp78", (void *)2, this)) {

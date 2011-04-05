@@ -9,6 +9,7 @@
 
 #include "NVClockX.h"
 #include "FakeSMC.h"
+#include "utils.h"
 
 #include <stdarg.h>
 #include <string.h>
@@ -137,11 +138,14 @@ int NVClockX::addTachometer(int index)
 		
 		snprintf(name, 5, KEY_FORMAT_FAN_SPEED, i); 
 		
+		UInt8 length = 0;
+		void * data = 0;
+		
+		if (kIOReturnSuccess == fakeSMC->callPlatformFunction(kFakeSMCGetKeyValue, true, (void *)name, (void *)&length, (void *)&data, 0))
+			continue;
+		
 		if (addSensor(name, TYPE_FPE2, 2, index)) {
-			
-			UInt8 length = 0;
-			void * data = 0;
-			
+	
 			IOReturn result = fakeSMC->callPlatformFunction(kFakeSMCGetKeyValue, true, (void *)KEY_FAN_NUMBER, (void *)&length, (void *)&data, 0);
 			
 			if (kIOReturnError == result) {
@@ -261,12 +265,12 @@ bool NVClockX::start(IOService * provider)
 		if((fanKey!=NULL)&(nv_card->set_fanspeed!=NULL)) 
 			nv_card->set_fanspeed(fanKey->unsigned8BitValue());
 		
-		InfoLog("Speed: %d\n", (UInt16)nv_card->get_gpu_speed());
+		InfoLog("Speed: %d", (UInt16)nv_card->get_gpu_speed());
 		OSNumber* speedKey=OSDynamicCast(OSNumber, getProperty("GPUSpeed"));
 		if ((speedKey!=NULL)&(nv_card->caps&GPU_OVERCLOCKING))  {
 			InfoLog("%d\n",speedKey->unsigned16BitValue());
 			nv_card->set_gpu_speed(speedKey->unsigned16BitValue());
-			InfoLog("Speed:%d\n", (UInt16)nv_card->get_gpu_speed());
+			InfoLog("Speed:%d", (UInt16)nv_card->get_gpu_speed());
 		}
 		
 		
@@ -335,10 +339,10 @@ IOReturn NVClockX::callPlatformFunction(const OSSymbol *functionName, bool waitF
 						case 'F':
 							switch (key[2]) {
 								case 'A':
-						if (nv_card->caps & I2C_FANSPEED_MONITORING)
-							value = nv_card->get_i2c_fanspeed_rpm(nv_card->sensor) << 2;
-						else if(nv_card->caps & GPU_FANSPEED_MONITORING)
-							value = (UInt16)nv_card->get_fanspeed() << 2;
+									if (nv_card->caps & I2C_FANSPEED_MONITORING)
+										value = encode_fp2e(nv_card->get_i2c_fanspeed_rpm(nv_card->sensor));
+									else if(nv_card->caps & GPU_FANSPEED_MONITORING)
+										value = encode_fp2e((UInt16)nv_card->get_fanspeed());
 									bcopy(&value, data, 2);
 									break;
 								case 'C':
@@ -346,12 +350,8 @@ IOReturn NVClockX::callPlatformFunction(const OSSymbol *functionName, bool waitF
 									data[0]=value>>8;
 									data[1]=value&0xff;
 									break;
+							}
 					}
-					}
-					
-										
-					
-					
 					return kIOReturnSuccess;					
 				}
 			}

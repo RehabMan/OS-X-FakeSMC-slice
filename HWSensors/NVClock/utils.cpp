@@ -52,6 +52,9 @@ int convert_gpu_architecture(short arch, char *buf)
 		case 0xa0:
 			snprintf(buf, sizeof("GT200"), "GT200"); /* Geforce GTX260/280 */
 			break;
+		case 0xc0 ... 0xcf:
+			snprintf(buf, sizeof("GF100"), "GF100"); /* GF100 */
+			break;
 		default:
 			if(arch <= 0x44) /* The NV44/6200TC is the last card with only an NV name */
 				snprintf(buf, sizeof("NV??"), "NV%X", arch);

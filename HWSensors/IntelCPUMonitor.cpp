@@ -9,6 +9,7 @@
 
 #include "IntelCPUMonitor.h"
 #include "FakeSMC.h"
+#include "utils.h"
 
 #define Debug FALSE
 
