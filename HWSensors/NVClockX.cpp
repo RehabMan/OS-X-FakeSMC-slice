@@ -17,10 +17,10 @@
 
 #define Debug FALSE
 
-#define LogPrefix "NVClockX: "
+/*#define LogPrefix "NVClockX: "
 #define DebugLog(string, args...)	do { if (Debug) { IOLog (LogPrefix "[Debug] " string "\n", ## args); } } while(0)
 #define WarningLog(string, args...) do { IOLog (LogPrefix "[Warning] " string "\n", ## args); } while(0)
-#define InfoLog(string, args...)	do { IOLog (LogPrefix string "\n", ## args); } while(0)
+#define InfoLog(string, args...)	do { IOLog (LogPrefix string "\n", ## args); } while(0)*/
 
 #define super IOService
 OSDefineMetaClassAndStructors(NVClockX, IOService)
@@ -200,7 +200,7 @@ bool NVClockX::start(IOService * provider)
 	if (!super::start(provider)) return false;
 	
     if (!(fakeSMC = waitForService(serviceMatching(kFakeSMCService)))) {
-		WarningLog("can't locate fake SMC device, kext will not load");
+		WarningLog("Can't locate fake SMC device, kext will not load");
 		return false;
 	}
 	
@@ -210,7 +210,7 @@ bool NVClockX::start(IOService * provider)
 	
 	if(!probeDevices()) {
 		char buf[80];
-		InfoLog("[Error] %s", get_error(buf, 80));
+		WarningLog("%s", get_error(buf, 80));
 		return false;
 	}
 	
@@ -218,7 +218,7 @@ bool NVClockX::start(IOService * provider)
 		/* set the card object to the requested card */
 		if(!set_card(index)){
 			char buf[80];
-			InfoLog("[Error] %s", get_error(buf, 80));
+			WarningLog("%s", get_error(buf, 80));
 			return 0;
 		}
 		
@@ -242,7 +242,7 @@ bool NVClockX::start(IOService * provider)
 			}
 		}
 		
-		if(nv_card->caps & (I2C_FANSPEED_MONITORING | GPU_FANSPEED_MONITORING)){
+		if (nv_card->caps & (I2C_FANSPEED_MONITORING | GPU_FANSPEED_MONITORING)){
 			
 			int fanIndex = addTachometer(index);
 			
@@ -262,15 +262,17 @@ bool NVClockX::start(IOService * provider)
 		
 		
 		OSNumber* fanKey = OSDynamicCast(OSNumber, getProperty("FanSpeedPercentage"));
+		
 		if((fanKey!=NULL)&(nv_card->set_fanspeed!=NULL)) 
 			nv_card->set_fanspeed(fanKey->unsigned8BitValue());
 		
-		InfoLog("Speed: %d", (UInt16)nv_card->get_gpu_speed());
 		OSNumber* speedKey=OSDynamicCast(OSNumber, getProperty("GPUSpeed"));
-		if ((speedKey!=NULL)&(nv_card->caps&GPU_OVERCLOCKING))  {
-			InfoLog("%d\n",speedKey->unsigned16BitValue());
+		
+		if ((speedKey!=NULL)&(nv_card->caps&GPU_OVERCLOCKING)) {
+			InfoLog("Default speed %d", (UInt16)nv_card->get_gpu_speed());
+			//InfoLog("%d", speedKey->unsigned16BitValue());
 			nv_card->set_gpu_speed(speedKey->unsigned16BitValue());
-			InfoLog("Speed:%d", (UInt16)nv_card->get_gpu_speed());
+			InfoLog("Overclocked to %d", (UInt16)nv_card->get_gpu_speed());
 		}
 		
 		
@@ -316,7 +318,7 @@ IOReturn NVClockX::callPlatformFunction(const OSSymbol *functionName, bool waitF
 					
 					if (!set_card(index)){
 						char buf[80];
-						InfoLog("Error: %s", get_error(buf, 80));
+						WarningLog("%s", get_error(buf, 80));
 						return kIOReturnSuccess;
 					}
 					
@@ -340,7 +342,7 @@ IOReturn NVClockX::callPlatformFunction(const OSSymbol *functionName, bool waitF
 							switch (key[2]) {
 								case 'A':
 									if (nv_card->caps & I2C_FANSPEED_MONITORING)
-										value = encode_fp2e(nv_card->get_i2c_fanspeed_rpm(nv_card->sensor));
+										value = encode_fp2e(nv_card->get_i2c_fanspeed_rpm(nv_card->sensor) >> 2);
 									else if(nv_card->caps & GPU_FANSPEED_MONITORING)
 										value = encode_fp2e((UInt16)nv_card->get_fanspeed());
 									bcopy(&value, data, 2);

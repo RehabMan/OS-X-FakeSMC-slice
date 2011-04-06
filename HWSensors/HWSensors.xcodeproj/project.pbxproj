@@ -135,6 +135,7 @@
 		12D78B1F12BFDCFD002C61EA /* RadeonMonitor-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RadeonMonitor-Info.plist"; sourceTree = "<group>"; };
 		12D78B2F12BFDDAC002C61EA /* Radeon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Radeon.h; sourceTree = "<group>"; };
 		12D78B3012BFDDAC002C61EA /* Radeon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Radeon.cpp; sourceTree = "<group>"; };
+		1D17EA5A134CE6F200518913 /* gpl.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gpl.txt; sourceTree = "<group>"; };
 		1D30B1E0134B90E0004F0967 /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
 		AE00C785126A1F440068E69A /* F718x.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = F718x.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE00C786126A1F440068E69A /* F718x-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "F718x-Info.plist"; sourceTree = "<group>"; };
@@ -303,10 +304,10 @@
 		12CB0F4F12C0897700068B06 /* IntelCPUMonitor */ = {
 			isa = PBXGroup;
 			children = (
+				12CB0F5A12C0899B00068B06 /* IntelCPUMonitor.h */,
+				12CB0F5912C0899B00068B06 /* IntelCPUMonitor.cpp */,
 				12CB0F5812C0899B00068B06 /* IntelCPUMonitor-Info.plist */,
 				12B6907112D5F2E3007D1C5C /* IntelCPUMonitor-pre106-Info.plist */,
-				12CB0F5912C0899B00068B06 /* IntelCPUMonitor.cpp */,
-				12CB0F5A12C0899B00068B06 /* IntelCPUMonitor.h */,
 			);
 			name = IntelCPUMonitor;
 			sourceTree = "<group>";
@@ -379,6 +380,7 @@
 				AE5BA5B61268D99C00EA6AB9 /* NVClockX.cpp */,
 				AE5BA5791268D94A00EA6AB9 /* NVClockX-Info.plist */,
 				AE5BA5B81268D9C300EA6AB9 /* NVClockX-pre106-info.plist */,
+				1D17EA5A134CE6F200518913 /* gpl.txt */,
 			);
 			name = NVClockX;
 			sourceTree = "<group>";

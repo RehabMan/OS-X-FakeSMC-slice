@@ -367,7 +367,7 @@ static int bit_init_script_table_get_next_entry(char *rom, int offset)
 			offset += 13;
 			break;
 		default:
-			printf("Unhandled init script entry with id '%c' at %04x\n", id, offset);
+			WarningLog("Unhandled init script entry with id '%c' at %04x", id, offset);
 			return 0;
 	}
 
@@ -1001,17 +1001,17 @@ struct nvbios *read_bios(const char *file)
 	struct nvbios *res;
 	char *rom = (char*)IOMalloc(NV_PROM_SIZE);
 	if(!rom) {
-		IOLog("Memory allocation error\n");
+		InfoLog("Memory allocation error");
 		return NULL;
 	}
 	if(!load_bios_prom(rom))
 	{
-		IOLog("Error reading BIOS\n");
+		InfoLog("Error reading BIOS");
 		IOFree(rom, NV_PROM_SIZE);
 		return NULL;
 	}
 	else {
-		IOLog("BIOS successfully read\n");
+		InfoLog("BIOS successfully read");
 	}
 
 

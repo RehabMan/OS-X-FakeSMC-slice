@@ -32,10 +32,6 @@
 			<string>IOResources</string>
 			<key>IOResourceMatch</key>
 			<string>IOKit</string>
-			<key>FanSpeedPercentage</key>
-			<integer>100</integer>
-			<key>GPUSpeed</key>
-			<integer>350</integer>
 		</dict>
 	</dict>
 	<key>OSBundleLibraries</key>
