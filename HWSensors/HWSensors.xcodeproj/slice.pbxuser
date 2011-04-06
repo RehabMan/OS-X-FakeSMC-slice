@@ -79,16 +79,6 @@
 		path = /System/Library/Frameworks/Kernel.framework/Versions/A/Headers/IOKit/acpi/IOACPIPlatformExpert.h;
 		sourceTree = "<absolute>";
 	};
-	12876F4412D5CD84007A01F7 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = AE36CBD5125FA80800E1EBA5 /* IntelThermal.cpp */;
-		name = "IntelThermal.cpp: 224";
-		rLen = 13;
-		rLoc = 5497;
-		rType = 0;
-		vrLen = 892;
-		vrLoc = 1483;
-	};
 	12876F4612D5CD84007A01F7 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 12876F1F12D5B6D2007A01F7 /* IOACPIPlatformExpert.h */;
@@ -484,32 +474,45 @@
 		rLen = 0;
 		rLoc = 4294967295;
 	};
-	12B621E3134CDB9A001046BD /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 12CB0F5912C0899B00068B06 /* IntelCPUMonitor.cpp */;
-		name = "IntelCPUMonitor.cpp: 152";
-		rLen = 17;
-		rLoc = 3695;
-		rType = 0;
-		vrLen = 639;
-		vrLoc = 3591;
-	};
-	12B621E4134CDB9A001046BD /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = AEABE82B125F8F6E00F08235 /* cpuid.h */;
-		rLen = 17;
-		rLoc = 4996;
-		rType = 0;
-	};
-	12B621E5134CDB9A001046BD /* PBXTextBookmark */ = {
+	12B621FE134CDF9E001046BD /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = AEABE82B125F8F6E00F08235 /* cpuid.h */;
 		name = "cpuid.h: 111";
 		rLen = 17;
 		rLoc = 4996;
 		rType = 0;
-		vrLen = 906;
+		vrLen = 865;
 		vrLoc = 4713;
+	};
+	12B621FF134CDF9E001046BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AE36CBD5125FA80800E1EBA5 /* IntelThermal.cpp */;
+		name = "IntelThermal.cpp: 130";
+		rLen = 28;
+		rLoc = 3180;
+		rType = 0;
+		vrLen = 596;
+		vrLoc = 2912;
+	};
+	12B62200134CDF9E001046BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12CB0F5912C0899B00068B06 /* IntelCPUMonitor.cpp */;
+		name = "IntelCPUMonitor.cpp: 152";
+		rLen = 17;
+		rLoc = 3695;
+		rType = 0;
+		vrLen = 548;
+		vrLoc = 3591;
+	};
+	12B62201134CDF9E001046BD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12CB0F5912C0899B00068B06 /* IntelCPUMonitor.cpp */;
+		name = "IntelCPUMonitor.cpp: 159";
+		rLen = 0;
+		rLoc = 3901;
+		rType = 0;
+		vrLen = 568;
+		vrLoc = 3591;
 	};
 	12C528FB12D7B7DF0078329F /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -526,9 +529,9 @@
 	};
 	12CB0F5912C0899B00068B06 /* IntelCPUMonitor.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {896, 6058}}";
-			sepNavSelRange = "{3695, 17}";
-			sepNavVisRange = "{3591, 639}";
+			sepNavIntBoundsRect = "{{0, 0}, {896, 6006}}";
+			sepNavSelRange = "{3901, 0}";
+			sepNavVisRange = "{3591, 568}";
 		};
 	};
 	12CBB16012BDDDE000157341 /* Source Control */ = {
@@ -793,9 +796,9 @@
 	};
 	AE36CBD5125FA80800E1EBA5 /* IntelThermal.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {922, 3198}}";
-			sepNavSelRange = "{3208, 0}";
-			sepNavVisRange = "{2760, 888}";
+			sepNavIntBoundsRect = "{{0, 0}, {896, 3120}}";
+			sepNavSelRange = "{3180, 28}";
+			sepNavVisRange = "{2912, 596}";
 		};
 	};
 	AE5BA5771268D94A00EA6AB9 /* NVClockX */ = {
@@ -870,7 +873,7 @@
 	AEABE453125F8E7400F08235 /* Project object */ = {
 		activeArchitecturePreference = i386;
 		activeBuildConfigurationName = "Release 10.6";
-		activeTarget = AE840E52128D8544006532CB /* ACPIMonitor */;
+		activeTarget = 12CB0F4512C0888E00068B06 /* IntelCPUMonitor */;
 		addToTargets = (
 			12D78B1D12BFDCFD002C61EA /* RadeonMonitor */,
 		);
@@ -960,8 +963,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 323803881;
-			PBXWorkspaceStateSaveDate = 323803881;
+			PBXPerProjectTemplateStateSaveDate = 323805031;
+			PBXWorkspaceStateSaveDate = 323805031;
 		};
 		perUserProjectItems = {
 			121E7A8312BF5F0E00AF698C /* PBXTextBookmark */ = 121E7A8312BF5F0E00AF698C /* PBXTextBookmark */;
@@ -971,7 +974,6 @@
 			124B668012C47F05004F78CF /* PBXTextBookmark */ = 124B668012C47F05004F78CF /* PBXTextBookmark */;
 			126AFB9212D5FC92008D78A8 /* PBXTextBookmark */ = 126AFB9212D5FC92008D78A8 /* PBXTextBookmark */;
 			126AFBC412D600F6008D78A8 /* PlistBookmark */ = 126AFBC412D600F6008D78A8 /* PlistBookmark */;
-			12876F4412D5CD84007A01F7 /* PBXTextBookmark */ = 12876F4412D5CD84007A01F7 /* PBXTextBookmark */;
 			12876F4612D5CD84007A01F7 /* PBXTextBookmark */ = 12876F4612D5CD84007A01F7 /* PBXTextBookmark */;
 			12876F4712D5CD84007A01F7 /* PBXTextBookmark */ = 12876F4712D5CD84007A01F7 /* PBXTextBookmark */;
 			12876F4812D5CD84007A01F7 /* PBXTextBookmark */ = 12876F4812D5CD84007A01F7 /* PBXTextBookmark */;
@@ -1003,9 +1005,10 @@
 			12ADDB6C12D619FA006000D8 /* PlistBookmark */ = 12ADDB6C12D619FA006000D8 /* PlistBookmark */;
 			12ADDB6D12D619FA006000D8 /* PlistBookmark */ = 12ADDB6D12D619FA006000D8 /* PlistBookmark */;
 			12ADDB7012D619FA006000D8 /* PlistBookmark */ = 12ADDB7012D619FA006000D8 /* PlistBookmark */;
-			12B621E3134CDB9A001046BD /* PBXTextBookmark */ = 12B621E3134CDB9A001046BD /* PBXTextBookmark */;
-			12B621E4134CDB9A001046BD /* PBXTextBookmark */ = 12B621E4134CDB9A001046BD /* PBXTextBookmark */;
-			12B621E5134CDB9A001046BD /* PBXTextBookmark */ = 12B621E5134CDB9A001046BD /* PBXTextBookmark */;
+			12B621FE134CDF9E001046BD /* PBXTextBookmark */ = 12B621FE134CDF9E001046BD /* PBXTextBookmark */;
+			12B621FF134CDF9E001046BD /* PBXTextBookmark */ = 12B621FF134CDF9E001046BD /* PBXTextBookmark */;
+			12B62200134CDF9E001046BD /* PBXTextBookmark */ = 12B62200134CDF9E001046BD /* PBXTextBookmark */;
+			12B62201134CDF9E001046BD /* PBXTextBookmark */ = 12B62201134CDF9E001046BD /* PBXTextBookmark */;
 			12C528FB12D7B7DF0078329F /* PBXTextBookmark */ = 12C528FB12D7B7DF0078329F /* PBXTextBookmark */;
 			12CBB19B12BDEB9800157341 /* PBXTextBookmark */ = 12CBB19B12BDEB9800157341 /* PBXTextBookmark */;
 			12CBB19D12BDEB9800157341 /* PBXTextBookmark */ = 12CBB19D12BDEB9800157341 /* PBXTextBookmark */;
@@ -1031,9 +1034,9 @@
 	};
 	AEABE82B125F8F6E00F08235 /* cpuid.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {896, 5655}}";
+			sepNavIntBoundsRect = "{{0, 0}, {896, 5629}}";
 			sepNavSelRange = "{4996, 17}";
-			sepNavVisRange = "{4713, 906}";
+			sepNavVisRange = "{4713, 865}";
 		};
 	};
 	AED15A20126CBA9600455FE0 /* SuperIOFamily */ = {
