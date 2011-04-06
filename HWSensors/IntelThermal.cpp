@@ -127,6 +127,7 @@ IOService* IntelThermal::probe(IOService *provider, SInt32 *score)
 					case CPU_MODEL_WESTMERE:
 					case CPU_MODEL_NEHALEM_EX:
 					case CPU_MODEL_WESTMERE_EX:
+					case CPU_MODEL_SANDY_BRIDGE:	
 					{
 						nehalemArch = true;
 						

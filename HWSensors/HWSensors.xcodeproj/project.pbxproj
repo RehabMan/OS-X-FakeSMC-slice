@@ -129,8 +129,8 @@
 		12CBB17F12BDEA9F00157341 /* X3100-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "X3100-Info.plist"; sourceTree = "<group>"; };
 		12CBB1AC12BDEC1000157341 /* X3100.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = X3100.h; sourceTree = "<group>"; };
 		12CBB1AD12BDEC1000157341 /* X3100.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = X3100.cpp; sourceTree = "<group>"; };
-		12D78B0912BFDB58002C61EA /* TigerAdditionals.cpp */ = {isa = PBXFileReference; fileEncoding = 18446744071562067968; lastKnownFileType = sourcecode.cpp.cpp; path = TigerAdditionals.cpp; sourceTree = "<group>"; };
-		12D78B0A12BFDB58002C61EA /* TigerAdditionals.h */ = {isa = PBXFileReference; fileEncoding = 18446744071562067968; lastKnownFileType = sourcecode.c.h; path = TigerAdditionals.h; sourceTree = "<group>"; };
+		12D78B0912BFDB58002C61EA /* TigerAdditionals.cpp */ = {isa = PBXFileReference; fileEncoding = 4294967295; lastKnownFileType = sourcecode.cpp.cpp; path = TigerAdditionals.cpp; sourceTree = "<group>"; };
+		12D78B0A12BFDB58002C61EA /* TigerAdditionals.h */ = {isa = PBXFileReference; fileEncoding = 4294967295; lastKnownFileType = sourcecode.c.h; path = TigerAdditionals.h; sourceTree = "<group>"; };
 		12D78B1E12BFDCFD002C61EA /* RadeonMonitor.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RadeonMonitor.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		12D78B1F12BFDCFD002C61EA /* RadeonMonitor-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RadeonMonitor-Info.plist"; sourceTree = "<group>"; };
 		12D78B2F12BFDDAC002C61EA /* Radeon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Radeon.h; sourceTree = "<group>"; };
@@ -779,6 +779,7 @@
 			};
 			buildConfigurationList = AEABE456125F8E7400F08235 /* Build configuration list for PBXProject "HWSensors" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				English,
