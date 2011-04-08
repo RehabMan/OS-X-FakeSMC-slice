@@ -149,13 +149,9 @@ IOService* IntelThermal::probe(IOService *provider, SInt32 *score)
 		}
 	}
 	
-	for (int i = 0; i < count; i++) {
+	for (int i = 0; i < count; i++)
 		if (!nehalemArch)
 			tjmax[i] = tjmax[0];
-		
-		key[i] = (char*)IOMalloc(5);
-		snprintf(key[i], 5, "TC%XD", i);
-	}
 		
 	return this;
 }
@@ -173,14 +169,19 @@ bool IntelThermal::start(IOService * provider)
 	
 	InfoLog("CPU family 0x%x, model 0x%x, stepping 0x%x, cores %d, threads %d, TJmax %d", cpuid_info()->cpuid_family, cpuid_info()->cpuid_model, cpuid_info()->cpuid_stepping, count, cpuid_info()->thread_count, tjmax[0]);
 	
-	/*if (!nehalemArch)
-		InfoLog("CPU Tjmax %d", tjmax[0]);
-	else
-		for (int i = 0; i < count; i++)
-			InfoLog("CPU%X Tjmax %d", i, tjmax[i]);*/
-	
 	for (int i = 0; i < count; i++) {
-		if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCAddKeyHandler, false, (void *)key[i], (void *)"sp78", (void *)2, this)) {
+		char key[5];
+		
+		snprintf(key, 5, KEY_FORMAT_CPU_DIODE_TEMPERATURE, i);
+		
+		if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCAddKeyHandler, false, (void *)key, (void *)TYPE_SP78, (void *)2, this)) {
+			WarningLog("Can't add key to fake SMC device, kext will not load");
+			return false;
+		}
+		
+		snprintf(key, 5, KEY_FORMAT_NON_APPLE_CPU_MULTIPLIER, i);
+		
+		if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCAddKeyHandler, false, (void *)key, (void *)TYPE_UI16, (void *)2, this)) {
 			WarningLog("Can't add key to fake SMC device, kext will not load");
 			return false;
 		}
@@ -216,18 +217,40 @@ IOReturn IntelThermal::callPlatformFunction(const OSSymbol *functionName, bool w
 #else
 			UInt32 magic;
 #endif			
-			UInt32 index = name[2] >= 'A' ? name[2] - 55 : name[2] - 48;
 			
-			if (index >= 0 && index < count) {
-				
-				mp_rendezvous_no_intrs(read_cpu_diode, &magic);
-				
-				UInt16 t = tjmax[index] - GlobalThermalValue[index];
-				
-				bcopy(&t, data, 2);
-				
-				return kIOReturnSuccess;
-			}			
+			switch (name[0]) {
+				case 'T': {
+					UInt32 index = get_index(name[2]);
+					
+					if (index >= 0 && index < count) {
+						
+						mp_rendezvous_no_intrs(read_cpu_diode, &magic);
+						
+						UInt16 t = tjmax[index] - GlobalThermalValue[index];
+						
+						bcopy(&t, data, 2);
+						
+						return kIOReturnSuccess;
+					}			
+					
+				} break;
+					
+				case 'M': {
+					UInt32 index = get_index(name[2]);
+					
+					if (index >= 0 && index < count) {
+						
+						mp_rendezvous_no_intrs(read_cpu_control, &magic);
+						
+						UInt16 m = GlobalControlValue[index];
+						
+						bcopy(&m, data, 2);
+						
+						return kIOReturnSuccess;
+					}			
+					
+				} break;
+			}
 			
 			//DebugLog("cpu index out of bounds");
 			

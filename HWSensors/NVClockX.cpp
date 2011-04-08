@@ -72,18 +72,9 @@ int NVClockX::probeDevices()
 #endif
 					if (data = OSDynamicCast(OSData, device->getProperty("device-id"))) {
 						nvclock.card[nvclock.num_cards].device_id=*(UInt32*)data->getBytesNoCopy();
-					
-						InfoLog("Vendor ID: %x, Device ID: %x", vendor_id, nvclock.card[nvclock.num_cards].device_id);
-						
-						nvclock.card[nvclock.num_cards].arch = get_gpu_arch(nvclock.card[nvclock.num_cards].device_id);
-						
-						InfoLog("Architecture: %x", nvclock.card[nvclock.num_cards].arch);
-						
+						nvclock.card[nvclock.num_cards].arch = get_gpu_arch(nvclock.card[nvclock.num_cards].device_id);			
 						nvclock.card[nvclock.num_cards].number = nvclock.num_cards;
 						nvclock.card[nvclock.num_cards].card_name = (char*)get_card_name(nvclock.card[nvclock.num_cards].device_id, &nvclock.card[nvclock.num_cards].gpu);
-						
-						InfoLog("%s", nvclock.card[nvclock.num_cards].card_name);
-						
 						nvclock.card[nvclock.num_cards].state = 0;
 						nvclock.card[nvclock.num_cards].reg_address = addr;
 						
@@ -107,7 +98,12 @@ int NVClockX::probeDevices()
 						
 						nvclock.card[nvclock.num_cards].mem_mapped = 1;
 						
-						InfoLog("Memory mapped successfully");
+						InfoLog("Card: %d, Vendor ID: %x, Device ID: %x, Architecture: %x, %s", 
+								nvclock.num_cards,
+								vendor_id, 
+								nvclock.card[nvclock.num_cards].device_id, 
+								nvclock.card[nvclock.num_cards].arch,
+								nvclock.card[nvclock.num_cards].card_name);
 						
 						nvclock.num_cards++;
 					}
@@ -132,44 +128,30 @@ bool NVClockX::addSensor(const char* key, const char* type, unsigned char size, 
 
 int NVClockX::addTachometer(int index)
 {
-	for (int i = 0; i < 0x10; i++) {
+	UInt8 length = 0;
+	void * data = 0;
+	
+	if (kIOReturnSuccess == fakeSMC->callPlatformFunction(kFakeSMCGetKeyValue, true, (void *)KEY_FAN_NUMBER, (void *)&length, (void *)&data, 0)) {
+		length = 0;
+		
+		bcopy(data, &length, 1);
 		
 		char name[5];
 		
-		snprintf(name, 5, KEY_FORMAT_FAN_SPEED, i); 
-		
-		UInt8 length = 0;
-		void * data = 0;
-		
-		if (kIOReturnSuccess == fakeSMC->callPlatformFunction(kFakeSMCGetKeyValue, true, (void *)name, (void *)&length, (void *)&data, 0))
-			continue;
+		snprintf(name, 5, KEY_FORMAT_FAN_SPEED, length); 
 		
 		if (addSensor(name, TYPE_FPE2, 2, index)) {
-	
-			IOReturn result = fakeSMC->callPlatformFunction(kFakeSMCGetKeyValue, true, (void *)KEY_FAN_NUMBER, (void *)&length, (void *)&data, 0);
+		
+			length++;
 			
-			if (kIOReturnError == result) {
-				length = 1;
-				
-				if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCAddKeyValue, true, (void *)KEY_FAN_NUMBER, (void *)TYPE_UI8, (void *)1, (void *)&length))
-					WarningLog("error adding FNum value");
-			}
-			else if (kIOReturnSuccess == result) {
-				length = 0;
-				
-				bcopy(data, &length, 1);
-				
-				length++;
-				
-				if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCSetKeyValue, true, (void *)KEY_FAN_NUMBER, (void *)1, (void *)&length, 0))
-					WarningLog("error updating FNum value");
-			}
-			else WarningLog("error reading FNum value");
+			if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCSetKeyValue, true, (void *)KEY_FAN_NUMBER, (void *)1, (void *)&length, 0))
+				WarningLog("error updating FNum value");
 			
-			return i;
+			return length-1;
 		}
 	}
-	
+	else WarningLog("error reading FNum value");
+		
 	return -1;
 }
 

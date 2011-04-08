@@ -24,6 +24,12 @@ extern "C" void mp_rendezvous_no_intrs(void (*action_func)(void *), void * arg);
 extern "C" int cpu_number(void);
 
 static UInt8 GlobalThermalValue[MaxCpuCount];
+static UInt16 GlobalControlValue[MaxCpuCount];
+
+inline UInt32 get_index(char c)
+{
+	return c >= 'A' ? c - 55 : c - 48;
+};
 
 inline void read_cpu_diode(__unused void* magic)
 {
@@ -37,13 +43,22 @@ inline void read_cpu_diode(__unused void* magic)
 	}
 };
 
+inline void read_cpu_control(__unused void* magic)
+{
+	UInt32 cpn = cpu_number();
+	
+	if(cpn < MaxCpuCount) {
+		UInt64 msr = rdmsr64(MSR_IA32_PERF_STS);
+		GlobalControlValue[cpn] = msr & 0xFFFF;
+	}
+};
+
 class IntelThermal : public IOService
 {
     OSDeclareDefaultStructors(IntelThermal)    
 private:
 	UInt8					count;
 	UInt8					tjmax[MaxCpuCount];
-	char*					key[MaxCpuCount];
 	bool					nehalemArch;
 	IOService*				fakeSMC;
 

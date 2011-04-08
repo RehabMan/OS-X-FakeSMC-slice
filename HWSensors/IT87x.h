@@ -50,6 +50,7 @@ enum IT87xModel
     IT8720F = 0x8720,
     IT8721F = 0x8721,
     IT8726F = 0x8726,
+	IT8726F = 0x8728,
 	IT8752F = 0x8752
 };
 

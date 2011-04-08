@@ -34,48 +34,35 @@ bool ACPIMonitor::addSensor(const char* method, const char* key, const char* typ
 
 bool ACPIMonitor::addTachometer(const char* method, const char* caption)
 {
-	for (int i = 0; i < 0x10; i++) {
+	UInt8 length = 0;
+	void * data = 0;
+	
+	if (kIOReturnSuccess == fakeSMC->callPlatformFunction(kFakeSMCGetKeyValue, true, (void *)KEY_FAN_NUMBER, (void *)&length, (void *)&data, 0)) {
+		length = 0;
+		
+		bcopy(data, &length, 1);
 		
 		char name[5];
 		
-		snprintf(name, 5, KEY_FORMAT_FAN_SPEED, i); 
+		snprintf(name, 5, KEY_FORMAT_FAN_SPEED, length); 
 		
 		if (addSensor(method, name, TYPE_FPE2, 2)) {
 			if (caption) {
-				snprintf(name, 5, KEY_FORMAT_FAN_ID, i); 
+				snprintf(name, 5, KEY_FORMAT_FAN_ID, length-1); 
 				
 				if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCAddKeyValue, false, (void *)name, (void *)TYPE_CH8, (void *)((UInt64)strlen(caption)), (void *)caption))
 					WarningLog("error adding tachometer id value");
-			}
+			}			
 			
-			UInt8 length = 0;
-			void * data = 0;
+			length++;
 			
-			IOReturn result = fakeSMC->callPlatformFunction(kFakeSMCGetKeyValue, false, (void *)KEY_FAN_NUMBER, (void *)&length, (void *)&data, 0);
-			
-			if (kIOReturnError == result) {
-				length = 1;
-				
-				if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCAddKeyValue, false, (void *)KEY_FAN_NUMBER, (void *)TYPE_UI8, (void *)1, (void *)&length))
-					WarningLog("error adding FNum value");
-			}
-			else {
-				if (kIOReturnSuccess == result) {
-					length = 0;
-					
-					bcopy(data, &length, 1);
-					
-					length++;
-					
-					if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCSetKeyValue, false, (void *)KEY_FAN_NUMBER, (void *)1, (void *)&length, 0))
-						WarningLog("error updating FNum value");
-				}
-				else WarningLog("error reading FNum value");
-			}
+			if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCSetKeyValue, true, (void *)KEY_FAN_NUMBER, (void *)1, (void *)&length, 0))
+				WarningLog("error updating FNum value");
 			
 			return true;
 		}
 	}
+	else WarningLog("error reading FNum value");
 	
 	return false;
 }
