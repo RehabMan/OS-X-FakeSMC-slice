@@ -48,7 +48,7 @@ bool ACPIMonitor::addTachometer(const char* method, const char* caption)
 		
 		if (addSensor(method, name, TYPE_FPE2, 2)) {
 			if (caption) {
-				snprintf(name, 5, KEY_FORMAT_FAN_ID, length-1); 
+				snprintf(name, 5, KEY_FORMAT_FAN_ID, length); 
 				
 				if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCAddKeyValue, false, (void *)name, (void *)TYPE_CH8, (void *)((UInt64)strlen(caption)), (void *)caption))
 					WarningLog("error adding tachometer id value");
