@@ -132,6 +132,10 @@ int adt7473_get_fanspeed_rpm(I2CDevPtr dev)
 	/* GT200 boards seem to use two phases instead of a single, the fan speed is twice as high */
 	if(dev->arch & GT200)
 		count *= 2;
+	
+	/* GF100 boards seem to use four phases... */
+	if(dev->arch & GF100)
+		count *= 4;
 
 	/* RPM = 60*90k pulses / (number of counts that fit in a pulse) */
 	return 90000*60/count;

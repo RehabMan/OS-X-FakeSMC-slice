@@ -324,9 +324,9 @@ IOReturn NVClockX::callPlatformFunction(const OSSymbol *functionName, bool waitF
 							switch (key[2]) {
 								case 'A':
 									if (nv_card->caps & I2C_FANSPEED_MONITORING)
-										value = encode_fp2e(nv_card->get_i2c_fanspeed_rpm(nv_card->sensor) >> 2);
+										value = encode_fp2e(nv_card->get_i2c_fanspeed_rpm(nv_card->sensor));
 									else if(nv_card->caps & GPU_FANSPEED_MONITORING)
-										value = encode_fp2e((UInt16)nv_card->get_fanspeed() >> 2);
+										value = encode_fp2e((UInt16)nv_card->get_fanspeed());
 									bcopy(&value, data, 2);
 									break;
 								case 'C':
