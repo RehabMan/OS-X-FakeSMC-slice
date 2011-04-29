@@ -164,7 +164,7 @@ bool IT87x::init(OSDictionary *properties)
 	
     if (!super::init(properties))
 		return false;
-	
+		
 	return true;
 }
 
@@ -174,7 +174,10 @@ IOService* IT87x::probe(IOService *provider, SInt32 *score)
 	
 	if (super::probe(provider, score) != this) 
 		return 0;
-		
+	
+	InfoLog("based on code from Open Hardware Monitor project by Michael Möller (C) 2010");
+	InfoLog("mozodojo (C) 2011");
+	
 	return this;
 }
 
@@ -184,7 +187,7 @@ bool IT87x::start(IOService * provider)
 	
 	if (!super::start(provider)) 
 		return false;
-		
+	
 	InfoLog("found ITE %s", getModelName());
 	
 	OSDictionary* configuration = OSDynamicCast(OSDictionary, getProperty("Sensors Configuration"));

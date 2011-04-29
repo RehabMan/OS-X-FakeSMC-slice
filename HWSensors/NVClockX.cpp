@@ -164,6 +164,8 @@ bool NVClockX::init(OSDictionary *properties)
 	
 	if (!(sensors = OSDictionary::withCapacity(0)))
 		return false;
+	
+	return true;
 }
 
 IOService* NVClockX::probe(IOService *provider, SInt32 *score)
@@ -171,6 +173,9 @@ IOService* NVClockX::probe(IOService *provider, SInt32 *score)
 	DebugLog("Probing...");
 	
 	if (super::probe(provider, score) != this) return 0;
+	
+	InfoLog("NVClock Darwin port by alphamerik (C) 2010");
+	InfoLog("usr-sse2 (C) 2010");
 	
 	return this;
 }
@@ -180,7 +185,7 @@ bool NVClockX::start(IOService * provider)
 	DebugLog("Starting...");
 	
 	if (!super::start(provider)) return false;
-	
+		
     if (!(fakeSMC = waitForService(serviceMatching(kFakeSMCService)))) {
 		WarningLog("Can't locate fake SMC device, kext will not load");
 		return false;
@@ -209,9 +214,9 @@ bool NVClockX::start(IOService * provider)
 		
 		/* Check if the card is supported, if not print a message. */
 		if(nvclock.card[index].gpu == UNKNOWN){
-			InfoLog("it seems your card isn't officialy supported in FakeSMCnVclockPort yet.");
-			InfoLog("please tell the author the pci_id of the card for further investigation.");
-			InfoLog("continuing anyway");
+			WarningLog("it seems your card isn't officialy supported in FakeSMCnVclockPort yet");
+			WarningLog("please tell the author the pci_id of the card for further investigation");
+			WarningLog("continuing anyway");
 		}
 		
 		if(nv_card->caps & (GPU_TEMP_MONITORING)) {
@@ -308,17 +313,19 @@ IOReturn NVClockX::callPlatformFunction(const OSSymbol *functionName, bool waitF
 					
 					switch (key[0]) {
 						case 'T':
-						switch (key[3]) {
-							case 'D':
-								if (nv_card->caps & GPU_TEMP_MONITORING)
-									value = nv_card->get_gpu_temp(nv_card->sensor);
-								break;
-							case 'H':
-								if (nv_card->caps & BOARD_TEMP_MONITORING)
-									value = nv_card->get_board_temp(nv_card->sensor);
-								break;
-						}
+							switch (key[3]) {
+								case 'D':
+									if (nv_card->caps & GPU_TEMP_MONITORING)
+										value = nv_card->get_gpu_temp(nv_card->sensor);
+									break;
+								case 'H':
+									if (nv_card->caps & BOARD_TEMP_MONITORING)
+										value = nv_card->get_board_temp(nv_card->sensor);
+									break;
+							}
+							
 							bcopy(&value, data, 2);
+							
 							break;
 						case 'F':
 							switch (key[2]) {
@@ -327,12 +334,16 @@ IOReturn NVClockX::callPlatformFunction(const OSSymbol *functionName, bool waitF
 										value = encode_fp2e(nv_card->get_i2c_fanspeed_rpm(nv_card->sensor));
 									else if(nv_card->caps & GPU_FANSPEED_MONITORING)
 										value = encode_fp2e((UInt16)nv_card->get_fanspeed());
+									else value = 0;
+									
 									bcopy(&value, data, 2);
+									
 									break;
 								case 'C':
 									value=(UInt16)nv_card->get_gpu_speed();
-									data[0]=value>>8;
-									data[1]=value&0xff;
+									
+									bcopy(&value, data, 2);
+									
 									break;
 							}
 					}

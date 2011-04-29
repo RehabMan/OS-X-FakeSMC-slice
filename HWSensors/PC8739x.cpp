@@ -110,6 +110,8 @@ IOService* PC8739x::probe(IOService *provider, SInt32 *score)
 	if (super::probe(provider, score) != this) 
 		return 0;
 	
+	InfoLog("slice (C) 2011");
+	
 	return this;
 }
 
@@ -119,7 +121,7 @@ bool PC8739x::start(IOService * provider)
 	
 	if (!super::start(provider)) 
 		return false;
-	
+		
 	InfoLog("found NSC %s, revision 0x%x", getModelName(), revision);
 	
 	OSDictionary* configuration = OSDynamicCast(OSDictionary, getProperty("Sensors Configuration"));

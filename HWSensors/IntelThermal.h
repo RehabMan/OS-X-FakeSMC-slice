@@ -13,8 +13,7 @@
 
 #include "cpuid.h"
 
-#define MSR_IA32_THERM_STATUS		0x019C
-#define MSR_IA32_PERF_STATUS		0x0198;
+#define MSR_IA32_THERM_STS			0x019C
 #define MSR_IA32_TEMPERATURE_TARGET	0x01A2
 //#define MSR_PLATFORM_INFO			0xCE;
 
@@ -26,7 +25,16 @@ extern "C" int cpu_number(void);
 static UInt8 GlobalThermalValue[MaxCpuCount];
 static UInt16 GlobalControlValue[MaxCpuCount];
 
-inline UInt32 get_index(char c)
+enum cpuArch {
+	Unknown,
+	NetBurst,
+	Core,
+	Atom,
+	Nehalem,
+	SandyBridge
+};
+
+inline UInt8 get_index(char c)
 {
 	return c >= 'A' ? c - 55 : c - 48;
 };
@@ -34,9 +42,9 @@ inline UInt32 get_index(char c)
 inline void read_cpu_diode(__unused void* magic)
 {
 	UInt32 cpn = cpu_number();
-	
+
 	if(cpn < MaxCpuCount) {
-		UInt64 msr = rdmsr64(MSR_IA32_THERM_STATUS);
+		UInt64 msr = rdmsr64(MSR_IA32_THERM_STS);
 		if (msr & 0x80000000) { 
 			GlobalThermalValue[cpn] = (msr >> 16) & 0x7F;
 		}
@@ -57,10 +65,12 @@ class IntelThermal : public IOService
 {
     OSDeclareDefaultStructors(IntelThermal)    
 private:
-	UInt8					count;
-	UInt8					tjmax[MaxCpuCount];
-	bool					nehalemArch;
-	IOService*				fakeSMC;
+	cpuArch				arch;
+	UInt8				count;
+	UInt8				tjmax[MaxCpuCount];
+	IOService*			fakeSMC;
+	
+	void				readTjmaxFromMSR();
 
 public:
 	virtual bool		init(OSDictionary *properties=0);

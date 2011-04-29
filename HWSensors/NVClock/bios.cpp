@@ -45,6 +45,8 @@ TODO:
 #define READ_INT(rom, offset) ((rom[offset+3]&0xff) << 24 | (rom[offset+2]&0xff) << 16 | (rom[offset+1]&0xff) << 8 | (rom[offset]&0xff))
 #define READ_LONG(rom, offset) (READ_INT(rom, offset+4)<<32 | READ_INT(rom, offset))
 
+//#define DEBUG	true
+
 //static unsigned int locate(char *rom, char *str, int offset);
 struct nvbios *read_bios(const char *file);
 static struct nvbios *parse_bios(char *rom);
@@ -235,7 +237,7 @@ static int bit_init_script_table_get_next_entry(char *rom, int offset)
 				int number = (unsigned char)rom[offset+5];
 
 				printf("'%c'\tbase: %08x number: %d\n", id, base, number);
-				for(i=0; i<number; i++)
+				for(int i=0; i<number; i++)
 					printf("'%c'\t %08x: %08x\n", id, base+4*i, READ_INT(rom, offset+6 + 4*i));
 			}
 #endif
@@ -343,7 +345,7 @@ static int bit_init_script_table_get_next_entry(char *rom, int offset)
 				int number = rom[offset+6];
 				printf("'%c'\treg: %08x size: %d number: %d", id, READ_INT(rom, offset+1), size, number);
 				/* why times 2? */
-				for(i=0; i<number*size*2; i++)
+				for(int i=0; i<number*size*2; i++)
 					printf(" %08x", READ_INT(rom, offset + 7 + i));
 				printf("\n");
 			}
@@ -417,7 +419,7 @@ static void parse_bit_init_script_table(struct nvbios *bios, char *rom, int init
 /* Table 1 */
 	offset = READ_SHORT(rom, init_offset);
 
-	for(i=0; i<=len; i+=2)
+	for(int i=0; i<=len; i+=2)
 	{
 		/* Not all tables have to exist */
 		if(!offset)

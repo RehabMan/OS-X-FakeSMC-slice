@@ -395,6 +395,8 @@ bool FakeSMCDevice::init(IOService *platform, OSDictionary *properties)
 	
 	this->attachToParent(platform, gIOServicePlane);
 	
+	InfoLog("successfully initialized");
+	
 	return true;
 }
 
@@ -421,10 +423,10 @@ void FakeSMCDevice::loadKeysFromDictionary(OSDictionary *dictionary)
 			iterator->release();
 		}
 		
-		InfoLog("%d keys added", keys->getCount());
+		InfoLog("%d preconfigured keys added: ", keys->getCount());
 	}
 	else {
-		WarningLog("no keys found");
+		WarningLog("no preconfigured keys found");
 	}
 }
 

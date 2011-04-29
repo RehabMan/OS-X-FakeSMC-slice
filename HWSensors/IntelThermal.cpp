@@ -9,6 +9,7 @@
 
 #include "IntelThermal.h"
 #include "FakeSMC.h"
+#include "utils.h"
 
 #define Debug FALSE
 
@@ -20,10 +21,17 @@
 #define super IOService
 OSDefineMetaClassAndStructors(IntelThermal, IOService)
 
+void IntelThermal::readTjmaxFromMSR()
+{
+	for (int i = 0; i < count; i++) {
+		tjmax[i] = (rdmsr64(MSR_IA32_TEMPERATURE_TARGET) >> 16) & 0xFF;
+	}
+}
+
 bool IntelThermal::init(OSDictionary *properties)
 {
 	DebugLog("Initialising...");
-	
+		
     if (!super::init(properties))
 		return false;
 	
@@ -36,8 +44,9 @@ IOService* IntelThermal::probe(IOService *provider, SInt32 *score)
 	
 	if (super::probe(provider, score) != this) return 0;
 	
-	InfoLog("Based on code by mercurysquad, superhai (C)2008");
-
+	InfoLog("based on code by mercurysquad, superhai (C) 2008");
+	InfoLog("based code from Open Hardware Monitor project by Michael Möller (C) 2011");
+	
 	cpuid_update_generic_info();
 	
 	if (strcmp(cpuid_info()->cpuid_vendor, CPUID_VID_INTEL) != 0)	{
@@ -67,8 +76,7 @@ IOService* IntelThermal::probe(IOService *provider, SInt32 *score)
 		
 		for (int i = 1; i < count; i++)
 				tjmax[i] = tjmax[0];
-	}
-	else { 
+	} else { 
 		// Calculating Tjmax
 		switch (CpuFamily)
 		{
@@ -77,6 +85,7 @@ IOService* IntelThermal::probe(IOService *provider, SInt32 *score)
 				switch (CpuModel) 
 				{
 					case CPU_MODEL_MEROM: // Intel Core (65nm)
+						arch = Core;
 						switch (CpuStepping) 
 						{
 							case 0x02: // G0
@@ -101,6 +110,7 @@ IOService* IntelThermal::probe(IOService *provider, SInt32 *score)
 						} break;
 						
 					case CPU_MODEL_PENRYN: // Intel Core (45nm)
+						arch = Core;
 						// Mobile CPU ?
 						if (rdmsr64(0x17) & (1<<28)) {
 							tjmax[0] = 105; break;
@@ -110,6 +120,7 @@ IOService* IntelThermal::probe(IOService *provider, SInt32 *score)
 						}
 						
 					case CPU_MODEL_ATOM: // Intel Atom (45nm)
+						arch = Atom;
 						switch (CpuStepping)
 						{
 							case 0x02: // C0
@@ -127,15 +138,14 @@ IOService* IntelThermal::probe(IOService *provider, SInt32 *score)
 					case CPU_MODEL_WESTMERE:
 					case CPU_MODEL_NEHALEM_EX:
 					case CPU_MODEL_WESTMERE_EX:
+						arch = Nehalem;
+						readTjmaxFromMSR();
+						break;
 					case CPU_MODEL_SANDY_BRIDGE:	
-					{
-						nehalemArch = true;
-						
-						for (int i = 0; i < count; i++) {
-							tjmax[i] = (rdmsr64(MSR_IA32_TEMPERATURE_TARGET) >> 16) & 0xFF;
-						}
-						
-					} break;
+					case CPU_MODEL_SANDY_BRIDGE_XEON:
+						arch = SandyBridge;
+						readTjmaxFromMSR();
+						break;
 						
 					default:
 						WarningLog("Unsupported Intel processor found, kext will not load");
@@ -150,7 +160,7 @@ IOService* IntelThermal::probe(IOService *provider, SInt32 *score)
 	}
 	
 	for (int i = 0; i < count; i++)
-		if (!nehalemArch)
+		if (!(arch == Nehalem) && !(arch == SandyBridge))
 			tjmax[i] = tjmax[0];
 		
 	return this;
@@ -236,15 +246,30 @@ IOReturn IntelThermal::callPlatformFunction(const OSSymbol *functionName, bool w
 				} break;
 					
 				case 'M': {
-					UInt32 index = get_index(name[2]);
+					UInt8 index = get_index(name[2]);
 					
 					if (index >= 0 && index < count) {
-						
+				
 						mp_rendezvous_no_intrs(read_cpu_control, &magic);
+
+						UInt16 value = GlobalControlValue[index];
 						
-						UInt16 m = GlobalControlValue[index];
+						switch (arch) {
+							case Nehalem: 
+								value = (value & 0xff) * 10;
+								break;
+								
+							case SandyBridge:
+								value = ((value >> 8) & 0xff) * 10;	
+								break;
+								
+							default:
+								float mult = float(((value >> 8) & 0x1f)) + 0.5 * float((value >> 14) & 1);
+								value = mult * 10;
+								break;
+						}
 						
-						bcopy(&m, data, 2);
+						bcopy(&value, data, 2);
 						
 						return kIOReturnSuccess;
 					}			

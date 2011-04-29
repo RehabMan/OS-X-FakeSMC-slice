@@ -22,6 +22,17 @@
 		12D78B1512BFDB58002C61EA /* TigerAdditionals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12D78B0912BFDB58002C61EA /* TigerAdditionals.cpp */; };
 		12D78B1612BFDB58002C61EA /* TigerAdditionals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12D78B0912BFDB58002C61EA /* TigerAdditionals.cpp */; };
 		12D78B3112BFDDAC002C61EA /* Radeon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12D78B3012BFDDAC002C61EA /* Radeon.cpp */; };
+		1D1CAB2C136570A4003878D0 /* IntelThermal.kext in CopyFiles */ = {isa = PBXBuildFile; fileRef = AEABE460125F8E9300F08235 /* IntelThermal.kext */; };
+		1D1CAB2D136570A4003878D0 /* NVClockX.kext in CopyFiles */ = {isa = PBXBuildFile; fileRef = AE5BA5781268D94A00EA6AB9 /* NVClockX.kext */; };
+		1D1CAB2E136570A4003878D0 /* SuperIOFamily.kext in CopyFiles */ = {isa = PBXBuildFile; fileRef = AED15A21126CBA9600455FE0 /* SuperIOFamily.kext */; };
+		1D1CAB2F136570A4003878D0 /* IT87x.kext in CopyFiles */ = {isa = PBXBuildFile; fileRef = AED9E18E125FBEF400736A5A /* IT87x.kext */; };
+		1D1CAB30136570A4003878D0 /* W836x.kext in CopyFiles */ = {isa = PBXBuildFile; fileRef = AE212C6A12678D3500145048 /* W836x.kext */; };
+		1D1CAB31136570A4003878D0 /* F718x.kext in CopyFiles */ = {isa = PBXBuildFile; fileRef = AE00C785126A1F440068E69A /* F718x.kext */; };
+		1D1CAB32136570A4003878D0 /* PC8739x.kext in CopyFiles */ = {isa = PBXBuildFile; fileRef = AE00C7BD126A24960068E69A /* PC8739x.kext */; };
+		1D1CAB33136570A4003878D0 /* ACPIMonitor.kext in CopyFiles */ = {isa = PBXBuildFile; fileRef = AE840E53128D8544006532CB /* ACPIMonitor.kext */; };
+		1D1CAB34136570A4003878D0 /* X3100.kext in CopyFiles */ = {isa = PBXBuildFile; fileRef = 12CBB17E12BDEA9F00157341 /* X3100.kext */; };
+		1D1CAB35136570A4003878D0 /* RadeonMonitor.kext in CopyFiles */ = {isa = PBXBuildFile; fileRef = 12D78B1E12BFDCFD002C61EA /* RadeonMonitor.kext */; };
+		1D1CAB36136570A4003878D0 /* IntelCPUMonitor.kext in CopyFiles */ = {isa = PBXBuildFile; fileRef = 12CB0F3A12C087D400068B06 /* IntelCPUMonitor.kext */; };
 		1D30B1E2134B90E0004F0967 /* utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D30B1E0134B90E0004F0967 /* utils.h */; };
 		AE00C79D126A1FED0068E69A /* F718x.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE00C79C126A1FED0068E69A /* F718x.cpp */; };
 		AE00C7E6126A253A0068E69A /* PC8739x.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE00C7E5126A253A0068E69A /* PC8739x.cpp */; };
@@ -55,57 +66,109 @@
 		AED49C8E126CC71E00840536 /* xf86i2c.h in Headers */ = {isa = PBXBuildFile; fileRef = AE5BA64D1268DCDE00EA6AB9 /* xf86i2c.h */; };
 		AED49C8F126CC71E00840536 /* xfree.h in Headers */ = {isa = PBXBuildFile; fileRef = AE5BA64E1268DCDE00EA6AB9 /* xfree.h */; };
 		AED9E1C2125FC02F00736A5A /* IT87x.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AED9E1C0125FC02F00736A5A /* IT87x.cpp */; };
-		AEE2D59E12720A8000128864 /* IT87x.kext in CopyFiles */ = {isa = PBXBuildFile; fileRef = AED9E18E125FBEF400736A5A /* IT87x.kext */; };
-		AEE2D5A712720A8300128864 /* W836x.kext in CopyFiles */ = {isa = PBXBuildFile; fileRef = AE212C6A12678D3500145048 /* W836x.kext */; };
-		AEE2D5B912720A8700128864 /* F718x.kext in CopyFiles */ = {isa = PBXBuildFile; fileRef = AE00C785126A1F440068E69A /* F718x.kext */; };
-		AEE2D5CB12720A8900128864 /* PC8739x.kext in CopyFiles */ = {isa = PBXBuildFile; fileRef = AE00C7BD126A24960068E69A /* PC8739x.kext */; };
 		AEF4C81712602F2600297B2B /* FakeSMCDevice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEF4C80E12602F2600297B2B /* FakeSMCDevice.cpp */; };
 		AEF4C81812602F2600297B2B /* FakeSMCKey.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEF4C81012602F2600297B2B /* FakeSMCKey.cpp */; };
 		AEF4C81C12602F2600297B2B /* FakeSMC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEF4C81512602F2600297B2B /* FakeSMC.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		AED15F44126CC43B00455FE0 /* PBXContainerItemProxy */ = {
+		1D1CAAB713657031003878D0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AEABE453125F8E7400F08235 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = AED9E18D125FBEF400736A5A;
-			remoteInfo = IT87x;
+			remoteGlobalIDString = AEABE45F125F8E9300F08235;
+			remoteInfo = IntelThermal;
 		};
-		AED15F46126CC43B00455FE0 /* PBXContainerItemProxy */ = {
+		1D1CAAB913657034003878D0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AEABE453125F8E7400F08235 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = AE212C6912678D3500145048;
-			remoteInfo = W836x;
+			remoteGlobalIDString = 12CB0F4512C0888E00068B06;
+			remoteInfo = IntelCPUMonitor;
 		};
-		AED15F48126CC43B00455FE0 /* PBXContainerItemProxy */ = {
+		1D1CAABB1365703A003878D0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AEABE453125F8E7400F08235 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = AE00C784126A1F440068E69A;
-			remoteInfo = F718x;
+			remoteGlobalIDString = AE840E52128D8544006532CB;
+			remoteInfo = ACPIMonitor;
 		};
-		AED15F4A126CC43B00455FE0 /* PBXContainerItemProxy */ = {
+		1D1CAABD1365703C003878D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEABE453125F8E7400F08235 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AE5BA5771268D94A00EA6AB9;
+			remoteInfo = NVClockX;
+		};
+		1D1CAABF1365703F003878D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEABE453125F8E7400F08235 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 12D78B1D12BFDCFD002C61EA;
+			remoteInfo = RadeonMonitor;
+		};
+		1D1CAAC113657041003878D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEABE453125F8E7400F08235 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 12CBB17D12BDEA9F00157341;
+			remoteInfo = X3100;
+		};
+		1D1CAAC313657046003878D0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AEABE453125F8E7400F08235 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = AE00C7BC126A24960068E69A;
 			remoteInfo = PC8739x;
 		};
+		1D1CAAC513657046003878D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEABE453125F8E7400F08235 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AE00C784126A1F440068E69A;
+			remoteInfo = F718x;
+		};
+		1D1CAAC713657046003878D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEABE453125F8E7400F08235 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AE212C6912678D3500145048;
+			remoteInfo = W836x;
+		};
+		1D1CAAC913657046003878D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEABE453125F8E7400F08235 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AED9E18D125FBEF400736A5A;
+			remoteInfo = IT87x;
+		};
+		1D1CAACB1365704A003878D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEABE453125F8E7400F08235 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AED15A20126CBA9600455FE0;
+			remoteInfo = SuperIOFamily;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		AEE2D61212720AA000128864 /* CopyFiles */ = {
+		1D1CAAF713657097003878D0 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				AEE2D59E12720A8000128864 /* IT87x.kext in CopyFiles */,
-				AEE2D5A712720A8300128864 /* W836x.kext in CopyFiles */,
-				AEE2D5B912720A8700128864 /* F718x.kext in CopyFiles */,
-				AEE2D5CB12720A8900128864 /* PC8739x.kext in CopyFiles */,
+				1D1CAB2C136570A4003878D0 /* IntelThermal.kext in CopyFiles */,
+				1D1CAB2D136570A4003878D0 /* NVClockX.kext in CopyFiles */,
+				1D1CAB2E136570A4003878D0 /* SuperIOFamily.kext in CopyFiles */,
+				1D1CAB2F136570A4003878D0 /* IT87x.kext in CopyFiles */,
+				1D1CAB30136570A4003878D0 /* W836x.kext in CopyFiles */,
+				1D1CAB31136570A4003878D0 /* F718x.kext in CopyFiles */,
+				1D1CAB32136570A4003878D0 /* PC8739x.kext in CopyFiles */,
+				1D1CAB33136570A4003878D0 /* ACPIMonitor.kext in CopyFiles */,
+				1D1CAB34136570A4003878D0 /* X3100.kext in CopyFiles */,
+				1D1CAB35136570A4003878D0 /* RadeonMonitor.kext in CopyFiles */,
+				1D1CAB36136570A4003878D0 /* IntelCPUMonitor.kext in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,7 +184,6 @@
 		12B6907212D5F52A007D1C5C /* X3100-pre106-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "X3100-pre106-Info.plist"; sourceTree = "<group>"; };
 		12B6907312D5F538007D1C5C /* RadeonMonitor-pre106-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "RadeonMonitor-pre106-Info.plist"; sourceTree = "<group>"; };
 		12CB0F3A12C087D400068B06 /* IntelCPUMonitor.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IntelCPUMonitor.kext; sourceTree = BUILT_PRODUCTS_DIR; };
-		12CB0F4612C0888E00068B06 /* IntelCPUMonitor.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IntelCPUMonitor.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		12CB0F5812C0899B00068B06 /* IntelCPUMonitor-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "IntelCPUMonitor-Info.plist"; sourceTree = "<group>"; };
 		12CB0F5912C0899B00068B06 /* IntelCPUMonitor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IntelCPUMonitor.cpp; sourceTree = "<group>"; };
 		12CB0F5A12C0899B00068B06 /* IntelCPUMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntelCPUMonitor.h; sourceTree = "<group>"; };
@@ -136,6 +198,7 @@
 		12D78B2F12BFDDAC002C61EA /* Radeon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Radeon.h; sourceTree = "<group>"; };
 		12D78B3012BFDDAC002C61EA /* Radeon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Radeon.cpp; sourceTree = "<group>"; };
 		1D17EA5A134CE6F200518913 /* gpl.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gpl.txt; sourceTree = "<group>"; };
+		1D1CAB37136570A4003878D0 /* IntelCPUMonitor.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IntelCPUMonitor.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D30B1E0134B90E0004F0967 /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
 		AE00C785126A1F440068E69A /* F718x.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = F718x.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE00C786126A1F440068E69A /* F718x-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "F718x-Info.plist"; sourceTree = "<group>"; };
@@ -450,7 +513,7 @@
 				12CBB17E12BDEA9F00157341 /* X3100.kext */,
 				12D78B1E12BFDCFD002C61EA /* RadeonMonitor.kext */,
 				12CB0F3A12C087D400068B06 /* IntelCPUMonitor.kext */,
-				12CB0F4612C0888E00068B06 /* IntelCPUMonitor.kext */,
+				1D1CAB37136570A4003878D0 /* IntelCPUMonitor.kext */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -585,7 +648,7 @@
 			);
 			name = IntelCPUMonitor;
 			productName = IntelCPUMonitor;
-			productReference = 12CB0F4612C0888E00068B06 /* IntelCPUMonitor.kext */;
+			productReference = 1D1CAB37136570A4003878D0 /* IntelCPUMonitor.kext */;
 			productType = "com.apple.product-type.kernel-extension.iokit";
 		};
 		12CBB17D12BDEA9F00157341 /* X3100 */ = {
@@ -723,16 +786,11 @@
 			buildConfigurationList = AED15A27126CBA9600455FE0 /* Build configuration list for PBXNativeTarget "SuperIOFamily" */;
 			buildPhases = (
 				AED15A1D126CBA9600455FE0 /* Sources */,
-				AEE2D61212720AA000128864 /* CopyFiles */,
 				AED15A1F126CBA9600455FE0 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				AED15F45126CC43B00455FE0 /* PBXTargetDependency */,
-				AED15F47126CC43B00455FE0 /* PBXTargetDependency */,
-				AED15F49126CC43B00455FE0 /* PBXTargetDependency */,
-				AED15F4B126CC43B00455FE0 /* PBXTargetDependency */,
 			);
 			name = SuperIOFamily;
 			productName = SuperIOFamily;
@@ -761,10 +819,22 @@
 			buildPhases = (
 				AEF4C80012602EE700297B2B /* Sources */,
 				AEF4C80212602EE700297B2B /* Frameworks */,
+				1D1CAAF713657097003878D0 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				1D1CAAB813657031003878D0 /* PBXTargetDependency */,
+				1D1CAABA13657034003878D0 /* PBXTargetDependency */,
+				1D1CAABC1365703A003878D0 /* PBXTargetDependency */,
+				1D1CAABE1365703C003878D0 /* PBXTargetDependency */,
+				1D1CAAC01365703F003878D0 /* PBXTargetDependency */,
+				1D1CAAC213657041003878D0 /* PBXTargetDependency */,
+				1D1CAACA13657046003878D0 /* PBXTargetDependency */,
+				1D1CAAC813657046003878D0 /* PBXTargetDependency */,
+				1D1CAAC613657046003878D0 /* PBXTargetDependency */,
+				1D1CAAC413657046003878D0 /* PBXTargetDependency */,
+				1D1CAACC1365704A003878D0 /* PBXTargetDependency */,
 			);
 			name = FakeSMC;
 			productName = VirtualSMC;
@@ -950,25 +1020,60 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		AED15F45126CC43B00455FE0 /* PBXTargetDependency */ = {
+		1D1CAAB813657031003878D0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AED9E18D125FBEF400736A5A /* IT87x */;
-			targetProxy = AED15F44126CC43B00455FE0 /* PBXContainerItemProxy */;
+			target = AEABE45F125F8E9300F08235 /* IntelThermal */;
+			targetProxy = 1D1CAAB713657031003878D0 /* PBXContainerItemProxy */;
 		};
-		AED15F47126CC43B00455FE0 /* PBXTargetDependency */ = {
+		1D1CAABA13657034003878D0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AE212C6912678D3500145048 /* W836x */;
-			targetProxy = AED15F46126CC43B00455FE0 /* PBXContainerItemProxy */;
+			target = 12CB0F4512C0888E00068B06 /* IntelCPUMonitor */;
+			targetProxy = 1D1CAAB913657034003878D0 /* PBXContainerItemProxy */;
 		};
-		AED15F49126CC43B00455FE0 /* PBXTargetDependency */ = {
+		1D1CAABC1365703A003878D0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AE00C784126A1F440068E69A /* F718x */;
-			targetProxy = AED15F48126CC43B00455FE0 /* PBXContainerItemProxy */;
+			target = AE840E52128D8544006532CB /* ACPIMonitor */;
+			targetProxy = 1D1CAABB1365703A003878D0 /* PBXContainerItemProxy */;
 		};
-		AED15F4B126CC43B00455FE0 /* PBXTargetDependency */ = {
+		1D1CAABE1365703C003878D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AE5BA5771268D94A00EA6AB9 /* NVClockX */;
+			targetProxy = 1D1CAABD1365703C003878D0 /* PBXContainerItemProxy */;
+		};
+		1D1CAAC01365703F003878D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 12D78B1D12BFDCFD002C61EA /* RadeonMonitor */;
+			targetProxy = 1D1CAABF1365703F003878D0 /* PBXContainerItemProxy */;
+		};
+		1D1CAAC213657041003878D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 12CBB17D12BDEA9F00157341 /* X3100 */;
+			targetProxy = 1D1CAAC113657041003878D0 /* PBXContainerItemProxy */;
+		};
+		1D1CAAC413657046003878D0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = AE00C7BC126A24960068E69A /* PC8739x */;
-			targetProxy = AED15F4A126CC43B00455FE0 /* PBXContainerItemProxy */;
+			targetProxy = 1D1CAAC313657046003878D0 /* PBXContainerItemProxy */;
+		};
+		1D1CAAC613657046003878D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AE00C784126A1F440068E69A /* F718x */;
+			targetProxy = 1D1CAAC513657046003878D0 /* PBXContainerItemProxy */;
+		};
+		1D1CAAC813657046003878D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AE212C6912678D3500145048 /* W836x */;
+			targetProxy = 1D1CAAC713657046003878D0 /* PBXContainerItemProxy */;
+		};
+		1D1CAACA13657046003878D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AED9E18D125FBEF400736A5A /* IT87x */;
+			targetProxy = 1D1CAAC913657046003878D0 /* PBXContainerItemProxy */;
+		};
+		1D1CAACC1365704A003878D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AED15A20126CBA9600455FE0 /* SuperIOFamily */;
+			targetProxy = 1D1CAACB1365704A003878D0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

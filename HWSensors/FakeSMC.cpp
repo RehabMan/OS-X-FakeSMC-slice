@@ -11,24 +11,28 @@
 OSDefineMetaClassAndStructors (FakeSMC, IOService)
 
 bool FakeSMC::init(OSDictionary *dictionary)
-{
-	return super::init(dictionary);
+{	
+	if (!super::init(dictionary))
+		return false;
+		
+	return true;
 }
 
 IOService *FakeSMC::probe(IOService *provider, SInt32 *score)
 {
-    return super::probe(provider, score);
+    if (!super::probe(provider, score))
+		return 0;
+	
+	InfoLog("opensource SMC device emulator by netkas (C) 2009");
+	InfoLog("plugins & plugins support modifications by mozodojo, usr-sse2, slice (C) 2010");
+	
+	return this;
 }
 
 bool FakeSMC::start(IOService *provider)
 {
 	if (!super::start(provider)) return false;
-	
-	InfoLog("Opensource SMC device emulator by netkas (C) 2009");
-	InfoLog("Modified for plugins support by mozodojo (C) 2010 v3.0");
-	InfoLog("Idea of FakeSMC plugins and code sample by usr-sse2");
-	InfoLog("Thanks to slice for help with hardware support code and plugins");
-		
+			
 	if (!(smcDevice = new FakeSMCDevice)) {
 		InfoLog("failed to create smcDevice");
 		return false;
@@ -41,7 +45,7 @@ bool FakeSMC::start(IOService *provider)
 	
 	smcDevice->registerService();
 	registerService();
-	
+		
 	return true;
 }
 
