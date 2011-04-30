@@ -22,11 +22,11 @@
 #define WarningLog(string, args...) do { IOLog (LogPrefix "[Warning] " string "\n", ## args); } while(0)
 #define InfoLog(string, args...)	do { IOLog (LogPrefix string "\n", ## args); } while(0)*/
 
+NVClock nvclock;
+NVCard* nv_card;
+
 #define super IOService
 OSDefineMetaClassAndStructors(NVClockX, IOService)
-
-NVClock	nvclock;
-NVCard*	nv_card;
 
 bool is_digit(char c)
 {
@@ -164,6 +164,9 @@ bool NVClockX::init(OSDictionary *properties)
 	
 	if (!(sensors = OSDictionary::withCapacity(0)))
 		return false;
+	
+	nvclock = this->nvClock;
+	nv_card = this->nvCard;
 	
 	return true;
 }

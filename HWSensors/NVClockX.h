@@ -19,10 +19,11 @@ class NVClockX : public IOService
 	
 private:
 	IOService *		fakeSMC;
-	//int				cardsCount;
 	OSDictionary *	sensors;
 	
 	IOMemoryMap *	nvio;
+	NVClock			nvClock;
+	NVCard*			nvCard;
 	
 	int				probeDevices();
 	bool			addSensor(const char* key, const char* type, unsigned char size, int index);
