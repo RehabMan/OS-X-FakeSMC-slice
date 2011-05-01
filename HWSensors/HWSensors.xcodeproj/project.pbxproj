@@ -22,17 +22,6 @@
 		12D78B1512BFDB58002C61EA /* TigerAdditionals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12D78B0912BFDB58002C61EA /* TigerAdditionals.cpp */; };
 		12D78B1612BFDB58002C61EA /* TigerAdditionals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12D78B0912BFDB58002C61EA /* TigerAdditionals.cpp */; };
 		12D78B3112BFDDAC002C61EA /* Radeon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12D78B3012BFDDAC002C61EA /* Radeon.cpp */; };
-		1D1CAB2C136570A4003878D0 /* IntelThermal.kext in CopyFiles */ = {isa = PBXBuildFile; fileRef = AEABE460125F8E9300F08235 /* IntelThermal.kext */; };
-		1D1CAB2D136570A4003878D0 /* NVClockX.kext in CopyFiles */ = {isa = PBXBuildFile; fileRef = AE5BA5781268D94A00EA6AB9 /* NVClockX.kext */; };
-		1D1CAB2E136570A4003878D0 /* SuperIOFamily.kext in CopyFiles */ = {isa = PBXBuildFile; fileRef = AED15A21126CBA9600455FE0 /* SuperIOFamily.kext */; };
-		1D1CAB2F136570A4003878D0 /* IT87x.kext in CopyFiles */ = {isa = PBXBuildFile; fileRef = AED9E18E125FBEF400736A5A /* IT87x.kext */; };
-		1D1CAB30136570A4003878D0 /* W836x.kext in CopyFiles */ = {isa = PBXBuildFile; fileRef = AE212C6A12678D3500145048 /* W836x.kext */; };
-		1D1CAB31136570A4003878D0 /* F718x.kext in CopyFiles */ = {isa = PBXBuildFile; fileRef = AE00C785126A1F440068E69A /* F718x.kext */; };
-		1D1CAB32136570A4003878D0 /* PC8739x.kext in CopyFiles */ = {isa = PBXBuildFile; fileRef = AE00C7BD126A24960068E69A /* PC8739x.kext */; };
-		1D1CAB33136570A4003878D0 /* ACPIMonitor.kext in CopyFiles */ = {isa = PBXBuildFile; fileRef = AE840E53128D8544006532CB /* ACPIMonitor.kext */; };
-		1D1CAB34136570A4003878D0 /* X3100.kext in CopyFiles */ = {isa = PBXBuildFile; fileRef = 12CBB17E12BDEA9F00157341 /* X3100.kext */; };
-		1D1CAB35136570A4003878D0 /* RadeonMonitor.kext in CopyFiles */ = {isa = PBXBuildFile; fileRef = 12D78B1E12BFDCFD002C61EA /* RadeonMonitor.kext */; };
-		1D1CAB36136570A4003878D0 /* IntelCPUMonitor.kext in CopyFiles */ = {isa = PBXBuildFile; fileRef = 12CB0F3A12C087D400068B06 /* IntelCPUMonitor.kext */; };
 		1D30B1E2134B90E0004F0967 /* utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D30B1E0134B90E0004F0967 /* utils.h */; };
 		AE00C79D126A1FED0068E69A /* F718x.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE00C79C126A1FED0068E69A /* F718x.cpp */; };
 		AE00C7E6126A253A0068E69A /* PC8739x.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE00C7E5126A253A0068E69A /* PC8739x.cpp */; };
@@ -150,29 +139,6 @@
 			remoteInfo = SuperIOFamily;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		1D1CAAF713657097003878D0 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				1D1CAB2C136570A4003878D0 /* IntelThermal.kext in CopyFiles */,
-				1D1CAB2D136570A4003878D0 /* NVClockX.kext in CopyFiles */,
-				1D1CAB2E136570A4003878D0 /* SuperIOFamily.kext in CopyFiles */,
-				1D1CAB2F136570A4003878D0 /* IT87x.kext in CopyFiles */,
-				1D1CAB30136570A4003878D0 /* W836x.kext in CopyFiles */,
-				1D1CAB31136570A4003878D0 /* F718x.kext in CopyFiles */,
-				1D1CAB32136570A4003878D0 /* PC8739x.kext in CopyFiles */,
-				1D1CAB33136570A4003878D0 /* ACPIMonitor.kext in CopyFiles */,
-				1D1CAB34136570A4003878D0 /* X3100.kext in CopyFiles */,
-				1D1CAB35136570A4003878D0 /* RadeonMonitor.kext in CopyFiles */,
-				1D1CAB36136570A4003878D0 /* IntelCPUMonitor.kext in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		12A8DAF612C0A6B600A49048 /* ATICard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ATICard.cpp; sourceTree = "<group>"; };
@@ -819,7 +785,6 @@
 			buildPhases = (
 				AEF4C80012602EE700297B2B /* Sources */,
 				AEF4C80212602EE700297B2B /* Frameworks */,
-				1D1CAAF713657097003878D0 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -1534,7 +1499,7 @@
 				INFOPLIST_FILE = "NVClockX-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = com.yourcompany.driver.NVClockX;
-				MODULE_VERSION = 1.0.0d1;
+				MODULE_VERSION = 1.0.1d1;
 				PREBINDING = NO;
 				PRODUCT_NAME = NVClockX;
 				WRAPPER_EXTENSION = kext;
@@ -1550,7 +1515,7 @@
 				INFOPLIST_FILE = "NVClockX-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.usrsse2.NVClockX;
-				MODULE_VERSION = 1.0.0d1;
+				MODULE_VERSION = 1.0.1d1;
 				PREBINDING = NO;
 				PRODUCT_NAME = NVClockX;
 				SDKROOT = macosx10.6;
@@ -1569,7 +1534,7 @@
 				INFOPLIST_FILE = "NVClockX-pre106-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.usrsse2.NVClockX;
-				MODULE_VERSION = 1.0.0d1;
+				MODULE_VERSION = 1.0.1d1;
 				PREBINDING = NO;
 				PRODUCT_NAME = NVClockX;
 				SDKROOT = macosx10.5;
@@ -1587,7 +1552,7 @@
 				INFOPLIST_FILE = "NVClockX-pre106-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.usrsse2.NVClockX;
-				MODULE_VERSION = 1.0.0d1;
+				MODULE_VERSION = 1.0.1d1;
 				PREBINDING = NO;
 				PRODUCT_NAME = NVClockX;
 				SDKROOT = macosx10.4;
@@ -1674,6 +1639,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
+				GCC_VERSION = "";
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -1686,6 +1652,7 @@
 				GCC_AUTO_VECTORIZATION = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = "";
+				GCC_VERSION = "";
 				GCC_WARN_PEDANTIC = NO;
 				GCC_WARN_SHADOW = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
@@ -1889,6 +1856,7 @@
 				GCC_AUTO_VECTORIZATION = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = "";
+				GCC_VERSION = "";
 				SDKROOT = macosx10.5;
 				VALID_ARCHS = i386;
 			};
@@ -1958,6 +1926,7 @@
 				GCC_AUTO_VECTORIZATION = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = "";
+				GCC_VERSION = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				OTHER_CFLAGS = "-DTIGER";
 				SDKROOT = macosx;
