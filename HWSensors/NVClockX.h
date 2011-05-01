@@ -13,6 +13,9 @@
 #define kGenericPCIDevice "IOPCIDevice"
 #define kNVGraphicsDevice "IONDRVDevice"
 
+NVClock nvclock;
+NVCard* nv_card;
+
 class NVClockX : public IOService
 {
     OSDeclareDefaultStructors(NVClockX)    
@@ -22,8 +25,6 @@ private:
 	OSDictionary *	sensors;
 	
 	IOMemoryMap *	nvio;
-	NVClock			nvClock;
-	NVCard*			nvCard;
 	
 	int				probeDevices();
 	bool			addSensor(const char* key, const char* type, unsigned char size, int index);

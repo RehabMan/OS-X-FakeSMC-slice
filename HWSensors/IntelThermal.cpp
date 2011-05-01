@@ -45,7 +45,7 @@ IOService* IntelThermal::probe(IOService *provider, SInt32 *score)
 	if (super::probe(provider, score) != this) return 0;
 	
 	InfoLog("based on code by mercurysquad, superhai (C) 2008");
-	InfoLog("based code from Open Hardware Monitor project by Michael Möller (C) 2011");
+	InfoLog("based on code from Open Hardware Monitor project by Michael Möller (C) 2011");
 	
 	cpuid_update_generic_info();
 	

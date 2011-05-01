@@ -22,9 +22,6 @@
 #define WarningLog(string, args...) do { IOLog (LogPrefix "[Warning] " string "\n", ## args); } while(0)
 #define InfoLog(string, args...)	do { IOLog (LogPrefix string "\n", ## args); } while(0)*/
 
-NVClock nvclock;
-NVCard* nv_card;
-
 #define super IOService
 OSDefineMetaClassAndStructors(NVClockX, IOService)
 
@@ -164,9 +161,6 @@ bool NVClockX::init(OSDictionary *properties)
 	
 	if (!(sensors = OSDictionary::withCapacity(0)))
 		return false;
-	
-	nvclock = this->nvClock;
-	nv_card = this->nvCard;
 	
 	return true;
 }
@@ -327,7 +321,8 @@ IOReturn NVClockX::callPlatformFunction(const OSSymbol *functionName, bool waitF
 									break;
 							}
 							
-							bcopy(&value, data, 2);
+							//bcopy(&value, data, 2);
+							memcpy(data, &value, 2);
 							
 							break;
 						case 'F':
@@ -339,13 +334,15 @@ IOReturn NVClockX::callPlatformFunction(const OSSymbol *functionName, bool waitF
 										value = encode_fp2e((UInt16)nv_card->get_fanspeed());
 									else value = 0;
 									
-									bcopy(&value, data, 2);
+									//bcopy(&value, data, 2);
+									memcpy(data, &value, 2);
 									
 									break;
 								case 'C':
 									value=(UInt16)nv_card->get_gpu_speed();
 									
-									bcopy(&value, data, 2);
+									//bcopy(&value, data, 2);
+									memcpy(data, &value, 2);
 									
 									break;
 							}
