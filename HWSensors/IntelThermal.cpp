@@ -230,9 +230,9 @@ IOReturn IntelThermal::callPlatformFunction(const OSSymbol *functionName, bool w
 			
 			switch (name[0]) {
 				case 'T': {
-					UInt32 index = get_index(name[2]);
+					UInt8 index = get_index(name[2]);
 					
-					if (index >= 0 && index < count) {
+					if (index < count) {
 						
 						mp_rendezvous_no_intrs(read_cpu_diode, &magic);
 						
@@ -248,7 +248,7 @@ IOReturn IntelThermal::callPlatformFunction(const OSSymbol *functionName, bool w
 				case 'M': {
 					UInt8 index = get_index(name[2]);
 					
-					if (index >= 0 && index < count) {
+					if (index < count) {
 				
 						mp_rendezvous_no_intrs(read_cpu_control, &magic);
 
