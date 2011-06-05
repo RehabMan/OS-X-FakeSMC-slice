@@ -305,6 +305,7 @@ RADEONCardInfo radeon_device_list[] = {
  { 0x9714, CHIP_FAMILY_RS880, 1, 0, 0, 0, 0 },
  { 0x9715, CHIP_FAMILY_RS880, 1, 0, 0, 0, 0 },
 	{ 0x6718, CHIP_FAMILY_Evergreen, 0, 0, 0, 0, 0 },
+	{ 0x6738, CHIP_FAMILY_Evergreen, 0, 0, 0, 0, 0 },
 	{ 0x6739, CHIP_FAMILY_Evergreen, 0, 0, 0, 0, 0 },
  { 0x6898, CHIP_FAMILY_Evergreen, 0, 0, 0, 0, 0 },
  { 0x6899, CHIP_FAMILY_Evergreen, 0, 0, 0, 0, 0 },
