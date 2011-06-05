@@ -143,9 +143,9 @@
 /* Begin PBXFileReference section */
 		12A8DAF612C0A6B600A49048 /* ATICard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ATICard.cpp; sourceTree = "<group>"; };
 		12A8DAF712C0A6B600A49048 /* ATICard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATICard.h; sourceTree = "<group>"; };
-		12A8DAF912C0A6C200A49048 /* radeon_chipinfo_gen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = radeon_chipinfo_gen.h; path = "../Plug-ins/FakeSMCRadeon/radeon_chipinfo_gen.h"; sourceTree = SOURCE_ROOT; };
-		12A8DAFA12C0A6C200A49048 /* radeon_chipsets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = radeon_chipsets.h; path = "../Plug-ins/FakeSMCRadeon/radeon_chipsets.h"; sourceTree = SOURCE_ROOT; };
-		12A8DAFB12C0A6D500A49048 /* atombios.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = atombios.h; path = "../Plug-ins/FakeSMCRadeon/atombios.h"; sourceTree = SOURCE_ROOT; };
+		12A8DAF912C0A6C200A49048 /* radeon_chipinfo_gen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = radeon_chipinfo_gen.h; path = Projects/FakeSMC/HWSensors/radeon_chipinfo_gen.h; sourceTree = DEVELOPER_DIR; };
+		12A8DAFA12C0A6C200A49048 /* radeon_chipsets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = radeon_chipsets.h; path = Projects/FakeSMC/HWSensors/radeon_chipsets.h; sourceTree = DEVELOPER_DIR; };
+		12A8DAFB12C0A6D500A49048 /* atombios.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = atombios.h; path = Projects/FakeSMC/HWSensors/atombios.h; sourceTree = DEVELOPER_DIR; };
 		12B6907112D5F2E3007D1C5C /* IntelCPUMonitor-pre106-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "IntelCPUMonitor-pre106-Info.plist"; sourceTree = "<group>"; };
 		12B6907212D5F52A007D1C5C /* X3100-pre106-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "X3100-pre106-Info.plist"; sourceTree = "<group>"; };
 		12B6907312D5F538007D1C5C /* RadeonMonitor-pre106-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "RadeonMonitor-pre106-Info.plist"; sourceTree = "<group>"; };

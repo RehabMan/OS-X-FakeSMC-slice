@@ -20,6 +20,36 @@
 		vrLen = 332;
 		vrLoc = 1944;
 	};
+	1247AAD6139B73BD00B9A493 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = AE36CBD3125FA7F900E1EBA5 /* IntelThermal.h */;
+		name = "IntelThermal.h: 37";
+		rLen = 9;
+		rLoc = 689;
+		rType = 0;
+		vrLen = 673;
+		vrLoc = 365;
+	};
+	1247AAD7139B73BD00B9A493 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12A8DAF912C0A6C200A49048 /* radeon_chipinfo_gen.h */;
+		name = "radeon_chipinfo_gen.h: 312";
+		rLen = 0;
+		rLoc = 14629;
+		rType = 0;
+		vrLen = 1571;
+		vrLoc = 13179;
+	};
+	1247AADE139B74BC00B9A493 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12A8DAF912C0A6C200A49048 /* radeon_chipinfo_gen.h */;
+		name = "radeon_chipinfo_gen.h: 308";
+		rLen = 0;
+		rLoc = 14271;
+		rType = 0;
+		vrLen = 1538;
+		vrLoc = 13366;
+	};
 	124B667E12C47F05004F78CF /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 12A8DAF612C0A6B600A49048 /* ATICard.cpp */;
@@ -189,11 +219,6 @@
 		lastKnownFileType = sourcecode.c.h;
 		path = IntelCPUMonitor.h;
 		sourceTree = "<group>";
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {896, 1820}}";
-			sepNavSelRange = "{1860, 0}";
-			sepNavVisRange = "{2216, 1008}";
-		};
 	};
 	129FAB5312BF991600330515 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -347,9 +372,9 @@
 	};
 	12A8DAF912C0A6C200A49048 /* radeon_chipinfo_gen.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {825, 4173}}";
-			sepNavSelRange = "{14475, 0}";
-			sepNavVisRange = "{13412, 1338}";
+			sepNavIntBoundsRect = "{{0, 0}, {896, 4225}}";
+			sepNavSelRange = "{14271, 0}";
+			sepNavVisRange = "{13366, 1538}";
 		};
 	};
 	12A8DAFA12C0A6C200A49048 /* radeon_chipsets.h */ = {
@@ -475,13 +500,6 @@
 			sepNavVisRect = "{{0, 2338}, {633, 575}}";
 			sepNavWindowFrame = "{{281, 57}, {678, 689}}";
 		};
-	};
-	12D5BD33137F04C900D4FD21 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = AE36CBD3125FA7F900E1EBA5 /* IntelThermal.h */;
-		rLen = 9;
-		rLoc = 689;
-		rType = 0;
 	};
 	12D5BD3B137F04DA00D4FD21 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -620,16 +638,6 @@
 		rType = 0;
 		vrLen = 817;
 		vrLoc = 5897;
-	};
-	12D5BD48137F04DA00D4FD21 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = AE36CBD3125FA7F900E1EBA5 /* IntelThermal.h */;
-		name = "IntelThermal.h: 37";
-		rLen = 9;
-		rLoc = 689;
-		rType = 0;
-		vrLen = 647;
-		vrLoc = 389;
 	};
 	12D78B0912BFDB58002C61EA /* TigerAdditionals.cpp */ = {
 		uiCtxt = {
@@ -818,9 +826,9 @@
 	};
 	AE36CBD3125FA7F900E1EBA5 /* IntelThermal.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {922, 1196}}";
+			sepNavIntBoundsRect = "{{0, 0}, {896, 1196}}";
 			sepNavSelRange = "{689, 9}";
-			sepNavVisRange = "{364, 674}";
+			sepNavVisRange = "{365, 673}";
 		};
 	};
 	AE36CBD5125FA80800E1EBA5 /* IntelThermal.cpp */ = {
@@ -902,7 +910,7 @@
 	AEABE453125F8E7400F08235 /* Project object */ = {
 		activeArchitecturePreference = i386;
 		activeBuildConfigurationName = "Release 10.6";
-		activeTarget = AEF4C80312602EE700297B2B /* FakeSMC */;
+		activeTarget = 12D78B1D12BFDCFD002C61EA /* RadeonMonitor */;
 		addToTargets = (
 			12D78B1D12BFDCFD002C61EA /* RadeonMonitor */,
 		);
@@ -992,12 +1000,15 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 327089891;
-			PBXWorkspaceStateSaveDate = 327089891;
+			PBXPerProjectTemplateStateSaveDate = 328954609;
+			PBXWorkspaceStateSaveDate = 328954609;
 		};
 		perUserProjectItems = {
 			121E7A8312BF5F0E00AF698C /* PBXTextBookmark */ = 121E7A8312BF5F0E00AF698C /* PBXTextBookmark */;
 			122519F412CE27CE00273689 /* PBXTextBookmark */ = 122519F412CE27CE00273689 /* PBXTextBookmark */;
+			1247AAD6139B73BD00B9A493 /* PBXTextBookmark */ = 1247AAD6139B73BD00B9A493 /* PBXTextBookmark */;
+			1247AAD7139B73BD00B9A493 /* PBXTextBookmark */ = 1247AAD7139B73BD00B9A493 /* PBXTextBookmark */;
+			1247AADE139B74BC00B9A493 /* PBXTextBookmark */ = 1247AADE139B74BC00B9A493 /* PBXTextBookmark */;
 			124B667E12C47F05004F78CF /* PBXTextBookmark */ = 124B667E12C47F05004F78CF /* PBXTextBookmark */;
 			124B667F12C47F05004F78CF /* PBXTextBookmark */ = 124B667F12C47F05004F78CF /* PBXTextBookmark */;
 			124B668012C47F05004F78CF /* PBXTextBookmark */ = 124B668012C47F05004F78CF /* PBXTextBookmark */;
@@ -1030,7 +1041,6 @@
 			12C528FB12D7B7DF0078329F /* PBXTextBookmark */ = 12C528FB12D7B7DF0078329F /* PBXTextBookmark */;
 			12CBB19B12BDEB9800157341 /* PBXTextBookmark */ = 12CBB19B12BDEB9800157341 /* PBXTextBookmark */;
 			12CBB19D12BDEB9800157341 /* PBXTextBookmark */ = 12CBB19D12BDEB9800157341 /* PBXTextBookmark */;
-			12D5BD33137F04C900D4FD21 /* PBXTextBookmark */ = 12D5BD33137F04C900D4FD21 /* PBXTextBookmark */;
 			12D5BD3B137F04DA00D4FD21 /* PBXTextBookmark */ = 12D5BD3B137F04DA00D4FD21 /* PBXTextBookmark */;
 			12D5BD3C137F04DA00D4FD21 /* PlistBookmark */ = 12D5BD3C137F04DA00D4FD21 /* PlistBookmark */;
 			12D5BD3D137F04DA00D4FD21 /* PlistBookmark */ = 12D5BD3D137F04DA00D4FD21 /* PlistBookmark */;
@@ -1044,7 +1054,6 @@
 			12D5BD45137F04DA00D4FD21 /* PBXTextBookmark */ = 12D5BD45137F04DA00D4FD21 /* PBXTextBookmark */;
 			12D5BD46137F04DA00D4FD21 /* PBXTextBookmark */ = 12D5BD46137F04DA00D4FD21 /* PBXTextBookmark */;
 			12D5BD47137F04DA00D4FD21 /* PBXTextBookmark */ = 12D5BD47137F04DA00D4FD21 /* PBXTextBookmark */;
-			12D5BD48137F04DA00D4FD21 /* PBXTextBookmark */ = 12D5BD48137F04DA00D4FD21 /* PBXTextBookmark */;
 			12E0F31712D62CB30056246C /* PlistBookmark */ = 12E0F31712D62CB30056246C /* PlistBookmark */;
 			12E67CD612D61FEE0014B361 /* PlistBookmark */ = 12E67CD612D61FEE0014B361 /* PlistBookmark */;
 			12E67CD712D61FEE0014B361 /* PlistBookmark */ = 12E67CD712D61FEE0014B361 /* PlistBookmark */;
