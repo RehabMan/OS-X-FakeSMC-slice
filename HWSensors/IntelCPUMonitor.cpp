@@ -93,6 +93,10 @@ IOService* IntelCPUMonitor::probe(IOService *provider, SInt32 *score)
 						break;					
 							
 					case CPU_MODEL_MEROM: // Intel Core (65nm)
+						if (rdmsr64(0x17) & (1<<28)) {
+							CpuMobile = true;
+						}
+						
 						switch (CpuStepping) 
 					{
 						case 0x02: // G0
@@ -113,13 +117,15 @@ IOService* IntelCPUMonitor::probe(IOService *provider, SInt32 *score)
 						case 0x0B: // G0
 							tjmax[0] = 90; break;
 						case 0x0D: // M0
-							tjmax[0] = 85; break;
+							if (CpuMobile) {
+								tjmax[0] = 100;
+							} else {
+								tjmax[0] = 85;
+							}							
+							break;
 						default:
 							tjmax[0] = 85; break;
 					} 
-						if (rdmsr64(0x17) & (1<<28)) {
-							CpuMobile = true;
-						}
 						snprintf(Platform, 4, "M75");
 						break;
 						
