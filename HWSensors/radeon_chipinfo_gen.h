@@ -262,6 +262,7 @@ RADEONCardInfo radeon_device_list[] = {
  { 0x9452, CHIP_FAMILY_RV770, 0, 0, 0, 0, 0 },
  { 0x9460, CHIP_FAMILY_RV790, 0, 0, 0, 0, 0 },
  { 0x9462, CHIP_FAMILY_RV790, 0, 0, 0, 0, 0 },
+ { 0x9480, CHIP_FAMILY_R730, 1, 0, 0, 0, 0 },
  { 0x9490, CHIP_FAMILY_R730, 0, 0, 0, 0, 0 },
  { 0x9498, CHIP_FAMILY_R730, 0, 0, 0, 0, 0 },
  { 0x94B3, CHIP_FAMILY_RV740, 0, 0, 0, 0, 0 },
