@@ -772,6 +772,7 @@ int get_gpu_arch(int device_id)
 		case 0x190:
 			arch = NV50; /* 8800 'NV50 / G80' */
 			break;
+	//	case 0xa30: /* GT240 */	
 		case 0x400: /* 8600 'G84' */
 			arch = G84;
 			break;
@@ -782,7 +783,7 @@ int get_gpu_arch(int device_id)
 		case 0x5f0: /* GT2x0 */
 		case 0xa60: /* GT2x0 */
 		case 0xa20:
-		case 0xa30:
+		case 0xa30: /* GT240 */
 		case 0xa70:
 		case 0xca0:
 		case 0xcb0:
