@@ -53,7 +53,7 @@ IOService* IntelCPUMonitor::probe(IOService *provider, SInt32 *score)
 	
 	count = cpuid_info()->core_count;//cpuid_count_cores();
 	threads = cpuid_info()->thread_count;
-	//uint64_t msr = rdmsr64(MSR_CORE_THREAD_COUNT); 
+	//uint64_t msr = rdmsr64(MSR_CORE_THREAD_COUNT);  //nehalem only
 	//uint64_t m2 = msr >> 32;
 	
 	if(count == 0)	{
@@ -69,122 +69,132 @@ IOService* IntelCPUMonitor::probe(IOService *provider, SInt32 *score)
 	if (OSNumber* number = OSDynamicCast(OSNumber, getProperty("TjMax"))) {
 		// User defined Tjmax
 		userTjmax = number->unsigned32BitValue();
+		IOLog("User defined TjMax=%d\n", (int)userTjmax);
 		snprintf(Platform, 4, "n");
 	}
-		// Calculating Tjmax
-		switch (CpuFamily)
+	// Calculating Tjmax
+	switch (CpuFamily)
+	{
+		case 0x06: 
 		{
-			case 0x06: 
+			switch (CpuModel) 
 			{
-				switch (CpuModel) 
-				{
-					case CPU_MODEL_PENTIUM_M:
-						tjmax[0] = 100; 
+				case CPU_MODEL_PENTIUM_M:
+					tjmax[0] = 100; 
+					CpuMobile = true;
+					snprintf(Platform, 4, "M70");
+					break;
+					
+				case CPU_MODEL_YONAH:
+					tjmax[0] = 85; 
+					if (rdmsr64(0x17) & (1<<28)) {
 						CpuMobile = true;
-						snprintf(Platform, 4, "M70");
+					}
+					snprintf(Platform, 4, "K22");
+					break;					
+					
+				case CPU_MODEL_MEROM: // Intel Core (65nm)
+					if (rdmsr64(0x17) & (1<<28)) {
+						CpuMobile = true;
+					}
+					
+					switch (CpuStepping) 
+				{
+					case 0x02: // G0
+						tjmax[0] = 95; 
+						snprintf(Platform, 4, "M71");
 						break;
-						
-					case CPU_MODEL_YONAH:
-						tjmax[0] = 85; 
-						if (rdmsr64(0x17) & (1<<28)) {
-							CpuMobile = true;
-						}
-						snprintf(Platform, 4, "K22");
-						break;					
-							
-					case CPU_MODEL_MEROM: // Intel Core (65nm)
-						if (rdmsr64(0x17) & (1<<28)) {
-							CpuMobile = true;
-						}
-						
-						switch (CpuStepping) 
+					case 0x06: // B2
+						switch (count) 
 					{
-						case 0x02: // G0
-							tjmax[0] = 95; 
-							snprintf(Platform, 4, "M71");
-							break;
-						case 0x06: // B2
-							switch (count) 
-						{
-							case 2:
-								tjmax[0] = 80; break;
-							case 4:
-								tjmax[0] = 90; break;
-							default:
-								tjmax[0] = 85; break;
-						}
+						case 2:
 							tjmax[0] = 80; break;
-						case 0x0B: // G0
+						case 4:
 							tjmax[0] = 90; break;
-						case 0x0D: // M0
-							if (CpuMobile) {
-								tjmax[0] = 100;
-							} else {
-								tjmax[0] = 85;
-							}							
-							break;
 						default:
 							tjmax[0] = 85; break;
-					} 
-						snprintf(Platform, 4, "M75");
-						break;
-						
-					case CPU_MODEL_PENRYN: // Intel Core (45nm)
-						// Mobile CPU ?
-						if (rdmsr64(0x17) & (1<<28)) {
-							CpuMobile = true;
-							tjmax[0] = 105; 
-							snprintf(Platform, 4, "M82");
-						}
-						else {
+					}
+						tjmax[0] = 80; break;
+					case 0x0B: // G0
+						tjmax[0] = 90; break;
+					case 0x0D: // M0
+						if (CpuMobile) {
 							tjmax[0] = 100;
-							snprintf(Platform, 4, "K36");
-						}
+						} else {
+							tjmax[0] = 85;
+						}							
 						break;
-						
-					case CPU_MODEL_ATOM: // Intel Atom (45nm)
-						switch (CpuStepping)
-						{
-							case 0x02: // C0
-								tjmax[0] = 100; break;
-							case 0x0A: // A0, B0
-								tjmax[0] = 100; break;
-							default:
-								tjmax[0] = 90; break;
-						} 
-						snprintf(Platform, 4, "T9");
-						break;
-						
-					case CPU_MODEL_NEHALEM:
-					case CPU_MODEL_FIELDS:
-					case CPU_MODEL_DALES:
-					case CPU_MODEL_DALES_32NM:
-					case CPU_MODEL_WESTMERE:
-					case CPU_MODEL_NEHALEM_EX:
-					case CPU_MODEL_WESTMERE_EX:
-					case CPU_MODEL_SANDY_BRIDGE:
-					case CPU_MODEL_SANDY_BRIDGE_XEON:
-					{
-						nehalemArch = true;
-						
-						for (int i = 0; i < count; i++) {
-							tjmax[i] = (rdmsr64(MSR_IA32_TEMPERATURE_TARGET) >> 16) & 0xFF;
-						}
-						
-					} 
-						snprintf(Platform, 4, "T9");
-						break;
-						
 					default:
-						WarningLog("Unsupported Intel processor found, kext will not load");
-						return 0;
-				}
-			} break;
-				
-			default:
-				WarningLog("Unknown Intel family processor found, kext will not load");
-				return 0;
-		}
+						tjmax[0] = 85; break;
+				} 
+					snprintf(Platform, 4, "M75");
+					break;
+					
+				case CPU_MODEL_PENRYN: // Intel Core (45nm)
+					// Mobile CPU ?
+					if (rdmsr64(0x17) & (1<<28)) {
+						CpuMobile = true;
+						tjmax[0] = 105; 
+						snprintf(Platform, 4, "M82");
+					}
+					else {
+						switch (CpuStepping) {
+							case 7:
+								tjmax[0] = 95;
+								break;
+							default:
+								tjmax[0] = 100;
+								break;
+						}
+						
+						snprintf(Platform, 4, "K36");
+					}
+					break;
+					
+				case CPU_MODEL_ATOM: // Intel Atom (45nm)
+					switch (CpuStepping)
+				{
+					case 0x02: // C0
+						tjmax[0] = 100; break;
+					case 0x0A: // A0, B0
+						tjmax[0] = 100; break;
+					default:
+						tjmax[0] = 90; break;
+				} 
+					snprintf(Platform, 4, "T9");
+					break;
+					
+				case CPU_MODEL_NEHALEM:
+				case CPU_MODEL_FIELDS:
+				case CPU_MODEL_DALES:
+				case CPU_MODEL_DALES_32NM:
+				case CPU_MODEL_WESTMERE:
+				case CPU_MODEL_NEHALEM_EX:
+				case CPU_MODEL_WESTMERE_EX:
+				case CPU_MODEL_SANDY_BRIDGE:
+				case CPU_MODEL_SANDY_BRIDGE_XEON:
+				{
+					nehalemArch = true;
+					
+					for (int i = 0; i < count; i++) {
+						tjmax[i] = (rdmsr64(MSR_IA32_TEMPERATURE_TARGET) >> 16) & 0xFF;
+					}
+					
+				} 
+					snprintf(Platform, 4, "T9");
+					break;
+					
+				default:
+					WarningLog("Unsupported Intel processor found, kext will not load");
+					return 0;
+			}
+		} break;
+			
+		default:
+			WarningLog("Unknown Intel family processor found, kext will not load");
+			return 0;
+	}
+	
 	if (userTjmax != 0) {
 		for (int i = 1; i < count; i++)
 			tjmax[i] = userTjmax;
