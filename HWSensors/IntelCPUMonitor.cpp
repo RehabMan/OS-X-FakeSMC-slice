@@ -335,7 +335,7 @@ IOReturn IntelCPUMonitor::callPlatformFunction(const OSSymbol *functionName, boo
 			
 			switch (name[0]) {
 				case 'T':
-					index = name[2] >= 'A' ? name[2] - 55 : name[2] - 48;
+					index = name[2] >= 'A' ? name[2] - 65 : name[2] - 48;
 					if (index >= 0 && index < count) {
 						if (threads > count) {
 							mp_rendezvous_no_intrs(IntelThermal2, &magic);
@@ -352,7 +352,7 @@ IOReturn IntelCPUMonitor::callPlatformFunction(const OSSymbol *functionName, boo
 					if ((name[1] != 'R') || (name[2] != 'C')) {
 						return kIOReturnBadArgument;
 					}
-					index = name[3] >= 'A' ? name[3] - 55 : name[3] - 48;
+					index = name[3] >= 'A' ? name[3] - 65 : name[3] - 48;
 					if (index >= 0 && index < count) {
 						value = swap_value(Frequency[index]);
 						//InfoLog("Frequency = %d", value);
