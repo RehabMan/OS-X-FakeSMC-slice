@@ -10,6 +10,11 @@
 #include <IOKit/IOTimerEventSource.h>
 #include <IOKit/IOService.h>
 #include <IOKit/IOLib.h>
+#include <IOKit/IORegistryEntry.h>
+#include <IOKit/IOPlatformExpert.h>
+#include <IOKit/IODeviceTreeSupport.h>
+#include <IOKit/IOKitKeys.h>
+
 
 #include "cpuid.h"
 

@@ -2,7 +2,7 @@
  *  IntelCPUMonitor.cpp
  *  HWSensors
  *
- *  Created by Sergey on 20.12.10.
+ *  Created by Slice on 20.12.10.
  *  Copyright 2010 mozodojo. All rights reserved.
  *
  */
@@ -217,6 +217,8 @@ IOService* IntelCPUMonitor::probe(IOService *provider, SInt32 *score)
 
 bool IntelCPUMonitor::start(IOService * provider)
 {
+  IORegistryEntry * rootNode;
+  OSData *tmpNumber = 0;
 	DebugLog("Starting...");
 	
 	if (!super::start(provider)) return false;
@@ -227,12 +229,26 @@ bool IntelCPUMonitor::start(IOService * provider)
 	}
 	
 	InfoLog("CPU family 0x%x, model 0x%x, stepping 0x%x, cores %d, threads %d", cpuid_info()->cpuid_family, cpuid_info()->cpuid_model, cpuid_info()->cpuid_stepping, count, cpuid_info()->thread_count);
-	BusClock = (gPEClockFrequencyInfo.bus_frequency_max_hz >> 2);
+/*	BusClock = (gPEClockFrequencyInfo.bus_frequency_max_hz >> 2);
 	if (BusClock >= (420 * Mega)) {
 		BusClock >>=2;
 	}
 	BusClock = BusClock / Mega;
 	FSBClock = gPEClockFrequencyInfo.bus_frequency_max_hz  / Mega;
+ */
+  rootNode = fromPath("/efi/platform", gIODTPlane);
+  if (rootNode) {
+    tmpNumber = OSDynamicCast(OSData, rootNode->getProperty("FSBFrequency"));
+    BusClock = *((UInt64*) tmpNumber->getBytesNoCopy());
+    FSBClock = BusClock << 2;
+    InfoLog("Using efi");
+  } else {
+    FSBClock = gPEClockFrequencyInfo.bus_frequency_max_hz;
+    BusClock = FSBClock >> 2;
+    InfoLog("Using bus_frequency_max_hz");
+  }
+  BusClock = BusClock / Mega;
+  FSBClock = FSBClock / Mega;
 	InfoLog("BusClock=%dMHz FSB=%dMHz", (int)(BusClock), (int)(FSBClock));
 	InfoLog("Platform string %s", Platform);
 	
