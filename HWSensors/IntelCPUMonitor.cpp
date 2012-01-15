@@ -99,40 +99,41 @@ IOService* IntelCPUMonitor::probe(IOService *provider, SInt32 *score)
 					}
 					
 					switch (CpuStepping) 
-				{
-					case 0x02: // G0
-						tjmax[0] = 95; 
-						snprintf(Platform, 4, "M71");
-						break;
-					case 0x06: // B2
-						switch (count) 
-					{
-						case 2:
-							tjmax[0] = 80; break;
-						case 4:
-							tjmax[0] = 90; break;
-						default:
-							tjmax[0] = 85; break;
-					}
-						tjmax[0] = 80; break;
-					case 0x0B: // G0
-						tjmax[0] = 90; break;
-					case 0x0D: // M0
-						if (CpuMobile) {
-							tjmax[0] = 100;
-						} else {
-							tjmax[0] = 85;
-						}							
-						break;
-					default:
-						tjmax[0] = 85; break;
-				} 
+          {
+            case 0x02: // G0
+              tjmax[0] = 80;  //why 95?
+              //snprintf(Platform, 4, "M71");
+              break;
+            case 0x06: // B2
+              switch (count) 
+              {
+                case 2:
+                  tjmax[0] = 80; break;
+                case 4:
+                  tjmax[0] = 90; break;
+                default:
+                  tjmax[0] = 85; break;
+              }
+              //tjmax[0] = 80;
+              break;
+            case 0x0B: // G0
+              tjmax[0] = 90; break;
+            case 0x0D: // M0
+              if (CpuMobile) {
+                tjmax[0] = 100;
+              } else {
+                tjmax[0] = 85;
+              }							
+              break;
+            default:
+              tjmax[0] = 85; break;
+          } 
 					snprintf(Platform, 4, "M75");
 					break;
 					
 				case CPU_MODEL_PENRYN: // Intel Core (45nm)
-					// Mobile CPU ?
-					if (rdmsr64(0x17) & (1<<28)) {
+                               // Mobile CPU ?
+					if (rdmsr64(0x17) & (1<<28)) { //mobile
 						CpuMobile = true;
 						tjmax[0] = 105; 
 						snprintf(Platform, 4, "M82");
@@ -145,22 +146,22 @@ IOService* IntelCPUMonitor::probe(IOService *provider, SInt32 *score)
 							default:
 								tjmax[0] = 100;
 								break;
-						}
-						
+						}						
 						snprintf(Platform, 4, "K36");
 					}
+          
 					break;
 					
 				case CPU_MODEL_ATOM: // Intel Atom (45nm)
 					switch (CpuStepping)
-				{
-					case 0x02: // C0
-						tjmax[0] = 100; break;
-					case 0x0A: // A0, B0
-						tjmax[0] = 100; break;
-					default:
-						tjmax[0] = 90; break;
-				} 
+          {
+            case 0x02: // C0
+              tjmax[0] = 100; break;
+            case 0x0A: // A0, B0
+              tjmax[0] = 100; break;
+            default:
+              tjmax[0] = 90; break;
+          } 
 					snprintf(Platform, 4, "T9");
 					break;
 					
@@ -196,7 +197,7 @@ IOService* IntelCPUMonitor::probe(IOService *provider, SInt32 *score)
 	}
 	
 	if (userTjmax != 0) {
-		for (int i = 1; i < count; i++)
+		for (int i = 0; i < count; i++)
 			tjmax[i] = userTjmax;
 		
 	} else {
@@ -459,10 +460,12 @@ UInt32 IntelCPUMonitor::IntelGetVoltage(UInt8 vid) {  //no nehalem
 	switch (CpuModel) {
 		case CPU_MODEL_PENTIUM_M:
 			return 700 + ((vid & 0x3F) << 4);
-			break;
-		case CPU_MODEL_MEROM:
+			break;      
 		case CPU_MODEL_YONAH:
-			return  CpuMobile ? (1425 + ((vid & 0x3F) * 25)) >> 1 : (1650 + ((vid & 0x3F) * 25)) >> 1;
+			return  (1425 + ((vid & 0x3F) * 25)) >> 1;
+			break;
+		case CPU_MODEL_MEROM: //Conroe?!
+			return (1650 + ((vid & 0x3F) * 25)) >> 1;
 			break;
 		case CPU_MODEL_PENRYN:
 		case CPU_MODEL_ATOM:

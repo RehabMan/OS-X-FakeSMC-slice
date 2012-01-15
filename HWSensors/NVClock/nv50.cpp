@@ -434,7 +434,7 @@ void nv50_init(void)
 		nv_card->sensor_name = (char*)STRDUP("GPU Internal Sensor", sizeof("GPU Internal Sensor"));
 		nv_card->get_gpu_temp = (int(*)(I2CDevPtr))nv50_get_gpu_temp;
 	}
-	else if((nv_card->arch & (G84 | G86 | G94 | G96 | GT200)) && !(nv_card->caps & GPU_TEMP_MONITORING))
+	else if((nv_card->arch & (G84 | G86 | G94 | G96 | GT200 | GF100)) && !(nv_card->caps & GPU_TEMP_MONITORING))
 	{
 		nv_card->caps |= GPU_TEMP_MONITORING;
 		nv_card->sensor_name = (char*)STRDUP("GPU Internal Sensor", sizeof("GPU Internal Sensor"));
@@ -455,7 +455,7 @@ void nv50_init(void)
 	/  the use of 0xe114/0xe118 and 0xe11c/0xe120 and to detect whether the pwm signal needs to be inverted
 	/  or not. Likely there is info in the bios for this.
 	*/
-	if((nv_card->arch & (G84 | G86 | G92 | G94 | G96 | GT200)) && !(nv_card->caps & I2C_FANSPEED_MONITORING) && (nv_card->PMC[0xe11c/4] > 1))
+	if((nv_card->arch & (G84 | G86 | G92 | G94 | G96 | GT200 | GF100)) && !(nv_card->caps & I2C_FANSPEED_MONITORING) && (nv_card->PMC[0xe11c/4] > 1))
 	{
 		nv_card->caps |= GPU_FANSPEED_MONITORING;
 		nv_card->get_fanspeed = g84_get_fanspeed;
