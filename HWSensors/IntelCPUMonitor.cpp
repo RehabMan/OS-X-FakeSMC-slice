@@ -448,10 +448,10 @@ UInt32 IntelCPUMonitor::IntelGetFrequency(UInt8 fid) {
 	}
 	else {
 		multiplier = fid & 0x1f;
-//		frequency = (multiplier * BusClock);
-		int half = gPEClockFrequencyInfo.bus_to_cpu_rate_num;
-		half = half?half:1;
-		frequency = (multiplier * BusClock) * gPEClockFrequencyInfo.bus_to_cpu_rate_den / half;
+		frequency = (multiplier * BusClock);
+//		int half = gPEClockFrequencyInfo.bus_to_cpu_rate_num;
+//		half = half?half:1;
+//		frequency = (multiplier * BusClock) * gPEClockFrequencyInfo.bus_to_cpu_rate_den / half;
 		return (frequency);	
 	}
 }
