@@ -195,6 +195,8 @@ IOService* IntelCPUMonitor::probe(IOService *provider, SInt32 *score)
 			WarningLog("Unknown Intel family processor found, kext will not load");
 			return 0;
 	}
+  
+  SandyArch = (CpuModel == CPU_MODEL_SANDY_BRIDGE) || (CpuModel == CPU_MODEL_SANDY_BRIDGE_XEON);
 	
 	if (userTjmax != 0) {
 		for (int i = 0; i < count; i++)
@@ -421,7 +423,7 @@ IOReturn IntelCPUMonitor::loopTimerEvent(void)
 
 	for (UInt32 i = 0; i < count; i++) 
 	{
-		if (!nehalemArch) {
+		if (!nehalemArch  || SandyArch) {
 			Frequency[i] = IntelGetFrequency(GlobalState[i].FID);
 			Voltage = IntelGetVoltage(GlobalState[i].VID);
 		} else {
@@ -447,7 +449,7 @@ UInt32 IntelCPUMonitor::IntelGetFrequency(UInt8 fid) {
 		return (frequency + (half * halffsb));	// = 3200 + 200 = 3400
 	}
 	else {
-		multiplier = fid & 0x1f;
+		multiplier = fid & 0x3f;
 		frequency = (multiplier * BusClock);
 //		int half = gPEClockFrequencyInfo.bus_to_cpu_rate_num;
 //		half = half?half:1;

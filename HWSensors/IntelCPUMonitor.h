@@ -124,6 +124,7 @@ private:
 	char*					key[MaxCpuCount];
 	char					Platform[4];
 	bool					nehalemArch;
+  bool          SandyArch;
 	IOService*				fakeSMC;
 	IOWorkLoop *			WorkLoop;
 	IOTimerEventSource *	TimerEventSource;
