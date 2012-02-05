@@ -310,6 +310,7 @@ RADEONCardInfo radeon_device_list[] = {
 	{ 0x6739, CHIP_FAMILY_Evergreen, 0, 0, 0, 0, 0 },
   { 0x6740, CHIP_FAMILY_Evergreen, 0, 0, 0, 0, 0 },
 	{ 0x6758, CHIP_FAMILY_Evergreen, 0, 0, 0, 0, 0 },
+  { 0x6759, CHIP_FAMILY_Evergreen, 0, 0, 0, 0, 0 },
 	{ 0x6898, CHIP_FAMILY_Evergreen, 0, 0, 0, 0, 0 },
  { 0x6899, CHIP_FAMILY_Evergreen, 0, 0, 0, 0, 0 },
  { 0x689C, CHIP_FAMILY_Evergreen, 0, 0, 0, 0, 0 },
