@@ -3,7 +3,7 @@
  *  HWSensors
  *
  *  Created by mozo on 12/11/10.
- *  Copyright 2010 mozodojo. All rights reserved.
+ *  Copyright 2010 Slice. All rights reserved.
  *
  */
 
@@ -88,7 +88,7 @@ bool ACPIMonitor::start(IOService * provider)
 	char key[5];
 	
 	//Here is Fan in ACPI	
-	OSArray* fanNames = OSDynamicCast(OSArray, getProperty("Fan Names"));
+	OSArray* fanNames = OSDynamicCast(OSArray, getProperty("FanNames"));
 	
 	for (int i=0; i<10; i++) 
 	{
