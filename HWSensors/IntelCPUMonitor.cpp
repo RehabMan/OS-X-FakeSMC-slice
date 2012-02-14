@@ -173,7 +173,7 @@ IOService* IntelCPUMonitor::probe(IOService *provider, SInt32 *score)
 				case CPU_MODEL_NEHALEM_EX:
 				case CPU_MODEL_WESTMERE_EX:
 				case CPU_MODEL_SANDY_BRIDGE:
-				case CPU_MODEL_SANDY_BRIDGE_XEON:
+				case CPU_MODEL_JAKETOWN:
 				{
 					nehalemArch = true;
 					
@@ -196,7 +196,7 @@ IOService* IntelCPUMonitor::probe(IOService *provider, SInt32 *score)
 			return 0;
 	}
   
-  SandyArch = (CpuModel == CPU_MODEL_SANDY_BRIDGE) || (CpuModel == CPU_MODEL_SANDY_BRIDGE_XEON);
+  SandyArch = (CpuModel == CPU_MODEL_SANDY_BRIDGE) || (CpuModel == CPU_MODEL_JAKETOWN);
 	
 	if (userTjmax != 0) {
 		for (int i = 0; i < count; i++)
@@ -226,7 +226,7 @@ bool IntelCPUMonitor::start(IOService * provider)
 	
 	if (!super::start(provider)) return false;
 	
-    if (!(fakeSMC = waitForService(serviceMatching(kFakeSMCService)))) {
+    if (!(fakeSMC = waitForService(serviceMatching(kFakeSMCDeviceService)))) {
 		WarningLog("Can't locate fake SMC device, kext will not load");
 		return false;
 	}

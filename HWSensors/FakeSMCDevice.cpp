@@ -3,11 +3,12 @@
  *  FakeSMC
  *
  *  Created by Vladimir on 20.08.09.
- *  Copyright 2009 __MyCompanyName__. All rights reserved.
+ *  Copyright 2009 netkas. All rights reserved.
  *
  */
 
 #include "FakeSMCDevice.h"
+#include "definitions.h"
 
 #define Debug FALSE
 
@@ -82,7 +83,7 @@ void FakeSMCDevice::applesmc_fill_info(struct AppleSMCStatus *s)
 		s->key_info[5] = 0;
 		
 		const char* typ = key->getType();
-		int len = strlen(typ);
+		UInt64 len = strlen(typ);
 		
 		for (int i=0; i<4; i++)
 		{
@@ -335,6 +336,7 @@ bool FakeSMCDevice::init(IOService *platform, OSDictionary *properties)
 	interrupt_handler=0;
 	
 	keys = OSArray::withCapacity(0);
+    values = OSDictionary::withCapacity(0);
 	
 	sharpKEY = FakeSMCKey::withValue("#KEY", "ui8", 4, "\1");
 	keys->setObject(sharpKEY);
@@ -344,13 +346,13 @@ bool FakeSMCDevice::init(IOService *platform, OSDictionary *properties)
 	this->setName("SMC");
 	
 	const char * nodeName = "APP0001";
-	this->setProperty("name",(void *)nodeName, strlen(nodeName)+1);
+	this->setProperty("name",(void *)nodeName, (UInt32)strlen(nodeName)+1);
 	
 	if(OSString *smccomp = OSDynamicCast(OSString, properties->getObject("smc-compatible"))) {
 		this->setProperty("compatible",(void *)smccomp->getCStringNoCopy(), smccomp->getLength()+1);
 	} else {
 		const char * nodeComp = "smc-napa";
-		this->setProperty("compatible",(void *)nodeComp, strlen(nodeComp)+1);
+		this->setProperty("compatible",(void *)nodeComp, (UInt32)strlen(nodeComp)+1);
 	}
 	
 	this->setProperty("_STA", (unsigned long long)0x0000000b, 32);
@@ -400,6 +402,23 @@ bool FakeSMCDevice::init(IOService *platform, OSDictionary *properties)
 	return true;
 }
 
+IOReturn FakeSMCDevice::setProperties(OSObject * properties)
+{
+    if (OSDictionary * message = OSDynamicCast(OSDictionary, properties))
+        if (OSString * name = OSDynamicCast(OSString, message->getObject(kFakeSMCDeviceUpdateKeyValue)))
+            if (FakeSMCKey * key = getKey(name->getCStringNoCopy())) {
+                
+                values->setObject(key->getName(), OSData::withBytes(key->getValue(), key->getSize()));
+                
+                this->setProperty(kFakeSMCDeviceValues, OSDictionary::withDictionary(values));
+                
+                return kIOReturnSuccess;
+            }
+	
+	return kIOReturnUnsupported;
+}
+
+
 void FakeSMCDevice::loadKeysFromDictionary(OSDictionary *dictionary)
 {
 	if (dictionary) {
@@ -423,7 +442,7 @@ void FakeSMCDevice::loadKeysFromDictionary(OSDictionary *dictionary)
 			iterator->release();
 		}
 		
-		InfoLog("%d preconfigured keys added: ", keys->getCount());
+		InfoLog("%d preconfigured key(s) added", keys->getCount());
 	}
 	else {
 		WarningLog("no preconfigured keys found");
@@ -440,22 +459,6 @@ void FakeSMCDevice::updateSharpKey()
 	
 	sharpKEY->setValueFromBuffer(value, 4);
 }
-
-/*FakeSMCKey *FakeSMCDevice::addKey(const char *name, const char *type, unsigned char size)
-{	
-	if (getKey(name))
-		return 0;
-	
-	DebugLog("adding key %s, type: %s, size: %d", name, type, size);
-	
-	if (FakeSMCKey *key = FakeSMCKey::withValue(name, type, size, 0)) {
-		keys->setObject(key);
-		updateSharpKey();
-		return key;
-	}
-	
-	return 0;
-}*/
 
 FakeSMCKey *FakeSMCDevice::addKeyWithValue(const char *name, const char *type, unsigned char size, const void *value)
 {	
@@ -573,4 +576,80 @@ IOReturn FakeSMCDevice::causeInterrupt(int source)
 		interrupt_handler(interrupt_target, interrupt_refcon, this, interrupt_source);
 	
 	return kIOReturnSuccess;
+}
+
+IOReturn FakeSMCDevice::callPlatformFunction(const OSSymbol *functionName, bool waitForFunction, void *param1, void *param2, void *param3, void *param4 )
+{
+	if (functionName->isEqualTo(kFakeSMCSetKeyValue)) {
+		const char *name = (const char *)param1;
+		unsigned char size = (UInt64)param2;
+		const void *data = (const void *)param3;
+		
+		if (name && data && size > 0) {
+            
+			if (FakeSMCKey *key = OSDynamicCast(FakeSMCKey, getKey(name)))
+				if (key->setValueFromBuffer(data, size))
+					return kIOReturnSuccess;
+			
+			return kIOReturnError;
+		}
+		
+		return kIOReturnBadArgument;
+	}
+	else if (functionName->isEqualTo(kFakeSMCAddKeyHandler)) {
+		const char *name = (const char *)param1;
+		const char *type = (const char *)param2;
+		unsigned char size = (UInt64)param3;
+		IOService *handler = (IOService *)param4;
+		
+		if (name && type && size > 0) {
+			
+			DebugLog("adding key %s with handler, type %s, size %d", name, type, size);
+			
+			if (addKeyWithHandler(name, type, size, handler))
+				return kIOReturnSuccess;
+            
+			return kIOReturnError;
+		}
+		
+		return kIOReturnBadArgument;
+	}
+	else if (functionName->isEqualTo(kFakeSMCAddKeyValue)) {
+		const char *name = (const char *)param1;
+		const char *type = (const char *)param2;
+		unsigned char size = (UInt64)param3;
+		const void *value = (const void *)param4;
+		
+		if (name && type && size > 0) {
+			
+			DebugLog("adding key %s with value, type %s, size %d", name, type, size);
+			
+			if (addKeyWithValue(name, type, size, value))
+				return kIOReturnSuccess;
+            
+			return kIOReturnError;
+		}
+		
+		return kIOReturnBadArgument;
+	}
+	else if (functionName->isEqualTo(kFakeSMCGetKeyValue)) {
+		const char *name = (const char *)param1;
+		UInt8 *size = (UInt8*)param2;
+		const void **value = (const void **)param3;
+		
+		if (name) {
+			if (FakeSMCKey *key = getKey(name)) {
+				*size = key->getSize();
+				*value = key->getValue();
+				
+				return kIOReturnSuccess;
+			}
+            
+			return kIOReturnError;
+		}
+		
+		return kIOReturnBadArgument;
+	}
+	
+	return kIOReturnUnsupported;
 }

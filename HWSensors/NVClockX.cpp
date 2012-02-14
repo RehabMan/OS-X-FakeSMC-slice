@@ -183,7 +183,7 @@ bool NVClockX::start(IOService * provider)
 	
 	if (!super::start(provider)) return false;
 		
-    if (!(fakeSMC = waitForService(serviceMatching(kFakeSMCService)))) {
+    if (!(fakeSMC = waitForService(serviceMatching(kFakeSMCDeviceService)))) {
 		WarningLog("Can't locate fake SMC device, kext will not load");
 		return false;
 	}

@@ -158,6 +158,7 @@
 		12D78B1F12BFDCFD002C61EA /* RadeonMonitor-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RadeonMonitor-Info.plist"; sourceTree = "<group>"; };
 		12D78B2F12BFDDAC002C61EA /* Radeon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Radeon.h; sourceTree = "<group>"; };
 		12D78B3012BFDDAC002C61EA /* Radeon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Radeon.cpp; sourceTree = "<group>"; };
+		12FC8BF814EA58C5008FFCE2 /* definitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = definitions.h; sourceTree = "<group>"; };
 		1D17EA5A134CE6F200518913 /* gpl.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gpl.txt; sourceTree = "<group>"; };
 		1D1CAB37136570A4003878D0 /* IntelCPUMonitor.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IntelCPUMonitor.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D30B1E0134B90E0004F0967 /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
@@ -220,14 +221,14 @@
 		AE840E6C128D865F006532CB /* ACPIMonitor-pre106-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ACPIMonitor-pre106-Info.plist"; sourceTree = "<group>"; };
 		AE840E77128D869D006532CB /* ACPIMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACPIMonitor.h; sourceTree = "<group>"; };
 		AE840E78128D869D006532CB /* ACPIMonitor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ACPIMonitor.cpp; sourceTree = "<group>"; };
-		AEABE460125F8E9300F08235 /* HWIntelThermal.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HWIntelThermal.kext; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEABE460125F8E9300F08235 /* IntelThermal.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IntelThermal.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEABE462125F8E9300F08235 /* IntelThermal-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IntelThermal-Info.plist"; sourceTree = "<group>"; };
 		AEABE46A125F8F1F00F08235 /* Kernel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kernel.framework; path = /System/Library/Frameworks/Kernel.framework; sourceTree = "<absolute>"; };
 		AEABE82B125F8F6E00F08235 /* cpuid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpuid.h; sourceTree = "<group>"; };
 		AED9E18E125FBEF400736A5A /* IT87x.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IT87x.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		AED9E581125FC23900736A5A /* SuperIOFamily.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperIOFamily.h; sourceTree = "<group>"; };
 		AED9E582125FC23900736A5A /* SuperIOFamily.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SuperIOFamily.cpp; sourceTree = "<group>"; };
-		AEF4C80412602EE700297B2B /* VirtualSMC.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VirtualSMC.kext; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEF4C80412602EE700297B2B /* FakeSMC.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FakeSMC.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEF4C80E12602F2600297B2B /* FakeSMCDevice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FakeSMCDevice.cpp; sourceTree = "<group>"; };
 		AEF4C80F12602F2600297B2B /* FakeSMCDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeSMCDevice.h; sourceTree = "<group>"; };
 		AEF4C81012602F2600297B2B /* FakeSMCKey.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FakeSMCKey.cpp; sourceTree = "<group>"; };
@@ -484,8 +485,8 @@
 		AEABE461125F8E9300F08235 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AEF4C80412602EE700297B2B /* VirtualSMC.kext */,
-				AEABE460125F8E9300F08235 /* HWIntelThermal.kext */,
+				AEF4C80412602EE700297B2B /* FakeSMC.kext */,
+				AEABE460125F8E9300F08235 /* IntelThermal.kext */,
 				AE5BA5781268D94A00EA6AB9 /* NVClockX.kext */,
 				AED9E18E125FBEF400736A5A /* IT87x.kext */,
 				AE212C6A12678D3500145048 /* W836x.kext */,
@@ -564,6 +565,7 @@
 				12D78B0A12BFDB58002C61EA /* TigerAdditionals.h */,
 				AEABE82B125F8F6E00F08235 /* cpuid.h */,
 				1D30B1E0134B90E0004F0967 /* utils.h */,
+				12FC8BF814EA58C5008FFCE2 /* definitions.h */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -749,7 +751,7 @@
 			);
 			name = IntelThermal;
 			productName = HWIntelThermal;
-			productReference = AEABE460125F8E9300F08235 /* HWIntelThermal.kext */;
+			productReference = AEABE460125F8E9300F08235 /* IntelThermal.kext */;
 			productType = "com.apple.product-type.kernel-extension.iokit";
 		};
 		AED9E18D125FBEF400736A5A /* IT87x */ = {
@@ -791,7 +793,7 @@
 			);
 			name = FakeSMC;
 			productName = VirtualSMC;
-			productReference = AEF4C80412602EE700297B2B /* VirtualSMC.kext */;
+			productReference = AEF4C80412602EE700297B2B /* FakeSMC.kext */;
 			productType = "com.apple.product-type.kernel-extension.iokit";
 		};
 /* End PBXNativeTarget section */
@@ -1703,7 +1705,10 @@
 		AEABE455125F8E7400F08235 /* Release 10.6 */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ARCHS = (
+					i386,
+					x86_64,
+				);
 				COPY_PHASE_STRIP = YES;
 				GCC_AUTO_VECTORIZATION = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
@@ -1717,7 +1722,7 @@
 				GCC_WARN_UNUSED_VALUE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				SDKROOT = macosx;
+				SDKROOT = "";
 				VALID_ARCHS = "i386 x86_64";
 			};
 			name = "Release 10.6";

@@ -3,7 +3,7 @@
  *  FakeSMC
  *
  *  Created by Vladimir on 20.08.09.
- *  Copyright 2009 __MyCompanyName__. All rights reserved.
+ *  Copyright 2009 netkas. All rights reserved.
  *
  */
 
@@ -53,6 +53,7 @@ private:
 	struct ApleSMCStatus	*status;
 	
 	OSArray				*keys;
+    OSDictionary        *values;
 	FakeSMCKey			*sharpKEY;
 	
 	bool				debug;
@@ -81,6 +82,7 @@ public:
 	virtual IOReturn	causeInterrupt(int source);
 	
 	virtual bool		init(IOService *platform, OSDictionary *properties);
+    virtual IOReturn	setProperties(OSObject * properties);
 	
 	virtual void		loadKeysFromDictionary(OSDictionary *dictionary);
 	//virtual FakeSMCKey	*addKey(const char *name, const char *type, unsigned char size);
@@ -93,6 +95,8 @@ public:
 	virtual void		updateSharpKey(void);
 	
 	virtual void		setDebug(bool debug_val);
+    
+    virtual IOReturn	callPlatformFunction(const OSSymbol *functionName, bool waitForFunction, void *param1, void *param2, void *param3, void *param4 ); 
 };
 
 #endif
