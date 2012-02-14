@@ -59,8 +59,6 @@
 	<dict>
 		<key>org.netkas.FakeSMC</key>
 		<string>3.1.0</string>
-		<key>org.mozodojo.SuperIOFamily</key>
-		<string>1.0.0d1</string>
 		<key>com.apple.kernel.6.0</key>
 		<string>7.9.9</string>
 		<key>com.apple.kernel.iokit</key>

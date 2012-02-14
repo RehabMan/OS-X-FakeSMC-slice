@@ -236,7 +236,7 @@ bool IT87x::probePort()
 	UInt16 id = listenPortWord(SUPERIO_CHIP_ID_REGISTER);
 	
 	if (id == 0 || id == 0xffff) {
-        WarningLog("invalid super I/O chip ID=0x%x", id);
+        DebugLog("invalid super I/O chip ID=0x%x", id);
 		return false;
     }
 	hasSmartGuardian = false;
@@ -264,19 +264,19 @@ bool IT87x::probePort()
     IOSleep(50);
 	
 	if (!getLogicalDeviceAddress()) {
-        WarningLog("can't get monitoring LDN address");
+        DebugLog("can't get monitoring LDN address");
 		return false;
     }
     
 	UInt8 vendor = readByte(address, ITE_VENDOR_ID_REGISTER);
 	
 	if (vendor != ITE_VENDOR_ID) {
-        WarningLog("invalid vendor ID=0x%x", vendor);
+        DebugLog("invalid vendor ID=0x%x", vendor);
 		return false;
     }
 	
 	if ((readByte(address, ITE_CONFIGURATION_REGISTER) & 0x10) == 0) {
-        WarningLog("invalid configuration register value");
+        DebugLog("invalid configuration register value");
 		return false;
     }
 	

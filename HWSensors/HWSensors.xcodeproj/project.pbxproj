@@ -16,16 +16,20 @@
 		12D78B0E12BFDB58002C61EA /* TigerAdditionals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12D78B0912BFDB58002C61EA /* TigerAdditionals.cpp */; };
 		12D78B0F12BFDB58002C61EA /* TigerAdditionals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12D78B0912BFDB58002C61EA /* TigerAdditionals.cpp */; };
 		12D78B1012BFDB58002C61EA /* TigerAdditionals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12D78B0912BFDB58002C61EA /* TigerAdditionals.cpp */; };
-		12D78B1112BFDB58002C61EA /* TigerAdditionals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12D78B0912BFDB58002C61EA /* TigerAdditionals.cpp */; };
 		12D78B1312BFDB58002C61EA /* TigerAdditionals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12D78B0912BFDB58002C61EA /* TigerAdditionals.cpp */; };
 		12D78B1412BFDB58002C61EA /* TigerAdditionals.h in Headers */ = {isa = PBXBuildFile; fileRef = 12D78B0A12BFDB58002C61EA /* TigerAdditionals.h */; };
 		12D78B1512BFDB58002C61EA /* TigerAdditionals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12D78B0912BFDB58002C61EA /* TigerAdditionals.cpp */; };
 		12D78B1612BFDB58002C61EA /* TigerAdditionals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12D78B0912BFDB58002C61EA /* TigerAdditionals.cpp */; };
 		12D78B3112BFDDAC002C61EA /* Radeon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12D78B3012BFDDAC002C61EA /* Radeon.cpp */; };
 		1D30B1E2134B90E0004F0967 /* utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D30B1E0134B90E0004F0967 /* utils.h */; };
-		AE00C79D126A1FED0068E69A /* F718x.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE00C79C126A1FED0068E69A /* F718x.cpp */; };
-		AE00C7E6126A253A0068E69A /* PC8739x.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE00C7E5126A253A0068E69A /* PC8739x.cpp */; };
-		AE212C7912678DC700145048 /* W836x.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE212C7812678DC700145048 /* W836x.cpp */; };
+		2C77199014EA44C30005C3C7 /* TigerAdditionals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12D78B0912BFDB58002C61EA /* TigerAdditionals.cpp */; };
+		2C7719A214EA46A60005C3C7 /* F718x.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C7719A014EA46A60005C3C7 /* F718x.cpp */; };
+		2C7719A914EA46D60005C3C7 /* IT87x.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C7719A714EA46D60005C3C7 /* IT87x.cpp */; };
+		2C7719AF14EA47500005C3C7 /* W836x.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C7719AD14EA47500005C3C7 /* W836x.cpp */; };
+		2C7719B514EA479A0005C3C7 /* PC8739x.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C7719B314EA479A0005C3C7 /* PC8739x.cpp */; };
+		2C7719BA14EA47EA0005C3C7 /* NuvotonNCT677x.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C7719B814EA47EA0005C3C7 /* NuvotonNCT677x.cpp */; };
+		2C7719BB14EA482E0005C3C7 /* TigerAdditionals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12D78B0912BFDB58002C61EA /* TigerAdditionals.cpp */; };
+		2C7719BC14EA483A0005C3C7 /* SuperIOFamily.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AED9E582125FC23900736A5A /* SuperIOFamily.cpp */; };
 		AE36CBD6125FA80800E1EBA5 /* IntelThermal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE36CBD5125FA80800E1EBA5 /* IntelThermal.cpp */; };
 		AE5BA5B71268D99C00EA6AB9 /* NVClockX.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE5BA5B61268D99C00EA6AB9 /* NVClockX.cpp */; };
 		AE5BA64F1268DCDE00EA6AB9 /* adt7473.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE5BA6361268DCDE00EA6AB9 /* adt7473.cpp */; };
@@ -46,7 +50,6 @@
 		AE5BA6651268DCDE00EA6AB9 /* xf86i2c.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE5BA64C1268DCDE00EA6AB9 /* xf86i2c.cpp */; };
 		AE840E6D128D865F006532CB /* ACPIMonitor-pre106-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE840E6C128D865F006532CB /* ACPIMonitor-pre106-Info.plist */; };
 		AE840E79128D869D006532CB /* ACPIMonitor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE840E78128D869D006532CB /* ACPIMonitor.cpp */; };
-		AED15E45126CC21A00455FE0 /* SuperIOFamily.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AED9E582125FC23900736A5A /* SuperIOFamily.cpp */; };
 		AED49C89126CC71E00840536 /* backend.h in Headers */ = {isa = PBXBuildFile; fileRef = AE5BA6381268DCDE00EA6AB9 /* backend.h */; };
 		AED49C8A126CC71E00840536 /* f75375.h in Headers */ = {isa = PBXBuildFile; fileRef = AE5BA63C1268DCDE00EA6AB9 /* f75375.h */; };
 		AED49C8B126CC71E00840536 /* i2c.h in Headers */ = {isa = PBXBuildFile; fileRef = AE5BA63E1268DCDE00EA6AB9 /* i2c.h */; };
@@ -54,7 +57,6 @@
 		AED49C8D126CC71E00840536 /* nvreg.h in Headers */ = {isa = PBXBuildFile; fileRef = AE5BA6471268DCDE00EA6AB9 /* nvreg.h */; };
 		AED49C8E126CC71E00840536 /* xf86i2c.h in Headers */ = {isa = PBXBuildFile; fileRef = AE5BA64D1268DCDE00EA6AB9 /* xf86i2c.h */; };
 		AED49C8F126CC71E00840536 /* xfree.h in Headers */ = {isa = PBXBuildFile; fileRef = AE5BA64E1268DCDE00EA6AB9 /* xfree.h */; };
-		AED9E1C2125FC02F00736A5A /* IT87x.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AED9E1C0125FC02F00736A5A /* IT87x.cpp */; };
 		AEF4C81712602F2600297B2B /* FakeSMCDevice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEF4C80E12602F2600297B2B /* FakeSMCDevice.cpp */; };
 		AEF4C81812602F2600297B2B /* FakeSMCKey.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEF4C81012602F2600297B2B /* FakeSMCKey.cpp */; };
 		AEF4C81C12602F2600297B2B /* FakeSMC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEF4C81512602F2600297B2B /* FakeSMC.cpp */; };
@@ -131,13 +133,6 @@
 			remoteGlobalIDString = AED9E18D125FBEF400736A5A;
 			remoteInfo = IT87x;
 		};
-		1D1CAACB1365704A003878D0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AEABE453125F8E7400F08235 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AED15A20126CBA9600455FE0;
-			remoteInfo = SuperIOFamily;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -166,23 +161,30 @@
 		1D17EA5A134CE6F200518913 /* gpl.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gpl.txt; sourceTree = "<group>"; };
 		1D1CAB37136570A4003878D0 /* IntelCPUMonitor.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IntelCPUMonitor.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D30B1E0134B90E0004F0967 /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
+		2C77199714EA44C30005C3C7 /* NuvotonNCT677x.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NuvotonNCT677x.kext; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C77199E14EA46A60005C3C7 /* F718x-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "F718x-Info.plist"; sourceTree = "<group>"; };
+		2C77199F14EA46A60005C3C7 /* F718x-pre106-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "F718x-pre106-Info.plist"; sourceTree = "<group>"; };
+		2C7719A014EA46A60005C3C7 /* F718x.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = F718x.cpp; sourceTree = "<group>"; };
+		2C7719A114EA46A60005C3C7 /* F718x.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F718x.h; sourceTree = "<group>"; };
+		2C7719A514EA46D60005C3C7 /* IT87x-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "IT87x-Info.plist"; sourceTree = "<group>"; };
+		2C7719A614EA46D60005C3C7 /* IT87x-pre106-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "IT87x-pre106-Info.plist"; sourceTree = "<group>"; };
+		2C7719A714EA46D60005C3C7 /* IT87x.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IT87x.cpp; sourceTree = "<group>"; };
+		2C7719A814EA46D60005C3C7 /* IT87x.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IT87x.h; sourceTree = "<group>"; };
+		2C7719AB14EA47500005C3C7 /* W836x-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "W836x-Info.plist"; sourceTree = "<group>"; };
+		2C7719AC14EA47500005C3C7 /* W836x-pre106-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "W836x-pre106-Info.plist"; sourceTree = "<group>"; };
+		2C7719AD14EA47500005C3C7 /* W836x.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = W836x.cpp; sourceTree = "<group>"; };
+		2C7719AE14EA47500005C3C7 /* W836x.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = W836x.h; sourceTree = "<group>"; };
+		2C7719B114EA479A0005C3C7 /* PC8739x-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "PC8739x-Info.plist"; sourceTree = "<group>"; };
+		2C7719B214EA479A0005C3C7 /* PC8739x-pre106-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "PC8739x-pre106-Info.plist"; sourceTree = "<group>"; };
+		2C7719B314EA479A0005C3C7 /* PC8739x.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PC8739x.cpp; sourceTree = "<group>"; };
+		2C7719B414EA479A0005C3C7 /* PC8739x.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PC8739x.h; sourceTree = "<group>"; };
+		2C7719B714EA47EA0005C3C7 /* NuvotonNCT677x-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "NuvotonNCT677x-Info.plist"; sourceTree = "<group>"; };
+		2C7719B814EA47EA0005C3C7 /* NuvotonNCT677x.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NuvotonNCT677x.cpp; sourceTree = "<group>"; };
+		2C7719B914EA47EA0005C3C7 /* NuvotonNCT677x.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NuvotonNCT677x.h; sourceTree = "<group>"; };
 		AE00C785126A1F440068E69A /* F718x.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = F718x.kext; sourceTree = BUILT_PRODUCTS_DIR; };
-		AE00C786126A1F440068E69A /* F718x-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "F718x-Info.plist"; sourceTree = "<group>"; };
-		AE00C799126A1FD00068E69A /* F718x-pre106-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "F718x-pre106-Info.plist"; sourceTree = "<group>"; };
-		AE00C79B126A1FED0068E69A /* F718x.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F718x.h; sourceTree = "<group>"; };
-		AE00C79C126A1FED0068E69A /* F718x.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = F718x.cpp; sourceTree = "<group>"; };
 		AE00C7BD126A24960068E69A /* PC8739x.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PC8739x.kext; sourceTree = BUILT_PRODUCTS_DIR; };
-		AE00C7BE126A24960068E69A /* PC8739x-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PC8739x-Info.plist"; sourceTree = "<group>"; };
-		AE00C7E2126A252E0068E69A /* PC8739x-pre106-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "PC8739x-pre106-Info.plist"; sourceTree = "<group>"; };
-		AE00C7E4126A253A0068E69A /* PC8739x.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PC8739x.h; sourceTree = "<group>"; };
-		AE00C7E5126A253A0068E69A /* PC8739x.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PC8739x.cpp; sourceTree = "<group>"; };
 		AE212C6A12678D3500145048 /* W836x.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = W836x.kext; sourceTree = BUILT_PRODUCTS_DIR; };
-		AE212C6B12678D3500145048 /* W836x-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "W836x-Info.plist"; sourceTree = "<group>"; };
-		AE212C7712678DC700145048 /* W836x.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = W836x.h; sourceTree = "<group>"; };
-		AE212C7812678DC700145048 /* W836x.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = W836x.cpp; sourceTree = "<group>"; };
 		AE3124F71268189A003930CB /* IntelThermal-pre106-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "IntelThermal-pre106-Info.plist"; sourceTree = "<group>"; };
-		AE3124F812681934003930CB /* IT87x-pre106-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "IT87x-pre106-Info.plist"; sourceTree = "<group>"; };
-		AE3124F912681966003930CB /* W836x-pre106-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "W836x-pre106-Info.plist"; sourceTree = "<group>"; };
 		AE36CBD3125FA7F900E1EBA5 /* IntelThermal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntelThermal.h; sourceTree = "<group>"; };
 		AE36CBD5125FA80800E1EBA5 /* IntelThermal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IntelThermal.cpp; sourceTree = "<group>"; };
 		AE5BA5781268D94A00EA6AB9 /* NVClockX.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NVClockX.kext; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -222,13 +224,7 @@
 		AEABE462125F8E9300F08235 /* IntelThermal-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IntelThermal-Info.plist"; sourceTree = "<group>"; };
 		AEABE46A125F8F1F00F08235 /* Kernel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kernel.framework; path = /System/Library/Frameworks/Kernel.framework; sourceTree = "<absolute>"; };
 		AEABE82B125F8F6E00F08235 /* cpuid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpuid.h; sourceTree = "<group>"; };
-		AED15A21126CBA9600455FE0 /* SuperIOFamily.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperIOFamily.kext; sourceTree = BUILT_PRODUCTS_DIR; };
-		AED15A22126CBA9600455FE0 /* SuperIOFamily-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SuperIOFamily-Info.plist"; sourceTree = "<group>"; };
-		AED15A5A126CBCEF00455FE0 /* SuperIOFamily-pre106-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SuperIOFamily-pre106-Info.plist"; sourceTree = "<group>"; };
 		AED9E18E125FBEF400736A5A /* IT87x.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IT87x.kext; sourceTree = BUILT_PRODUCTS_DIR; };
-		AED9E18F125FBEF400736A5A /* IT87x-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IT87x-Info.plist"; sourceTree = "<group>"; };
-		AED9E1BF125FC02F00736A5A /* IT87x.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IT87x.h; sourceTree = "<group>"; };
-		AED9E1C0125FC02F00736A5A /* IT87x.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IT87x.cpp; sourceTree = "<group>"; };
 		AED9E581125FC23900736A5A /* SuperIOFamily.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperIOFamily.h; sourceTree = "<group>"; };
 		AED9E582125FC23900736A5A /* SuperIOFamily.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SuperIOFamily.cpp; sourceTree = "<group>"; };
 		AEF4C80412602EE700297B2B /* VirtualSMC.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VirtualSMC.kext; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -258,6 +254,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		12D78B1C12BFDCFD002C61EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C77199114EA44C30005C3C7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -300,13 +303,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		AEABE45E125F8E9300F08235 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AED15A1F126CBA9600455FE0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -368,37 +364,58 @@
 			name = Radeon;
 			sourceTree = "<group>";
 		};
-		AE00C780126A1F170068E69A /* Fintek F718x  */ = {
+		2C77199D14EA46850005C3C7 /* F718x */ = {
 			isa = PBXGroup;
 			children = (
-				AE00C79B126A1FED0068E69A /* F718x.h */,
-				AE00C79C126A1FED0068E69A /* F718x.cpp */,
-				AE00C786126A1F440068E69A /* F718x-Info.plist */,
-				AE00C799126A1FD00068E69A /* F718x-pre106-Info.plist */,
+				2C77199E14EA46A60005C3C7 /* F718x-Info.plist */,
+				2C77199F14EA46A60005C3C7 /* F718x-pre106-Info.plist */,
+				2C7719A014EA46A60005C3C7 /* F718x.cpp */,
+				2C7719A114EA46A60005C3C7 /* F718x.h */,
 			);
-			name = "Fintek F718x ";
+			name = F718x;
 			sourceTree = "<group>";
 		};
-		AE00C7B8126A24650068E69A /* NSC PC8739x */ = {
+		2C7719A414EA46B40005C3C7 /* ITEIT87x */ = {
 			isa = PBXGroup;
 			children = (
-				AE00C7E4126A253A0068E69A /* PC8739x.h */,
-				AE00C7E5126A253A0068E69A /* PC8739x.cpp */,
-				AE00C7BE126A24960068E69A /* PC8739x-Info.plist */,
-				AE00C7E2126A252E0068E69A /* PC8739x-pre106-Info.plist */,
+				2C7719A514EA46D60005C3C7 /* IT87x-Info.plist */,
+				2C7719A614EA46D60005C3C7 /* IT87x-pre106-Info.plist */,
+				2C7719A714EA46D60005C3C7 /* IT87x.cpp */,
+				2C7719A814EA46D60005C3C7 /* IT87x.h */,
 			);
-			name = "NSC PC8739x";
+			name = ITEIT87x;
 			sourceTree = "<group>";
 		};
-		AE212C5812678C3500145048 /* Winbond W836x */ = {
+		2C7719AA14EA47300005C3C7 /* WinbondW836x */ = {
 			isa = PBXGroup;
 			children = (
-				AE212C7712678DC700145048 /* W836x.h */,
-				AE212C7812678DC700145048 /* W836x.cpp */,
-				AE212C6B12678D3500145048 /* W836x-Info.plist */,
-				AE3124F912681966003930CB /* W836x-pre106-Info.plist */,
+				2C7719AB14EA47500005C3C7 /* W836x-Info.plist */,
+				2C7719AC14EA47500005C3C7 /* W836x-pre106-Info.plist */,
+				2C7719AD14EA47500005C3C7 /* W836x.cpp */,
+				2C7719AE14EA47500005C3C7 /* W836x.h */,
 			);
-			name = "Winbond W836x";
+			name = WinbondW836x;
+			sourceTree = "<group>";
+		};
+		2C7719B014EA476B0005C3C7 /* NSCPC8739x */ = {
+			isa = PBXGroup;
+			children = (
+				2C7719B114EA479A0005C3C7 /* PC8739x-Info.plist */,
+				2C7719B214EA479A0005C3C7 /* PC8739x-pre106-Info.plist */,
+				2C7719B314EA479A0005C3C7 /* PC8739x.cpp */,
+				2C7719B414EA479A0005C3C7 /* PC8739x.h */,
+			);
+			name = NSCPC8739x;
+			sourceTree = "<group>";
+		};
+		2C7719B614EA47C40005C3C7 /* NuvotonNCT677x */ = {
+			isa = PBXGroup;
+			children = (
+				2C7719B714EA47EA0005C3C7 /* NuvotonNCT677x-Info.plist */,
+				2C7719B814EA47EA0005C3C7 /* NuvotonNCT677x.cpp */,
+				2C7719B914EA47EA0005C3C7 /* NuvotonNCT677x.h */,
+			);
+			name = NuvotonNCT677x;
 			sourceTree = "<group>";
 		};
 		AE5BA55F1268D89100EA6AB9 /* NVClockX */ = {
@@ -470,7 +487,6 @@
 				AEF4C80412602EE700297B2B /* VirtualSMC.kext */,
 				AEABE460125F8E9300F08235 /* HWIntelThermal.kext */,
 				AE5BA5781268D94A00EA6AB9 /* NVClockX.kext */,
-				AED15A21126CBA9600455FE0 /* SuperIOFamily.kext */,
 				AED9E18E125FBEF400736A5A /* IT87x.kext */,
 				AE212C6A12678D3500145048 /* W836x.kext */,
 				AE00C785126A1F440068E69A /* F718x.kext */,
@@ -480,6 +496,7 @@
 				12D78B1E12BFDCFD002C61EA /* RadeonMonitor.kext */,
 				12CB0F3A12C087D400068B06 /* IntelCPUMonitor.kext */,
 				1D1CAB37136570A4003878D0 /* IntelCPUMonitor.kext */,
+				2C77199714EA44C30005C3C7 /* NuvotonNCT677x.kext */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -505,57 +522,29 @@
 			name = "Intel Thermal Monitor";
 			sourceTree = "<group>";
 		};
-		AED15A5B126CBD0100455FE0 /* Plugins */ = {
-			isa = PBXGroup;
-			children = (
-				AEE2926A125FBC050034E471 /* ITE IT87x */,
-				AE212C5812678C3500145048 /* Winbond W836x */,
-				AE00C780126A1F170068E69A /* Fintek F718x  */,
-				AE00C7B8126A24650068E69A /* NSC PC8739x */,
-			);
-			name = Plugins;
-			sourceTree = "<group>";
-		};
 		AED15A5C126CBD1C00455FE0 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
+				2C7719B614EA47C40005C3C7 /* NuvotonNCT677x */,
+				2C7719B014EA476B0005C3C7 /* NSCPC8739x */,
+				2C7719AA14EA47300005C3C7 /* WinbondW836x */,
+				2C7719A414EA46B40005C3C7 /* ITEIT87x */,
+				2C77199D14EA46850005C3C7 /* F718x */,
 				12CB0F4F12C0897700068B06 /* IntelCPUMonitor */,
 				12D78B1912BFDCBB002C61EA /* Radeon */,
 				12CBB19A12BDEB6800157341 /* X3100 */,
 				AEABE82A125F8F6000F08235 /* Intel Thermal Monitor */,
 				AE5BA55F1268D89100EA6AB9 /* NVClockX */,
-				AEE2925C125FBBB10034E471 /* SuperIO Family */,
 				AE840E5B128D8593006532CB /* ACPIMonitor */,
 			);
 			name = Plugins;
 			sourceTree = "<group>";
 		};
-		AEE2925C125FBBB10034E471 /* SuperIO Family */ = {
+		AEF4C7FE12602E9E00297B2B /* FakeSMC */ = {
 			isa = PBXGroup;
 			children = (
 				AED9E581125FC23900736A5A /* SuperIOFamily.h */,
 				AED9E582125FC23900736A5A /* SuperIOFamily.cpp */,
-				AED15A22126CBA9600455FE0 /* SuperIOFamily-Info.plist */,
-				AED15A5A126CBCEF00455FE0 /* SuperIOFamily-pre106-Info.plist */,
-				AED15A5B126CBD0100455FE0 /* Plugins */,
-			);
-			name = "SuperIO Family";
-			sourceTree = "<group>";
-		};
-		AEE2926A125FBC050034E471 /* ITE IT87x */ = {
-			isa = PBXGroup;
-			children = (
-				AED9E1BF125FC02F00736A5A /* IT87x.h */,
-				AED9E1C0125FC02F00736A5A /* IT87x.cpp */,
-				AED9E18F125FBEF400736A5A /* IT87x-Info.plist */,
-				AE3124F812681934003930CB /* IT87x-pre106-Info.plist */,
-			);
-			name = "ITE IT87x";
-			sourceTree = "<group>";
-		};
-		AEF4C7FE12602E9E00297B2B /* FakeSMC */ = {
-			isa = PBXGroup;
-			children = (
 				AEF4C81612602F2600297B2B /* FakeSMC.h */,
 				AEF4C81512602F2600297B2B /* FakeSMC.cpp */,
 				AEF4C80F12602F2600297B2B /* FakeSMCDevice.h */,
@@ -647,6 +636,22 @@
 			name = RadeonMonitor;
 			productName = RadeonMonitor;
 			productReference = 12D78B1E12BFDCFD002C61EA /* RadeonMonitor.kext */;
+			productType = "com.apple.product-type.kernel-extension.iokit";
+		};
+		2C77198D14EA44C30005C3C7 /* NuvotonNCT677x */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C77199214EA44C30005C3C7 /* Build configuration list for PBXNativeTarget "NuvotonNCT677x" */;
+			buildPhases = (
+				2C77198E14EA44C30005C3C7 /* Sources */,
+				2C77199114EA44C30005C3C7 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NuvotonNCT677x;
+			productName = PC8739x;
+			productReference = 2C77199714EA44C30005C3C7 /* NuvotonNCT677x.kext */;
 			productType = "com.apple.product-type.kernel-extension.iokit";
 		};
 		AE00C784126A1F440068E69A /* F718x */ = {
@@ -747,22 +752,6 @@
 			productReference = AEABE460125F8E9300F08235 /* HWIntelThermal.kext */;
 			productType = "com.apple.product-type.kernel-extension.iokit";
 		};
-		AED15A20126CBA9600455FE0 /* SuperIOFamily */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AED15A27126CBA9600455FE0 /* Build configuration list for PBXNativeTarget "SuperIOFamily" */;
-			buildPhases = (
-				AED15A1D126CBA9600455FE0 /* Sources */,
-				AED15A1F126CBA9600455FE0 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = SuperIOFamily;
-			productName = SuperIOFamily;
-			productReference = AED15A21126CBA9600455FE0 /* SuperIOFamily.kext */;
-			productType = "com.apple.product-type.kernel-extension.iokit";
-		};
 		AED9E18D125FBEF400736A5A /* IT87x */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AED9E192125FBEF400736A5A /* Build configuration list for PBXNativeTarget "IT87x" */;
@@ -799,7 +788,6 @@
 				1D1CAAC813657046003878D0 /* PBXTargetDependency */,
 				1D1CAAC613657046003878D0 /* PBXTargetDependency */,
 				1D1CAAC413657046003878D0 /* PBXTargetDependency */,
-				1D1CAACC1365704A003878D0 /* PBXTargetDependency */,
 			);
 			name = FakeSMC;
 			productName = VirtualSMC;
@@ -832,7 +820,6 @@
 				AEF4C80312602EE700297B2B /* FakeSMC */,
 				AEABE45F125F8E9300F08235 /* IntelThermal */,
 				12CB0F4512C0888E00068B06 /* IntelCPUMonitor */,
-				AED15A20126CBA9600455FE0 /* SuperIOFamily */,
 				AE840E52128D8544006532CB /* ACPIMonitor */,
 				AE5BA5771268D94A00EA6AB9 /* NVClockX */,
 				12D78B1D12BFDCFD002C61EA /* RadeonMonitor */,
@@ -841,6 +828,7 @@
 				AE212C6912678D3500145048 /* W836x */,
 				AE00C784126A1F440068E69A /* F718x */,
 				AE00C7BC126A24960068E69A /* PC8739x */,
+				2C77198D14EA44C30005C3C7 /* NuvotonNCT677x */,
 			);
 		};
 /* End PBXProject section */
@@ -861,6 +849,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C7719BB14EA482E0005C3C7 /* TigerAdditionals.cpp in Sources */,
 				12CB0F5C12C0899B00068B06 /* IntelCPUMonitor.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -883,12 +872,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2C77198E14EA44C30005C3C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C77199014EA44C30005C3C7 /* TigerAdditionals.cpp in Sources */,
+				2C7719BA14EA47EA0005C3C7 /* NuvotonNCT677x.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AE00C781126A1F440068E69A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE00C79D126A1FED0068E69A /* F718x.cpp in Sources */,
 				12D78B0D12BFDB58002C61EA /* TigerAdditionals.cpp in Sources */,
+				2C7719A214EA46A60005C3C7 /* F718x.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -896,8 +894,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE00C7E6126A253A0068E69A /* PC8739x.cpp in Sources */,
 				12D78B0C12BFDB58002C61EA /* TigerAdditionals.cpp in Sources */,
+				2C7719B514EA479A0005C3C7 /* PC8739x.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -905,8 +903,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE212C7912678DC700145048 /* W836x.cpp in Sources */,
 				12D78B0E12BFDB58002C61EA /* TigerAdditionals.cpp in Sources */,
+				2C7719AF14EA47500005C3C7 /* W836x.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -953,21 +951,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AED15A1D126CBA9600455FE0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AED15E45126CC21A00455FE0 /* SuperIOFamily.cpp in Sources */,
-				12D78B1112BFDB58002C61EA /* TigerAdditionals.cpp in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		AED9E18A125FBEF400736A5A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AED9E1C2125FC02F00736A5A /* IT87x.cpp in Sources */,
 				12D78B0F12BFDB58002C61EA /* TigerAdditionals.cpp in Sources */,
+				2C7719A914EA46D60005C3C7 /* IT87x.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -975,6 +964,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C7719BC14EA483A0005C3C7 /* SuperIOFamily.cpp in Sources */,
 				AEF4C81812602F2600297B2B /* FakeSMCKey.cpp in Sources */,
 				AEF4C81712602F2600297B2B /* FakeSMCDevice.cpp in Sources */,
 				AEF4C81C12602F2600297B2B /* FakeSMC.cpp in Sources */,
@@ -1034,11 +1024,6 @@
 			isa = PBXTargetDependency;
 			target = AED9E18D125FBEF400736A5A /* IT87x */;
 			targetProxy = 1D1CAAC913657046003878D0 /* PBXContainerItemProxy */;
-		};
-		1D1CAACC1365704A003878D0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AED15A20126CBA9600455FE0 /* SuperIOFamily */;
-			targetProxy = 1D1CAACB1365704A003878D0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1266,6 +1251,76 @@
 				SDKROOT = macosx10.4;
 				WRAPPER_EXTENSION = kext;
 				ZERO_LINK = YES;
+			};
+			name = "Release 10.4";
+		};
+		2C77199314EA44C30005C3C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INFOPLIST_FILE = "NuvotonNCT677x-Info.plist";
+				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
+				MODULE_NAME = org.mozodojo.NCT677x;
+				MODULE_VERSION = 1.0.0d1;
+				PREBINDING = NO;
+				PRODUCT_NAME = NuvotonNCT677x;
+				WRAPPER_EXTENSION = kext;
+			};
+			name = Debug;
+		};
+		2C77199414EA44C30005C3C7 /* Release 10.6 */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				INFOPLIST_FILE = "NuvotonNCT677x-Info.plist";
+				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
+				MODULE_NAME = org.mozodojo.NCT677x;
+				MODULE_VERSION = 1.0.0d1;
+				PREBINDING = NO;
+				PRODUCT_NAME = NuvotonNCT677x;
+				SDKROOT = macosx10.6;
+				WRAPPER_EXTENSION = kext;
+			};
+			name = "Release 10.6";
+		};
+		2C77199514EA44C30005C3C7 /* Release 10.5 */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				INFOPLIST_FILE = "NuvotonNCT677x-Info.plist";
+				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
+				MODULE_NAME = org.mozodojo.NCT677x;
+				MODULE_VERSION = 1.0.0d1;
+				PREBINDING = NO;
+				PRODUCT_NAME = NuvotonNCT677x;
+				WRAPPER_EXTENSION = kext;
+			};
+			name = "Release 10.5";
+		};
+		2C77199614EA44C30005C3C7 /* Release 10.4 */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				INFOPLIST_FILE = "NuvotonNCT677x-Info.plist";
+				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
+				MODULE_NAME = org.mozodojo.NCT677x;
+				MODULE_VERSION = 1.0.0d1;
+				PREBINDING = NO;
+				PRODUCT_NAME = NuvotonNCT677x;
+				SDKROOT = macosx10.4;
+				WRAPPER_EXTENSION = kext;
 			};
 			name = "Release 10.4";
 		};
@@ -1703,79 +1758,6 @@
 			};
 			name = "Release 10.6";
 		};
-		AED15A23126CBA9600455FE0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_MODEL_TUNING = G5;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				INFOPLIST_FILE = "SuperIOFamily-Info.plist";
-				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
-				MODULE_NAME = com.yourcompany.driver.SuperIOFamily;
-				MODULE_VERSION = 1.0.0d1;
-				PREBINDING = NO;
-				PRODUCT_NAME = SuperIOFamily;
-				WRAPPER_EXTENSION = kext;
-			};
-			name = Debug;
-		};
-		AED15A24126CBA9600455FE0 /* Release 10.6 */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_MODEL_TUNING = G5;
-				INFOPLIST_FILE = "SuperIOFamily-Info.plist";
-				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
-				MODULE_NAME = org.mozodojo.SuperIOFamily;
-				MODULE_VERSION = 1.0.0d1;
-				PREBINDING = NO;
-				PRODUCT_NAME = SuperIOFamily;
-				SDKROOT = macosx10.6;
-				WRAPPER_EXTENSION = kext;
-			};
-			name = "Release 10.6";
-		};
-		AED15A25126CBA9600455FE0 /* Release 10.5 */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				GCC_AUTO_VECTORIZATION = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_MODEL_TUNING = "";
-				INFOPLIST_FILE = "SuperIOFamily-pre106-Info.plist";
-				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
-				MODULE_NAME = org.mozodojo.SuperIOFamily;
-				MODULE_VERSION = 1.0.0d1;
-				PREBINDING = NO;
-				PRODUCT_NAME = SuperIOFamily;
-				SDKROOT = macosx10.5;
-				WRAPPER_EXTENSION = kext;
-			};
-			name = "Release 10.5";
-		};
-		AED15A26126CBA9600455FE0 /* Release 10.4 */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_MODEL_TUNING = G5;
-				INFOPLIST_FILE = "SuperIOFamily-pre106-Info.plist";
-				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
-				MODULE_NAME = org.mozodojo.SuperIOFamily;
-				MODULE_VERSION = 1.0.0d1;
-				PREBINDING = NO;
-				PRODUCT_NAME = SuperIOFamily;
-				SDKROOT = macosx10.4;
-				WRAPPER_EXTENSION = kext;
-			};
-			name = "Release 10.4";
-		};
 		AED9E190125FBEF400736A5A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2026,6 +2008,17 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = "Release 10.6";
 		};
+		2C77199214EA44C30005C3C7 /* Build configuration list for PBXNativeTarget "NuvotonNCT677x" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C77199314EA44C30005C3C7 /* Debug */,
+				2C77199414EA44C30005C3C7 /* Release 10.6 */,
+				2C77199514EA44C30005C3C7 /* Release 10.5 */,
+				2C77199614EA44C30005C3C7 /* Release 10.4 */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release 10.6";
+		};
 		AE00C78B126A1F440068E69A /* Build configuration list for PBXNativeTarget "F718x" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -2099,17 +2092,6 @@
 				AEABE465125F8E9300F08235 /* Release 10.6 */,
 				AEF4C8391260304100297B2B /* Release 10.5 */,
 				AEF4C83D1260304900297B2B /* Release 10.4 */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "Release 10.6";
-		};
-		AED15A27126CBA9600455FE0 /* Build configuration list for PBXNativeTarget "SuperIOFamily" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AED15A23126CBA9600455FE0 /* Debug */,
-				AED15A24126CBA9600455FE0 /* Release 10.6 */,
-				AED15A25126CBA9600455FE0 /* Release 10.5 */,
-				AED15A26126CBA9600455FE0 /* Release 10.4 */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = "Release 10.6";
