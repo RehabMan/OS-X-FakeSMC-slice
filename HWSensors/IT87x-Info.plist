@@ -13,11 +13,11 @@
 	<key>CFBundlePackageType</key>
 	<string>KEXT</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>1.0.3</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.0.0d1</string>
+	<string>1.0.3</string>
 	<key>IOKitPersonalities</key>
 	<dict>
 		<key>ITE IT87x Monitor Plugin</key>
@@ -26,8 +26,6 @@
 			<string>org.mozodojo.${PRODUCT_NAME}</string>
 			<key>IOClass</key>
 			<string>IT87x</string>
-			<key>IOProbeScore</key>
-			<string>1000</string>
 			<key>IOMatchCategory</key>
 			<string>IT87x</string>
 			<key>IOProviderClass</key>
@@ -36,34 +34,110 @@
 			<string>IOKit</string>
 			<key>Sensors Configuration</key>
 			<dict>
-				<key>TEMPIN0</key>
-				<string>System</string>
-				<key>TEMPIN1</key>
-				<string>Processor</string>
-				<key>TEMPIN2</key>
-				<string>Auxiliary</string>
-				<key>VIN0</key>
-				<string>Processor</string>
-				<key>VIN1</key>
-				<string>Memory</string>
-				<key>FANIN0</key>
-				<string></string>
-				<key>FANIN1</key>
-				<string></string>
-				<key>FANIN2</key>
-				<string></string>
-				<key>FANIN3</key>
-				<string></string>
-				<key>FANIN4</key>
-				<string></string>
+				<key>IT8718F</key>
+				<dict>
+					<key>SmartGuardian</key>
+					<true/>
+					<key>FANIN0</key>
+					<string></string>
+					<key>FANIN1</key>
+					<string></string>
+					<key>FANIN2</key>
+					<string></string>
+					<key>FANIN3</key>
+					<string></string>
+					<key>FANIN4</key>
+					<string></string>
+					<key>TEMPIN0</key>
+					<string>System</string>
+					<key>TEMPIN1</key>
+					<string>Processor</string>
+					<key>TEMPIN2</key>
+					<string>Auxiliary</string>
+					<key>VIN0</key>
+					<string>Processor</string>
+					<key>VIN1</key>
+					<string>Memory</string>
+				</dict>
+				<key>IT8728F</key>
+				<dict>
+					<key>FANIN0</key>
+					<string></string>
+					<key>FANIN1</key>
+					<string></string>
+					<key>FANIN2</key>
+					<string></string>
+					<key>FANIN3</key>
+					<string></string>
+					<key>FANIN4</key>
+					<string></string>
+					<key>TEMPIN0</key>
+					<string>System</string>
+					<key>TEMPIN1</key>
+					<string></string>
+					<key>TEMPIN2</key>
+					<string>Processor</string>
+					<key>VIN5</key>
+					<string>Processor</string>
+					<key>VIN6</key>
+					<string>Memory</string>
+				</dict>
+				<key>Default</key>
+				<dict>
+					<key>FANIN0</key>
+					<string></string>
+					<key>FANIN1</key>
+					<string></string>
+					<key>FANIN2</key>
+					<string></string>
+					<key>FANIN3</key>
+					<string></string>
+					<key>FANIN4</key>
+					<string></string>
+					<key>TEMPIN0</key>
+					<string>System</string>
+					<key>TEMPIN1</key>
+					<string>Processor</string>
+					<key>TEMPIN2</key>
+					<string>Auxiliary</string>
+					<key>VIN0</key>
+					<string>Processor</string>
+					<key>VIN1</key>
+					<string>Memory</string>
+				</dict>
+				<key>IT8720F</key>
+				<dict>
+					<key>FANIN0</key>
+					<string></string>
+					<key>FANIN1</key>
+					<string></string>
+					<key>FANIN2</key>
+					<string></string>
+					<key>FANIN3</key>
+					<string></string>
+					<key>FANIN4</key>
+					<string></string>
+					<key>TEMPIN0</key>
+					<string>System</string>
+					<key>TEMPIN1</key>
+					<string></string>
+					<key>TEMPIN2</key>
+					<string>Processor</string>
+					<key>VIN0</key>
+					<string>Processor</string>
+					<key>VIN1</key>
+					<string>Memory</string>
+				</dict>
 			</dict>
 		</dict>
 	</dict>
 	<key>OSBundleLibraries</key>
 	<dict>
-		<key>com.apple.kpi.libkern</key>
-		<string>10.0.0</string>
+		<key>org.mozodojo.SuperIOFamily</key>
+		<string>1.0.0d1</string>
 		<key>com.apple.kpi.iokit</key>
+		<string>10.0.0</string>
+		<key>com.apple.kpi.libkern</key>
 		<string>10.0.0</string>
 		<key>com.apple.kpi.mach</key>
 		<string>10.0.0</string>
@@ -71,8 +145,6 @@
 		<string>10.0.0</string>
 		<key>org.netkas.FakeSMC</key>
 		<string>3.1.0</string>
-		<key>org.mozodojo.SuperIOFamily</key>
-		<string>1.0.0d1</string>
 	</dict>
 	<key>OSBundleRequired</key>
 	<string>Root</string>

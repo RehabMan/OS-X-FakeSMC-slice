@@ -22,6 +22,103 @@
 	<dict>
 		<key>ITE IT87x Monitor Plugin</key>
 		<dict>
+			<key>Sensors Configuration</key>
+			<dict>
+				<key>IT8718F</key>
+				<dict>
+					<key>SmartGuardian</key>
+					<true/>
+					<key>FANIN0</key>
+					<string></string>
+					<key>FANIN1</key>
+					<string></string>
+					<key>FANIN2</key>
+					<string></string>
+					<key>FANIN3</key>
+					<string></string>
+					<key>FANIN4</key>
+					<string></string>
+					<key>TEMPIN0</key>
+					<string>System</string>
+					<key>TEMPIN1</key>
+					<string>Processor</string>
+					<key>TEMPIN2</key>
+					<string>Auxiliary</string>
+					<key>VIN0</key>
+					<string>Processor</string>
+					<key>VIN1</key>
+					<string>Memory</string>
+				</dict>
+				<key>IT8728F</key>
+				<dict>
+					<key>FANIN0</key>
+					<string></string>
+					<key>FANIN1</key>
+					<string></string>
+					<key>FANIN2</key>
+					<string></string>
+					<key>FANIN3</key>
+					<string></string>
+					<key>FANIN4</key>
+					<string></string>
+					<key>TEMPIN0</key>
+					<string>System</string>
+					<key>TEMPIN1</key>
+					<string></string>
+					<key>TEMPIN2</key>
+					<string>Processor</string>
+					<key>VIN5</key>
+					<string>Processor</string>
+					<key>VIN6</key>
+					<string>Memory</string>
+				</dict>
+				<key>Default</key>
+				<dict>
+					<key>FANIN0</key>
+					<string></string>
+					<key>FANIN1</key>
+					<string></string>
+					<key>FANIN2</key>
+					<string></string>
+					<key>FANIN3</key>
+					<string></string>
+					<key>FANIN4</key>
+					<string></string>
+					<key>TEMPIN0</key>
+					<string>System</string>
+					<key>TEMPIN1</key>
+					<string>Processor</string>
+					<key>TEMPIN2</key>
+					<string>Auxiliary</string>
+					<key>VIN0</key>
+					<string>Processor</string>
+					<key>VIN1</key>
+					<string>Memory</string>
+				</dict>
+				<key>IT8720F</key>
+				<dict>
+					<key>FANIN0</key>
+					<string></string>
+					<key>FANIN1</key>
+					<string></string>
+					<key>FANIN2</key>
+					<string></string>
+					<key>FANIN3</key>
+					<string></string>
+					<key>FANIN4</key>
+					<string></string>
+					<key>TEMPIN0</key>
+					<string>System</string>
+					<key>TEMPIN1</key>
+					<string></string>
+					<key>TEMPIN2</key>
+					<string>Processor</string>
+					<key>VIN0</key>
+					<string>Processor</string>
+					<key>VIN1</key>
+					<string>Memory</string>
+				</dict>
+			</dict>
 			<key>CFBundleIdentifier</key>
 			<string>org.mozodojo.${PRODUCT_NAME}</string>
 			<key>IOClass</key>
@@ -34,25 +131,6 @@
 			<string>IOResources</string>
 			<key>IOResourceMatch</key>
 			<string>IOKit</string>
-			<key>Sensors Configuration</key>
-			<dict>
-				<key>TEMPIN0</key>
-				<string>System</string>
-				<key>TEMPIN1</key>
-				<string></string>
-				<key>TEMPIN2</key>
-				<string>Processor</string>
-				<key>FANIN0</key>
-				<string></string>
-				<key>FANIN1</key>
-				<string></string>
-				<key>FANIN2</key>
-				<string></string>
-				<key>FANIN3</key>
-				<string></string>
-				<key>FANIN4</key>
-				<string></string>
-			</dict>
 		</dict>
 	</dict>
 	<key>OSBundleLibraries</key>

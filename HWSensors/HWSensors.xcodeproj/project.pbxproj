@@ -218,7 +218,7 @@
 		AE840E6C128D865F006532CB /* ACPIMonitor-pre106-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ACPIMonitor-pre106-Info.plist"; sourceTree = "<group>"; };
 		AE840E77128D869D006532CB /* ACPIMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACPIMonitor.h; sourceTree = "<group>"; };
 		AE840E78128D869D006532CB /* ACPIMonitor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ACPIMonitor.cpp; sourceTree = "<group>"; };
-		AEABE460125F8E9300F08235 /* IntelThermal.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IntelThermal.kext; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEABE460125F8E9300F08235 /* HWIntelThermal.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HWIntelThermal.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEABE462125F8E9300F08235 /* IntelThermal-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IntelThermal-Info.plist"; sourceTree = "<group>"; };
 		AEABE46A125F8F1F00F08235 /* Kernel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kernel.framework; path = /System/Library/Frameworks/Kernel.framework; sourceTree = "<absolute>"; };
 		AEABE82B125F8F6E00F08235 /* cpuid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpuid.h; sourceTree = "<group>"; };
@@ -231,7 +231,7 @@
 		AED9E1C0125FC02F00736A5A /* IT87x.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IT87x.cpp; sourceTree = "<group>"; };
 		AED9E581125FC23900736A5A /* SuperIOFamily.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperIOFamily.h; sourceTree = "<group>"; };
 		AED9E582125FC23900736A5A /* SuperIOFamily.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SuperIOFamily.cpp; sourceTree = "<group>"; };
-		AEF4C80412602EE700297B2B /* FakeSMC.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FakeSMC.kext; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEF4C80412602EE700297B2B /* VirtualSMC.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VirtualSMC.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEF4C80E12602F2600297B2B /* FakeSMCDevice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FakeSMCDevice.cpp; sourceTree = "<group>"; };
 		AEF4C80F12602F2600297B2B /* FakeSMCDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeSMCDevice.h; sourceTree = "<group>"; };
 		AEF4C81012602F2600297B2B /* FakeSMCKey.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FakeSMCKey.cpp; sourceTree = "<group>"; };
@@ -467,8 +467,8 @@
 		AEABE461125F8E9300F08235 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AEF4C80412602EE700297B2B /* FakeSMC.kext */,
-				AEABE460125F8E9300F08235 /* IntelThermal.kext */,
+				AEF4C80412602EE700297B2B /* VirtualSMC.kext */,
+				AEABE460125F8E9300F08235 /* HWIntelThermal.kext */,
 				AE5BA5781268D94A00EA6AB9 /* NVClockX.kext */,
 				AED15A21126CBA9600455FE0 /* SuperIOFamily.kext */,
 				AED9E18E125FBEF400736A5A /* IT87x.kext */,
@@ -744,7 +744,7 @@
 			);
 			name = IntelThermal;
 			productName = HWIntelThermal;
-			productReference = AEABE460125F8E9300F08235 /* IntelThermal.kext */;
+			productReference = AEABE460125F8E9300F08235 /* HWIntelThermal.kext */;
 			productType = "com.apple.product-type.kernel-extension.iokit";
 		};
 		AED15A20126CBA9600455FE0 /* SuperIOFamily */ = {
@@ -803,7 +803,7 @@
 			);
 			name = FakeSMC;
 			productName = VirtualSMC;
-			productReference = AEF4C80412602EE700297B2B /* FakeSMC.kext */;
+			productReference = AEF4C80412602EE700297B2B /* VirtualSMC.kext */;
 			productType = "com.apple.product-type.kernel-extension.iokit";
 		};
 /* End PBXNativeTarget section */
@@ -1639,7 +1639,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
-				GCC_VERSION = "";
+				GCC_VERSION = 4.2;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -1652,7 +1653,7 @@
 				GCC_AUTO_VECTORIZATION = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = "";
-				GCC_VERSION = "";
+				GCC_VERSION = 4.2;
 				GCC_WARN_PEDANTIC = NO;
 				GCC_WARN_SHADOW = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
@@ -1660,6 +1661,7 @@
 				GCC_WARN_UNUSED_PARAMETER = NO;
 				GCC_WARN_UNUSED_VALUE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				SDKROOT = macosx;
 				VALID_ARCHS = "i386 x86_64";
 			};
@@ -1856,7 +1858,8 @@
 				GCC_AUTO_VECTORIZATION = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = "";
-				GCC_VERSION = "";
+				GCC_VERSION = 4.2;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				SDKROOT = macosx10.5;
 				VALID_ARCHS = i386;
 			};
@@ -1926,8 +1929,8 @@
 				GCC_AUTO_VECTORIZATION = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = "";
-				GCC_VERSION = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				GCC_VERSION = 4.2;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OTHER_CFLAGS = "-DTIGER";
 				SDKROOT = macosx;
 				VALID_ARCHS = i386;
