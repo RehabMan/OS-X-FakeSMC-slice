@@ -404,8 +404,8 @@ bool FakeSMCDevice::init(IOService *platform, OSDictionary *properties)
 
 IOReturn FakeSMCDevice::setProperties(OSObject * properties)
 {
-    if (OSDictionary * message = OSDynamicCast(OSDictionary, properties))
-        if (OSString * name = OSDynamicCast(OSString, message->getObject(kFakeSMCDeviceUpdateKeyValue)))
+    if (OSDictionary * message = OSDynamicCast(OSDictionary, properties)) {
+        if (OSString * name = OSDynamicCast(OSString, message->getObject(kFakeSMCDeviceUpdateKeyValue))) {
             if (FakeSMCKey * key = getKey(name->getCStringNoCopy())) {
                 
                 values->setObject(key->getName(), OSData::withBytes(key->getValue(), key->getSize()));
@@ -414,8 +414,36 @@ IOReturn FakeSMCDevice::setProperties(OSObject * properties)
                 
                 return kIOReturnSuccess;
             }
+        }
+        else if ((OSString *)OSDynamicCast(OSString, message->getObject(kFakeSMCDevicePopulateValues))) {
+            if (OSCollectionIterator *iterator = OSCollectionIterator::withCollection(keys)) {
+                while (FakeSMCKey *key = OSDynamicCast(FakeSMCKey, iterator->getNextObject()))
+                    values->setObject(key->getName(), OSData::withBytes(key->getValue(), key->getSize()));
+                
+                iterator->release();
+            }
+            
+            this->setProperty(kFakeSMCDeviceValues, OSDictionary::withDictionary(values));
+            
+            return kIOReturnSuccess;
+        }
+        else if (OSArray * list = OSDynamicCast(OSArray, message->getObject(kFakeSMCDevicePopulateList))) {
+            if (OSIterator *iterator = OSCollectionIterator::withCollection(list)) {
+                while (const OSSymbol *name = (const OSSymbol *)iterator->getNextObject())
+                    if (FakeSMCKey * key = getKey(name->getCStringNoCopy())) 
+                        values->setObject(key->getName(), OSData::withBytes(key->getValue(), key->getSize()));
+                
+                this->setProperty(kFakeSMCDeviceValues, OSDictionary::withDictionary(values));
+                
+                iterator->release();
+                
+                return kIOReturnSuccess;
+            }
+        }
+    }
 	
 	return kIOReturnUnsupported;
+
 }
 
 
