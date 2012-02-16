@@ -3,7 +3,7 @@
  *  HWSensors
  *
  *  Created by Sergey on 19.12.10.
- *  Copyright 2010 mozodojo. All rights reserved.
+ *  Copyright 2010 Slice. All rights reserved.
  *
  */
 
@@ -86,6 +86,10 @@ bool X3100monitor::start(IOService * provider)
 		WarningLog("Can't locate fake SMC device, kext will not load");
 		return false;
 	}
+  
+  if (!VCard) {
+    return false;
+  }
 	
 	IOMemoryDescriptor *		theDescriptor;
 	IOPhysicalAddress bar = (IOPhysicalAddress)((VCard->configRead32(kMCHBAR)) & ~0xf);
