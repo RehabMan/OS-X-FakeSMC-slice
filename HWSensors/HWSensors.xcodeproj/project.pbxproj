@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 45;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -48,7 +48,6 @@
 		AE5BA6631268DCDE00EA6AB9 /* w83781d.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE5BA64A1268DCDE00EA6AB9 /* w83781d.cpp */; };
 		AE5BA6641268DCDE00EA6AB9 /* w83l785r.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE5BA64B1268DCDE00EA6AB9 /* w83l785r.cpp */; };
 		AE5BA6651268DCDE00EA6AB9 /* xf86i2c.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE5BA64C1268DCDE00EA6AB9 /* xf86i2c.cpp */; };
-		AE840E6D128D865F006532CB /* ACPIMonitor-pre106-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE840E6C128D865F006532CB /* ACPIMonitor-pre106-Info.plist */; };
 		AE840E79128D869D006532CB /* ACPIMonitor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE840E78128D869D006532CB /* ACPIMonitor.cpp */; };
 		AED49C89126CC71E00840536 /* backend.h in Headers */ = {isa = PBXBuildFile; fileRef = AE5BA6381268DCDE00EA6AB9 /* backend.h */; };
 		AED49C8A126CC71E00840536 /* f75375.h in Headers */ = {isa = PBXBuildFile; fileRef = AE5BA63C1268DCDE00EA6AB9 /* f75375.h */; };
@@ -142,7 +141,6 @@
 		1260E40716C3DBC0006515EB /* ICHSMBus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICHSMBus.h; sourceTree = "<group>"; };
 		1260E40816C3DBC0006515EB /* SMBus.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SMBus.c; sourceTree = "<group>"; };
 		1260E42316C3DC3A006515EB /* Andigilog.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Andigilog.kext; sourceTree = BUILT_PRODUCTS_DIR; };
-		1260E42416C3DC3A006515EB /* Andigilog-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Andigilog-Info.plist"; sourceTree = "<group>"; };
 		12A8DAF612C0A6B600A49048 /* ATICard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ATICard.cpp; sourceTree = "<group>"; };
 		12A8DAF712C0A6B600A49048 /* ATICard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATICard.h; sourceTree = "<group>"; };
 		12A8DAF912C0A6C200A49048 /* radeon_chipinfo_gen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = radeon_chipinfo_gen.h; sourceTree = SOURCE_ROOT; };
@@ -229,7 +227,7 @@
 		AED9E18E125FBEF400736A5A /* IT87x.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IT87x.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		AED9E581125FC23900736A5A /* SuperIOFamily.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperIOFamily.h; sourceTree = "<group>"; };
 		AED9E582125FC23900736A5A /* SuperIOFamily.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SuperIOFamily.cpp; sourceTree = "<group>"; };
-		AEF4C80412602EE700297B2B /* FakeSMC.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FakeSMC.kext; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEF4C80412602EE700297B2B /* VirtualSMC.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VirtualSMC.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEF4C80E12602F2600297B2B /* FakeSMCDevice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FakeSMCDevice.cpp; sourceTree = "<group>"; };
 		AEF4C80F12602F2600297B2B /* FakeSMCDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeSMCDevice.h; sourceTree = "<group>"; };
 		AEF4C81012602F2600297B2B /* FakeSMCKey.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FakeSMCKey.cpp; sourceTree = "<group>"; };
@@ -498,14 +496,13 @@
 				AEABE469125F8F0700F08235 /* Sources */,
 				AEABE461125F8E9300F08235 /* Products */,
 				AEABE46A125F8F1F00F08235 /* Kernel.framework */,
-				1260E42416C3DC3A006515EB /* Andigilog-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
 		AEABE461125F8E9300F08235 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AEF4C80412602EE700297B2B /* FakeSMC.kext */,
+				AEF4C80412602EE700297B2B /* VirtualSMC.kext */,
 				AE5BA5781268D94A00EA6AB9 /* NVClockX.kext */,
 				AED9E18E125FBEF400736A5A /* IT87x.kext */,
 				AE212C6A12678D3500145048 /* W836x.kext */,
@@ -802,7 +799,7 @@
 			);
 			name = FakeSMC;
 			productName = VirtualSMC;
-			productReference = AEF4C80412602EE700297B2B /* FakeSMC.kext */;
+			productReference = AEF4C80412602EE700297B2B /* VirtualSMC.kext */;
 			productType = "com.apple.product-type.kernel-extension.iokit";
 		};
 /* End PBXNativeTarget section */
@@ -811,10 +808,11 @@
 		AEABE453125F8E7400F08235 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = mozodojo;
 			};
 			buildConfigurationList = AEABE456125F8E7400F08235 /* Build configuration list for PBXProject "HWSensors" */;
-			compatibilityVersion = "Xcode 3.1";
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -857,7 +855,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE840E6D128D865F006532CB /* ACPIMonitor-pre106-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1057,17 +1054,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				INFOPLIST_FILE = "Andigilog-Info.plist";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "SMBusSensors/Andigilog-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = com.yourcompany.driver.Andigilog;
 				MODULE_VERSION = 1.0.0d1;
-				PREBINDING = NO;
 				PRODUCT_NAME = Andigilog;
 				WRAPPER_EXTENSION = kext;
 			};
@@ -1077,15 +1074,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
-				INFOPLIST_FILE = "Andigilog-Info.plist";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "SMBusSensors/Andigilog-Info.plist";
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.dukzcry.driver.Andigilog;
 				MODULE_VERSION = 1.0.0d1;
-				PREBINDING = NO;
 				PRODUCT_NAME = Andigilog;
 				WRAPPER_EXTENSION = kext;
 			};
@@ -1095,14 +1092,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
-				INFOPLIST_FILE = "Andigilog-Info.plist";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "SMBusSensors/Andigilog-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = com.yourcompany.driver.Andigilog;
 				MODULE_VERSION = 1.0.0d1;
-				PREBINDING = NO;
 				PRODUCT_NAME = Andigilog;
 				WRAPPER_EXTENSION = kext;
 			};
@@ -1112,14 +1109,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
-				INFOPLIST_FILE = "Andigilog-Info.plist";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "SMBusSensors/Andigilog-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = com.yourcompany.driver.Andigilog;
 				MODULE_VERSION = 1.0.0d1;
-				PREBINDING = NO;
 				PRODUCT_NAME = Andigilog;
 				WRAPPER_EXTENSION = kext;
 			};
@@ -1129,17 +1126,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "IntelCPUMonitor-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = com.yourcompany.driver.IntelCPUMonitor;
 				MODULE_VERSION = 1.0.1;
-				PREBINDING = NO;
 				PRODUCT_NAME = IntelCPUMonitor;
 				WRAPPER_EXTENSION = kext;
 			};
@@ -1153,16 +1150,16 @@
 					i386,
 					x86_64,
 				);
+				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_AUTO_VECTORIZATION = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "IntelCPUMonitor-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.slice.IntelCPUMonitor;
 				MODULE_VERSION = 1.0.1;
-				PREBINDING = NO;
 				PRODUCT_NAME = IntelCPUMonitor;
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = "Release 10.6";
@@ -1171,18 +1168,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_AUTO_VECTORIZATION = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "IntelCPUMonitor-pre106-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = com.yourcompany.driver.IntelCPUMonitor;
 				MODULE_VERSION = 1.0.1;
-				PREBINDING = NO;
 				PRODUCT_NAME = IntelCPUMonitor;
-				SDKROOT = macosx10.5;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = "Release 10.5";
@@ -1191,16 +1188,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "IntelCPUMonitor-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = com.yourcompany.driver.IntelCPUMonitor;
 				MODULE_VERSION = 1.0.1;
-				PREBINDING = NO;
 				PRODUCT_NAME = IntelCPUMonitor;
-				SDKROOT = macosx10.4;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = "Release 10.4";
@@ -1209,17 +1206,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "X3100-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = com.yourcompany.driver.X3100;
 				MODULE_VERSION = 1.0.0d1;
-				PREBINDING = NO;
 				PRODUCT_NAME = X3100;
 				WRAPPER_EXTENSION = kext;
 			};
@@ -1229,15 +1226,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "X3100-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.slice.sensor.X3100;
 				MODULE_VERSION = 1.0.0d1;
-				PREBINDING = NO;
 				PRODUCT_NAME = X3100;
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = "Release 10.6";
@@ -1246,18 +1243,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_AUTO_VECTORIZATION = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "X3100-pre106-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.slice.sensor.X3100;
 				MODULE_VERSION = 1.0.0d1;
-				PREBINDING = NO;
 				PRODUCT_NAME = X3100;
-				SDKROOT = macosx10.5;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = "Release 10.5";
@@ -1266,16 +1263,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "X3100-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = com.yourcompany.driver.X3100;
 				MODULE_VERSION = 1.0.0d1;
-				PREBINDING = NO;
 				PRODUCT_NAME = X3100;
-				SDKROOT = macosx10.4;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = "Release 10.4";
@@ -1283,17 +1280,17 @@
 		12D78B2112BFDCFF002C61EA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "RadeonMonitor-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = com.yourcompany.driver.RadeonMonitor;
 				MODULE_VERSION = 1.0.0d1;
-				PREBINDING = NO;
 				PRODUCT_NAME = RadeonMonitor;
 				WRAPPER_EXTENSION = kext;
 				ZERO_LINK = YES;
@@ -1303,15 +1300,15 @@
 		12D78B2212BFDCFF002C61EA /* Release 10.6 */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_MODEL_TUNING = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "RadeonMonitor-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.slice.RadeonMonitor;
 				MODULE_VERSION = 1.0.0d1;
-				PREBINDING = NO;
 				PRODUCT_NAME = RadeonMonitor;
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = kext;
 				ZERO_LINK = YES;
 			};
@@ -1320,17 +1317,17 @@
 		12D78B2312BFDCFF002C61EA /* Release 10.5 */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_AUTO_VECTORIZATION = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "RadeonMonitor-pre106-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.slice.RadeonMonitor;
 				MODULE_VERSION = 1.0.0d1;
-				PREBINDING = NO;
 				PRODUCT_NAME = RadeonMonitor;
-				SDKROOT = macosx10.5;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = kext;
 				ZERO_LINK = YES;
 			};
@@ -1339,14 +1336,14 @@
 		12D78B2412BFDCFF002C61EA /* Release 10.4 */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "RadeonMonitor-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.slice.RadeonMonitor;
 				MODULE_VERSION = 1.0.0d1;
-				PREBINDING = NO;
 				PRODUCT_NAME = RadeonMonitor;
-				SDKROOT = macosx10.4;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = kext;
 				ZERO_LINK = YES;
 			};
@@ -1356,17 +1353,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "NuvotonNCT677x-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.mozodojo.NCT677x;
 				MODULE_VERSION = 1.0.0d1;
-				PREBINDING = NO;
 				PRODUCT_NAME = NuvotonNCT677x;
 				WRAPPER_EXTENSION = kext;
 			};
@@ -1376,15 +1373,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_MODEL_TUNING = G5;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "NuvotonNCT677x-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.mozodojo.NCT677x;
 				MODULE_VERSION = 1.0.0d1;
-				PREBINDING = NO;
 				PRODUCT_NAME = NuvotonNCT677x;
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = "Release 10.6";
@@ -1393,13 +1390,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_MODEL_TUNING = G5;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "NuvotonNCT677x-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.mozodojo.NCT677x;
 				MODULE_VERSION = 1.0.0d1;
-				PREBINDING = NO;
 				PRODUCT_NAME = NuvotonNCT677x;
 				WRAPPER_EXTENSION = kext;
 			};
@@ -1409,15 +1406,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_MODEL_TUNING = G5;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "NuvotonNCT677x-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.mozodojo.NCT677x;
 				MODULE_VERSION = 1.0.0d1;
-				PREBINDING = NO;
 				PRODUCT_NAME = NuvotonNCT677x;
-				SDKROOT = macosx10.4;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = "Release 10.4";
@@ -1426,17 +1423,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "F718x-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = com.yourcompany.driver.F718x;
 				MODULE_VERSION = 1.0.0d1;
-				PREBINDING = NO;
 				PRODUCT_NAME = F718x;
 				WRAPPER_EXTENSION = kext;
 			};
@@ -1446,15 +1443,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_MODEL_TUNING = G5;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "F718x-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.mozodojo.F718x;
 				MODULE_VERSION = 1.0.0d1;
-				PREBINDING = NO;
 				PRODUCT_NAME = F718x;
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = "Release 10.6";
@@ -1463,17 +1460,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_AUTO_VECTORIZATION = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "F718x-pre106-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.mozodojo.F718x;
 				MODULE_VERSION = 1.0.0d1;
-				PREBINDING = NO;
 				PRODUCT_NAME = F718x;
-				SDKROOT = macosx10.5;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = "Release 10.5";
@@ -1482,15 +1479,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_MODEL_TUNING = G5;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "F718x-pre106-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.mozodojo.F718x;
 				MODULE_VERSION = 1.0.0d1;
-				PREBINDING = NO;
 				PRODUCT_NAME = F718x;
-				SDKROOT = macosx10.4;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = "Release 10.4";
@@ -1499,17 +1496,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "PC8739x-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = com.yourcompany.driver.PC8739x;
 				MODULE_VERSION = 1.0.0d1;
-				PREBINDING = NO;
 				PRODUCT_NAME = PC8739x;
 				WRAPPER_EXTENSION = kext;
 			};
@@ -1519,15 +1516,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_MODEL_TUNING = G5;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "PC8739x-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.slice.PC8739x;
 				MODULE_VERSION = 1.0.0d1;
-				PREBINDING = NO;
 				PRODUCT_NAME = PC8739x;
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = "Release 10.6";
@@ -1536,13 +1533,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_MODEL_TUNING = G5;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "PC8739x-pre106-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.slice.PC8739x;
 				MODULE_VERSION = 1.0.0d1;
-				PREBINDING = NO;
 				PRODUCT_NAME = PC8739x;
 				WRAPPER_EXTENSION = kext;
 			};
@@ -1552,15 +1549,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_MODEL_TUNING = G5;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "PC8739x-pre106-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.slice.PC8739x;
 				MODULE_VERSION = 1.0.0d1;
-				PREBINDING = NO;
 				PRODUCT_NAME = PC8739x;
-				SDKROOT = macosx10.4;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = "Release 10.4";
@@ -1569,17 +1566,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "W836x-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = com.yourcompany.driver.W836x;
 				MODULE_VERSION = 1.0.0d1;
-				PREBINDING = NO;
 				PRODUCT_NAME = W836x;
 				WRAPPER_EXTENSION = kext;
 			};
@@ -1589,15 +1586,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_MODEL_TUNING = G5;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "W836x-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.mozodojo.W836x;
 				MODULE_VERSION = 1.0.0d1;
-				PREBINDING = NO;
 				PRODUCT_NAME = W836x;
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = "Release 10.6";
@@ -1606,17 +1603,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_AUTO_VECTORIZATION = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "W836x-pre106-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.mozodojo.W836x;
 				MODULE_VERSION = 1.0.0d1;
-				PREBINDING = NO;
 				PRODUCT_NAME = W836x;
-				SDKROOT = macosx10.5;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = "Release 10.5";
@@ -1625,16 +1622,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_MODEL_TUNING = G5;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "W836x-pre106-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				MODULE_NAME = org.mozodojo.W836x;
 				MODULE_VERSION = 1.0.0d1;
-				PREBINDING = NO;
 				PRODUCT_NAME = W836x;
-				SDKROOT = macosx10.4;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = "Release 10.4";
@@ -1643,17 +1640,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "NVClockX-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = com.yourcompany.driver.NVClockX;
 				MODULE_VERSION = 1.0.1d1;
-				PREBINDING = NO;
 				PRODUCT_NAME = NVClockX;
 				WRAPPER_EXTENSION = kext;
 			};
@@ -1663,15 +1660,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_MODEL_TUNING = G5;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "NVClockX-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.usrsse2.NVClockX;
 				MODULE_VERSION = 1.0.1d1;
-				PREBINDING = NO;
 				PRODUCT_NAME = NVClockX;
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = "Release 10.6";
@@ -1680,17 +1677,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_AUTO_VECTORIZATION = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "NVClockX-pre106-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.usrsse2.NVClockX;
 				MODULE_VERSION = 1.0.1d1;
-				PREBINDING = NO;
 				PRODUCT_NAME = NVClockX;
-				SDKROOT = macosx10.5;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = "Release 10.5";
@@ -1699,16 +1696,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "NVClockX-pre106-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.usrsse2.NVClockX;
 				MODULE_VERSION = 1.0.1d1;
-				PREBINDING = NO;
 				PRODUCT_NAME = NVClockX;
-				SDKROOT = macosx10.4;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = "Release 10.4";
@@ -1717,17 +1714,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "ACPIMonitor-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = com.yourcompany.driver.ACPIMonitor;
 				MODULE_VERSION = 1.0.0d1;
-				PREBINDING = NO;
 				PRODUCT_NAME = ACPIMonitor;
 				WRAPPER_EXTENSION = kext;
 			};
@@ -1737,15 +1734,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_MODEL_TUNING = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "ACPIMonitor-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.slice.ACPIMonitor;
 				MODULE_VERSION = 1.0.0d1;
-				PREBINDING = NO;
 				PRODUCT_NAME = ACPIMonitor;
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = "Release 10.6";
@@ -1754,18 +1751,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_AUTO_VECTORIZATION = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "ACPIMonitor-pre106-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.slice.ACPIMonitor;
 				MODULE_VERSION = 1.0.0d1;
-				PREBINDING = NO;
 				PRODUCT_NAME = ACPIMonitor;
-				SDKROOT = macosx10.5;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = "Release 10.5";
@@ -1774,16 +1771,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "ACPIMonitor-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.slice.ACPIMonitor;
 				MODULE_VERSION = 1.0.0d1;
-				PREBINDING = NO;
 				PRODUCT_NAME = ACPIMonitor;
-				SDKROOT = macosx10.4;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = "Release 10.4";
@@ -1791,8 +1788,9 @@
 		AEABE454125F8E7400F08235 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = NO;
-				GCC_VERSION = 4.2;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				SDKROOT = macosx;
 			};
@@ -1801,15 +1799,12 @@
 		AEABE455125F8E7400F08235 /* Release 10.6 */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					i386,
-					x86_64,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = YES;
 				GCC_AUTO_VECTORIZATION = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = "";
-				GCC_VERSION = "";
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_PEDANTIC = NO;
 				GCC_WARN_SHADOW = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
@@ -1827,17 +1822,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "IT87x-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = com.yourcompany.driver.IT87x;
 				MODULE_VERSION = 1.0.0d1;
-				PREBINDING = NO;
 				PRODUCT_NAME = IT87x;
 				WRAPPER_EXTENSION = kext;
 			};
@@ -1847,16 +1842,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "IT87x-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.mozodojo.IT87x;
 				MODULE_VERSION = 1.0.0d1;
-				PREBINDING = NO;
 				PRODUCT_NAME = IT87x;
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = kext;
 				ZERO_LINK = NO;
 			};
@@ -1866,17 +1861,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "FakeSMC-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
-				MODULE_NAME = com.yourcompany.driver.VirtualSMC;
+				MODULE_NAME = org.netkas.FakeSMC;
 				MODULE_VERSION = 1.0.0d1;
-				PREBINDING = NO;
 				PRODUCT_NAME = VirtualSMC;
 				WRAPPER_EXTENSION = kext;
 			};
@@ -1885,15 +1880,16 @@
 		AEF4C80712602EE700297B2B /* Release 10.6 */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_AUTO_VECTORIZATION = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "FakeSMC-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.netkas.FakeSMC;
 				MODULE_VERSION = 3.2.0;
-				PREBINDING = NO;
 				PRODUCT_NAME = FakeSMC;
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx;
 				ZERO_LINK = NO;
 			};
 			name = "Release 10.6";
@@ -1901,14 +1897,14 @@
 		AEF4C8381260304100297B2B /* Release 10.5 */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = YES;
 				GCC_AUTO_VECTORIZATION = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = "";
-				GCC_VERSION = 4.2;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				SDKROOT = macosx10.5;
+				SDKROOT = macosx;
 				VALID_ARCHS = i386;
 			};
 			name = "Release 10.5";
@@ -1917,18 +1913,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_AUTO_VECTORIZATION = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "IT87x-pre106-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.mozodojo.IT87x;
 				MODULE_VERSION = 1.0.0d1;
-				PREBINDING = NO;
 				PRODUCT_NAME = IT87x;
-				SDKROOT = macosx10.5;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = kext;
 				ZERO_LINK = NO;
 			};
@@ -1937,18 +1933,18 @@
 		AEF4C83B1260304100297B2B /* Release 10.5 */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_AUTO_VECTORIZATION = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "FakeSMC-pre106-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.netkas.FakeSMC;
 				MODULE_VERSION = 3.1.0d1;
-				PREBINDING = NO;
 				PRODUCT_NAME = FakeSMC;
-				SDKROOT = macosx10.5;
+				SDKROOT = macosx;
 				ZERO_LINK = NO;
 			};
 			name = "Release 10.5";
@@ -1956,13 +1952,13 @@
 		AEF4C83C1260304900297B2B /* Release 10.4 */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = i386;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
 				GCC_AUTO_VECTORIZATION = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = "";
-				GCC_VERSION = 4.2;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OTHER_CFLAGS = "-DTIGER";
 				SDKROOT = macosx;
@@ -1974,17 +1970,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "IT87x-pre106-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				MODULE_NAME = org.mozodojo.IT87x;
 				MODULE_VERSION = 1.0.0d1;
-				PREBINDING = NO;
 				PRODUCT_NAME = IT87x;
-				SDKROOT = macosx10.4;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = kext;
 				ZERO_LINK = NO;
 			};
@@ -1993,16 +1989,16 @@
 		AEF4C83F1260304900297B2B /* Release 10.4 */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "FakeSMC-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.netkas.FakeSMC;
 				MODULE_VERSION = 1.0.0d1;
-				PREBINDING = NO;
 				PRODUCT_NAME = FakeSMC;
-				SDKROOT = macosx10.4;
+				SDKROOT = macosx;
 				ZERO_LINK = NO;
 			};
 			name = "Release 10.4";

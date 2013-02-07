@@ -110,7 +110,7 @@ IOService* PC8739x::probe(IOService *provider, SInt32 *score)
 	if (super::probe(provider, score) != this) 
 		return 0;
 	
-	InfoLog("slice (C) 2011");
+	InfoLog("slice (c) 2011");
 	
 	return this;
 }

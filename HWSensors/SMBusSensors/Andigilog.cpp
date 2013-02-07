@@ -80,9 +80,9 @@ bool Andigilog::start(IOService *provider)
     }
   
   if (!(fakeSMC = waitForService(serviceMatching(kFakeSMCDeviceService)))) {
-		WarningLog("Can't locate fake SMC device, kext will not load");
+//		WarningLog("Can't locate fake SMC device, kext will not load");
 		return false;
-    
+  }
     
     i2cNub->retain();
     i2cNub->open(this);
@@ -105,10 +105,11 @@ bool Andigilog::start(IOService *provider)
     memcpy(&Pwm, &pwm, sizeof(Pwm));
     
     if (fRoot) {
-        vendor = vendorID(OSDynamicCast(OSString, fRoot->getProperty("oem-mb-manufacturer") ?
+  /*      vendor = vendorID(OSDynamicCast(OSString, fRoot->getProperty("oem-mb-manufacturer") ?
                                         fRoot->getProperty("oem-mb-manufacturer") :
                                         (fRoot->getProperty("oem-manufacturer") ?
-                                         fRoot->getProperty("oem-manufacturer") : NULL)));
+                                         fRoot->getProperty("oem-manufacturer") : NULL))); */
+      vendor = NULL;
         str = OSDynamicCast(OSString, fRoot->getProperty("oem-mb-product") ?
                                 fRoot->getProperty("oem-mb-product") :
                                 (fRoot->getProperty("oem-product-name") ?

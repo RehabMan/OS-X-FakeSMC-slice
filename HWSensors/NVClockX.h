@@ -13,8 +13,8 @@
 #define kGenericPCIDevice "IOPCIDevice"
 #define kNVGraphicsDevice "IONDRVDevice"
 
-NVClock nvclock;
-NVCard* nv_card;
+//NVClock nvclock;
+//NVCard* nv_card;
 
 class NVClockX : public IOService
 {
