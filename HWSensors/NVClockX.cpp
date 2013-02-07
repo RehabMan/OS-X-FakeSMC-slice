@@ -2,8 +2,11 @@
  *  NVClockX.cpp
  *  HWSensors
  *
+ *  Based on NVClock Darwin port by alphamerik (C) 2010
+ *  
+ *
  *  Created by mozo on 15/10/10.
- *  Copyright 2010 mozodojo. All rights reserved.
+ *  Copyright 2010 usr-sse2. All rights reserved.
  *
  */
 
@@ -24,6 +27,11 @@
 
 #define super IOService
 OSDefineMetaClassAndStructors(NVClockX, IOService)
+
+NVClock nvclock;
+NVCard* nv_card;
+
+bool is_digit(char c);
 
 bool is_digit(char c)
 {
@@ -117,8 +125,16 @@ int NVClockX::probeDevices()
 
 bool NVClockX::addSensor(const char* key, const char* type, unsigned char size, int index)
 {
-	if (kIOReturnSuccess == fakeSMC->callPlatformFunction(kFakeSMCAddKeyHandler, false, (void *)key, (void *)type, (void *)size, (void *)this))
-		return sensors->setObject(key, OSNumber::withNumber(index, 32));
+	if (kIOReturnSuccess == fakeSMC->callPlatformFunction(kFakeSMCAddKeyHandler, false, (void *)key, (void *)type, (void *)size, (void *)this)) {
+		if (sensors->setObject(key, OSNumber::withNumber(index, 32))) {
+            return true;
+        } else {
+            WarningLog("%s key sensor not set", key);
+            return 0;
+        }
+    }
+            
+	WarningLog("%s key sensor not added", key);
 	
 	return 0;
 }

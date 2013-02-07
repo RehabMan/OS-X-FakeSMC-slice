@@ -95,6 +95,15 @@ bool ATICard::getRadeonInfo()
 		}
 		devices++;
 	}
+  if ((devID & 0xF000) == 0x6000) {
+    rinfo->device_id = devID;
+    rinfo->ChipFamily = CHIP_FAMILY_Evergreen;
+    family = CHIP_FAMILY_Evergreen;
+    rinfo->igp = 0;
+    rinfo->is_mobility = false;
+    IOLog(" Common ATI Radeon like Evergreen DID=%04lx\n", (long unsigned int)devID);
+    return true;    
+  }
 
 	InfoLog("Unknown DeviceID!\n");
 	return false;

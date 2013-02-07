@@ -30,7 +30,6 @@
 		2C7719BA14EA47EA0005C3C7 /* NuvotonNCT677x.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C7719B814EA47EA0005C3C7 /* NuvotonNCT677x.cpp */; };
 		2C7719BB14EA482E0005C3C7 /* TigerAdditionals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12D78B0912BFDB58002C61EA /* TigerAdditionals.cpp */; };
 		2C7719BC14EA483A0005C3C7 /* SuperIOFamily.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AED9E582125FC23900736A5A /* SuperIOFamily.cpp */; };
-		AE36CBD6125FA80800E1EBA5 /* IntelThermal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE36CBD5125FA80800E1EBA5 /* IntelThermal.cpp */; };
 		AE5BA5B71268D99C00EA6AB9 /* NVClockX.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE5BA5B61268D99C00EA6AB9 /* NVClockX.cpp */; };
 		AE5BA64F1268DCDE00EA6AB9 /* adt7473.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE5BA6361268DCDE00EA6AB9 /* adt7473.cpp */; };
 		AE5BA6501268DCDE00EA6AB9 /* backend.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE5BA6371268DCDE00EA6AB9 /* backend.cpp */; };
@@ -63,13 +62,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1D1CAAB713657031003878D0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AEABE453125F8E7400F08235 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AEABE45F125F8E9300F08235;
-			remoteInfo = IntelThermal;
-		};
 		1D1CAAB913657034003878D0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AEABE453125F8E7400F08235 /* Project object */;
@@ -136,6 +128,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1260E3C216C3D42A006515EB /* IntelThermal.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = IntelThermal.kext; path = "/Users/slice/Projects/fakesmc/HWSensors/build/Release 10.6/IntelThermal.kext"; sourceTree = "<absolute>"; };
 		12A8DAF612C0A6B600A49048 /* ATICard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ATICard.cpp; sourceTree = "<group>"; };
 		12A8DAF712C0A6B600A49048 /* ATICard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATICard.h; sourceTree = "<group>"; };
 		12A8DAF912C0A6C200A49048 /* radeon_chipinfo_gen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = radeon_chipinfo_gen.h; sourceTree = SOURCE_ROOT; };
@@ -160,7 +153,7 @@
 		12D78B3012BFDDAC002C61EA /* Radeon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Radeon.cpp; sourceTree = "<group>"; };
 		12FC8BF814EA58C5008FFCE2 /* definitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = definitions.h; sourceTree = "<group>"; };
 		1D17EA5A134CE6F200518913 /* gpl.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gpl.txt; sourceTree = "<group>"; };
-		1D1CAB37136570A4003878D0 /* IntelCPUMonitor.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IntelCPUMonitor.kext; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D1CAB37136570A4003878D0 /* IntelCPUMonitor.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = IntelCPUMonitor.kext; path = "/Users/slice/Projects/fakesmc/HWSensors/build/Release 10.6/IntelCPUMonitor.kext"; sourceTree = "<absolute>"; };
 		1D30B1E0134B90E0004F0967 /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
 		2C77199714EA44C30005C3C7 /* NuvotonNCT677x.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NuvotonNCT677x.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C77199E14EA46A60005C3C7 /* F718x-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "F718x-Info.plist"; sourceTree = "<group>"; };
@@ -185,9 +178,6 @@
 		AE00C785126A1F440068E69A /* F718x.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = F718x.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE00C7BD126A24960068E69A /* PC8739x.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PC8739x.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE212C6A12678D3500145048 /* W836x.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = W836x.kext; sourceTree = BUILT_PRODUCTS_DIR; };
-		AE3124F71268189A003930CB /* IntelThermal-pre106-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "IntelThermal-pre106-Info.plist"; sourceTree = "<group>"; };
-		AE36CBD3125FA7F900E1EBA5 /* IntelThermal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntelThermal.h; sourceTree = "<group>"; };
-		AE36CBD5125FA80800E1EBA5 /* IntelThermal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IntelThermal.cpp; sourceTree = "<group>"; };
 		AE5BA5781268D94A00EA6AB9 /* NVClockX.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NVClockX.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE5BA5791268D94A00EA6AB9 /* NVClockX-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NVClockX-Info.plist"; sourceTree = "<group>"; };
 		AE5BA5B51268D99C00EA6AB9 /* NVClockX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NVClockX.h; sourceTree = "<group>"; };
@@ -221,8 +211,6 @@
 		AE840E6C128D865F006532CB /* ACPIMonitor-pre106-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ACPIMonitor-pre106-Info.plist"; sourceTree = "<group>"; };
 		AE840E77128D869D006532CB /* ACPIMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACPIMonitor.h; sourceTree = "<group>"; };
 		AE840E78128D869D006532CB /* ACPIMonitor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ACPIMonitor.cpp; sourceTree = "<group>"; };
-		AEABE460125F8E9300F08235 /* IntelThermal.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IntelThermal.kext; sourceTree = BUILT_PRODUCTS_DIR; };
-		AEABE462125F8E9300F08235 /* IntelThermal-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IntelThermal-Info.plist"; sourceTree = "<group>"; };
 		AEABE46A125F8F1F00F08235 /* Kernel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kernel.framework; path = /System/Library/Frameworks/Kernel.framework; sourceTree = "<absolute>"; };
 		AEABE82B125F8F6E00F08235 /* cpuid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpuid.h; sourceTree = "<group>"; };
 		AED9E18E125FBEF400736A5A /* IT87x.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IT87x.kext; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -486,7 +474,6 @@
 			isa = PBXGroup;
 			children = (
 				AEF4C80412602EE700297B2B /* FakeSMC.kext */,
-				AEABE460125F8E9300F08235 /* IntelThermal.kext */,
 				AE5BA5781268D94A00EA6AB9 /* NVClockX.kext */,
 				AED9E18E125FBEF400736A5A /* IT87x.kext */,
 				AE212C6A12678D3500145048 /* W836x.kext */,
@@ -496,7 +483,6 @@
 				12CBB17E12BDEA9F00157341 /* X3100.kext */,
 				12D78B1E12BFDCFD002C61EA /* RadeonMonitor.kext */,
 				12CB0F3A12C087D400068B06 /* IntelCPUMonitor.kext */,
-				1D1CAB37136570A4003878D0 /* IntelCPUMonitor.kext */,
 				2C77199714EA44C30005C3C7 /* NuvotonNCT677x.kext */,
 			);
 			name = Products;
@@ -512,17 +498,6 @@
 			name = Sources;
 			sourceTree = "<group>";
 		};
-		AEABE82A125F8F6000F08235 /* Intel Thermal Monitor */ = {
-			isa = PBXGroup;
-			children = (
-				AE36CBD3125FA7F900E1EBA5 /* IntelThermal.h */,
-				AE36CBD5125FA80800E1EBA5 /* IntelThermal.cpp */,
-				AEABE462125F8E9300F08235 /* IntelThermal-Info.plist */,
-				AE3124F71268189A003930CB /* IntelThermal-pre106-Info.plist */,
-			);
-			name = "Intel Thermal Monitor";
-			sourceTree = "<group>";
-		};
 		AED15A5C126CBD1C00455FE0 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
@@ -534,7 +509,6 @@
 				12CB0F4F12C0897700068B06 /* IntelCPUMonitor */,
 				12D78B1912BFDCBB002C61EA /* Radeon */,
 				12CBB19A12BDEB6800157341 /* X3100 */,
-				AEABE82A125F8F6000F08235 /* Intel Thermal Monitor */,
 				AE5BA55F1268D89100EA6AB9 /* NVClockX */,
 				AE840E5B128D8593006532CB /* ACPIMonitor */,
 			);
@@ -751,7 +725,7 @@
 			);
 			name = IntelThermal;
 			productName = HWIntelThermal;
-			productReference = AEABE460125F8E9300F08235 /* IntelThermal.kext */;
+			productReference = 1260E3C216C3D42A006515EB /* IntelThermal.kext */;
 			productType = "com.apple.product-type.kernel-extension.iokit";
 		};
 		AED9E18D125FBEF400736A5A /* IT87x */ = {
@@ -780,7 +754,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				1D1CAAB813657031003878D0 /* PBXTargetDependency */,
 				1D1CAABA13657034003878D0 /* PBXTargetDependency */,
 				1D1CAABC1365703A003878D0 /* PBXTargetDependency */,
 				1D1CAABE1365703C003878D0 /* PBXTargetDependency */,
@@ -948,7 +921,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE36CBD6125FA80800E1EBA5 /* IntelThermal.cpp in Sources */,
 				12D78B1512BFDB58002C61EA /* TigerAdditionals.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -977,11 +949,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1D1CAAB813657031003878D0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AEABE45F125F8E9300F08235 /* IntelThermal */;
-			targetProxy = 1D1CAAB713657031003878D0 /* PBXContainerItemProxy */;
-		};
 		1D1CAABA13657034003878D0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 12CB0F4512C0888E00068B06 /* IntelCPUMonitor */;
@@ -1713,7 +1680,7 @@
 				GCC_AUTO_VECTORIZATION = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = "";
-				GCC_VERSION = 4.2;
+				GCC_VERSION = "";
 				GCC_WARN_PEDANTIC = NO;
 				GCC_WARN_SHADOW = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
@@ -1826,10 +1793,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
+				GCC_AUTO_VECTORIZATION = NO;
 				INFOPLIST_FILE = "FakeSMC-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.netkas.FakeSMC;
-				MODULE_VERSION = 3.1.0d1;
+				MODULE_VERSION = 3.2.0;
 				PREBINDING = NO;
 				PRODUCT_NAME = FakeSMC;
 				SDKROOT = macosx10.6;

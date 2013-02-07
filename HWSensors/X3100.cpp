@@ -3,7 +3,7 @@
  *  HWSensors
  *
  *  Created by Sergey on 19.12.10.
- *  Copyright 2010 Slice. All rights reserved.
+ *  Copyright 2010 slice. All rights reserved.
  *
  */
 
@@ -201,7 +201,7 @@ IOReturn X3100monitor::callPlatformFunction(const OSSymbol *functionName, bool w
 				value = INVID8(TR1);
 			}				
 			
-			t = 140 - value;
+			t = 150 - value;
 			bcopy(&t, data, 2);
 			
 			return kIOReturnSuccess;

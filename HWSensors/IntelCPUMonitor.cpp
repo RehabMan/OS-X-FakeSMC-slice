@@ -18,6 +18,50 @@
 #define WarningLog(string, args...) do { IOLog (LogPrefix "[Warning] " string "\n", ## args); } while(0)
 #define InfoLog(string, args...)	do { IOLog (LogPrefix string "\n", ## args); } while(0)
 
+void IntelState(__unused void * magic)
+{
+	UInt32 i = cpu_number();
+	if(i < MaxCpuCount) {
+		UInt64 msr = rdmsr64(MSR_IA32_PERF_STS);
+		GlobalState[i].Control = msr & 0xFFFF;
+    GlobalState64 = msr;
+	}
+}
+
+void IntelThermal(__unused void * magic)
+{
+	UInt32 i = cpu_number();
+	if(i < MaxCpuCount) {
+		UInt64 msr = rdmsr64(MSR_IA32_THERM_STATUS);
+		if (msr & 0x80000000) {
+			GlobalThermalValue[i] = (msr >> 16) & 0x7F;
+			GlobalThermalValueIsObsolete[i]=false;
+		}
+	}
+}
+
+void IntelState2(__unused void * magic)
+{
+	UInt32 i = cpu_number() >> 1;
+	if(i < MaxCpuCount) {
+		UInt64 msr = rdmsr64(MSR_IA32_PERF_STS);
+		GlobalState[i].Control = msr & 0xFFFF;
+    GlobalState64 = msr;
+	}
+}
+
+void IntelThermal2(__unused void * magic)
+{
+	UInt32 i = cpu_number() >> 1;
+	if(i < MaxCpuCount) {
+		UInt64 msr = rdmsr64(MSR_IA32_THERM_STATUS);
+		if (msr & 0x80000000) {
+			GlobalThermalValue[i] = (msr >> 16) & 0x7F;
+			GlobalThermalValueIsObsolete[i]=false;
+		}
+	}
+}
+
 #define super IOService
 OSDefineMetaClassAndStructors(IntelCPUMonitor, IOService)
 
@@ -33,6 +77,7 @@ bool IntelCPUMonitor::init(OSDictionary *properties)
 
 IOService* IntelCPUMonitor::probe(IOService *provider, SInt32 *score)
 {
+  bool RPltSet = false;
 	DebugLog("Probing...");
 	
 	if (super::probe(provider, score) != this) return 0;
@@ -72,6 +117,12 @@ IOService* IntelCPUMonitor::probe(IOService *provider, SInt32 *score)
 		IOLog("User defined TjMax=%d\n", (int)userTjmax);
 		snprintf(Platform, 4, "n");
 	}
+  if (OSString* name = OSDynamicCast(OSString, getProperty("RPlt"))) {
+    snprintf(Platform, 4, "%s", name ? name->getCStringNoCopy() : "n");
+    if ((Platform[0] != 'n') &&  (Platform[0] != 'N')) {
+      RPltSet = true;
+    }    
+  }
 	// Calculating Tjmax
 	switch (CpuFamily)
 	{
@@ -82,7 +133,11 @@ IOService* IntelCPUMonitor::probe(IOService *provider, SInt32 *score)
 				case CPU_MODEL_PENTIUM_M:
 					tjmax[0] = 100; 
 					CpuMobile = true;
+          if (!RPltSet) {
 					snprintf(Platform, 4, "M70");
+            RPltSet = true;
+          }
+					
 					break;
 					
 				case CPU_MODEL_YONAH:
@@ -90,7 +145,10 @@ IOService* IntelCPUMonitor::probe(IOService *provider, SInt32 *score)
 					if (rdmsr64(0x17) & (1<<28)) {
 						CpuMobile = true;
 					}
+          if (!RPltSet) {
 					snprintf(Platform, 4, "K22");
+            RPltSet = true;
+          }
 					break;					
 					
 				case CPU_MODEL_MEROM: // Intel Core (65nm)
@@ -128,7 +186,10 @@ IOService* IntelCPUMonitor::probe(IOService *provider, SInt32 *score)
             default:
               tjmax[0] = 85; break;
           } 
+          if (!RPltSet) {
 					snprintf(Platform, 4, "M75");
+            RPltSet = true;
+          }
 					break;
 					
 				case CPU_MODEL_PENRYN: // Intel Core (45nm)
@@ -136,7 +197,10 @@ IOService* IntelCPUMonitor::probe(IOService *provider, SInt32 *score)
 					if (rdmsr64(0x17) & (1<<28)) { //mobile
 						CpuMobile = true;
 						tjmax[0] = 105; 
+            if (!RPltSet) {
 						snprintf(Platform, 4, "M82");
+              RPltSet = true;
+            }
 					}
 					else {
 						switch (CpuStepping) {
@@ -147,7 +211,10 @@ IOService* IntelCPUMonitor::probe(IOService *provider, SInt32 *score)
 								tjmax[0] = 100;
 								break;
 						}						
+            if (!RPltSet) {
 						snprintf(Platform, 4, "K36");
+              RPltSet = true;
+            }
 					}
           
 					break;
@@ -162,7 +229,10 @@ IOService* IntelCPUMonitor::probe(IOService *provider, SInt32 *score)
             default:
               tjmax[0] = 90; break;
           } 
+          if (!RPltSet) {
 					snprintf(Platform, 4, "T9");
+            RPltSet = true;
+          }
 					break;
 					
 				case CPU_MODEL_NEHALEM:
@@ -173,7 +243,10 @@ IOService* IntelCPUMonitor::probe(IOService *provider, SInt32 *score)
 				case CPU_MODEL_NEHALEM_EX:
 				case CPU_MODEL_WESTMERE_EX:
 				case CPU_MODEL_SANDY_BRIDGE:
+				case CPU_MODEL_IVY_BRIDGE:
 				case CPU_MODEL_JAKETOWN:
+        case CPU_MODEL_HASWELL:
+        case CPU_MODEL_IVY_BRIDGE_E5:
 				{
 					nehalemArch = true;
 					
@@ -196,7 +269,19 @@ IOService* IntelCPUMonitor::probe(IOService *provider, SInt32 *score)
 			return 0;
 	}
   
-  SandyArch = (CpuModel == CPU_MODEL_SANDY_BRIDGE) || (CpuModel == CPU_MODEL_JAKETOWN);
+  SandyArch = (CpuModel == CPU_MODEL_SANDY_BRIDGE) || (CpuModel == CPU_MODEL_JAKETOWN)  || (CpuModel == CPU_MODEL_IVY_BRIDGE);
+  if (!RPltSet) {
+    if (SandyArch) {
+      if (CpuMobile) {
+        snprintf(Platform, 4, "k90i");
+      } else {
+        snprintf(Platform, 4, "k62");
+      }
+    } else {
+      snprintf(Platform, 4, "T9");
+    }
+    RPltSet = true;
+  }
 	
 	if (userTjmax != 0) {
 		for (int i = 0; i < count; i++)
@@ -226,19 +311,12 @@ bool IntelCPUMonitor::start(IOService * provider)
 	
 	if (!super::start(provider)) return false;
 	
-    if (!(fakeSMC = waitForService(serviceMatching(kFakeSMCDeviceService)))) {
+  if (!(fakeSMC = waitForService(serviceMatching(kFakeSMCDeviceService)))) {
 		WarningLog("Can't locate fake SMC device, kext will not load");
 		return false;
 	}
 	
 	InfoLog("CPU family 0x%x, model 0x%x, stepping 0x%x, cores %d, threads %d", cpuid_info()->cpuid_family, cpuid_info()->cpuid_model, cpuid_info()->cpuid_stepping, count, cpuid_info()->thread_count);
-/*	BusClock = (gPEClockFrequencyInfo.bus_frequency_max_hz >> 2);
-	if (BusClock >= (420 * Mega)) {
-		BusClock >>=2;
-	}
-	BusClock = BusClock / Mega;
-	FSBClock = gPEClockFrequencyInfo.bus_frequency_max_hz  / Mega;
- */
   rootNode = fromPath("/efi/platform", gIODTPlane);
   if (rootNode) {
     tmpNumber = OSDynamicCast(OSData, rootNode->getProperty("FSBFrequency"));
@@ -284,14 +362,35 @@ bool IntelCPUMonitor::start(IOService * provider)
 		if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCAddKeyHandler, false, (void *)keyF, (void *)"freq", (void *)2, this)) {
 			WarningLog("Can't add Frequency key to fake SMC device");
 		}	
-		if (!nehalemArch){  // Voltage is impossible for Nehalem
+    
+    if (!nehalemArch and !SandyArch){ 
+      char keyM[5];
+      snprintf(keyM, 5, KEY_FORMAT_NON_APPLE_CPU_MULTIPLIER, i);
+      if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCAddKeyHandler, false, (void *)keyM, (void *)TYPE_UI16, (void *)2, this)) {
+        WarningLog("Can't add key to fake SMC device");
+        //return false;
+      }
+    }
+    
+		if (!nehalemArch || SandyArch){  // Voltage is impossible for Nehalem
 			char keyV[5];
 			snprintf(keyV, 5, "VC0C");
 			if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCAddKeyHandler, false, (void *)keyV, (void *)"fp2e", (void *)2, this)) {
 				WarningLog("Can't add Voltage key to fake SMC device");
 			}
 		}	
+    /* but Voltage is possible on SandyBridge!
+     * MSR_PERF_STATUS[47:32] * (float) 1/(2^13). //there is a mistake in Intel datasheet [37:32]
+     * MSR 00000198  0000-2764-0000-2800
+     */
 	}
+  if (nehalemArch || SandyArch) 
+    if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCAddKeyHandler, false, (void *)KEY_NON_APPLE_PACKAGE_MULTIPLIER, (void *)TYPE_UI16, (void *)2, this)) {
+      WarningLog("Can't add key to fake SMC device");
+      //return false;
+    }
+  
+  
 	if (Platform[0] != 'n') {
 		if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCAddKeyHandler, false, (void *)"RPlt", (void *)"ch8*", (void *)6, this)) {
 			WarningLog("Can't add Platform key to fake SMC device");
@@ -347,7 +446,7 @@ IOReturn IntelCPUMonitor::callPlatformFunction(const OSSymbol *functionName, boo
 		const char* name = (const char*)param1;
 		void * data = param2;
 		//UInt32 size = (UInt64)param3;
-		UInt16 value;
+		UInt16 value=0;
 		int index;
 		//InfoLog("key %s is called", name);
 		if (name && data) {
@@ -367,6 +466,37 @@ IOReturn IntelCPUMonitor::callPlatformFunction(const OSSymbol *functionName, boo
 						return kIOReturnBadArgument;						
 					}
 					break;
+        case 'M':
+          
+          if (strcasecmp(name, KEY_NON_APPLE_PACKAGE_MULTIPLIER) == 0) {
+            value = GlobalState[0].Control;
+            if (SandyArch) 
+              value = (value >> 8) * 10;
+            else if(nehalemArch)
+              value = value * 10;
+            else value=0;
+            
+            
+            bcopy(&value, data, 2);
+            
+            return kIOReturnSuccess;    
+          }
+          else    
+          {
+            index = name[2] >= 'A' ? name[2] - 65 : name[2] - 48;
+            if (index >= 0 && index < count) 
+            {
+              
+              value = GlobalState[index].Control;
+              
+              float mult = float(((value >> 8) & 0x1f)) + 0.5f * float((value >> 14) & 1);
+              value = mult * 10.0f;
+              
+              
+            }
+            else return kIOReturnBadArgument;
+          }  
+          break;
 				case 'F':
 					if ((name[1] != 'R') || (name[2] != 'C')) {
 						return kIOReturnBadArgument;
@@ -387,11 +517,11 @@ IOReturn IntelCPUMonitor::callPlatformFunction(const OSSymbol *functionName, boo
 					}
 					bcopy(Platform, data, 4);
 					return kIOReturnSuccess;
-
+          
 				default:
 					return kIOReturnBadArgument;
 			}
-				
+      
 			bcopy(&value, data, 2);		
 			return kIOReturnSuccess;
 		}
@@ -423,7 +553,10 @@ IOReturn IntelCPUMonitor::loopTimerEvent(void)
 
 	for (UInt32 i = 0; i < count; i++) 
 	{
-		if (!nehalemArch  || SandyArch) {
+    if (SandyArch) {
+      Frequency[i] = IntelGetFrequency(GlobalState[i].FID);
+			Voltage = GlobalState64 >> 35;
+    } else if (!nehalemArch) {
 			Frequency[i] = IntelGetFrequency(GlobalState[i].FID);
 			Voltage = IntelGetVoltage(GlobalState[i].VID);
 		} else {
@@ -443,22 +576,19 @@ UInt32 IntelCPUMonitor::IntelGetFrequency(UInt8 fid) {
 		multiplier = fid & 0x1f;					// = 0x08
 		int half = (fid & 0x40)?1:0;							// = 0x01
 		int dfsb = (fid & 0x80)?1:0;							// = 0x00
-		UInt32 fsb = BusClock >> dfsb;
-		UInt32 halffsb = BusClock >> 1;						// = 200
+		UInt32 fsb = (UInt32)BusClock >> dfsb;
+		UInt32 halffsb = (UInt32)BusClock >> 1;						// = 200
 		frequency = (multiplier * fsb);			// = 3200
 		return (frequency + (half * halffsb));	// = 3200 + 200 = 3400
 	}
 	else {
 		multiplier = fid & 0x3f;
-		frequency = (multiplier * BusClock);
-//		int half = gPEClockFrequencyInfo.bus_to_cpu_rate_num;
-//		half = half?half:1;
-//		frequency = (multiplier * BusClock) * gPEClockFrequencyInfo.bus_to_cpu_rate_den / half;
+		frequency = (multiplier * (UInt32)BusClock);
 		return (frequency);	
 	}
 }
 
-UInt32 IntelCPUMonitor::IntelGetVoltage(UInt8 vid) {  //no nehalem
+UInt32 IntelCPUMonitor::IntelGetVoltage(UInt16 vid) {  //no nehalem
 	switch (CpuModel) {
 		case CPU_MODEL_PENTIUM_M:
 			return 700 + ((vid & 0x3F) << 4);

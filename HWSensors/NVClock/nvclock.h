@@ -24,6 +24,8 @@
 
 #include <IOKit/IOLib.h>
 
+#define Debug FALSE
+
 #define LogPrefix "NVClockX: "
 #define DebugLog(string, args...)	do { if (Debug) { IOLog (LogPrefix "[Debug] " string "\n", ## args); } } while(0)
 #define WarningLog(string, args...) do { IOLog (LogPrefix "[Warning] " string "\n", ## args); } while(0)
@@ -197,7 +199,12 @@ typedef struct {
 	short device_id;
 	short subvendor_id;
 	int arch; /* Architecture NV10, NV15, NV20 ..; for internal use only as we don't list all architectures */
-	unsigned int reg_address;
+#if __LP64__
+    mach_vm_address_t reg_address;
+#else
+    vm_address_t reg_address;
+#endif
+	//unsigned int reg_address;
 	char *dev_name; /* /dev/mem or /dev/nvidiaX */
 	unsigned short devbusfn;
 	int irq; /* We might need the IRQ to sync NV-CONTROL info with nvclock */
@@ -257,7 +264,7 @@ typedef struct {
 
 	/* Hardware monitoring */
 	short num_busses; /* Number of available i2c busses */
-	I2CBusPtr busses[3]; /* I2C busses on the videocard; this bus is needed for communication with sensor chips */
+	I2CBusPtr busses[4]; /* I2C busses on the videocard; this bus is needed for communication with sensor chips */
 	I2CDevPtr sensor; /* When a sensor chip is available, this device pointer can be used to access it */
 	char *sensor_name; /* Name of the sensor; although sensor contains the name too, we add sensor_name because of the builtin temperature sensor used on various NV4x cards */
 	int (*get_board_temp)(I2CDevPtr dev); /* Temperature of the sensor chip or for example the ram chips */

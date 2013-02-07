@@ -25,6 +25,12 @@
 #include "backend.h"
 #include "nvclock.h"
 
+char* get_bus_type(void);
+char* get_agp_fw_status(void);
+char* get_agp_sba_status(void);
+char* get_agp_status(void);
+char* get_memory_type(void);
+
 /* This list isn't used much for the speed ranges anymore */
 /* Mainly mobile gpu speeds are missing */
 static const struct pci_ids ids[] =
@@ -648,10 +654,15 @@ static const struct pci_ids ids[] =
 	
 	// 0EE0 - 0EFF: none yet
 	// 0F00 - 0F3F: none yet
+    { 0x0F00, "GF100 [GeForce GT630]", DESKTOP },
 	
 	// 1040 - 107F
+  { 0x1040, "GF100 [GeForce GT 520]", DESKTOP },
+  { 0x104A, "GF100 [GeForce GT 610]", DESKTOP },
 	{ 0x1050, "GF100 [GeForce GT 520M]", MOBILE },
+  { 0x1051, "GF100 [GeForce GT 520MX]", MOBILE },
 	{ 0x1054, "GF100 [GeForce GT 410M]", MOBILE },
+	{ 0x1055, "GF100 [GeForce GT 410M]", MOBILE },
 	{ 0x1056, "GF100 [NVS 4200M]", MOBILE },
 	{ 0x1057, "GF100 [NVS 4200M]", MOBILE },
 	{ 0x107F, "GF100 [NVIDIA GF119-ES]", DESKTOP },
@@ -668,6 +679,7 @@ static const struct pci_ids ids[] =
 	
 	// 1200 - 127F
 	{ 0x1200, "GF100 [GeForce GTX 560 Ti]", DESKTOP },
+    { 0x1201, "GF100 [GeForce GTX 560]", DESKTOP },
 	{ 0x1244, "GF100 [GeForce GTX 550 Ti]", DESKTOP },
 	{ 0x1245, "GF100 [GeForce GTS 450]", DESKTOP },
 	{ 0x1251, "GF100 [N12E-GS-A1]", DESKTOP },
@@ -770,6 +782,7 @@ int get_gpu_arch(int device_id)
 			arch = NV4B; /* 7600 */
 			break;
 		case 0x190:
+ //       case 0x606:    
 			arch = NV50; /* 8800 'NV50 / G80' */
 			break;
 	//	case 0xa30: /* GT240 */	
@@ -797,7 +810,11 @@ int get_gpu_arch(int device_id)
 			break;
 		case 0x600: /* G92 */
 		case 0x610: /* G92 */
-			arch = NV50; //G84; //NV50;
+      if (device_id == 0x606) {
+        arch = NV50;
+      } else {
+        arch = G84;
+      }
 			break;
 		case 0x620: /* 9600GT 'G94' */
 			arch = G94;
@@ -867,6 +884,7 @@ int get_gpu_arch(int device_id)
 			}
 			break;
 		default:
+            printf("Unknown GPU %s\n", nv_card->card_name);
 			arch = UNKNOWN;
 	}
 	return arch;

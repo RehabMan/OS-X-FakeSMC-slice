@@ -51,6 +51,8 @@ TODO:
 struct nvbios *read_bios(const char *file);
 static struct nvbios *parse_bios(char *rom);
 int load_bios_prom(char *data);
+int verify_bios(char *rom);
+int load_bios_pramin(char *data);
 
 typedef struct
 {
@@ -369,7 +371,7 @@ static int bit_init_script_table_get_next_entry(char *rom, int offset)
 			offset += 13;
 			break;
 		default:
-			WarningLog("Unhandled init script entry with id '%c' at %04x", id, offset);
+	//		WarningLog("Unhandled init script entry with id '%c' at %04x", id, offset);
 			return 0;
 	}
 
@@ -879,8 +881,8 @@ static void parse_bit_structure(struct nvbios *bios, char *rom, unsigned int bit
 
 static unsigned int locate(char *rom, const char *str, int offset)
 {
-	int size = strlen(str);
-	int i;
+	unsigned int size = (unsigned int)strlen(str);
+	unsigned int i;
 	char* data;
 
 	/* We shouldn't assume this is allways 64kB */

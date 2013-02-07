@@ -100,8 +100,9 @@ void FakeSMCDevice::applesmc_fill_info(struct AppleSMCStatus *s)
 		return;
 	}
 		
-	if (debug)
+	if (debug) {
 		WarningLog("key info not found %c%c%c%c, length - %x", s->key[0], s->key[1], s->key[2], s->key[3],  s->data_len);
+  }
 	
 	s->status_1e=0x84;
 }
@@ -429,8 +430,8 @@ IOReturn FakeSMCDevice::setProperties(OSObject * properties)
         }
         else if (OSArray * list = OSDynamicCast(OSArray, message->getObject(kFakeSMCDevicePopulateList))) {
             if (OSIterator *iterator = OSCollectionIterator::withCollection(list)) {
-                while (const OSSymbol *name = (const OSSymbol *)iterator->getNextObject())
-                    if (FakeSMCKey * key = getKey(name->getCStringNoCopy())) 
+                while (const OSSymbol *keyName = (const OSSymbol *)iterator->getNextObject())
+                    if (FakeSMCKey * key = getKey(keyName->getCStringNoCopy())) 
                         values->setObject(key->getName(), OSData::withBytes(key->getValue(), key->getSize()));
                 
                 this->setProperty(kFakeSMCDeviceValues, OSDictionary::withDictionary(values));

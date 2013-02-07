@@ -137,6 +137,7 @@ bool RadeonMonitor::init(OSDictionary *properties)
 void RadeonMonitor::stop (IOService* provider)
 {
 	sensors->flushCollection();
+	Card->release();  //?
 	
 	super::stop(provider);
 }
@@ -144,6 +145,7 @@ void RadeonMonitor::stop (IOService* provider)
 void RadeonMonitor::free ()
 {
 	sensors->release();
+//	Card->release();
 	
 	super::free();
 }

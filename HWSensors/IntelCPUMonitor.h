@@ -31,8 +31,7 @@ extern "C" int cpu_number(void);
 
 struct PState 
 {
-	union 
-	{
+	union {
 		UInt16 Control;
 		struct 
 		{
@@ -43,11 +42,13 @@ struct PState
 	
 	UInt8	DID;		// DID
 	UInt8	CID;		// Compare ID
+//  UInt32 Max;
 };
 
 static UInt8				GlobalThermalValue[MaxCpuCount];
 static bool					GlobalThermalValueIsObsolete[MaxCpuCount];
 static PState				GlobalState[MaxCpuCount];
+static UInt64       GlobalState64; //it is for package
 
 const UInt32 Kilo = 1000; //Slice
 const UInt32 Mega = Kilo * 1000;
@@ -58,49 +59,6 @@ inline void IntelWaitForSts(void) {
 	while (rdmsr64(MSR_IA32_PERF_STS) & (1 << 21)) { if (!inline_timeout--) break; }
 }
 
-
-void IntelState(__unused void * magic)
-{
-	UInt32 i = cpu_number();
-	if(i < MaxCpuCount) {
-		UInt64 msr = rdmsr64(MSR_IA32_PERF_STS);
-		GlobalState[i].Control = msr & 0xFFFF;
-	}
-}
-
-void IntelThermal(__unused void * magic)
-{
-	UInt32 i = cpu_number();
-	if(i < MaxCpuCount) {
-		UInt64 msr = rdmsr64(MSR_IA32_THERM_STATUS);
-		if (msr & 0x80000000) {
-			GlobalThermalValue[i] = (msr >> 16) & 0x7F;
-			GlobalThermalValueIsObsolete[i]=false;
-		}
-	}
-}
-
-void IntelState2(__unused void * magic)
-{
-	UInt32 i = cpu_number() >> 1;
-	if(i < MaxCpuCount) {
-		UInt64 msr = rdmsr64(MSR_IA32_PERF_STS);
-		GlobalState[i].Control = msr & 0xFFFF;
-	}
-}
-
-void IntelThermal2(__unused void * magic)
-{
-	UInt32 i = cpu_number() >> 1;
-	if(i < MaxCpuCount) {
-		UInt64 msr = rdmsr64(MSR_IA32_THERM_STATUS);
-		if (msr & 0x80000000) {
-			GlobalThermalValue[i] = (msr >> 16) & 0x7F;
-			GlobalThermalValueIsObsolete[i]=false;
-		}
-	}
-}
-
 class IntelCPUMonitor : public IOService
 {
     OSDeclareDefaultStructors(IntelCPUMonitor)   
@@ -109,36 +67,38 @@ public:
 	UInt32					Voltage;
 
 private:
-	bool					Active;	
-	bool					LoopLock;
+	bool				  	Active;	
+	bool					  LoopLock;
 	UInt32					BusClock;
 	UInt32					FSBClock;
 	UInt32					CpuFamily;
 	UInt32					CpuModel; 
 	UInt32					CpuStepping;
-	bool					CpuMobile;
-	UInt8					count;
-	UInt8					threads;
-	UInt8					tjmax[MaxCpuCount];
+	bool					  CpuMobile;
+	UInt8					  count;
+	UInt8					  threads;
+	UInt8					  tjmax[MaxCpuCount];
 	UInt32					userTjmax;
-	char*					key[MaxCpuCount];
-	char					Platform[4];
-	bool					nehalemArch;
-  bool          SandyArch;
-	IOService*				fakeSMC;
-	IOWorkLoop *			WorkLoop;
-	IOTimerEventSource *	TimerEventSource;
-	void					Activate(void);
-	void					Deactivate(void);
+	char*					  key[MaxCpuCount];
+	char					  Platform[4];
+	bool					  nehalemArch;
+  bool            SandyArch;
+	IOService*			fakeSMC;
+	void					  Activate(void);
+	void					  Deactivate(void);
 	UInt32					IntelGetFrequency(UInt8 fid);
-	UInt32					IntelGetVoltage(UInt8 vid);
+	UInt32					IntelGetVoltage(UInt16 vid);
+  
+  IOWorkLoop *		WorkLoop;
+	IOTimerEventSource *	TimerEventSource;
+
 	
 public:
-	virtual bool		init(OSDictionary *properties=0);
+	virtual bool		    init(OSDictionary *properties=0);
 	virtual IOService*	probe(IOService *provider, SInt32 *score);
-    virtual bool		start(IOService *provider);
-	virtual void		stop(IOService *provider);
-	virtual void		free(void);
+  virtual bool		    start(IOService *provider);
+	virtual void		    stop(IOService *provider);
+	virtual void		    free(void);
 	
 	virtual IOReturn	callPlatformFunction(const OSSymbol *functionName, bool waitForFunction, void *param1, void *param2, void *param3, void *param4 ); 
 	virtual IOReturn	loopTimerEvent(void);
