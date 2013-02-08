@@ -266,13 +266,16 @@ void SwapASCIIString(UInt16 *buffer, UInt16 length) {
 			if(bsdName){
 //				if([partitionData objectForKey:(__bridge_transfer NSString *)bsdName])
 //					[diskInfo setObject:[partitionData objectForKey:(__bridge_transfer NSString *)bsdName] forKey:@"partitions"];
+				if([partitionData objectForKey:(NSString *)bsdName])
+					[diskInfo setObject:[partitionData objectForKey:(NSString *)bsdName] forKey:@"partitions"];
+
 				CFRelease(bsdName);
 			}
 			
 			[diskInfo setObject:temp forKey:@"temp"];
 			[diskData addObject:diskInfo];
 		}
-		//[diskInfo release];
+//		[diskInfo release];
 	}
 
 	( *smartInterface )->Release ( smartInterface );
@@ -292,10 +295,14 @@ void SwapASCIIString(UInt16 *buffer, UInt16 length) {
 
 	[subDict setObject:[NSNumber numberWithBool:YES] forKey:[NSString stringWithCString:kIOPropertySMARTCapableKey encoding:NSUTF8StringEncoding]];
 	[matchingDict setObject:subDict forKey:[NSString stringWithCString:kIOPropertyMatchKey encoding:NSUTF8StringEncoding]];
-	//[subDict release];
-	//subDict = NULL;
+/*		[subDict setObject:[NSNumber numberWithBool:YES] forKey:[NSString stringWithCString:kIOPropertySMARTCapableKey]];
+	[matchingDict setObject:subDict forKey:[NSString stringWithCString:kIOPropertyMatchKey]];
+	[subDict release];
+	subDict = NULL; */
 
-	error = IOServiceGetMatchingServices (kIOMasterPortDefault, (__bridge_retained CFDictionaryRef)matchingDict, &iter);
+//	error = IOServiceGetMatchingServices (kIOMasterPortDefault, (__bridge_retained CFDictionaryRef)matchingDict, &iter);
+	error = IOServiceGetMatchingServices (kIOMasterPortDefault, (CFDictionaryRef)matchingDict, &iter);
+
 	if (error == kIOReturnSuccess) {
 		while ((obj = IOIteratorNext(iter)) != IO_OBJECT_NULL) {		
 			[self getSMARTData:obj];
@@ -305,9 +312,13 @@ void SwapASCIIString(UInt16 *buffer, UInt16 length) {
 
 	if ([diskData count] == 0) {
 		iter			= IO_OBJECT_NULL;
-		matchingDict	= (__bridge_transfer NSMutableDictionary *)IOServiceMatching("IOATABlockStorageDevice");
+//		matchingDict	= (__bridge_transfer NSMutableDictionary *)IOServiceMatching("IOATABlockStorageDevice");
+		matchingDict	= (NSMutableDictionary *)IOServiceMatching("IOATABlockStorageDevice");
 
-		error = IOServiceGetMatchingServices (kIOMasterPortDefault, (__bridge_retained CFDictionaryRef)matchingDict, &iter);
+
+//		error = IOServiceGetMatchingServices (kIOMasterPortDefault, (__bridge_retained CFDictionaryRef)matchingDict, &iter);
+		error = IOServiceGetMatchingServices (kIOMasterPortDefault, (CFDictionaryRef)matchingDict, &iter);
+
 		if (error == kIOReturnSuccess) {
 			while ((obj = IOIteratorNext(iter)) != IO_OBJECT_NULL) {
 				[self getSMARTData:obj];
@@ -327,11 +338,14 @@ void SwapASCIIString(UInt16 *buffer, UInt16 length) {
 }
 
 - (NSDictionary *)getDataSet:(int)degrees {
+//- (NSArray *)getDataSet:(int)degrees {
 	NSString *degreesSuffix = [NSString stringWithUTF8String:"\xC2\xB0"];					
 	if(degrees == 2)
 		degreesSuffix = @"K";
 	
 	NSMutableDictionary *formattedTemps = [[NSMutableDictionary alloc] init];
+	//	NSMutableArray *formattedTemps = [[NSMutableArray alloc] init];
+
 	int x;
 	for(x=0;x<[latestData count];x++){
 		int value = [[[latestData objectAtIndex:x] objectForKey:@"temp"] intValue];
@@ -344,19 +358,24 @@ void SwapASCIIString(UInt16 *buffer, UInt16 length) {
 			name = [NSString stringWithFormat:@"%@ s/n %@", [[[latestData objectAtIndex:x] objectForKey:@"model"] stringByTrimmingLeadingWhitespace],[[[latestData objectAtIndex:x] objectForKey:@"serial"] stringByTrimmingLeadingWhitespace] ];
 		
 		[formattedTemps setObject:[NSData dataWithBytes:&value length:sizeof( value)] forKey:name];
+		//		[formattedTemps addObject:[NSArray arrayWithObjects:name, [NSString stringWithFormat:@"%i%@",value,degreesSuffix], nil]];
+
 	}
 	return formattedTemps;
+	//	return [formattedTemps autorelease];
+
 }
 
 - (void)getPartitions {
 	if(partitionData){
 		[partitionData removeAllObjects];
-		
+//		[partitionData release];
+//		partitionData = nil;
 	}
 	
 	partitionData = [[NSMutableDictionary alloc] init];
 	
-
+//	[[NSAutoreleasePool alloc] init];
     NSString *path;
 	BOOL first = YES;
     NSEnumerator *mountedPathsEnumerator = [[[NSWorkspace  sharedWorkspace] mountedLocalVolumePaths] objectEnumerator];
@@ -388,7 +407,7 @@ void SwapASCIIString(UInt16 *buffer, UInt16 length) {
 				NSMutableArray *paritions = [[NSMutableArray alloc] init];
 				[paritions addObject:[[NSFileManager defaultManager] displayNameAtPath:path]];
 				[partitionData setObject:paritions forKey:name];
-			
+//				[paritions release];
 			}
 		}
 	}
