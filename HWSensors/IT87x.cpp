@@ -236,9 +236,9 @@ bool IT87x::probePort()
 	UInt16 id = listenPortWord(SUPERIO_CHIP_ID_REGISTER);
 	
 	if (id == 0 || id == 0xffff) {
-        DebugLog("invalid super I/O chip ID=0x%x", id);
+    DebugLog("invalid super I/O chip ID=0x%x", id);
 		return false;
-    }
+  }
 	hasSmartGuardian = false;
 	switch (id)
 	{
@@ -251,49 +251,49 @@ bool IT87x::probePort()
 		case IT8726F:
 		case IT8728F:
 		case IT8752F:
-        case IT8772E:
+    case IT8772E:
 			model = id; 
 			break; 
 		default:
 			WarningLog("found unsupported chip ID=0x%x", id);
 			return false;
 	}
-    
+  
 	selectLogicalDevice(ITE_ENVIRONMENT_CONTROLLER_LDN);
-    
-    IOSleep(50);
+  
+  IOSleep(50);
 	
 	if (!getLogicalDeviceAddress()) {
-        DebugLog("can't get monitoring LDN address");
+    DebugLog("can't get monitoring LDN address");
 		return false;
-    }
-    
+  }
+  
 	UInt8 vendor = readByte(address, ITE_VENDOR_ID_REGISTER);
 	
 	if (vendor != ITE_VENDOR_ID) {
-        DebugLog("invalid vendor ID=0x%x", vendor);
+    DebugLog("invalid vendor ID=0x%x", vendor);
 		return false;
-    }
+  }
 	
 	if ((readByte(address, ITE_CONFIGURATION_REGISTER) & 0x10) == 0) {
-        DebugLog("invalid configuration register value");
+    DebugLog("invalid configuration register value");
 		return false;
-    }
+  }
 	
-    if (id == IT8721F || id == IT8728F || id == IT8772E)
-        voltageGain = 12;
-    else
-        voltageGain = 16;
-    
-    UInt8 version = readByte(address, ITE_VERSION_REGISTER) & 0x0F;
-    
-    if (id == IT8712F && version < 8)
-        has16bitFanCounter = false;
-    else
-        has16bitFanCounter = true;
+  if (id == IT8721F || id == IT8728F || id == IT8772E)
+    voltageGain = 12;
+  else
+    voltageGain = 16;
+  
+  UInt8 version = readByte(address, ITE_VERSION_REGISTER) & 0x0F;
+  
+  if (id == IT8712F && version < 8)
+    has16bitFanCounter = false;
+  else
+    has16bitFanCounter = true;
 	
 	return true;
-
+  
 }
 
 void IT87x::enter()
@@ -302,12 +302,10 @@ void IT87x::enter()
 	outb(registerPort, 0x01);
 	outb(registerPort, 0x55);
 	
-	if (registerPort == 0x4e) 
-	{
+	if (registerPort == 0x4e) {
 		outb(registerPort, 0xaa);
 	}
-	else
-	{
+	else {
 		outb(registerPort, 0x55);
 	}
 }
@@ -320,18 +318,17 @@ void IT87x::exit()
 
 const char *IT87x::getModelName()
 {
-	switch (model) 
-	{
-        case IT8512F: return "IT8512F";
-        case IT8712F: return "IT8712F";
-        case IT8716F: return "IT8716F";
-        case IT8718F: return "IT8718F";
-        case IT8720F: return "IT8720F";
-        case IT8721F: return "IT8721F";
-        case IT8726F: return "IT8726F";
-		case IT8728F: return "IT8728F";
-        case IT8752F: return "IT8752F";
-        case IT8772E: return "IT8772E";
+	switch (model) {
+    case IT8512F: return "IT8512F";
+    case IT8712F: return "IT8712F";
+    case IT8716F: return "IT8716F";
+    case IT8718F: return "IT8718F";
+    case IT8720F: return "IT8720F";
+    case IT8721F: return "IT8721F";
+    case IT8726F: return "IT8726F";
+    case IT8728F: return "IT8728F";
+    case IT8752F: return "IT8752F";
+    case IT8772E: return "IT8772E";
 	}
 	
 	return "unknown";
@@ -365,11 +362,11 @@ bool IT87x::start(IOService * provider)
 		return false;
 	
 	InfoLog("found ITE %s", getModelName());
-    OSDictionary* list = OSDynamicCast(OSDictionary, getProperty("Sensors Configuration"));
-    OSDictionary* configuration = list ? OSDynamicCast(OSDictionary, list->getObject(getModelName())) : 0;
-    
-    if (list && !configuration) 
-        configuration = OSDynamicCast(OSDictionary, list->getObject("Default"));
+  OSDictionary* list = OSDynamicCast(OSDictionary, getProperty("Sensors Configuration"));
+  OSDictionary* configuration = list ? OSDynamicCast(OSDictionary, list->getObject(getModelName())) : 0;
+  
+  if (list && !configuration) 
+    configuration = OSDynamicCast(OSDictionary, list->getObject("Default"));
 	
 	// Temperature Sensors
 	if (configuration) {
@@ -442,59 +439,59 @@ bool IT87x::start(IOService * provider)
 		UInt32 nameLength = name ? strlen(name->getCStringNoCopy()) : 0;
 		
 		if (readTachometer(i) > 10 || nameLength > 0)
-         // Pff WTF ??? Add tachometer if it doesn't exist in a system but only the name defined in the config???   
-        {
-           
+      // Pff WTF ??? Add tachometer if it doesn't exist in a system but only the name defined in the config???   
+    {
+      
 			if (!addTachometer(i, (nameLength > 0 ? name->getCStringNoCopy() : 0)))
-                // Need to look at this a bit later
+        // Need to look at this a bit later
 				WarningLog("error adding tachometer sensor %d", i);
-            
-            
-
-        }
-       
+      
+      
+      
+    }
+    
     // Check if this chip support SmartGuardian feature  
     
     hasSmartGuardian=false;
     if(configuration)
     {
-        if(OSBoolean* smartGuard=OSDynamicCast(OSBoolean, configuration->getObject("SmartGuardian")))
-            if(smartGuard->isTrue())
-                hasSmartGuardian=true;
-        
+      if(OSBoolean* smartGuard=OSDynamicCast(OSBoolean, configuration->getObject("SmartGuardian")))
+        if(smartGuard->isTrue())
+          hasSmartGuardian=true;
+      
     }
-        
-        if(hasSmartGuardian)
-        {
-        // Ugly development hack started for (SuperIOSensorGroup)
-        snprintf(key,5,KEY_FORMAT_FAN_TARGET_SPEED,i);
-        if (!addSensor(key, TYPE_UI8, 1, (SuperIOSensorGroup)kSuperIOSmartGuardPWMControl, i))
-            WarningLog("error adding PWM fan control");
-        
-        snprintf(key,5,KEY_FORMAT_FAN_START_TEMP,i);
-        if (!addSensor(key, TYPE_UI8, 1, (SuperIOSensorGroup)kSuperIOSmartGuardTempFanStart, i))
-            WarningLog("error adding start temp fan control");
-        
-        snprintf(key,5,KEY_FORMAT_FAN_OFF_TEMP,i);
-        if (!addSensor(key, TYPE_UI8, 1, (SuperIOSensorGroup)kSuperIOSmartGuardTempFanStop, i))
-            WarningLog("error adding stop temp fan control");
-        
-        snprintf(key,5,KEY_FORMAT_FAN_FULL_TEMP,i);
-        if (!addSensor(key, TYPE_UI8, 1, (SuperIOSensorGroup)kSuperIOSmartGuardTempFanFullOn, i))
-            WarningLog("error adding full speed temp fan control");
-        
-        snprintf(key,5,KEY_FORMAT_FAN_START_PWM,i);
-        if (!addSensor(key, TYPE_UI8, 1, (SuperIOSensorGroup)kSuperIOSmartGuardPWMStart, i))
-            WarningLog("error adding start PWM fan control");
-        
-        snprintf(key,5,KEY_FORMAT_FAN_TEMP_DELTA,i);
-        if (!addSensor(key, TYPE_UI8, 1, (SuperIOSensorGroup)kSuperIOSmartGuardTempFanFullOff, i))
-            WarningLog("error adding temp full off fan control");
-        
-        snprintf(key,5,KEY_FORMAT_FAN_CONTROL,i);
-        if (!addSensor(key, TYPE_UI8, 1, (SuperIOSensorGroup)kSuperIOSmartGuardTempFanControl, i))
-            WarningLog("error adding register fan control");
-        }
+    
+    if(hasSmartGuardian)
+    {
+      // Ugly development hack started for (SuperIOSensorGroup)
+      snprintf(key,5,KEY_FORMAT_FAN_TARGET_SPEED,i);
+      if (!addSensor(key, TYPE_UI8, 1, (SuperIOSensorGroup)kSuperIOSmartGuardPWMControl, i))
+        WarningLog("error adding PWM fan control");
+      
+      snprintf(key,5,KEY_FORMAT_FAN_START_TEMP,i);
+      if (!addSensor(key, TYPE_UI8, 1, (SuperIOSensorGroup)kSuperIOSmartGuardTempFanStart, i))
+        WarningLog("error adding start temp fan control");
+      
+      snprintf(key,5,KEY_FORMAT_FAN_OFF_TEMP,i);
+      if (!addSensor(key, TYPE_UI8, 1, (SuperIOSensorGroup)kSuperIOSmartGuardTempFanStop, i))
+        WarningLog("error adding stop temp fan control");
+      
+      snprintf(key,5,KEY_FORMAT_FAN_FULL_TEMP,i);
+      if (!addSensor(key, TYPE_UI8, 1, (SuperIOSensorGroup)kSuperIOSmartGuardTempFanFullOn, i))
+        WarningLog("error adding full speed temp fan control");
+      
+      snprintf(key,5,KEY_FORMAT_FAN_START_PWM,i);
+      if (!addSensor(key, TYPE_UI8, 1, (SuperIOSensorGroup)kSuperIOSmartGuardPWMStart, i))
+        WarningLog("error adding start PWM fan control");
+      
+      snprintf(key,5,KEY_FORMAT_FAN_TEMP_DELTA,i);
+      if (!addSensor(key, TYPE_UI8, 1, (SuperIOSensorGroup)kSuperIOSmartGuardTempFanFullOff, i))
+        WarningLog("error adding temp full off fan control");
+      
+      snprintf(key,5,KEY_FORMAT_FAN_CONTROL,i);
+      if (!addSensor(key, TYPE_UI8, 1, (SuperIOSensorGroup)kSuperIOSmartGuardTempFanControl, i))
+        WarningLog("error adding register fan control");
+    }
 	}
 	
 	return true;	
