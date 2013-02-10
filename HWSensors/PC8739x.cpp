@@ -134,7 +134,7 @@ bool PC8739x::start(IOService * provider)
 	
 	IOPhysicalAddress bar = (IOPhysicalAddress)(adr & ~0xf);	
 	
-	if(IOMemoryDescriptor *theDescriptor = IOMemoryDescriptor::withPhysicalAddress(bar, 0x200, kIODirectionOutIn))
+	if(IOMemoryDescriptor *theDescriptor = IOMemoryDescriptor::withPhysicalAddress(bar, 0x200, kIODirectionOutIn)) {
 		if(mmio = theDescriptor->map()){
 			mmioBase = (volatile UInt8 *)mmio->getVirtualAddress();
 		}
@@ -142,6 +142,7 @@ bool PC8739x::start(IOService * provider)
 			WarningLog("MCHBAR failed to map");
 			return false;
 		}			
+  }
 	
 	// Heatsink
 	if (!addSensor(KEY_CPU_HEATSINK_TEMPERATURE, TYPE_SP78, 2, kSuperIOTemperatureSensor, 2))

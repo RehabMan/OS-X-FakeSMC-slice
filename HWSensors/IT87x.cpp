@@ -50,7 +50,7 @@ long IT87xSensor::getValue()
 		case kSuperIOTachometerSensor:
 			value = owner->readTachometer(index);
 			break;
-        case kSuperIOSmartGuardPWMControl:
+/*        case kSuperIOSmartGuardPWMControl:
             value = OSDynamicCast(IT87x, owner)->readSmartGuardPWMControl(index);
             break;
         case kSuperIOSmartGuardTempFanStop:
@@ -71,7 +71,7 @@ long IT87xSensor::getValue()
         case kSuperIOSmartGuardTempFanControl:
             value = OSDynamicCast(IT87x, owner)->readSmartGuardFanControl(index);
             break;
-          
+*/
 		default:
 			break;
 	}
@@ -85,7 +85,7 @@ long IT87xSensor::getValue()
 	return value;
 }
 
-
+/*
 void IT87xSensor::setValue(UInt16 value)
 {
 
@@ -126,7 +126,7 @@ void IT87xSensor::setValue(UInt16 value)
 //	}
 //	
 //	return value;
-}
+} */
 
 #pragma mark IT87x implementation
 
@@ -376,7 +376,7 @@ bool IT87x::start(IOService * provider)
 			
 			snprintf(key, 8, "TEMPIN%X", i);
 			
-			if (OSString* name = OSDynamicCast(OSString, configuration->getObject(key)))
+			if (OSString* name = OSDynamicCast(OSString, configuration->getObject(key))) {
 				if (name->isEqualTo("Processor")) {
 					if (!addSensor(KEY_CPU_HEATSINK_TEMPERATURE, TYPE_SP78, 2, kSuperIOTemperatureSensor, i))
 						WarningLog("error adding heatsink temperature sensor");
@@ -390,6 +390,7 @@ bool IT87x::start(IOService * provider)
 						WarningLog("error adding auxiliary temperature sensor");
 				}
 		}
+	}
 	}
 	else {
 		if (!addSensor(KEY_CPU_HEATSINK_TEMPERATURE, TYPE_SP78, 2, kSuperIOTemperatureSensor, 0))

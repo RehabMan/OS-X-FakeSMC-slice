@@ -289,7 +289,8 @@ IOReturn ACPIMonitor::callPlatformFunction(const OSSymbol *functionName, bool wa
 	
 	if (functionName->isEqualTo(kFakeSMCSetValueCallback)) {
 		if (name && data) {
-			if (key = OSDynamicCast(OSString, sensors->getObject(name))) {
+      key = OSDynamicCast(OSString, sensors->getObject(name));
+			if (key) {
 				InfoLog("Writing key=%s by method=%s value=%x", name, key->getCStringNoCopy(), *(UInt16*)data);
 				OSObject * params[1];
 				if (key->getChar(0) == 'F') {
@@ -318,7 +319,8 @@ IOReturn ACPIMonitor::callPlatformFunction(const OSSymbol *functionName, bool wa
 	if (functionName->isEqualTo(kFakeSMCGetValueCallback)) {
 		
 		if (name && data) {
-			if (key = OSDynamicCast(OSString, sensors->getObject(name))) {
+      key = OSDynamicCast(OSString, sensors->getObject(name));
+			if (key) {
 				if (kIOReturnSuccess == acpiDevice->evaluateInteger(key->getCStringNoCopy(), &value)) {
 				
 					val = 0;

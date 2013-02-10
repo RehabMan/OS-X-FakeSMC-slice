@@ -78,7 +78,7 @@ long W836x::readVoltage(unsigned long index)
 
 UInt64 set_bit(UInt64 target, UInt32 bit, UInt32 value)
 {
-	if (((value & 1) == value) && bit >= 0 && bit <= 63)
+	if (((value & 1) == value) && bit <= 63)
 	{
 		UInt64 mask = (((UInt64)1) << bit);
 		return value > 0 ? target | mask : target & ~mask;

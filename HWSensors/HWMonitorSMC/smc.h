@@ -89,4 +89,5 @@ typedef struct {
   SMCBytes_t              bytes;
 } SMCVal_t;
 
- io_connect_t conn;
+extern io_connect_t conn;
+

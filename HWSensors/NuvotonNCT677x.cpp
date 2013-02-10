@@ -259,7 +259,7 @@ bool NCT677x::startPlugin()
       }
     }
     else if ((name && name->isEqualTo("AVCC")) || (!configuration && i==2)) {
-      if (!addSensor(KEY_AVCC_VOLTAGE, TYPE_FP2E, 2, kSuperIOVoltageSensor, i)) {
+      if (!addSensor(KEY_5VC_VOLTAGE, TYPE_FP2E, 2, kSuperIOVoltageSensor, i)) {
         WarningLog("ERROR Adding AVCC Voltage Sensor!");
       }
     }
