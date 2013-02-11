@@ -57,7 +57,7 @@
     if (!service ) {
 		return nil;
     }
-//    value = (__bridge_transfer  NSString *)IORegistryEntryCreateCFProperty(service, CFSTR("Product"), kCFAllocatorDefault, 0);
+    value = (/*__bridge_transfer*/  NSString *)IORegistryEntryCreateCFProperty(service, CFSTR("Product"), kCFAllocatorDefault, 0);
     
     IOObjectRelease(service);
     return value;
@@ -72,7 +72,7 @@
   if (!service ) {
 		return nil;
     }
-//    value = (__bridge_transfer  NSString *)IORegistryEntryCreateCFProperty(service, CFSTR("Product"), kCFAllocatorDefault, 0);
+    value = (/*__bridge_transfer*/   NSString *)IORegistryEntryCreateCFProperty(service, CFSTR("Product"), kCFAllocatorDefault, 0);
     
     IOObjectRelease(service);
     return value;
@@ -87,7 +87,7 @@
    if (!service ) {
 		return nil;
     }
- //   value = (__bridge_transfer  NSString *)IORegistryEntryCreateCFProperty(service, CFSTR("Product"), kCFAllocatorDefault, 0);
+    value = (/*__bridge_transfer*/   NSString *)IORegistryEntryCreateCFProperty(service, CFSTR("Product"), kCFAllocatorDefault, 0);
     
     IOObjectRelease(service);
     return value;
@@ -102,11 +102,11 @@
     if (!service ) {
       return 0; //nil;
     }
-//    NSNumber * percent = (__bridge_transfer  NSNumber *)IORegistryEntryCreateCFProperty(service, CFSTR("BatteryPercent"), kCFAllocatorDefault, 0);
+    NSNumber * percent = (/*__bridge_transfer*/   NSNumber *)IORegistryEntryCreateCFProperty(service, CFSTR("BatteryPercent"), kCFAllocatorDefault, 0);
     
     IOObjectRelease(service);
-//    return [percent integerValue];
-   return 0;
+    return [percent integerValue];
+//   return 0;
     
 }
 
@@ -118,11 +118,11 @@
     if (!service ) {
       return 0; //nil;
     }
- //   NSNumber * percent = (__bridge_transfer  NSNumber *)IORegistryEntryCreateCFProperty(service, CFSTR("BatteryPercent"), kCFAllocatorDefault, 0);
+    NSNumber * percent = (/*__bridge_transfer*/   NSNumber *)IORegistryEntryCreateCFProperty(service, CFSTR("BatteryPercent"), kCFAllocatorDefault, 0);
     
     IOObjectRelease(service);
- //   return [percent integerValue];
-   return 0; 
+    return [percent integerValue];
+//   return 0; 
 }
 
 +(NSInteger ) getMouseBatteryLevel
@@ -133,11 +133,11 @@
     if (!service ) {
       return 0; //nil;
     }
-//    NSNumber * percent = (__bridge_transfer  NSNumber *)IORegistryEntryCreateCFProperty(service, CFSTR("BatteryPercent"), kCFAllocatorDefault, 0);
+    NSNumber * percent = (/*__bridge_transfer*/   NSNumber *)IORegistryEntryCreateCFProperty(service, CFSTR("BatteryPercent"), kCFAllocatorDefault, 0);
     
     IOObjectRelease(service);
-//    return [percent integerValue];
-  return 0;  
+    return [percent integerValue];
+//  return 0;  
 }
 
 

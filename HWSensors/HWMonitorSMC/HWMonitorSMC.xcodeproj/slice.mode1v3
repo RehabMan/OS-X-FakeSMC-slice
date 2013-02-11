@@ -197,7 +197,48 @@
 	<key>Notifications</key>
 	<array/>
 	<key>OpenEditors</key>
-	<array/>
+	<array>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
+				<string>1260E61616C92549006515EB</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>smc.c</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>1260E61716C92549006515EB</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>smc.c</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>1260E61816C92549006515EB</string>
+						<key>history</key>
+						<array>
+							<string>1260E60716C915EE006515EB</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {828, 581}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>382 185 828 622 0 0 1440 878 </string>
+			</dict>
+		</dict>
+	</array>
 	<key>PerspectiveWidths</key>
 	<array>
 		<integer>-1</integer>
@@ -272,7 +313,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>15</integer>
+									<integer>16</integer>
 									<integer>4</integer>
 									<integer>0</integer>
 								</array>
@@ -308,12 +349,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>HWMonitorSMCAppDelegate.m</string>
+								<string>smc.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -321,23 +364,24 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>HWMonitorSMCAppDelegate.m</string>
+										<string>smc.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>1260E50E16C4F0EE006515EB</string>
+										<string>1260E61316C92549006515EB</string>
 										<key>history</key>
 										<array>
 											<string>1260E4D316C4E8F5006515EB</string>
 											<string>1260E4D416C4E8F5006515EB</string>
 											<string>1260E4D516C4E8F5006515EB</string>
 											<string>1260E50416C4F0AC006515EB</string>
-											<string>1260E50516C4F0AC006515EB</string>
 											<string>1260E50616C4F0AC006515EB</string>
 											<string>1260E50716C4F0AC006515EB</string>
 											<string>1260E50816C4F0AC006515EB</string>
-											<string>1260E50916C4F0AC006515EB</string>
-											<string>1260E50A16C4F0AC006515EB</string>
+											<string>1260E60F16C92549006515EB</string>
+											<string>1260E61016C92549006515EB</string>
+											<string>1260E61116C92549006515EB</string>
+											<string>1260E61216C92549006515EB</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -349,18 +393,16 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {878, 402}}</string>
+								<string>{{0, 0}, {878, 388}}</string>
 								<key>RubberWindowFrame</key>
 								<string>49 219 1166 644 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>402pt</string>
+							<string>388pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -371,14 +413,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 407}, {878, 196}}</string>
+								<string>{{0, 393}, {878, 210}}</string>
 								<key>RubberWindowFrame</key>
 								<string>49 219 1166 644 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
 							<key>Proportion</key>
-							<string>196pt</string>
+							<string>210pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
@@ -397,9 +439,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>1260E50C16C4F0AC006515EB</string>
+				<string>1260E61416C92549006515EB</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>1260E50D16C4F0AC006515EB</string>
+				<string>1260E61516C92549006515EB</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -537,8 +579,9 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1C530D57069F1CE1000CFCEE</string>
+		<string>1260E61916C92549006515EB</string>
 		<string>1260E48C16C4E3A8006515EB</string>
+		<string>1260E61616C92549006515EB</string>
 		<string>/Users/slice/Projects/fakesmc/HWSensors/HWMonitorSMC/HWMonitorSMC.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -563,21 +606,21 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>ISPSmartController.m</string>
+								<string>HWMonitorSensor.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {919, 394}}</string>
+								<string>{{0, 0}, {919, 278}}</string>
 								<key>RubberWindowFrame</key>
 								<string>347 255 919 534 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>394pt</string>
+							<string>278pt</string>
 						</dict>
 						<dict>
 							<key>BecomeActive</key>
@@ -596,14 +639,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 399}, {919, 94}}</string>
+								<string>{{0, 283}, {919, 210}}</string>
 								<key>RubberWindowFrame</key>
 								<string>347 255 919 534 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXBuildResultsModule</string>
 							<key>Proportion</key>
-							<string>94pt</string>
+							<string>210pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
@@ -621,7 +664,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1260E48C16C4E3A8006515EB</string>
-				<string>1260E4E416C4EE32006515EB</string>
+				<string>1260E60E16C92546006515EB</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>

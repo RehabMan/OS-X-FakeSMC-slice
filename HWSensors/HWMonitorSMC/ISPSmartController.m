@@ -337,14 +337,14 @@ void SwapASCIIString(UInt16 *buffer, UInt16 length) {
 	latestData = diskData;
 }
 
-- (NSDictionary *)getDataSet:(int)degrees {
-//- (NSArray *)getDataSet:(int)degrees {
+//- (NSDictionary *)getDataSet:(int)degrees {
+- (NSArray *)getDataSet:(int)degrees {
 	NSString *degreesSuffix = [NSString stringWithUTF8String:"\xC2\xB0"];					
 	if(degrees == 2)
 		degreesSuffix = @"K";
 	
-	NSMutableDictionary *formattedTemps = [[NSMutableDictionary alloc] init];
-	//	NSMutableArray *formattedTemps = [[NSMutableArray alloc] init];
+	//NSMutableDictionary *formattedTemps = [[NSMutableDictionary alloc] init];
+		NSMutableArray *formattedTemps = [[NSMutableArray alloc] init];
 
 	int x;
 	for(x=0;x<[latestData count];x++){
