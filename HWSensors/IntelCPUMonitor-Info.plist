@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIdentifier</key>
-	<string>org.mozodojo.${PRODUCT_NAME}</string>
+	<string>org.slice.${PRODUCT_NAME}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundlePackageType</key>
@@ -23,7 +23,7 @@
 		<key>Intel CPU Monitor Plugin</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
-			<string>org.mozodojo.IntelCPUMonitor</string>
+			<string>org.slice.IntelCPUMonitor</string>
 			<key>IOClass</key>
 			<string>IntelCPUMonitor</string>
 			<key>IOMatchCategory</key>
@@ -39,13 +39,13 @@
 	<key>OSBundleLibraries</key>
 	<dict>
 		<key>com.apple.kpi.iokit</key>
-		<string>10.0.0</string>
+		<string>9.0.0</string>
 		<key>com.apple.kpi.libkern</key>
-		<string>10.0.0</string>
+		<string>9.0.0</string>
 		<key>com.apple.kpi.mach</key>
-		<string>10.0.0</string>
+		<string>9.0.0</string>
 		<key>com.apple.kpi.unsupported</key>
-		<string>10.0.0</string>
+		<string>9.0.0</string>
 		<key>org.netkas.FakeSMC</key>
 		<string>3.2.0</string>
 	</dict>
