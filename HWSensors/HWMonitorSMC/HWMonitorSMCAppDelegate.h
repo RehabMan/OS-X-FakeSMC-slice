@@ -11,7 +11,7 @@
 #include "HWMonitorSensor.h"
 
 
-@interface HWMonitorSMCAppDelegate : NSObject <NSApplicationDelegate> {
+@interface AppDelegate : NSObject <NSApplicationDelegate> {
   NSStatusItem *          statusItem;
   NSFont *                statusItemFont;
   NSDictionary*           statusItemAttributes;

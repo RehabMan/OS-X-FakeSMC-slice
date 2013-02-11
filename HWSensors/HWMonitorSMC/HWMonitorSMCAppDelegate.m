@@ -1,17 +1,17 @@
 //
-//  HWMonitorSMCAppDelegate.m
+//  AppDelegate.m
 //  HWMonitor
 //
 //  Created by mozo,Navi on 20.10.11.
 //  Copyright (c) 2011 mozo. All rights reserved.
 //
 
-#import "HWMonitorSMCAppDelegate.h"
+#import "AppDelegate.h"
 #import "NSString+TruncateToWidth.h"
 #import "IOBatteryStatus.h"
 #include "../definitions.h"
 
-@implementation HWMonitorSMCAppDelegate
+@implementation AppDelegate
 
 #define SMC_ACCESS
 #define SMART_UPDATE_INTERVAL 5*60
