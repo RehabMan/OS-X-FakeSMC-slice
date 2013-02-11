@@ -113,15 +113,15 @@ bool HWInfo::start(IOService * provider)
       }    
     }
     
-    if (kIOReturnSuccess == fakeSMC->callPlatformFunction(kFakeSMCGetKeyValue, true, (void *)"RBr", (void *)&length, (void *)&data, 0)) {
+    if (kIOReturnSuccess == fakeSMC->callPlatformFunction(kFakeSMCGetKeyValue, true, (void *)"RBr ", (void *)&length, (void *)&data, 0)) {
       //if success means the key is exists and we should replace the value
-      if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCSetKeyValue, true, (void *)"RBr", (void *)8, (void *)&PlatformB, 0)) {
+      if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCSetKeyValue, true, (void *)"RBr ", (void *)8, (void *)&PlatformB, 0)) {
         WarningLog("error updating RBr value");
       }
     } else {
       //create a key up to caller
       if (Platform[0] != 'N') {
-        if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCAddKeyHandler, false, (void *)"RBr", (void *)"ch8*", (void *)8, this)) {
+        if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCAddKeyHandler, false, (void *)"RBr ", (void *)"ch8*", (void *)8, this)) {
           WarningLog("Can't add Branch key to fake SMC device");
         }			
       }    
@@ -129,15 +129,15 @@ bool HWInfo::start(IOService * provider)
   }
   
   if (REVset) {
-    if (kIOReturnSuccess == fakeSMC->callPlatformFunction(kFakeSMCGetKeyValue, true, (void *)"REV", (void *)&length, (void *)&data, 0)) {
+    if (kIOReturnSuccess == fakeSMC->callPlatformFunction(kFakeSMCGetKeyValue, true, (void *)"REV ", (void *)&length, (void *)&data, 0)) {
       //if success means the key is exists and we should replace the value
-      if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCSetKeyValue, true, (void *)"REV", (void *)6, (void *)&SMCRevision, 0)) {
+      if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCSetKeyValue, true, (void *)"REV ", (void *)6, (void *)&SMCRevision, 0)) {
         WarningLog("error updating RBr value");
       }
     } else {
       //create a key up to caller
       if (Platform[0] != 'N') {
-        if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCAddKeyHandler, false, (void *)"REV", (void *)"ch8*", (void *)6, this)) {
+        if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCAddKeyHandler, false, (void *)"REV ", (void *)"{rev", (void *)6, this)) {
           WarningLog("Can't add Branch key to fake SMC device");
         }			
       }    
@@ -153,7 +153,7 @@ bool HWInfo::start(IOService * provider)
     } else {
       //create a key up to caller
       if (Platform[0] != 'N') {
-        if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCAddKeyHandler, false, (void *)"EPCI", (void *)"ch8*", (void *)4, this)) {
+        if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCAddKeyHandler, false, (void *)"EPCI", (void *)"flag", (void *)4, this)) {
           WarningLog("Can't add config key to fake SMC device");
         }			
       }    
@@ -169,7 +169,7 @@ bool HWInfo::start(IOService * provider)
     } else {
       //create a key up to caller
       if (Platform[0] != 'N') {
-        if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCAddKeyHandler, false, (void *)"BEMB", (void *)"ch8*", (void *)1, this)) {
+        if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCAddKeyHandler, false, (void *)"BEMB", (void *)"ui8 ", (void *)1, this)) {
           WarningLog("Can't add config key to fake SMC device");
         }			
       }    

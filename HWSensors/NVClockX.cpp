@@ -49,8 +49,11 @@ int NVClockX::probeDevices()
 		if (OSIterator * iterator = getMatchingServices(dictionary)) {
 			
 			IOPCIDevice* device = 0;
-			
-			while (device = OSDynamicCast(IOPCIDevice, iterator->getNextObject())) {
+			do {
+        device = OSDynamicCast(IOPCIDevice, iterator->getNextObject());
+        if (!device) {
+          break;
+        }
 				UInt16 vendor_id=0;
 				
 #if __LP64__
@@ -75,7 +78,8 @@ int NVClockX::probeDevices()
 #else
 					addr = (vm_address_t)nvio->getVirtualAddress();
 #endif
-					if (data = OSDynamicCast(OSData, device->getProperty("device-id"))) {
+          data = OSDynamicCast(OSData, device->getProperty("device-id"));
+					if (data) {
 						nvclock.card[nvclock.num_cards].device_id=*(UInt32*)data->getBytesNoCopy();
 						nvclock.card[nvclock.num_cards].arch = get_gpu_arch(nvclock.card[nvclock.num_cards].device_id);			
 						nvclock.card[nvclock.num_cards].number = nvclock.num_cards;
@@ -113,7 +117,7 @@ int NVClockX::probeDevices()
 						nvclock.num_cards++;
 					}
 				}
-			}
+			} while(TRUE);
 		}
 	}
 	
@@ -314,7 +318,7 @@ IOReturn NVClockX::callPlatformFunction(const OSSymbol *functionName, bool waitF
 				
 				UInt32 index = number->unsigned16BitValue();
 				
-				if (index >= 0 && index < nvclock.num_cards) {
+				if (index < nvclock.num_cards) {
 					
 					if (!set_card(index)){
 						char buf[80];

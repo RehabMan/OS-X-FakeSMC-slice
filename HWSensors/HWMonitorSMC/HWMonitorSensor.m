@@ -64,7 +64,7 @@
     kern_return_t result = SMCReadKey(readkey, &val);
                 if (result != kIOReturnSuccess)
                     return NULL;
-    SMCClose(&conn);
+    SMCClose(conn);
     if (val.dataSize > 0)
     {
 

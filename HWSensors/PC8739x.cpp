@@ -133,9 +133,10 @@ bool PC8739x::start(IOService * provider)
 		((listenPortByte(NSC_MEM + 3) & 0xff) << 24);
 	
 	IOPhysicalAddress bar = (IOPhysicalAddress)(adr & ~0xf);	
-	
-	if(IOMemoryDescriptor *theDescriptor = IOMemoryDescriptor::withPhysicalAddress(bar, 0x200, kIODirectionOutIn)) {
-		if(mmio = theDescriptor->map()){
+	IOMemoryDescriptor *theDescriptor = IOMemoryDescriptor::withPhysicalAddress(bar, 0x200, kIODirectionOutIn);
+	if(theDescriptor) {
+    mmio = theDescriptor->map();
+		if(mmio){
 			mmioBase = (volatile UInt8 *)mmio->getVirtualAddress();
 		}
 		else {

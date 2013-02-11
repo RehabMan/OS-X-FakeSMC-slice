@@ -58,8 +58,11 @@ IOService* X3100monitor::probe(IOService *provider, SInt32 *score)
 		if (OSIterator * iterator = getMatchingServices(dictionary)) {
 			
 			IOPCIDevice* device = 0;
-			
-			while (device = OSDynamicCast(IOPCIDevice, iterator->getNextObject())) {
+			do {
+        device = OSDynamicCast(IOPCIDevice, iterator->getNextObject());
+        if (!device) {
+          break;
+        }
 				OSData *data = OSDynamicCast(OSData, device->getProperty("vendor-id"));
 				if (data)
 					vendor_id = *(UInt32*)data->getBytesNoCopy();
@@ -71,8 +74,9 @@ IOService* X3100monitor::probe(IOService *provider, SInt32 *score)
 				if ((vendor_id==0x8086) && (device_id==0x2a00)){
 					InfoLog("found %lx chip", (long unsigned int)device_id);
 					VCard = device;
+          break;
 				}
-			}
+			} while(TRUE);
 		}
 	}	
 	return this;

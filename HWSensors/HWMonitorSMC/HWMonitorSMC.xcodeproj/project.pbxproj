@@ -23,7 +23,7 @@
 		1260E4C316C4E7F1006515EB /* temp_alt_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 1260E4C016C4E7F1006515EB /* temp_alt_small.png */; };
 		1260E4C416C4E7F1006515EB /* temperature_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 1260E4C116C4E7F1006515EB /* temperature_small.png */; };
 		1260E4C516C4E7F1006515EB /* voltage_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 1260E4C216C4E7F1006515EB /* voltage_small.png */; };
-		1260E64516C92E4E006515EB /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1260E64416C92E4E006515EB /* IOKit.framework */; };
+		12BDC50B16C96E6C001EC9D9 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12BDC50A16C96E6C001EC9D9 /* IOKit.framework */; };
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
 		256AC3DA0F4B6AC300CF3369 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* AppDelegate.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
@@ -56,6 +56,7 @@
 		1260E4C716C4E80B006515EB /* IOBatteryStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOBatteryStatus.h; sourceTree = "<group>"; };
 		1260E4C816C4E812006515EB /* ISPSmartController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISPSmartController.h; sourceTree = "<group>"; };
 		1260E64416C92E4E006515EB /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		12BDC50A16C96E6C001EC9D9 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = ../../../../../../../../System/Library/Frameworks/IOKit.framework; sourceTree = "<group>"; };
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 		1DDD58150DA1D0A300B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		256AC3D80F4B6AC300CF3369 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -73,8 +74,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12BDC50B16C96E6C001EC9D9 /* IOKit.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
-				1260E64516C92E4E006515EB /* IOKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +121,7 @@
 		29B97314FDCFA39411CA2CEA /* HWMonitorSMC */ = {
 			isa = PBXGroup;
 			children = (
+				12BDC50A16C96E6C001EC9D9 /* IOKit.framework */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -294,9 +296,11 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = HWMonitorSMC_Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				INFOPLIST_FILE = "HWMonitorSMC-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = HWMonitorSMC;
+				SDKROOT = "";
 			};
 			name = Debug;
 		};
@@ -308,9 +312,11 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = HWMonitorSMC_Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				INFOPLIST_FILE = "HWMonitorSMC-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = HWMonitorSMC;
+				SDKROOT = "";
 			};
 			name = Release;
 		};
