@@ -27,6 +27,10 @@ private:
 	char					  Platform[8];
 	char					  PlatformB[8];
   UInt8           SMCRevision[6];
+  bool            RPltset;
+  bool            REVset;
+  bool            EPCIset;
+  bool            BEMBset;
 	
 public:
 	virtual bool		    init(OSDictionary *properties=0);

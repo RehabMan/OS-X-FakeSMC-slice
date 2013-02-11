@@ -195,3 +195,71 @@ IOReturn RadeonMonitor::callPlatformFunction(const OSSymbol *functionName, bool 
 	
 	return super::callPlatformFunction(functionName, waitForFunction, param1, param2, param3, param4);
 }
+
+//what about sleep/wake?
+/*
+#pragma mark -
+#pragma mark ••• Power Management •••
+#pragma mark -
+
+//---------------------------------------------------------------------------
+
+enum {
+  kPowerStateOff = 0,
+	kPowerStateDoze,
+  kPowerStateOn,
+  kPowerStateCount
+};
+
+IOReturn RadeonMonitor::registerWithPolicyMaker( IOService * policyMaker )
+{
+  static IOPMPowerState powerStateArray[ kPowerStateCount ] =
+  {
+    { 1,0,0,0,0,0,0,0,0,0,0,0 },
+    { 1,0,kIOPMDoze,kIOPMDoze,0,0,0,0,0,0,0,0 },
+    { 1,kIOPMDeviceUsable,kIOPMPowerOn,kIOPMPowerOn,0,0,0,0,0,0,0,0 }
+  };
+	
+  fCurrentPowerState = kPowerStateOn;
+	
+  return policyMaker->registerPowerDriver( this, powerStateArray,
+                                          kPowerStateCount );
+}
+
+//---------------------------------------------------------------------------
+
+IOReturn RadeonMonitor::setPowerState( unsigned long powerStateOrdinal,
+                                IOService *   policyMaker )
+{
+	if (!pciNub || (powerStateOrdinal == fCurrentPowerState))
+    return IOPMAckImplied;
+	
+  switch (powerStateOrdinal)
+  {
+    case kPowerStateOff:
+      // Now that the driver knows if Magic Packet support was enabled,
+      // tell PCI Family whether PME_EN should be set or not.
+			
+      //hwSetMagicPacketEnable( fMagicPacketEnabled );
+			
+      pciNub->hasPCIPowerManagement( fMagicPacketEnabled ?
+                                    kPCIPMCPMESupportFromD3Cold : kPCIPMCD3Support );
+      break;
+			
+    case kPowerStateDoze:
+      break;
+			
+    case kPowerStateOn:
+      if (fCurrentPowerState == kPowerStateOff)
+        initPCIConfigSpace(pciNub);
+      break;
+  }
+	
+  fCurrentPowerState = powerStateOrdinal;
+	
+  return IOPMAckImplied;
+}
+
+
+
+*/

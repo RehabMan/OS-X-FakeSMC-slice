@@ -57,26 +57,28 @@ bool HWInfo::start(IOService * provider)
   //first we get all values from DT	
   rootNode = fromPath("/efi/platform", gIODTPlane);
   if (rootNode) {   
-    
+    RPltset = false;
     data = OSDynamicCast(OSData, rootNode->getProperty("RPlt"));
     if (data) {
       //      bzero(Platform, 8);
       bcopy(data->getBytesNoCopy(), Platform, 8);
       InfoLog("SMC Platform: %s", Platform);
+      RPltset = true;
     }
-    
+    //we propose that RBr always follow RPlt and no additional check
     data = OSDynamicCast(OSData, rootNode->getProperty("RBr"));
     if (data) {
       bcopy(data->getBytesNoCopy(), PlatformB, 8);
       InfoLog("SMC Branch: %s", PlatformB);
     }
-    
+    REVset = false;
     data = OSDynamicCast(OSData, rootNode->getProperty("REV"));
     if (data) {
       bcopy(data->getBytesNoCopy(), SMCRevision, 6);
       InfoLog("SMC Revision set to: %01x.%02xf%02x", SMCRevision[0], SMCRevision[1], SMCRevision[5]);
+      REVset = true;
     }
-    
+    EPCIset = false;
     data = OSDynamicCast(OSData, rootNode->getProperty("EPCI"));
     if (data) {
       SMCConfig = *(UInt32*)data->getBytesNoCopy();
@@ -85,82 +87,92 @@ bool HWInfo::start(IOService * provider)
               (unsigned int)(SMCConfig >> 8) & 0xFF, 
               (unsigned int)(SMCConfig >> 16) & 0xFF,
               (unsigned int)(SMCConfig >> 24) & 0xFF);
+      EPCIset = true;
     }
-    
+    BEMBset = false;
     data = OSDynamicCast(OSData, rootNode->getProperty("BEMB"));
     if (data) {
       Mobile = *(UInt8*)data->getBytesNoCopy();
+      BEMBset = true;
+    }
+  } 
+  
+  //then we add or renew keys  
+  if (RPltset) {
+    if (kIOReturnSuccess == fakeSMC->callPlatformFunction(kFakeSMCGetKeyValue, true, (void *)"RPlt", (void *)&length, (void *)&data, 0)) {
+      //if success means the key is exists and we should replace the value
+      if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCSetKeyValue, true, (void *)"RPlt", (void *)8, (void *)&Platform, 0)) {
+        WarningLog("error updating RPlt value");
+      }
+    } else {
+      //create a key up to caller
+      if (Platform[0] != 'N') {
+        if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCAddKeyHandler, false, (void *)"RPlt", (void *)"ch8*", (void *)8, this)) {
+          WarningLog("Can't add Platform key to fake SMC device");
+        }			
+      }    
     }
     
-  } 
-  //then we add or renew keys  
-  if (kIOReturnSuccess == fakeSMC->callPlatformFunction(kFakeSMCGetKeyValue, true, (void *)"RPlt", (void *)&length, (void *)&data, 0)) {
-    //if success means the key is exists and we should replace the value
-    if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCSetKeyValue, true, (void *)"RPlt", (void *)8, (void *)&Platform, 0)) {
-      WarningLog("error updating RPlt value");
-    }
-  } else {
-    //create a key up to caller
-    if (Platform[0] != 'N') {
-      if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCAddKeyHandler, false, (void *)"RPlt", (void *)"ch8*", (void *)8, this)) {
-        WarningLog("Can't add Platform key to fake SMC device");
-      }			
+    if (kIOReturnSuccess == fakeSMC->callPlatformFunction(kFakeSMCGetKeyValue, true, (void *)"RBr", (void *)&length, (void *)&data, 0)) {
+      //if success means the key is exists and we should replace the value
+      if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCSetKeyValue, true, (void *)"RBr", (void *)8, (void *)&PlatformB, 0)) {
+        WarningLog("error updating RBr value");
+      }
+    } else {
+      //create a key up to caller
+      if (Platform[0] != 'N') {
+        if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCAddKeyHandler, false, (void *)"RBr", (void *)"ch8*", (void *)8, this)) {
+          WarningLog("Can't add Branch key to fake SMC device");
+        }			
+      }    
     }    
   }
   
-  if (kIOReturnSuccess == fakeSMC->callPlatformFunction(kFakeSMCGetKeyValue, true, (void *)"RBr", (void *)&length, (void *)&data, 0)) {
-    //if success means the key is exists and we should replace the value
-    if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCSetKeyValue, true, (void *)"RBr", (void *)8, (void *)&PlatformB, 0)) {
-      WarningLog("error updating RBr value");
-    }
-  } else {
-    //create a key up to caller
-    if (Platform[0] != 'N') {
-      if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCAddKeyHandler, false, (void *)"RBr", (void *)"ch8*", (void *)8, this)) {
-        WarningLog("Can't add Branch key to fake SMC device");
-      }			
+  if (REVset) {
+    if (kIOReturnSuccess == fakeSMC->callPlatformFunction(kFakeSMCGetKeyValue, true, (void *)"REV", (void *)&length, (void *)&data, 0)) {
+      //if success means the key is exists and we should replace the value
+      if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCSetKeyValue, true, (void *)"REV", (void *)6, (void *)&SMCRevision, 0)) {
+        WarningLog("error updating RBr value");
+      }
+    } else {
+      //create a key up to caller
+      if (Platform[0] != 'N') {
+        if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCAddKeyHandler, false, (void *)"REV", (void *)"ch8*", (void *)6, this)) {
+          WarningLog("Can't add Branch key to fake SMC device");
+        }			
+      }    
     }    
   }
   
-  if (kIOReturnSuccess == fakeSMC->callPlatformFunction(kFakeSMCGetKeyValue, true, (void *)"REV", (void *)&length, (void *)&data, 0)) {
-    //if success means the key is exists and we should replace the value
-    if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCSetKeyValue, true, (void *)"REV", (void *)6, (void *)&SMCRevision, 0)) {
-      WarningLog("error updating RBr value");
-    }
-  } else {
-    //create a key up to caller
-    if (Platform[0] != 'N') {
-      if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCAddKeyHandler, false, (void *)"REV", (void *)"ch8*", (void *)6, this)) {
-        WarningLog("Can't add Branch key to fake SMC device");
-      }			
+  if (EPCIset) {
+    if (kIOReturnSuccess == fakeSMC->callPlatformFunction(kFakeSMCGetKeyValue, true, (void *)"EPCI", (void *)&length, (void *)&data, 0)) {
+      //if success means the key is exists and we should replace the value
+      if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCSetKeyValue, true, (void *)"EPCI", (void *)4, (void *)&SMCConfig, 0)) {
+        WarningLog("error updating EPCI value");
+      }
+    } else {
+      //create a key up to caller
+      if (Platform[0] != 'N') {
+        if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCAddKeyHandler, false, (void *)"EPCI", (void *)"ch8*", (void *)4, this)) {
+          WarningLog("Can't add config key to fake SMC device");
+        }			
+      }    
     }    
   }
   
-  if (kIOReturnSuccess == fakeSMC->callPlatformFunction(kFakeSMCGetKeyValue, true, (void *)"EPCI", (void *)&length, (void *)&data, 0)) {
-    //if success means the key is exists and we should replace the value
-    if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCSetKeyValue, true, (void *)"EPCI", (void *)4, (void *)&SMCConfig, 0)) {
-      WarningLog("error updating EPCI value");
-    }
-  } else {
-    //create a key up to caller
-    if (Platform[0] != 'N') {
-      if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCAddKeyHandler, false, (void *)"EPCI", (void *)"ch8*", (void *)4, this)) {
-        WarningLog("Can't add config key to fake SMC device");
-      }			
-    }    
-  }
-  
-  if (kIOReturnSuccess == fakeSMC->callPlatformFunction(kFakeSMCGetKeyValue, true, (void *)"BEMB", (void *)&length, (void *)&data, 0)) {
-    //if success means the key is exists and we should replace the value
-    if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCSetKeyValue, true, (void *)"BEMB", (void *)1, (void *)&Mobile, 0)) {
-      WarningLog("error updating EPCI value");
-    }
-  } else {
-    //create a key up to caller
-    if (Platform[0] != 'N') {
-      if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCAddKeyHandler, false, (void *)"BEMB", (void *)"ch8*", (void *)1, this)) {
-        WarningLog("Can't add config key to fake SMC device");
-      }			
+  if (BEMBset) {
+    if (kIOReturnSuccess == fakeSMC->callPlatformFunction(kFakeSMCGetKeyValue, true, (void *)"BEMB", (void *)&length, (void *)&data, 0)) {
+      //if success means the key is exists and we should replace the value
+      if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCSetKeyValue, true, (void *)"BEMB", (void *)1, (void *)&Mobile, 0)) {
+        WarningLog("error updating EPCI value");
+      }
+    } else {
+      //create a key up to caller
+      if (Platform[0] != 'N') {
+        if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCAddKeyHandler, false, (void *)"BEMB", (void *)"ch8*", (void *)1, this)) {
+          WarningLog("Can't add config key to fake SMC device");
+        }			
+      }    
     }    
   }
 	return true;
