@@ -12,6 +12,7 @@
 
 #include <IOKit/acpi/IOACPIPlatformDevice.h>
 #include <IOKit/IOService.h>
+#include <IOKit/IOLocks.h>
 #include "FakeSMCKey.h"
 
 
@@ -52,6 +53,7 @@ private:
     IOInterruptAction   interrupt_handler;
     void                *interrupt_refcon;
     int                 interrupt_source;
+    IORecursiveLock*    device_lock;
 
     struct ApleSMCStatus    *status;
 

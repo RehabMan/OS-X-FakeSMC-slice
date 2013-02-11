@@ -330,15 +330,21 @@ bool FakeSMCDevice::init(IOService *platform, OSDictionary *properties)
 {
     if (!super::init(platform, 0, 0))
         return false;
-
+    
+    device_lock = IORecursiveLockAlloc();
+    if (!device_lock)
+        return false;
+    
     status = (ApleSMCStatus *) IOMalloc(sizeof(struct AppleSMCStatus));
+    if (!status)
+        return false;
     bzero((void*)status, sizeof(struct AppleSMCStatus));
 
     debug = false;
     interrupt_handler=0;
 
-    keys = OSArray::withCapacity(0);
-    values = OSDictionary::withCapacity(0);
+    keys = OSArray::withCapacity(16);
+    values = OSDictionary::withCapacity(16);
 
     sharpKEY = FakeSMCKey::withValue("#KEY", "ui8", 4, "\1");
     keys->setObject(sharpKEY);
@@ -406,6 +412,9 @@ bool FakeSMCDevice::init(IOService *platform, OSDictionary *properties)
 
 IOReturn FakeSMCDevice::setProperties(OSObject * properties)
 {
+    IOReturn result = kIOReturnUnsupported;
+  
+    IORecursiveLockLock(device_lock);
     if (OSDictionary * message = OSDynamicCast(OSDictionary, properties)) 
     {
         if(OSDictionary * data = OSDynamicCast(OSDictionary, message->getObject(kFakeSMCDeviceUpdateKeyValue))) 
@@ -419,7 +428,8 @@ IOReturn FakeSMCDevice::setProperties(OSObject * properties)
                         
                         this->setProperty(kFakeSMCDeviceValues, OSDictionary::withDictionary(values));
                         
-                        return kIOReturnSuccess;
+                        result = kIOReturnSuccess;
+                        break;
                     }
             }
         }
@@ -433,12 +443,13 @@ IOReturn FakeSMCDevice::setProperties(OSObject * properties)
 
             this->setProperty(kFakeSMCDeviceValues, OSDictionary::withDictionary(values));
 
-            return kIOReturnSuccess;
+            result = kIOReturnSuccess;
         }
         
     }
+    IORecursiveLockUnlock(device_lock);
 
-    return kIOReturnUnsupported;
+    return result;
 }
 
 
@@ -493,81 +504,95 @@ void FakeSMCDevice::updateSharpKey()
 
 FakeSMCKey *FakeSMCDevice::addKeyWithValue(const char *name, const char *type, unsigned char size, const void *value)
 {
-    if (FakeSMCKey *key = getKey(name)) {
+    IORecursiveLockLock(device_lock);
+    
+    FakeSMCKey* key = getKey(name);
+    if (key) {
         key->setValueFromBuffer(value, size);
 
         DebugLog("updating value for key %s, type: %s, size: %d", name, type, size);
-
-        return key;
     }
-
-    DebugLog("adding key %s with value, type: %s, size: %d", name, type, size);
-
-    if (FakeSMCKey *key = FakeSMCKey::withValue(name, type, size, value)) {
-        keys->setObject(key);
-        values->setObject(key->getName(), OSData::withBytes(key->getValue(), key->getSize()));
-        updateSharpKey();
-        this->setProperty(kFakeSMCDeviceValues, OSDictionary::withDictionary(values));
-        return key;
+    else {
+        
+        DebugLog("adding key %s with value, type: %s, size: %d", name, type, size);
+        
+        if ((key = FakeSMCKey::withValue(name, type, size, value))) {
+            keys->setObject(key);
+            values->setObject(key->getName(), OSData::withBytes(key->getValue(), key->getSize()));
+            updateSharpKey();
+            this->setProperty(kFakeSMCDeviceValues, OSDictionary::withDictionary(values));
+        }
     }
+    IORecursiveLockUnlock(device_lock);
+    
+    if (!key)
+        WarningLog("can't create key %s", name);
 
-    WarningLog("can't create key %s", name);
-
-    return 0;
+    return key;
 }
 
 FakeSMCKey *FakeSMCDevice::addKeyWithHandler(const char *name, const char *type, unsigned char size, IOService *handler)
 {
-    if (FakeSMCKey *key = getKey(name)) {
+    IORecursiveLockLock(device_lock);
+    
+    FakeSMCKey* key = getKey(name);
+    if (key) {
         key->setHandler(handler);
 
         DebugLog("changing handler for key %s, type: %s, size: %d", name, type, size);
-
-        return key;
     }
-
-    DebugLog("adding key %s with handler, type: %s, size: %d", name, type, size);
-
-    if (FakeSMCKey *key = FakeSMCKey::withHandler(name, type, size, handler)) {
-        keys->setObject(key);
-        values->setObject(key->getName(), OSData::withBytes(key->getValue(), key->getSize()));
-        updateSharpKey();
-        this->setProperty(kFakeSMCDeviceValues, OSDictionary::withDictionary(values));
-        return key;
+    else {
+        
+        DebugLog("adding key %s with handler, type: %s, size: %d", name, type, size);
+        
+        if ((key = FakeSMCKey::withHandler(name, type, size, handler))) {
+            keys->setObject(key);
+            values->setObject(key->getName(), OSData::withBytes(key->getValue(), key->getSize()));
+            updateSharpKey();
+            this->setProperty(kFakeSMCDeviceValues, OSDictionary::withDictionary(values));
+        }
     }
+    IORecursiveLockUnlock(device_lock);
 
-    WarningLog("can't create key %s", name);
+    if (!key)
+        WarningLog("can't create key %s", name);
 
-    return 0;
+    return key;
 }
 
 FakeSMCKey *FakeSMCDevice::getKey(const char * name)
 {
+    IORecursiveLockLock(device_lock);
+    
+    FakeSMCKey* key = 0;
     if (OSCollectionIterator *iterator = OSCollectionIterator::withCollection(keys)) {
         UInt32 key1 = *((uint32_t*)name);
-        while (FakeSMCKey *key = OSDynamicCast(FakeSMCKey, iterator->getNextObject())) {
+        while ((key = OSDynamicCast(FakeSMCKey, iterator->getNextObject()))) {
             UInt32 key2 = *((uint32_t*)key->getName());
             if (key1 == key2) {
-                iterator->release();
-                return key;
+                break;
             }
         }
         iterator->release();
     }
+    IORecursiveLockUnlock(device_lock);
 
-//    DebugLog("key %s not found", name);
+//    if (!key)
+//        DebugLog("key %s not found", name);
 
-    return 0;
+    return key;
 }
 
 FakeSMCKey *FakeSMCDevice::getKey(unsigned int index)
 {
-    if (FakeSMCKey *key = OSDynamicCast(FakeSMCKey, keys->getObject(index)))
-        return key;
+    IORecursiveLockLock(device_lock);
+    FakeSMCKey* key = OSDynamicCast(FakeSMCKey, keys->getObject(index));
+    IORecursiveLockUnlock(device_lock);
+    
+//  if (!key)
+//      DebugLog("key with index %d not found", index);
 
-//    DebugLog("key with index %d not found", index);
-
-    return 0;
+    return key;
 }
 
 void FakeSMCDevice::setDebug(bool debug_val)
@@ -615,6 +640,20 @@ IOReturn FakeSMCDevice::causeInterrupt(int source)
 
 IOReturn FakeSMCDevice::callPlatformFunction(const OSSymbol *functionName, bool waitForFunction, void *param1, void *param2, void *param3, void *param4 )
 {
+    // special case for locks
+    if (functionName->isEqualTo(kFakeSMCLock)) {
+        IORecursiveLockLock(device_lock);
+        return kIOReturnSuccess;
+    }
+    else if (functionName->isEqualTo(kFakeSMCUnlock)) {
+        IORecursiveLockUnlock(device_lock);
+        return kIOReturnSuccess;
+    }
+    
+    // normal case: lock going in, unlock going out
+    IORecursiveLockLock(device_lock);
+    IOReturn result = kIOReturnError;
+    
     if (functionName->isEqualTo(kFakeSMCSetKeyValue)) {
         const char *name = (const char *)param1;
         unsigned char size = (UInt64)param2;
@@ -622,14 +661,13 @@ IOReturn FakeSMCDevice::callPlatformFunction(const OSSymbol *functionName, bool 
 
         if (name && data && size > 0) {
 
-            if (FakeSMCKey *key = OSDynamicCast(FakeSMCKey, getKey(name)))
-                if (key->setValueFromBuffer(data, size))
-                    return kIOReturnSuccess;
-
-            return kIOReturnError;
+          FakeSMCKey *key = OSDynamicCast(FakeSMCKey, getKey(name));
+            if (key && key->setValueFromBuffer(data, size))
+                result = kIOReturnSuccess;
         }
-
-        return kIOReturnBadArgument;
+        else {
+            result = kIOReturnBadArgument;
+        }
     }
     else if (functionName->isEqualTo(kFakeSMCAddKeyHandler)) {
         const char *name = (const char *)param1;
@@ -642,12 +680,11 @@ IOReturn FakeSMCDevice::callPlatformFunction(const OSSymbol *functionName, bool 
             DebugLog("adding key %s with handler, type %s, size %d", name, type, size);
 
             if (addKeyWithHandler(name, type, size, handler))
-                return kIOReturnSuccess;
-
-            return kIOReturnError;
+                result = kIOReturnSuccess;
         }
-
-        return kIOReturnBadArgument;
+        else {
+            result = kIOReturnBadArgument;
+        }
     }
     else if (functionName->isEqualTo(kFakeSMCAddKeyValue)) {
         const char *name = (const char *)param1;
@@ -660,12 +697,11 @@ IOReturn FakeSMCDevice::callPlatformFunction(const OSSymbol *functionName, bool 
             DebugLog("adding key %s with value, type %s, size %d", name, type, size);
 
             if (addKeyWithValue(name, type, size, value))
-                return kIOReturnSuccess;
-
-            return kIOReturnError;
+                result = kIOReturnSuccess;
         }
-
-        return kIOReturnBadArgument;
+        else {
+            result = kIOReturnBadArgument;
+        }
     }
     else if (functionName->isEqualTo(kFakeSMCGetKeyValue)) {
         const char *name = (const char *)param1;
@@ -677,26 +713,35 @@ IOReturn FakeSMCDevice::callPlatformFunction(const OSSymbol *functionName, bool 
                 *size = key->getSize();
                 *value = key->getValue();
 
-                return kIOReturnSuccess;
+                result = kIOReturnSuccess;
             }
-
-            return kIOReturnError;
         }
-
-        return kIOReturnBadArgument;
+        else {
+            return kIOReturnBadArgument;
+        }
     }
     else if (functionName->isEqualTo(kFakeSMCRemoveHandler)) {
-        if (IOService *handler = (IOService *)param1)
+        if (IOService *handler = (IOService *)param1) {
             if (OSCollectionIterator *iterator = OSCollectionIterator::withCollection(keys)) {
                 while (FakeSMCKey *key = OSDynamicCast(FakeSMCKey, iterator->getNextObject()))
                     if (key->getHandler() == handler) {
                         key->setHandler(NULL);
+                        result = kIOReturnSuccess;
                         break;
                     }
                 iterator->release();
             }
+        }
+        else {
+            result = kIOReturnBadArgument;
+        }
     }
-
-    return kIOReturnUnsupported;
+    else {
+        result = kIOReturnUnsupported;
+    }
+  
+    IORecursiveLockUnlock(device_lock);
+    
+    return result;
 }
 

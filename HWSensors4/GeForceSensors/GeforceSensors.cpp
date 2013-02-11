@@ -85,10 +85,11 @@ int GeforceSensors::addTachometer(int index)
     
     
     
-    
+    int result = -1;
 	UInt8 length = 0;
 	void * data = 0;
 
+    lockStorageProvider();
     
 
         if (kIOReturnSuccess == fakeSMC->callPlatformFunction(kFakeSMCGetKeyValue, false, (void *)KEY_FAN_NUMBER, (void *)&length, (void *)&data, 0)) {
@@ -108,13 +109,13 @@ int GeforceSensors::addTachometer(int index)
                 
                 if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCSetKeyValue, false, (void *)KEY_FAN_NUMBER, (void *)1, (void *)&length, 0))
                     WarningLog("error updating FNum value");
-                
-                return length-1;
+                result = length-1;
             }
         }
         else WarningLog("error reading FNum value");
+    unlockStorageProvider();
     
-	return -1;
+	return result;
 }
 
 //float GeforceSensors::getSensorValue(FakeSMCSensor *sensor)
@@ -255,7 +256,7 @@ bool GeforceSensors::start(IOService * provider)
         return false;
     }
     
-    nv_info(device, "chipset: %s (NV%02lX) bios: %02x.%02x.%02x.%02x\n", device->cname, device->chipset, device->bios.version.major, device->bios.version.chip, device->bios.version.minor, device->bios.version.micro);
+    nv_info(device, "chipset: %s (NV%02lX) bios: %02x.%02x.%02x.%02x\n", device->cname, (unsigned long)device->chipset, device->bios.version.major, device->bios.version.chip, device->bios.version.minor, device->bios.version.micro);
     
     if (device->card_type < NV_C0) {
         // init i2c structures
@@ -385,6 +386,7 @@ IOReturn GeforceSensors::callPlatformFunction(const OSSymbol *functionName, bool
 		
 		if (key && data) {
 			if (OSNumber *number = OSDynamicCast(OSNumber, sensors->getObject(key))) {
+                number=number;//REVIEW: rehabman, just to keep the compiler quiet
 				
 //				UInt32 index = number->unsigned16BitValue();
 //				
@@ -396,7 +398,7 @@ IOReturn GeforceSensors::callPlatformFunction(const OSSymbol *functionName, bool
 //						return kIOReturnSuccess;
 //					}
 					
-					   UInt32 value = 0;
+                    UInt32 value = 0;
 					
 					switch (key[0]) {
 						case 'T':

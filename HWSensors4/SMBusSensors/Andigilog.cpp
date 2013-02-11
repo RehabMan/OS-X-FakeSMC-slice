@@ -332,6 +332,7 @@ void Andigilog::addTachometer(struct MList *sensor, int index)
     UInt8 length = 0;
     void * data = 0;
     
+    lockStorageProvider();
     if (kIOReturnSuccess == fakeSMC->callPlatformFunction(kFakeSMCGetKeyValue, false, (void *)KEY_FAN_NUMBER,
                                                           (void *)&length, (void *)&data, 0))
     {
@@ -368,6 +369,8 @@ void Andigilog::addTachometer(struct MList *sensor, int index)
         addKey(name, TYPE_FPE2, 2, length);
     }
     else IOPrint("ERROR reading FNum value!\n");
+    
+    unlockStorageProvider();
 }
 /* */
 

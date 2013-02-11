@@ -87,3 +87,14 @@ IOReturn FakeSMCPlugin::callPlatformFunction(const OSSymbol *functionName, bool 
 {
     return super::callPlatformFunction(functionName, waitForFunction, param1, param2, param3, param4);
 }
+
+void FakeSMCPlugin::lockStorageProvider()
+{
+    fakeSMC->callPlatformFunction(kFakeSMCLock, true, 0, 0, 0, 0);
+}
+
+void FakeSMCPlugin::unlockStorageProvider()
+{
+    fakeSMC->callPlatformFunction(kFakeSMCUnlock, true, 0, 0, 0, 0);
+}
+

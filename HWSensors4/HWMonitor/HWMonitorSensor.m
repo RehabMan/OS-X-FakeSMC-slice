@@ -123,9 +123,12 @@
                 
             case BatterySensorsGroup:
             {
-                NSInteger * t;
-                t = [value bytes];
-               return [[NSString alloc] initWithFormat:@"%ld%%",*t];
+                //NSInteger * t;
+                //t = [value bytes];
+               //return [[NSString alloc] initWithFormat:@"%ld%%",*t];
+                unsigned long t = 0;
+                bcopy([value bytes], &t, 4);
+                return [[NSString alloc] initWithFormat:@"%ld%%",t];
             } break;
                 
             case VoltageSensorGroup:

@@ -19,7 +19,6 @@
 
 #ifndef __SMC_H__
 #define __SMC_H__
-#endif
 
 #define VERSION               "0.01"
 
@@ -100,3 +99,5 @@ kern_return_t SMCOpen(io_connect_t *conn);
 UInt32 _strtoul(char *str, int size, int base);
 void _ultostr(char *str, UInt32 val);
 float _strtof(char *str, int size, int e);
+
+#endif // __SMC_H__

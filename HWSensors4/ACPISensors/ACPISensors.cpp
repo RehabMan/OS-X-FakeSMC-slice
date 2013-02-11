@@ -36,7 +36,9 @@ bool ACPIMonitor::addTachometer(const char* method, const char* caption)
 {
 	UInt8 length = 0;
 	void * data = 0;
-	
+    bool result = false;
+
+	lockStorageProvider();
 	if (kIOReturnSuccess == fakeSMC->callPlatformFunction(kFakeSMCGetKeyValue, true, (void *)KEY_FAN_NUMBER, (void *)&length, (void *)&data, 0)) {
 		length = 0;
 		
@@ -59,12 +61,13 @@ bool ACPIMonitor::addTachometer(const char* method, const char* caption)
 			if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCSetKeyValue, true, (void *)KEY_FAN_NUMBER, (void *)1, (void *)&length, 0))
 				WarningLog("error updating FNum value");
 			
-			return true;
+			result = true;
 		}
 	}
 	else WarningLog("error reading FNum value");
+    unlockStorageProvider();
 	
-	return false;
+	return result;
 }
 
 bool ACPIMonitor::init(OSDictionary *properties)
@@ -82,7 +85,7 @@ bool ACPIMonitor::start(IOService * provider)
 {
 	if (!super::start(provider)) 
         return false;
-
+    
 	acpiDevice = (IOACPIPlatformDevice *)provider;
 	
 	char key[5];
@@ -242,7 +245,7 @@ bool ACPIMonitor::start(IOService * provider)
 	} else {
 		WarningLog(" keysToAdd not found");
 	}
-
+    
 	registerService(0);
 
 	return true;	

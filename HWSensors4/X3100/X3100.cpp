@@ -128,7 +128,9 @@ bool X3100monitor::start(IOService * provider)
 	}	
 	
 	char name[5];
+    bool success = true;
 	//try to find empty key
+    lockStorageProvider();
 	for (int i = 0; i < 0x10; i++) {
 						
 		snprintf(name, 5, KEY_FORMAT_GPU_DIODE_TEMPERATURE, i); 
@@ -149,12 +151,14 @@ bool X3100monitor::start(IOService * provider)
 		
 	if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCAddKeyHandler, false, (void *)name, (void *)TYPE_SP78, (void *)2, this)) {
 		WarningLog("Can't add key to fake SMC device, kext will not load");
-		return false;
+		success = false;
 	}
-    
-    registerService(0);
+    unlockStorageProvider();
+
+    if (success)
+        registerService(0);
 	
-	return true;	
+	return success;
 }
 
 void X3100monitor::stop (IOService* provider)

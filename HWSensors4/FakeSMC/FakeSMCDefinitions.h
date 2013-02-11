@@ -254,5 +254,7 @@ typedef struct fanTypeDescStruct {
 #define kFakeSMCGetValueCallback                "FakeSMC_GetValueCallback"
 #define kFakeSMCSetValueCallback                "FakeSMC_SetValueCallback"
 #define kFakeSMCRemoveHandler                   "FakeSMC_RemoveHandler"
+#define kFakeSMCLock                            "FakeSMC_Lock"
+#define kFakeSMCUnlock                          "FakeSMC_Unlock"
 
 #endif

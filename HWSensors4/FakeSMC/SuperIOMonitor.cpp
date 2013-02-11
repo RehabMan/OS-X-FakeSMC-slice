@@ -274,7 +274,9 @@ SuperIOSensor *SuperIOMonitor::addTachometer(unsigned long index, const char* id
 {
     UInt8 length = 0;
     void * data = 0;
+    SuperIOSensor* sensor = 0;
 
+    lockStorageProvider();
     if (kIOReturnSuccess == fakeSMC->callPlatformFunction(kFakeSMCGetKeyValue, true, (void *)KEY_FAN_NUMBER, (void *)&length, (void *)&data, 0)) {
         length = 0;
 
@@ -284,7 +286,7 @@ SuperIOSensor *SuperIOMonitor::addTachometer(unsigned long index, const char* id
 
         snprintf(name, 5, KEY_FORMAT_FAN_SPEED, length); 
 
-        if (SuperIOSensor *sensor = addSensor(name, TYPE_FPE2, 2, kSuperIOTachometerSensor, index)) {
+        if ((sensor = addSensor(name, TYPE_FPE2, 2, kSuperIOTachometerSensor, index))) {
             if (id) {
                 snprintf(name, 5, KEY_FORMAT_FAN_ID, length);
                 
@@ -301,13 +303,13 @@ SuperIOSensor *SuperIOMonitor::addTachometer(unsigned long index, const char* id
 
             if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCSetKeyValue, true, (void *)KEY_FAN_NUMBER, (void *)1, (void *)&length, 0))
                 WarningLog("ERROR updating FNum value!");
-
-            return sensor;
         }
     }
     else WarningLog("ERROR reading FNum value!");
+    
+    unlockStorageProvider();
 
-    return 0;
+    return sensor;
 }
 
 SuperIOSensor * SuperIOMonitor::getSensor(const char* key) 
@@ -389,11 +391,6 @@ bool SuperIOMonitor::start(IOService *provider)
 
     if (!isActive) return true;
 
-    if (!(fakeSMC = waitForService(serviceMatching(kFakeSMCDeviceService)))) {
-        WarningLog("Can't locate fake SMC device, kext will not load!");
-        return false;
-    }
-    
     IOService * fRoot = getServiceRoot();
     
 

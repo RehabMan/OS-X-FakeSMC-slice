@@ -313,7 +313,7 @@
     NSData * keydata = [HWMonitorSensor readValueForKey:[[NSString alloc] initWithFormat:@"F%XID",i]];
     NSString * caption;
     if(keydata) {
-      fds = [keydata bytes];
+      fds = (FanTypeDescStruct *)[keydata bytes];
       caption = [[[NSString alloc] initWithBytes:  fds->strFunction length: DIAG_FUNCTION_STR_LEN encoding: NSUTF8StringEncoding] stringByTrimmingCharactersInSet:[[NSCharacterSet letterCharacterSet] invertedSet]];
     } else {
       caption = @"";
@@ -345,6 +345,7 @@
   
   if (![sensorsList count]) {
     NSMenuItem * item = [[NSMenuItem alloc]initWithTitle:@"No sensors found or FakeSMCDevice unavailable" action:nil keyEquivalent:@""];
+
     
     [item setEnabled:FALSE];
     

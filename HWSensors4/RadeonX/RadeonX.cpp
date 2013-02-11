@@ -70,10 +70,12 @@ bool RadeonMonitor::start(IOService * provider)
     
 	Card->chipID = data ? *(UInt32*)data->getBytesNoCopy() : 0;	
     
-	if(Card->initialize()) {
+    bool success = Card->initialize();
+	if(success) {
 		char name[5];
         
 		//try to find empty key
+        lockStorageProvider();
 		for (int i = 0; i < 0x10; i++) {
 			
 			snprintf(name, 5, KEY_FORMAT_GPU_DIODE_TEMPERATURE, i); 
@@ -94,15 +96,15 @@ bool RadeonMonitor::start(IOService * provider)
 		
 		if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCAddKeyHandler, false, (void *)name, (void *)TYPE_SP78, (void *)2, this)) {
 			WarningLog("Can't add key to fake SMC device");
-			return false;
+            success = false;
 		}
-        
-        registerService(0);
-		
-		return true;	
+        unlockStorageProvider();
 	}
+    
+    if (success)
+        registerService(0);
 	
-    return false;
+    return success;
 }
 
 void RadeonMonitor::stop (IOService* provider)

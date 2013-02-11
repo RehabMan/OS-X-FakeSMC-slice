@@ -129,7 +129,6 @@ private:
 	bool					nehalemArch;
     bool                    SandyArch;
     bool                    hasTurbo;
-	IOService*				fakeSMC;
 	IOWorkLoop *			WorkLoop;
 	IOTimerEventSource *	TimerEventSource;
 	void					Activate(void);

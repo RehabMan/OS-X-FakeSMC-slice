@@ -71,7 +71,9 @@ int NVClockX::addTachometer(int index)
   } else {
     value = 0;
   }
-	
+
+  int result = -1;
+  lockStorageProvider();
   if(value>10) {
     if (kIOReturnSuccess == fakeSMC->callPlatformFunction(kFakeSMCGetKeyValue, false, (void *)KEY_FAN_NUMBER, (void *)&length, (void *)&data, 0)) {
       char name[5];
@@ -83,14 +85,15 @@ int NVClockX::addTachometer(int index)
         if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCSetKeyValue, false, (void *)KEY_FAN_NUMBER, (void *)1, (void *)&length, 0)) {
           WarningLog("error updating FNum value");
         }
-        return length-1;
+        result = length-1;
       }
     } else {
       WarningLog("error reading FNum value");
     }
   }
+  unlockStorageProvider();
   
-	return -1;
+  return result;
 }
 
 bool NVClockX::init(OSDictionary *properties)

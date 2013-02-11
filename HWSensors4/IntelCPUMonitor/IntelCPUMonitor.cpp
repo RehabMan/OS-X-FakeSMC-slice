@@ -83,7 +83,7 @@ static IOPMPowerState myTwoStates[2] = {
     {1, kIOPMPowerOn, kIOPMPowerOn, kIOPMPowerOn, 0, 0, 0, 0, 0, 0, 0, 0}
 };
 
-#define super IOService
+#define super FakeSMCPlugin
 OSDefineMetaClassAndStructors(IntelCPUMonitor, FakeSMCPlugin)
 
 bool IntelCPUMonitor::init(OSDictionary *properties)
@@ -348,11 +348,6 @@ bool IntelCPUMonitor::start(IOService * provider)
     registerPowerDriver(this, myTwoStates, 2);
     provider->joinPMtree(this);
     
-    if (!(fakeSMC = waitForService(serviceMatching(kFakeSMCDeviceService)))) {
-		WarningLog("Can't locate fake SMC device, kext will not load");
-		return false;
-	}
-	
 	InfoLog("CPU family 0x%x, model 0x%x, stepping 0x%x, cores %d, threads %d", cpuid_info()->cpuid_family, cpuid_info()->cpuid_model, cpuid_info()->cpuid_stepping, count, cpuid_info()->thread_count);
 /*	BusClock = (gPEClockFrequencyInfo.bus_frequency_max_hz >> 2);
 	if (BusClock >= (420 * Mega)) {
@@ -394,16 +389,19 @@ bool IntelCPUMonitor::start(IOService * provider)
 		return false;
 	}
 	Activate();
+    
 	if (!nehalemArch)
 		InfoLog("CPU Tjmax %d", tjmax[0]);
 	else
 		for (int i = 0; i < count; i++)
 			InfoLog("CPU%X Tjmax %d", i, tjmax[i]);
-	
+
+	bool result = true;
 	for (int i = 0; i < count; i++) {
 		if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCAddKeyHandler, false, (void *)key[i], (void *)"sp78", (void *)2, this)) {
 			WarningLog("Can't add key to fake SMC device, kext will not load");
-			return false;
+			result = false;
+            break;
 		}
 		
 		char keyF[5];
@@ -417,7 +415,8 @@ bool IntelCPUMonitor::start(IOService * provider)
               snprintf(keyM, 5, KEY_FORMAT_NON_APPLE_CPU_MULTIPLIER, i);
                 if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCAddKeyHandler, false, (void *)keyM, (void *)TYPE_UI16, (void *)2, this)) {
                     WarningLog("Can't add key to fake SMC device");
-                    //return false;
+                    //result = false;
+                    //break;
                 }
         }
         
@@ -432,7 +431,8 @@ bool IntelCPUMonitor::start(IOService * provider)
     if (nehalemArch || SandyArch) 
         if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCAddKeyHandler, false, (void *)KEY_NON_APPLE_PACKAGE_MULTIPLIER, (void *)TYPE_UI16, (void *)2, this)) {
                 WarningLog("Can't add key to fake SMC device");
-                //return false;
+                //result = false;
+                //break;
             }
 
  
@@ -441,8 +441,8 @@ bool IntelCPUMonitor::start(IOService * provider)
 			WarningLog("Can't add Platform key to fake SMC device");
 		}			
 	}
-	
-	return true;
+    
+	return result;
 }
 
 void IntelCPUMonitor::stop (IOService* provider)

@@ -64,8 +64,6 @@ class SuperIOMonitor : public FakeSMCPlugin {
     OSDeclareAbstractStructors(SuperIOMonitor)
 
 protected:
-    IOService *             fakeSMC;
-
     bool                    isActive;
 
     UInt16                  address;

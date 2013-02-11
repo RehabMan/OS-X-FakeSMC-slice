@@ -278,7 +278,7 @@ serializeSMBIOS( void * target, void * refcon, OSSerialize * s )
     if (map)
     {
         data = OSData::withBytesNoCopy(
-                (void *) map->getVirtualAddress(), map->getLength());
+                (void *) map->getVirtualAddress(), (unsigned)map->getLength());
 
         if (data)
         {
@@ -334,7 +334,7 @@ getSlotNameWithSlotId( int slotId )
 	}
 
 	name[sizeof(name) - 1] = '\0';
-    return OSData::withBytes(name, strlen(name) + 1);
+    return OSData::withBytes(name, (unsigned)strlen(name) + 1);
 }
 
 
@@ -884,7 +884,7 @@ void OemSMBIOS::processSMBIOSStructureType17(
 		memoryType = 0x02; // unknown type
 
 	memTypesData->appendBytes( SMBMemoryDeviceTypes[memoryType],
-						strlen(SMBMemoryDeviceTypes[memoryType]) + 1 );
+						(unsigned)strlen(SMBMemoryDeviceTypes[memoryType]) + 1 );
 
 
     // update memSizesData
@@ -902,7 +902,7 @@ void OemSMBIOS::processSMBIOSStructureType17(
         char speedText[16];
 
 		snprintf(speedText, sizeof(speedText), "%u MHz", memory->memorySpeed);
-		memSpeedData->appendBytes(speedText, strlen(speedText) + 1);
+		memSpeedData->appendBytes(speedText, (unsigned)strlen(speedText) + 1);
     }
 
     string = strings->stringAtIndex( memory->manufacturer, &stringLength );
