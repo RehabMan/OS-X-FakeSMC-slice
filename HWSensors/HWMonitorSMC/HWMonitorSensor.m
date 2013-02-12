@@ -90,7 +90,7 @@
         switch (group) {
             case TemperatureSensorGroup:
             {
-                unsigned int t = 0;
+      //          unsigned int t = 0;
                 
                 unsigned int encoded = 0;
                 

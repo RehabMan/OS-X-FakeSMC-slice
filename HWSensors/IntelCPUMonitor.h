@@ -21,6 +21,8 @@
 #define MSR_IA32_THERM_STATUS		0x019C
 #define MSR_IA32_PERF_STATUS		0x0198;
 #define MSR_IA32_TEMPERATURE_TARGET	0x01A2
+#define MSR_PERF_FIXED_CTR_CTRL  (0x38d)
+#define MSR_PERF_GLOBAL_CTRL            (0x38f)
 //#define MSR_PLATFORM_INFO			0xCE;
 
 #define MaxCpuCount 128
@@ -49,6 +51,11 @@ static UInt8				GlobalThermalValue[MaxCpuCount];
 static bool					GlobalThermalValueIsObsolete[MaxCpuCount];
 static PState				GlobalState[MaxCpuCount];
 static UInt64       GlobalState64; //it is for package
+static UInt16               InitFlags[MaxCpuCount];
+static UInt64               UCC[MaxCpuCount];
+static UInt64               UCR[MaxCpuCount];
+static UInt64               lastUCC[MaxCpuCount];
+static UInt64               lastUCR[MaxCpuCount];
 
 const UInt32 Kilo = 1000; //Slice
 const UInt32 Mega = Kilo * 1000;
@@ -65,12 +72,12 @@ class IntelCPUMonitor : public IOService
 public:
 	UInt32					Frequency[MaxCpuCount];
 	UInt32					Voltage;
-
+    UInt32                  BaseFreqRatio;
 private:
 	bool				  	Active;	
 	bool					  LoopLock;
-	UInt32					BusClock;
-	UInt32					FSBClock;
+	UInt64					BusClock;
+	UInt64					FSBClock;
 	UInt32					CpuFamily;
 	UInt32					CpuModel; 
 	UInt32					CpuStepping;
@@ -99,7 +106,7 @@ public:
   virtual bool		    start(IOService *provider);
 	virtual void		    stop(IOService *provider);
 	virtual void		    free(void);
-	
+	virtual IOReturn setPowerState(unsigned long which, IOService *whom);
 	virtual IOReturn	callPlatformFunction(const OSSymbol *functionName, bool waitForFunction, void *param1, void *param2, void *param3, void *param4 ); 
 	virtual IOReturn	loopTimerEvent(void);
 };

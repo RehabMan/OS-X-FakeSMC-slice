@@ -52,7 +52,7 @@
 				<key>IT8728F</key>
 				<dict>
 					<key>FANIN0</key>
-					<string></string>
+					<string>CPU</string>
 					<key>FANIN1</key>
 					<string></string>
 					<key>FANIN2</key>

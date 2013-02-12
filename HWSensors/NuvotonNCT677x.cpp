@@ -249,7 +249,7 @@ bool NCT677x::startPlugin()
     OSString  *name = configuration ? OSDynamicCast(OSString, configuration->getObject(key)) : 0;
 
     if ((name && name->isEqualTo("Processor")) || (!configuration && i==0)) {
-      if (!addSensor(KEY_CPU_VOLTAGE, TYPE_FP2E, 2, kSuperIOVoltageSensor, i)) {
+      if (!addSensor(KEY_CPU_VOLTAGE_RAW, TYPE_FP2E, 2, kSuperIOVoltageSensor, i)) {
         WarningLog("ERROR Adding Processor Voltage Sensor!");
       }
     }

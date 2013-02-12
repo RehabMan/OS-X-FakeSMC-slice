@@ -573,7 +573,7 @@ bool W836x::start(IOService * provider)
 	}
 	
 	// CPU Vcore
-	if (!addSensor(KEY_CPU_VOLTAGE, TYPE_FP2E, 2, kSuperIOVoltageSensor, 0))
+	if (!addSensor(KEY_CPU_VOLTAGE_RAW, TYPE_FP2E, 2, kSuperIOVoltageSensor, 0))
 		WarningLog("error adding CPU voltage sensor");
 	
 	// FANs

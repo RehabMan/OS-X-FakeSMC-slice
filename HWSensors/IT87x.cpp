@@ -85,7 +85,7 @@ long IT87xSensor::getValue()
 	return value;
 }
 
-/*
+
 void IT87xSensor::setValue(UInt16 value)
 {
 
@@ -126,7 +126,7 @@ void IT87xSensor::setValue(UInt16 value)
 //	}
 //	
 //	return value;
-} */
+}
 
 #pragma mark IT87x implementation
 
@@ -414,7 +414,7 @@ bool IT87x::start(IOService * provider)
 			
 			if (OSString* name = OSDynamicCast(OSString, configuration->getObject(key))) {
 				if (name->isEqualTo("Processor")) {
-					if (!addSensor(KEY_CPU_VOLTAGE, TYPE_FP2E, 2, kSuperIOVoltageSensor, i))
+					if (!addSensor(KEY_CPU_VOLTAGE_RAW, TYPE_FP2E, 2, kSuperIOVoltageSensor, i))
 						WarningLog("error adding CPU voltage sensor");
 				}
 				else if (name->isEqualTo("Memory")) {

@@ -257,7 +257,7 @@ bool F718x::start(IOService * provider)
 			break;
         default:
 			// CPU Vcore
-			if (!addSensor(KEY_CPU_VOLTAGE, TYPE_FP2E, 2, kSuperIOVoltageSensor, 1))
+			if (!addSensor(KEY_CPU_VOLTAGE_RAW, TYPE_FP2E, 2, kSuperIOVoltageSensor, 1))
 				WarningLog("error adding CPU voltage sensor");
 			break;
 	}
