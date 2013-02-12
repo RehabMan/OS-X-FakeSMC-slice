@@ -257,7 +257,7 @@
 		AED9E18E125FBEF400736A5A /* IT87x.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IT87x.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		AED9E581125FC23900736A5A /* SuperIOFamily.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperIOFamily.h; sourceTree = "<group>"; };
 		AED9E582125FC23900736A5A /* SuperIOFamily.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SuperIOFamily.cpp; sourceTree = "<group>"; };
-		AEF4C80412602EE700297B2B /* FakeSMC.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = FakeSMC.kext; path = VirtualSMC.kext; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEF4C80412602EE700297B2B /* FakeSMC.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FakeSMC.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEF4C80E12602F2600297B2B /* FakeSMCDevice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FakeSMCDevice.cpp; sourceTree = "<group>"; };
 		AEF4C80F12602F2600297B2B /* FakeSMCDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeSMCDevice.h; sourceTree = "<group>"; };
 		AEF4C81012602F2600297B2B /* FakeSMCKey.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FakeSMCKey.cpp; sourceTree = "<group>"; };

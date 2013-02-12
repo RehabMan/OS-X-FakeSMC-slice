@@ -264,11 +264,8 @@ void SwapASCIIString(UInt16 *buffer, UInt16 length) {
 		if(temp != nil){
 			CFStringRef bsdName = IORegistryEntrySearchCFProperty(object, kIOServicePlane, CFSTR("BSD Name"), kCFAllocatorDefault, kIORegistryIterateRecursively); 
 			if(bsdName){
-//				if([partitionData objectForKey:(__bridge_transfer NSString *)bsdName])
-//					[diskInfo setObject:[partitionData objectForKey:(__bridge_transfer NSString *)bsdName] forKey:@"partitions"];
-				if([partitionData objectForKey:(NSString *)bsdName])
-					[diskInfo setObject:[partitionData objectForKey:(NSString *)bsdName] forKey:@"partitions"];
-
+				if([partitionData objectForKey:(__bridge_transfer NSString *)bsdName])
+					[diskInfo setObject:[partitionData objectForKey:(__bridge_transfer NSString *)bsdName] forKey:@"partitions"];
 				CFRelease(bsdName);
 			}
 			
@@ -295,14 +292,10 @@ void SwapASCIIString(UInt16 *buffer, UInt16 length) {
 
 	[subDict setObject:[NSNumber numberWithBool:YES] forKey:[NSString stringWithCString:kIOPropertySMARTCapableKey encoding:NSUTF8StringEncoding]];
 	[matchingDict setObject:subDict forKey:[NSString stringWithCString:kIOPropertyMatchKey encoding:NSUTF8StringEncoding]];
-/*		[subDict setObject:[NSNumber numberWithBool:YES] forKey:[NSString stringWithCString:kIOPropertySMARTCapableKey]];
-	[matchingDict setObject:subDict forKey:[NSString stringWithCString:kIOPropertyMatchKey]];
-	[subDict release];
-	subDict = NULL; */
+	//[subDict release];
+	//subDict = NULL;
 
-//	error = IOServiceGetMatchingServices (kIOMasterPortDefault, (__bridge_retained CFDictionaryRef)matchingDict, &iter);
-	error = IOServiceGetMatchingServices (kIOMasterPortDefault, (CFDictionaryRef)matchingDict, &iter);
-
+	error = IOServiceGetMatchingServices (kIOMasterPortDefault, (__bridge_retained CFDictionaryRef)matchingDict, &iter);
 	if (error == kIOReturnSuccess) {
 		while ((obj = IOIteratorNext(iter)) != IO_OBJECT_NULL) {		
 			[self getSMARTData:obj];
@@ -312,13 +305,9 @@ void SwapASCIIString(UInt16 *buffer, UInt16 length) {
 
 	if ([diskData count] == 0) {
 		iter			= IO_OBJECT_NULL;
-//		matchingDict	= (__bridge_transfer NSMutableDictionary *)IOServiceMatching("IOATABlockStorageDevice");
-		matchingDict	= (NSMutableDictionary *)IOServiceMatching("IOATABlockStorageDevice");
+		matchingDict	= (__bridge_transfer NSMutableDictionary *)IOServiceMatching("IOATABlockStorageDevice");
 
-
-//		error = IOServiceGetMatchingServices (kIOMasterPortDefault, (__bridge_retained CFDictionaryRef)matchingDict, &iter);
-		error = IOServiceGetMatchingServices (kIOMasterPortDefault, (CFDictionaryRef)matchingDict, &iter);
-
+		error = IOServiceGetMatchingServices (kIOMasterPortDefault, (__bridge_retained CFDictionaryRef)matchingDict, &iter);
 		if (error == kIOReturnSuccess) {
 			while ((obj = IOIteratorNext(iter)) != IO_OBJECT_NULL) {
 				[self getSMARTData:obj];
@@ -362,8 +351,6 @@ void SwapASCIIString(UInt16 *buffer, UInt16 length) {
 
 	}
 	return formattedTemps;
-	//	return [formattedTemps autorelease];
-
 }
 
 - (void)getPartitions {
