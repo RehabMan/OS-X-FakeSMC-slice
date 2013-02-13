@@ -119,13 +119,19 @@ private:
 	virtual long			readVoltage(unsigned long index);
 	virtual long			readTachometer(unsigned long index);
 	
-    virtual int				getPortsCount();
+  virtual int				getPortsCount();
 	virtual const char *	getModelName();
 	
 public:
+	virtual bool			  init(OSDictionary *properties=0);
+	virtual IOService*	probe(IOService *provider, SInt32 *score);
+  virtual bool			  start(IOService *provider);
+	virtual void			  stop(IOService *provider);
+	virtual void			  free(void);
 
-	virtual bool            probePort();
-    virtual bool			startPlugin();
+
+	  virtual bool      probePort();
+//    virtual bool			startPlugin(IOService *provider);
 
     
     virtual long			readSmartGuardPWMControl(unsigned long index);

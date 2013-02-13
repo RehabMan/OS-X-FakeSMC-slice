@@ -368,61 +368,106 @@ void IT87x::exit()
 
 const char *IT87x::getModelName()
 {
-	switch (model) 
+	switch (model)
 	{
-        case IT8512F: return "IT8512F";
-        case IT8712F: return "IT8712F";
-        case IT8716F: return "IT8716F";
-        case IT8718F: return "IT8718F";
-        case IT8720F: return "IT8720F";
-        case IT8721F: return "IT8721F";
-        case IT8726F: return "IT8726F";
+    case IT8512F: return "IT8512F";
+    case IT8712F: return "IT8712F";
+    case IT8716F: return "IT8716F";
+    case IT8718F: return "IT8718F";
+    case IT8720F: return "IT8720F";
+    case IT8721F: return "IT8721F";
+    case IT8726F: return "IT8726F";
 		case IT8728F: return "IT8728F";
-        case IT8752F: return "IT8752F";
-        case IT8772E: return "IT8772E";
+    case IT8752F: return "IT8752F";
+    case IT8772E: return "IT8772E";
 	}
-	
+
 	return "unknown";
 }
 
+bool IT87x::init(OSDictionary *properties)
+{
+	DebugLog("initialising...");
 
+  if (!super::init(properties))
+		return false;
 
+	return true;
+}
 
-bool IT87x::startPlugin()
+IOService* IT87x::probe(IOService *provider, SInt32 *score)
+{
+	DebugLog("probing...");
+
+	if (super::probe(provider, score) != this)
+		return 0;
+
+	return this;
+}
+
+/*bool IT87x::start(IOService * provider)
 {
 	DebugLog("starting...");
+
+	if (!super::start(provider))
+		return false;
+
+  if (!startPlugin(provider)) {
+    return false;
+  }
+  return TRUE;
+}
+*/
+
+bool IT87x::start(IOService * provider)
+{
+	DebugLog("starting ...");
   IORegistryEntry * rootNode;
+  OSData *data;
   
+	if (!super::start(provider))
+		return false;
 	
 	InfoLog("found ITE %s", getModelName());
   OSDictionary* list = OSDynamicCast(OSDictionary, getProperty("Sensors Configuration"));
   //   IOService * fRoot = getServiceRoot();
-  OSString *vendor=NULL, *product=NULL;
+//  OSString *vendor=NULL, *product=NULL;
   OSDictionary *configuration=NULL; 
   rootNode = fromPath("/efi/platform", gIODTPlane);
-  
+    char vend[40];
+    char prod[40];
+
   if(rootNode) {
-    vendor = OSDynamicCast(OSString, rootNode->getProperty("OEMVendor"));
-    product = OSDynamicCast(OSString, rootNode->getProperty("OEMBoard"));
-    if (!product) {
-      product = OSDynamicCast(OSString, rootNode->getProperty("OEMProduct"));
-    }                    
+//    vendor = OSDynamicCast(OSString, rootNode->getProperty("OEMVendor"));
+    data = OSDynamicCast(OSData, rootNode->getProperty("OEMVendor"));
+    bcopy(data->getBytesNoCopy(), vend, data->getLength());
+//    product = OSDynamicCast(OSString, rootNode->getProperty("OEMBoard"));
+    data = OSDynamicCast(OSData, rootNode->getProperty("OEMBoard"));
+
+    if (!data) {
+      WarningLog("no OEMBoard");
+ //     product = OSDynamicCast(OSString, rootNode->getProperty("OEMProduct"));
+      data = OSDynamicCast(OSData, rootNode->getProperty("OEMProduct"));
+    }
+    if (data) {
+      bcopy(data->getBytesNoCopy(), prod, data->getLength());
+    }
   }
-  if (product && vendor) {
-    InfoLog(" mother vendor=%s product=%s", vendor->getCStringNoCopy(), product->getCStringNoCopy());
-  }  else {
-    WarningLog("no vendor or product");
-  }
+//  if (product && vendor) {
+//    InfoLog(" mother vendor=%s product=%s", vendor->getCStringNoCopy(), product->getCStringNoCopy());
+    InfoLog(" mother vendor=%s product=%s", vend, prod);
+//  }  else {
+//    WarningLog("no vendor or product");
+//  }
   
-  
-  if (vendor) {
-    OSDictionary *link = OSDynamicCast(OSDictionary, list->getObject(vendor));
+  if (vend) {
+    OSDictionary *link = OSDynamicCast(OSDictionary, list->getObject(vend));
     if (link){
-      if(product) {
-        configuration = OSDynamicCast(OSDictionary, link->getObject(product));
-      } else {
-        WarningLog("no such product");
-      }
+ //     if(product) {
+        configuration = OSDynamicCast(OSDictionary, link->getObject(prod));
+ //     } else {
+ //       WarningLog("no such product");
+ //     }
     }
   } else {
     WarningLog("no vendor");
@@ -432,8 +477,10 @@ bool IT87x::startPlugin()
   if (list && !configuration) 
     configuration = OSDynamicCast(OSDictionary, list->getObject("Default"));
   
-  if(configuration)
+  if(configuration) {
     this->setProperty("Current Configuration", configuration);
+    WarningLog("set default configuration");
+  }
 	
 	// Temperature Sensors
 	if (configuration) {
@@ -699,3 +746,16 @@ IOReturn IT87x::callPlatformFunction(const OSSymbol *functionName, bool waitForF
 	return super::callPlatformFunction(functionName, waitForFunction, param1, param2, param3, param4);
 }
 
+void IT87x::stop (IOService* provider)
+{
+	DebugLog("stoping...");
+
+	super::stop(provider);
+}
+
+void IT87x::free ()
+{
+	DebugLog("freeing...");
+
+	super::free();
+}

@@ -45,9 +45,9 @@
 			<key>IOMatchCategory</key>
 			<string>IT87x</string>
 			<key>IOProviderClass</key>
-			<string>FakeSMC</string>
+			<string>IOResources</string>
 			<key>IOResourceMatch</key>
-			<string>ACPI</string>
+			<string>IOKit</string>
 			<key>Sensors Configuration</key>
 			<dict>
 				<key>Default</key>
@@ -896,7 +896,7 @@
 						<key>FANIN4</key>
 						<string></string>
 						<key>SmartGuardian</key>
-						<true/>
+						<false/>
 						<key>TEMPIN0</key>
 						<string>System</string>
 						<key>TEMPIN1</key>
