@@ -167,7 +167,7 @@ IOService* IntelCPUMonitor::probe(IOService *provider, SInt32 *score)
 		// User defined Tjmax
 		userTjmax = number->unsigned32BitValue();
 		IOLog("User defined TjMax=%d\n", (int)userTjmax);
-		snprintf(Platform, 4, "n");
+//		snprintf(Platform, 4, "n");
 	}
   /*  if (OSString* name = OSDynamicCast(OSString, getProperty("RPlt"))) {
    snprintf(Platform, 4, "%s", name ? name->getCStringNoCopy() : "n");
@@ -402,7 +402,7 @@ bool IntelCPUMonitor::start(IOService * provider)
   }
   FSBClock = FSBClock / Mega;
 	InfoLog("BusClock=%dMHz FSB=%dMHz", (int)(BusClock), (int)(FSBClock));
-	InfoLog("Platform string %s", Platform);
+//	InfoLog("Platform string %s", Platform);
 
 
 	if (!(WorkLoop = getWorkLoop()))

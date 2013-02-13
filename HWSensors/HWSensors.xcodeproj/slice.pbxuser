@@ -1,5 +1,49 @@
 // !$*UTF8*$!
 {
+	1220243116CBD28E003769F4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D30B1E0134B90E0004F0967 /* utils.h */;
+		name = "utils.h: 42";
+		rLen = 20;
+		rLoc = 732;
+		rType = 0;
+		vrLen = 914;
+		vrLoc = 606;
+	};
+	1220243216CBD28E003769F4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 12CB0F5912C0899B00068B06 /* IntelCPUMonitor.cpp */;
+		name = "IntelCPUMonitor.cpp: 170";
+		rLen = 0;
+		rLoc = 4026;
+		rType = 0;
+		vrLen = 621;
+		vrLoc = 2223;
+	};
+	1220243316CBD28E003769F4 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 12CB0F5812C0899B00068B06 /* IntelCPUMonitor-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			OSBundleRequired,
+		);
+		name = "/Users/slice/Projects/fakesmc/HWSensors/IntelCPUMonitor-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	1220243416CBD28E003769F4 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 12CB0F5812C0899B00068B06 /* IntelCPUMonitor-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundleInfoDictionaryVersion,
+		);
+		name = "/Users/slice/Projects/fakesmc/HWSensors/IntelCPUMonitor-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
 	124E606516C818AD004D3FE0 /* HWInfo */ = {
 		activeExec = 0;
 	};
@@ -54,7 +98,7 @@
 		);
 		name = "/Users/slice/Projects/fakesmc/HWSensors/WinbondW836x/WinbondW836x-Info.plist";
 		rLen = 0;
-		rLoc = 9223372036854775807;
+		rLoc = 9223372036854775808;
 	};
 	1250EF7216CBCF9000D454E4 /* PlistBookmark */ = {
 		isa = PlistBookmark;
@@ -66,7 +110,7 @@
 		);
 		name = "/Users/slice/Projects/fakesmc/HWSensors/FakeSMC-Info.plist";
 		rLen = 0;
-		rLoc = 9223372036854775807;
+		rLoc = 9223372036854775808;
 	};
 	1250EF7316CBCF9000D454E4 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -107,23 +151,6 @@
 		rType = 0;
 		vrLen = 1377;
 		vrLoc = 991;
-	};
-	1250EF7716CBCF9000D454E4 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D30B1E0134B90E0004F0967 /* utils.h */;
-		rLen = 20;
-		rLoc = 732;
-		rType = 0;
-	};
-	1250EF7816CBCF9000D454E4 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D30B1E0134B90E0004F0967 /* utils.h */;
-		name = "utils.h: 42";
-		rLen = 20;
-		rLoc = 732;
-		rType = 0;
-		vrLen = 916;
-		vrLoc = 606;
 	};
 	1257C3E116CBA2AE00812892 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -191,16 +218,6 @@
 		rType = 0;
 		vrLen = 797;
 		vrLoc = 157;
-	};
-	1257C46816CBB8A500812892 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 12CB0F5912C0899B00068B06 /* IntelCPUMonitor.cpp */;
-		name = "IntelCPUMonitor.cpp: 367";
-		rLen = 27;
-		rLoc = 8543;
-		rType = 0;
-		vrLen = 1074;
-		vrLoc = 8357;
 	};
 	1260E3E716C3D51F006515EB /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -422,9 +439,9 @@
 	};
 	12CB0F5912C0899B00068B06 /* IntelCPUMonitor.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {716, 9633}}";
-			sepNavSelRange = "{8543, 27}";
-			sepNavVisRange = "{8357, 1074}";
+			sepNavIntBoundsRect = "{{0, 0}, {716, 9841}}";
+			sepNavSelRange = "{4026, 0}";
+			sepNavVisRange = "{2223, 621}";
 			sepNavWindowFrame = "{{15, 60}, {877, 713}}";
 		};
 	};
@@ -513,18 +530,6 @@
 		rLen = 0;
 		rLoc = 9223372036854775808;
 	};
-	12FC8C0C14EA5D5A008FFCE2 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 2C7719AB14EA47500005C3C7 /* W836x-Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-			OSBundleRequired,
-		);
-		name = "/Users/slice/Projects/fakesmc/HWSensors/W836x-Info.plist";
-		rLen = 0;
-		rLoc = 9223372036854775808;
-	};
 	12FC8C0E14EA5D5A008FFCE2 /* PlistBookmark */ = {
 		isa = PlistBookmark;
 		fRef = 2C77199E14EA46A60005C3C7 /* F718x-Info.plist */;
@@ -534,18 +539,6 @@
 			OSBundleRequired,
 		);
 		name = "/Users/slice/Projects/fakesmc/HWSensors/F718x-Info.plist";
-		rLen = 0;
-		rLoc = 9223372036854775808;
-	};
-	12FC8C0F14EA5D5A008FFCE2 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 12CB0F5812C0899B00068B06 /* IntelCPUMonitor-Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-			OSBundleRequired,
-		);
-		name = "/Users/slice/Projects/fakesmc/HWSensors/IntelCPUMonitor-Info.plist";
 		rLen = 0;
 		rLoc = 9223372036854775808;
 	};
@@ -627,19 +620,11 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {716, 858}}";
 			sepNavSelRange = "{732, 20}";
-			sepNavVisRange = "{606, 916}";
+			sepNavVisRange = "{606, 914}";
 		};
 	};
 	2C77198D14EA44C30005C3C7 /* NuvotonNCT677x */ = {
 		activeExec = 0;
-	};
-	2C7719AB14EA47500005C3C7 /* W836x-Info.plist */ = {
-		isa = PBXFileReference;
-		fileEncoding = 4;
-		lastKnownFileType = text.plist.xml;
-		name = "W836x-Info.plist";
-		path = "/Users/slice/Projects/fakesmc/HWSensors/W836x-Info.plist";
-		sourceTree = "<absolute>";
 	};
 	2C7719B814EA47EA0005C3C7 /* NuvotonNCT677x.cpp */ = {
 		uiCtxt = {
@@ -755,9 +740,9 @@
 		};
 	};
 	AEABE453125F8E7400F08235 /* Project object */ = {
-		activeArchitecturePreference = i386;
+		activeArchitecturePreference = x86_64;
 		activeBuildConfigurationName = "Release 10.6";
-		activeTarget = AEF4C80312602EE700297B2B /* FakeSMC */;
+		activeTarget = 12CB0F4512C0888E00068B06 /* IntelCPUMonitor */;
 		addToTargets = (
 			AE212C6912678D3500145048 /* W836x */,
 		);
@@ -847,10 +832,14 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 382454337;
-			PBXWorkspaceStateSaveDate = 382454337;
+			PBXPerProjectTemplateStateSaveDate = 382456287;
+			PBXWorkspaceStateSaveDate = 382456287;
 		};
 		perUserProjectItems = {
+			1220243116CBD28E003769F4 /* PBXTextBookmark */ = 1220243116CBD28E003769F4 /* PBXTextBookmark */;
+			1220243216CBD28E003769F4 /* PBXTextBookmark */ = 1220243216CBD28E003769F4 /* PBXTextBookmark */;
+			1220243316CBD28E003769F4 /* PlistBookmark */ = 1220243316CBD28E003769F4 /* PlistBookmark */;
+			1220243416CBD28E003769F4 /* PlistBookmark */ = 1220243416CBD28E003769F4 /* PlistBookmark */;
 			1250EF2316CBC91300D454E4 /* PBXTextBookmark */ = 1250EF2316CBC91300D454E4 /* PBXTextBookmark */;
 			1250EF7016CBCF9000D454E4 /* PBXTextBookmark */ = 1250EF7016CBCF9000D454E4 /* PBXTextBookmark */;
 			1250EF7116CBCF9000D454E4 /* PlistBookmark */ = 1250EF7116CBCF9000D454E4 /* PlistBookmark */;
@@ -859,14 +848,11 @@
 			1250EF7416CBCF9000D454E4 /* PBXTextBookmark */ = 1250EF7416CBCF9000D454E4 /* PBXTextBookmark */;
 			1250EF7516CBCF9000D454E4 /* PBXTextBookmark */ = 1250EF7516CBCF9000D454E4 /* PBXTextBookmark */;
 			1250EF7616CBCF9000D454E4 /* PBXTextBookmark */ = 1250EF7616CBCF9000D454E4 /* PBXTextBookmark */;
-			1250EF7716CBCF9000D454E4 /* PBXTextBookmark */ = 1250EF7716CBCF9000D454E4 /* PBXTextBookmark */;
-			1250EF7816CBCF9000D454E4 /* PBXTextBookmark */ = 1250EF7816CBCF9000D454E4 /* PBXTextBookmark */;
 			1257C3E116CBA2AE00812892 /* PBXTextBookmark */ = 1257C3E116CBA2AE00812892 /* PBXTextBookmark */;
 			1257C3E216CBA2AE00812892 /* PBXTextBookmark */ = 1257C3E216CBA2AE00812892 /* PBXTextBookmark */;
 			1257C40116CBAF3500812892 /* PlistBookmark */ = 1257C40116CBAF3500812892 /* PlistBookmark */;
 			1257C46416CBB8A500812892 /* PBXTextBookmark */ = 1257C46416CBB8A500812892 /* PBXTextBookmark */;
 			1257C46716CBB8A500812892 /* PBXTextBookmark */ = 1257C46716CBB8A500812892 /* PBXTextBookmark */;
-			1257C46816CBB8A500812892 /* PBXTextBookmark */ = 1257C46816CBB8A500812892 /* PBXTextBookmark */;
 			1260E3E716C3D51F006515EB /* PBXTextBookmark */ = 1260E3E716C3D51F006515EB /* PBXTextBookmark */;
 			1260E3E816C3D51F006515EB /* PBXTextBookmark */ = 1260E3E816C3D51F006515EB /* PBXTextBookmark */;
 			1260E46E16C3E228006515EB /* PlistBookmark */ = 1260E46E16C3E228006515EB /* PlistBookmark */;
@@ -883,9 +869,7 @@
 			12C9795E16C3BAFB005874B2 /* PBXTextBookmark */ = 12C9795E16C3BAFB005874B2 /* PBXTextBookmark */;
 			12C979DA16C3D1CE005874B2 /* PBXTextBookmark */ = 12C979DA16C3D1CE005874B2 /* PBXTextBookmark */;
 			12FC8C0B14EA5D5A008FFCE2 /* PlistBookmark */ = 12FC8C0B14EA5D5A008FFCE2 /* PlistBookmark */;
-			12FC8C0C14EA5D5A008FFCE2 /* PlistBookmark */ = 12FC8C0C14EA5D5A008FFCE2 /* PlistBookmark */;
 			12FC8C0E14EA5D5A008FFCE2 /* PlistBookmark */ = 12FC8C0E14EA5D5A008FFCE2 /* PlistBookmark */;
-			12FC8C0F14EA5D5A008FFCE2 /* PlistBookmark */ = 12FC8C0F14EA5D5A008FFCE2 /* PlistBookmark */;
 			12FC8C1014EA5D5A008FFCE2 /* PlistBookmark */ = 12FC8C1014EA5D5A008FFCE2 /* PlistBookmark */;
 			12FC8C1114EA5D5A008FFCE2 /* PlistBookmark */ = 12FC8C1114EA5D5A008FFCE2 /* PlistBookmark */;
 			12FC8C1214EA5D5A008FFCE2 /* PlistBookmark */ = 12FC8C1214EA5D5A008FFCE2 /* PlistBookmark */;
