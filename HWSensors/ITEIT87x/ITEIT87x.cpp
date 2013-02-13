@@ -401,16 +401,12 @@ bool IT87x::startPlugin()
   OSDictionary *configuration=NULL; 
   rootNode = fromPath("/efi/platform", gIODTPlane);
   
-  
-  if(rootNode)
-  {
+  if(rootNode) {
     vendor = OSDynamicCast(OSString, rootNode->getProperty("OEMVendor"));
     product = OSDynamicCast(OSString, rootNode->getProperty("OEMBoard"));
     if (!product) {
       product = OSDynamicCast(OSString, rootNode->getProperty("OEMProduct"));
     }                    
-    
-    
   }
   if (product && vendor) {
     InfoLog(" mother vendor=%s product=%s", vendor->getCStringNoCopy(), product->getCStringNoCopy());

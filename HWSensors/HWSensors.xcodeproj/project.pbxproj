@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		124E608216C81921004D3FE0 /* HWInfo-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 124E607D16C81921004D3FE0 /* HWInfo-Prefix.pch */; };
+		1250EF3A16CBCA6200D454E4 /* WinbondW836x.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1250EF3816CBCA6200D454E4 /* WinbondW836x.cpp */; };
 		1257C3FA16CBAE4000812892 /* ITEIT87x.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1257C3F816CBAE4000812892 /* ITEIT87x.cpp */; };
 		1260E43B16C3DD64006515EB /* ICHSMBus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1260E40616C3DBC0006515EB /* ICHSMBus.cpp */; };
 		1260E43C16C3DD72006515EB /* Andigilog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1260E3FF16C3DBC0006515EB /* Andigilog.cpp */; };
@@ -28,7 +29,6 @@
 		1D30B1E2134B90E0004F0967 /* utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D30B1E0134B90E0004F0967 /* utils.h */; };
 		2C77199014EA44C30005C3C7 /* TigerAdditionals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12D78B0912BFDB58002C61EA /* TigerAdditionals.cpp */; };
 		2C7719A214EA46A60005C3C7 /* F718x.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C7719A014EA46A60005C3C7 /* F718x.cpp */; };
-		2C7719AF14EA47500005C3C7 /* W836x.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C7719AD14EA47500005C3C7 /* W836x.cpp */; };
 		2C7719B514EA479A0005C3C7 /* PC8739x.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C7719B314EA479A0005C3C7 /* PC8739x.cpp */; };
 		2C7719BA14EA47EA0005C3C7 /* NuvotonNCT677x.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C7719B814EA47EA0005C3C7 /* NuvotonNCT677x.cpp */; };
 		2C7719BB14EA482E0005C3C7 /* TigerAdditionals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12D78B0912BFDB58002C61EA /* TigerAdditionals.cpp */; };
@@ -158,6 +158,11 @@
 		124E607D16C81921004D3FE0 /* HWInfo-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HWInfo-Prefix.pch"; sourceTree = "<group>"; };
 		124E607E16C81921004D3FE0 /* HWInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HWInfo.cpp; sourceTree = "<group>"; };
 		124E607F16C81921004D3FE0 /* HWInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWInfo.h; sourceTree = "<group>"; };
+		1250EF3516CBCA6200D454E4 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1250EF3616CBCA6200D454E4 /* WinbondW836x-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "WinbondW836x-Info.plist"; sourceTree = "<group>"; };
+		1250EF3716CBCA6200D454E4 /* WinbondW836x-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WinbondW836x-Prefix.pch"; sourceTree = "<group>"; };
+		1250EF3816CBCA6200D454E4 /* WinbondW836x.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WinbondW836x.cpp; sourceTree = "<group>"; };
+		1250EF3916CBCA6200D454E4 /* WinbondW836x.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WinbondW836x.h; sourceTree = "<group>"; };
 		1257C3F516CBAE4000812892 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1257C3F616CBAE4000812892 /* ITEIT87x-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ITEIT87x-Info.plist"; sourceTree = "<group>"; };
 		1257C3F716CBAE4000812892 /* ITEIT87x-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ITEIT87x-Prefix.pch"; sourceTree = "<group>"; };
@@ -206,10 +211,6 @@
 		2C77199F14EA46A60005C3C7 /* F718x-pre106-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "F718x-pre106-Info.plist"; sourceTree = "<group>"; };
 		2C7719A014EA46A60005C3C7 /* F718x.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = F718x.cpp; sourceTree = "<group>"; };
 		2C7719A114EA46A60005C3C7 /* F718x.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F718x.h; sourceTree = "<group>"; };
-		2C7719AB14EA47500005C3C7 /* W836x-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "W836x-Info.plist"; sourceTree = "<group>"; };
-		2C7719AC14EA47500005C3C7 /* W836x-pre106-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "W836x-pre106-Info.plist"; sourceTree = "<group>"; };
-		2C7719AD14EA47500005C3C7 /* W836x.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = W836x.cpp; sourceTree = "<group>"; };
-		2C7719AE14EA47500005C3C7 /* W836x.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = W836x.h; sourceTree = "<group>"; };
 		2C7719B114EA479A0005C3C7 /* PC8739x-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "PC8739x-Info.plist"; sourceTree = "<group>"; };
 		2C7719B214EA479A0005C3C7 /* PC8739x-pre106-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "PC8739x-pre106-Info.plist"; sourceTree = "<group>"; };
 		2C7719B314EA479A0005C3C7 /* PC8739x.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PC8739x.cpp; sourceTree = "<group>"; };
@@ -392,6 +393,18 @@
 			path = HWInfo;
 			sourceTree = "<group>";
 		};
+		1250EF3316CBCA6200D454E4 /* WinbondW836x */ = {
+			isa = PBXGroup;
+			children = (
+				1250EF3416CBCA6200D454E4 /* InfoPlist.strings */,
+				1250EF3616CBCA6200D454E4 /* WinbondW836x-Info.plist */,
+				1250EF3716CBCA6200D454E4 /* WinbondW836x-Prefix.pch */,
+				1250EF3816CBCA6200D454E4 /* WinbondW836x.cpp */,
+				1250EF3916CBCA6200D454E4 /* WinbondW836x.h */,
+			);
+			path = WinbondW836x;
+			sourceTree = "<group>";
+		};
 		1257C3F316CBAE4000812892 /* ITEIT87x */ = {
 			isa = PBXGroup;
 			children = (
@@ -469,17 +482,6 @@
 				2C7719A114EA46A60005C3C7 /* F718x.h */,
 			);
 			name = F718x;
-			sourceTree = "<group>";
-		};
-		2C7719AA14EA47300005C3C7 /* WinbondW836x */ = {
-			isa = PBXGroup;
-			children = (
-				2C7719AB14EA47500005C3C7 /* W836x-Info.plist */,
-				2C7719AC14EA47500005C3C7 /* W836x-pre106-Info.plist */,
-				2C7719AD14EA47500005C3C7 /* W836x.cpp */,
-				2C7719AE14EA47500005C3C7 /* W836x.h */,
-			);
-			name = WinbondW836x;
 			sourceTree = "<group>";
 		};
 		2C7719B014EA476B0005C3C7 /* NSCPC8739x */ = {
@@ -603,7 +605,7 @@
 			children = (
 				2C7719B614EA47C40005C3C7 /* NuvotonNCT677x */,
 				2C7719B014EA476B0005C3C7 /* NSCPC8739x */,
-				2C7719AA14EA47300005C3C7 /* WinbondW836x */,
+				1250EF3316CBCA6200D454E4 /* WinbondW836x */,
 				1257C3F316CBAE4000812892 /* ITEIT87x */,
 				2C77199D14EA46850005C3C7 /* F718x */,
 				12CB0F4F12C0897700068B06 /* IntelCPUMonitor */,
@@ -1055,7 +1057,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				12D78B0E12BFDB58002C61EA /* TigerAdditionals.cpp in Sources */,
-				2C7719AF14EA47500005C3C7 /* W836x.cpp in Sources */,
+				1250EF3A16CBCA6200D454E4 /* WinbondW836x.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1184,6 +1186,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				124E607B16C81921004D3FE0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1250EF3416CBCA6200D454E4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1250EF3516CBCA6200D454E4 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -1896,7 +1906,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_MODEL_TUNING = "";
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
-				INFOPLIST_FILE = "W836x-Info.plist";
+				INFOPLIST_FILE = "WinbondW836x/WinbondW836x-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.mozodojo.W836x;
 				MODULE_VERSION = 1.0.0d1;

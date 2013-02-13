@@ -64,7 +64,7 @@ const UInt16 NUVOTON_VOLTAGE_VBAT_REG           = 0x0551;
 // Temperatures                                    SYSTIN  CPUTIN
 const UInt16 NUVOTON_TEMPERATURE_REG[]          = { 0x27,  0x73};
 
-// Voltages                                         VCORE +12V  AVCC  3VCC  +5V   5VSB  +3.3V 3VSB   VBAT
+// Voltages                                         VCORE VIN0  AVCC  3VCC  VIN1  VIN2  VIN3  3VSB   VBAT
 const UInt16 NUVOTON_VOLTAGE_REG[]              = { 0x20, 0x21, 0x22, 0x23, 0x24, 0x25, 0x26, 0x550, 0x551 };
 const float  NUVOTON_VOLTAGE_SCALE[]            = { 8,    8,    16,   16,   8,    8,    8,    16,    16 };
 
@@ -76,20 +76,22 @@ const UInt16 NUVOTON_FAN_CONTROL_MODE_REG[]     = { 0x102,  0x202,  0x302 };
 
 // NCT677x Voltage Label
 // TODO: Make and implement(how?) the math for voltages...
+// UNKN0-3: Seems they are vendor implementations, eg ASUS use VIN0 for +12V, not the same on ASRock
 
 // VCORE = "CPU VCore",
-// VIN0  = "+12V",
+// VIN0  = "UNKN0", // +12V?
 // AVCC  = "AVCC", // Analog +3.3 V power input. Internally supply power to all analog circuits
 // 3VCC  = "3VCC", // +3.3 V power supply for driving 3 V on host interface.
-// VIN1  = "+5V",
-// VIN2  = "5VSB", // -5V?
-// VIN3  = "+3.3V", // Disabled if AUXTIN is used
+// VIN1  = "UNKN1", // +5V?
+// VIN2  = "UNKN2", // -5V?
+// VIN3  = "UNKN3", // Disabled if AUXTIN is used, and if not?
 // 3VSB  = "3VSB", // +3.3 V stand-by power supply for the digital circuits
 // VBAT  = "VBAT" // +3 V on-board battery for the digital circuits(EN_VBAT_MNT MUST BE SET!)
 
 enum NCT677xModel {
   NCT6771F = 0xB470,
-  NCT6776F = 0xC330
+  NCT6776F = 0xC330,
+  NCT6779D = 0xC560
 };
 
 class NCT677x : public SuperIOMonitor

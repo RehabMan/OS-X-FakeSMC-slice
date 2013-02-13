@@ -2,17 +2,58 @@
  *  W836x.cpp
  *  HWSensors
  *
+ *  Based on code from Open Hardware Monitor project by Michael Möller (C) 2011
+ *
  *  Created by mozo on 14/10/10.
  *  Copyright 2010 mozodojo. All rights reserved.
  *
  */
 
-#include "W836x.h"
-#include "FakeSMC.h"
-#include "cpuid.h"
-#include <architecture/i386/pio.h>
+/*
+ 
+ Version: MPL 1.1/GPL 2.0/LGPL 2.1
+ 
+ The contents of this file are subject to the Mozilla Public License Version
+ 1.1 (the "License"); you may not use this file except in compliance with
+ the License. You may obtain a copy of the License at
+ 
+ http://www.mozilla.org/MPL/
+ 
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+ 
+ The Original Code is the Open Hardware Monitor code.
+ 
+ The Initial Developer of the Original Code is 
+ Michael Möller <m.moeller@gmx.ch>.
+ Portions created by the Initial Developer are Copyright (C) 2011
+ the Initial Developer. All Rights Reserved.
+ 
+ Contributor(s):
+ 
+ Alternatively, the contents of this file may be used under the terms of
+ either the GNU General Public License Version 2 or later (the "GPL"), or
+ the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+ in which case the provisions of the GPL or the LGPL are applicable instead
+ of those above. If you wish to allow use of your version of this file only
+ under the terms of either the GPL or the LGPL, and not to allow others to
+ use your version of this file under the terms of the MPL, indicate your
+ decision by deleting the provisions above and replace them with the notice
+ and other provisions required by the GPL or the LGPL. If you do not delete
+ the provisions above, a recipient may use your version of this file under
+ the terms of any one of the MPL, the GPL or the LGPL.
+ 
+ */
 
-#define Debug FALSE
+#include "WinbondW836x.h"
+
+#include <architecture/i386/pio.h>
+#include "cpuid.h"
+#include "FakeSMC.h"
+#include "../utils.h"
+
+#define Debug false
 
 #define LogPrefix "W836x: "
 #define DebugLog(string, args...)	do { if (Debug) { IOLog (LogPrefix "[Debug] " string "\n", ## args); } } while(0)
@@ -38,6 +79,17 @@ void W836x::writeByte(UInt8 bank, UInt8 reg, UInt8 value)
 	outb((UInt16)(address + WINBOND_DATA_REGISTER_OFFSET), value); 
 }
 
+UInt64 W836x::setBit(UInt64 target, UInt16 bit, UInt32 value)
+{
+	if (((value & 1) == value) && bit <= 63)
+	{
+		UInt64 mask = (((UInt64)1) << bit);
+		return value > 0 ? target | mask : target & ~mask;
+	}
+	
+	return value;
+}
+
 long W836x::readTemperature(unsigned long index)
 {
 	UInt32 value = readByte(WINBOND_TEMPERATURE_BANK[index], WINBOND_TEMPERATURE[index]) << 1;
@@ -52,39 +104,21 @@ long W836x::readTemperature(unsigned long index)
 
 long W836x::readVoltage(unsigned long index)
 {
-	float voltage = 0;
-	float gain = 1;
-	
-	UInt16 V = readByte(0, WINBOND_VOLTAGE + index);
-	
-	if (index == 0 && (model == W83627HF || model == W83627THF || model == W83687THF)) 
-	{
-		UInt8 vrmConfiguration = readByte(0, 0x18);
-		
-		if ((vrmConfiguration & 0x01) == 0)
-			voltage = 16.0f * V; // VRM8 formula
-		else
-			voltage = 4.88f * V + 690.0f; // VRM9 formula
-	}
-	else 
-	{
-		if (index == 3) gain = 2;
-		
-		voltage = (V << 3) * gain;
-	}
-	
-	return voltage;
-}
-
-UInt64 set_bit(UInt64 target, UInt32 bit, UInt32 value)
-{
-	if (((value & 1) == value) && bit <= 63)
-	{
-		UInt64 mask = (((UInt64)1) << bit);
-		return value > 0 ? target | mask : target & ~mask;
-	}
-	
-	return value;
+    if (index < 9) {
+        
+        float value = readByte(0,WINBOND_VOLTAGE_REG[index]) * (WINBOND_VOLTAGE_SCALE[index]);
+        
+        bool valid = value > 0;
+        
+        // check if battery voltage monitor is enabled
+        if (valid && WINBOND_VOLTAGE_REG[index] == WINBOND_VOLTAGE_VBAT_REG) {
+            valid = (readByte(0,0x5D) & 0x01) > 0;
+        }
+        
+        return valid ? value : 0;
+    }
+    
+    return 0;
 }
 
 void W836x::updateTachometers()
@@ -121,9 +155,9 @@ void W836x::updateTachometers()
 		fanValue[i] = (count < 0xff) ? 1.35e6f / (float(count * divisor)) : 0;
 		fanValueObsolete[i] = false;
 		
-		newBits = set_bit(newBits, WINBOND_TACHOMETER_DIVISOR2[i], (offset >> 2) & 1);
-		newBits = set_bit(newBits, WINBOND_TACHOMETER_DIVISOR1[i], (offset >> 1) & 1);
-		newBits = set_bit(newBits, WINBOND_TACHOMETER_DIVISOR0[i],  offset       & 1);
+		newBits = setBit(newBits, WINBOND_TACHOMETER_DIVISOR2[i], (offset >> 2) & 1);
+		newBits = setBit(newBits, WINBOND_TACHOMETER_DIVISOR1[i], (offset >> 1) & 1);
+		newBits = setBit(newBits, WINBOND_TACHOMETER_DIVISOR0[i],  offset       & 1);
 	}		
 	
 	// write new fan divisors 
@@ -162,13 +196,18 @@ void W836x::enter()
 void W836x::exit()
 {
 	outb(registerPort, 0xAA);
-	outb(registerPort, SUPERIO_CONFIGURATION_CONTROL_REGISTER);
-	outb(valuePort, 0x02);
+	//outb(registerPort, SUPERIO_CONFIGURATION_CONTROL_REGISTER);
+	//outb(valuePort, 0x02);
 }
 
 bool W836x::probePort()
 {
+    model = 0;
+    
 	UInt8 id =listenPortByte(SUPERIO_CHIP_ID_REGISTER);
+    
+    IOSleep(50);
+    
 	UInt8 revision = listenPortByte(SUPERIO_CHIP_REVISION_REGISTER);
 	
 	if (id == 0 || id == 0xff || revision == 0 || revision == 0xff)
@@ -366,6 +405,7 @@ bool W836x::probePort()
 			{
 				case 0x50:
 					model = W83667HGB;
+                    fanLimit = 4;
 					break;
 			}
 			break; 
@@ -392,73 +432,73 @@ bool W836x::probePort()
 	
 	if (!model)
 	{
-		InfoLog("found unsupported chip ID=0x%x REVISION=0x%x", id, revision);
+		DebugLog("found unsupported chip ID=0x%x REVISION=0x%x", id, revision);
 		return false;
 	}
-	
+    
 	selectLogicalDevice(WINBOND_HARDWARE_MONITOR_LDN);
 	
-	if (!getLogicalDeviceAddress())
+     IOSleep(50);
+//    UInt16 vendor = (UInt16)(readByte(0x80, WINBOND_VENDOR_ID_REGISTER) << 8) | readByte(0, WINBOND_VENDOR_ID_REGISTER);
+//    
+//    if (vendor != WINBOND_VENDOR_ID)
+//    {
+//        DebugLog("wrong vendor ID=0x%x", vendor);
+//        return false;
+//    }
+//    
+//    IOSleep(50);
+    
+	if (!getLogicalDeviceAddress()) {
+        DebugLog("can't get monitoring logical device address");
 		return false;
-	
+    }
+    
+
 	return true;
 }
 
-const char *W836x::getModelName()
+bool W836x::startPlugin()
 {
-	switch (model) 
-	{
-        case W83627DHG: return "W83627DHG";
-        case W83627DHGP: return "W83627DHG-P";
-        case W83627EHF: return "W83627EHF";
-        case W83627HF: return "W83627HF";
-        case W83627THF: return "W83627THF";
-        case W83667HG: return "W83667HG";
-        case W83667HGB: return "W83667HG-B";
-        case W83687THF: return "W83687THF";
-		case W83627SF: return "W83627SF";
-        case W83697HF: return "W83697HF";
-		case W83637HF: return "W83637HF";
-        case W83627UHG: return "W83627UHG";
-        case W83697SF: return "W83697SF";
-	}
+  InfoLog("found Winbond %s", getModelName());
 	
-	return "unknown";
-}
-
-bool W836x::init(OSDictionary *properties)
-{
-	DebugLog("initialising...");
-	
-    if (!super::init(properties))
-		return false;
-	
-	return true;
-}
-
-IOService* W836x::probe(IOService *provider, SInt32 *score)
-{
-	DebugLog("probing...");
-	
-	if (super::probe(provider, score) != this) 
-		return 0;
-	
-	InfoLog("based on code from Open Hardware Monitor project by Michael Möller (C) 2010");
-	InfoLog("mozodojo (C) 2011");
-	
-	return this;
-}
-
-bool W836x::start(IOService * provider)
-{
-	DebugLog("starting...");
-	
-	if (!super::start(provider)) 
-		return false;
-	
-	InfoLog("found Winbond %s", getModelName());
-	
-	OSDictionary* configuration = OSDynamicCast(OSDictionary, getProperty("Sensors Configuration"));
+  OSDictionary* list = OSDynamicCast(OSDictionary, getProperty("Sensors Configuration"));
+//  IOService * fRoot = getServiceRoot();
+  OSString *vendor=NULL, *product=NULL;
+  OSDictionary *configuration=NULL; 
+  IORegistryEntry * rootNode;
+  
+  rootNode = fromPath("/efi/platform", gIODTPlane);
+  
+  if(rootNode) {
+    vendor = OSDynamicCast(OSString, rootNode->getProperty("OEMVendor"));
+    product = OSDynamicCast(OSString, rootNode->getProperty("OEMBoard"));
+    if (!product) {
+      product = OSDynamicCast(OSString, rootNode->getProperty("OEMProduct"));
+    }                    
+  }
+  if (product && vendor) {
+    InfoLog(" mother vendor=%s product=%s", vendor->getCStringNoCopy(), product->getCStringNoCopy());
+  }  else {
+    WarningLog("no vendor or product");
+  }
+  
+  
+  if (vendor) {
+    OSDictionary *link = OSDynamicCast(OSDictionary, list->getObject(vendor));
+    if (link){
+      if(product) {
+        configuration = OSDynamicCast(OSDictionary, link->getObject(product));
+      } else {
+        WarningLog("no such product");
+      }
+    }
+  } else {
+    WarningLog("no vendor");
+  }
+  
+  if (list && !configuration) 
+    configuration = OSDynamicCast(OSDictionary, list->getObject("Default"));
 	
 	OSBoolean* tempin0forced = configuration ? OSDynamicCast(OSBoolean, configuration->getObject("TEMPIN0FORCED")) : 0;
 	OSBoolean* tempin1forced = configuration ? OSDynamicCast(OSBoolean, configuration->getObject("TEMPIN1FORCED")) : 0;
@@ -559,10 +599,10 @@ bool W836x::start(IOService * provider)
 				if (!addSensor(KEY_CPU_HEATSINK_TEMPERATURE, TYPE_SP78, 2, kSuperIOTemperatureSensor, 0))
 					WarningLog("error adding heatsink temperature sensor");
 				// Ambient
-
+        
 				if (!addSensor(KEY_AMBIENT_TEMPERATURE, TYPE_SP78, 2, kSuperIOTemperatureSensor, 1))
 					WarningLog("error adding ambient temperature sensor");
-
+        
 				// Northbridge
 				if (!addSensor(KEY_NORTHBRIDGE_TEMPERATURE, TYPE_SP78, 2, kSuperIOTemperatureSensor, 2))
 					WarningLog("error adding system temperature sensor");
@@ -572,9 +612,65 @@ bool W836x::start(IOService * provider)
 		}
 	}
 	
-	// CPU Vcore
-	if (!addSensor(KEY_CPU_VOLTAGE_RAW, TYPE_FP2E, 2, kSuperIOVoltageSensor, 0))
-		WarningLog("error adding CPU voltage sensor");
+  // Voltage
+	if (configuration) {
+		for (int i = 0; i < 9; i++) {
+			char key[5];
+      long Ri=0;
+      long Rf=1;
+      long Vf=0;
+      OSString * name;
+      
+			snprintf(key, 5, "VIN%X", i);
+			
+      if (process_sensor_entry(configuration->getObject(key), &name, &Ri, &Rf, &Vf)) {
+				if (name->isEqualTo("CPU")) {
+					if (!addSensor(KEY_CPU_VRM_SUPPLY0, TYPE_FP2E, 2, kSuperIOVoltageSensor, i /*,Ri,Rf,Vf*/))
+						WarningLog("error adding CPU voltage sensor");
+				}
+				else if (name->isEqualTo("Memory")) {
+					if (!addSensor(KEY_MEMORY_VOLTAGE, TYPE_FP2E, 2, kSuperIOVoltageSensor, i/*,Ri,Rf,Vf*/))
+						WarningLog("error adding memory voltage sensor");
+				}
+        else if (name->isEqualTo("+5VC")) {  
+          if (!addSensor(KEY_5VC_VOLTAGE, TYPE_FP4C, 2, kSuperIOVoltageSensor, i/*,Ri,Rf,Vf*/)) {
+            WarningLog("ERROR Adding AVCC Voltage Sensor!");
+          }
+        }
+        else if (name->isEqualTo("+5VSB")) {  
+          if (!addSensor(KEY_5VSB_VOLTAGE, TYPE_FP4C, 2, kSuperIOVoltageSensor, i/*,Ri,Rf,Vf*/)) {
+            WarningLog("ERROR Adding AVCC Voltage Sensor!");
+          }
+        }                
+        else if (name->isEqualTo("+12VC")) {
+          if (!addSensor(KEY_12V_VOLTAGE, TYPE_FP4C, 2, kSuperIOVoltageSensor, i/*,Ri,Rf,Vf*/)) {
+            WarningLog("ERROR Adding 12V Voltage Sensor!");
+          }
+        }
+        else if (name->isEqualTo("-12VC")) {
+          if (!addSensor(KEY_N12VC_VOLTAGE, TYPE_FP4C, 2, kSuperIOVoltageSensor, i/*,Ri,Rf,Vf*/)) {
+            WarningLog("ERROR Adding 12V Voltage Sensor!");
+          }
+        }
+        else if (name->isEqualTo("3VCC")) {
+          if (!addSensor(KEY_3VCC_VOLTAGE, TYPE_FP2E, 2, kSuperIOVoltageSensor, i/*,Ri,Rf,Vf*/)) {
+            WarningLog("ERROR Adding 3VCC Voltage Sensor!");
+          }
+        }
+        
+        else if (name->isEqualTo("3VSB")) {
+          if (!addSensor(KEY_3VSB_VOLTAGE, TYPE_FP2E, 2, kSuperIOVoltageSensor, i/*,Ri,Rf,Vf*/)) {
+            WarningLog("ERROR Adding 3VSB Voltage Sensor!");
+          }
+        }
+        else if (name->isEqualTo("VBAT")) {
+          if (!addSensor(KEY_VBAT_VOLTAGE, TYPE_FP2E, 2, kSuperIOVoltageSensor, i/*,Ri,Rf,Vf*/)) {
+            WarningLog("ERROR Adding VBAT Voltage Sensor!");
+          }
+        }
+			}
+		}
+	}
 	
 	// FANs
 	for (int i = 0; i < fanLimit; i++) 
@@ -593,7 +689,7 @@ bool W836x::start(IOService * provider)
 			name = OSDynamicCast(OSString, configuration->getObject(key));
 		}
 		
-		UInt32 nameLength = name ? strlen(name->getCStringNoCopy()) : 0;
+		UInt64 nameLength = name ? name->getLength() : 0;
 		
 		if (readTachometer(i) > 10 || nameLength > 0)
 			if (!addTachometer(i, (nameLength > 0 ? name->getCStringNoCopy() : 0)))
@@ -603,16 +699,24 @@ bool W836x::start(IOService * provider)
 	return true;
 }
 
-void W836x::stop (IOService* provider)
+const char *W836x::getModelName()
 {
-	DebugLog("stoping...");
+	switch (model) 
+	{
+    case W83627DHG:     return "W83627DHG";
+    case W83627DHGP:    return "W83627DHG-P";
+    case W83627EHF:     return "W83627EHF";
+    case W83627HF:      return "W83627HF";
+    case W83627THF:     return "W83627THF";
+    case W83667HG:      return "W83667HG";
+    case W83667HGB:     return "W83667HG-B";
+    case W83687THF:     return "W83687THF";
+		case W83627SF:      return "W83627SF";
+    case W83697HF:      return "W83697HF";
+		case W83637HF:      return "W83637HF";
+    case W83627UHG:     return "W83627UHG";
+    case W83697SF:      return "W83697SF";
+	}
 	
-	super::stop(provider);
-}
-
-void W836x::free ()
-{
-	DebugLog("freeing...");
-	
-	super::free();
+	return "unknown";
 }

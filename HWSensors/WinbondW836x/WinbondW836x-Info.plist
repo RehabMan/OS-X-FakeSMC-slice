@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIdentifier</key>
-	<string>org.mozodojo.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>org.mozodojo.${PRODUCT_NAME}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundlePackageType</key>
@@ -20,137 +20,65 @@
 	<string>1.0.1</string>
 	<key>IOKitPersonalities</key>
 	<dict>
-		<key>Nuvoton NCT677x Monitor Plugin</key>
+		<key>Winbond W836x Monitor Plugin</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
 			<string>org.mozodojo.${PRODUCT_NAME}</string>
 			<key>IOClass</key>
-			<string>NCT677x</string>
+			<string>W836x</string>
 			<key>IOMatchCategory</key>
-			<string>SuperIOMonitor</string>
+			<string>W836x</string>
 			<key>IOProviderClass</key>
 			<string>FakeSMC</string>
 			<key>IOResourceMatch</key>
-			<string>IOKit</string>
+			<string>ACPI</string>
 			<key>Sensors Configuration</key>
 			<dict>
 				<key>ASUS</key>
 				<dict>
-					<key>P8Z77-M</key>
+					<key>P7P55D LE</key>
 					<dict>
 						<key>FANIN0</key>
-						<string>System</string>
+						<string>Chassis Fan 1</string>
 						<key>FANIN1</key>
-						<string>CPU</string>
+						<string>CPU Fan</string>
 						<key>FANIN2</key>
-						<string></string>
+						<string>Chassis Fan 2</string>
 						<key>FANIN3</key>
-						<string></string>
+						<string>Chassis Fan 3</string>
 						<key>FANIN4</key>
-						<string></string>
+						<string>Power Fan</string>
+						<key>FANINLIMIT</key>
+						<integer>4</integer>
 						<key>TEMPIN0</key>
-						<string>System</string>
-						<key>TEMPIN1</key>
 						<string>CPU</string>
+						<key>TEMPIN1</key>
+						<string>Ambient</string>
+						<key>TEMPIN2</key>
+						<string>System</string>
 						<key>VIN0</key>
 						<string>CPU</string>
 						<key>VIN1</key>
-						<dict>
-							<key>Name</key>
-							<string>+5VC</string>
-							<key>Rf</key>
-							<integer>300</integer>
-							<key>Ri</key>
-							<integer>1200</integer>
-							<key>VRef</key>
-							<integer>0</integer>
-						</dict>
+						<string>Memory</string>
 						<key>VIN2</key>
 						<string>3VCC</string>
 						<key>VIN3</key>
-						<string></string>
-						<key>VIN4</key>
 						<dict>
 							<key>Name</key>
 							<string>+12VC</string>
-							<key>Rf</key>
-							<integer>100</integer>
 							<key>Ri</key>
-							<integer>1100</integer>
-							<key>VRef</key>
-							<integer>0</integer>
-						</dict>
-						<key>VIN5</key>
-						<string></string>
-						<key>VIN6</key>
-						<string></string>
-						<key>VIN7</key>
-						<string>3VSB</string>
-						<key>VIN8</key>
-						<string>VBAT</string>
-					</dict>
-					<key>P8H67-M PRO</key>
-					<dict>
-						<key>FANIN0</key>
-						<string>CPU Fan</string>
-						<key>FANIN1</key>
-						<string>Power Fan</string>
-						<key>FANIN2</key>
-						<string>Chassis Fan</string>
-						<key>FANIN3</key>
-						<string></string>
-						<key>FANIN4</key>
-						<string></string>
-						<key>TEMPIN0</key>
-						<string>CPU</string>
-						<key>TEMPIN1</key>
-						<string></string>
-						<key>TEMPIN2</key>
-						<string></string>
-						<key>TEMPIN3</key>
-						<string>System</string>
-						<key>TEMPIN4</key>
-						<string></string>
-						<key>TEMPIN5</key>
-						<string></string>
-						<key>TEMPIN6</key>
-						<string></string>
-						<key>TEMPIN7</key>
-						<string></string>
-						<key>TEMPIN8</key>
-						<string></string>
-						<key>VIN0</key>
-						<string>CPU</string>
-						<key>VIN1</key>
-						<dict>
-							<key>Ri</key>
-							<integer>1100</integer>
-							<key>Name</key>
-							<string>+12VC</string>
+							<integer>7193</integer>
 							<key>Rf</key>
-							<integer>100</integer>
+							<integer>1000</integer>
 							<key>VRef</key>
-							<integer>0</integer>
+							<string></string>
 						</dict>
-						<key>VIN2</key>
-						<dict>
-							<key>Ri</key>
-							<integer>100</integer>
-							<key>Name</key>
-							<string>3VCC</string>
-							<key>Rf</key>
-							<integer>100</integer>
-							<key>VRef</key>
-							<integer>0</integer>
-						</dict>
-						<key>VIN3</key>
-						<string></string>
 						<key>VIN4</key>
 						<dict>
-							<key>Ri</key>
-							<integer>4000</integer>
 							<key>Name</key>
 							<string>+5VC</string>
+							<key>Ri</key>
+							<integer>2000</integer>
 							<key>Rf</key>
 							<integer>1000</integer>
 							<key>VRef</key>
@@ -161,428 +89,373 @@
 						<key>VIN6</key>
 						<string></string>
 						<key>VIN7</key>
-						<dict>
-							<key>Ri</key>
-							<integer>100</integer>
-							<key>Name</key>
-							<string>3VSB</string>
-							<key>Rf</key>
-							<integer>100</integer>
-							<key>VRef</key>
-							<integer>0</integer>
-						</dict>
+						<string></string>
 						<key>VIN8</key>
-						<dict>
-							<key>Ri</key>
-							<integer>100</integer>
-							<key>Name</key>
-							<string>VBAT</string>
-							<key>Rf</key>
-							<integer>100</integer>
-							<key>VRef</key>
-							<integer>0</integer>
-						</dict>
+						<string></string>
 					</dict>
-					<key>P8P67 PRO</key>
+					<key>P6T DELUXE V2</key>
 					<dict>
 						<key>TEMPIN0</key>
 						<string>CPU</string>
 						<key>TEMPIN1</key>
 						<string></string>
 						<key>TEMPIN2</key>
-						<string>Ambient</string>
-						<key>TEMPIN3</key>
 						<string>System</string>
-						<key>TEMPIN4</key>
-						<string></string>
-						<key>TEMPIN5</key>
-						<string></string>
-						<key>TEMPIN6</key>
-						<string></string>
-						<key>TEMPIN7</key>
-						<string></string>
-						<key>TEMPIN8</key>
-						<string></string>
+						<key>FANINLIMIT</key>
+						<integer>0</integer>
 						<key>FANIN0</key>
-						<string>CPU Fan</string>
-						<key>FANIN1</key>
-						<string>Power Fan</string>
-						<key>FANIN2</key>
-						<string>Chassis Fan #2</string>
-						<key>FANIN3</key>
-						<string></string>
-						<key>FANIN4</key>
-						<string></string>
-						<key>VIN0</key>
-						<string>CPU</string>
-						<key>VIN1</key>
-						<dict>
-							<key>Name</key>
-							<string>+12VC</string>
-							<key>Ri</key>
-							<integer>1100</integer>
-							<key>Rf</key>
-							<integer>100</integer>
-							<key>VRef</key>
-							<integer>0</integer>
-						</dict>
-						<key>VIN2</key>
-						<string></string>
-						<key>VIN3</key>
-						<dict>
-							<key>Name</key>
-							<string>3VCC</string>
-							<key>Ri</key>
-							<integer>100</integer>
-							<key>Rf</key>
-							<integer>100</integer>
-							<key>VRef</key>
-							<integer>0</integer>
-						</dict>
-						<key>VIN4</key>
-						<dict>
-							<key>Name</key>
-							<string>+5VC</string>
-							<key>Ri</key>
-							<integer>1200</integer>
-							<key>Rf</key>
-							<integer>300</integer>
-							<key>VRef</key>
-							<integer>0</integer>
-						</dict>
-						<key>VIN5</key>
-						<string></string>
-						<key>VIN6</key>
-						<string></string>
-						<key>VIN7</key>
-						<dict>
-							<key>Name</key>
-							<string>3VSB</string>
-							<key>Ri</key>
-							<integer>100</integer>
-							<key>Rf</key>
-							<integer>100</integer>
-							<key>VRef</key>
-							<integer>0</integer>
-						</dict>
-						<key>VIN8</key>
-						<dict>
-							<key>Name</key>
-							<string>VBAT</string>
-							<key>Ri</key>
-							<integer>100</integer>
-							<key>Rf</key>
-							<integer>100</integer>
-							<key>VRef</key>
-							<integer>0</integer>
-						</dict>
-					</dict>
-					<key>P8P67 EVO</key>
-					<dict>
-						<key>TEMPIN0</key>
-						<string>CPU</string>
-						<key>TEMPIN1</key>
-						<string></string>
-						<key>TEMPIN2</key>
-						<string>Ambient</string>
-						<key>TEMPIN3</key>
-						<string>System</string>
-						<key>TEMPIN4</key>
-						<string></string>
-						<key>TEMPIN5</key>
-						<string></string>
-						<key>TEMPIN6</key>
-						<string></string>
-						<key>TEMPIN7</key>
-						<string></string>
-						<key>TEMPIN8</key>
-						<string></string>
-						<key>FANIN0</key>
-						<string>CPU Fan</string>
-						<key>FANIN1</key>
-						<string>Power Fan</string>
-						<key>FANIN2</key>
-						<string>Chassis Fan #2</string>
-						<key>FANIN3</key>
-						<string></string>
-						<key>FANIN4</key>
-						<string></string>
-						<key>VIN0</key>
-						<string>CPU</string>
-						<key>VIN1</key>
-						<dict>
-							<key>Name</key>
-							<string>+12VC</string>
-							<key>Ri</key>
-							<integer>1100</integer>
-							<key>Rf</key>
-							<integer>100</integer>
-							<key>VRef</key>
-							<integer>0</integer>
-						</dict>
-						<key>VIN2</key>
-						<string></string>
-						<key>VIN3</key>
-						<dict>
-							<key>Name</key>
-							<string>3VCC</string>
-							<key>Ri</key>
-							<integer>100</integer>
-							<key>Rf</key>
-							<integer>100</integer>
-							<key>VRef</key>
-							<integer>0</integer>
-						</dict>
-						<key>VIN4</key>
-						<dict>
-							<key>Name</key>
-							<string>+5VC</string>
-							<key>Ri</key>
-							<integer>1200</integer>
-							<key>Rf</key>
-							<integer>300</integer>
-							<key>VRef</key>
-							<integer>0</integer>
-						</dict>
-						<key>VIN5</key>
-						<string></string>
-						<key>VIN6</key>
-						<string></string>
-						<key>VIN7</key>
-						<dict>
-							<key>Name</key>
-							<string>3VSB</string>
-							<key>Ri</key>
-							<integer>100</integer>
-							<key>Rf</key>
-							<integer>100</integer>
-							<key>VRef</key>
-							<integer>0</integer>
-						</dict>
-						<key>VIN8</key>
-						<dict>
-							<key>Name</key>
-							<string>VBAT</string>
-							<key>Ri</key>
-							<integer>100</integer>
-							<key>Rf</key>
-							<integer>100</integer>
-							<key>VRef</key>
-							<integer>0</integer>
-						</dict>
-					</dict>
-					<key>P8P67</key>
-					<dict>
-						<key>TEMPIN0</key>
-						<string>CPU</string>
-						<key>TEMPIN1</key>
-						<string></string>
-						<key>TEMPIN2</key>
-						<string>Ambient</string>
-						<key>TEMPIN3</key>
-						<string>System</string>
-						<key>TEMPIN4</key>
-						<string></string>
-						<key>TEMPIN5</key>
-						<string></string>
-						<key>TEMPIN6</key>
-						<string></string>
-						<key>TEMPIN7</key>
-						<string></string>
-						<key>TEMPIN8</key>
-						<string></string>
-						<key>FANIN0</key>
-						<string>CPU Fan</string>
-						<key>FANIN1</key>
-						<string>Power Fan</string>
-						<key>FANIN2</key>
-						<string>Chassis Fan #2</string>
-						<key>FANIN3</key>
-						<string></string>
-						<key>FANIN4</key>
-						<string></string>
-						<key>VIN0</key>
-						<string>CPU</string>
-						<key>VIN1</key>
-						<dict>
-							<key>Name</key>
-							<string>+12VC</string>
-							<key>Ri</key>
-							<integer>1100</integer>
-							<key>Rf</key>
-							<integer>100</integer>
-							<key>VRef</key>
-							<integer>0</integer>
-						</dict>
-						<key>VIN2</key>
-						<string></string>
-						<key>VIN3</key>
-						<dict>
-							<key>Name</key>
-							<string>3VCC</string>
-							<key>Ri</key>
-							<integer>100</integer>
-							<key>Rf</key>
-							<integer>100</integer>
-							<key>VRef</key>
-							<integer>0</integer>
-						</dict>
-						<key>VIN4</key>
-						<dict>
-							<key>Name</key>
-							<string>+5VC</string>
-							<key>Ri</key>
-							<integer>1200</integer>
-							<key>Rf</key>
-							<integer>300</integer>
-							<key>VRef</key>
-							<integer>0</integer>
-						</dict>
-						<key>VIN5</key>
-						<string></string>
-						<key>VIN6</key>
-						<string></string>
-						<key>VIN7</key>
-						<dict>
-							<key>Name</key>
-							<string>3VSB</string>
-							<key>Ri</key>
-							<integer>100</integer>
-							<key>Rf</key>
-							<integer>100</integer>
-							<key>VRef</key>
-							<integer>0</integer>
-						</dict>
-						<key>VIN8</key>
-						<dict>
-							<key>Name</key>
-							<string>VBAT</string>
-							<key>Ri</key>
-							<integer>100</integer>
-							<key>Rf</key>
-							<integer>100</integer>
-							<key>VRef</key>
-							<integer>0</integer>
-						</dict>
-					</dict>
-					<key>P8P67-M PR</key>
-					<dict>
-						<key>TEMPIN0</key>
-						<string>CPU</string>
-						<key>TEMPIN1</key>
-						<string></string>
-						<key>TEMPIN2</key>
-						<string></string>
-						<key>TEMPIN3</key>
-						<string>System</string>
-						<key>TEMPIN4</key>
-						<string></string>
-						<key>TEMPIN5</key>
-						<string></string>
-						<key>TEMPIN6</key>
-						<string></string>
-						<key>TEMPIN7</key>
-						<string></string>
-						<key>TEMPIN8</key>
-						<string></string>
-						<key>FANIN0</key>
-						<string>Chassis Fan #1</string>
+						<string>System Fan</string>
 						<key>FANIN1</key>
 						<string>CPU Fan</string>
+						<key>FANIN2</key>
+						<string>Auxiliary</string>
 						<key>FANIN3</key>
+						<string>CPU Fan 2</string>
+						<key>FANIN4</key>
+						<string>Auxiliary Fan 2</string>
+						<key>VIN0</key>
+						<string>CPU</string>
+						<key>VIN1</key>
+						<dict>
+							<key>Name</key>
+							<string>+12VC</string>
+							<key>Ri</key>
+							<integer>1150</integer>
+							<key>Rf</key>
+							<integer>191</integer>
+							<key>VRef</key>
+							<integer>0</integer>
+						</dict>
+						<key>VIN2</key>
+						<string></string>
+						<key>VIN3</key>
+						<dict>
+							<key>Name</key>
+							<string>3VCC</string>
+							<key>Ri</key>
+							<integer>100</integer>
+							<key>Rf</key>
+							<integer>100</integer>
+							<key>VRef</key>
+							<integer>0</integer>
+						</dict>
+						<key>VIN4</key>
+						<dict>
+							<key>Name</key>
+							<string>+5VC</string>
+							<key>Ri</key>
+							<integer>150</integer>
+							<key>Rf</key>
+							<integer>75</integer>
+							<key>VRef</key>
+							<integer>0</integer>
+						</dict>
+						<key>VIN5</key>
+						<string></string>
+						<key>VIN6</key>
+						<string></string>
+						<key>VIN7</key>
+						<dict>
+							<key>Name</key>
+							<string>3VSB</string>
+							<key>Ri</key>
+							<integer>100</integer>
+							<key>Rf</key>
+							<integer>100</integer>
+							<key>VRef</key>
+							<integer>0</integer>
+						</dict>
+						<key>VIN8</key>
+						<dict>
+							<key>Name</key>
+							<string>VBAT</string>
+							<key>Ri</key>
+							<integer>100</integer>
+							<key>Rf</key>
+							<integer>100</integer>
+							<key>VRef</key>
+							<integer>0</integer>
+						</dict>
+						<key>VIN9</key>
+						<string>Power Supply 8</string>
+					</dict>
+					<key>Rampage II GENE</key>
+					<dict>
+						<key>TEMPIN0</key>
+						<string>CPU</string>
+						<key>TEMPIN1</key>
+						<string></string>
+						<key>TEMPIN2</key>
+						<string>System</string>
+						<key>FANINLIMIT</key>
+						<integer>0</integer>
+						<key>FANIN0</key>
+						<string>System Fan</string>
+						<key>FANIN1</key>
+						<string>CPU Fan</string>
+						<key>FANIN2</key>
+						<string>Auxiliary</string>
+						<key>FANIN3</key>
+						<string>CPU Fan 2</string>
+						<key>FANIN4</key>
+						<string>Auxiliary Fan 2</string>
+						<key>VIN0</key>
+						<string>CPU</string>
+						<key>VIN1</key>
+						<dict>
+							<key>Name</key>
+							<string>+12VC</string>
+							<key>Ri</key>
+							<integer>1150</integer>
+							<key>Rf</key>
+							<integer>191</integer>
+							<key>VRef</key>
+							<integer>0</integer>
+						</dict>
+						<key>VIN2</key>
+						<string></string>
+						<key>VIN3</key>
+						<dict>
+							<key>Name</key>
+							<string>3VCC</string>
+							<key>Ri</key>
+							<integer>100</integer>
+							<key>Rf</key>
+							<integer>100</integer>
+							<key>VRef</key>
+							<integer>0</integer>
+						</dict>
+						<key>VIN4</key>
+						<dict>
+							<key>Name</key>
+							<string>+5VC</string>
+							<key>Ri</key>
+							<integer>150</integer>
+							<key>Rf</key>
+							<integer>75</integer>
+							<key>VRef</key>
+							<integer>0</integer>
+						</dict>
+						<key>VIN5</key>
+						<string></string>
+						<key>VIN6</key>
+						<string></string>
+						<key>VIN7</key>
+						<dict>
+							<key>Name</key>
+							<string>3VSB</string>
+							<key>Ri</key>
+							<integer>100</integer>
+							<key>Rf</key>
+							<integer>100</integer>
+							<key>VRef</key>
+							<integer>0</integer>
+						</dict>
+						<key>VIN8</key>
+						<dict>
+							<key>Name</key>
+							<string>VBAT</string>
+							<key>Ri</key>
+							<integer>100</integer>
+							<key>Rf</key>
+							<integer>100</integer>
+							<key>VRef</key>
+							<integer>0</integer>
+						</dict>
+						<key>VIN9</key>
+						<string></string>
+					</dict>
+					<key>P6T</key>
+					<dict>
+						<key>TEMPIN0</key>
+						<string>CPU</string>
+						<key>TEMPIN1</key>
+						<string></string>
+						<key>TEMPIN2</key>
+						<string>System</string>
+						<key>FANINLIMIT</key>
+						<integer>5</integer>
+						<key>FANIN0</key>
+						<string>System Fan</string>
+						<key>FANIN1</key>
+						<string>CPU Fan</string>
+						<key>FANIN2</key>
+						<string>Auxiliary</string>
+						<key>FANIN3</key>
+						<string>CPU Fan 2</string>
+						<key>FANIN4</key>
+						<string>Auxiliary Fan 2</string>
+						<key>VIN0</key>
+						<string>CPU</string>
+						<key>VIN1</key>
+						<dict>
+							<key>Name</key>
+							<string>+12VC</string>
+							<key>Ri</key>
+							<integer>1150</integer>
+							<key>Rf</key>
+							<integer>191</integer>
+							<key>VRef</key>
+							<integer>0</integer>
+						</dict>
+						<key>VIN2</key>
+						<string></string>
+						<key>VIN3</key>
+						<dict>
+							<key>Name</key>
+							<string>3VCC</string>
+							<key>Ri</key>
+							<integer>100</integer>
+							<key>Rf</key>
+							<integer>100</integer>
+							<key>VRef</key>
+							<integer>0</integer>
+						</dict>
+						<key>VIN4</key>
+						<dict>
+							<key>Name</key>
+							<string>+5VC</string>
+							<key>Ri</key>
+							<integer>150</integer>
+							<key>Rf</key>
+							<integer>75</integer>
+							<key>VRef</key>
+							<integer>0</integer>
+						</dict>
+						<key>VIN5</key>
+						<string></string>
+						<key>VIN6</key>
+						<string></string>
+						<key>VIN7</key>
+						<dict>
+							<key>Name</key>
+							<string>3VSB</string>
+							<key>Ri</key>
+							<integer>100</integer>
+							<key>Rf</key>
+							<integer>100</integer>
+							<key>VRef</key>
+							<integer>0</integer>
+						</dict>
+						<key>VIN8</key>
+						<dict>
+							<key>Name</key>
+							<string>VBAT</string>
+							<key>Ri</key>
+							<integer>100</integer>
+							<key>Rf</key>
+							<integer>100</integer>
+							<key>VRef</key>
+							<integer>0</integer>
+						</dict>
+						<key>VIN9</key>
+						<string></string>
+					</dict>
+					<key>P6X58D-E</key>
+					<dict>
+						<key>TEMPIN0</key>
+						<string>CPU</string>
+						<key>TEMPIN1</key>
+						<string></string>
+						<key>TEMPIN2</key>
+						<string>System</string>
+						<key>FANINLIMIT</key>
+						<integer>0</integer>
+						<key>FANIN0</key>
+						<string>System Fan</string>
+						<key>FANIN1</key>
+						<string>CPU Fan</string>
+						<key>FANIN2</key>
+						<string>Auxiliary</string>
+						<key>FANIN3</key>
+						<string>CPU Fan 2</string>
+						<key>FANIN4</key>
+						<string>Auxiliary Fan 2</string>
+						<key>VIN0</key>
+						<string>CPU</string>
+						<key>VIN1</key>
+						<dict>
+							<key>Name</key>
+							<string>+12VC</string>
+							<key>Ri</key>
+							<integer>1150</integer>
+							<key>Rf</key>
+							<integer>191</integer>
+							<key>VRef</key>
+							<integer>0</integer>
+						</dict>
+						<key>VIN2</key>
+						<string></string>
+						<key>VIN3</key>
+						<dict>
+							<key>Name</key>
+							<string>3VCC</string>
+							<key>Ri</key>
+							<integer>100</integer>
+							<key>Rf</key>
+							<integer>100</integer>
+							<key>VRef</key>
+							<integer>0</integer>
+						</dict>
+						<key>VIN4</key>
+						<dict>
+							<key>Name</key>
+							<string>+5VC</string>
+							<key>Ri</key>
+							<integer>150</integer>
+							<key>Rf</key>
+							<integer>75</integer>
+							<key>VRef</key>
+							<integer>0</integer>
+						</dict>
+						<key>VIN5</key>
+						<string></string>
+						<key>VIN6</key>
+						<string></string>
+						<key>VIN7</key>
+						<dict>
+							<key>Name</key>
+							<string>3VSB</string>
+							<key>Ri</key>
+							<integer>100</integer>
+							<key>Rf</key>
+							<integer>100</integer>
+							<key>VRef</key>
+							<integer>0</integer>
+						</dict>
+						<key>VIN8</key>
+						<dict>
+							<key>Name</key>
+							<string>VBAT</string>
+							<key>Ri</key>
+							<integer>100</integer>
+							<key>Rf</key>
+							<integer>100</integer>
+							<key>VRef</key>
+							<integer>0</integer>
+						</dict>
+						<key>VIN9</key>
+						<string>Power Supply 8</string>
+					</dict>
+				</dict>
+				<key>ASRock</key>
+				<dict>
+					<key>880GMH/USB3</key>
+					<dict>
+						<key>TEMPIN0</key>
+						<string>CPU</string>
+						<key>TEMPIN1</key>
+						<string></string>
+						<key>TEMPIN2</key>
+						<string>System</string>
+						<key>FANINLIMIT</key>
+						<integer>0</integer>
+						<key>FANIN0</key>
+						<string>Chasis Fan</string>
+						<key>FANIN1</key>
+						<string>CPU Fan</string>
+						<key>FANIN2</key>
 						<string>Power Fan</string>
-						<key>FANIN4</key>
-						<string>Auxiliary Fan</string>
-						<key>VIN0</key>
-						<string>CPU</string>
-						<key>VIN1</key>
-						<dict>
-							<key>Name</key>
-							<string>+12VC</string>
-							<key>Ri</key>
-							<integer>1100</integer>
-							<key>Rf</key>
-							<integer>100</integer>
-							<key>VRef</key>
-							<integer>0</integer>
-						</dict>
-						<key>VIN2</key>
-						<string></string>
-						<key>VIN3</key>
-						<dict>
-							<key>Name</key>
-							<string>3VCC</string>
-							<key>Ri</key>
-							<integer>100</integer>
-							<key>Rf</key>
-							<integer>100</integer>
-							<key>VRef</key>
-							<integer>0</integer>
-						</dict>
-						<key>VIN4</key>
-						<dict>
-							<key>Name</key>
-							<string>+5VC</string>
-							<key>Ri</key>
-							<integer>1200</integer>
-							<key>Rf</key>
-							<integer>300</integer>
-							<key>VRef</key>
-							<integer>0</integer>
-						</dict>
-						<key>VIN5</key>
-						<string></string>
-						<key>VIN6</key>
-						<string></string>
-						<key>VIN7</key>
-						<dict>
-							<key>Name</key>
-							<string>3VSB</string>
-							<key>Ri</key>
-							<integer>100</integer>
-							<key>Rf</key>
-							<integer>100</integer>
-							<key>VRef</key>
-							<integer>0</integer>
-						</dict>
-						<key>VIN8</key>
-						<dict>
-							<key>Name</key>
-							<string>VBAT</string>
-							<key>Ri</key>
-							<integer>100</integer>
-							<key>Rf</key>
-							<integer>100</integer>
-							<key>VRef</key>
-							<integer>0</integer>
-						</dict>
-					</dict>
-					<key>P8Z68-V PRO</key>
-					<dict>
-						<key>TEMPIN0</key>
-						<string>CPU</string>
-						<key>TEMPIN1</key>
-						<string></string>
-						<key>TEMPIN2</key>
-						<string>Ambient</string>
-						<key>TEMPIN3</key>
-						<string>System</string>
-						<key>TEMPIN4</key>
-						<string></string>
-						<key>TEMPIN5</key>
-						<string></string>
-						<key>TEMPIN6</key>
-						<string></string>
-						<key>TEMPIN7</key>
-						<string></string>
-						<key>TEMPIN8</key>
-						<string></string>
-						<key>FANIN0</key>
-						<string></string>
-						<key>FANIN1</key>
-						<string></string>
-						<key>FANIN2</key>
-						<string></string>
 						<key>FANIN3</key>
 						<string></string>
 						<key>FANIN4</key>
@@ -590,16 +463,7 @@
 						<key>VIN0</key>
 						<string>CPU</string>
 						<key>VIN1</key>
-						<dict>
-							<key>Name</key>
-							<string>+12VC</string>
-							<key>Ri</key>
-							<integer>1100</integer>
-							<key>Rf</key>
-							<integer>100</integer>
-							<key>VRef</key>
-							<integer>0</integer>
-						</dict>
+						<string></string>
 						<key>VIN2</key>
 						<string></string>
 						<key>VIN3</key>
@@ -614,20 +478,29 @@
 							<integer>0</integer>
 						</dict>
 						<key>VIN4</key>
+						<string></string>
+						<key>VIN5</key>
 						<dict>
 							<key>Name</key>
 							<string>+5VC</string>
 							<key>Ri</key>
-							<integer>400</integer>
+							<integer>150</integer>
+							<key>Rf</key>
+							<integer>75</integer>
+							<key>VRef</key>
+							<integer>0</integer>
+						</dict>
+						<key>VIN6</key>
+						<dict>
+							<key>Name</key>
+							<string>+12VC</string>
+							<key>Ri</key>
+							<integer>560</integer>
 							<key>Rf</key>
 							<integer>100</integer>
 							<key>VRef</key>
 							<integer>0</integer>
 						</dict>
-						<key>VIN5</key>
-						<string></string>
-						<key>VIN6</key>
-						<string></string>
 						<key>VIN7</key>
 						<dict>
 							<key>Name</key>
@@ -650,134 +523,44 @@
 							<key>VRef</key>
 							<integer>0</integer>
 						</dict>
-					</dict>
-					<key>P9X79</key>
-					<dict>
-						<key>TEMPIN0</key>
-						<string>CPU</string>
-						<key>TEMPIN1</key>
+						<key>VIN9</key>
 						<string></string>
-						<key>TEMPIN2</key>
-						<string></string>
-						<key>TEMPIN3</key>
-						<string>System</string>
-						<key>TEMPIN4</key>
-						<string></string>
-						<key>TEMPIN5</key>
-						<string></string>
-						<key>TEMPIN6</key>
-						<string></string>
-						<key>TEMPIN7</key>
-						<string></string>
-						<key>TEMPIN8</key>
-						<string></string>
-						<key>FANIN0</key>
-						<string></string>
-						<key>FANIN1</key>
-						<string></string>
-						<key>FANIN2</key>
-						<string></string>
-						<key>FANIN3</key>
-						<string></string>
-						<key>FANIN4</key>
-						<string></string>
-						<key>VIN0</key>
-						<string>CPU</string>
-						<key>VIN1</key>
-						<dict>
-							<key>Name</key>
-							<string>+12VC</string>
-							<key>Ri</key>
-							<integer>1100</integer>
-							<key>Rf</key>
-							<integer>100</integer>
-							<key>VRef</key>
-							<integer>0</integer>
-						</dict>
-						<key>VIN2</key>
-						<string></string>
-						<key>VIN3</key>
-						<dict>
-							<key>Name</key>
-							<string>3VCC</string>
-							<key>Ri</key>
-							<integer>100</integer>
-							<key>Rf</key>
-							<integer>100</integer>
-							<key>VRef</key>
-							<integer>0</integer>
-						</dict>
-						<key>VIN4</key>
-						<dict>
-							<key>Name</key>
-							<string>+5VC</string>
-							<key>Ri</key>
-							<integer>400</integer>
-							<key>Rf</key>
-							<integer>100</integer>
-							<key>VRef</key>
-							<integer>0</integer>
-						</dict>
-						<key>VIN5</key>
-						<string></string>
-						<key>VIN6</key>
-						<string></string>
-						<key>VIN7</key>
-						<dict>
-							<key>Name</key>
-							<string>3VSB</string>
-							<key>Ri</key>
-							<integer>100</integer>
-							<key>Rf</key>
-							<integer>100</integer>
-							<key>VRef</key>
-							<integer>0</integer>
-						</dict>
-						<key>VIN8</key>
-						<dict>
-							<key>Name</key>
-							<string>VBAT</string>
-							<key>Ri</key>
-							<integer>100</integer>
-							<key>Rf</key>
-							<integer>100</integer>
-							<key>VRef</key>
-							<integer>0</integer>
-						</dict>
 					</dict>
 				</dict>
 				<key>Default</key>
 				<dict>
 					<key>FANIN0</key>
-					<string>System</string>
+					<string></string>
 					<key>FANIN1</key>
-					<string>CPU</string>
+					<string></string>
 					<key>FANIN2</key>
 					<string></string>
 					<key>FANIN3</key>
 					<string></string>
 					<key>FANIN4</key>
 					<string></string>
-					<key>TEMPIN0</key>
-					<string>System</string>
-					<key>TEMPIN1</key>
-					<string>CPU</string>
+					<key>FANINLIMIT</key>
+					<integer>0</integer>
+					<key>TEMPIN0FORCED</key>
+					<false/>
+					<key>TEMPIN1FORCED</key>
+					<false/>
 					<key>VIN0</key>
 					<string>CPU</string>
 					<key>VIN1</key>
-					<string></string>
+					<string>Memory</string>
 					<key>VIN2</key>
 					<string>3VCC</string>
 					<key>VIN3</key>
-					<string>+5VC</string>
+					<string>12VC</string>
 					<key>VIN4</key>
-					<string>+12VC</string>
+					<string></string>
 					<key>VIN5</key>
 					<string></string>
 					<key>VIN6</key>
 					<string></string>
 					<key>VIN7</key>
-					<string>3VSB</string>
+					<string></string>
 					<key>VIN8</key>
 					<string>VBAT</string>
 				</dict>
@@ -787,13 +570,13 @@
 	<key>OSBundleLibraries</key>
 	<dict>
 		<key>com.apple.kpi.iokit</key>
-		<string>10.0.0</string>
+		<string>9.0.0</string>
 		<key>com.apple.kpi.libkern</key>
-		<string>10.0.0</string>
+		<string>9.0.0</string>
 		<key>com.apple.kpi.mach</key>
-		<string>10.0.0</string>
+		<string>9.0.0</string>
 		<key>com.apple.kpi.unsupported</key>
-		<string>10.0.0</string>
+		<string>9.0.0</string>
 		<key>org.netkas.FakeSMC</key>
 		<string>3.2.0</string>
 	</dict>
