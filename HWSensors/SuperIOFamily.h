@@ -42,6 +42,10 @@ protected:
 	unsigned char		size;
 	SuperIOSensorGroup	group;
 	unsigned long		index;
+  long                Ri;
+  long                Rf;
+  long                Vf;
+  
 	
 public:
 	static SuperIOSensor *withOwner(SuperIOMonitor *aOwner, const char* aKey, const char* aType, unsigned char aSize, SuperIOSensorGroup aGroup, unsigned long aIndex);

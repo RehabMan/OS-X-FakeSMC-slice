@@ -405,56 +405,84 @@ bool FakeSMCDevice::init(IOService *platform, OSDictionary *properties)
 
 IOReturn FakeSMCDevice::setProperties(OSObject * properties)
 {
-    if (OSDictionary * message = OSDynamicCast(OSDictionary, properties)) {
-        if (OSString * name = OSDynamicCast(OSString, message->getObject(kFakeSMCDeviceUpdateKeyValue))) {
-            if (FakeSMCKey * key = getKey(name->getCStringNoCopy())) {
-                
-                values->setObject(key->getName(), OSData::withBytes(key->getValue(), key->getSize()));
-                
-                this->setProperty(kFakeSMCDeviceValues, OSDictionary::withDictionary(values));
-                
-                return kIOReturnSuccess;
+  OSString * name;
+  FakeSMCKey * key;
+  OSDictionary * messageDict = OSDynamicCast(OSDictionary, properties);
+  if (messageDict) {
+    name = OSDynamicCast(OSString, messageDict->getObject(kFakeSMCDeviceUpdateKeyValue));
+    if (name) {
+      key = getKey(name->getCStringNoCopy());
+      if (key) {
+        values->setObject(key->getName(), OSData::withBytes(key->getValue(), key->getSize()));
+        this->setProperty(kFakeSMCDeviceValues, OSDictionary::withDictionary(values));
+        return kIOReturnSuccess;
+      }
+    }
+    else {
+      OSString * tmpString = OSDynamicCast(OSString, messageDict->getObject(kFakeSMCDevicePopulateValues));
+      if (tmpString) {
+        OSCollectionIterator *iterator = OSCollectionIterator::withCollection(keys);
+        if (iterator) {
+          while (true) {
+            key = OSDynamicCast(FakeSMCKey, iterator->getNextObject());
+            if (!key) {
+              break;
             }
+            values->setObject(key->getName(), OSData::withBytes(key->getValue(), key->getSize()));
+            iterator->release();
+          } 
+          
+          this->setProperty(kFakeSMCDeviceValues, OSDictionary::withDictionary(values));
+          
+          return kIOReturnSuccess;
         }
-        else if ((OSString *)OSDynamicCast(OSString, message->getObject(kFakeSMCDevicePopulateValues))) {
-            if (OSCollectionIterator *iterator = OSCollectionIterator::withCollection(keys)) {
-                while (FakeSMCKey *key = OSDynamicCast(FakeSMCKey, iterator->getNextObject()))
-                    values->setObject(key->getName(), OSData::withBytes(key->getValue(), key->getSize()));
-                
-                iterator->release();
+      }
+      else {
+        OSArray * list = OSDynamicCast(OSArray, messageDict->getObject(kFakeSMCDevicePopulateList));
+        if (list) {
+          OSIterator *iterator = OSCollectionIterator::withCollection(list);
+          if (iterator) {
+            while (true){
+              const OSSymbol *keyName = (const OSSymbol *)iterator->getNextObject();
+              if (!keyName) {
+                break;
+              }
+              key = getKey(keyName->getCStringNoCopy());
+              if (key) 
+                values->setObject(key->getName(), OSData::withBytes(key->getValue(), key->getSize()));
             }
             
             this->setProperty(kFakeSMCDeviceValues, OSDictionary::withDictionary(values));
             
+            iterator->release();
+            
             return kIOReturnSuccess;
+          }
         }
-        else if (OSArray * list = OSDynamicCast(OSArray, message->getObject(kFakeSMCDevicePopulateList))) {
-            if (OSIterator *iterator = OSCollectionIterator::withCollection(list)) {
-                while (const OSSymbol *keyName = (const OSSymbol *)iterator->getNextObject())
-                    if (FakeSMCKey * key = getKey(keyName->getCStringNoCopy())) 
-                        values->setObject(key->getName(), OSData::withBytes(key->getValue(), key->getSize()));
-                
-                this->setProperty(kFakeSMCDeviceValues, OSDictionary::withDictionary(values));
-                
-                iterator->release();
-                
-                return kIOReturnSuccess;
-            }
-        }
+      }
     }
+  }
+  
 	
 	return kIOReturnUnsupported;
-
+  
 }
 
 
 void FakeSMCDevice::loadKeysFromDictionary(OSDictionary *dictionary)
 {
 	if (dictionary) {
-		if (OSIterator *iterator = OSCollectionIterator::withCollection(dictionary)) {
-			while (const OSSymbol *key = (const OSSymbol *)iterator->getNextObject()) {
-				if (OSArray *array = OSDynamicCast(OSArray, dictionary->getObject(key))) {
-					if (OSIterator *aiterator = OSCollectionIterator::withCollection(array)) {
+    OSIterator *iterator = OSCollectionIterator::withCollection(dictionary);
+		if (iterator) {
+			while (true) {
+        const OSSymbol *key = (const OSSymbol *)iterator->getNextObject();
+        if (!key) {
+          break;
+        }
+        OSArray *array = OSDynamicCast(OSArray, dictionary->getObject(key));
+				if (array) {
+          OSIterator *aiterator = OSCollectionIterator::withCollection(array);
+					if (aiterator) {
 						
 						OSString *type = OSDynamicCast(OSString, aiterator->getNextObject());
 						OSData *value = OSDynamicCast(OSData, aiterator->getNextObject());
@@ -491,7 +519,8 @@ void FakeSMCDevice::updateSharpKey()
 
 FakeSMCKey *FakeSMCDevice::addKeyWithValue(const char *name, const char *type, unsigned char size, const void *value)
 {	
-	if (FakeSMCKey *key = getKey(name)) {
+  FakeSMCKey *key = getKey(name);
+	if (key) {
 		key->setValueFromBuffer(value, size);
 		
 		DebugLog("updating value for key %s, type: %s, size: %d", name, type, size);
@@ -500,8 +529,8 @@ FakeSMCKey *FakeSMCDevice::addKeyWithValue(const char *name, const char *type, u
 	}
 	
 	DebugLog("adding key %s with value, type: %s, size: %d", name, type, size);
-	
-	if (FakeSMCKey *key = FakeSMCKey::withValue(name, type, size, value)) {		
+	key = FakeSMCKey::withValue(name, type, size, value);
+	if (key) {		
 		keys->setObject(key);
 		updateSharpKey();
 		return key;
@@ -514,7 +543,8 @@ FakeSMCKey *FakeSMCDevice::addKeyWithValue(const char *name, const char *type, u
 
 FakeSMCKey *FakeSMCDevice::addKeyWithHandler(const char *name, const char *type, unsigned char size, IOService *handler)
 {	
-	if (FakeSMCKey *key = getKey(name)) {
+  FakeSMCKey *key = getKey(name);
+	if (key) {
 		key->setHandler(handler);
 		
 		DebugLog("changing handler for key %s, type: %s, size: %d", name, type, size);
@@ -523,8 +553,8 @@ FakeSMCKey *FakeSMCDevice::addKeyWithHandler(const char *name, const char *type,
 	}
 	
 	DebugLog("adding key %s with handler, type: %s, size: %d", name, type, size);
-	
-	if (FakeSMCKey *key = FakeSMCKey::withHandler(name, type, size, handler)) {
+	key = FakeSMCKey::withHandler(name, type, size, handler);
+	if (key) {
 		keys->setObject(key);
 		updateSharpKey();
 		return key;
@@ -537,9 +567,15 @@ FakeSMCKey *FakeSMCDevice::addKeyWithHandler(const char *name, const char *type,
 
 FakeSMCKey *FakeSMCDevice::getKey(const char * name)
 {
-	if (OSCollectionIterator *iterator = OSCollectionIterator::withCollection(keys)) {
+  FakeSMCKey *key;
+  OSCollectionIterator *iterator = OSCollectionIterator::withCollection(keys);
+	if (iterator) {
 		UInt32 key1 = *((uint32_t*)name);
-		while (FakeSMCKey *key = OSDynamicCast(FakeSMCKey, iterator->getNextObject())) {
+		while (true) {
+      key = OSDynamicCast(FakeSMCKey, iterator->getNextObject());
+      if (!key) {
+        break;
+      }
 			UInt32 key2 = *((uint32_t*)key->getName());
 			if (key1 == key2) {
 				iterator->release();
@@ -556,7 +592,8 @@ FakeSMCKey *FakeSMCDevice::getKey(const char * name)
 
 FakeSMCKey *FakeSMCDevice::getKey(unsigned int index)
 {
-	if (FakeSMCKey *key = OSDynamicCast(FakeSMCKey, keys->getObject(index)))
+  FakeSMCKey *key = OSDynamicCast(FakeSMCKey, keys->getObject(index));
+	if (key)
 		return key;
 	
 	DebugLog("key with index %d not found", index);
@@ -609,16 +646,16 @@ IOReturn FakeSMCDevice::causeInterrupt(int source)
 
 IOReturn FakeSMCDevice::callPlatformFunction(const OSSymbol *functionName, bool waitForFunction, void *param1, void *param2, void *param3, void *param4 )
 {
+  FakeSMCKey *key = NULL;
 	if (functionName->isEqualTo(kFakeSMCSetKeyValue)) {
 		const char *name = (const char *)param1;
 		unsigned char size = (UInt64)param2;
 		const void *data = (const void *)param3;
 		
 		if (name && data && size > 0) {
-            
-			if (FakeSMCKey *key = OSDynamicCast(FakeSMCKey, getKey(name)))
-				if (key->setValueFromBuffer(data, size))
-					return kIOReturnSuccess;
+      key = OSDynamicCast(FakeSMCKey, getKey(name));
+      if (key && key->setValueFromBuffer(data, size))
+        return kIOReturnSuccess;
 			
 			return kIOReturnError;
 		}
@@ -637,7 +674,7 @@ IOReturn FakeSMCDevice::callPlatformFunction(const OSSymbol *functionName, bool 
 			
 			if (addKeyWithHandler(name, type, size, handler))
 				return kIOReturnSuccess;
-            
+      
 			return kIOReturnError;
 		}
 		
@@ -655,7 +692,7 @@ IOReturn FakeSMCDevice::callPlatformFunction(const OSSymbol *functionName, bool 
 			
 			if (addKeyWithValue(name, type, size, value))
 				return kIOReturnSuccess;
-            
+      
 			return kIOReturnError;
 		}
 		
@@ -667,13 +704,14 @@ IOReturn FakeSMCDevice::callPlatformFunction(const OSSymbol *functionName, bool 
 		const void **value = (const void **)param3;
 		
 		if (name) {
-			if (FakeSMCKey *key = getKey(name)) {
+      key = getKey(name);
+			if (key) {
 				*size = key->getSize();
 				*value = key->getValue();
 				
 				return kIOReturnSuccess;
 			}
-            
+      
 			return kIOReturnError;
 		}
 		

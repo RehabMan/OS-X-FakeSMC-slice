@@ -38,3 +38,28 @@ inline UInt16 decode_fpe2(UInt16 value)
 {
 	return (swap_value(value) >> 2);
 }
+
+inline bool process_sensor_entry(OSObject *object, OSString **name, long *Ri, long *Rf, long *Vf)
+{
+  *Rf=1;
+  *Ri=0;
+  *Vf=0;
+  if ((*name = OSDynamicCast(OSString, object))) {
+    return true;
+  }
+  else if (OSDictionary *dictionary = OSDynamicCast(OSDictionary, object))
+    if ((*name = OSDynamicCast(OSString, dictionary->getObject("Name")))) {
+      if (OSNumber *number = OSDynamicCast(OSNumber, dictionary->getObject("VRef")))
+        *Vf = number->unsigned64BitValue() ;
+      
+      if (OSNumber *number = OSDynamicCast(OSNumber, dictionary->getObject("Ri")))
+        *Ri = number->unsigned64BitValue();
+      
+      if (OSNumber *number = OSDynamicCast(OSNumber, dictionary->getObject("Rf")))
+        *Rf = number->unsigned64BitValue() ;
+      
+      return true;
+    }
+  
+  return false;
+}

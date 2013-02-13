@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		124E608216C81921004D3FE0 /* HWInfo-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 124E607D16C81921004D3FE0 /* HWInfo-Prefix.pch */; };
+		1257C3FA16CBAE4000812892 /* ITEIT87x.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1257C3F816CBAE4000812892 /* ITEIT87x.cpp */; };
 		1260E43B16C3DD64006515EB /* ICHSMBus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1260E40616C3DBC0006515EB /* ICHSMBus.cpp */; };
 		1260E43C16C3DD72006515EB /* Andigilog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1260E3FF16C3DBC0006515EB /* Andigilog.cpp */; };
 		12A8DAF812C0A6B600A49048 /* ATICard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12A8DAF612C0A6B600A49048 /* ATICard.cpp */; };
@@ -27,7 +28,6 @@
 		1D30B1E2134B90E0004F0967 /* utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D30B1E0134B90E0004F0967 /* utils.h */; };
 		2C77199014EA44C30005C3C7 /* TigerAdditionals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12D78B0912BFDB58002C61EA /* TigerAdditionals.cpp */; };
 		2C7719A214EA46A60005C3C7 /* F718x.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C7719A014EA46A60005C3C7 /* F718x.cpp */; };
-		2C7719A914EA46D60005C3C7 /* IT87x.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C7719A714EA46D60005C3C7 /* IT87x.cpp */; };
 		2C7719AF14EA47500005C3C7 /* W836x.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C7719AD14EA47500005C3C7 /* W836x.cpp */; };
 		2C7719B514EA479A0005C3C7 /* PC8739x.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C7719B314EA479A0005C3C7 /* PC8739x.cpp */; };
 		2C7719BA14EA47EA0005C3C7 /* NuvotonNCT677x.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C7719B814EA47EA0005C3C7 /* NuvotonNCT677x.cpp */; };
@@ -158,6 +158,11 @@
 		124E607D16C81921004D3FE0 /* HWInfo-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HWInfo-Prefix.pch"; sourceTree = "<group>"; };
 		124E607E16C81921004D3FE0 /* HWInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HWInfo.cpp; sourceTree = "<group>"; };
 		124E607F16C81921004D3FE0 /* HWInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWInfo.h; sourceTree = "<group>"; };
+		1257C3F516CBAE4000812892 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1257C3F616CBAE4000812892 /* ITEIT87x-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ITEIT87x-Info.plist"; sourceTree = "<group>"; };
+		1257C3F716CBAE4000812892 /* ITEIT87x-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ITEIT87x-Prefix.pch"; sourceTree = "<group>"; };
+		1257C3F816CBAE4000812892 /* ITEIT87x.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ITEIT87x.cpp; sourceTree = "<group>"; };
+		1257C3F916CBAE4000812892 /* ITEIT87x.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITEIT87x.h; sourceTree = "<group>"; };
 		1260E3F116C3DBA2006515EB /* IntelCPUMonitor.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IntelCPUMonitor.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		1260E3FD16C3DBC0006515EB /* Andigilog-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Andigilog-Info.plist"; sourceTree = "<group>"; };
 		1260E3FE16C3DBC0006515EB /* Andigilog-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Andigilog-Prefix.pch"; sourceTree = "<group>"; };
@@ -201,10 +206,6 @@
 		2C77199F14EA46A60005C3C7 /* F718x-pre106-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "F718x-pre106-Info.plist"; sourceTree = "<group>"; };
 		2C7719A014EA46A60005C3C7 /* F718x.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = F718x.cpp; sourceTree = "<group>"; };
 		2C7719A114EA46A60005C3C7 /* F718x.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = F718x.h; sourceTree = "<group>"; };
-		2C7719A514EA46D60005C3C7 /* IT87x-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "IT87x-Info.plist"; sourceTree = "<group>"; };
-		2C7719A614EA46D60005C3C7 /* IT87x-pre106-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "IT87x-pre106-Info.plist"; sourceTree = "<group>"; };
-		2C7719A714EA46D60005C3C7 /* IT87x.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IT87x.cpp; sourceTree = "<group>"; };
-		2C7719A814EA46D60005C3C7 /* IT87x.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IT87x.h; sourceTree = "<group>"; };
 		2C7719AB14EA47500005C3C7 /* W836x-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "W836x-Info.plist"; sourceTree = "<group>"; };
 		2C7719AC14EA47500005C3C7 /* W836x-pre106-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "W836x-pre106-Info.plist"; sourceTree = "<group>"; };
 		2C7719AD14EA47500005C3C7 /* W836x.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = W836x.cpp; sourceTree = "<group>"; };
@@ -254,7 +255,7 @@
 		AE840E78128D869D006532CB /* ACPIMonitor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ACPIMonitor.cpp; sourceTree = "<group>"; };
 		AEABE46A125F8F1F00F08235 /* Kernel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kernel.framework; path = /System/Library/Frameworks/Kernel.framework; sourceTree = "<absolute>"; };
 		AEABE82B125F8F6E00F08235 /* cpuid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpuid.h; sourceTree = "<group>"; };
-		AED9E18E125FBEF400736A5A /* IT87x.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IT87x.kext; sourceTree = BUILT_PRODUCTS_DIR; };
+		AED9E18E125FBEF400736A5A /* ITEIT87x.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ITEIT87x.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		AED9E581125FC23900736A5A /* SuperIOFamily.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperIOFamily.h; sourceTree = "<group>"; };
 		AED9E582125FC23900736A5A /* SuperIOFamily.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SuperIOFamily.cpp; sourceTree = "<group>"; };
 		AEF4C80412602EE700297B2B /* FakeSMC.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FakeSMC.kext; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -391,6 +392,18 @@
 			path = HWInfo;
 			sourceTree = "<group>";
 		};
+		1257C3F316CBAE4000812892 /* ITEIT87x */ = {
+			isa = PBXGroup;
+			children = (
+				1257C3F416CBAE4000812892 /* InfoPlist.strings */,
+				1257C3F616CBAE4000812892 /* ITEIT87x-Info.plist */,
+				1257C3F716CBAE4000812892 /* ITEIT87x-Prefix.pch */,
+				1257C3F816CBAE4000812892 /* ITEIT87x.cpp */,
+				1257C3F916CBAE4000812892 /* ITEIT87x.h */,
+			);
+			path = ITEIT87x;
+			sourceTree = "<group>";
+		};
 		1260E3FC16C3DBC0006515EB /* SMBusSensors */ = {
 			isa = PBXGroup;
 			children = (
@@ -456,17 +469,6 @@
 				2C7719A114EA46A60005C3C7 /* F718x.h */,
 			);
 			name = F718x;
-			sourceTree = "<group>";
-		};
-		2C7719A414EA46B40005C3C7 /* ITEIT87x */ = {
-			isa = PBXGroup;
-			children = (
-				2C7719A514EA46D60005C3C7 /* IT87x-Info.plist */,
-				2C7719A614EA46D60005C3C7 /* IT87x-pre106-Info.plist */,
-				2C7719A714EA46D60005C3C7 /* IT87x.cpp */,
-				2C7719A814EA46D60005C3C7 /* IT87x.h */,
-			);
-			name = ITEIT87x;
 			sourceTree = "<group>";
 		};
 		2C7719AA14EA47300005C3C7 /* WinbondW836x */ = {
@@ -570,7 +572,7 @@
 			children = (
 				AEF4C80412602EE700297B2B /* FakeSMC.kext */,
 				AE5BA5781268D94A00EA6AB9 /* NVClockX.kext */,
-				AED9E18E125FBEF400736A5A /* IT87x.kext */,
+				AED9E18E125FBEF400736A5A /* ITEIT87x.kext */,
 				AE212C6A12678D3500145048 /* W836x.kext */,
 				AE00C785126A1F440068E69A /* F718x.kext */,
 				AE00C7BD126A24960068E69A /* PC8739x.kext */,
@@ -602,7 +604,7 @@
 				2C7719B614EA47C40005C3C7 /* NuvotonNCT677x */,
 				2C7719B014EA476B0005C3C7 /* NSCPC8739x */,
 				2C7719AA14EA47300005C3C7 /* WinbondW836x */,
-				2C7719A414EA46B40005C3C7 /* ITEIT87x */,
+				1257C3F316CBAE4000812892 /* ITEIT87x */,
 				2C77199D14EA46850005C3C7 /* F718x */,
 				12CB0F4F12C0897700068B06 /* IntelCPUMonitor */,
 				12D78B1912BFDCBB002C61EA /* Radeon */,
@@ -869,7 +871,7 @@
 			);
 			name = IT87x;
 			productName = IT87x;
-			productReference = AED9E18E125FBEF400736A5A /* IT87x.kext */;
+			productReference = AED9E18E125FBEF400736A5A /* ITEIT87x.kext */;
 			productType = "com.apple.product-type.kernel-extension.iokit";
 		};
 		AEF4C80312602EE700297B2B /* FakeSMC */ = {
@@ -1096,7 +1098,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				12D78B0F12BFDB58002C61EA /* TigerAdditionals.cpp in Sources */,
-				2C7719A914EA46D60005C3C7 /* IT87x.cpp in Sources */,
+				1257C3FA16CBAE4000812892 /* ITEIT87x.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1186,6 +1188,14 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
+		1257C3F416CBAE4000812892 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1257C3F516CBAE4000812892 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		1260E40116C3DBC0006515EB /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1243,7 +1253,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -1270,7 +1280,7 @@
 				MODULE_NAME = org.slice.HWInfo;
 				MODULE_VERSION = 1.0.0d1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.7;
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = "Release 10.6";
@@ -1373,8 +1383,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_MODEL_TUNING = G5;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_MODEL_TUNING = "";
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				INFOPLIST_FILE = "SMBusSensors/Andigilog-Info.plist";
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
@@ -1450,7 +1460,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_AUTO_VECTORIZATION = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				INFOPLIST_FILE = "IntelCPUMonitor-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.slice.IntelCPUMonitor;
@@ -1525,7 +1535,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				INFOPLIST_FILE = "X3100-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.slice.sensor.X3100;
@@ -1599,7 +1609,7 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_MODEL_TUNING = "";
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				INFOPLIST_FILE = "RadeonMonitor-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.slice.RadeonMonitor;
@@ -1607,7 +1617,7 @@
 				PRODUCT_NAME = RadeonMonitor;
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = kext;
-				ZERO_LINK = YES;
+				ZERO_LINK = NO;
 			};
 			name = "Release 10.6";
 		};
@@ -1671,8 +1681,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COMBINE_HIDPI_IMAGES = YES;
-				GCC_MODEL_TUNING = G5;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_MODEL_TUNING = "";
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				INFOPLIST_FILE = "NuvotonNCT677x-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.mozodojo.NCT677x;
@@ -1741,8 +1751,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COMBINE_HIDPI_IMAGES = YES;
-				GCC_MODEL_TUNING = G5;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_MODEL_TUNING = "";
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				INFOPLIST_FILE = "F718x-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.mozodojo.F718x;
@@ -1814,8 +1824,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COMBINE_HIDPI_IMAGES = YES;
-				GCC_MODEL_TUNING = G5;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_MODEL_TUNING = "";
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				INFOPLIST_FILE = "PC8739x-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.slice.PC8739x;
@@ -1884,8 +1894,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COMBINE_HIDPI_IMAGES = YES;
-				GCC_MODEL_TUNING = G5;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_MODEL_TUNING = "";
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				INFOPLIST_FILE = "W836x-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.mozodojo.W836x;
@@ -1958,8 +1968,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COMBINE_HIDPI_IMAGES = YES;
-				GCC_MODEL_TUNING = G5;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_MODEL_TUNING = "";
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				INFOPLIST_FILE = "NVClockX-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.usrsse2.NVClockX;
@@ -2033,7 +2043,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_MODEL_TUNING = "";
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				INFOPLIST_FILE = "ACPIMonitor-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.slice.ACPIMonitor;
@@ -2098,7 +2108,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = YES;
-				GCC_AUTO_VECTORIZATION = YES;
+				GCC_AUTO_VECTORIZATION = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = "";
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
@@ -2141,13 +2151,13 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
-				GCC_MODEL_TUNING = G5;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				INFOPLIST_FILE = "IT87x-Info.plist";
+				GCC_MODEL_TUNING = "";
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				INFOPLIST_FILE = "ITEIT87x/ITEIT87x-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.mozodojo.IT87x;
 				MODULE_VERSION = 1.0.0d1;
-				PRODUCT_NAME = IT87x;
+				PRODUCT_NAME = ITEIT87x;
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = kext;
 				ZERO_LINK = NO;
@@ -2180,7 +2190,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_AUTO_VECTORIZATION = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				INFOPLIST_FILE = "FakeSMC-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.netkas.FakeSMC;

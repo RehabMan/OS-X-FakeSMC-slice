@@ -109,11 +109,11 @@ bool Andigilog::start(IOService *provider)
                                         fRoot->getProperty("oem-mb-manufacturer") :
                                         (fRoot->getProperty("oem-manufacturer") ?
                                          fRoot->getProperty("oem-manufacturer") : NULL))); */
-      vendor = NULL;
-        str = OSDynamicCast(OSString, fRoot->getProperty("oem-mb-product") ?
-                                fRoot->getProperty("oem-mb-product") :
-                                (fRoot->getProperty("oem-product-name") ?
-                                 fRoot->getProperty("oem-product-name") : NULL));
+      vendor = OSDynamicCast(OSString, fRoot->getProperty("OEMVendor"));
+      str = OSDynamicCast(OSString, fRoot->getProperty("OEMBoard"));
+      if (!str) {
+        str = OSDynamicCast(OSString, fRoot->getProperty("OEMProduct"));
+      }                    
     }
     if (vendor)
         if (OSDictionary *link = OSDynamicCast(OSDictionary, sconf->getObject(vendor)))
@@ -228,7 +228,7 @@ void Andigilog::GetConf()
             
         if (!ASC7621_ALTBG(val) && (val == 7 || (val == 3 &&
             /* PWM: 255 -> 0 */
-            (conf |= 1 << ASC7621_PWM3B) && ((conf &= ~(1 << ASC7621_PWM2B) & ~(1 << ASC7621_PWM1B)) != -1) &&
+            (conf |= 1 << ASC7621_PWM3B) && ((conf &= ~(1 << ASC7621_PWM2B) & ~(1 << ASC7621_PWM1B)) != 0xFF) &&
             (i2cNub->WriteI2CBus(Asc7621_addr, &Pwm[i].reg[0], sizeof Pwm[i].reg[0], &conf, sizeof conf) != -1)
             /* */
             )))
