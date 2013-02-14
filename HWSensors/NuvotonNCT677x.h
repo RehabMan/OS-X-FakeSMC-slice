@@ -47,6 +47,11 @@ the terms of any one of the MPL, the GPL or the LGPL.
 */
 
 #include <IOKit/IOService.h>
+#include <IOKit/IORegistryEntry.h>
+#include <IOKit/IOPlatformExpert.h>
+#include <IOKit/IODeviceTreeSupport.h>
+#include <IOKit/IOKitKeys.h>
+
 #include "SuperIOFamily.h"
 
 const UInt8 NUVOTON_HARDWARE_MONITOR_LDN        = 0x0B;

@@ -8,6 +8,12 @@
  */
 
 #include <IOKit/IOService.h>
+#include <IOKit/IORegistryEntry.h>
+#include <IOKit/IOPlatformExpert.h>
+#include <IOKit/IODeviceTreeSupport.h>
+#include <IOKit/IOKitKeys.h>
+
+
 #include "SuperIOFamily.h"
 
 // Registers
@@ -35,11 +41,11 @@ const UInt8 FINTEK_FAN_TACHOMETER_REG[] = { 0xA0, 0xB0, 0xC0, 0xD0 };
 enum F718xMode 
 {
 	F71858		= 0x0507,
-    F71862		= 0x0601, 
-    F71869		= 0x0814,
-    F71882		= 0x0541,
-    F71889ED	= 0x0909,
-    F71889F		= 0x0723,
+  F71862		= 0x0601,
+  F71869		= 0x0814,
+  F71882		= 0x0541,
+  F71889ED	= 0x0909,
+  F71889F		= 0x0723,
 	F71808		= 0x0901,
 };
 
@@ -66,7 +72,7 @@ private:
 public:
 	virtual bool			init(OSDictionary *properties=0);
 	virtual IOService*		probe(IOService *provider, SInt32 *score);
-    virtual bool			start(IOService *provider);
+  virtual bool			start(IOService *provider);
 	virtual void			stop(IOService *provider);
 	virtual void			free(void);
 };

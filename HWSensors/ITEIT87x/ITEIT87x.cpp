@@ -316,10 +316,10 @@ bool IT87x::probePort()
 		return false;
   }
   
-	UInt8 vendor = readByte(address, ITE_VENDOR_ID_REGISTER);
+	UInt8 vendor16 = readByte(address, ITE_VENDOR_ID_REGISTER);
 	
-	if (vendor != ITE_VENDOR_ID) {
-    DebugLog("invalid vendor ID=0x%x", vendor);
+	if (vendor16 != ITE_VENDOR_ID) {
+    DebugLog("invalid vendor ID=0x%x", vendor16);
 		return false;
   }
 	
@@ -432,8 +432,10 @@ bool IT87x::start(IOService * provider)
 
   if(rootNode) {
     data = OSDynamicCast(OSData, rootNode->getProperty("OEMVendor"));
+ //   OSString::withCString
     if (data) {
       bcopy(data->getBytesNoCopy(), vendor, data->getLength());
+      OSString * VendorNick = vendorID(OSString::withCString(vendor));
       
       data = OSDynamicCast(OSData, rootNode->getProperty("OEMBoard"));
       if (!data) {
@@ -442,9 +444,9 @@ bool IT87x::start(IOService * provider)
       }
       if (data) {
         bcopy(data->getBytesNoCopy(), product, data->getLength());
-        OSDictionary *link = OSDynamicCast(OSDictionary, list->getObject(vendor));
+        OSDictionary *link = OSDynamicCast(OSDictionary, list->getObject(VendorNick));
         if (link){
-          configuration = OSDynamicCast(OSDictionary, link->getObject(product));
+          configuration = OSDynamicCast(OSDictionary, link->getObject(OSString::withCString(product)));
           InfoLog(" mother vendor=%s product=%s", vendor, product);
         }        
       }
@@ -453,12 +455,13 @@ bool IT87x::start(IOService * provider)
     }
   }
   
-  if (list && !configuration) 
+  if (list && !configuration) {
     configuration = OSDynamicCast(OSDictionary, list->getObject("Default"));
+    WarningLog("set default configuration");
+  }
   
   if(configuration) {
     this->setProperty("Current Configuration", configuration);
-    WarningLog("set default configuration");
   }
 	
 	// Temperature Sensors

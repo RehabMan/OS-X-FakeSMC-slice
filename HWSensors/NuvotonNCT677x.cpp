@@ -191,10 +191,10 @@ bool NCT677x::probePort()
     return false;
   }
 
-  UInt16 vendor = (UInt16)(readByte(NUVOTON_VENDOR_ID_HIGH_REGISTER) << 8) | readByte(NUVOTON_VENDOR_ID_LOW_REGISTER);
+  UInt16 vendor16 = (UInt16)(readByte(NUVOTON_VENDOR_ID_HIGH_REGISTER) << 8) | readByte(NUVOTON_VENDOR_ID_LOW_REGISTER);
 
-  if (vendor != NUVOTON_VENDOR_ID) {
-    DebugLog("Wrong vendor id: 0x%x, Unloading...", vendor);
+  if (vendor16 != NUVOTON_VENDOR_ID) {
+    DebugLog("Wrong vendor id: 0x%x, Unloading...", vendor16);
     return false;
   }
 
@@ -245,9 +245,10 @@ bool NCT677x::start(IOService * provider)
   InfoLog("Found Nuvoton %s", getModelName());
   
   OSDictionary* list = OSDynamicCast(OSDictionary, getProperty("Sensors Configuration"));
-  OSString *vendor=NULL, *product=NULL;
+//  OSString *vendor=NULL, *product=NULL;
   OSDictionary *configuration=NULL; 
   OSString  *name = 0;
+  OSData    *data;
   IORegistryEntry * rootNode = fromPath("/efi/platform", gIODTPlane);;
   
   if(rootNode) {

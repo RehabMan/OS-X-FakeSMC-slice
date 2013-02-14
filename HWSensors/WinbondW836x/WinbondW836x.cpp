@@ -504,7 +504,7 @@ bool W836x::start(IOService * provider)
 	
   OSDictionary* list = OSDynamicCast(OSDictionary, getProperty("Sensors Configuration"));
 //  IOService * fRoot = getServiceRoot();
-  OSString *vendor=NULL, *product=NULL;
+//  OSString *vendor=NULL, *product=NULL;
   OSDictionary *configuration=NULL; 
   IORegistryEntry * rootNode;
   

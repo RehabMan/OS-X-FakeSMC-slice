@@ -19,7 +19,6 @@
 
 #include "SuperIOFamily.h"
 
-
 const UInt8 ITE_ENVIRONMENT_CONTROLLER_LDN				= 0x04;
 
 // ITE

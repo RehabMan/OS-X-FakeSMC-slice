@@ -14,6 +14,8 @@
 #include <libkern/c++/OSArray.h>
 #include <IOKit/IOService.h>
 
+OSString * vendorID(OSString * smbios_manufacturer);
+
 // Ports
 const UInt8 SUPERIO_STANDART_PORT[]					= { 0x2e, 0x4e };
 

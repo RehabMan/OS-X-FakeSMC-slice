@@ -8,6 +8,11 @@
  */
 
 #include <IOKit/IOService.h>
+#include <IOKit/IORegistryEntry.h>
+#include <IOKit/IOPlatformExpert.h>
+#include <IOKit/IODeviceTreeSupport.h>
+#include <IOKit/IOKitKeys.h>
+
 #include "SuperIOFamily.h"
 //temp and fans
 const UInt16 NSC_HARDWARE_MONITOR_REGS[2][4]	= {{0x61, 0x62, 0x63, 0x64}, {0x68, 0x68, 0x68, 0x68}};
