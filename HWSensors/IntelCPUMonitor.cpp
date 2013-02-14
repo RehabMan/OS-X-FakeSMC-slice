@@ -616,6 +616,8 @@ IOReturn IntelCPUMonitor::loopTimerEvent(void)
 	LoopLock = true;
 	if(SandyArch){
         mp_rendezvous_no_intrs(UCState, &magic);
+        IOSleep(2);
+        mp_rendezvous_no_intrs(UCState, &magic);
     }
 	
 	// State Readout
@@ -627,14 +629,13 @@ IOReturn IntelCPUMonitor::loopTimerEvent(void)
 
 	for (UInt32 i = 0; i < count; i++) 
 	{
+	Frequency[i] = IntelGetFrequency(i);
     if (SandyArch) {
-      Frequency[i] = IntelGetFrequency(i);
+      
 			Voltage = GlobalState64 >> 35;
     } else if (!nehalemArch) {
-			Frequency[i] = IntelGetFrequency(i);
 			Voltage = IntelGetVoltage(GlobalState[i].VID);
 		} else {
-			Frequency[i] = IntelGetFrequency(i);
 			Voltage = 1000;
 		}
 	}
@@ -644,23 +645,25 @@ IOReturn IntelCPUMonitor::loopTimerEvent(void)
 	return kIOReturnSuccess;
 }
 
-UInt32 IntelCPUMonitor::IntelGetFrequency(UInt8 cpu_id) {
+UInt32 IntelCPUMonitor::IntelGetFrequency(UInt8 cpu_id) 
+{
 	UInt32 multiplier, frequency=0;
-	UInt8 fid = GlobalState[cpu_id].FID;
-    if(SandyArch)
-    {
-        UInt64 deltaUCC = lastUCC[cpu_id] > UCC[cpu_id] ? 0xFFFFFFFFFFFFFFFFll - lastUCC[cpu_id] + UCC[cpu_id] : UCC[cpu_id] - lastUCC[cpu_id];
-        UInt64 deltaUCR = lastUCR[cpu_id] > UCR[cpu_id] ? 0xFFFFFFFFFFFFFFFFll - lastUCR[cpu_id] + UCR[cpu_id] : UCR[cpu_id] - lastUCR[cpu_id];
-        if(deltaUCR>0)
-        {
-            float num = (float)deltaUCC*BaseFreqRatio/(float)deltaUCR;
-            int n = (int)(num < 0 ? (num - 0.5) : (num + 0.5));
-            return BusClock*n;
-        }
-        
+	UInt8 fid = 0;
+  if(SandyArch)
+  {
+    fid = GlobalState[cpu_id].FID;
+    UInt64 deltaUCC = lastUCC[cpu_id] > UCC[cpu_id] ? 0xFFFFFFFFFFFFFFFFll - lastUCC[cpu_id] + UCC[cpu_id] : UCC[cpu_id] - lastUCC[cpu_id];
+    UInt64 deltaUCR = lastUCR[cpu_id] > UCR[cpu_id] ? 0xFFFFFFFFFFFFFFFFll - lastUCR[cpu_id] + UCR[cpu_id] : UCR[cpu_id] - lastUCR[cpu_id];
+    if(deltaUCR>0) {
+      float num = (float)deltaUCC*BaseFreqRatio/(float)deltaUCR;
+      int n = (int)(num < 0 ? (num - 0.5) : (num + 0.5));
+      return BusClock*n;
     }
+    
+  }
   if (!nehalemArch)
   {
+    fid = GlobalState[cpu_id].FID;
 		multiplier = fid & 0x1f;					// = 0x08
 		int half = (fid & 0x40)?1:0;							// = 0x01
 		int dfsb = (fid & 0x80)?1:0;							// = 0x00
@@ -670,6 +673,9 @@ UInt32 IntelCPUMonitor::IntelGetFrequency(UInt8 cpu_id) {
 		return (frequency + (half * halffsb));	// = 3200 + 200 = 3400
 	}
 	else {
+    if (!SandyArch) {
+      fid = GlobalState[cpu_id].VID;
+    }    
 		multiplier = fid & 0x3f;
 		frequency = (multiplier * (UInt32)BusClock);
 		return (frequency);	

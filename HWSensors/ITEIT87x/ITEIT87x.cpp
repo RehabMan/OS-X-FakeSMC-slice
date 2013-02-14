@@ -106,49 +106,49 @@ long IT87xSensor::getValue()
 
 void IT87xSensor::setValue(UInt16 value)
 {
-    
+  
 	switch ((SuperIOSensorGroupEx)group) {
-            
-        case kSuperIOSmartGuardPWMControl:
-            OSDynamicCast(IT87x, owner)->writeSmartGuardPWMControl(index,value);
-            break;
-        case kSuperIOSmartGuardTempFanStop:
-            OSDynamicCast(IT87x, owner)->writeSmartGuardTempFanStop(index,value);
-            break;
-        case kSuperIOSmartGuardTempFanStart:
-            OSDynamicCast(IT87x, owner)->writeSmartGuardTempFanStart(index,value);
-            break;
-        case kSuperIOSmartGuardTempFanFullOn:
-            OSDynamicCast(IT87x, owner)->writeSmartGuardTempFanFullOn(index,value);
-            break;
-        case kSuperIOSmartGuardPWMStart:
-            OSDynamicCast(IT87x, owner)->writeSmartGuardPWMStart(index,value);
-            break;
-        case kSuperIOSmartGuardTempFanFullOff:
-            OSDynamicCast(IT87x, owner)->writeSmartGuardTempFanFullOff(index,value);
-            break;
-        case kSuperIOSmartGuardTempFanControl:
-            OSDynamicCast(IT87x, owner)->writeSmartGuardFanControl(index,value);
-            break;
-        case kSuperIOSmartGuardMainControl:
-            OSDynamicCast(IT87x, owner)->writeSmartGuardMainControl(index,value);
-            break;
-        case kSuperIOSmartGuardRegControl:
-            OSDynamicCast(IT87x, owner)->writeSmartGuardRegControl(index,value);
-            break;
+      
+    case kSuperIOSmartGuardPWMControl:
+      OSDynamicCast(IT87x, owner)->writeSmartGuardPWMControl(index,value);
+      break;
+    case kSuperIOSmartGuardTempFanStop:
+      OSDynamicCast(IT87x, owner)->writeSmartGuardTempFanStop(index,value);
+      break;
+    case kSuperIOSmartGuardTempFanStart:
+      OSDynamicCast(IT87x, owner)->writeSmartGuardTempFanStart(index,value);
+      break;
+    case kSuperIOSmartGuardTempFanFullOn:
+      OSDynamicCast(IT87x, owner)->writeSmartGuardTempFanFullOn(index,value);
+      break;
+    case kSuperIOSmartGuardPWMStart:
+      OSDynamicCast(IT87x, owner)->writeSmartGuardPWMStart(index,value);
+      break;
+    case kSuperIOSmartGuardTempFanFullOff:
+      OSDynamicCast(IT87x, owner)->writeSmartGuardTempFanFullOff(index,value);
+      break;
+    case kSuperIOSmartGuardTempFanControl:
+      OSDynamicCast(IT87x, owner)->writeSmartGuardFanControl(index,value);
+      break;
+    case kSuperIOSmartGuardMainControl:
+      OSDynamicCast(IT87x, owner)->writeSmartGuardMainControl(index,value);
+      break;
+    case kSuperIOSmartGuardRegControl:
+      OSDynamicCast(IT87x, owner)->writeSmartGuardRegControl(index,value);
+      break;
 		default:
 			break;
 	}
-    
-    // Damn... need someone to explain the encoding scheme of SMC keys... but actually works well without it
-    //	if (*((uint32_t*)type) == *((uint32_t*)TYPE_FP2E)) {
-    //		value = encode_fp2e(value);
-    //	}
-    //	else if (*((uint32_t*)type) == *((uint32_t*)TYPE_FPE2)) {
-    //		value = encode_fpe2(value);
-    //	}
-    //	
-    //	return value;
+  
+  // Damn... need someone to explain the encoding scheme of SMC keys... but actually works well without it
+  //	if (*((uint32_t*)type) == *((uint32_t*)TYPE_FP2E)) {
+  //		value = encode_fp2e(value);
+  //	}
+  //	else if (*((uint32_t*)type) == *((uint32_t*)TYPE_FPE2)) {
+  //		value = encode_fpe2(value);
+  //	}
+  //	
+  //	return value;
 }
 
 #pragma mark IT87x implementation
@@ -284,9 +284,9 @@ bool IT87x::probePort()
 	UInt16 id = listenPortWord(SUPERIO_CHIP_ID_REGISTER);
 	
 	if (id == 0 || id == 0xffff) {
-        DebugLog("invalid super I/O chip ID=0x%x", id);
+    DebugLog("invalid super I/O chip ID=0x%x", id);
 		return false;
-    }
+  }
 	hasSmartGuardian = false;
 	switch (id)
 	{
@@ -306,42 +306,41 @@ bool IT87x::probePort()
 			DebugLog("found unsupported chip ID=0x%x", id);
 			return false;
 	}
-    
+  
 	selectLogicalDevice(ITE_ENVIRONMENT_CONTROLLER_LDN);
-    
-    IOSleep(50);
+  
+  IOSleep(50);
 	
 	if (!getLogicalDeviceAddress()) {
-        DebugLog("can't get monitoring LDN address");
+    DebugLog("can't get monitoring LDN address");
 		return false;
-    }
-    
+  }
+  
 	UInt8 vendor = readByte(address, ITE_VENDOR_ID_REGISTER);
 	
 	if (vendor != ITE_VENDOR_ID) {
-        DebugLog("invalid vendor ID=0x%x", vendor);
+    DebugLog("invalid vendor ID=0x%x", vendor);
 		return false;
-    }
+  }
 	
 	if ((readByte(address, ITE_CONFIGURATION_REGISTER) & 0x10) == 0) {
-        DebugLog("invalid configuration register value");
+    DebugLog("invalid configuration register value");
 		return false;
-    }
+  }
 	
-    if (id == IT8721F || id == IT8728F || id == IT8772E)
-        voltageGain = 12;
-    else
-        voltageGain = 16;
-    
-    UInt8 version = readByte(address, ITE_VERSION_REGISTER) & 0x0F;
-    
-    if (id == IT8712F && version < 8)
-        has16bitFanCounter = false;
-    else
-        has16bitFanCounter = true;
+  if (id == IT8721F || id == IT8728F || id == IT8772E)
+    voltageGain = 12;
+  else
+    voltageGain = 16;
+  
+  UInt8 version = readByte(address, ITE_VERSION_REGISTER) & 0x0F;
+  
+  if (id == IT8712F && version < 8)
+    has16bitFanCounter = false;
+  else
+    has16bitFanCounter = true;
 	
 	return true;
-    
 }
 
 void IT87x::enter()
@@ -350,12 +349,10 @@ void IT87x::enter()
 	outb(registerPort, 0x01);
 	outb(registerPort, 0x55);
 	
-	if (registerPort == 0x4e) 
-	{
+	if (registerPort == 0x4e) {
 		outb(registerPort, 0xaa);
 	}
-	else
-	{
+	else {
 		outb(registerPort, 0x55);
 	}
 }
@@ -368,8 +365,7 @@ void IT87x::exit()
 
 const char *IT87x::getModelName()
 {
-	switch (model)
-	{
+	switch (model) {
     case IT8512F: return "IT8512F";
     case IT8712F: return "IT8712F";
     case IT8716F: return "IT8716F";
@@ -405,19 +401,19 @@ IOService* IT87x::probe(IOService *provider, SInt32 *score)
 	return this;
 }
 
-/*bool IT87x::start(IOService * provider)
+void IT87x::stop (IOService* provider)
 {
-	DebugLog("starting...");
-
-	if (!super::start(provider))
-		return false;
-
-  if (!startPlugin(provider)) {
-    return false;
-  }
-  return TRUE;
+	DebugLog("stoping...");
+  
+	super::stop(provider);
 }
-*/
+
+void IT87x::free ()
+{
+	DebugLog("freeing...");
+  
+	super::free();
+}
 
 bool IT87x::start(IOService * provider)
 {
@@ -430,49 +426,32 @@ bool IT87x::start(IOService * provider)
 	
 	InfoLog("found ITE %s", getModelName());
   OSDictionary* list = OSDynamicCast(OSDictionary, getProperty("Sensors Configuration"));
-  //   IOService * fRoot = getServiceRoot();
-//  OSString *vendor=NULL, *product=NULL;
+
   OSDictionary *configuration=NULL; 
   rootNode = fromPath("/efi/platform", gIODTPlane);
-    char vend[40];
-    char prod[40];
 
   if(rootNode) {
-//    vendor = OSDynamicCast(OSString, rootNode->getProperty("OEMVendor"));
     data = OSDynamicCast(OSData, rootNode->getProperty("OEMVendor"));
-    bcopy(data->getBytesNoCopy(), vend, data->getLength());
-//    product = OSDynamicCast(OSString, rootNode->getProperty("OEMBoard"));
-    data = OSDynamicCast(OSData, rootNode->getProperty("OEMBoard"));
-
-    if (!data) {
-      WarningLog("no OEMBoard");
- //     product = OSDynamicCast(OSString, rootNode->getProperty("OEMProduct"));
-      data = OSDynamicCast(OSData, rootNode->getProperty("OEMProduct"));
-    }
     if (data) {
-      bcopy(data->getBytesNoCopy(), prod, data->getLength());
+      bcopy(data->getBytesNoCopy(), vendor, data->getLength());
+      
+      data = OSDynamicCast(OSData, rootNode->getProperty("OEMBoard"));
+      if (!data) {
+        WarningLog("no OEMBoard");
+        data = OSDynamicCast(OSData, rootNode->getProperty("OEMProduct"));
+      }
+      if (data) {
+        bcopy(data->getBytesNoCopy(), product, data->getLength());
+        OSDictionary *link = OSDynamicCast(OSDictionary, list->getObject(vendor));
+        if (link){
+          configuration = OSDynamicCast(OSDictionary, link->getObject(product));
+          InfoLog(" mother vendor=%s product=%s", vendor, product);
+        }        
+      }
+    } else {
+      WarningLog("no OEMVendor");
     }
   }
-//  if (product && vendor) {
-//    InfoLog(" mother vendor=%s product=%s", vendor->getCStringNoCopy(), product->getCStringNoCopy());
-    InfoLog(" mother vendor=%s product=%s", vend, prod);
-//  }  else {
-//    WarningLog("no vendor or product");
-//  }
-  
-  if (vend) {
-    OSDictionary *link = OSDynamicCast(OSDictionary, list->getObject(vend));
-    if (link){
- //     if(product) {
-        configuration = OSDynamicCast(OSDictionary, link->getObject(prod));
- //     } else {
- //       WarningLog("no such product");
- //     }
-    }
-  } else {
-    WarningLog("no vendor");
-  }
-  
   
   if (list && !configuration) 
     configuration = OSDynamicCast(OSDictionary, list->getObject("Default"));
@@ -529,14 +508,12 @@ bool IT87x::start(IOService * provider)
   UInt8 tmp = readByte(address, ITE_ADC_CHANNEL_ENABLE);
   DebugLog("ADC Enable register = %X",tmp);
   
-  vbat_updates=false;
+  vbat_updates = false;
   if(configuration)
   {
-    OSBoolean* smartGuard=OSDynamicCast(OSBoolean, configuration->getObject("VBATNeedUpdates"));
-    if(smartGuard) {
-      if(smartGuard->isTrue())
+    OSBoolean* smartGuard = OSDynamicCast(OSBoolean, configuration->getObject("VBATNeedUpdates"));
+    if(smartGuard && smartGuard->isTrue())
         vbat_updates=true;
-    }
   }
   // Refresh VBAT reading on each access to the key
   if(vbat_updates)
@@ -615,31 +592,24 @@ bool IT87x::start(IOService * provider)
 		
 		UInt32 nameLength = name ? (UInt32)strlen(name->getCStringNoCopy()) : 0;
 		
-		if (readTachometer(i) > 10 || nameLength > 0)
+		if (readTachometer(i) > 10 || nameLength > 0) {
       // Pff WTF ??? Add tachometer if it doesn't exist in a system but only the name defined in the config???   
-    {
-      
+       
 			if (!addTachometer(i, (nameLength > 0 ? name->getCStringNoCopy() : 0)))
         // Need to look at this a bit later
-				WarningLog("error adding tachometer sensor %d", i);
-      
-      
-      
+				WarningLog("error adding tachometer sensor %d", i);      
     }
     
     // Check if this chip support SmartGuardian feature  
     
     hasSmartGuardian=false;
-    if(configuration)
-    {
+    if(configuration) {
       if(OSBoolean* smartGuard=OSDynamicCast(OSBoolean, configuration->getObject("SmartGuardian")))
         if(smartGuard->isTrue())
-          hasSmartGuardian=true;
-      
+          hasSmartGuardian=true;      
     }
     
-    if(hasSmartGuardian)
-    {
+    if(hasSmartGuardian) {
       // Ugly development hack started for (SuperIOSensorGroup)
       snprintf(key,5,KEY_FORMAT_FAN_TARGET_SPEED,i);
       if (!addSensor(key, TYPE_UI8, 1, (SuperIOSensorGroup)kSuperIOSmartGuardPWMControl, i))
@@ -670,9 +640,7 @@ bool IT87x::start(IOService * provider)
         WarningLog("error adding register fan control");
     }
 	}
-  if(hasSmartGuardian)
-  {
-    
+  if(hasSmartGuardian) {
     if (!addSensor(KEY_FORMAT_FAN_MAIN_CONTROL, TYPE_UI8, 1, (SuperIOSensorGroup)kSuperIOSmartGuardMainControl, 0))
       WarningLog("error adding Main fan control"); 
     if (!addSensor(KEY_FORMAT_FAN_REG_CONTROL, TYPE_UI8, 1, (SuperIOSensorGroup)kSuperIOSmartGuardRegControl, 0))
@@ -692,11 +660,11 @@ SuperIOSensor * IT87x::addSensor(const char* name, const char* type, unsigned ch
 {
 	if (NULL != getSensor(name))
 		return 0;
-    SuperIOSensor *sensor = sensor = IT87xSensor::withOwner(this, name, type, size, group, index /*,aRi, aRf, aVf*/);
+  
+  SuperIOSensor *sensor = IT87xSensor::withOwner(this, name, type, size, group, index /*,aRi, aRf, aVf*/);
 
-	if (sensor)
-		if (sensors->setObject(sensor))
-			if(kIOReturnSuccess == fakeSMC->callPlatformFunction(kFakeSMCAddKeyHandler, false, (void *)name, (void *)type, (void *)size, (void *)this))
+	if (sensor && sensors->setObject(sensor))
+		if(kIOReturnSuccess == fakeSMC->callPlatformFunction(kFakeSMCAddKeyHandler, false, (void *)name, (void *)type, (void *)size, (void *)this))
 				return sensor;
 	
 	return 0;
@@ -712,14 +680,16 @@ IOReturn IT87x::callPlatformFunction(const OSSymbol *functionName, bool waitForF
 		//UInt32 size = (UInt64)param3;
 		
         
-		if (name && data)
-			if (SuperIOSensor * sensor = getSensor(name)) {
+		if (name && data) {
+      SuperIOSensor * sensor = getSensor(name);
+			if (sensor) {
 				UInt16 value = sensor->getValue();
 				
 				bcopy(&value, data, 2);
 				
 				return kIOReturnSuccess;
 			}
+    }
 		
 		return kIOReturnBadArgument;
 	}
@@ -728,34 +698,19 @@ IOReturn IT87x::callPlatformFunction(const OSSymbol *functionName, bool waitForF
 		const char* name = (const char*)param1;
 		void * data = param2;
 		//UInt32 size = (UInt64)param3;
-		
-        
-		if (name && data)
-			if (IT87xSensor *sensor = OSDynamicCast(IT87xSensor, getSensor(name))) {
+		        
+		if (name && data) {
+      IT87xSensor *sensor = OSDynamicCast(IT87xSensor, getSensor(name));
+			if (sensor) {
 				UInt16 value;
-                bcopy(data, &value, 2);
+        bcopy(data, &value, 2);
 				sensor->setValue(value);
-				
-				
+
 				return kIOReturnSuccess;
 			}
-		
+    }		
 		return kIOReturnBadArgument;
 	}    
     
 	return super::callPlatformFunction(functionName, waitForFunction, param1, param2, param3, param4);
-}
-
-void IT87x::stop (IOService* provider)
-{
-	DebugLog("stoping...");
-
-	super::stop(provider);
-}
-
-void IT87x::free ()
-{
-	DebugLog("freeing...");
-
-	super::free();
 }

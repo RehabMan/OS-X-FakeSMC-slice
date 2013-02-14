@@ -118,8 +118,20 @@ enum W836xModel {
 class W836x : public SuperIOMonitor
 {
     OSDeclareDefaultStructors(W836x)
+  
+public:
+	virtual bool			  init(OSDictionary *properties=0);
+	virtual IOService*	probe(IOService *provider, SInt32 *score);
+  virtual bool			  start(IOService *provider);
+	virtual void			  stop(IOService *provider);
+	virtual void			  free(void);
+  
+  
 	
 private:
+  char              vendor[40];
+  char              product[40];
+  
 	UInt8					fanLimit;
 	UInt16				fanValue[5];
 	bool					fanValueObsolete[5];
@@ -129,7 +141,7 @@ private:
   UInt64        setBit(UInt64 target, UInt16 bit, UInt32 value);
 	
 	virtual bool			probePort();
-  virtual bool			startPlugin();
+//  virtual bool			startPlugin();
 	virtual void			enter();
 	virtual void			exit();
     

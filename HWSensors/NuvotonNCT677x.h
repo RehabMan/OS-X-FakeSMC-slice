@@ -97,8 +97,20 @@ enum NCT677xModel {
 class NCT677x : public SuperIOMonitor
 {
   OSDeclareDefaultStructors(NCT677x)
+  
+public:
+  virtual bool			  init(OSDictionary *properties=0);
+	virtual IOService*	probe(IOService *provider, SInt32 *score);
+  virtual bool			  start(IOService *provider);
+	virtual void			  stop(IOService *provider);
+	virtual void			  free(void);
+  
 
 private:
+  char              vendor[40];
+  char              product[40];
+  
+  
   int                 temperature[2];
   bool                temperatureIsObsolete[2];
 
@@ -108,7 +120,7 @@ private:
   void                writeByte(UInt16 reg, UInt8 value);
 
   virtual bool        probePort();
-  virtual bool        startPlugin();
+//  virtual bool        startPlugin();
   virtual void        enter();
   virtual void        exit();
 
@@ -117,7 +129,5 @@ private:
   virtual long        readTachometer(unsigned long index);
 
   virtual const char  *getModelName();
-
-public:
 
 };

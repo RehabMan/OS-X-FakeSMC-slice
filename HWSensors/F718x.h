@@ -45,10 +45,13 @@ enum F718xMode
 
 class F718x : public SuperIOMonitor
 {
-    OSDeclareDefaultStructors(F718x)
+    OSDeclareDefaultStructors(F718x)  
 	
 private:
-	UInt8					readByte(UInt8 reg);	
+  char              vendor[40];
+  char              product[40];
+  
+	UInt8             readByte(UInt8 reg);	
 	
 	virtual bool			probePort();
 	virtual void			enter();

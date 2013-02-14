@@ -405,7 +405,7 @@ bool W836x::probePort()
 			{
 				case 0x50:
 					model = W83667HGB;
-                    fanLimit = 4;
+          fanLimit = 4;
 					break;
 			}
 			break; 
@@ -458,8 +458,48 @@ bool W836x::probePort()
 	return true;
 }
 
-bool W836x::startPlugin()
+bool W836x::init(OSDictionary *properties)
 {
+	DebugLog("initialising...");
+  
+  if (!super::init(properties))
+		return false;
+  
+	return true;
+}
+
+IOService* W836x::probe(IOService *provider, SInt32 *score)
+{
+	DebugLog("probing...");
+  
+	if (super::probe(provider, score) != this)
+		return 0;
+  
+	return this;
+}
+
+void W836x::stop (IOService* provider)
+{
+	DebugLog("stoping...");
+  
+	super::stop(provider);
+}
+
+void W836x::free ()
+{
+	DebugLog("freeing...");
+  
+	super::free();
+}
+
+bool W836x::start(IOService * provider)
+{
+	DebugLog("starting ...");
+  OSData *data;
+  
+	if (!super::start(provider))
+		return false;
+
   InfoLog("found Winbond %s", getModelName());
 	
   OSDictionary* list = OSDynamicCast(OSDictionary, getProperty("Sensors Configuration"));
@@ -471,30 +511,26 @@ bool W836x::startPlugin()
   rootNode = fromPath("/efi/platform", gIODTPlane);
   
   if(rootNode) {
-    vendor = OSDynamicCast(OSString, rootNode->getProperty("OEMVendor"));
-    product = OSDynamicCast(OSString, rootNode->getProperty("OEMBoard"));
-    if (!product) {
-      product = OSDynamicCast(OSString, rootNode->getProperty("OEMProduct"));
-    }                    
-  }
-  if (product && vendor) {
-    InfoLog(" mother vendor=%s product=%s", vendor->getCStringNoCopy(), product->getCStringNoCopy());
-  }  else {
-    WarningLog("no vendor or product");
-  }
-  
-  
-  if (vendor) {
-    OSDictionary *link = OSDynamicCast(OSDictionary, list->getObject(vendor));
-    if (link){
-      if(product) {
-        configuration = OSDynamicCast(OSDictionary, link->getObject(product));
-      } else {
-        WarningLog("no such product");
+    data = OSDynamicCast(OSData, rootNode->getProperty("OEMVendor"));
+    if (data) {
+      bcopy(data->getBytesNoCopy(), vendor, data->getLength());
+      
+      data = OSDynamicCast(OSData, rootNode->getProperty("OEMBoard"));
+      if (!data) {
+        WarningLog("no OEMBoard");
+        data = OSDynamicCast(OSData, rootNode->getProperty("OEMProduct"));
       }
+      if (data) {
+        bcopy(data->getBytesNoCopy(), product, data->getLength());
+        OSDictionary *link = OSDynamicCast(OSDictionary, list->getObject(vendor));
+        if (link){
+          configuration = OSDynamicCast(OSDictionary, link->getObject(product));
+          InfoLog(" mother vendor=%s product=%s", vendor, product);
+        }        
+      }
+    } else {
+      WarningLog("no OEMVendor");
     }
-  } else {
-    WarningLog("no vendor");
   }
   
   if (list && !configuration) 

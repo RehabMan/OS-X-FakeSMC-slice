@@ -201,28 +201,76 @@ bool NCT677x::probePort()
   return true;
 }
 
-bool NCT677x::startPlugin()
+bool NCT677x::init(OSDictionary *properties)
 {
+	DebugLog("initialising...");
+  
+  if (!super::init(properties))
+		return false;
+  
+	return true;
+}
+
+IOService* NCT677x::probe(IOService *provider, SInt32 *score)
+{
+	DebugLog("probing...");
+  
+	if (super::probe(provider, score) != this)
+		return 0;
+  
+	return this;
+}
+
+
+void NCT677x::stop (IOService* provider)
+{
+	DebugLog("stoping...");
+  
+	super::stop(provider);
+}
+
+void NCT677x::free ()
+{
+	DebugLog("freeing...");
+  
+	super::free();
+}
+
+
+bool NCT677x::start(IOService * provider)
+{
+  if (!super::start(provider))
+		return false;
+
   InfoLog("Found Nuvoton %s", getModelName());
   
   OSDictionary* list = OSDynamicCast(OSDictionary, getProperty("Sensors Configuration"));
-  //   IOService * fRoot = getServiceRoot();
   OSString *vendor=NULL, *product=NULL;
   OSDictionary *configuration=NULL; 
-  IORegistryEntry * rootNode;
   OSString  *name = 0;
+  IORegistryEntry * rootNode = fromPath("/efi/platform", gIODTPlane);;
   
   if(rootNode) {
-    vendor = OSDynamicCast(OSString, rootNode->getProperty("OEMVendor"));
-    product = OSDynamicCast(OSString, rootNode->getProperty("OEMBoard"));
-    if (!product) {
-      product = OSDynamicCast(OSString, rootNode->getProperty("OEMProduct"));
-    }                    
-  }
-  if (vendor) {
-    OSDictionary *link = OSDynamicCast(OSDictionary, list->getObject(vendor));
-    if(link && product)
-      configuration = OSDynamicCast(OSDictionary, link->getObject(product));
+    data = OSDynamicCast(OSData, rootNode->getProperty("OEMVendor"));
+    if (data) {
+      bcopy(data->getBytesNoCopy(), vendor, data->getLength());
+      
+      data = OSDynamicCast(OSData, rootNode->getProperty("OEMBoard"));
+      if (!data) {
+        WarningLog("no OEMBoard");
+        data = OSDynamicCast(OSData, rootNode->getProperty("OEMProduct"));
+      }
+      if (data) {
+        bcopy(data->getBytesNoCopy(), product, data->getLength());
+        OSDictionary *link = OSDynamicCast(OSDictionary, list->getObject(vendor));
+        if (link){
+          configuration = OSDynamicCast(OSDictionary, link->getObject(product));
+          InfoLog(" mother vendor=%s product=%s", vendor, product);
+        }        
+      }
+    } else {
+      WarningLog("no OEMVendor");
+    }
   }
   
   if (list && !configuration) 

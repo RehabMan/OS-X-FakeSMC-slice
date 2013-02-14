@@ -264,9 +264,9 @@ SuperIOSensor *SuperIOMonitor::addSensor(const char* name, const char* type, uns
 	if (NULL != getSensor(name))
 		return 0;
 	
-	if (SuperIOSensor *sensor = SuperIOSensor::withOwner(this, name, type, size, group, index))
-		if (sensors->setObject(sensor))
-			if(kIOReturnSuccess == fakeSMC->callPlatformFunction(kFakeSMCAddKeyHandler, false, (void *)name, (void *)type, (void *)size, (void *)this))
+  SuperIOSensor *sensor = SuperIOSensor::withOwner(this, name, type, size, group, index);
+	if (sensor && sensors->setObject(sensor))
+		if(kIOReturnSuccess == fakeSMC->callPlatformFunction(kFakeSMCAddKeyHandler, false, (void *)name, (void *)type, (void *)size, (void *)this))
 				return sensor;
 	
 	return 0;
