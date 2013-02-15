@@ -379,17 +379,23 @@ bool FakeSMCDevice::init(IOService *platform, OSDictionary *properties)
 	}
 	
 	OSArray *controllers = OSArray::withCapacity(1);
-	if(!controllers)
+	if(!controllers) {
 		WarningLog("failed to create controllers array");
+        return false;
+    }
 	
 	OSArray *specifiers  = OSArray::withCapacity(1);
-	if(!specifiers)
+	if(!specifiers) {
 		WarningLog("failed to create specifiers array");
+        return false;
+    }
 	
 	UInt64 line = 0x06;
 	OSData *tmpData = OSData::withBytes( &line, sizeof(line) );
-	if (!tmpData)
+	if (!tmpData) {
 		WarningLog("failed to create tmpdata");
+        return false;
+    }
 	
 	OSSymbol *gIntelPICName = (OSSymbol *) OSSymbol::withCStringNoCopy("io-apic-0");
 	specifiers->setObject( tmpData );
@@ -572,10 +578,10 @@ FakeSMCKey *FakeSMCDevice::getKey(const char * name)
 	if (iterator) {
 		UInt32 key1 = *((uint32_t*)name);
 		while (true) {
-      key = OSDynamicCast(FakeSMCKey, iterator->getNextObject());
-      if (!key) {
-        break;
-      }
+  		    key = OSDynamicCast(FakeSMCKey, iterator->getNextObject());
+ 		    if (!key) {
+        		break;
+      		}
 			UInt32 key2 = *((uint32_t*)key->getName());
 			if (key1 == key2) {
 				iterator->release();
@@ -646,17 +652,19 @@ IOReturn FakeSMCDevice::causeInterrupt(int source)
 
 IOReturn FakeSMCDevice::callPlatformFunction(const OSSymbol *functionName, bool waitForFunction, void *param1, void *param2, void *param3, void *param4 )
 {
-  FakeSMCKey *key = NULL;
+	IOLockLock(platformFunctionLock);
+    FakeSMCKey *key = NULL;
+    IOReturn result = kIOReturnUnsupported;
+    
 	if (functionName->isEqualTo(kFakeSMCSetKeyValue)) {
 		const char *name = (const char *)param1;
 		unsigned char size = (UInt64)param2;
 		const void *data = (const void *)param3;
 		
 		if (name && data && size > 0) {
-      key = OSDynamicCast(FakeSMCKey, getKey(name));
-      if (key && key->setValueFromBuffer(data, size))
-        return kIOReturnSuccess;
-			
+      		key = OSDynamicCast(FakeSMCKey, getKey(name));
+      		if (key && key->setValueFromBuffer(data, size))
+        		return kIOReturnSuccess;
 			return kIOReturnError;
 		}
 		
@@ -668,18 +676,57 @@ IOReturn FakeSMCDevice::callPlatformFunction(const OSSymbol *functionName, bool 
 		unsigned char size = (UInt64)param3;
 		IOService *handler = (IOService *)param4;
 		
-		if (name && type && size > 0) {
-			
+		if (name && type && size > 0) {			
 			DebugLog("adding key %s with handler, type %s, size %d", name, type, size);
 			
 			if (addKeyWithHandler(name, type, size, handler))
-				return kIOReturnSuccess;
-      
+				return kIOReturnSuccess;      
 			return kIOReturnError;
 		}
 		
 		return kIOReturnBadArgument;
 	}
+    else if (functionName->isEqualTo(kFakeSMCGetKeyHandler)) {
+        
+        result = kIOReturnBadArgument;
+        
+        if (param1) {
+            const char *name = (const char *)param1);
+                
+                result = kIOReturnError;
+                FakeSMCKey *key = OSDynamicCast(FakeSMCKey, getKey(name));
+                    if (key && key->getHandler()) {
+                        
+                        result = kIOReturnBadArgument;
+                        
+                        if (param2) {
+                            IOService *handler = (IOService *)param2;
+                            bcopy(key->getHandler(), handler, sizeof(handler));
+                            result = kIOReturnSuccess;
+                        }
+                    }
+        }
+	}
+    else if (functionName->isEqualTo(kFakeSMCRemoveKeyHandler)) {
+        
+        result = kIOReturnBadArgument;
+        
+        if (param1) {
+            result = kIOReturnError;
+            OSCollectionIterator *iterator = OSCollectionIterator::withCollection(keys);
+            if (iterator) {
+                IOService *handler = (IOService *)param1;
+                while (true) {
+                  FakeSMCKey *key = OSDynamicCast(FakeSMCKey, iterator->getNextObject());
+                  if (!key) break;
+                  if (key->getHandler() == handler)
+                        key->setHandler(NULL);
+                }
+                result = kIOReturnSuccess;
+                OSSafeRelease(iterator);
+            }
+        }
+    }
 	else if (functionName->isEqualTo(kFakeSMCAddKeyValue)) {
 		const char *name = (const char *)param1;
 		const char *type = (const char *)param2;
@@ -717,6 +764,8 @@ IOReturn FakeSMCDevice::callPlatformFunction(const OSSymbol *functionName, bool 
 		
 		return kIOReturnBadArgument;
 	}
+	
+	IOLockUnlock(platformFunctionLock);
 	
 	return kIOReturnUnsupported;
 }

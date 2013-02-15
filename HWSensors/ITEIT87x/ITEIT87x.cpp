@@ -418,8 +418,6 @@ void IT87x::free ()
 bool IT87x::start(IOService * provider)
 {
 	DebugLog("starting ...");
-  IORegistryEntry * rootNode;
-  OSData *data;
   
 	if (!super::start(provider))
 		return false;
@@ -428,11 +426,11 @@ bool IT87x::start(IOService * provider)
   OSDictionary* list = OSDynamicCast(OSDictionary, getProperty("Sensors Configuration"));
 
   OSDictionary *configuration=NULL; 
-  rootNode = fromPath("/efi/platform", gIODTPlane);
+  OSData *data;
+  IORegistryEntry * rootNode = fromPath("/efi/platform", gIODTPlane);
 
   if(rootNode) {
     data = OSDynamicCast(OSData, rootNode->getProperty("OEMVendor"));
- //   OSString::withCString
     if (data) {
       bcopy(data->getBytesNoCopy(), vendor, data->getLength());
       OSString * VendorNick = vendorID(OSString::withCString(vendor));

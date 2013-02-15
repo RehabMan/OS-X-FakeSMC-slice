@@ -255,6 +255,7 @@ bool NCT677x::start(IOService * provider)
     data = OSDynamicCast(OSData, rootNode->getProperty("OEMVendor"));
     if (data) {
       bcopy(data->getBytesNoCopy(), vendor, data->getLength());
+      OSString * VendorNick = vendorID(OSString::withCString(vendor));
       
       data = OSDynamicCast(OSData, rootNode->getProperty("OEMBoard"));
       if (!data) {
@@ -263,9 +264,9 @@ bool NCT677x::start(IOService * provider)
       }
       if (data) {
         bcopy(data->getBytesNoCopy(), product, data->getLength());
-        OSDictionary *link = OSDynamicCast(OSDictionary, list->getObject(vendor));
+        OSDictionary *link = OSDynamicCast(OSDictionary, list->getObject(VendorNick));
         if (link){
-          configuration = OSDynamicCast(OSDictionary, link->getObject(product));
+          configuration = OSDynamicCast(OSDictionary, link->getObject(OSString::withCString(product)));
           InfoLog(" mother vendor=%s product=%s", vendor, product);
         }        
       }
@@ -274,9 +275,15 @@ bool NCT677x::start(IOService * provider)
     }
   }
   
-  if (list && !configuration) 
+  if (list && !configuration) {
     configuration = OSDynamicCast(OSDictionary, list->getObject("Default"));
+    WarningLog("set default configuration");
+  }
   
+  if(configuration) {
+    this->setProperty("Current Configuration", configuration);
+  }
+	
   // Fans
   for (int i = 0; i < 5; i++) {    
     if (configuration) {

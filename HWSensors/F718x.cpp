@@ -197,13 +197,13 @@ const char *F718x::getModelName()
 {
 	switch (model) 
 	{
-        case F71858: return "F71858";
-        case F71862: return "F71862";
-        case F71869: return "F71869";
-        case F71882: return "F71882";
-        case F71889ED: return "F71889ED";
-        case F71889F: return "F71889F";
-		case F71808:  return "F71808";	
+    case F71858:   return "F71858";
+    case F71862:   return "F71862";
+    case F71869:   return "F71869";
+    case F71882:   return "F71882";
+    case F71889ED: return "F71889ED";
+    case F71889F:  return "F71889F";
+		case F71808:   return "F71808";	
 	}
 	
 	return "unknown";
@@ -253,9 +253,9 @@ bool F718x::start(IOService * provider)
 	// Voltage
 	switch (model) 
 	{
-        case F71858:
+    case F71858:
 			break;
-        default:
+    default:
 			// CPU Vcore
 			if (!addSensor(KEY_CPU_VOLTAGE_RAW, TYPE_FP2E, 2, kSuperIOVoltageSensor, 1))
 				WarningLog("error adding CPU voltage sensor");
