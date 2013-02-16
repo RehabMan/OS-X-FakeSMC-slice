@@ -26,19 +26,16 @@ bool ATICard::initialize()
 		IOLog("\n");
 	 }
 	 */
-	for (UInt32 i = 0; (mmio = VCard->mapDeviceMemoryWithIndex(i)); i++)
-	{
+	for (UInt32 i = 0; (mmio = VCard->mapDeviceMemoryWithIndex(i)); i++) {
 		long unsigned int mmio_base_phys = mmio->getPhysicalAddress();
 		// Make sure we  select MMIO registers
 		if (((mmio->getLength()) <= 0x00020000) && (mmio_base_phys != 0))
 			break;
 	}
-	if (mmio)
-	{
+	if (mmio)	{
 		mmio_base = (volatile UInt8 *)mmio->getVirtualAddress();
 	} 
-	else
-	{
+	else {
 		InfoLog(" have no mmio\n ");
 		return false;
 	}

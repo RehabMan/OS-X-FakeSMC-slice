@@ -18,37 +18,38 @@
 
 class FakeSMCKey : public OSObject
 {
-    OSDeclareDefaultStructors(FakeSMCKey)
-	
+  OSDeclareDefaultStructors(FakeSMCKey)
+
 protected:
 	static void		copySymbol(const char *from, char* to);
-	
-    char *			name;
-    char *			type;
+
+  char *        name;
+  char *        type;
 	unsigned char	size;
-	void *			value;
+	void *        value;
 	IOService *		handler;
-	
+
 public:
 	static FakeSMCKey *withValue(const char *aName, const char *aType, unsigned char aSize, const void *aValue);
 	static FakeSMCKey *withHandler(const char *aName, const char *aType, unsigned char aSize, IOService *aHandler);
-	
+
 	// Not for general use. Use withCallback or withValue instance creation method
 	virtual bool init(const char * aName, const char * aType, unsigned char aSize, const void *aValue, IOService *aHandler = 0);
-	
+
 	virtual void free();
-	
-	const char *getName();
-	const char *getType();
+
+	const char    *getName();
+	const char    *getType();
 	unsigned char getSize();
-	const void *getValue();
-	
-	bool setValueFromBuffer(const void *aBuffer, unsigned char aSize);
-	bool setHandler(IOService *aHandler);
-	
-	bool isEqualTo(const char *aKey);
-	bool isEqualTo(FakeSMCKey *aKey);
-	bool isEqualTo(const OSMetaClassBase *anObject);
+	const void    *getValue();
+
+	bool          setValueFromBuffer(const void *aBuffer, unsigned char aSize);
+	bool          setHandler(IOService *aHandler);
+  IOService     *getHandler();
+
+	bool          isEqualTo(const char *aKey);
+	bool          isEqualTo(FakeSMCKey *aKey);
+	bool          isEqualTo(const OSMetaClassBase *anObject);
 };
 
 

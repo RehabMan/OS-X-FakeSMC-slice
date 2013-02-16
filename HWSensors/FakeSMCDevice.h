@@ -45,58 +45,59 @@ class FakeSMCDevice : public IOACPIPlatformDevice
     OSDeclareDefaultStructors( FakeSMCDevice )
 	
 private:
-	OSObject			*interrupt_target;
+	OSObject          *interrupt_target;
 	IOInterruptAction	interrupt_handler;
-	void				*interrupt_refcon;
-	int					interrupt_source;
+	void              *interrupt_refcon;
+	int               interrupt_source;
 	
 	struct ApleSMCStatus	*status;
 	
-	OSArray				*keys;
-    OSDictionary        *values;
-	FakeSMCKey			*sharpKEY;
+	OSArray           *keys;
+  OSDictionary      *values;
+	FakeSMCKey        *sharpKEY;
 	
-	bool				debug;
+	bool              debug;
+  IOLock            *platformFunctionLock;
 	
-	virtual void		applesmc_io_cmd_writeb(void *opaque, uint32_t addr, uint32_t val);
-	virtual void		applesmc_io_data_writeb(void *opaque, uint32_t addr, uint32_t val);
+	virtual void      applesmc_io_cmd_writeb(void *opaque, uint32_t addr, uint32_t val);
+	virtual void      applesmc_io_data_writeb(void *opaque, uint32_t addr, uint32_t val);
 	virtual uint32_t	applesmc_io_data_readb(void *opaque, uint32_t addr1);
 	virtual uint32_t	applesmc_io_cmd_readb(void *opaque, uint32_t addr1);
 	virtual const char	*applesmc_get_key_by_index(uint32_t index, struct AppleSMCStatus *s);
-	virtual void		applesmc_fill_data(struct AppleSMCStatus *s);
-	virtual void		applesmc_fill_info(struct AppleSMCStatus *s);
+	virtual void      applesmc_fill_data(struct AppleSMCStatus *s);
+	virtual void      applesmc_fill_info(struct AppleSMCStatus *s);
 	
 public:
-    virtual void		ioWrite32( UInt16 offset, UInt32 value, IOMemoryMap * map = 0 );
-    virtual void		ioWrite16( UInt16 offset, UInt16 value, IOMemoryMap * map = 0 );
-    virtual void		ioWrite8(  UInt16 offset, UInt8 value, IOMemoryMap * map = 0 );
-    virtual UInt32		ioRead32( UInt16 offset, IOMemoryMap * map = 0 );
-    virtual UInt16		ioRead16( UInt16 offset, IOMemoryMap * map = 0 );
-    virtual UInt8		ioRead8(  UInt16 offset, IOMemoryMap * map = 0 );
+  virtual void      ioWrite32( UInt16 offset, UInt32 value, IOMemoryMap * map = 0 );
+  virtual void      ioWrite16( UInt16 offset, UInt16 value, IOMemoryMap * map = 0 );
+  virtual void      ioWrite8(  UInt16 offset, UInt8 value, IOMemoryMap * map = 0 );
+  virtual UInt32    ioRead32( UInt16 offset, IOMemoryMap * map = 0 );
+  virtual UInt16    ioRead16( UInt16 offset, IOMemoryMap * map = 0 );
+  virtual UInt8     ioRead8(  UInt16 offset, IOMemoryMap * map = 0 );
 	
 	virtual IOReturn	registerInterrupt(int source, OSObject *target, IOInterruptAction handler, void *refCon = 0);
-    virtual IOReturn	unregisterInterrupt(int source);
-    virtual IOReturn	getInterruptType(int source, int *interruptType);
-    virtual IOReturn	enableInterrupt(int source);
-    virtual IOReturn	disableInterrupt(int source);
+  virtual IOReturn	unregisterInterrupt(int source);
+  virtual IOReturn	getInterruptType(int source, int *interruptType);
+  virtual IOReturn	enableInterrupt(int source);
+  virtual IOReturn	disableInterrupt(int source);
 	virtual IOReturn	causeInterrupt(int source);
 	
-	virtual bool		init(IOService *platform, OSDictionary *properties);
-    virtual IOReturn	setProperties(OSObject * properties);
+	virtual bool      init(IOService *platform, OSDictionary *properties);
+  virtual IOReturn	setProperties(OSObject * properties);
 	
-	virtual void		loadKeysFromDictionary(OSDictionary *dictionary);
+	virtual void      loadKeysFromDictionary(OSDictionary *dictionary);
 	//virtual FakeSMCKey	*addKey(const char *name, const char *type, unsigned char size);
 	virtual FakeSMCKey	*addKeyWithValue(const char *name, const char *type, unsigned char size, const void *value);
 	virtual FakeSMCKey	*addKeyWithHandler(const char *name, const char *type, unsigned char size, IOService *handler);
 	virtual FakeSMCKey	*getKey(const char *name);
 	virtual FakeSMCKey	*getKey(unsigned int index);
-	virtual UInt32		getCount(void);
+	virtual UInt32      getCount(void);
 	
-	virtual void		updateSharpKey(void);
+	virtual void        updateSharpKey(void);
 	
-	virtual void		setDebug(bool debug_val);
+	virtual void        setDebug(bool debug_val);
     
-    virtual IOReturn	callPlatformFunction(const OSSymbol *functionName, bool waitForFunction, void *param1, void *param2, void *param3, void *param4 ); 
+  virtual IOReturn    callPlatformFunction(const OSSymbol *functionName, bool waitForFunction, void *param1, void *param2, void *param3, void *param4 ); 
 };
 
 #endif

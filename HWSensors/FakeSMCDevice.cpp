@@ -22,14 +22,14 @@ OSDefineMetaClassAndStructors (FakeSMCDevice, IOACPIPlatformDevice)
 
 void FakeSMCDevice::applesmc_io_cmd_writeb(void *opaque, uint32_t addr, uint32_t val)
 {
-    struct AppleSMCStatus *s = (struct AppleSMCStatus *)opaque;
-    //DebugLog("CMD Write B: %#x = %#x", addr, val);
-    switch(val) {
-        case APPLESMC_READ_CMD:
-            s->status = 0x0c;
-            break;
+  struct AppleSMCStatus *s = (struct AppleSMCStatus *)opaque;
+  //DebugLog("CMD Write B: %#x = %#x", addr, val);
+  switch(val) {
+    case APPLESMC_READ_CMD:
+      s->status = 0x0c;
+      break;
 		case APPLESMC_WRITE_CMD:
-			 s->status = 0x0c;
+      s->status = 0x0c;
 			break;
 		case APPLESMC_GET_KEY_BY_INDEX_CMD:
 			s->status = 0x0c;
@@ -37,12 +37,12 @@ void FakeSMCDevice::applesmc_io_cmd_writeb(void *opaque, uint32_t addr, uint32_t
 		case APPLESMC_GET_KEY_TYPE_CMD:
 			s->status = 0x0c;
 			break;
-    }
-    s->cmd = val;
-    s->read_pos = 0;
-    s->data_pos = 0;
-	s->key_index = 0;
-//	bzero(s->key_info, 6);
+  }
+  s->cmd = val;
+  s->read_pos = 0;
+  s->data_pos = 0;
+  s->key_index = 0;
+  //	bzero(s->key_info, 6);
 }
 
 void FakeSMCDevice::applesmc_fill_data(struct AppleSMCStatus *s)
@@ -64,7 +64,8 @@ void FakeSMCDevice::applesmc_fill_data(struct AppleSMCStatus *s)
 
 const char * FakeSMCDevice::applesmc_get_key_by_index(uint32_t index, struct AppleSMCStatus *s)
 {
-	if (FakeSMCKey *key = getKey(index))
+  FakeSMCKey *key = getKey(index);
+	if (key)
 		return key->getName();
 	
 	if (debug)
@@ -78,21 +79,19 @@ const char * FakeSMCDevice::applesmc_get_key_by_index(uint32_t index, struct App
 
 void FakeSMCDevice::applesmc_fill_info(struct AppleSMCStatus *s)
 {
-	if (FakeSMCKey *key = getKey((char *)s->key)) {
+  FakeSMCKey *key = getKey((char *)s->key);
+	if (key) {
 		s->key_info[0] = key->getSize();
 		s->key_info[5] = 0;
 		
 		const char* typ = key->getType();
 		UInt64 len = strlen(typ);
 		
-		for (int i=0; i<4; i++)
-		{
-			if (i<len) 
-			{
+		for (int i=0; i<4; i++) {
+			if (i<len) {
 				s->key_info[i+1] = typ[i];
 			}
-			else 
-			{
+			else {
 				s->key_info[i+1] = 0;
 			}
 		}
@@ -109,32 +108,32 @@ void FakeSMCDevice::applesmc_fill_info(struct AppleSMCStatus *s)
 
 void FakeSMCDevice::applesmc_io_data_writeb(void *opaque, uint32_t addr, uint32_t val)
 {
-    struct AppleSMCStatus *s = (struct AppleSMCStatus *)opaque;
-//    IOLog("APPLESMC: DATA Write B: %#x = %#x\n", addr, val);
-    switch(s->cmd) {
-        case APPLESMC_READ_CMD:
-            if(s->read_pos < 4) {
-                s->key[s->read_pos] = val;
-                s->status = 0x04;
-            } else if(s->read_pos == 4) {
-                s->data_len = val;
-                s->status = 0x05;
-                s->data_pos = 0;
-//                IOLog("APPLESMC: Key = %c%c%c%c Len = %d\n", s->key[0], s->key[1], s->key[2], s->key[3], val);
-                applesmc_fill_data(s);
-            }
-            s->read_pos++;
-            break;
+  struct AppleSMCStatus *s = (struct AppleSMCStatus *)opaque;
+  //    IOLog("APPLESMC: DATA Write B: %#x = %#x\n", addr, val);
+  switch(s->cmd) {
+    case APPLESMC_READ_CMD:
+      if(s->read_pos < 4) {
+        s->key[s->read_pos] = val;
+        s->status = 0x04;
+      } else if(s->read_pos == 4) {
+        s->data_len = val;
+        s->status = 0x05;
+        s->data_pos = 0;
+        //                IOLog("APPLESMC: Key = %c%c%c%c Len = %d\n", s->key[0], s->key[1], s->key[2], s->key[3], val);
+        applesmc_fill_data(s);
+      }
+      s->read_pos++;
+      break;
 		case APPLESMC_WRITE_CMD:
-//			IOLog("FakeSMC: attempting to write(WRITE_CMD) to io port value %x ( %c )\n", val, val);
+      //			IOLog("FakeSMC: attempting to write(WRITE_CMD) to io port value %x ( %c )\n", val, val);
 			if(s->read_pos < 4) {
-                s->key[s->read_pos] = val;
-                s->status = 0x04;
+        s->key[s->read_pos] = val;
+        s->status = 0x04;
 			} else if(s->read_pos == 4) {
 				s->status = 0x05;
 				s->data_pos=0;
 				s->data_len = val;
-//				IOLog("FakeSMC: System Tried to write Key = %c%c%c%c Len = %d\n", s->key[0], s->key[1], s->key[2], s->key[3], val);
+        //				IOLog("FakeSMC: System Tried to write Key = %c%c%c%c Len = %d\n", s->key[0], s->key[1], s->key[2], s->key[3], val);
 			} else if( s->data_pos < s->data_len ) {
 				s->value[s->data_pos] = val;
 				s->data_pos++;
@@ -145,7 +144,7 @@ void FakeSMCDevice::applesmc_io_data_writeb(void *opaque, uint32_t addr, uint32_
 					
 					snprintf(name, 5, "%c%c%c%c", s->key[0], s->key[1], s->key[2], s->key[3]);
 					
-//					IOLog("FakeSMC: adding Key = %c%c%c%c Len = %d\n", s->key[0], s->key[1], s->key[2], s->key[3], s->data_len);
+          //					IOLog("FakeSMC: adding Key = %c%c%c%c Len = %d\n", s->key[0], s->key[1], s->key[2], s->key[3], s->data_len);
 					addKeyWithValue(name, 0, s->data_len, s->value);
 					bzero(s->value, 255);
 				}
@@ -153,26 +152,27 @@ void FakeSMCDevice::applesmc_io_data_writeb(void *opaque, uint32_t addr, uint32_
 			s->read_pos++;
 			break;
 		case APPLESMC_GET_KEY_BY_INDEX_CMD:
-//			IOLog("FakeSMC: System Tried to write GETKEYBYINDEX = %x (%c) at pos %x\n",val , val, s->read_pos);
+      //			IOLog("FakeSMC: System Tried to write GETKEYBYINDEX = %x (%c) at pos %x\n",val , val, s->read_pos);
 			if(s->read_pos < 4) {
-                s->key_index += val << (24 - s->read_pos * 8);
-                s->status = 0x04;
+        s->key_index += val << (24 - s->read_pos * 8);
+        s->status = 0x04;
 				s->read_pos++;
 			};
 			if(s->read_pos == 4) {
 				s->status = 0x05;
-//				IOLog("FakeSMC: trying to find key by index %x\n", s->key_index);
-				if(const char * key = applesmc_get_key_by_index(s->key_index, s))
+        //				IOLog("FakeSMC: trying to find key by index %x\n", s->key_index);
+        const char * key = applesmc_get_key_by_index(s->key_index, s);
+				if(key)
 					bcopy(key, s->key, 4);
 			}
 			
 			break;
 		case APPLESMC_GET_KEY_TYPE_CMD:
-//			IOLog("FakeSMC: System Tried to write GETKEYTYPE = %x (%c) at pos %x\n",val , val, s->read_pos);
+      //			IOLog("FakeSMC: System Tried to write GETKEYTYPE = %x (%c) at pos %x\n",val , val, s->read_pos);
 			if(s->read_pos < 4) {
-                s->key[s->read_pos] = val;
-                s->status = 0x04;
-            };
+        s->key[s->read_pos] = val;
+        s->status = 0x04;
+      };
 			s->read_pos++;
 			if(s->read_pos == 4) {
 				s->data_len = 6;  ///s->data_len = val ; ? val should be 6 here too
@@ -181,58 +181,58 @@ void FakeSMCDevice::applesmc_io_data_writeb(void *opaque, uint32_t addr, uint32_
 				applesmc_fill_info(s);
 			}
 			break;
-    }
+  }
 }
 
 uint32_t FakeSMCDevice::applesmc_io_data_readb(void *opaque, uint32_t addr1)
 {
-	    struct AppleSMCStatus *s = (struct AppleSMCStatus *)opaque;
-	    uint8_t retval = 0;
-	    switch(s->cmd) {
-			case APPLESMC_READ_CMD:
-			    if(s->data_pos < s->data_len) {
-			        retval = s->value[s->data_pos];
-//			        IOLog("APPLESMC: READ_DATA[%d] = %#hhx\n", s->data_pos, retval);
-			        s->data_pos++;
-			        if(s->data_pos == s->data_len) {
-			            s->status = 0x00;
-						bzero(s->value, 255);
-//			            IOLog("APPLESMC: EOF\n");
-			         } else
-			            s->status = 0x05;
-			         }
-				break;
-			case APPLESMC_WRITE_CMD:
-//				InfoLog("attempting to read(WRITE_CMD) from io port");
-				s->status = 0x00;
-				break;
-			case APPLESMC_GET_KEY_BY_INDEX_CMD:  ///shouldnt be here if status == 0
-//				IOLog("FakeSMC:System Tried to read GETKEYBYINDEX = %x (%c) , at pos %d\n", retval, s->key[s->data_pos], s->key[s->data_pos], s->data_pos);
-				if(s->status == 0) return 0; //sanity check
-				if(s->data_pos < 4) {
-					retval = s->key[s->data_pos];
-					s->data_pos++;
-				}
-				if (s->data_pos == 4)
-					s->status = 0x00;
-				break;
-			case APPLESMC_GET_KEY_TYPE_CMD:
-//				IOLog("FakeSMC:System Tried to read GETKEYTYPE = %x , at pos %d\n", s->key_info[s->data_pos], s->data_pos);
-				if(s->data_pos < s->data_len) {
-			        retval = s->key_info[s->data_pos];
-			        s->data_pos++;
-			        if(s->data_pos == s->data_len) {
-			            s->status = 0x00;
-						bzero(s->key_info, 6);
-						//			            IOLog("APPLESMC: EOF\n");
-					} else
-			            s->status = 0x05;
-				}
-				break;
-				
-    }
-//    IOLog("APPLESMC: DATA Read b: %#x = %#x\n", addr1, retval);
-    return retval;
+  struct AppleSMCStatus *s = (struct AppleSMCStatus *)opaque;
+  uint8_t retval = 0;
+  switch(s->cmd) {
+    case APPLESMC_READ_CMD:
+      if(s->data_pos < s->data_len) {
+        retval = s->value[s->data_pos];
+        //			        IOLog("APPLESMC: READ_DATA[%d] = %#hhx\n", s->data_pos, retval);
+        s->data_pos++;
+        if(s->data_pos == s->data_len) {
+          s->status = 0x00;
+          bzero(s->value, 255);
+          //			            IOLog("APPLESMC: EOF\n");
+        } else
+          s->status = 0x05;
+      }
+      break;
+    case APPLESMC_WRITE_CMD:
+      //				InfoLog("attempting to read(WRITE_CMD) from io port");
+      s->status = 0x00;
+      break;
+    case APPLESMC_GET_KEY_BY_INDEX_CMD:  ///shouldnt be here if status == 0
+      //				IOLog("FakeSMC:System Tried to read GETKEYBYINDEX = %x (%c) , at pos %d\n", retval, s->key[s->data_pos], s->key[s->data_pos], s->data_pos);
+      if(s->status == 0) return 0; //sanity check
+      if(s->data_pos < 4) {
+        retval = s->key[s->data_pos];
+        s->data_pos++;
+      }
+      if (s->data_pos == 4)
+        s->status = 0x00;
+      break;
+    case APPLESMC_GET_KEY_TYPE_CMD:
+      //				IOLog("FakeSMC:System Tried to read GETKEYTYPE = %x , at pos %d\n", s->key_info[s->data_pos], s->data_pos);
+      if(s->data_pos < s->data_len) {
+        retval = s->key_info[s->data_pos];
+        s->data_pos++;
+        if(s->data_pos == s->data_len) {
+          s->status = 0x00;
+          bzero(s->key_info, 6);
+          //			            IOLog("APPLESMC: EOF\n");
+        } else
+          s->status = 0x05;
+      }
+      break;
+      
+  }
+  //    IOLog("APPLESMC: DATA Read b: %#x = %#x\n", addr1, retval);
+  return retval;
 }
 
 uint32_t FakeSMCDevice::applesmc_io_cmd_readb(void *opaque, uint32_t addr1)
@@ -267,26 +267,24 @@ UInt16 FakeSMCDevice::ioRead16( UInt16 offset, IOMemoryMap * map )
 
 UInt8 FakeSMCDevice::ioRead8( UInt16 offset, IOMemoryMap * map )
 {
-    UInt8  value =0;
-    UInt16  base = 0;
+  UInt8  value =0;
+  UInt16  base = 0;
 	struct AppleSMCStatus *s = (struct AppleSMCStatus *)status;
-//	IODelay(10);
-
-    if (map) base = map->getPhysicalAddress();
+  //	IODelay(10);
+  
+  if (map) base = map->getVirtualAddress();
 	if((base+offset) == APPLESMC_DATA_PORT) value=applesmc_io_data_readb(status, base+offset);
 	if((base+offset) == APPLESMC_CMD_PORT) value=applesmc_io_cmd_readb(status, base+offset);
-
-    if((base+offset) == APPLESMC_ERROR_CODE_PORT)
-	{
-		if(s->status_1e != 0)
-		{
+  
+  if((base+offset) == APPLESMC_ERROR_CODE_PORT) {
+		if(s->status_1e != 0) {
 			value = s->status_1e;
 			s->status_1e = 0x00;
-//			IOLog("generating error %x\n", value);
+      //			IOLog("generating error %x\n", value);
 		}
 		else value = 0x0;
 	}
-//	if(((base+offset) != APPLESMC_DATA_PORT) && ((base+offset) != APPLESMC_CMD_PORT)) IOLog("ioread8 to port %x.\n", base+offset);
+  //	if(((base+offset) != APPLESMC_DATA_PORT) && ((base+offset) != APPLESMC_CMD_PORT)) IOLog("ioread8 to port %x.\n", base+offset);
 	
 	//DebugLog("ioread8 called");
 	
@@ -313,9 +311,9 @@ void FakeSMCDevice::ioWrite16( UInt16 offset, UInt16 value, IOMemoryMap * map )
 
 void FakeSMCDevice::ioWrite8( UInt16 offset, UInt8 value, IOMemoryMap * map )
 {
-    UInt16 base = 0;
+  UInt16 base = 0;
 	IODelay(10);
-    if (map) base = map->getPhysicalAddress();
+  if (map) base = map->getVirtualAddress();
 
 	if((base+offset) == APPLESMC_DATA_PORT) applesmc_io_data_writeb(status, base+offset, value);
 	if((base+offset) == APPLESMC_CMD_PORT) applesmc_io_cmd_writeb(status, base+offset,value);	
@@ -335,9 +333,11 @@ bool FakeSMCDevice::init(IOService *platform, OSDictionary *properties)
 	
 	debug = false;
 	interrupt_handler=0;
+
+//  platformFunctionLock = IOLockAlloc();
 	
 	keys = OSArray::withCapacity(0);
-    values = OSDictionary::withCapacity(0);
+  values = OSDictionary::withCapacity(0);
 	
 	sharpKEY = FakeSMCKey::withValue("#KEY", "ui8", 4, "\1");
 	keys->setObject(sharpKEY);
@@ -652,120 +652,134 @@ IOReturn FakeSMCDevice::causeInterrupt(int source)
 
 IOReturn FakeSMCDevice::callPlatformFunction(const OSSymbol *functionName, bool waitForFunction, void *param1, void *param2, void *param3, void *param4 )
 {
-	IOLockLock(platformFunctionLock);
-    FakeSMCKey *key = NULL;
-    IOReturn result = kIOReturnUnsupported;
-    
-	if (functionName->isEqualTo(kFakeSMCSetKeyValue)) {
-		const char *name = (const char *)param1;
-		unsigned char size = (UInt64)param2;
-		const void *data = (const void *)param3;
-		
-		if (name && data && size > 0) {
-      		key = OSDynamicCast(FakeSMCKey, getKey(name));
-      		if (key && key->setValueFromBuffer(data, size))
-        		return kIOReturnSuccess;
-			return kIOReturnError;
-		}
-		
-		return kIOReturnBadArgument;
-	}
-	else if (functionName->isEqualTo(kFakeSMCAddKeyHandler)) {
-		const char *name = (const char *)param1;
-		const char *type = (const char *)param2;
-		unsigned char size = (UInt64)param3;
-		IOService *handler = (IOService *)param4;
-		
-		if (name && type && size > 0) {			
-			DebugLog("adding key %s with handler, type %s, size %d", name, type, size);
-			
-			if (addKeyWithHandler(name, type, size, handler))
-				return kIOReturnSuccess;      
-			return kIOReturnError;
-		}
-		
-		return kIOReturnBadArgument;
-	}
-    else if (functionName->isEqualTo(kFakeSMCGetKeyHandler)) {
-        
-        result = kIOReturnBadArgument;
-        
-        if (param1) {
-            const char *name = (const char *)param1);
-                
-                result = kIOReturnError;
-                FakeSMCKey *key = OSDynamicCast(FakeSMCKey, getKey(name));
-                    if (key && key->getHandler()) {
-                        
-                        result = kIOReturnBadArgument;
-                        
-                        if (param2) {
-                            IOService *handler = (IOService *)param2;
-                            bcopy(key->getHandler(), handler, sizeof(handler));
-                            result = kIOReturnSuccess;
-                        }
-                    }
+//	IOLockLock(platformFunctionLock);
+  FakeSMCKey *key = NULL;
+  IOReturn result = kIOReturnUnsupported;
+  const char *name;
+  const void *data;
+
+  do {
+    if (functionName->isEqualTo(kFakeSMCSetKeyValue)) {
+      name = (const char *)param1;
+      unsigned char size = (UInt64)param2;
+      data = (const void *)param3;
+
+      if (name && data && size > 0) {
+        key = OSDynamicCast(FakeSMCKey, getKey(name));
+        if (key && key->setValueFromBuffer(data, size)){
+          result = kIOReturnSuccess;
+          break;
         }
-	}
-    else if (functionName->isEqualTo(kFakeSMCRemoveKeyHandler)) {
-        
-        result = kIOReturnBadArgument;
-        
-        if (param1) {
-            result = kIOReturnError;
-            OSCollectionIterator *iterator = OSCollectionIterator::withCollection(keys);
-            if (iterator) {
-                IOService *handler = (IOService *)param1;
-                while (true) {
-                  FakeSMCKey *key = OSDynamicCast(FakeSMCKey, iterator->getNextObject());
-                  if (!key) break;
-                  if (key->getHandler() == handler)
-                        key->setHandler(NULL);
-                }
-                result = kIOReturnSuccess;
-                OSSafeRelease(iterator);
-            }
-        }
+        result = kIOReturnError;
+        break;
+      }
+
+      result = kIOReturnBadArgument;
     }
-	else if (functionName->isEqualTo(kFakeSMCAddKeyValue)) {
-		const char *name = (const char *)param1;
-		const char *type = (const char *)param2;
-		unsigned char size = (UInt64)param3;
-		const void *value = (const void *)param4;
-		
-		if (name && type && size > 0) {
-			
-			DebugLog("adding key %s with value, type %s, size %d", name, type, size);
-			
-			if (addKeyWithValue(name, type, size, value))
-				return kIOReturnSuccess;
-      
-			return kIOReturnError;
-		}
-		
-		return kIOReturnBadArgument;
-	}
-	else if (functionName->isEqualTo(kFakeSMCGetKeyValue)) {
-		const char *name = (const char *)param1;
-		UInt8 *size = (UInt8*)param2;
-		const void **value = (const void **)param3;
-		
-		if (name) {
-      key = getKey(name);
-			if (key) {
-				*size = key->getSize();
-				*value = key->getValue();
-				
-				return kIOReturnSuccess;
-			}
-      
-			return kIOReturnError;
-		}
-		
-		return kIOReturnBadArgument;
-	}
+    else if (functionName->isEqualTo(kFakeSMCAddKeyHandler)) {
+      name = (const char *)param1;
+      const char *type = (const char *)param2;
+      unsigned char size = (UInt64)param3;
+      IOService *handler = (IOService *)param4;
+
+      if (name && type && size > 0) {
+        DebugLog("adding key %s with handler, type %s, size %d", name, type, size);
+
+        if (addKeyWithHandler(name, type, size, handler)) {
+          result = kIOReturnSuccess;
+          break;
+        }
+        result = kIOReturnError;
+        break;
+      }
+
+      result = kIOReturnBadArgument;
+    }
+    else if (functionName->isEqualTo(kFakeSMCGetKeyHandler)) {
+      result = kIOReturnBadArgument;
+      if (param1) {
+        name = (const char *)param1;
+
+        result = kIOReturnError;
+        key = OSDynamicCast(FakeSMCKey, getKey(name));
+        if (key && key->getHandler()) {
+
+          result = kIOReturnBadArgument;
+
+          if (param2) {
+            IOService *handler = (IOService *)param2;
+            bcopy(key->getHandler(), handler, sizeof(handler));
+            result = kIOReturnSuccess;
+          }
+        }
+      }
+    }
+    else if (functionName->isEqualTo(kFakeSMCRemoveKeyHandler)) {
+
+      result = kIOReturnBadArgument;
+
+      if (param1) {
+        result = kIOReturnError;
+        OSCollectionIterator *iterator = OSCollectionIterator::withCollection(keys);
+        if (iterator) {
+          IOService *handler = (IOService *)param1;
+          while (true) {
+            key = OSDynamicCast(FakeSMCKey, iterator->getNextObject());
+            if (!key) break;
+            if (key->getHandler() == handler)
+              key->setHandler(NULL);
+              }
+          result = kIOReturnSuccess;
+          OSSafeRelease(iterator);
+        }
+      }
+    }
+    else if (functionName->isEqualTo(kFakeSMCAddKeyValue)) {
+      name = (const char *)param1;
+      const char *type = (const char *)param2;
+      unsigned char size = (UInt64)param3;
+      const void *value = (const void *)param4;
+
+      if (name && type && size > 0) {
+
+        DebugLog("adding key %s with value, type %s, size %d", name, type, size);
+
+        if (addKeyWithValue(name, type, size, value)) {
+          result = kIOReturnSuccess;
+          break;
+        }
+
+        result = kIOReturnError;
+        break;
+      }
+
+      result = kIOReturnBadArgument;
+    }
+    else if (functionName->isEqualTo(kFakeSMCGetKeyValue)) {
+      name = (const char *)param1;
+      UInt8 *size = (UInt8*)param2;
+      const void **value = (const void **)param3;
+
+      if (name) {
+        key = getKey(name);
+        if (key) {
+          *size = key->getSize();
+          *value = key->getValue();
+
+          result = kIOReturnSuccess;
+          break;
+        }
+
+        result = kIOReturnError;
+        break;
+      }
+
+      result = kIOReturnBadArgument;
+      break;
+    }
+  } while (0);
+
+//	IOLockUnlock(platformFunctionLock);
 	
-	IOLockUnlock(platformFunctionLock);
-	
-	return kIOReturnUnsupported;
+	return result;
 }

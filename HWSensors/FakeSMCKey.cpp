@@ -22,6 +22,8 @@
 #define super OSObject
 OSDefineMetaClassAndStructors(FakeSMCKey, OSObject)
 
+IOService *FakeSMCKey::getHandler() { return handler; };
+
 void FakeSMCKey::copySymbol(const char *from, char* to)
 {
 	bzero(to, 5);
