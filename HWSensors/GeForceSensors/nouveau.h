@@ -53,44 +53,44 @@ enum nouveau_card_type {
 typedef struct _I2CDevRec *I2CDevPtr;
 
 struct nouveau_device {
-    IOPCIDevice *pcidev;
-    IOMemoryMap *mmio;
-    
-    const char *name;
+  IOPCIDevice *pcidev;
+  IOMemoryMap *mmio;
+  
+  const char *name;
 	const char *cname;
-    
+  
 	nouveau_card_type card_type;
-    s8 card_index;
-    
+  s8 card_index;
+  
 	u32 chipset;
 	u32 crystal;
-    
-    nouveau_bios bios;
-    nvbios vbios;
-    
-    nouveau_pm_temp_sensor_constants sensor_constants;
-    nouveau_pm_voltage voltage;
-    nouveau_i2c i2c;
-    
-    I2CDevPtr nvclock_i2c_sensor;
-    
-    dcb_gpio_func fan_pwm;
-    dcb_gpio_func fan_tach;
-        
-    int (*gpio_sense)(struct nouveau_device *, int line);
-    int (*gpio_find)(struct nouveau_device *, int idx, u8 tag, u8 line, struct dcb_gpio_func *);
-    int (*gpio_get)(struct nouveau_device *, int idx, u8 tag, u8 line);
-    
+  
+  nouveau_bios bios;
+  nvbios vbios;
+  
+  nouveau_pm_temp_sensor_constants sensor_constants;
+  nouveau_pm_voltage voltage;
+  nouveau_i2c i2c;
+  
+  I2CDevPtr nvclock_i2c_sensor;
+  
+  dcb_gpio_func fan_pwm;
+  dcb_gpio_func fan_tach;
+  
+  int (*gpio_sense)(struct nouveau_device *, int line);
+  int (*gpio_find)(struct nouveau_device *, int idx, u8 tag, u8 line, struct dcb_gpio_func *);
+  int (*gpio_get)(struct nouveau_device *, int idx, u8 tag, u8 line);
+  
 	int (*pwm_get)(struct nouveau_device *, int line, u32*, u32*);
-    
-    int (*clocks_get)(struct nouveau_device *, u8 source);
+  
+  int (*clocks_get)(struct nouveau_device *, u8 source);
 	int (*voltage_get)(struct nouveau_device *);
-    int (*temp_get)(struct nouveau_device *);
+  int (*temp_get)(struct nouveau_device *);
 	int (*core_temp_get)(struct nouveau_device *);
-    int (*board_temp_get)(struct nouveau_device *);
-    int (*fan_sense)(struct nouveau_device *);
-    int (*fan_pwm_get)(struct nouveau_device *);
-    int (*fan_rpm_get)(struct nouveau_device *);
+  int (*board_temp_get)(struct nouveau_device *);
+  int (*fan_sense)(struct nouveau_device *);
+  int (*fan_pwm_get)(struct nouveau_device *);
+  int (*fan_rpm_get)(struct nouveau_device *);
 };
 
 inline u8 nv_rd08(nouveau_device *device, u32 addr)

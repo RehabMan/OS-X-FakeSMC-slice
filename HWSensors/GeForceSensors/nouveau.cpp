@@ -41,18 +41,18 @@
 
 bool nouveau_identify(struct nouveau_device *device)
 {
-    /* identify the chipset */
-    
-    nv_debug(device, "identifying the chipset\n");
-    
-    /* read boot0 and strapping information */
-    UInt32 boot0 = nv_rd32(device, 0x000000);
-    UInt32 strap = nv_rd32(device, 0x101000);
-    
-    /* determine chipset and derive architecture from it */
-    if ((boot0 & 0x0f000000) > 0) {
-        device->chipset = (boot0 & 0xff00000) >> 20;
-        switch (device->chipset & 0xf0) {
+  /* identify the chipset */
+  
+  nv_debug(device, "identifying the chipset\n");
+  
+  /* read boot0 and strapping information */
+  UInt32 boot0 = nv_rd32(device, 0x000000);
+  UInt32 strap = nv_rd32(device, 0x101000);
+  
+  /* determine chipset and derive architecture from it */
+  if ((boot0 & 0x0f000000) > 0) {
+    device->chipset = (boot0 & 0xff00000) >> 20;
+    switch (device->chipset & 0xf0) {
 			case 0x40:
 			case 0x60: device->card_type = NV_40; break;
 			case 0x50:
@@ -64,78 +64,78 @@ bool nouveau_identify(struct nouveau_device *device)
 			case 0xe0: device->card_type = NV_E0; break;
 			default:
 				break;
-        }
     }
-    
-    bool ret = FALSE;
-    
-    switch (device->card_type) {
+  }
+  
+  bool ret = FALSE;
+  
+  switch (device->card_type) {
 		case NV_40: ret = nv40_identify(device); break;
 		case NV_50: ret = nv50_identify(device); break;
 		case NV_C0:
 		case NV_D0: ret = nvc0_identify(device); break;
 		case NV_E0: ret = nve0_identify(device); break;
-        default: break;
-    }
-    
-    if (!ret) {
-        nv_error(device, "unknown chipset, 0x%08x\n", boot0);
-        return false;
-    }
-    
-    nv_debug(device, "BOOT0  : 0x%08x\n", boot0);
-    nv_debug(device, "chipset: %s (NV%02X) family: NV%02X\n",
-			device->cname, device->chipset, device->card_type);
-    /* determine frequency of timing crystal */
-    if ( device->chipset < 0x17 ||
-        (device->chipset >= 0x20 && device->chipset <= 0x25))
-        strap &= 0x00000040;
-    else
-        strap &= 0x00400040;
-    
-    switch (strap) {
+    default: break;
+  }
+  
+  if (!ret) {
+    nv_error(device, "unknown chipset, 0x%08x\n", boot0);
+    return false;
+  }
+  
+  nv_debug(device, "BOOT0  : 0x%08x\n", boot0);
+  nv_debug(device, "chipset: %s (NV%02X) family: NV%02X\n",
+           device->cname, device->chipset, device->card_type);
+  /* determine frequency of timing crystal */
+  if ( device->chipset < 0x17 ||
+      (device->chipset >= 0x20 && device->chipset <= 0x25))
+    strap &= 0x00000040;
+  else
+    strap &= 0x00400040;
+  
+  switch (strap) {
 		case 0x00000000: device->crystal = 13500; break;
 		case 0x00000040: device->crystal = 14318; break;
 		case 0x00400000: device->crystal = 27000; break;
 		case 0x00400040: device->crystal = 25000; break;
-    }
-    
-    nv_debug(device, "crystal freq: %dKHz\n", device->crystal);
-    
-    return true;
+  }
+  
+  nv_debug(device, "crystal freq: %dKHz\n", device->crystal);
+  
+  return true;
 }
 
 bool nouveau_init(struct nouveau_device *device)
 {
 	int ret;
-    
-    nv_debug(device, "initializing monitoring driver\n");
-    
-    switch (device->card_type) {
+  
+  nv_debug(device, "initializing monitoring driver\n");
+  
+  switch (device->card_type) {
 		case NV_40: nv40_init(device); break;
 		case NV_50: nv50_init(device); break;
 		case NV_C0:
 		case NV_D0: nvc0_init(device); break;
 		case NV_E0: nve0_init(device); break;
-        default: break;
-    }
-    
-    // attempt to locate a drivable fan
-    ret = device->gpio_find(device, 0, DCB_GPIO_FAN, 0xff, &device->fan_pwm);
-    if (ret < 0)
+    default: break;
+  }
+  
+  // attempt to locate a drivable fan
+  ret = device->gpio_find(device, 0, DCB_GPIO_FAN, 0xff, &device->fan_pwm);
+  if (ret < 0)
 		device->fan_pwm.func = DCB_GPIO_UNUSED;
     
-    /* attempt to detect a tachometer connection */
-	ret = device->gpio_find(device, 0, DCB_GPIO_FAN_SENSE, 0xff, &device->fan_tach);
-	if (ret < 0)
-		device->fan_tach.func = DCB_GPIO_UNUSED;
-    
+  /* attempt to detect a tachometer connection */
+    ret = device->gpio_find(device, 0, DCB_GPIO_FAN_SENSE, 0xff, &device->fan_tach);
+    if (ret < 0)
+      device->fan_tach.func = DCB_GPIO_UNUSED;
+      
     /*if (device->gpio_init)
-        device->gpio_init(device);*/
-    
-	/* parse aux tables from vbios */
-	nouveau_volt_init(device);
-    nouveau_therm_init(device);
-    
-    return true;
+     device->gpio_init(device);*/
+      
+    /* parse aux tables from vbios */
+      nouveau_volt_init(device);
+      nouveau_therm_init(device);
+      
+      return true;
 }

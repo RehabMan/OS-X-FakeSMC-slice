@@ -27,31 +27,29 @@
 			<key>IOClass</key>
 			<string>GeforceSensors</string>
 			<key>IOMatchCategory</key>
-			<string>FakeSMCPlugin</string>
-			<key>IOPCIClassMatch</key>
-			<string>0x03000000&amp;0xff000000</string>
-			<key>IOPCIMatch</key>
-			<string>0x000010de&amp;0x0000ffff</string>
+			<string>${PRODUCT_NAME}</string>
 			<key>IOProbeScore</key>
 			<integer>1000</integer>
 			<key>IOProviderClass</key>
-			<string>IOPCIDevice</string>
+			<string>IOResources</string>
+			<key>IOResourceMatch</key>
+			<string>IOKit</string>
 		</dict>
 	</dict>
 	<key>OSBundleLibraries</key>
 	<dict>
-		<key>com.apple.iokit.IOPCIFamily</key>
-		<string>2.6</string>
 		<key>com.apple.kpi.iokit</key>
-		<string>10.0.0</string>
+		<string>9.0.0</string>
 		<key>com.apple.kpi.libkern</key>
-		<string>10.0.0</string>
+		<string>9.0.0</string>
 		<key>com.apple.kpi.mach</key>
-		<string>10.0.0</string>
+		<string>9.0.0</string>
 		<key>com.apple.kpi.unsupported</key>
-		<string>10.0.0</string>
+		<string>9.0.0</string>
 		<key>org.netkas.FakeSMC</key>
-		<string>4.2.0</string>
+		<string>3.2.0</string>
+		<key>com.apple.iokit.IOPCIFamily</key>
+		<string>2.4</string>
 	</dict>
 	<key>OSBundleRequired</key>
 	<string>Root</string>
