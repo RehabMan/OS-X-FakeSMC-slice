@@ -180,7 +180,6 @@
 
 /* Begin PBXFileReference section */
 		122024FD16D3A8BF003769F4 /* GeforceSensor.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GeforceSensor.kext; sourceTree = BUILT_PRODUCTS_DIR; };
-		122024FE16D3A8BF003769F4 /* GeforceSensor-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GeforceSensor-Info.plist"; sourceTree = "<group>"; };
 		1220250916D3A92B003769F4 /* adt7473.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = adt7473.cpp; sourceTree = "<group>"; };
 		1220250A16D3A92B003769F4 /* f75375.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = f75375.cpp; sourceTree = "<group>"; };
 		1220250B16D3A92B003769F4 /* f75375.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = f75375.h; sourceTree = "<group>"; };
@@ -718,7 +717,6 @@
 				124E606716C818AD004D3FE0 /* Frameworks */,
 				AEABE461125F8E9300F08235 /* Products */,
 				AEABE46A125F8F1F00F08235 /* Kernel.framework */,
-				122024FE16D3A8BF003769F4 /* GeforceSensor-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};

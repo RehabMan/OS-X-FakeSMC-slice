@@ -293,6 +293,10 @@ void NVClockX::stop (IOService* provider)
 	DebugLog("Stoping...");
 	
 	sensors->flushCollection();
+  if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCRemoveKeyHandler, true, this, NULL, NULL, NULL)) {
+    WarningLog("Can't remove key handler");
+    IOSleep(500);
+  }
 	
 	super::stop(provider);
 }

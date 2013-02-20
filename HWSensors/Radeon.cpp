@@ -154,6 +154,10 @@ void RadeonMonitor::stop (IOService* provider)
 {
 	sensors->flushCollection();
 	Card->release();  //?
+  if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCRemoveKeyHandler, true, this, NULL, NULL, NULL)) {
+    WarningLog("Can't remove key handler");
+    IOSleep(500);
+  }
 	
 	super::stop(provider);
 }

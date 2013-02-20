@@ -166,6 +166,10 @@ bool X3100monitor::init(OSDictionary *properties)
 void X3100monitor::stop (IOService* provider)
 {
 	sensors->flushCollection();
+  if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCRemoveKeyHandler, true, this, NULL, NULL, NULL)) {
+    WarningLog("Can't remove key handler");
+    IOSleep(500);
+  }
 	
 	super::stop(provider);
 }

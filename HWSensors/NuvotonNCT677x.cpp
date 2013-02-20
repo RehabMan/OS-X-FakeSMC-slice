@@ -225,6 +225,10 @@ IOService* NCT677x::probe(IOService *provider, SInt32 *score)
 void NCT677x::stop (IOService* provider)
 {
 	DebugLog("stoping...");
+  if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCRemoveKeyHandler, true, this, NULL, NULL, NULL)) {
+    WarningLog("Can't remove key handler");
+    IOSleep(500);
+  }
   
 	super::stop(provider);
 }

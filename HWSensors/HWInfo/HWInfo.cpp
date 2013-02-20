@@ -181,6 +181,11 @@ bool HWInfo::start(IOService * provider)
 void HWInfo::stop (IOService* provider)
 {
 	DebugLog("Stoping...");
+  if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCRemoveKeyHandler, true, this, NULL, NULL, NULL)) {
+    WarningLog("Can't remove key handler");
+    IOSleep(500);
+  }
+  
 	super::stop(provider);
 }
 

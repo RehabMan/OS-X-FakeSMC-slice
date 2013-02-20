@@ -170,7 +170,11 @@ void Andigilog::stop(IOService *provider)
     DbgPrint("stop\n");
     
     sensors->flushCollection();
-    
+  if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCRemoveKeyHandler, true, this, NULL, NULL, NULL)) {
+    IOLog("Can't remove key handler");
+    IOSleep(500);
+  }
+  
     super::stop(provider);
 }
 

@@ -423,10 +423,12 @@ bool GeforceSensors::start(IOService * provider)
 void GeforceSensors::stop (IOService* provider)
 {
 	DebugLog("Stoping...");
-    
-    fakeSMC->callPlatformFunction(kFakeSMCRemoveKeyHandler, true, this, NULL, NULL, NULL);
 	
 	sensors->flushCollection();
+  if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCRemoveKeyHandler, true, this, NULL, NULL, NULL)) {
+    WarningLog("Can't remove key handler");
+    IOSleep(500);
+  }
 	
 	super::stop(provider);
 }

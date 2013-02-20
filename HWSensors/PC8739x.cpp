@@ -186,6 +186,10 @@ bool PC8739x::start(IOService * provider)
 void PC8739x::stop(IOService* provider)
 {
 	DebugLog("stoping...");
+  if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCRemoveKeyHandler, true, this, NULL, NULL, NULL)) {
+    WarningLog("Can't remove key handler");
+    IOSleep(500);
+  }
 	
 	super::stop(provider);
 }

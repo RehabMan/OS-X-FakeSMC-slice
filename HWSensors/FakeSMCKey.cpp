@@ -178,6 +178,15 @@ bool FakeSMCKey::setHandler(IOService *aHandler)
 	return true;
 }
 
+/*
+void FakeSMCKey::removeHandler()
+{	
+	handler = NULL;
+	
+	return;
+}
+*/
+
 bool FakeSMCKey::isEqualTo(const char *aKey)
 {
 	return strncmp(name, aKey, 4) == 0;
