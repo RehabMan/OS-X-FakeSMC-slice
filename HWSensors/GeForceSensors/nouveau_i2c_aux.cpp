@@ -59,7 +59,7 @@ auxch_init(struct nouveau_i2c *aux, int ch)
 		ctrl = nv_rd32(aux->device, 0x00e4e4 + (ch * 0x50));
 		IODelay(1);
 		if (!timeout--) {
-			nv_error(aux->device, "begin idle timeout 0x%08x", ctrl);
+			nv_error(aux->device, "begin idle timeout 0x%08x", (unsigned int)ctrl);
 			return -EBUSY;
 		}
 	} while (ctrl & 0x03010000);
@@ -71,7 +71,7 @@ auxch_init(struct nouveau_i2c *aux, int ch)
 		ctrl = nv_rd32(aux->device, 0x00e4e4 + (ch * 0x50));
 		IODelay(1);
 		if (!timeout--) {
-			nv_error(aux->device, "magic wait 0x%08x\n", ctrl);
+			nv_error(aux->device, "magic wait 0x%08x\n", (unsigned int)ctrl);
 			auxch_fini(aux, ch);
 			return -EBUSY;
 		}
@@ -87,7 +87,7 @@ auxch_tx(struct nouveau_i2c *aux, int ch, u8 type, u32 addr, u8 *data, u8 size)
 	u32 xbuf[4] = {};
 	int ret, i;
     
-	nv_debug(aux->device, "%d: 0x%08x %d\n", type, addr, size);
+	nv_debug(aux->device, "%d: 0x%08x %d\n", type, (unsigned int)addr, size);
     
 	ret = auxch_init(aux, ch);
 	if (ret)
@@ -103,7 +103,7 @@ auxch_tx(struct nouveau_i2c *aux, int ch, u8 type, u32 addr, u8 *data, u8 size)
 	if (!(type & 1)) {
 		memcpy(xbuf, data, size);
 		for (i = 0; i < 16; i += 4) {
-			nv_debug(aux->device, "wr 0x%08x\n", xbuf[i / 4]);
+			nv_debug(aux->device, "wr 0x%08x\n", (unsigned int)xbuf[i / 4]);
 			nv_wr32(aux->device, 0x00e4c0 + (ch * 0x50) + i, xbuf[i / 4]);
 		}
 	}
@@ -131,7 +131,7 @@ auxch_tx(struct nouveau_i2c *aux, int ch, u8 type, u32 addr, u8 *data, u8 size)
 			ctrl = nv_rd32(aux->device, 0x00e4e4 + (ch * 0x50));
 			IODelay(1);
 			if (!timeout--) {
-				nv_error(aux->device, "tx req timeout 0x%08x\n", ctrl);
+				nv_error(aux->device, "tx req timeout 0x%08x\n", (unsigned int)ctrl);
 				goto out;
 			}
 		} while (ctrl & 0x00010000);
@@ -143,13 +143,13 @@ auxch_tx(struct nouveau_i2c *aux, int ch, u8 type, u32 addr, u8 *data, u8 size)
 			break;
 		}
         
-		nv_debug(aux->device, "%02d 0x%08x 0x%08x\n", retries, ctrl, stat);
+		nv_debug(aux->device, "%02d 0x%08x 0x%08x\n", retries, (unsigned int)ctrl, (unsigned int)stat);
 	}
     
 	if (type & 1) {
 		for (i = 0; i < 16; i += 4) {
 			xbuf[i / 4] = nv_rd32(aux->device, 0x00e4d0 + (ch * 0x50) + i);
-			nv_debug(aux->device, "rd 0x%08x\n", xbuf[i / 4]);
+			nv_debug(aux->device, "rd 0x%08x\n", (unsigned int)xbuf[i / 4]);
 		}
 		memcpy(data, xbuf, size);
 	}

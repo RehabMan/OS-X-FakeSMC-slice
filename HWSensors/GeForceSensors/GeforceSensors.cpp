@@ -53,6 +53,14 @@ bool is_digit(char c);
 #define kNouveauCoreTemperatureSensor   1001
 #define kNouveauBoardTemperatureSensor  1002
 
+#define kGenericPCIDevice "IOPCIDevice"
+#define kTimeoutMSecs     1000
+#define fVendor           "vendor-id"
+#define fDevice           "device-id"
+#define fClass            "class-code"
+#define kIOPCIConfigBaseAddress0 0x10
+
+
 #define super IOService
 OSDefineMetaClassAndStructors(GeforceSensors, IOService)
 
@@ -148,6 +156,57 @@ bool GeforceSensors::init(OSDictionary *properties)
 	return true;
 }
 
+IOService* GeforceSensors::probe(IOService *provider, SInt32 *score)
+{
+  UInt32 vendor_id, device_id, class_id;
+	DebugLog("Probing...");
+	
+	if (super::probe(provider, score) != this) return 0;
+	
+	InfoLog("GeforceSensors by kozlek (C) 2012");
+	s8 ret = 0;
+	if (OSDictionary * dictionary = serviceMatching(kGenericPCIDevice)) {
+		if (OSIterator * iterator = getMatchingServices(dictionary)) {
+			ret = 1;
+			IOPCIDevice* device = 0;
+			do {
+			  device = OSDynamicCast(IOPCIDevice, iterator->getNextObject());
+        if (!device) {
+          break;
+        }
+				OSData *data = OSDynamicCast(OSData, device->getProperty(fVendor));
+        vendor_id = 0;
+				if (data)
+					vendor_id = *(UInt32*)data->getBytesNoCopy();
+				
+        device_id = 0;
+				data = OSDynamicCast(OSData, device->getProperty(fDevice));				
+				if (data)
+					device_id = *(UInt32*)data->getBytesNoCopy();
+				
+        class_id = 0;
+				data = OSDynamicCast(OSData, device->getProperty(fClass));				
+				if (data)
+					class_id = *(UInt32*)data->getBytesNoCopy();
+				
+				if ((vendor_id==0x10de) && (class_id == 0x030000)) {
+					InfoLog("found %x Nvidia chip", (unsigned int)device_id);
+					card.pcidev = device;
+          card.device_id = device_id;
+					ret = 1; //TODO - count a number of cards
+          card.card_index = ret;
+					break;
+				}
+			} while (device);	
+		}
+	}
+	if(ret)
+		return this;
+	else return 0;
+	
+	return this;
+}
+
 
 
 SInt8 GeforceSensors::getVacantGPUIndex()
@@ -215,7 +274,8 @@ bool GeforceSensors::start(IOService * provider)
   }
   
   // map device memory
-  if ((device->pcidev = (IOPCIDevice*)provider)) {
+  device->pcidev = (IOPCIDevice*)provider;
+  if (device->pcidev) {
     
     device->pcidev->setMemoryEnable(true);
     
@@ -267,7 +327,7 @@ bool GeforceSensors::start(IOService * provider)
     return false;
   }
   
-  nv_info(device, "chipset: %s (NV%02lX) bios: %02x.%02x.%02x.%02x\n", device->cname, device->chipset, device->bios.version.major, device->bios.version.chip, device->bios.version.minor, device->bios.version.micro);
+  nv_info(device, "chipset: %s (NV%02X) bios: %02x.%02x.%02x.%02x\n", device->cname, (unsigned int)device->chipset, device->bios.version.major, device->bios.version.chip, device->bios.version.minor, device->bios.version.micro);
   
   if (device->card_type < NV_C0) {
     // init i2c structures

@@ -68,7 +68,7 @@ static int pwm_info(struct nouveau_device *device, int line)
             break;
 	}
     
-	nv_error(device, "GPIO %d unknown PWM: 0x%08x\n", line, gpio);
+	nv_error(device, "GPIO %d unknown PWM: 0x%08x\n", line, (unsigned int)gpio);
 	return -ENODEV;
 }
 

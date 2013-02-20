@@ -354,13 +354,13 @@ bool nouveau_i2c_create(struct nouveau_device *device)
         
 		if (!port->adapter.algo && !port->drive) {
 			nv_error(device, "I2C%d: type %d index %x/%x unknown\n",
-                     i, port->type, port->drive, port->sense);
+                     i, port->type, (unsigned int)port->drive, (unsigned int)port->sense);
 			IOFree(port, sizeof(struct nouveau_i2c_port));
 			continue;
 		}
         
 		snprintf(port->adapter.name, sizeof(port->adapter.name),
-                 "nouveau-%d-%x-%x-%x-%d", port->type, info.drive, port->drive, port->sense, i);
+                 "nouveau-%d-%x-%x-%x-%d", port->type, (unsigned int)info.drive, (unsigned int)port->drive, (unsigned int)port->sense, i);
         
 		//port->adapter.owner = this;
 		//port->adapter.dev.parent = &device->pdev->dev;

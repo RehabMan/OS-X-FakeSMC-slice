@@ -79,13 +79,13 @@ bool nouveau_identify(struct nouveau_device *device)
   }
   
   if (!ret) {
-    nv_error(device, "unknown chipset, 0x%08x\n", boot0);
+    nv_error(device, "unknown chipset, 0x%08x\n", (unsigned int)boot0);
     return false;
   }
   
-  nv_debug(device, "BOOT0  : 0x%08x\n", boot0);
+  nv_debug(device, "BOOT0  : 0x%08x\n", (unsigned int)boot0);
   nv_debug(device, "chipset: %s (NV%02X) family: NV%02X\n",
-           device->cname, device->chipset, device->card_type);
+           device->cname, (unsigned int)device->chipset, (unsigned int)device->card_type);
   /* determine frequency of timing crystal */
   if ( device->chipset < 0x17 ||
       (device->chipset >= 0x20 && device->chipset <= 0x25))
@@ -100,7 +100,7 @@ bool nouveau_identify(struct nouveau_device *device)
 		case 0x00400040: device->crystal = 25000; break;
   }
   
-  nv_debug(device, "crystal freq: %dKHz\n", device->crystal);
+  nv_debug(device, "crystal freq: %dKHz\n", (unsigned int)device->crystal);
   
   return true;
 }

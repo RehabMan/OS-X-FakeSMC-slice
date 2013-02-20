@@ -46,6 +46,7 @@ IOService* RadeonMonitor::probe(IOService *provider, SInt32 *score)
         if (!device) {
           break;
         }
+        vendor_id = 0;
 				OSData *data = OSDynamicCast(OSData, device->getProperty(fVendor));
 				if (data)
 					vendor_id = *(UInt32*)data->getBytesNoCopy();
@@ -55,16 +56,18 @@ IOService* RadeonMonitor::probe(IOService *provider, SInt32 *score)
 						vendor_id = *(UInt32*)data->getBytesNoCopy();
 				}
 				
+        device_id = 0;
 				data = OSDynamicCast(OSData, device->getProperty(fDevice));				
 				if (data)
 					device_id = *(UInt32*)data->getBytesNoCopy();
 				
+        class_id = 0;
 				data = OSDynamicCast(OSData, device->getProperty(fClass));				
 				if (data)
 					class_id = *(UInt32*)data->getBytesNoCopy();
 				
 				if ((vendor_id==0x1002) && (class_id == 0x030000)) {
-					InfoLog("found %lx Radeon chip", (long unsigned int)device_id);
+					InfoLog("found %x Radeon chip", (unsigned int)device_id);
 					VCard = device;
 					ret = 1; //TODO - count a number of cards
 					break;

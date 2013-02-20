@@ -18,10 +18,10 @@
 #include "nouveau_i2c.h"
 
 enum nouveau_clock_source {
-    nouveau_clock_core      = 1,
-    nouveau_clock_shader    = 2,
-    nouveau_clock_memory    = 3,
-    nouveau_clock_rop       = 4,
+  nouveau_clock_core      = 1,
+  nouveau_clock_shader    = 2,
+  nouveau_clock_memory    = 3,
+  nouveau_clock_rop       = 4,
 	nouveau_clock_copy      = 5,
 	nouveau_clock_daemon    = 6,
 	nouveau_clock_vdec      = 7,
@@ -62,6 +62,7 @@ struct nouveau_device {
 	nouveau_card_type card_type;
   s8 card_index;
   
+  u32 device_id;
 	u32 chipset;
 	u32 crystal;
   

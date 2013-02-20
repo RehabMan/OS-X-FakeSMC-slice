@@ -163,7 +163,7 @@ static u32 read_pll_src(struct nouveau_device *device, u32 base)
                 case 0x4008: id = !!(rsel & 0x00000008); break;
                 case 0x4030: id = 0; break;
                 default:
-                    nv_error(device, "ref: bad pll 0x%06x\n", base);
+                    nv_error(device, "ref: bad pll 0x%06x\n", (unsigned int)base);
                     return 0;
             }
             
@@ -191,7 +191,7 @@ static u32 read_pll_src(struct nouveau_device *device, u32 base)
                 case 0x4028: rsel = (rsel & 0x00001800) >> 11; break;
                 case 0x4030: rsel = 3; break;
                 default:
-                    nv_error(device, "ref: bad pll 0x%06x\n", base);
+                    nv_error(device, "ref: bad pll 0x%06x\n", (unsigned int)base);
                     return 0;
             }
             
@@ -238,7 +238,7 @@ static u32 read_pll_ref(struct nouveau_device *device, u32 base)
         case 0x00e810:
             return read_clk(device, clk_src_crystal);
         default:
-            nv_error(device, "bad pll 0x%06x\n", base);
+            nv_error(device, "bad pll 0x%06x\n", (unsigned int)base);
             return 0;
 	}
     
@@ -404,7 +404,7 @@ static u32 read_clk(struct nouveau_device *device, enum clk_src src)
             break;
 	}
     
-	nv_debug(device, "unknown clock source %d 0x%08x\n", src, mast);
+	nv_debug(device, "unknown clock source %d 0x%08x\n", src, (unsigned int)mast);
 	return 0;
 }
 
