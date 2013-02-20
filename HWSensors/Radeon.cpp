@@ -23,6 +23,16 @@
 #define INVID(offset)		OSReadLittleInt32((mmio_base), offset)
 #define OUTVID(offset,val)	OSWriteLittleInt32((mmio_base), offset, val)
 
+//TODO
+/*
+CARD32
+_RHDReadPLL(int scrnIndex, CARD16 offset)
+{
+  _RHDRegWrite(scrnIndex, CLOCK_CNTL_INDEX, (offset & PLL_ADDR));
+  return _RHDRegRead(scrnIndex, CLOCK_CNTL_DATA);
+}
+*/
+
 #define super IOService
 OSDefineMetaClassAndStructors(RadeonMonitor, IOService)
 
