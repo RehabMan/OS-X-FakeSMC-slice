@@ -143,7 +143,7 @@ auxch_tx(struct nouveau_i2c *aux, int ch, u8 type, u32 addr, u8 *data, u8 size)
 			break;
 		}
         
-		nv_debug(aux->device, "%02d 0x%08x 0x%08x\n", retries, (unsigned int)ctrl, (unsigned int)stat);
+		nv_debug(aux->device, "%02d 0x%08x 0x%08x\n", (int)retries, (unsigned int)ctrl, (unsigned int)stat);
 	}
     
 	if (type & 1) {

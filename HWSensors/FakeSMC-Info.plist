@@ -30,6 +30,11 @@
 			<dict>
 				<key>Keys</key>
 				<dict>
+					<key>$Num</key>
+					<array>
+						<string>ui8 </string>
+						<data>AQ==</data>
+					</array>
 					<key>ACID</key>
 					<array>
 						<string>ch8*</string>

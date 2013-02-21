@@ -346,7 +346,7 @@
 		AE840E78128D869D006532CB /* ACPIMonitor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ACPIMonitor.cpp; sourceTree = "<group>"; };
 		AEABE46A125F8F1F00F08235 /* Kernel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kernel.framework; path = /System/Library/Frameworks/Kernel.framework; sourceTree = "<absolute>"; };
 		AEABE82B125F8F6E00F08235 /* cpuid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpuid.h; sourceTree = "<group>"; };
-		AED9E18E125FBEF400736A5A /* ITEIT87x.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ITEIT87x.kext; sourceTree = BUILT_PRODUCTS_DIR; };
+		AED9E18E125FBEF400736A5A /* ITEIT87x.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = ITEIT87x.kext; path = IT87x.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		AED9E581125FC23900736A5A /* SuperIOFamily.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperIOFamily.h; sourceTree = "<group>"; };
 		AED9E582125FC23900736A5A /* SuperIOFamily.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SuperIOFamily.cpp; sourceTree = "<group>"; };
 		AEF4C80412602EE700297B2B /* VirtualSMC.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VirtualSMC.kext; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2487,8 +2487,8 @@
 				INFOPLIST_FILE = "FakeSMC-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.netkas.FakeSMC;
-				MODULE_VERSION = 1.0.0d1;
-				PRODUCT_NAME = VirtualSMC;
+				MODULE_VERSION = 3.3.0;
+				PRODUCT_NAME = FakeSMC;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = Debug;
@@ -2503,7 +2503,7 @@
 				INFOPLIST_FILE = "FakeSMC-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.netkas.FakeSMC;
-				MODULE_VERSION = 3.2.0;
+				MODULE_VERSION = 3.3.0;
 				PRODUCT_NAME = FakeSMC;
 				SDKROOT = macosx;
 				ZERO_LINK = NO;
@@ -2607,10 +2607,10 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				INFOPLIST_FILE = "FakeSMC-Info.plist";
+				INFOPLIST_FILE = "FakeSMC-pre106-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.netkas.FakeSMC;
-				MODULE_VERSION = 1.0.0d1;
+				MODULE_VERSION = 3.1.0;
 				PRODUCT_NAME = FakeSMC;
 				SDKROOT = macosx;
 				ZERO_LINK = NO;
