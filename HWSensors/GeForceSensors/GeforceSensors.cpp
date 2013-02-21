@@ -274,7 +274,7 @@ bool GeforceSensors::start(IOService * provider)
   }
   
   // map device memory
-  device->pcidev = (IOPCIDevice*)provider;
+//  device->pcidev = (IOPCIDevice*)provider;
   if (device->pcidev) {
     
     device->pcidev->setMemoryEnable(true);
