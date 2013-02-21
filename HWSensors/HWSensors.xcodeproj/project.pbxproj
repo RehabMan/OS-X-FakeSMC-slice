@@ -113,6 +113,13 @@
 			remoteGlobalIDString = 124E606516C818AD004D3FE0;
 			remoteInfo = HWInfo;
 		};
+		128160D316D628A40012840B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEABE453125F8E7400F08235 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 122024FC16D3A8BF003769F4 /* GeforceSensor */;
+			remoteInfo = GeforceSensor;
+		};
 		1D1CAAB913657034003878D0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AEABE453125F8E7400F08235 /* Project object */;
@@ -342,7 +349,7 @@
 		AED9E18E125FBEF400736A5A /* ITEIT87x.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ITEIT87x.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		AED9E581125FC23900736A5A /* SuperIOFamily.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperIOFamily.h; sourceTree = "<group>"; };
 		AED9E582125FC23900736A5A /* SuperIOFamily.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SuperIOFamily.cpp; sourceTree = "<group>"; };
-		AEF4C80412602EE700297B2B /* FakeSMC.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FakeSMC.kext; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEF4C80412602EE700297B2B /* VirtualSMC.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VirtualSMC.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEF4C80E12602F2600297B2B /* FakeSMCDevice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FakeSMCDevice.cpp; sourceTree = "<group>"; };
 		AEF4C80F12602F2600297B2B /* FakeSMCDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeSMCDevice.h; sourceTree = "<group>"; };
 		AEF4C81012602F2600297B2B /* FakeSMCKey.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FakeSMCKey.cpp; sourceTree = "<group>"; };
@@ -723,7 +730,7 @@
 		AEABE461125F8E9300F08235 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AEF4C80412602EE700297B2B /* FakeSMC.kext */,
+				AEF4C80412602EE700297B2B /* VirtualSMC.kext */,
 				AE5BA5781268D94A00EA6AB9 /* NVClockX.kext */,
 				AED9E18E125FBEF400736A5A /* ITEIT87x.kext */,
 				AE212C6A12678D3500145048 /* W836x.kext */,
@@ -1068,10 +1075,11 @@
 				1D1CAAC813657046003878D0 /* PBXTargetDependency */,
 				1D1CAAC613657046003878D0 /* PBXTargetDependency */,
 				1D1CAAC413657046003878D0 /* PBXTargetDependency */,
+				128160D416D628A40012840B /* PBXTargetDependency */,
 			);
 			name = FakeSMC;
 			productName = VirtualSMC;
-			productReference = AEF4C80412602EE700297B2B /* FakeSMC.kext */;
+			productReference = AEF4C80412602EE700297B2B /* VirtualSMC.kext */;
 			productType = "com.apple.product-type.kernel-extension.iokit";
 		};
 /* End PBXNativeTarget section */
@@ -1347,6 +1355,11 @@
 			target = 124E606516C818AD004D3FE0 /* HWInfo */;
 			targetProxy = 124E608916C819C3004D3FE0 /* PBXContainerItemProxy */;
 		};
+		128160D416D628A40012840B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 122024FC16D3A8BF003769F4 /* GeforceSensor */;
+			targetProxy = 128160D316D628A40012840B /* PBXContainerItemProxy */;
+		};
 		1D1CAABA13657034003878D0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 12CB0F4512C0888E00068B06 /* IntelCPUMonitor */;
@@ -1438,11 +1451,11 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_MODEL_TUNING = G5;
+				GCC_MODEL_TUNING = "";
 				GCC_OPTIMIZATION_LEVEL = 0;
-				INFOPLIST_FILE = "GeforceSensor-Info.plist";
+				INFOPLIST_FILE = "GeForceSensors/GeforceSensors-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
-				MODULE_NAME = com.yourcompany.driver.GeforceSensor;
+				MODULE_NAME = com.kozlek.driver.GeforceSensor;
 				MODULE_VERSION = 1.0.0d1;
 				PREBINDING = NO;
 				PRODUCT_NAME = GeforceSensor;
@@ -1538,7 +1551,7 @@
 				MODULE_VERSION = 1.0.0d1;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.7;
+				SDKROOT = "";
 				WRAPPER_EXTENSION = kext;
 			};
 			name = Debug;
@@ -2171,12 +2184,12 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_MODEL_TUNING = G5;
+				GCC_MODEL_TUNING = "";
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				INFOPLIST_FILE = "W836x-Info.plist";
+				INFOPLIST_FILE = "WinbondW836x/WinbondW836x-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
-				MODULE_NAME = com.yourcompany.driver.W836x;
+				MODULE_NAME = org.mozodojo.W836x;
 				MODULE_VERSION = 1.0.0d1;
 				PRODUCT_NAME = W836x;
 				WRAPPER_EXTENSION = kext;
@@ -2389,11 +2402,14 @@
 		AEABE454125F8E7400F08235 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ARCHS = (
+					x86_64,
+					i386,
+				);
 				COPY_PHASE_STRIP = NO;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				SDKROOT = macosx;
+				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Debug;
 		};
@@ -2414,7 +2430,6 @@
 				GCC_WARN_UNUSED_VALUE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				SDKROOT = "";
 				VALID_ARCHS = "i386 x86_64";
 			};
 			name = "Release 10.6";
@@ -2430,11 +2445,11 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				INFOPLIST_FILE = "IT87x-Info.plist";
+				INFOPLIST_FILE = "ITEIT87x/ITEIT87x-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
-				MODULE_NAME = com.yourcompany.driver.IT87x;
+				MODULE_NAME = org.mozodojo.IT87x;
 				MODULE_VERSION = 1.0.0d1;
-				PRODUCT_NAME = IT87x;
+				PRODUCT_NAME = ITEIT87x;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = Debug;
@@ -2466,7 +2481,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_MODEL_TUNING = G5;
+				GCC_MODEL_TUNING = "";
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "FakeSMC-Info.plist";
@@ -2505,7 +2520,6 @@
 				GCC_MODEL_TUNING = "";
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				SDKROOT = macosx;
 				VALID_ARCHS = i386;
 			};
 			name = "Release 10.5";
@@ -2524,7 +2538,7 @@
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = org.mozodojo.IT87x;
 				MODULE_VERSION = 1.0.0d1;
-				PRODUCT_NAME = IT87x;
+				PRODUCT_NAME = ITEIT87x;
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = kext;
 				ZERO_LINK = NO;
@@ -2562,7 +2576,6 @@
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OTHER_CFLAGS = "-DTIGER";
-				SDKROOT = macosx;
 				VALID_ARCHS = i386;
 			};
 			name = "Release 10.4";
