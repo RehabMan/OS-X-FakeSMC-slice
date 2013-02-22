@@ -197,7 +197,8 @@ int I2CDevice::I2CExec(I2COp op, UInt16 addr, void *cmdbuf, size_t cmdlen, void 
 {
     int ret;
     UInt8 St, ctl;
-    AbsoluteTime deadline;
+//    AbsoluteTime deadline;
+    UInt64 deadline;
     
     DbgPrint("exec: op %d, addr 0x%02x, cmdlen %d, len %d\n", op, addr, (int)cmdlen, (int)len);
     
@@ -255,7 +256,9 @@ int I2CDevice::I2CExec(I2COp op, UInt16 addr, void *cmdbuf, size_t cmdlen, void 
         goto done;
     }
     /* Don't block forever */
-    ret = IOLockSleepDeadline(Lock.holder, &Lock.event, deadline, THREAD_INTERRUPTIBLE);
+//    ret = IOLockSleepDeadline(Lock.holder, &Lock.event, deadline, THREAD_INTERRUPTIBLE);
+    ret = IOLockSleepDeadline(Lock.holder, &Lock.event,  *((AbsoluteTime *) &deadline), THREAD_INTERRUPTIBLE);
+  
     Lock.event = false;
     IOLockUnlock(Lock.holder);
     if (ret != THREAD_AWAKENED)
