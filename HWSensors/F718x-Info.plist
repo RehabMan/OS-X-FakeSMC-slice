@@ -27,7 +27,7 @@
 			<key>IOClass</key>
 			<string>F718x</string>
 			<key>IOProbeScore</key>
-			<string>3000</string>
+			<integer>3000</integer>
 			<key>IOMatchCategory</key>
 			<string>F718x</string>
 			<key>IOProviderClass</key>

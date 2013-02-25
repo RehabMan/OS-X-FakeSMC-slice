@@ -27,7 +27,7 @@
 			<key>IOClass</key>
 			<string>RadeonMonitor</string>
 			<key>IOProbeScore</key>
-			<string>500</string>
+			<integer>500</integer>
 			<key>IOMatchCategory</key>
 			<string>RadeonMonitor</string>
 			<key>IOProviderClass</key>

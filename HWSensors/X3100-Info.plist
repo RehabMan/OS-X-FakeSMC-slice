@@ -27,7 +27,7 @@
 			<key>IOClass</key>
 			<string>X3100monitor</string>
 			<key>IOProbeScore</key>
-			<string>500</string>
+			<integer>500</integer>
 			<key>IOMatchCategory</key>
 			<string>X3100monitor</string>
 			<key>IOProviderClass</key>
