@@ -54,6 +54,7 @@ IOService* X3100monitor::probe(IOService *provider, SInt32 *score)
 {
 	if (super::probe(provider, score) != this) return 0;
 	UInt32 vendor_id, device_id;
+  VCard = NULL;
 	if (OSDictionary * dictionary = serviceMatching(kGenericPCIDevice)) {
 		if (OSIterator * iterator = getMatchingServices(dictionary)) {
 			
@@ -79,6 +80,10 @@ IOService* X3100monitor::probe(IOService *provider, SInt32 *score)
 			} while(TRUE);
 		}
 	}	
+  if (!VCard) {
+    WarningLog("no ICH8M found");
+//    return NULL; // no return NULL here because on repeating attempts to probe
+  }
 	return this;
 }
 
@@ -145,7 +150,7 @@ bool X3100monitor::start(IOService * provider)
 		
 	if (kIOReturnSuccess != fakeSMC->callPlatformFunction(kFakeSMCAddKeyHandler, false, (void *)name, (void *)TYPE_SP78, (void *)2, this)) {
 		WarningLog("Can't add key to fake SMC device, kext will not load");
-		return false;
+		return false; 
 	}
 	
 	return true;	

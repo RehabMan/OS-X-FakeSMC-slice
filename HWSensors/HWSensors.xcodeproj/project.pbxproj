@@ -117,7 +117,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = AEABE453125F8E7400F08235 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 122024FC16D3A8BF003769F4 /* GeforceSensor */;
+			remoteGlobalIDString = 122024FC16D3A8BF003769F4;
 			remoteInfo = GeforceSensor;
 		};
 		1D1CAAB913657034003878D0 /* PBXContainerItemProxy */ = {
@@ -346,10 +346,10 @@
 		AE840E78128D869D006532CB /* ACPIMonitor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ACPIMonitor.cpp; sourceTree = "<group>"; };
 		AEABE46A125F8F1F00F08235 /* Kernel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kernel.framework; path = /System/Library/Frameworks/Kernel.framework; sourceTree = "<absolute>"; };
 		AEABE82B125F8F6E00F08235 /* cpuid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpuid.h; sourceTree = "<group>"; };
-		AED9E18E125FBEF400736A5A /* ITEIT87x.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = ITEIT87x.kext; path = IT87x.kext; sourceTree = BUILT_PRODUCTS_DIR; };
+		AED9E18E125FBEF400736A5A /* ITEIT87x.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ITEIT87x.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		AED9E581125FC23900736A5A /* SuperIOFamily.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperIOFamily.h; sourceTree = "<group>"; };
 		AED9E582125FC23900736A5A /* SuperIOFamily.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SuperIOFamily.cpp; sourceTree = "<group>"; };
-		AEF4C80412602EE700297B2B /* VirtualSMC.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VirtualSMC.kext; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEF4C80412602EE700297B2B /* FakeSMC.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FakeSMC.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEF4C80E12602F2600297B2B /* FakeSMCDevice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FakeSMCDevice.cpp; sourceTree = "<group>"; };
 		AEF4C80F12602F2600297B2B /* FakeSMCDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeSMCDevice.h; sourceTree = "<group>"; };
 		AEF4C81012602F2600297B2B /* FakeSMCKey.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FakeSMCKey.cpp; sourceTree = "<group>"; };
@@ -730,7 +730,7 @@
 		AEABE461125F8E9300F08235 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AEF4C80412602EE700297B2B /* VirtualSMC.kext */,
+				AEF4C80412602EE700297B2B /* FakeSMC.kext */,
 				AE5BA5781268D94A00EA6AB9 /* NVClockX.kext */,
 				AED9E18E125FBEF400736A5A /* ITEIT87x.kext */,
 				AE212C6A12678D3500145048 /* W836x.kext */,
@@ -1079,7 +1079,7 @@
 			);
 			name = FakeSMC;
 			productName = VirtualSMC;
-			productReference = AEF4C80412602EE700297B2B /* VirtualSMC.kext */;
+			productReference = AEF4C80412602EE700297B2B /* FakeSMC.kext */;
 			productType = "com.apple.product-type.kernel-extension.iokit";
 		};
 /* End PBXNativeTarget section */

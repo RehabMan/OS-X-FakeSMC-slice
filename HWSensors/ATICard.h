@@ -51,18 +51,18 @@ class ATICard : public OSObject {
 	OSDeclareDefaultStructors(ATICard)
 
 public:
-	UInt32			chipID;
-	UInt16			family;
-	IOPCIDevice *	VCard;
+	UInt32          chipID;
+	UInt16          family;
+	IOPCIDevice *   VCard;
 	RADEONCardInfo*	rinfo;
-	int				tempFamily;
+	int             tempFamily;
 	
 private:
 	volatile UInt8* mmio_base;
-	IOMemoryMap *	mmio;
-	UInt32			Caps;
-	UInt32			tReg;
-	int				card_number;
+	IOMemoryMap *   mmio;
+	UInt32          Caps;
+	UInt32          tReg;
+	int             card_number;
 	
 	
 	bool			getRadeonInfo	();
@@ -77,8 +77,8 @@ public:
 //	Binding* tempSensor;
 //	Binding* boardSensor;
 //	Binding* fanSensor;  
-	UInt32			read32			(UInt32 reg);
-	bool			initialize		(void);
+	UInt32			read32(UInt32 reg);
+	bool        initialize(void);
 	IOReturn		R6xxTemperatureSensor(UInt16* data);
 	IOReturn		R7xxTemperatureSensor(UInt16* data);
 	IOReturn		EverTemperatureSensor(UInt16* data);
