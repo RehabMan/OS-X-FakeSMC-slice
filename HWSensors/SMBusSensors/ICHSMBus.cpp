@@ -193,6 +193,11 @@ void I2CDevice::UnlockI2CBus()
 {
     IORWLockUnlock(I2C_Lock);
 }
+
+#ifdef clock_interval_to_deadline
+#undef clock_interval_to_deadline
+#endif
+
 int I2CDevice::I2CExec(I2COp op, UInt16 addr, void *cmdbuf, size_t cmdlen, void *buf, size_t len)
 {
     int ret;
@@ -246,9 +251,9 @@ int I2CDevice::I2CExec(I2COp op, UInt16 addr, void *cmdbuf, size_t cmdlen, void 
     ctl |= ICH_SMB_HC_INTREN | ICH_SMB_HC_START;
     fPCIDevice->ioWrite8(fBase + ICH_SMB_HC, ctl);
 
-//    clock_interval_to_deadline(ICHIIC_TIMEOUT, kSecondScale, (UInt64 *) &deadline);
+    clock_interval_to_deadline(ICHIIC_TIMEOUT, kSecondScale, (UInt64 *) &deadline);
   
-  clock_interval_to_deadline(ICHIIC_TIMEOUT, kSecondScale, (AbsoluteTime *)&deadline);
+//  clock_interval_to_deadline(ICHIIC_TIMEOUT, kSecondScale, (AbsoluteTime *)&deadline);
     IOLockLock(Lock.holder);
     if (Lock.event) {
         Lock.event = false;
