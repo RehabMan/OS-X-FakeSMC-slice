@@ -47,7 +47,7 @@ bool Andigilog::start(IOService *provider)
     UInt8 cmd, data, addrs[] = ASC7621_ADDRS;
     /* Mapping common for Intel boards */
     struct MList list[] = {
-        { ASC7621_TEMP1H, ASC7621_TEMP1L, {"TC0D",TYPE_SP78,2,-1}, -1, 0, true },
+        { ASC7621_TEMP1H, ASC7621_TEMP1L, {KEY_CPU_PROXIMITY_TEMPERATURE,TYPE_SP78,2,-1}, -1, 0, true },
         { ASC7621_TEMP2H, ASC7621_TEMP2L, {KEY_AMBIENT_TEMPERATURE,TYPE_SP78,2,-1}, -1, 0, true },
         { ASC7621_TEMP3H, ASC7621_TEMP3L, {KEY_DIMM_TEMPERATURE,TYPE_SP78,2,-1}, -1, 0, true },
         { ASC7621_TEMP4H, ASC7621_TEMP4L, {KEY_CPU_HEATSINK_TEMPERATURE,TYPE_SP78,2,-1}, -1, 0, true },

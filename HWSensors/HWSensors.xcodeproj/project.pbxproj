@@ -39,7 +39,6 @@
 		1250EF3A16CBCA6200D454E4 /* WinbondW836x.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1250EF3816CBCA6200D454E4 /* WinbondW836x.cpp */; };
 		1257C3FA16CBAE4000812892 /* ITEIT87x.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1257C3F816CBAE4000812892 /* ITEIT87x.cpp */; };
 		1260E43C16C3DD72006515EB /* Andigilog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1260E3FF16C3DBC0006515EB /* Andigilog.cpp */; };
-		128BC44C16DC98DC008C76D6 /* ICHSMBus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1260E40616C3DBC0006515EB /* ICHSMBus.cpp */; };
 		128BC45516DC999F008C76D6 /* ICHSMBus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1260E40616C3DBC0006515EB /* ICHSMBus.cpp */; };
 		12A8DAF812C0A6B600A49048 /* ATICard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12A8DAF612C0A6B600A49048 /* ATICard.cpp */; };
 		12B4838D16C978FD008BF975 /* HWInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 124E607E16C81921004D3FE0 /* HWInfo.cpp */; };
@@ -125,7 +124,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = AEABE453125F8E7400F08235 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 128BC44416DC9854008C76D6 /* ICHSMBus */;
+			remoteGlobalIDString = 128BC44416DC9854008C76D6;
 			remoteInfo = ICHSMBus;
 		};
 		1D1CAAB913657034003878D0 /* PBXContainerItemProxy */ = {
@@ -1258,7 +1257,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1260E43C16C3DD72006515EB /* Andigilog.cpp in Sources */,
-				128BC44C16DC98DC008C76D6 /* ICHSMBus.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
