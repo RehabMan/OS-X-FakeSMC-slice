@@ -38,8 +38,9 @@
 		124E608216C81921004D3FE0 /* HWInfo-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 124E607D16C81921004D3FE0 /* HWInfo-Prefix.pch */; };
 		1250EF3A16CBCA6200D454E4 /* WinbondW836x.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1250EF3816CBCA6200D454E4 /* WinbondW836x.cpp */; };
 		1257C3FA16CBAE4000812892 /* ITEIT87x.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1257C3F816CBAE4000812892 /* ITEIT87x.cpp */; };
-		1260E43B16C3DD64006515EB /* ICHSMBus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1260E40616C3DBC0006515EB /* ICHSMBus.cpp */; };
 		1260E43C16C3DD72006515EB /* Andigilog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1260E3FF16C3DBC0006515EB /* Andigilog.cpp */; };
+		128BC44C16DC98DC008C76D6 /* ICHSMBus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1260E40616C3DBC0006515EB /* ICHSMBus.cpp */; };
+		128BC45516DC999F008C76D6 /* ICHSMBus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1260E40616C3DBC0006515EB /* ICHSMBus.cpp */; };
 		12A8DAF812C0A6B600A49048 /* ATICard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12A8DAF612C0A6B600A49048 /* ATICard.cpp */; };
 		12B4838D16C978FD008BF975 /* HWInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 124E607E16C81921004D3FE0 /* HWInfo.cpp */; };
 		12CB0F5C12C0899B00068B06 /* IntelCPUMonitor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12CB0F5912C0899B00068B06 /* IntelCPUMonitor.cpp */; };
@@ -119,6 +120,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 122024FC16D3A8BF003769F4;
 			remoteInfo = GeforceSensor;
+		};
+		128BC45316DC998A008C76D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEABE453125F8E7400F08235 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 128BC44416DC9854008C76D6 /* ICHSMBus */;
+			remoteInfo = ICHSMBus;
 		};
 		1D1CAAB913657034003878D0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -271,6 +279,7 @@
 		1260E40716C3DBC0006515EB /* ICHSMBus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICHSMBus.h; sourceTree = "<group>"; };
 		1260E40816C3DBC0006515EB /* SMBus.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SMBus.c; sourceTree = "<group>"; };
 		1260E42316C3DC3A006515EB /* Andigilog.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Andigilog.kext; sourceTree = BUILT_PRODUCTS_DIR; };
+		128BC44516DC9854008C76D6 /* ICHSMBus.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ICHSMBus.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		12A8DAF612C0A6B600A49048 /* ATICard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ATICard.cpp; sourceTree = "<group>"; };
 		12A8DAF712C0A6B600A49048 /* ATICard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATICard.h; sourceTree = "<group>"; };
 		12A8DAF912C0A6C200A49048 /* radeon_chipinfo_gen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = radeon_chipinfo_gen.h; sourceTree = SOURCE_ROOT; };
@@ -376,6 +385,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		1260E42116C3DC3A006515EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		128BC44316DC9854008C76D6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -745,6 +761,7 @@
 				1260E42316C3DC3A006515EB /* Andigilog.kext */,
 				124E606616C818AD004D3FE0 /* HWInfo.kext */,
 				122024FD16D3A8BF003769F4 /* GeforceSensor.kext */,
+				128BC44516DC9854008C76D6 /* ICHSMBus.kext */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -889,6 +906,23 @@
 			name = Andigilog;
 			productName = Andigilog;
 			productReference = 1260E42316C3DC3A006515EB /* Andigilog.kext */;
+			productType = "com.apple.product-type.kernel-extension.iokit";
+		};
+		128BC44416DC9854008C76D6 /* ICHSMBus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 128BC44B16DC9855008C76D6 /* Build configuration list for PBXNativeTarget "ICHSMBus" */;
+			buildPhases = (
+				128BC44116DC9854008C76D6 /* Sources */,
+				128BC44216DC9854008C76D6 /* Resources */,
+				128BC44316DC9854008C76D6 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ICHSMBus;
+			productName = ICHSMBus;
+			productReference = 128BC44516DC9854008C76D6 /* ICHSMBus.kext */;
 			productType = "com.apple.product-type.kernel-extension.iokit";
 		};
 		12CB0F4512C0888E00068B06 /* IntelCPUMonitor */ = {
@@ -1076,6 +1110,7 @@
 				1D1CAAC613657046003878D0 /* PBXTargetDependency */,
 				1D1CAAC413657046003878D0 /* PBXTargetDependency */,
 				128160D416D628A40012840B /* PBXTargetDependency */,
+				128BC45416DC998A008C76D6 /* PBXTargetDependency */,
 			);
 			name = FakeSMC;
 			productName = VirtualSMC;
@@ -1121,6 +1156,7 @@
 				1260E42216C3DC3A006515EB /* Andigilog */,
 				124E606516C818AD004D3FE0 /* HWInfo */,
 				122024FC16D3A8BF003769F4 /* GeforceSensor */,
+				128BC44416DC9854008C76D6 /* ICHSMBus */,
 			);
 		};
 /* End PBXProject section */
@@ -1142,6 +1178,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		1260E42016C3DC3A006515EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		128BC44216DC9854008C76D6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1214,8 +1257,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1260E43B16C3DD64006515EB /* ICHSMBus.cpp in Sources */,
 				1260E43C16C3DD72006515EB /* Andigilog.cpp in Sources */,
+				128BC44C16DC98DC008C76D6 /* ICHSMBus.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		128BC44116DC9854008C76D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				128BC45516DC999F008C76D6 /* ICHSMBus.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1359,6 +1410,11 @@
 			isa = PBXTargetDependency;
 			target = 122024FC16D3A8BF003769F4 /* GeforceSensor */;
 			targetProxy = 128160D316D628A40012840B /* PBXContainerItemProxy */;
+		};
+		128BC45416DC998A008C76D6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 128BC44416DC9854008C76D6 /* ICHSMBus */;
+			targetProxy = 128BC45316DC998A008C76D6 /* PBXContainerItemProxy */;
 		};
 		1D1CAABA13657034003878D0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1732,6 +1788,81 @@
 				MODULE_NAME = com.yourcompany.driver.Andigilog;
 				MODULE_VERSION = 1.0.0d1;
 				PRODUCT_NAME = Andigilog;
+				WRAPPER_EXTENSION = kext;
+			};
+			name = "Release 10.4";
+		};
+		128BC44716DC9855008C76D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INFOPLIST_FILE = "ICHSMBus-Info.plist";
+				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
+				MODULE_NAME = com.yourcompany.driver.ICHSMBus;
+				MODULE_VERSION = 1.0.0d1;
+				PREBINDING = NO;
+				PRODUCT_NAME = ICHSMBus;
+				WRAPPER_EXTENSION = kext;
+			};
+			name = Debug;
+		};
+		128BC44816DC9855008C76D6 /* Release 10.6 */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					x86_64,
+					i386,
+				);
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = "";
+				INFOPLIST_FILE = "SMBusSensors/ICHSMBus-Info.plist";
+				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
+				MODULE_NAME = org.dukzcry.I2CFamily;
+				MODULE_VERSION = 1.0.0d1;
+				PREBINDING = NO;
+				PRODUCT_NAME = ICHSMBus;
+				WRAPPER_EXTENSION = kext;
+			};
+			name = "Release 10.6";
+		};
+		128BC44916DC9855008C76D6 /* Release 10.5 */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				INFOPLIST_FILE = "ICHSMBus-Info.plist";
+				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
+				MODULE_NAME = com.yourcompany.driver.ICHSMBus;
+				MODULE_VERSION = 1.0.0d1;
+				PREBINDING = NO;
+				PRODUCT_NAME = ICHSMBus;
+				WRAPPER_EXTENSION = kext;
+			};
+			name = "Release 10.5";
+		};
+		128BC44A16DC9855008C76D6 /* Release 10.4 */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				INFOPLIST_FILE = "ICHSMBus-Info.plist";
+				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
+				MODULE_NAME = com.yourcompany.driver.ICHSMBus;
+				MODULE_VERSION = 1.0.0d1;
+				PREBINDING = NO;
+				PRODUCT_NAME = ICHSMBus;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = "Release 10.4";
@@ -2416,7 +2547,10 @@
 		AEABE455125F8E7400F08235 /* Release 10.6 */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ARCHS = (
+					x86_64,
+					i386,
+				);
 				COPY_PHASE_STRIP = YES;
 				GCC_AUTO_VECTORIZATION = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
@@ -2649,6 +2783,17 @@
 				1260E42616C3DC3A006515EB /* Release 10.6 */,
 				1260E42716C3DC3A006515EB /* Release 10.5 */,
 				1260E42816C3DC3A006515EB /* Release 10.4 */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release 10.6";
+		};
+		128BC44B16DC9855008C76D6 /* Build configuration list for PBXNativeTarget "ICHSMBus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				128BC44716DC9855008C76D6 /* Debug */,
+				128BC44816DC9855008C76D6 /* Release 10.6 */,
+				128BC44916DC9855008C76D6 /* Release 10.5 */,
+				128BC44A16DC9855008C76D6 /* Release 10.4 */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = "Release 10.6";
