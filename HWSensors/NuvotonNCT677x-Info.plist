@@ -27,9 +27,9 @@
 			<key>IOClass</key>
 			<string>NCT677x</string>
 			<key>IOMatchCategory</key>
-			<string>SuperIOMonitor</string>
+			<string>NCT677x</string>
 			<key>IOProviderClass</key>
-			<string>FakeSMC</string>
+			<string>IOResources</string>
 			<key>IOResourceMatch</key>
 			<string>IOKit</string>
 			<key>Sensors Configuration</key>

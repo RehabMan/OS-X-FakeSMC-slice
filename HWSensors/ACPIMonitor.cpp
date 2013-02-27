@@ -175,7 +175,7 @@ bool ACPIMonitor::start(IOService * provider)
 		addSensor("PSN1", "PC1C", TYPE_UI16, 2);
 	
 	// AC Power/Battery
-    if (kIOReturnSuccess == acpiDevice->validateObject("ACDC")) // Power Source Read AC/Battery
+  if (kIOReturnSuccess == acpiDevice->validateObject("ACDC")) // Power Source Read AC/Battery
 	{ 
 		addSensor("ACDC", "ACEN", TYPE_UI8, 1);
 		addSensor("ACDC", "ACFP", TYPE_FLAG, 1);
@@ -282,7 +282,7 @@ IOReturn ACPIMonitor::callPlatformFunction(const OSSymbol *functionName, bool wa
 {
 	const char* name = (const char*)param1;
 	void * data = param2;
-//	UInt64 size = (UInt64)param3;
+  //	UInt64 size = (UInt64)param3;
 	OSString* key;
 #if __LP64__
 	UInt64 value;
@@ -305,14 +305,14 @@ IOReturn ACPIMonitor::callPlatformFunction(const OSSymbol *functionName, bool wa
 				params[0] = OSDynamicCast(OSObject, OSNumber::withNumber((unsigned long long)val, 32));
 				return acpiDevice->evaluateInteger(key->getCStringNoCopy(), &value, params, 1);
 				
-		/*
-		 virtual IOReturn evaluateInteger( const OSSymbol * objectName,
-		 UInt32 *         resultInt32,
-		 OSObject *       params[]   = 0,
-		 IOItemCount      paramCount = 0,
-		 IOOptionBits     options    = 0 );
-		 flags_num = OSNumber::withNumber((unsigned long long)flags, 32);
-		 */
+        /*
+         virtual IOReturn evaluateInteger( const OSSymbol * objectName,
+         UInt32 *         resultInt32,
+         OSObject *       params[]   = 0,
+         IOItemCount      paramCount = 0,
+         IOOptionBits     options    = 0 );
+         flags_num = OSNumber::withNumber((unsigned long long)flags, 32);
+         */
 				
 			}
 			return kIOReturnBadArgument;
@@ -326,26 +326,27 @@ IOReturn ACPIMonitor::callPlatformFunction(const OSSymbol *functionName, bool wa
       key = OSDynamicCast(OSString, sensors->getObject(name));
 			if (key) {
 				if (kIOReturnSuccess == acpiDevice->evaluateInteger(key->getCStringNoCopy(), &value)) {
-				
+          
 					val = 0;
 					
 					if (key->getChar(0) == 'V') {
 						val = encode_fp2e(value);
-					}
-					else if (key->getChar(0) == 'F') {
+					} else if (key->getChar(0) == 'F') {
 						if (key->getChar(1) == 'A') {
 							val = encode_fpe2(value);
-						} else 
+						} else {
 							if (key->getChar(1) == 'T') {
 								val = encode_fpe2(MEGA10 / value);
 							} else {
-							val = value;
-						}
-					}
-					else val = value;
-					
-					bcopy(&val, data, 2);					
-					return kIOReturnSuccess;
+                val = value;
+              }
+            }
+					} else {
+            val = value;
+          }
+            
+          bcopy(&val, data, 2);					
+          return kIOReturnSuccess;
 				}
 			}
 			
