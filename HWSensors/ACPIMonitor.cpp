@@ -121,29 +121,29 @@ bool ACPIMonitor::start(IOService * provider)
 
 	//Next step - temperature keys
 	if (kIOReturnSuccess == acpiDevice->validateObject("TCPU"))
-		addSensor("TCPU", KEY_CPU_HEATSINK_TEMPERATURE, TYPE_SP78, 2);
+		addSensor("TCPU", KEY_CPU_HEATSINK_TEMPERATURE, TYPE_SP78, 2); //Th0H
 
 	if (kIOReturnSuccess == acpiDevice->validateObject("TSYS"))
-		addSensor("TSYS", KEY_NORTHBRIDGE_TEMPERATURE, TYPE_SP78, 2);
+		addSensor("TSYS", KEY_NORTHBRIDGE_TEMPERATURE, TYPE_SP78, 2); //TN0P
 
 	if (kIOReturnSuccess == acpiDevice->validateObject("TDIM"))
-		addSensor("TDIM", KEY_DIMM_TEMPERATURE, TYPE_SP78, 2);
+		addSensor("TDIM", KEY_DIMM_TEMPERATURE, TYPE_SP78, 2);      //Tm0P
 		
 	if (kIOReturnSuccess == acpiDevice->validateObject("TAMB"))
-		addSensor("TAMB", KEY_AMBIENT_TEMPERATURE, TYPE_SP78, 2);
+		addSensor("TAMB", KEY_AMBIENT_TEMPERATURE, TYPE_SP78, 2);  //TA0P
 	
     if (kIOReturnSuccess == acpiDevice->validateObject("TCPP"))
-        addSensor("TCPP", KEY_CPU_PROXIMITY_TEMPERATURE, TYPE_SP78, 2);
+        addSensor("TCPP", KEY_CPU_PROXIMITY_TEMPERATURE, TYPE_SP78, 2);  //TC0P
 	// We should add also GPU reading stuff for those who has no supported plug in but have the value on EC registers
 	
 	
 	
 	//Voltage
 	if (kIOReturnSuccess == acpiDevice->validateObject("VCPU"))
-		addSensor("VSN0", KEY_CPU_VOLTAGE, TYPE_FP2E, 2);
+		addSensor("VSN0", KEY_CPU_VOLTAGE, TYPE_FP2E, 2);           //VC0C
 	
 	if (kIOReturnSuccess == acpiDevice->validateObject("VMEM"))
-		addSensor("VSN0", KEY_MEMORY_VOLTAGE, TYPE_FP2E, 2);
+		addSensor("VSN0", KEY_MEMORY_VOLTAGE, TYPE_FP2E, 2);      //VM0R
 
 	if (kIOReturnSuccess == acpiDevice->validateObject("VSN1"))
 		addSensor("VSN1", "Vp0C", TYPE_FP2E, 2);

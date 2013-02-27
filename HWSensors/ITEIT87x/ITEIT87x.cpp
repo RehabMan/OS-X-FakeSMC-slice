@@ -438,19 +438,22 @@ bool IT87x::start(IOService * provider)
     if (data) {
       bcopy(data->getBytesNoCopy(), vendor, data->getLength());
       OSString * VendorNick = vendorID(OSString::withCString(vendor));
-      
-      data = OSDynamicCast(OSData, rootNode->getProperty("OEMBoard"));
-      if (!data) {
-        WarningLog("no OEMBoard");
-        data = OSDynamicCast(OSData, rootNode->getProperty("OEMProduct"));
-      }
-      if (data) {
-        bcopy(data->getBytesNoCopy(), product, data->getLength());
-        OSDictionary *link = OSDynamicCast(OSDictionary, list->getObject(VendorNick));
-        if (link){
-          configuration = OSDynamicCast(OSDictionary, link->getObject(OSString::withCString(product)));
-          InfoLog(" mother vendor=%s product=%s", vendor, product);
-        }        
+      if (VendorNick) {
+        data = OSDynamicCast(OSData, rootNode->getProperty("OEMBoard"));
+        if (!data) {
+          WarningLog("no OEMBoard");
+          data = OSDynamicCast(OSData, rootNode->getProperty("OEMProduct"));
+        }
+        if (data) {
+          bcopy(data->getBytesNoCopy(), product, data->getLength());
+          OSDictionary *link = OSDynamicCast(OSDictionary, list->getObject(VendorNick));
+          if (link){
+            configuration = OSDynamicCast(OSDictionary, link->getObject(OSString::withCString(product)));
+            InfoLog(" mother vendor=%s product=%s", vendor, product);
+          }
+        }
+      } else {
+        WarningLog("unknown OEMVendor %s", vendor);
       }
     } else {
       WarningLog("no OEMVendor");
