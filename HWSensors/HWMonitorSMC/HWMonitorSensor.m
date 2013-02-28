@@ -134,13 +134,13 @@
                 encoded = [HWMonitorSensor swapBytes:encoded];
                 
                 if ([type isEqualToString:@TYPE_FP4C]){ 
-                float v = ((float) encoded )/ 4096.0f; //2^12
-                return [[NSString alloc] initWithFormat:@"%2.3fV",v];
+                  float v = ((float) encoded )/ 4096.0f; //2^12
+                  return [[NSString alloc] initWithFormat:@"%2.3fV",v];
                 }
                 else if ([type isEqualToString:@TYPE_FP2E])
                 { 
-                float v = ((float) encoded) / 16384.0f; //2^14
-                return [[NSString alloc] initWithFormat:@"%1.3fV",v]; 
+                  float v = ((float) encoded) / 16384.0f; //2^14
+                  return [[NSString alloc] initWithFormat:@"%1.3fV",v]; 
                 }
             } break;
                 

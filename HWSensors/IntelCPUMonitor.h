@@ -71,8 +71,9 @@ class IntelCPUMonitor : public IOService
     OSDeclareDefaultStructors(IntelCPUMonitor)   
 public:
 	UInt32					Frequency[MaxCpuCount];
-	UInt32					Voltage;
-    UInt32                  BaseFreqRatio;
+	UInt32					Voltage;    //in millivolts
+  UInt32          BaseFreqRatio;
+  
 private:
 	bool				  	Active;	
 	bool					  LoopLock;

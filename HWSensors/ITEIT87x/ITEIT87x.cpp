@@ -93,7 +93,7 @@ long IT87xSensor::getValue()
 	if (*((uint32_t*)type) == *((uint32_t*)TYPE_FP2E)) {
 		value = encode_fp2e(value);
 	}
-    else if (*((uint32_t*)type) == *((uint32_t*)TYPE_FP4C)) {
+  else if (*((uint32_t*)type) == *((uint32_t*)TYPE_FP4C)) {
 		value = encode_fp4c(value);
 	}
 	else if (*((uint32_t*)type) == *((uint32_t*)TYPE_FPE2)) {

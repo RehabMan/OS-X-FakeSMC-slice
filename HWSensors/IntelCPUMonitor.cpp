@@ -636,7 +636,7 @@ IOReturn IntelCPUMonitor::loopTimerEvent(void)
 	{
 	Frequency[i] = IntelGetFrequency(i);
     if (SandyArch) {
-      
+//value in millivolts      
 			Voltage = GlobalState64 >> 35;
     } else if (!nehalemArch) {
 			Voltage = IntelGetVoltage(GlobalState[i].VID);

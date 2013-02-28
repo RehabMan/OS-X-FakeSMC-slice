@@ -12,6 +12,7 @@
 
 #include "SuperIOFamily.h"
 #include "FakeSMC.h"
+#include "utils.h"
 
 #define Debug FALSE
 
@@ -19,7 +20,7 @@
 #define DebugLog(string, args...)	do { if (Debug) { IOLog (LogPrefix "[Debug] " string "\n", ## args); } } while(0)
 #define WarningLog(string, args...) do { IOLog (LogPrefix "[Warning] " string "\n", ## args); } while(0)
 #define InfoLog(string, args...)	do { IOLog (LogPrefix string "\n", ## args); } while(0)
-
+/*
 inline UInt16 swap_value(UInt16 value)
 {
 	return ((value & 0xff00) >> 8) | ((value & 0xff) << 8);
@@ -30,14 +31,14 @@ inline UInt16 encode_fp2e(UInt16 value)
 	UInt16 dec = (float)value / 1000.0f;
 	UInt16 frc = value - (dec * 1000);
 	
-	return swap_value((dec << 14) | (frc << 4) /*| 0x3*/);
+	return swap_value((dec << 14) | (frc << 4));
 }
 
 inline UInt16 encode_fpe2(UInt16 value)
 {
 	return swap_value(value << 2);
 }
-
+*/
 OSString * vendorID(OSString * smbios_manufacturer)
 {
   if (smbios_manufacturer) {
