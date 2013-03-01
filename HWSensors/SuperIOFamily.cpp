@@ -119,6 +119,69 @@ unsigned long SuperIOSensor::getIndex()
 	return index;
 }
 
+inline UInt8 get_index(char c)
+{
+	return c > 96 && c < 103 ? c - 87 : c > 47 && c < 58 ? c - 48 : 0;
+}
+
+
+long  SuperIOSensor::encodeValue(UInt32 value)
+{
+//  UInt32 tmp = 0;
+  if ((type[0] == 'u' || type[0] == 's') && type[1] == 'i') {
+    
+    bool minus = value < 0;
+    
+    if (type[0] == 'u' && minus) {
+      value = -value;
+      minus = false;
+    }
+    
+    switch (type[2]) {
+      case '8':
+        if (type[3] == '\0' && size == 1) {
+          UInt8 out = minus ? (UInt8)(-value) | 0x80 : (UInt8)value;
+          return out;
+        }
+        break;
+        
+      case '1':
+        if (type[3] == '6' && size == 2) {
+          UInt16 out = OSSwapHostToBigInt16(minus ? (UInt16)(-value) | 0x8000 : (UInt16)value);
+          return out;
+        }
+        break;
+        
+      case '3':
+        if (type[3] == '2' && size == 4) {
+          UInt32 out = OSSwapHostToBigInt32(minus ? (UInt32)(-value) | 0x80000000 : (UInt32)value);
+          return out;
+        }
+        break;
+        
+      default:
+        return 0;
+    }
+  }
+  else if ((type[0] == 'f' || type[0] == 's') && type[1] == 'p') {
+    
+    bool minus = value < 0;
+    UInt8 i = get_index(type[2]);
+    UInt8 f = get_index(type[3]);
+    
+    if (i + f == (type[0] == 'f' ? 16 : 15)) {
+      
+      UInt64 mult = (minus ? -value : value) * 1000 ;
+      UInt64 encoded = ((mult << f) / 1000) & 0xffff;
+      
+      UInt16 out = OSSwapHostToBigInt16(minus ? (UInt16)(encoded | 0x8000) : (UInt16)encoded);
+      
+      return out;
+    }
+  }
+  
+}
+
 long SuperIOSensor::getValue()
 {
 	UInt16 value = 0;
@@ -137,12 +200,14 @@ long SuperIOSensor::getValue()
 			break;
 	}
 	
-	if (*((uint32_t*)type) == *((uint32_t*)TYPE_FP2E)) {
+/*	if (*((uint32_t*)type) == *((uint32_t*)TYPE_FP2E)) {
 		value = encode_fp2e(value);
 	}
 	else if (*((uint32_t*)type) == *((uint32_t*)TYPE_FPE2)) {
 		value = encode_fpe2(value);
-	}
+	}*/
+  
+  value = encodeValue(value);
 	
 	return value;
 }

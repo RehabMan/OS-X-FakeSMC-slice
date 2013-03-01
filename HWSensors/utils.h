@@ -19,7 +19,7 @@ inline UInt16 encode_fp2e(UInt16 value)
     value = (UInt16)(tmp & 0xffff);
     return swap_value(value);
 }
-
+/*
 inline UInt16 encode_fp3d(UInt16 value)
 {
   UInt32 tmp = value;
@@ -58,7 +58,7 @@ inline UInt16 encode_sp5a(UInt16 value)
 
   return swap_value(value);
 }
-
+*/
 inline UInt16 encode_fpe2(UInt16 value)
 {
 	return swap_value(value << 2);

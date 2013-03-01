@@ -407,7 +407,8 @@ IOReturn Andigilog::callPlatformFunction(const OSSymbol *functionName, bool wait
                         if (idx > -1) {
                             readSensor(idx);
                             if (fan >= 0 && (*((uint32_t*)&Measures[idx].hwsensor.type) == *((uint32_t*)TYPE_FPE2)))
-                                Measures[idx].value = encode_fpe2(Measures[idx].value);
+                        //      Measures[idx].value = Measures[idx].hwsensor->encodeValue(Measures[idx].value);
+                               Measures[idx].value = encode_fpe2(Measures[idx].value);
                             memcpy(data, &Measures[idx].value, Measures[idx].hwsensor.size);
                             return kIOReturnSuccess;
                         }

@@ -38,12 +38,12 @@ class SuperIOSensor : public OSObject {
 	 OSDeclareDefaultStructors(SuperIOSensor)
 	
 protected:
-	SuperIOMonitor *	owner;
-	char *				name;
-	char *				type;
-	unsigned char		size;
+	SuperIOMonitor *    owner;
+	char *              name;
+	char *              type;
+	unsigned char       size;
 	SuperIOSensorGroup	group;
-	unsigned long		index;
+	unsigned long       index;
   long                Ri;
   long                Rf;
   long                Vf;
@@ -52,15 +52,16 @@ protected:
 public:
 	static SuperIOSensor *withOwner(SuperIOMonitor *aOwner, const char* aKey, const char* aType, unsigned char aSize, SuperIOSensorGroup aGroup, unsigned long aIndex);
 	
-	const char *		getName();
-	const char *		getType();
-	unsigned char		getSize();
+	const char *        getName();
+	const char *        getType();
+	unsigned char       getSize();
 	SuperIOSensorGroup	getGroup();
-	unsigned long		getIndex();
+	unsigned long       getIndex();
+  long                encodeValue(UInt32 value);
 	
 	virtual bool		initWithOwner(SuperIOMonitor *aOwner, const char* aKey, const char* aType, unsigned char aSize, SuperIOSensorGroup aGroup, unsigned long aIndex);
-	virtual long		getValue();
-	virtual void		free();
+	virtual long        getValue();
+	virtual void        free();
 };
 
 class SuperIOMonitor : public IOService {
@@ -69,18 +70,18 @@ class SuperIOMonitor : public IOService {
 protected:
 	IOService *				fakeSMC;
 		
-	UInt16					address;
-	UInt8					registerPort;
-	UInt8					valuePort;
+	UInt16            address;
+	UInt8             registerPort;
+	UInt8             valuePort;
 	
-	UInt32					model;
+	UInt32            model;
 	
-	OSArray *				sensors;
+	OSArray *         sensors;
 	
-	UInt8					listenPortByte(UInt8 reg);
-	UInt16					listenPortWord(UInt8 reg);
-	void					selectLogicalDevice(UInt8 num);
-	bool					getLogicalDeviceAddress(UInt8 reg = SUPERIO_BASE_ADDRESS_REGISTER);
+	UInt8             listenPortByte(UInt8 reg);
+	UInt16            listenPortWord(UInt8 reg);
+	void              selectLogicalDevice(UInt8 num);
+	bool              getLogicalDeviceAddress(UInt8 reg = SUPERIO_BASE_ADDRESS_REGISTER);
 	
 	virtual int				getPortsCount();
 	virtual void			selectPort(unsigned char index);
@@ -90,10 +91,10 @@ protected:
 	
 	virtual const char *	getModelName();
 	
-	SuperIOSensor *			addSensor(const char* key, const char* type, unsigned char size, SuperIOSensorGroup group, unsigned long index);
-	SuperIOSensor *			addTachometer(unsigned long index, const char* id = 0);
-	SuperIOSensor *			getSensor(const char* key);
-	virtual bool			updateSensor(const char *key, const char *type, unsigned char size, SuperIOSensorGroup group, unsigned long index);
+	SuperIOSensor *		addSensor(const char* key, const char* type, unsigned char size, SuperIOSensorGroup group, unsigned long index);
+	SuperIOSensor *		addTachometer(unsigned long index, const char* id = 0);
+	SuperIOSensor *		getSensor(const char* key);
+	virtual bool      updateSensor(const char *key, const char *type, unsigned char size, SuperIOSensorGroup group, unsigned long index);
 		
 public:
 	virtual long			readTemperature(unsigned long index);
@@ -102,7 +103,7 @@ public:
 	
 	virtual bool			init(OSDictionary *properties=0);
 	virtual IOService*		probe(IOService *provider, SInt32 *score);
-    virtual bool			start(IOService *provider);
+  virtual bool			start(IOService *provider);
 	virtual void			stop(IOService *provider);
 	virtual void			free(void);
 	

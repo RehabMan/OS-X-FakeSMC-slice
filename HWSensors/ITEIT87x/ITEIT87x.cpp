@@ -89,7 +89,7 @@ long IT87xSensor::getValue()
       }
 	}
 //    value =  value + ((value - Vf) * Ri)/Rf;
-    
+/*    
 	if (*((uint32_t*)type) == *((uint32_t*)TYPE_FP2E)) {
 		value = encode_fp2e(value);
 	}
@@ -98,7 +98,9 @@ long IT87xSensor::getValue()
 	}
 	else if (*((uint32_t*)type) == *((uint32_t*)TYPE_FPE2)) {
 		value = encode_fpe2(value);
-	}
+	}*/
+  
+  value = encodeValue(value);
 	
 	return value;
 }

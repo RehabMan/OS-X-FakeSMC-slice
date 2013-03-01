@@ -200,6 +200,7 @@
 #define TYPE_FP88                               "fp88"
 #define TYPE_CH8                                "ch8*"
 #define TYPE_SP3C                               "sp3c"
+#define TYPE_SP4B                               "sp4b"
 #define TYPE_SP5A                               "sp5a"
 #define TYPE_SP78                               "sp78"
 #define TYPE_SP87                               "sp87"

@@ -585,7 +585,7 @@ IOReturn IntelCPUMonitor::callPlatformFunction(const OSSymbol *functionName, boo
 					}
 					break;
 				case 'V':
-					value = encode_fp2e(Voltage);
+					value = encode_fpe2(Voltage);
 					break;
 				case 'R':
 					if ((name[1] != 'P') || (name[2] != 'l') || (name[3] != 't')) {
