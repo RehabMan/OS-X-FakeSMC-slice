@@ -169,13 +169,23 @@
             } break;
             case FrequencySensorGroup:
             {
-                unsigned int MHZ = 0;
-                
-                bcopy([value bytes], &MHZ, 2);
-                
-                MHZ = [HWMonitorSensor swapBytes:MHZ];
-                
-                return [[NSString alloc] initWithFormat:@"%dMhz",MHZ];
+                if ([type isEqualToString:@TYPE_FREQ])
+                {
+                    unsigned int MHZ = 0;
+                    
+                    bcopy([value bytes], &MHZ, 2);
+                    
+                    MHZ = [HWMonitorSensor swapBytes:MHZ];
+                    
+                    return [[NSString alloc] initWithFormat:@"%dMhz",MHZ];
+                }
+                else if ([type isEqualToString:@TYPE_UI32])
+                {
+                    UInt32 MHZ = 0;
+                    bcopy([value bytes], &MHZ, 4);
+                    MHZ = OSSwapBigToHostInt32(MHZ);
+                    return [[NSString alloc] initWithFormat:@"%dMhz", MHZ];
+                }
                 
             } break;  
                 
@@ -184,6 +194,9 @@
                 unsigned int mlt = 0;
                 
                 bcopy([value bytes], &mlt, 2);
+                
+                if ([type isEqualToString:@TYPE_FP88])
+                    mlt *= 10;
                 
                 return [[NSString alloc] initWithFormat:@"x%1.1f",(float)mlt / 10.0];
                 
