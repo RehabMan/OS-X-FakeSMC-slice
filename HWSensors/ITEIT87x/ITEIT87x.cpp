@@ -88,7 +88,7 @@ long IT87xSensor::getValue()
           break;
       }
 	}
-//    value =  value + ((value - Vf) * Ri)/Rf;
+  value =  value + ((value - Vf) * Ri)/Rf;
 /*    
 	if (*((uint32_t*)type) == *((uint32_t*)TYPE_FP2E)) {
 		value = encode_fp2e(value);
@@ -100,7 +100,7 @@ long IT87xSensor::getValue()
 		value = encode_fpe2(value);
 	}*/
   
-  value = encodeValue(value);
+  value = encodeValue(value, scale);
 	
 	return value;
 }
@@ -549,22 +549,22 @@ bool IT87x::start(IOService * provider)
 						WarningLog("error adding memory voltage sensor");
 				}
         else if (name->isEqualTo("+5VC")) {  
-          if (!addSensor(KEY_5VC_VOLTAGE, TYPE_FP4C, 2, kSuperIOVoltageSensor, i,Ri,Rf,Vf)) {
+          if (!addSensor(KEY_5VC_VOLTAGE, TYPE_SP4B, 2, kSuperIOVoltageSensor, i,Ri,Rf,Vf)) {
             WarningLog("ERROR Adding AVCC Voltage Sensor!");
           }
         }
         else if (name->isEqualTo("+5VSB")) {  
-          if (!addSensor(KEY_5VSB_VOLTAGE, TYPE_FP4C, 2, kSuperIOVoltageSensor, i,Ri,Rf,Vf)) {
+          if (!addSensor(KEY_5VSB_VOLTAGE, TYPE_SP4B, 2, kSuperIOVoltageSensor, i,Ri,Rf,Vf)) {
             WarningLog("ERROR Adding AVCC Voltage Sensor!");
           }
         }                
         else if (name->isEqualTo("+12VC")) {
-          if (!addSensor(KEY_12V_VOLTAGE, TYPE_FP4C, 2, kSuperIOVoltageSensor, i,Ri,Rf,Vf)) {
+          if (!addSensor(KEY_12V_VOLTAGE, TYPE_SP4B, 2, kSuperIOVoltageSensor, i,Ri,Rf,Vf)) {
             WarningLog("ERROR Adding 12V Voltage Sensor!");
           }
         }
         else if (name->isEqualTo("-12VC")) {
-          if (!addSensor(KEY_N12VC_VOLTAGE, TYPE_FP4C, 2, kSuperIOVoltageSensor, i,Ri,Rf,Vf)) {
+          if (!addSensor(KEY_N12VC_VOLTAGE, TYPE_SP4B, 2, kSuperIOVoltageSensor, i,Ri,Rf,Vf)) {
             WarningLog("ERROR Adding 12V Voltage Sensor!");
           }
         }

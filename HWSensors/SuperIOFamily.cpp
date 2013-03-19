@@ -125,12 +125,12 @@ inline UInt8 get_index(char c)
 }
 
 
-long  SuperIOSensor::encodeValue(UInt32 value)
+long  SuperIOSensor::encodeValue(UInt32 value, int scale) //Vscale=1, Tscale=1000
 {
 //  UInt32 tmp = 0;
   if ((type[0] == 'u' || type[0] == 's') && type[1] == 'i') {
     
-    bool minus = value < 0;
+    bool minus = (int)value < 0;
     
     if (type[0] == 'u' && minus) {
       value = -value;
@@ -165,13 +165,13 @@ long  SuperIOSensor::encodeValue(UInt32 value)
   }
   else if ((type[0] == 'f' || type[0] == 's') && type[1] == 'p') {
     
-    bool minus = value < 0;
+    bool minus = (int)value < 0;
     UInt8 i = get_index(type[2]);
     UInt8 f = get_index(type[3]);
     
     if (i + f == (type[0] == 'f' ? 16 : 15)) {
       
-      UInt64 mult = (minus ? -value : value) * 1000 ;
+      UInt64 mult = (minus ? -value : value) * scale ;
       UInt64 encoded = ((mult << f) / 1000) & 0xffff;
       
       UInt16 out = OSSwapHostToBigInt16(minus ? (UInt16)(encoded | 0x8000) : (UInt16)encoded);
@@ -207,9 +207,9 @@ long SuperIOSensor::getValue()
 		value = encode_fpe2(value);
 	}*/
   
-  value = encodeValue(value);
+  value = encodeValue(value, scale);
 	
-	return value;
+	return out;
 }
 
 bool SuperIOSensor::initWithOwner(SuperIOMonitor *aOwner, const char* aKey, const char* aType, unsigned char aSize, SuperIOSensorGroup aGroup, unsigned long aIndex)
@@ -235,6 +235,18 @@ bool SuperIOSensor::initWithOwner(SuperIOMonitor *aOwner, const char* aKey, cons
 	size = aSize;
 	group = aGroup;
 	index = aIndex;
+  switch (group) {
+    case kSuperIOTemperatureSensor:
+    case kSuperIOTachometerSensor:  
+      scale = 1000;
+      break;
+    case kSuperIOVoltageSensor:  
+      scale = 1;
+      break;
+    case kSuperIOFrequency:  
+      scale = 10;
+      break;
+  }
 	
 	return true;
 }

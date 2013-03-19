@@ -29,7 +29,8 @@ const UInt8 SUPERIO_BASE_ADDRESS_REGISTER			= 0x60;
 enum SuperIOSensorGroup {
 	kSuperIOTemperatureSensor,
 	kSuperIOTachometerSensor,
-	kSuperIOVoltageSensor
+	kSuperIOVoltageSensor,
+  kSuperIOFrequency
 };
 
 class SuperIOMonitor;
@@ -44,6 +45,7 @@ protected:
 	unsigned char       size;
 	SuperIOSensorGroup	group;
 	unsigned long       index;
+  int                 scale;
   long                Ri;
   long                Rf;
   long                Vf;
@@ -57,7 +59,7 @@ public:
 	unsigned char       getSize();
 	SuperIOSensorGroup	getGroup();
 	unsigned long       getIndex();
-  long                encodeValue(UInt32 value);
+  long                encodeValue(UInt32 value, int scale);
 	
 	virtual bool		initWithOwner(SuperIOMonitor *aOwner, const char* aKey, const char* aType, unsigned char aSize, SuperIOSensorGroup aGroup, unsigned long aIndex);
 	virtual long        getValue();
