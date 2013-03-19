@@ -268,7 +268,9 @@
   for (int i=0; i<16; i++)
     [self addSensorWithKey:[[NSString alloc] initWithFormat:@"FRC%X",i] andType: @TYPE_FREQ andCaption:[[NSString alloc] initWithFormat:NSLocalizedString(@"CPU %X",nil),i] intoGroup:FrequencySensorGroup ];
     
+  //rehabman: added for compatibility with kozlek sensors...
   [self addSensorWithKey:@"CCPC" andType: @TYPE_UI32 andCaption:[[NSString alloc] initWithFormat:NSLocalizedString(@"CPU Package",nil)] intoGroup:FrequencySensorGroup ];
+
   //
   for (int i=0; i<0xA; i++) {
     [self addSensorWithKey:[[NSString alloc] initWithFormat:@KEY_FAKESMC_FORMAT_GPU_FREQUENCY,i] andType: @TYPE_SP78 andCaption:[[NSString alloc] initWithFormat:NSLocalizedString(@"GPU %X Core",nil) ,i] intoGroup:FrequencySensorGroup ];
@@ -277,13 +279,10 @@
     // Temporary disable GPU ROP and Memory reporting
     //        [self addSensorWithKey:[[NSString alloc] initWithFormat:@KEY_FAKESMC_FORMAT_GPU_MEMORY_FREQUENCY,i] andType: @TYPE_SP78 andCaption:[[NSString alloc] initWithFormat:NSLocalizedString(@"GPU %X Memory",nil) ,i] intoGroup:FrequencySensorGroup ];
     //        [self addSensorWithKey:[[NSString alloc] initWithFormat:@KEY_FAKESMC_FORMAT_GPU_ROP_FREQUENCY,i] andType: @TYPE_SP78 andCaption:[[NSString alloc] initWithFormat:NSLocalizedString(@"GPU %X ROP",nil) ,i] intoGroup:FrequencySensorGroup ];
-      
-    //rehabman: added for compatibility with kozlek sensors...
-    [self addSensorWithKey:@"CCPC" andType: @TYPE_UI32 andCaption:[[NSString alloc] initWithFormat:NSLocalizedString(@"CPU Package",nil)] intoGroup:FrequencySensorGroup ];
-    
     //
-    [self insertFooterAndTitle:NSLocalizedString(@"FREQUENCIES",nil) andImage:[NSImage imageNamed:@"freq_small"]];
   }
+  [self insertFooterAndTitle:NSLocalizedString(@"FREQUENCIES",nil) andImage:[NSImage imageNamed:@"freq_small"]];
+
   //Multipliers
   
   for (int i=0; i<0xA; i++) {
