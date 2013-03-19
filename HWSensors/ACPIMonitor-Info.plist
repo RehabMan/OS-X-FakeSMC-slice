@@ -49,8 +49,10 @@
 			</array>
 			<key>keysToAdd</key>
 			<dict>
-				<key>TCRK</key>
-				<string>TW0P</string>
+				<key>TCRR</key>
+				<string>TA0P</string>
+				<key>TCRW</key>
+				<string>TA1P</string>
 			</dict>
 		</dict>
 	</dict>
