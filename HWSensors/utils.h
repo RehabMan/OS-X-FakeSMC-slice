@@ -19,6 +19,16 @@ inline UInt16 encode_fp2e(UInt16 value)
     value = (UInt16)(tmp & 0xffff);
     return swap_value(value);
 }
+
+inline UInt16 encode_sp4b(UInt16 value)
+{
+  UInt32 tmp = (value < 0x8000)?value:(~value);
+  tmp = (tmp << 11) / 1000;
+  value = (UInt16)(tmp & 0xffff);
+  return swap_value(value);
+}
+
+
 /*
 inline UInt16 encode_fp3d(UInt16 value)
 {
@@ -85,8 +95,12 @@ inline bool process_sensor_entry(OSObject *object, OSString **name, long *Ri, lo
       if (OSNumber *number = OSDynamicCast(OSNumber, dictionary->getObject("Ri")))
         *Ri = number->unsigned64BitValue();
       
-      if (OSNumber *number = OSDynamicCast(OSNumber, dictionary->getObject("Rf")))
+      if (OSNumber *number = OSDynamicCast(OSNumber, dictionary->getObject("Rf"))) {
         *Rf = number->unsigned64BitValue() ;
+        if (*Rf == 0) {
+          *Rf = 1;
+        }
+      }
       
       return true;
     }

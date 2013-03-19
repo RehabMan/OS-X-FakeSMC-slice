@@ -336,7 +336,7 @@ IOReturn ACPIMonitor::callPlatformFunction(const OSSymbol *functionName, bool wa
 							val = encode_fpe2(value);
 						} else {
 							if (key->getChar(1) == 'T') {
-								val = encode_fpe2(MEGA10 / value);
+								val = value?encode_fpe2(MEGA10 / value):0;
 							} else {
                 val = value;
               }

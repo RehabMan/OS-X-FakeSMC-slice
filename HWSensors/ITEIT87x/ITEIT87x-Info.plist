@@ -900,17 +900,17 @@
 						<key>TEMPIN0</key>
 						<string>System</string>
 						<key>TEMPIN1</key>
-						<string></string>
+						<string>DDR</string>
 						<key>TEMPIN2</key>
 						<string>CPU</string>
 						<key>VBATNeedUpdates</key>
 						<true/>
 						<key>VIN0</key>
-						<string></string>
+						<string>CPU</string>
 						<key>VIN1</key>
 						<dict>
 							<key>Name</key>
-							<string>+5VC</string>
+							<string>Memory</string>
 							<key>Ri</key>
 							<integer>1</integer>
 						</dict>
@@ -922,13 +922,18 @@
 							<integer>3</integer>
 						</dict>
 						<key>VIN3</key>
-						<string></string>
+						<dict>
+							<key>Name</key>
+							<string>+5VC</string>
+							<key>Ri</key>
+							<integer>1</integer>
+						</dict>
 						<key>VIN4</key>
 						<string></string>
 						<key>VIN5</key>
-						<string>CPU</string>
+						<string></string>
 						<key>VIN6</key>
-						<string>Memory</string>
+						<string></string>
 						<key>VIN7</key>
 						<dict>
 							<key>Name</key>

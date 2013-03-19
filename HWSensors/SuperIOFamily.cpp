@@ -82,11 +82,11 @@ OSString * vendorID(OSString * smbios_manufacturer)
 
 OSDefineMetaClassAndStructors(SuperIOSensor, OSObject)
 
-SuperIOSensor *SuperIOSensor::withOwner(SuperIOMonitor *aOwner, const char* aKey, const char* aType, unsigned char aSize, SuperIOSensorGroup aGroup, unsigned long aIndex)
+SuperIOSensor *SuperIOSensor::withOwner(SuperIOMonitor *aOwner, const char* aKey, const char* aType, unsigned char aSize, SuperIOSensorGroup aGroup, unsigned long aIndex, long aRi, long aRf, long aVf)
 {
 	SuperIOSensor *me = new SuperIOSensor;
 	
-    if (me && !me->initWithOwner(aOwner, aKey, aType, aSize, aGroup, aIndex)) {
+    if (me && !me->initWithOwner(aOwner, aKey, aType, aSize, aGroup, aIndex ,aRi,aRf,aVf)) {
         me->release();
         return 0;
     }
@@ -125,36 +125,37 @@ inline UInt8 get_index(char c)
 }
 
 
-long  SuperIOSensor::encodeValue(UInt32 value, int scale) //Vscale=1, Tscale=1000
+long  SuperIOSensor::encodeValue(UInt32 value, int sscale) //Vscale=1, Tscale=1000
 {
 //  UInt32 tmp = 0;
+  int svalue = (int)value;
   if ((type[0] == 'u' || type[0] == 's') && type[1] == 'i') {
     
-    bool minus = (int)value < 0;
+    bool minus = svalue < 0;
     
     if (type[0] == 'u' && minus) {
-      value = -value;
+      svalue = -svalue;
       minus = false;
     }
     
     switch (type[2]) {
       case '8':
         if (type[3] == '\0' && size == 1) {
-          UInt8 out = minus ? (UInt8)(-value) | 0x80 : (UInt8)value;
+          UInt8 out = minus ? (UInt8)(-svalue) | 0x80 : (UInt8)svalue;
           return out;
         }
         break;
         
       case '1':
         if (type[3] == '6' && size == 2) {
-          UInt16 out = OSSwapHostToBigInt16(minus ? (UInt16)(-value) | 0x8000 : (UInt16)value);
+          UInt16 out = OSSwapHostToBigInt16(minus ? (UInt16)(-svalue) | 0x8000 : (UInt16)value);
           return out;
         }
         break;
         
       case '3':
         if (type[3] == '2' && size == 4) {
-          UInt32 out = OSSwapHostToBigInt32(minus ? (UInt32)(-value) | 0x80000000 : (UInt32)value);
+          UInt32 out = OSSwapHostToBigInt32(minus ? (UInt32)(-svalue) | 0x80000000 : value);
           return out;
         }
         break;
@@ -165,13 +166,13 @@ long  SuperIOSensor::encodeValue(UInt32 value, int scale) //Vscale=1, Tscale=100
   }
   else if ((type[0] == 'f' || type[0] == 's') && type[1] == 'p') {
     
-    bool minus = (int)value < 0;
+    bool minus = svalue < 0;
     UInt8 i = get_index(type[2]);
     UInt8 f = get_index(type[3]);
     
     if (i + f == (type[0] == 'f' ? 16 : 15)) {
       
-      UInt64 mult = (minus ? -value : value) * scale ;
+      UInt64 mult = (minus ? -svalue : svalue) * sscale ;
       UInt64 encoded = ((mult << f) / 1000) & 0xffff;
       
       UInt16 out = OSSwapHostToBigInt16(minus ? (UInt16)(encoded | 0x8000) : (UInt16)encoded);
@@ -206,13 +207,23 @@ long SuperIOSensor::getValue()
 	else if (*((uint32_t*)type) == *((uint32_t*)TYPE_FPE2)) {
 		value = encode_fpe2(value);
 	}*/
-  
-  value = encodeValue(value, scale);
+	if (*((uint32_t*)type) == *((uint32_t*)TYPE_FP2E)) {
+		value = encode_fp2e(value);
+	}
+  else if (*((uint32_t*)type) == *((uint32_t*)TYPE_SP4B)) {
+		value = encode_sp4b(value);
+	}
+	else if (*((uint32_t*)type) == *((uint32_t*)TYPE_FPE2)) {
+		value = encode_fpe2(value);
+	}
+
+
+//  value = encodeValue(value, scale);
 	
-	return out;
+	return value;
 }
 
-bool SuperIOSensor::initWithOwner(SuperIOMonitor *aOwner, const char* aKey, const char* aType, unsigned char aSize, SuperIOSensorGroup aGroup, unsigned long aIndex)
+bool SuperIOSensor::initWithOwner(SuperIOMonitor *aOwner, const char* aKey, const char* aType, unsigned char aSize, SuperIOSensorGroup aGroup, unsigned long aIndex, long aRi, long aRf, long aVf)
 {
 	if (!OSObject::init())
 		return false;
@@ -376,7 +387,7 @@ const char *SuperIOMonitor::getModelName()
 	return "Unknown";
 }
 
-SuperIOSensor *SuperIOMonitor::addSensor(const char* name, const char* type, unsigned char size, SuperIOSensorGroup group, unsigned long index)
+SuperIOSensor *SuperIOMonitor::addSensor(const char* name, const char* type, unsigned char size, SuperIOSensorGroup group, unsigned long index, long aRi, long aRf, long aVf)
 {
 	if (NULL != getSensor(name))
 		return 0;

@@ -88,7 +88,7 @@ class IT87xSensor : public SuperIOSensor
 
      
 public:    
-    static SuperIOSensor *withOwner(SuperIOMonitor *aOwner, const char* aKey, const char* aType, unsigned char aSize, SuperIOSensorGroup aGroup, unsigned long aIndex /*, long aRi=0, long aRf=1, long aVf=0 */);
+    static SuperIOSensor *withOwner(SuperIOMonitor *aOwner, const char* aKey, const char* aType, unsigned char aSize, SuperIOSensorGroup aGroup, unsigned long aIndex , long aRi=0, long aRf=1, long aVf=0);
     
     virtual long		getValue();
     virtual void    setValue(UInt16 value);

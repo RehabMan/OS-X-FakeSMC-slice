@@ -52,7 +52,7 @@ protected:
   
 	
 public:
-	static SuperIOSensor *withOwner(SuperIOMonitor *aOwner, const char* aKey, const char* aType, unsigned char aSize, SuperIOSensorGroup aGroup, unsigned long aIndex);
+	static SuperIOSensor *withOwner(SuperIOMonitor *aOwner, const char* aKey, const char* aType, unsigned char aSize, SuperIOSensorGroup aGroup, unsigned long aIndex, long aRi=0, long aRf=1, long aVf=0);
 	
 	const char *        getName();
 	const char *        getType();
@@ -61,7 +61,7 @@ public:
 	unsigned long       getIndex();
   long                encodeValue(UInt32 value, int scale);
 	
-	virtual bool		initWithOwner(SuperIOMonitor *aOwner, const char* aKey, const char* aType, unsigned char aSize, SuperIOSensorGroup aGroup, unsigned long aIndex);
+	virtual bool		initWithOwner(SuperIOMonitor *aOwner, const char* aKey, const char* aType, unsigned char aSize, SuperIOSensorGroup aGroup, unsigned long aIndex, long aRi, long aRf, long aVf);
 	virtual long        getValue();
 	virtual void        free();
 };
@@ -93,7 +93,7 @@ protected:
 	
 	virtual const char *	getModelName();
 	
-	SuperIOSensor *		addSensor(const char* key, const char* type, unsigned char size, SuperIOSensorGroup group, unsigned long index);
+	SuperIOSensor *		addSensor(const char* key, const char* type, unsigned char size, SuperIOSensorGroup group, unsigned long index, long aRi=0, long aRf=1, long aVf=0);
 	SuperIOSensor *		addTachometer(unsigned long index, const char* id = 0);
 	SuperIOSensor *		getSensor(const char* key);
 	virtual bool      updateSensor(const char *key, const char *type, unsigned char size, SuperIOSensorGroup group, unsigned long index);

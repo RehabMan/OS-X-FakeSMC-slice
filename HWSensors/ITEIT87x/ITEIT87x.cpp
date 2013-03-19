@@ -28,11 +28,11 @@ OSDefineMetaClassAndStructors(IT87xSensor, SuperIOSensor)
 
 #pragma mark IT87xSensor implementation
 
-SuperIOSensor * IT87xSensor::withOwner(SuperIOMonitor *aOwner, const char* aKey, const char* aType, unsigned char aSize, SuperIOSensorGroup aGroup, unsigned long aIndex) //, long aRi, long aRf, long aVf)
+SuperIOSensor * IT87xSensor::withOwner(SuperIOMonitor *aOwner, const char* aKey, const char* aType, unsigned char aSize, SuperIOSensorGroup aGroup, unsigned long aIndex, long aRi, long aRf, long aVf)
 {
 	SuperIOSensor *me = new IT87xSensor;
 
-    if (me && !me->initWithOwner(aOwner, aKey, aType, aSize, aGroup, aIndex /*,aRi,aRf,aVf*/)) {
+    if (me && !me->initWithOwner(aOwner, aKey, aType, aSize, aGroup, aIndex ,aRi,aRf,aVf)) {
         me->release();
         return 0;
     }
@@ -88,19 +88,23 @@ long IT87xSensor::getValue()
           break;
       }
 	}
+  if (Rf == 0) {
+    Rf = 1;
+    IOLog("Rf == 0 when getValue index=%d value=%04x\n", (int)index, value);
+  }
   value =  value + ((value - Vf) * Ri)/Rf;
-/*    
+   
 	if (*((uint32_t*)type) == *((uint32_t*)TYPE_FP2E)) {
 		value = encode_fp2e(value);
 	}
-  else if (*((uint32_t*)type) == *((uint32_t*)TYPE_FP4C)) {
-		value = encode_fp4c(value);
+  else if (*((uint32_t*)type) == *((uint32_t*)TYPE_SP4B)) {
+		value = encode_sp4b(value);
 	}
 	else if (*((uint32_t*)type) == *((uint32_t*)TYPE_FPE2)) {
 		value = encode_fpe2(value);
-	}*/
+	}
   
-  value = encodeValue(value, scale);
+//  value = encodeValue(value, scale);
 	
 	return value;
 }
@@ -275,7 +279,7 @@ long IT87x::readTachometer(unsigned long index)
 	
 	value |= readByte(address, ITE_FAN_TACHOMETER_EXT_REG[index]) << 8;
 	
-	return value > 0x3f && value < 0xffff ? (float)(1350000 + value) / (float)(value * 2) : 0;
+	return (value > 0x3f && value < 0xffff) ? (float)(1350000 + value) / (float)(value * 2) : 0;
 }
 
 
@@ -671,7 +675,7 @@ SuperIOSensor * IT87x::addSensor(const char* name, const char* type, unsigned ch
 	if (NULL != getSensor(name))
 		return 0;
   
-  SuperIOSensor *sensor = IT87xSensor::withOwner(this, name, type, size, group, index /*,aRi, aRf, aVf*/);
+  SuperIOSensor *sensor = IT87xSensor::withOwner(this, name, type, size, group, index, aRi, aRf, aVf);
 
 	if (sensor && sensors->setObject(sensor))
 		if(kIOReturnSuccess == fakeSMC->callPlatformFunction(kFakeSMCAddKeyHandler, false, (void *)name, (void *)type, (void *)size, (void *)this))
